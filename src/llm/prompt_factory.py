@@ -62,21 +62,32 @@ You are a D&D Cartographer. Generate a SPATIAL REPORT for the node: "{title}".
 Current Text:
 {content}
 
-Sub-area Reports:
+Sub-area Reports (from children nodes):
 {child_summaries}
 
 Task:
-1. **Analyze Local Text**: Extract location type and specific exits/connections mentioned in the text (e.g., "Door to A2").
-2. **Integrate Children**: If "Sub-area Reports" are provided, you MUST list them individually. **DO NOT** merge them into a single paragraph.
-3. **Preserve IDs**: Keep all Area IDs (e.g., A1, B2) visible.
+1. **STRICTLY Filter Non-Locations**: 
+   - **ONLY** physical locations (Rooms, Buildings, Islands, Caves, Landmarks, etc) can be nodes in the hierarchy.
+   - **EXCLUDE** abstract concepts, narratives, or containers such as: "Quests", "Events", "Encounters", "Chapters", "Introductions", "Welcome to...".
+   - If the current node "{title}" is NOT a physical location (e.g., "Cloister Quests"), **DO NOT** create a hierarchy node for it. Instead, **PROMOTE** (hoist) its valid spatial children to the top level of the list.
+   - **Synthesize Names**: If the text describes a valid physical location or spatial relationship but lacks a specific proper name (or the title is abstract), **CREATE** a descriptive name yourself based on the content
+
+2. **Refine & Flatten Hierarchy**:
+   - **Correction**: If a child report lists a major location under a non-spatial parent, move it to the top level.
+   - **Siblings vs Children**: Major adventure sites are usually **siblings**, not inside each other. Ensure they are listed as separate top-level items unless the text explicitly says one is inside the other.
+   - **Deduplicate**: If the same location appears multiple times with slightly different names, **MERGE** them into a single node using the most specific or canonical name.
+
+3. **Format**: Use `(ID) Site Name` format. If no ID, use `Site Name`.
 
 Output Requirements:
-- If no spatial info exists anywhere (neither in text nor children), output: "NO_SPATIAL_INFO"
+- If no spatial info exists anywhere (and no valid children), output: "NO_SPATIAL_INFO"
 - Otherwise, use this format:
-  **[Overview]**: <Brief description of this node>
-  **[Direct Connections]**: <Specific exits mentioned in this node's text>
-  **[Sub-Areas]**: <If children exist, list them below>
-    - [Child Title]: <Key connection info from child>
+  **[Overview]**: <Brief description. If this node is just a container/chapter, say "Region Container">
+  **[Direct Connections]**: <Specific exits mentioned in THIS node's text>
+  **[Spatial Hierarchy]**:
+    - Valid Location A: <Connection info>
+      - Sub-Location A1: <Connection info>
+    - Valid Location B (Promoted/Hoisted if necessary): <Connection info>
 """
 
     @staticmethod

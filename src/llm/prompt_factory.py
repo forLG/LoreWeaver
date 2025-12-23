@@ -6,7 +6,7 @@ class PromptFactory:
     AREA_PATTERN = re.compile(r"^(?:Area\s+)?([A-Z][0-9]+)[:\s]\s*(.+)$", re.IGNORECASE)
 
     @staticmethod
-    def create_prompt(node: Dict, child_summaries: List[str] = None) -> str:
+    def create_summary_prompt(node: Dict, child_summaries: List[str] = None) -> str:
         node_type = node.get("type", "section")
         content = node.get("content", "")
         title = node.get("title", node.get("name", "Untitled"))
@@ -44,6 +44,66 @@ class PromptFactory:
             return PromptFactory._prompt_for_list(base_context, node)
         else:
             return PromptFactory._prompt_default(base_context, children_text)
+        
+        # ... existing code ...
+
+    @staticmethod
+    def create_spatial_summary_prompt(node: Dict, child_summaries: List[str]) -> str:
+        """
+        阶段一：递归生成纯文本的空间关系总结
+        """
+        title = node.get("title", "Untitled")
+        content = node.get("content", "")
+        
+        # 基础 Prompt 结构
+        return f"""
+You are a D&D Cartographer. Generate a SPATIAL REPORT for the node: "{title}".
+
+Current Text:
+{content}
+
+Sub-area Reports:
+{child_summaries}
+
+Task:
+1. **Analyze Local Text**: Extract location type and specific exits/connections mentioned in the text (e.g., "Door to A2").
+2. **Integrate Children**: If "Sub-area Reports" are provided, you MUST list them individually. **DO NOT** merge them into a single paragraph.
+3. **Preserve IDs**: Keep all Area IDs (e.g., A1, B2) visible.
+
+Output Requirements:
+- If no spatial info exists anywhere (neither in text nor children), output: "NO_SPATIAL_INFO"
+- Otherwise, use this format:
+  **[Overview]**: <Brief description of this node>
+  **[Direct Connections]**: <Specific exits mentioned in this node's text>
+  **[Sub-Areas]**: <If children exist, list them below>
+    - [Child Title]: <Key connection info from child>
+"""
+
+    @staticmethod
+    def create_graph_extraction_prompt(spatial_summary_text: str) -> str:
+        """
+        阶段二：从总结文本中提取 JSON
+        """
+        return f"""
+Based on the following spatial description, extract the Location Knowledge Graph.
+
+Description:
+{spatial_summary_text}
+
+Task:
+Identify all Locations and their Connections.
+
+Output Format (JSON ONLY):
+{{
+    "nodes": [
+        {{ "id": "A1", "label": "Entrance Hall", "type": "room" }},
+        {{ "id": "A2", "label": "Kitchen", "type": "room" }}
+    ],
+    "edges": [
+        {{ "source": "A1", "target": "A2", "relation": "connected_to", "desc": "North door" }}
+    ]
+}}
+"""
         
     @staticmethod
     def _prompt_for_area(context: str, children_text: str, area_id: str, area_name: str) -> str:

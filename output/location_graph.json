@@ -1,0 +1,88 @@
+{
+  "nodes": [
+    {
+      "id": "L1",
+      "label": "Dragon's Rest",
+      "type": "cloister"
+    },
+    {
+      "id": "L2",
+      "label": "Stormwreck Isle",
+      "type": "island"
+    },
+    {
+      "id": "L3",
+      "label": "Open Sea",
+      "type": "sea"
+    },
+    {
+      "id": "L4",
+      "label": "Harbor",
+      "type": "dock"
+    },
+    {
+      "id": "L5",
+      "label": "Cliffside Path",
+      "type": "path"
+    },
+    {
+      "id": "L6",
+      "label": "Sea Caves",
+      "type": "cave"
+    },
+    {
+      "id": "L7",
+      "label": "Shipwreck",
+      "type": "wreck"
+    },
+    {
+      "id": "L8",
+      "label": "Ancient Observatory",
+      "type": "structure"
+    }
+  ],
+  "edges": [
+    {
+      "source": "L1",
+      "target": "L2",
+      "relation": "located_on",
+      "desc": "Built into cliffside on Stormwreck Isle"
+    },
+    {
+      "source": "L3",
+      "target": "L4",
+      "relation": "connected_to",
+      "desc": "Characters arrive by boat from open sea to harbor"
+    },
+    {
+      "source": "L4",
+      "target": "L5",
+      "relation": "connected_to",
+      "desc": "Long winding cliffside path leads from harbor to cloister"
+    },
+    {
+      "source": "L5",
+      "target": "L1",
+      "relation": "leads_to",
+      "desc": "Path leads up to Dragon's Rest cloister"
+    },
+    {
+      "source": "L1",
+      "target": "L6",
+      "relation": "quest_destination",
+      "desc": "Key destination mentioned in Cloister Quests"
+    },
+    {
+      "source": "L1",
+      "target": "L7",
+      "relation": "quest_destination",
+      "desc": "Key destination mentioned in Cloister Quests"
+    },
+    {
+      "source": "L1",
+      "target": "L8",
+      "relation": "quest_destination",
+      "desc": "Key destination mentioned in Cloister Quests"
+    }
+  ]
+}

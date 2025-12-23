@@ -6,7 +6,7 @@ from openai import OpenAI
 from src.llm.prompt_factory import PromptFactory
 from src.utils.logger import logger
 
-class LLMProcessor:
+class SummaryProcessor:
     def __init__(self, api_key: str, base_url: str = None, model: str = "deepseek-chat"):
         self.client = OpenAI(api_key=api_key, base_url=base_url)
         self.model = model

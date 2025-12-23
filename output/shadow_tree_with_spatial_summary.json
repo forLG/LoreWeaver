@@ -52,7 +52,8 @@
             "type": "insetReadaloud",
             "content": "Your journey was uneventful, but the island now visible off the bow promises rare wonders. Seaweed shimmers in countless brilliant colors below you, and rays of sunlight defy the overcast sky to illuminate the lush grass and dark basalt rock of the island. Avoiding the rocks jutting up from the ocean, your ship makes its way toward a calm harbor on the island's north side.\nA large, open-air temple comes into view, perched on the edge of a cliff high above you. The ship drops anchor at the mouth of the harbor, and two sailors row you ashore. You have plenty of time to admire the towering statue at the center of the temple, depicting a wizened man surrounded by seven songbirds. A long path winds up the side of the cliff to the temple, dotted along the way with doorways cut into the rock.\nThe sailors set you ashore on a rickety dock, where a large rowboat is neatly tied. They point to the base of the path and wish you good luck before they row back to the ship. Your visit to Dragon's Rest begins!",
             "links": [],
-            "children": []
+            "children": [],
+            "spatial_summary": "[Untitled Section]: **[Overview]**: A calm harbor on the north side of Dragon's Rest Island, featuring a rickety dock and the starting point of a long cliffside path leading up to a large, open-air temple.\n\n**[Direct Connections]**: The harbor is connected to the open sea (arrival point). A long, winding path leads from the base of the cliff up to the temple above. The path is dotted with doorways cut into the cliff rock.\n\n**[Sub-Areas]**:\n- **The Cliffside Path**: A long, winding ascent up the cliff face from the harbor to the temple, featuring multiple doorways carved into the rock along its length.\n- **The Temple of the Seven Songbirds**: A large, open-air temple perched on the cliff edge, dominated by a central statue of a wizened man surrounded by seven songbirds."
           },
           {
             "id": "014",
@@ -86,7 +87,8 @@
                 "type": "insetReadaloud",
                 "content": "As you're about to leave the beach and start your climb, you hear a ruckus of splashing and a wet, gurgling moan behind you. Three figures are shambling up from the water's edge, about thirty feet away. They're dressed as sailors, but their skin is gray and they look drowned. Sea water drools from their slack mouths as they lurch toward you.",
                 "links": [],
-                "children": []
+                "children": [],
+                "spatial_summary": "NO_SPATIAL_INFO"
               },
               {
                 "id": "016",
@@ -112,7 +114,8 @@
                         "attrs": []
                       }
                     ],
-                    "children": []
+                    "children": [],
+                    "spatial_summary": "[Tip: Undead Fortitude]: **[Overview]**: A descriptive tip for the Dungeon Master on how to narratively handle the \"Undead Fortitude\" trait of zombies, including hints for players and mechanics for bypassing the trait.\n\n**[Direct Connections]**: NO_EXITS\n\n**[Sub-Areas]**: NO_SUBAREAS"
                   },
                   {
                     "id": "018",
@@ -136,7 +139,8 @@
                         ]
                       }
                     ],
-                    "children": []
+                    "children": [],
+                    "spatial_summary": "[Runara's Aid]: **[Overview]**: A narrative outcome where the characters are rescued by Runara and wake up in the temple of Dragon's Rest after a defeat.\n\n**[Direct Connections]**: This node is a narrative transition to area A5 (temple) in Dragon's Rest.\n\n**[Sub-Areas]**:"
                   },
                   {
                     "id": "019",
@@ -153,11 +157,14 @@
                         ]
                       }
                     ],
-                    "children": []
+                    "children": [],
+                    "spatial_summary": "NO_SPATIAL_INFO"
                   }
-                ]
+                ],
+                "spatial_summary": "[Untitled Section]: **[Overview]**: A collection of narrative and mechanical notes, not a defined spatial location.\n\n**[Direct Connections]**: NO_EXITS\n\n**[Sub-Areas]**:\n  - [Tip: Undead Fortitude]: NO_EXITS\n  - [Runara's Aid]: This node is a narrative transition to area A5 (temple) in Dragon's Rest."
               }
-            ]
+            ],
+            "spatial_summary": "[Drowned Sailors]: **[Overview]**: A coastal path where the characters encounter three zombie sailors shambling up from the shore. This is a potential combat encounter.\n\n**[Direct Connections]**: NO_EXITS\n\n**[Sub-Areas]**:\n  - [Tip: Undead Fortitude]: NO_EXITS\n  - [Runara's Aid]: This node is a narrative transition to area A5 (temple) in Dragon's Rest."
           },
           {
             "id": "01a",
@@ -227,7 +234,8 @@
                 "type": "insetReadaloud",
                 "content": "Your arrival quickly draws the attention of the entire population of the place—which consists mostly of kobolds. These small, reptilian folk eye you curiously while a couple of humans watch from a distance. All the cloister's residents are dressed in simple clothes, and no one carries a visible weapon. One of the kobolds pipes up with, \"What's your name?\"\nAt that, all the kobolds begin barraging you with questions—\"Where are you from?\" \"What's that?\" \"Why are you here?\" and more that are lost in the din.",
                 "links": [],
-                "children": []
+                "children": [],
+                "spatial_summary": "[Untitled Section]: **[Overview]**: A small, simple cloister inhabited primarily by curious kobolds and a few watchful humans. The residents are unarmed and dressed plainly.\n\n**[Direct Connections]**: No specific exits or connections are mentioned in the local text.\n\n**[Sub-Areas]**: No sub-areas are provided for integration."
               },
               {
                 "id": "01c",
@@ -235,7 +243,8 @@
                 "type": "insetReadaloud",
                 "content": "The chattering kobolds fall silent as a new figure comes into view, descending gracefully from the upper part of the cloister. She's an elderly human woman with weathered brown skin, white hair in tight braids, and kindly hazel eyes, dressed in a simple white robe. She smiles as she draws near and extends her arms in greeting.\n\"Welcome to Dragon's Rest,\" she says. \"May Bahamut's guidance lead you to whatever you seek.\"",
                 "links": [],
-                "children": []
+                "children": [],
+                "spatial_summary": "NO_SPATIAL_INFO"
               },
               {
                 "id": "01d",
@@ -267,7 +276,8 @@
                     ]
                   }
                 ],
-                "children": []
+                "children": [],
+                "spatial_summary": "[Elder Runara]: **[Overview]**: The personal domain of Elder Runara, the bronze dragon leader of Dragon's Rest. This includes her public persona within the cloister and her secret, private lair.\n\n**[Direct Connections]**:\n*   **Secret Lair**: Accessed via an undersea tunnel from the open ocean, a short distance from the cloister. The entrance is not shown on the main map.\n*   **Dragon's Rest (Public)**: Runara is frequently seen in the temple (area A5), the library, and checking on residents throughout the cloister.\n\n**[Sub-Areas]**:\n*   **[A5. Temple]**: The central temple of Dragon's Rest, where Runara is often assumed to reside. It contains a shrine, library, and Runara's office."
               },
               {
                 "id": "01e",
@@ -329,7 +339,8 @@
                     ]
                   }
                 ],
-                "children": []
+                "children": [],
+                "spatial_summary": "[Kobolds]: **[Overview]**: A group of nine lawful good kobolds who live and work at Dragon's Rest, serving Runara. They are sensitive to sunlight and operate primarily at night.\n\n**[Direct Connections]**: None explicitly stated in this node's text.\n\n**[Sub-Areas]**: No sub-area reports provided."
               },
               {
                 "id": "01f",
@@ -379,7 +390,8 @@
                     ]
                   }
                 ],
-                "children": []
+                "children": [],
+                "spatial_summary": "[Tarak]: **[Overview]**: Tarak is a former poisoner turned repentant botanist, tending the gardens of a cloister on an island. He is a key NPC with a hidden past and a current quest involving the local sea caves.\n\n**[Direct Connections]**: The text directly connects this node to the **sea caves on the south side of the island**.\n\n**[Sub-Areas]**:\n    - **Sea Caves**: Tarak frequently visits these caves to acquire heart cap mushrooms from the resident myconids. The caves are now guarded by a fungus-covered octopus monster."
               },
               {
                 "id": "020",
@@ -421,9 +433,11 @@
                     ]
                   }
                 ],
-                "children": []
+                "children": [],
+                "spatial_summary": "[Varnoth]: **[Overview]**: Varnoth is a retired general residing in reflective contemplation at Dragon's Rest. She is often found maintaining the temple with her mason's tools.\n\n**[Direct Connections]**: The text mentions she is located at **Dragon's Rest**. She witnessed a ship crash into the **rocks to the north** of the cloister.\n\n**[Sub-Areas]**: No sub-area reports were provided."
               }
-            ]
+            ],
+            "spatial_summary": "[Meeting the Inhabitants]: **[Overview]**: The initial encounter point at Dragon's Rest where the characters meet the curious kobold inhabitants and are formally greeted by Elder Runara. This establishes the cloister as a home base.\n\n**[Direct Connections]**:\n*   **A1. Monastic Cells**: Characters can sleep here.\n*   **A3. Dining Room**: Characters can eat here.\n*   **A5. Temple**: Characters can sleep here.\n\n**[Sub-Areas]**:\n*   **[Elder Runara]**: The leader is frequently present in the temple (area A5) and throughout the public areas of the cloister. Her secret lair is accessed via an undersea tunnel from the open ocean.\n*   **[Kobolds]**: The nine kobolds live in the small monastic cells (area A1).\n*   **[Tarak]**: This NPC is connected to the sea caves on the south side of the island.\n*   **[Varnoth]**: This NPC is located at Dragon's Rest and witnessed a ship crash into the rocks to the north of the cloister."
           },
           {
             "id": "021",
@@ -445,7 +459,8 @@
                     "type": "insetReadaloud",
                     "content": "A long path leads from the rocky shore up the side of the cliff, with occasional stairs to ease the ascent. Here and there along the lower part of the path, well-tended garden plots hold flowers, herbs, and vegetables.\nAbout thirty feet above the bay, the path widens into a long plaza. Halfway along the plaza, a stone statue of a dragon gazes serenely down the path. Six open doorways are cut into the cliff side.",
                     "links": [],
-                    "children": []
+                    "children": [],
+                    "spatial_summary": "[Untitled Section]: **[Overview]**: A long, ascending path from a rocky shore leads to a wide plaza carved into a cliff face, featuring a dragon statue and multiple doorways.\n\n**[Direct Connections]**: Path leads up from the \"rocky shore\" (presumably the bay below). Six open doorways are cut into the cliff side on the plaza.\n\n**[Sub-Areas]**:\n- **A1 - The Path**: The path connects the rocky shore to the plaza above.\n- **A2 - The Plaza**: The plaza contains the dragon statue and is the location of the six doorways.\n- **A3 - The Dragon Statue**: The statue is located halfway along the plaza.\n- **A4 - Doorway 1**: One of six doorways in the cliff side on the plaza.\n- **A5 - Doorway 2**: One of six doorways in the cliff side on the plaza.\n- **A6 - Doorway 3**: One of six doorways in the cliff side on the plaza.\n- **A7 - Doorway 4**: One of six doorways in the cliff side on the plaza.\n- **A8 - Doorway 5**: One of six doorways in the cliff side on the plaza.\n- **A9 - Doorway 6**: One of six doorways in the cliff side on the plaza.\n- **B1 - Lower Garden Plots**: Small garden plots are located along the lower part of the path."
                   },
                   {
                     "id": "024",
@@ -471,7 +486,8 @@
                         ]
                       }
                     ],
-                    "children": []
+                    "children": [],
+                    "spatial_summary": "[Statue]: **[Overview]**: A bronze dragon statue depicting Astalagan, located on the cliffs. It is marked on the map with a star-in-a-circle symbol.\n\n**[Direct Connections]**: None explicitly stated in the local text.\n\n**[Sub-Areas]**: No sub-area reports were provided."
                   },
                   {
                     "id": "025",
@@ -503,9 +519,11 @@
                         ]
                       }
                     ],
-                    "children": []
+                    "children": [],
+                    "spatial_summary": "[Cells]: **[Overview]**: A row of six simple monastic cells for the cloister's residents, each furnished with a bed, nightstand, desk, and chair. The westernmost cell is vacant, and the others are occupied by Tarak, Varnoth, Myla, and eight kobolds in two shared rooms.\n\n**[Direct Connections]**: The cells are accessed via doorways from the main cloister area.\n\n**[Sub-Areas]**:\n    - [Cell 1 (Vacant)]: The westernmost cell. Available for the characters.\n    - [Cell 2 (Tarak)]: Located next to the vacant cell.\n    - [Cell 3 (Varnoth)]: Located next to Tarak's cell.\n    - [Cell 4 (Myla)]: The fourth cell, cluttered with junk and tools.\n    - [Cell 5 & 6 (Kobold Dormitory)]: The fifth and sixth cells, each strung with hammocks for four kobolds."
                   }
-                ]
+                ],
+                "spatial_summary": "[A1: Path and Monastic Cells]: **[Overview]**: A long, ascending path from a rocky shore leads to a wide plaza carved into a cliff face, featuring a bronze dragon statue and a row of six monastic cells.\n\n**[Direct Connections]**: The path leads up from the \"rocky shore\" (presumably the bay below).\n\n**[Sub-Areas]**:\n    - [A1 - The Path]: The path connects the rocky shore to the plaza above.\n    - [A2 - The Plaza]: The plaza contains the dragon statue and is the location of the six doorways.\n    - [A3 - The Dragon Statue]: A bronze statue depicting Astalagan, located halfway along the plaza.\n    - [A4 - Doorway 1]: One of six doorways in the cliff side on the plaza.\n    - [A5 - Doorway 2]: One of six doorways in the cliff side on the plaza.\n    - [A6 - Doorway 3]: One of six doorways in the cliff side on the plaza.\n    - [A7 - Doorway 4]: One of six doorways in the cliff side on the plaza.\n    - [A8 - Doorway 5]: One of six doorways in the cliff side on the plaza.\n    - [A9 - Doorway 6]: One of six doorways in the cliff side on the plaza.\n    - [B1 - Lower Garden Plots]: Small garden plots are located along the lower part of the path.\n    - [Cells]: A row of six simple monastic cells accessed via the doorways from the plaza.\n        - [Cell 1 (Vacant)]: The westernmost cell. Available for the characters.\n        - [Cell 2 (Tarak)]: Located next to the vacant cell.\n        - [Cell 3 (Varnoth)]: Located next to Tarak's cell.\n        - [Cell 4 (Myla)]: The fourth cell, cluttered with junk and tools.\n        - [Cell 5 & 6 (Kobold Dormitory)]: The fifth and sixth cells, each strung with hammocks for four kobolds."
               },
               {
                 "id": "026",
@@ -520,9 +538,11 @@
                     "type": "insetReadaloud",
                     "content": "A small, free-standing building halfway up the path has a peaked roof and a weathered wooden door. A sturdy wooden pallet wrapped with rope hangs beneath the building on an iron chain, lying flat against the cliff face.",
                     "links": [],
-                    "children": []
+                    "children": [],
+                    "spatial_summary": "[Untitled Section]: **[Overview]**: A small, free-standing building with a peaked roof, built into the cliff face halfway up a path. A rope-wrapped wooden pallet is suspended beneath it on a chain.\n\n**[Direct Connections]**: The main path runs past this building. The weathered wooden door is the primary entrance/exit.\n\n**[Sub-Areas]**:\n    - **The Pallet (B1)**: A wooden pallet suspended on a chain beneath the main building. It is accessed via a trap door in the building's floor."
                   }
-                ]
+                ],
+                "spatial_summary": "[A2: Winch House]: **[Overview]**: A small, free-standing building with a peaked roof, built into the cliff face halfway up a path. It contains a winch mechanism for raising and lowering a supply pallet to the water 50 feet below.\n\n**[Direct Connections]**: The main path runs past this building. The primary entrance/exit is a weathered wooden door.\n\n**[Sub-Areas]**:\n    - **The Pallet (B1)**: A wooden pallet suspended on a chain beneath the main building. It is accessed via a trap door in the building's floor."
               },
               {
                 "id": "028",
@@ -545,9 +565,11 @@
                     "type": "insetReadaloud",
                     "content": "A doorway in the rock opens into a dining room with a long table. Two benches run the length of the table, and a single chair sits at the table's head. A short hallway connects to a small, tidy kitchen.",
                     "links": [],
-                    "children": []
+                    "children": [],
+                    "spatial_summary": "[Untitled Section]: **[Overview]**: A dining room with a long table, benches, and a single chair at its head, connected to a small kitchen via a short hallway. The room is accessed through a doorway in the rock.\n\n**[Direct Connections]**: Entrance via a doorway in the rock.\n\n**[Sub-Areas]**:\n- **Kitchen**: A small, tidy kitchen connected to the dining room via a short hallway."
                   }
-                ]
+                ],
+                "spatial_summary": "[A3: Kitchen]: **[Overview]**: A kitchen used by the cloister residents to prepare their three shared daily meals. It is tidy and small.\n\n**[Direct Connections]**: Connected to the dining room via a short hallway.\n\n**[Sub-Areas]**:\n- **A3: Kitchen**: Connected to the dining room via a short hallway."
               },
               {
                 "id": "02a",
@@ -591,9 +613,11 @@
                     "type": "insetReadaloud",
                     "content": "Of all the doorways cut into the cliff face, only one has an actual door. This entry's door is made of sturdy oak with iron bands, and it swings open easily to reveal a spacious library. Bookshelves line every wall, with three free-standing shelves in the west half of the room. In the east half is a table with two benches, writing implements, book stands, and glass-shielded lamps.",
                     "links": [],
-                    "children": []
+                    "children": [],
+                    "spatial_summary": "NO_SPATIAL_INFO"
                   }
-                ]
+                ],
+                "spatial_summary": "[A4: Library]: **[Overview]**: A library within the cloister, focused on theology and history, serving as a quiet study space for several residents.\n\n**[Direct Connections]**: No specific exits or connections are mentioned in the provided text.\n\n**[Sub-Areas]**: No sub-areas are provided in the \"Sub-area Reports\" section."
               },
               {
                 "id": "02c",
@@ -643,7 +667,8 @@
                     "type": "insetReadaloud",
                     "content": "The highest point of the cloister is crowned by an open-air temple that overhangs the cliff, supported by arched stone struts anchored to the cliff face. The north wall of the temple is carved directly into the rock, while the rest is open to the sea air. Heavy pillars mark the three open sides, supporting the wooden roof. In the center of the temple stands a stone statue of a kind-looking old man with canaries perched on his hands, shoulders, and head. A feeling of serenity suffuses the place.",
                     "links": [],
-                    "children": []
+                    "children": [],
+                    "spatial_summary": "[Untitled Section]: **[Overview]**: An open-air temple at the highest point of the cloister, built into the cliff face with a statue of an old man with canaries at its center.\n\n**[Direct Connections]**: The temple is open on three sides (east, south, west) to the sea air. It is anchored to the cliff face to the north.\n\n**[Sub-Areas]**:"
                   },
                   {
                     "id": "02e",
@@ -651,13 +676,17 @@
                     "type": "entries",
                     "content": "Known as the Platinum Dragon, Bahamut is the patron and progenitor of metallic dragons. Adventurers and dragons alike pray to Bahamut to uphold honor and justice, or when they need courage to face a great threat. He seldom interferes in the affairs of mortal creatures, though he makes exceptions to help thwart the machinations of Tiamat the Dragon Queen and the evil dragons that serve her.",
                     "links": [],
-                    "children": []
+                    "children": [],
+                    "spatial_summary": "[About Bahamut]: **[Overview]**: A conceptual node describing the deity Bahamut, the Platinum Dragon, patron of metallic dragons and a divine force for justice and courage.\n\n**[Direct Connections]**: No physical exits or spatial connections are described in the text.\n\n**[Sub-Areas]**: No sub-area reports were provided for integration."
                   }
-                ]
+                ],
+                "spatial_summary": "[A5: Temple of Bahamut]: **[Overview]**: A simple, open-air temple at the highest point of the Dragon's Rest cloister, built into the northern cliff face. Its central feature is a statue of an old man (Bahamut in mortal guise) surrounded by seven canaries, set upon a pedestal. The area is suffused with a palpable, magically-induced serenity.\n\n**[Direct Connections]**: The temple is open to the sea air on its east, south, and west sides. It is anchored directly to the northern cliff face.\n\n**[Sub-Areas]**:\n- **[About Bahamut]**: A conceptual node describing the deity Bahamut, the Platinum Dragon. No physical exits or spatial connections are described."
               }
-            ]
+            ],
+            "spatial_summary": "[Dragon's Rest Locations]: **[Overview]**: The primary living and communal area of the Dragon's Rest cloister, carved into a cliff face overlooking the sea.\n\n**[Direct Connections]**: The main path leads up from the rocky shore below.\n\n**[Sub-Areas]**:\n    - [A1: Path and Monastic Cells]: The long, ascending path from the shore leads to a wide plaza containing a bronze dragon statue and a row of six monastic cells.\n    - [A2: Winch House]: A small, free-standing building built into the cliff face halfway up the main path.\n    - [A3: Kitchen]: A tidy kitchen connected to the dining room via a short hallway.\n    - [A4: Library]: A library within the cloister, focused on theology and history.\n    - [A5: Temple of Bahamut]: A simple, open-air temple at the highest point of the cloister, built into the northern cliff face."
           }
-        ]
+        ],
+        "spatial_summary": "[Welcome to Dragon's Rest]: **[Overview]**: The starting point for the adventure at Dragon's Rest, where the party arrives by boat at a harbor and prepares to ascend to the cloister above.\n\n**[Direct Connections]**: The characters arrive by boat from the open sea. A long, winding cliffside path leads from the harbor up to the temple (A5) of the Dragon's Rest cloister.\n\n**[Sub-Areas]**:\n  - **[Untitled Section]**: A calm harbor with a rickety dock. A long, winding cliffside path leads from here up to the temple above. The path features multiple doorways carved into the cliff rock.\n  - **[Drowned Sailors]**: A coastal path where the characters encounter three zombie sailors. This is a potential combat encounter with no described exits.\n  - **[Meeting the Inhabitants]**: The initial encounter point at Dragon's Rest where the characters meet the kobolds and Elder Runara. It provides connections to the Monastic Cells (A1), Dining Room (A3), and Temple (A5).\n  - **[Dragon's Rest Locations]**: The primary living and communal area of the cloister, carved into a cliff. The main path leads up from the rocky shore below. Its sub-areas include the Path and Monastic Cells (A1), Winch House (A2), Kitchen (A3), Library (A4), and Temple of Bahamut (A5)."
       },
       {
         "id": "02f",
@@ -763,7 +792,8 @@
                 "type": "insetReadaloud",
                 "content": "Two residents of Dragon's Rest are running for their lives up the lower path, their fishing equipment discarded behind them. Blood and dirt stain their robes. Three figures shamble after them—bloated corpses dressed as sailors, moaning and gurgling.",
                 "links": [],
-                "children": []
+                "children": [],
+                "spatial_summary": "NO_SPATIAL_INFO"
               },
               {
                 "id": "032",
@@ -780,9 +810,11 @@
                     ]
                   }
                 ],
-                "children": []
+                "children": [],
+                "spatial_summary": "NO_SPATIAL_INFO"
               }
-            ]
+            ],
+            "spatial_summary": "[Zombie Resurgence]: **[Overview]**: A location within the cloister grounds where a zombie attack occurs if the initial encounter was avoided. The zombies threaten the lives of Blepp the kobold and Tarak the gardener.\n\n**[Direct Connections]**: The text mentions a wrecked ship \"off the rocks to the north\" as a suspected source of the zombies, creating a connection to that location.\n\n**[Sub-Areas]**:\n    - [Shipwreck]: The suspected source of the zombies, located off the northern rocks. Runara asks the characters to investigate this site."
           },
           {
             "id": "033",
@@ -806,7 +838,8 @@
                 ]
               }
             ],
-            "children": []
+            "children": [],
+            "spatial_summary": "[Sea Caves]: **[Overview]**: A network of coastal caves inhabited by myconids, guarded by a fungal octopus. Tarak has tasked the party with investigating the myconids' troubles and retrieving heart cap mushrooms.\n\n**[Direct Connections]**: The primary entrance is from the coastal waters or shoreline. No other specific exits are detailed in the local text.\n\n**[Sub-Areas]**:\n    - **A1 - The Guardian's Grotto**: The main entrance cavern, home to the fungal octopus guardian. A tunnel leads deeper into the caves (to A2).\n    - **A2 - The Myconid Colony**: The central living chamber of the myconids. A narrow, submerged tunnel (to A3) leads out from the back of the chamber.\n    - **A3 - The Heart Cap Grotto**: A secluded, humid cavern where the rare heart cap mushrooms grow. The only entrance is the submerged tunnel from A2."
           },
           {
             "id": "034",
@@ -829,7 +862,8 @@
                 ]
               }
             ],
-            "children": []
+            "children": [],
+            "spatial_summary": "[Shipwreck]: **[Overview]**: A stretch of treacherous coastline north of Dragon's Rest, littered with the remains of multiple shipwrecks. The most recent wreck occurred under mysterious circumstances, witnessed by locals. The older wreck of the *Compass Rose* is suggested as a key location for investigation.\n\n**[Direct Connections]**: The coastline is north of Dragon's Rest. The wrecks are located on or near the rocks offshore.\n\n**[Sub-Areas]**:\n- **[A1. The New Wreck]**: The most recent shipwreck, crashed into the rocks. Contains the ship's main deck and holds.\n- **[A2. Captain's Quarters]**: Located on the upper deck of the new wreck. Contains the captain's log and personal effects.\n- **[A3. The Compass Rose]**: An older, more deteriorated wreck resting in deeper water. The hull is breached.\n- **[A4. Cargo Hold]**: The main storage area of the Compass Rose, accessed through the breached hull (A3). Contains waterlogged crates and a hidden compartment."
           },
           {
             "id": "035",
@@ -852,7 +886,8 @@
                     ]
                   }
                 ],
-                "children": []
+                "children": [],
+                "spatial_summary": "[The Cleric]: **[Overview]**: A location where a cleric character, guided by a dream, can speak with Runara about their quest. She directs them to investigate a shipwreck.\n\n**[Direct Connections]**: Runara points the character toward the wreck of the *Compass Rose*.\n\n**[Sub-Areas]**:\n    - [Shipwreck]: The wreck of the *Compass Rose*, the destination Runara points the cleric toward."
               },
               {
                 "id": "037",
@@ -868,7 +903,8 @@
                     ]
                   }
                 ],
-                "children": []
+                "children": [],
+                "spatial_summary": "[The Fighter]: **[Overview]**: A narrative node describing a conversation between the Fighter player character and Runara at Dragon's Rest. The conversation's content changes based on the adventure's progress.\n\n**[Direct Connections]**: None specified in the local text.\n\n**[Sub-Areas]**: No sub-area reports were provided."
               },
               {
                 "id": "038",
@@ -898,7 +934,8 @@
                     ]
                   }
                 ],
-                "children": []
+                "children": [],
+                "spatial_summary": "[The Paladin]: **[Overview]**: A location in Dragon's Rest where a disillusioned paladin is welcomed by Runara. It serves as a hub for guidance, connecting the paladin to other residents and a place of contemplation.\n\n**[Direct Connections]**: The local text implies connections to the areas where **Tarak** and **Varnoth** can be found, and to the **temple of Bahamut**.\n\n**[Sub-Areas]**:\n    - [Sub-area Reports]: No specific spatial information is provided in the sub-area reports."
               },
               {
                 "id": "039",
@@ -914,7 +951,8 @@
                     ]
                   }
                 ],
-                "children": []
+                "children": [],
+                "spatial_summary": "[The Rogue]: **[Overview]**: A small, secluded cove on the island's western shore, known as Dragon's Rest. It serves as the current hideout and refuge for Tarak, a former member of the Gilded Gallows thieves' guild.\n\n**[Direct Connections]**: The cove is accessible via a narrow, hidden path from the island's main western trail. A small, beached rowboat suggests arrival by sea.\n\n**[Sub-Areas]**:\n    - **[Tarak's Lean-to]**: A makeshift shelter tucked against the cliff face, constructed from driftwood and sailcloth. It contains a bedroll and a small, cold fire pit.\n    - **[The Tide Pool]**: A shallow, rocky pool at the base of the cliffs, filled with clear seawater. It is where Tarak keeps a watertight chest containing his few remaining personal effects, hidden beneath a large, flat stone."
               },
               {
                 "id": "03a",
@@ -938,9 +976,11 @@
                     ]
                   }
                 ],
-                "children": []
+                "children": [],
+                "spatial_summary": "[The Wizard]: **[Overview]**: A wizard named Runara who possesses a letter about the Clifftop Observatory. She offers to direct the party there in exchange for their help with other island problems.\n\n**[Direct Connections]**: The wizard can direct the party to the **Clifftop Observatory (see chapter 4)**.\n\n**[Sub-Areas]**: NO_SUB_AREAS"
               }
-            ]
+            ],
+            "spatial_summary": "[Individual Quests]: **[Overview]**: A narrative node representing the collection of personal quests for individual player characters, each anchored to a specific location or NPC within Dragon's Rest.\n\n**[Direct Connections]**: The local text does not specify any physical exits or connections from this abstract node.\n\n**[Sub-Areas]**:\n    - **[The Clicer]**: Runara directs the character toward the wreck of the *Compass Rose*.\n    - **[The Fighter]**: No specific spatial information is provided in the sub-area report.\n    - **[The Paladin]**: The local text implies connections to the areas where **Tarak** and **Varnoth** can be found, and to the **temple of Bahamut**.\n    - **[The Rogue]**: The cove is accessible via a narrow, hidden path from the island's main western trail. A small, beached rowboat suggests arrival by sea.\n    - **[The Wizard]**: The wizard can direct the party to the **Clifftop Observatory (see chapter 4)**."
           },
           {
             "id": "03b",
@@ -987,7 +1027,8 @@
                     ]
                   }
                 ],
-                "children": []
+                "children": [],
+                "spatial_summary": "[Untitled Section]: **[Overview]**: A chamber or clearing where the bronze dragon Elder Runara reveals her true form and speaks of the island's \"old wounds\" and a new cycle of violence.\n\n**[Direct Connections]**: No specific exits or connections are mentioned in the local text.\n\n**[Sub-Areas]**:\n    - [Sub-area Reports]: No spatial information was provided in the sub-area reports."
               },
               {
                 "id": "03d",
@@ -1016,11 +1057,14 @@
                     ]
                   }
                 ],
-                "children": []
+                "children": [],
+                "spatial_summary": "[Runara Saves the Day!]: **[Overview]**: A narrative contingency where the powerful dragon Runara rescues the party if they are defeated, bringing them to the temple at Dragon's Rest to recover.\n\n**[Direct Connections]**: This event connects directly to **Area A5 (Temple)**.\n\n**[Sub-Areas]**:\n- **Area A5 (Temple)**: The location where rescued characters awaken, tended to by kobolds."
               }
-            ]
+            ],
+            "spatial_summary": "[Lost Wyrmling]: **[Overview]**: The temple at Dragon's Rest (Area A5), where the bronze dragon Elder Runara, in her humanoid guise, reveals the island's history and tasks the party with finding the lost bronze wyrmling, Aidron, at the ancient observatory.\n\n**[Direct Connections]**: The observatory on the southeast side of the island (implied future destination).\n\n**[Sub-Areas]**:\n- **[Untitled Section]**: This narrative moment occurs within **Area A5 (Temple)**. No new spatial connections are defined.\n- **[Runara Saves the Day!]**: This contingency event connects directly to **Area A5 (Temple)**, where rescued characters are brought to recover."
           }
-        ]
+        ],
+        "spatial_summary": "[Cloister Quests]: **[Overview]**: A narrative node representing the initial quest hub at Dragon's Rest, where the party learns of the island's major locations and receives their primary objectives.\n\n**[Direct Connections]**: The local text explicitly mentions three key destinations: **the sea caves**, **the shipwreck**, and **the ancient observatory**. These are presented as distinct sites the party can choose to investigate.\n\n**[Sub-Areas]**:\n- [Zombie Resurgence]: This event within the cloister grounds creates a direct investigative link to the **[Shipwreck]** location to the north.\n- [Sea Caves]: A network of coastal caves. The primary entrance is from the coastal waters or shoreline.\n- [Shipwreck]: A stretch of treacherous coastline north of Dragon's Rest, littered with ship remains.\n- [Individual Quests]: An abstract collection of personal character goals, some of which direct characters toward specific locations like the **wreck of the *Compass Rose*** or the **Clifftop Observatory**.\n- [Lost Wyrmling]: This quest originates in the **temple (Area A5)** at Dragon's Rest and directs the party toward the **ancient observatory** on the southeast side of the island."
       },
       {
         "id": "03e",
@@ -1068,7 +1112,8 @@
                     "type": "insetReadaloud",
                     "content": "Billowing clouds of steam emerge from the rocks ahead, and the air grows thicker with moisture. As you round a bend, you see a cove where a hot spring burbles up from the rocks and spills into a pool before draining into the ocean. The turquoise water is luminescent, and the gray basalt edges of the spring are lined with vibrantly colored mushrooms, which occasionally burst in a shower of rainbow spores.",
                     "links": [],
-                    "children": []
+                    "children": [],
+                    "spatial_summary": "[Untitled Section]: **[Overview]**: A coastal cove featuring a hot spring that bubbles up from gray basalt rocks, filling a luminescent turquoise pool before draining into the ocean. The area is steamy, humid, and lined with vibrant, spore-bursting mushrooms.\n\n**[Direct Connections]**: The hot spring pool drains into the ocean.\n\n**[Sub-Areas]**:"
                   },
                   {
                     "id": "042",
@@ -1076,7 +1121,8 @@
                     "type": "entries",
                     "content": "The spring is the site of a brass dragon's death, and life-giving magic persists at the site. A character who spends 10 minutes bathing in the waters of the spring can roll one of their Hit Dice (noted on each character sheet) and regain hit points equal to the roll plus their Constitution modifier. A character can benefit from bathing in the hot spring at most once per day.",
                     "links": [],
-                    "children": []
+                    "children": [],
+                    "spatial_summary": "NO_SPATIAL_INFO"
                   },
                   {
                     "id": "043",
@@ -1100,9 +1146,11 @@
                         "attrs": []
                       }
                     ],
-                    "children": []
+                    "children": [],
+                    "spatial_summary": "[Treasure]: **[Overview]**: A small, natural spring lined with rare wind spore mushrooms.\n\n**[Direct Connections]**: None specified in the local text.\n\n**[Sub-Areas]**: No sub-area reports were provided."
                   }
-                ]
+                ],
+                "spatial_summary": "[Hot Springs Havoc]: **[Overview]**: A coastal cove featuring a hot spring that bubbles up from gray basalt rocks, filling a luminescent turquoise pool before draining into the ocean. The area is steamy, humid, and lined with vibrant, spore-bursting mushrooms. Three Fume Drakes lurk invisibly in the pool's water.\n\n**[Direct Connections]**: The hot spring pool drains into the ocean.\n\n**[Sub-Areas]**:\n- **[Treasure]**: A small, natural spring lined with rare wind spore mushrooms."
               },
               {
                 "id": "044",
@@ -1138,9 +1186,11 @@
                     "type": "insetReadaloud",
                     "content": "A discordant sound—half a low growl, half a piercing screech—rips through the air. Abruptly, a hulking creature comes into view. A mix of purple feathers and deep brown fur covers its bearlike body, and its large eyes stare hungrily at you from its owlish head.",
                     "links": [],
-                    "children": []
+                    "children": [],
+                    "spatial_summary": "NO_SPATIAL_INFO"
                   }
-                ]
+                ],
+                "spatial_summary": "[There, There, Owlbear]: **[Overview]**: A hostile, stranded owlbear's territory, likely a forested or rocky inland area of the island. The creature can be pacified by retrieving and using a training whistle around its neck.\n\n**[Direct Connections]**: None specified in the local text.\n\n**[Sub-Areas]**: No sub-area reports provided."
               },
               {
                 "id": "046",
@@ -1186,7 +1236,8 @@
                     "type": "insetReadaloud",
                     "content": "A yipping sound erupts around you as angry kobolds emerge from their hiding places and attack!",
                     "links": [],
-                    "children": []
+                    "children": [],
+                    "spatial_summary": "[Untitled Section]: **[Overview]**: A section of a tunnel or cavern where a party is ambushed by kobolds emerging from hiding places.\n\n**[Direct Connections]**: No specific exits or connections are mentioned in the local text.\n\n**[Sub-Areas]**: No sub-areas are provided."
                   },
                   {
                     "id": "048",
@@ -1194,7 +1245,8 @@
                     "type": "entries",
                     "content": "If the characters are 2nd level, use six kobolds and two winged kobolds.",
                     "links": [],
-                    "children": []
+                    "children": [],
+                    "spatial_summary": "[2nd-Level Characters]: **[Overview]**: An encounter area for a party of 2nd-level characters, populated by six kobolds and two winged kobolds.\n\n**[Direct Connections]**: NO_EXITS_MENTIONED\n\n**[Sub-Areas]**: NO_SUB_AREAS"
                   },
                   {
                     "id": "049",
@@ -1202,9 +1254,11 @@
                     "type": "entries",
                     "content": "If the characters are 3rd level, use eight kobolds and three winged kobolds.",
                     "links": [],
-                    "children": []
+                    "children": [],
+                    "spatial_summary": "[3rd-Level Characters]: **[Overview]**: An encounter area for a party of 3rd-level characters, populated by eight kobolds and three winged kobolds.\n\n**[Direct Connections]**: NO_EXITS_MENTIONED\n\n**[Sub-Areas]**: NO_SUB_AREAS"
                   }
-                ]
+                ],
+                "spatial_summary": "[Kobold Renegades]: **[Overview]**: A rocky, lightly forested stretch of trail on the island, suitable for an ambush by desperate kobolds hiding among the terrain.\n\n**[Direct Connections]**: NO_EXITS_MENTIONED\n\n**[Sub-Areas]**:\n- **[Untitled Section]**: A section of a tunnel or cavern where a party is ambushed by kobolds emerging from hiding places.\n- **[2nd-Level Characters]**: An encounter area for a party of 2nd-level characters, populated by six kobolds and two winged kobolds.\n- **[3rd-Level Characters]**: An encounter area for a party of 3rd-level characters, populated by eight kobolds and three winged kobolds."
               },
               {
                 "id": "04a",
@@ -1221,12 +1275,16 @@
                     ]
                   }
                 ],
-                "children": []
+                "children": [],
+                "spatial_summary": "[What Lies Beneath]: **[Overview]**: A high-level adventure hook describing the potential for subterranean exploration beneath Stormwreck Isle, centered on the legendary tomb of the red dragon Sharruth.\n\n**[Direct Connections]**: The node describes potential access points from the surface of Stormwreck Isle, specifically \"hidden vents\" that lead to \"winding tunnels.\" It is not directly connected to any other named location.\n\n**[Sub-Areas]**: No sub-area reports were provided for integration."
               }
-            ]
+            ],
+            "spatial_summary": "[Additional Encounters]: **[Overview]**: A collection of optional encounter locations that can be placed anywhere on Stormwreck Isle or used as inspiration for new adventures.\n\n**[Direct Connections]**: None specified in the local text.\n\n**[Sub-Areas]**:\n- **[Hot Springs Havoc]**: The hot spring pool drains into the ocean.\n- **[There, There, Owlbear]**: NO_EXITS_MENTIONED\n- **[Kobold Renegades]**: NO_EXITS_MENTIONED\n- **[What Lies Beneath]**: Accessible via hidden vents and winding tunnels from the surface of Stormwreck Isle."
           }
-        ]
+        ],
+        "spatial_summary": "[Exploring the Island]: **[Overview]**: A general directive for the DM to place optional encounters and locations anywhere on Stormwreck Isle as the characters travel or explore.\n\n**[Direct Connections]**: None specified in the local text.\n\n**[Sub-Areas]**:\n- **[Hot Springs Havoc]**: The hot spring pool drains into the ocean.\n- **[There, There, Owlbear]**: NO_EXITS_MENTIONED\n- **[Kobold Renegades]**: NO_EXITS_MENTIONED\n- **[What Lies Beneath]**: Accessible via hidden vents and winding tunnels from the surface of Stormwreck Isle."
       }
-    ]
+    ],
+    "spatial_summary": "[Chapter 1: Dragon's Rest]: **[Overview]**: The starting location for the adventure, a small, peaceful cloister called Dragon's Rest built into a cliffside on Stormwreck Isle. It serves as a quest hub where the party arrives, meets key NPCs, and learns of the island's dangers.\n\n**[Direct Connections]**: The characters arrive by boat from the open sea, docking at a harbor below the cloister.\n\n**[Sub-Areas]**:\n  - [Welcome to Dragon's Rest]: The arrival point. A long, winding cliffside path leads from the harbor up to the temple (A5).\n  - [Cloister Quests]: The narrative quest hub. Its text explicitly mentions three key destinations for the party to investigate: **the sea caves**, **the shipwreck**, and **the ancient observatory**.\n  - [Exploring the Island]: A general directive for travel and exploration on Stormwreck Isle, containing optional encounter locations."
   }
 ]

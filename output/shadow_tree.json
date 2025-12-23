@@ -142,7 +142,7 @@
             "id": "007",
             "title": "Adventure Maps",
             "type": "entries",
-            "content": "The maps in this adventure are for the DM's eyes only. These maps show secret doors and other elements the players aren't meant to see.\nWhen the characters arrive at a location marked on a map, describe it to give them a clear mental picture of the location. You can also draw what they see on paper, copying what's on your map while omitting secret details. It's not important that your hand-drawn map perfectly match what's in the adventure. Try to get the basic shape and dimensions correct and leave the rest to the players' imaginations.",
+            "content": "The maps in this adventure are for the DM's eyes only. These maps show secret doors and other elements the players aren't meant to see.\n**Gallery:**\n[Image (map): Map 1: Stormwreck Isle]\n[Image (mapPlayer): Player Version]\nWhen the characters arrive at a location marked on a map, describe it to give them a clear mental picture of the location. You can also draw what they see on paper, copying what's on your map while omitting secret details. It's not important that your hand-drawn map perfectly match what's in the adventure. Try to get the basic shape and dimensions correct and leave the rest to the players' imaginations.",
             "links": [],
             "children": []
           }
@@ -893,7 +893,7 @@
             "id": "021",
             "title": "Dragon's Rest Locations",
             "type": "entries",
-            "content": "The following locations are keyed to map 2, which shows the layout of Dragon's Rest.",
+            "content": "The following locations are keyed to map 2, which shows the layout of Dragon's Rest.\n**Gallery:**\n[Image (map): Map 2: Dragons Rest]\n[Image (mapPlayer): Player Version]",
             "links": [],
             "children": [
               {
@@ -1984,7 +1984,7 @@
             "id": "057",
             "title": "Seagrow Caves Locations",
             "type": "entries",
-            "content": "The following locations are keyed to map 3, which shows the layout of the Seagrow Caves.",
+            "content": "The following locations are keyed to map 3, which shows the layout of the Seagrow Caves.\n**Gallery:**\n[Image (map): Map 3: Seagrow Caves]\n[Image (mapPlayer): Player Version]",
             "links": [],
             "children": [
               {
@@ -2689,7 +2689,7 @@
             "id": "078",
             "title": "Shipwreck Locations",
             "type": "entries",
-            "content": "The following locations are keyed to map 4, which shows the layout of the shipwreck.",
+            "content": "The following locations are keyed to map 4, which shows the layout of the shipwreck.\n**Gallery:**\n[Image (map): Map 4: The Wreck of Compass Rose]\n[Image (mapPlayer): Player Version]",
             "links": [],
             "children": [
               {
@@ -3634,7 +3634,7 @@
             "id": "0aa",
             "title": "Observatory Locations",
             "type": "entries",
-            "content": "The following locations are keyed to map 5, which shows the layout of the Clifftop Observatory.",
+            "content": "The following locations are keyed to map 5, which shows the layout of the Clifftop Observatory.\n**Gallery:**\n[Image (map): Map 5: Clifftop Observatory]\n[Image (mapPlayer): Player Version]",
             "links": [],
             "children": [
               {

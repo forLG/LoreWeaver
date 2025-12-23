@@ -1,0 +1,401 @@
+{
+  "nodes": [
+    {
+      "id": "L1",
+      "label": "Dragon's Rest (Cloister)",
+      "type": "cloister"
+    },
+    {
+      "id": "L2",
+      "label": "Cloister Entrance / Greeting Area",
+      "type": "area"
+    },
+    {
+      "id": "L3",
+      "label": "Upper Cloister",
+      "type": "area"
+    },
+    {
+      "id": "L4",
+      "label": "Cliffside Path & Cells",
+      "type": "path"
+    },
+    {
+      "id": "L5",
+      "label": "The Rocky Shore",
+      "type": "shore"
+    },
+    {
+      "id": "L6",
+      "label": "The Cliffside Path",
+      "type": "path"
+    },
+    {
+      "id": "L7",
+      "label": "Garden Plots",
+      "type": "garden"
+    },
+    {
+      "id": "L8",
+      "label": "The Cliffside Plaza",
+      "type": "plaza"
+    },
+    {
+      "id": "L9",
+      "label": "Astalagan's Statue",
+      "type": "feature"
+    },
+    {
+      "id": "L10",
+      "label": "Cliffside Doorways",
+      "type": "entrance"
+    },
+    {
+      "id": "L11",
+      "label": "Westernmost Cell (Vacant)",
+      "type": "room"
+    },
+    {
+      "id": "L12",
+      "label": "Tarak's Cell",
+      "type": "room"
+    },
+    {
+      "id": "L13",
+      "label": "Varnoth's Cell",
+      "type": "room"
+    },
+    {
+      "id": "L14",
+      "label": "Myla's Cell",
+      "type": "room"
+    },
+    {
+      "id": "L15",
+      "label": "Shared Kobold Dormitory",
+      "type": "room"
+    },
+    {
+      "id": "L16",
+      "label": "The Winch House",
+      "type": "building"
+    },
+    {
+      "id": "L17",
+      "label": "The Mountain Path",
+      "type": "path"
+    },
+    {
+      "id": "L18",
+      "label": "The Kitchen & Dining Room",
+      "type": "room"
+    },
+    {
+      "id": "L19",
+      "label": "The Cliffside Library",
+      "type": "room"
+    },
+    {
+      "id": "L20",
+      "label": "The Temple of Bahamut",
+      "type": "temple"
+    },
+    {
+      "id": "L21",
+      "label": "Cloister Gardens",
+      "type": "garden"
+    },
+    {
+      "id": "L22",
+      "label": "North Harbor",
+      "type": "harbor"
+    },
+    {
+      "id": "L23",
+      "label": "Rickety Dock",
+      "type": "dock"
+    },
+    {
+      "id": "L24",
+      "label": "Cliffside Path (to Temple)",
+      "type": "path"
+    },
+    {
+      "id": "L25",
+      "label": "The Beach",
+      "type": "beach"
+    },
+    {
+      "id": "L26",
+      "label": "The Water's Edge",
+      "type": "shore"
+    },
+    {
+      "id": "L27",
+      "label": "Coastal Path to Dragon's Rest",
+      "type": "path"
+    },
+    {
+      "id": "L28",
+      "label": "Runara's Secret Lair",
+      "type": "lair"
+    },
+    {
+      "id": "L29",
+      "label": "Undersea Tunnel",
+      "type": "tunnel"
+    },
+    {
+      "id": "L30",
+      "label": "Sea Caves (South Side of the Island)",
+      "type": "cave"
+    },
+    {
+      "id": "L31",
+      "label": "Myconid Caves",
+      "type": "cave"
+    },
+    {
+      "id": "L32",
+      "label": "Clifftop Observatory",
+      "type": "observatory"
+    },
+    {
+      "id": "L33",
+      "label": "Northern Rocky Coast",
+      "type": "coast"
+    },
+    {
+      "id": "L34",
+      "label": "Seagrow Caves",
+      "type": "cave"
+    },
+    {
+      "id": "L35",
+      "label": "Wreck of the Compass Rose",
+      "type": "wreck"
+    },
+    {
+      "id": "L36",
+      "label": "The Luminescent Cove",
+      "type": "cove"
+    },
+    {
+      "id": "L37",
+      "label": "The Hot Spring Pool",
+      "type": "pool"
+    },
+    {
+      "id": "L38",
+      "label": "Owlbear's Territory",
+      "type": "territory"
+    },
+    {
+      "id": "L39",
+      "label": "Kobold Ambush Site",
+      "type": "site"
+    },
+    {
+      "id": "L40",
+      "label": "Stormwreck Isle (Surface)",
+      "type": "island"
+    },
+    {
+      "id": "L41",
+      "label": "Hidden Volcanic Vents",
+      "type": "vent"
+    },
+    {
+      "id": "L42",
+      "label": "The Subterranean Network",
+      "type": "network"
+    },
+    {
+      "id": "L43",
+      "label": "Sharruth's Tomb",
+      "type": "tomb"
+    }
+  ],
+  "edges": [
+    {
+      "source": "L1",
+      "target": "L2",
+      "relation": "contains",
+      "desc": "Entrance area within cloister"
+    },
+    {
+      "source": "L1",
+      "target": "L3",
+      "relation": "contains",
+      "desc": "Upper level within cloister"
+    },
+    {
+      "source": "L1",
+      "target": "L4",
+      "relation": "contains",
+      "desc": "Path and cells area within cloister"
+    },
+    {
+      "source": "L1",
+      "target": "L16",
+      "relation": "contains",
+      "desc": "Winch house within cloister"
+    },
+    {
+      "source": "L1",
+      "target": "L18",
+      "relation": "contains",
+      "desc": "Kitchen and dining room within cloister"
+    },
+    {
+      "source": "L1",
+      "target": "L19",
+      "relation": "contains",
+      "desc": "Library within cloister"
+    },
+    {
+      "source": "L1",
+      "target": "L20",
+      "relation": "contains",
+      "desc": "Temple within cloister"
+    },
+    {
+      "source": "L1",
+      "target": "L21",
+      "relation": "contains",
+      "desc": "Gardens within cloister"
+    },
+    {
+      "source": "L4",
+      "target": "L5",
+      "relation": "connected_to",
+      "desc": "Path ascends from rocky shore"
+    },
+    {
+      "source": "L4",
+      "target": "L6",
+      "relation": "contains",
+      "desc": "Cliffside path within path and cells area"
+    },
+    {
+      "source": "L4",
+      "target": "L8",
+      "relation": "contains",
+      "desc": "Plaza within path and cells area"
+    },
+    {
+      "source": "L6",
+      "target": "L7",
+      "relation": "contains",
+      "desc": "Garden plots along the path"
+    },
+    {
+      "source": "L8",
+      "target": "L9",
+      "relation": "contains",
+      "desc": "Statue on the plaza"
+    },
+    {
+      "source": "L8",
+      "target": "L10",
+      "relation": "contains",
+      "desc": "Doorways on the plaza"
+    },
+    {
+      "source": "L10",
+      "target": "L11",
+      "relation": "leads_to",
+      "desc": "Doorway leads to cell"
+    },
+    {
+      "source": "L10",
+      "target": "L12",
+      "relation": "leads_to",
+      "desc": "Doorway leads to cell"
+    },
+    {
+      "source": "L10",
+      "target": "L13",
+      "relation": "leads_to",
+      "desc": "Doorway leads to cell"
+    },
+    {
+      "source": "L10",
+      "target": "L14",
+      "relation": "leads_to",
+      "desc": "Doorway leads to cell"
+    },
+    {
+      "source": "L10",
+      "target": "L15",
+      "relation": "leads_to",
+      "desc": "Doorway leads to dormitory"
+    },
+    {
+      "source": "L16",
+      "target": "L17",
+      "relation": "connected_to",
+      "desc": "Winch house accessed via mountain path"
+    },
+    {
+      "source": "L22",
+      "target": "L23",
+      "relation": "contains",
+      "desc": "Dock within harbor"
+    },
+    {
+      "source": "L22",
+      "target": "L5",
+      "relation": "connected_to",
+      "desc": "Harbor connected to rocky shore"
+    },
+    {
+      "source": "L22",
+      "target": "L24",
+      "relation": "connected_to",
+      "desc": "Path leads from harbor to temple"
+    },
+    {
+      "source": "L25",
+      "target": "L26",
+      "relation": "contains",
+      "desc": "Water's edge part of beach"
+    },
+    {
+      "source": "L28",
+      "target": "L29",
+      "relation": "accessed_via",
+      "desc": "Lair accessed via undersea tunnel"
+    },
+    {
+      "source": "L30",
+      "target": "L31",
+      "relation": "contains",
+      "desc": "Myconid caves within sea caves"
+    },
+    {
+      "source": "L36",
+      "target": "L37",
+      "relation": "contains",
+      "desc": "Hot spring pool within cove"
+    },
+    {
+      "source": "L40",
+      "target": "L41",
+      "relation": "contains",
+      "desc": "Volcanic vents on island surface"
+    },
+    {
+      "source": "L42",
+      "target": "L43",
+      "relation": "contains",
+      "desc": "Tomb within subterranean network"
+    },
+    {
+      "source": "L41",
+      "target": "L42",
+      "relation": "leads_to",
+      "desc": "Vents lead to subterranean network"
+    }
+  ]
+}

@@ -1,0 +1,1290 @@
+[
+  {
+    "id": "011",
+    "title": "Chapter 1: Dragon's Rest",
+    "type": "section",
+    "content": "The adventure begins at a tiny cloister called Dragon's Rest, a haven where world-weary people come to seek peace, reconciliation, and enlightenment. There, the characters learn about the dangers facing Stormwreck Isle.\nEach character has a specific reason for coming to the cloister, as shown on the character sheets. You can also let players invent their own reasons for their characters to seek out Runara's wisdom and assistance.",
+    "links": [
+      {
+        "text": "the character sheets",
+        "tag": "area",
+        "attrs": [
+          "002",
+          "x"
+        ]
+      },
+      {
+        "text": "Runara",
+        "tag": "creature",
+        "attrs": [
+          "DoSI"
+        ]
+      }
+    ],
+    "children": [
+      {
+        "id": "012",
+        "title": "Welcome to Dragon's Rest",
+        "type": "section",
+        "content": "Read the following text when you're ready to start:\nBefore continuing with the adventure, encourage the players to introduce their characters to each other if they haven't done so already. They might want to discuss their reasons for visiting Dragon's Rest, or they might prefer to keep their reasons secret for now. If they have any questions about what they can see of the cloister from the boat, use map 2 and the information in \"Dragon's Rest Locations\" to answer them.\nAsk the players to give you the party's marching order as they start toward the cloister. Who's in front, and who's bringing up the rear? Make a note of this marching order.\nWhen you're ready, continue with the \"Drowned Sailors\" section.",
+        "links": [
+          {
+            "text": "map 2",
+            "tag": "area",
+            "attrs": [
+              "021",
+              "x"
+            ]
+          },
+          {
+            "text": "Dragon's Rest Locations",
+            "tag": "area",
+            "attrs": [
+              "021",
+              "x"
+            ]
+          }
+        ],
+        "children": [
+          {
+            "id": "013",
+            "title": "Untitled Section",
+            "type": "insetReadaloud",
+            "content": "Your journey was uneventful, but the island now visible off the bow promises rare wonders. Seaweed shimmers in countless brilliant colors below you, and rays of sunlight defy the overcast sky to illuminate the lush grass and dark basalt rock of the island. Avoiding the rocks jutting up from the ocean, your ship makes its way toward a calm harbor on the island's north side.\nA large, open-air temple comes into view, perched on the edge of a cliff high above you. The ship drops anchor at the mouth of the harbor, and two sailors row you ashore. You have plenty of time to admire the towering statue at the center of the temple, depicting a wizened man surrounded by seven songbirds. A long path winds up the side of the cliff to the temple, dotted along the way with doorways cut into the rock.\nThe sailors set you ashore on a rickety dock, where a large rowboat is neatly tied. They point to the base of the path and wish you good luck before they row back to the ship. Your visit to Dragon's Rest begins!",
+            "links": [],
+            "children": [],
+            "spatial_summary": "[Untitled Section]: **[Overview]**: Region Container. This text describes the arrival at a harbor on the north side of an island, with a temple visible on a cliff above.\n\n**[Direct Connections]**: The ship arrives at the harbor from the open sea. From the dock, a path leads up the cliff to the temple.\n\n**[Spatial Hierarchy]**:\n- **(1) North Harbor**: A calm harbor on the island's north side, with a rickety dock. A large rowboat is tied here. Connected to the open sea and the base of the Cliffside Path.\n  - **(1a) Rickety Dock**: The landing point within the harbor.\n- **(2) Cliffside Path**: A long, winding path up the side of the cliff from the harbor to the temple. It is dotted with doorways cut into the rock.\n- **(3) The Cliff-Top Temple**: A large, open-air temple perched on the edge of the cliff. Contains a towering statue of a wizened man surrounded by seven songbirds. Connected to the top of the Cliffside Path."
+          },
+          {
+            "id": "014",
+            "title": "Drowned Sailors",
+            "type": "entries",
+            "content": "Read the following text to start the encounter:\nThe three shambling sailors are Zombie, the animated corpses of sailors who died in a recent shipwreck. The characters face a choice: they can turn and fight the zombies, or they can continue up the path and leave the slow, shambling zombies behind.\nIf the characters turn and fight, this is the first combat encounter in the adventure. Here are the steps you should follow to run it:\n- Review the zombie stat block.\n- Use the initiative rules to determine who acts first, second, third, and so on. Keep track of everyone's initiative count on your notepad.\n- On the zombies' initiative count, they move toward the characters. If they get close enough, they make melee attacks. The zombies' stat block contains the information you need to resolve these attacks. If all the characters are more than 20 feet away, the zombies use the Dash action so they can move farther. For more information on what the zombies can do on their turn, see \"Combat\" in the Basic Rules.\n- The zombies fight until they're all defeated.",
+            "links": [
+              {
+                "text": "Zombie",
+                "tag": "creature",
+                "attrs": [
+                  "",
+                  "zombies"
+                ]
+              },
+              {
+                "text": "zombie",
+                "tag": "creature",
+                "attrs": []
+              },
+              {
+                "text": "Dash",
+                "tag": "action",
+                "attrs": []
+              }
+            ],
+            "children": [
+              {
+                "id": "015",
+                "title": "Untitled Section",
+                "type": "insetReadaloud",
+                "content": "As you're about to leave the beach and start your climb, you hear a ruckus of splashing and a wet, gurgling moan behind you. Three figures are shambling up from the water's edge, about thirty feet away. They're dressed as sailors, but their skin is gray and they look drowned. Sea water drools from their slack mouths as they lurch toward you.",
+                "links": [],
+                "children": [],
+                "spatial_summary": "[Untitled Section]: **[Overview]**: A stretch of beach at the base of a cliff, where the party is ambushed by drowned sailors.\n\n**[Direct Connections]**: The beach connects to the base of a cliff (the start of a climb) and to the water's edge of the sea.\n\n**[Spatial Hierarchy]**:\n- The Beach: Connects to the base of the cliff and the water's edge.\n  - The Water's Edge: The immediate shoreline where the drowned sailors emerge. Connects to the beach and the open sea."
+              },
+              {
+                "id": "016",
+                "title": "Untitled Section",
+                "type": "entries",
+                "content": "",
+                "links": [],
+                "children": [
+                  {
+                    "id": "017",
+                    "title": "Tip: Undead Fortitude",
+                    "type": "entries",
+                    "content": "The zombies' Undead Fortitude trait reflects how hard it is to kill these walking corpses. When this trait prevents a zombie from dying, give the players a hint about what happened. You might say, \"That should have finished the creature off, but it refuses to stop moving!\" On the flip side, any time a zombie takes radiant damage (such as from the cleric's sacred flame cantrip), you might describe the creature howling in agony. This can help the players realize that radiant damage is a way to get around Undead Fortitude. If the players ask whether their characters know anything about fighting zombies, have them make 10 Intelligence checks. Those who succeed might recall that a particularly powerful blow (a critical hit) or radiant damage can help finish off a zombie.",
+                    "links": [
+                      {
+                        "text": "sacred flame",
+                        "tag": "spell",
+                        "attrs": []
+                      },
+                      {
+                        "text": "10",
+                        "tag": "dc",
+                        "attrs": []
+                      }
+                    ],
+                    "children": [],
+                    "spatial_summary": "NO_SPATIAL_INFO"
+                  },
+                  {
+                    "id": "018",
+                    "title": "Runara's Aid",
+                    "type": "entries",
+                    "content": "In the unlikely event that the zombies defeat the adventurers, Runara comes to their rescue. The characters wake up in the temple (area A5 in Dragon's Rest). Runara explains that she heard the sounds of combat and arrived just in time to prevent the zombies from dragging the characters into the sea.",
+                    "links": [
+                      {
+                        "text": "Runara",
+                        "tag": "creature",
+                        "attrs": [
+                          "DoSI"
+                        ]
+                      },
+                      {
+                        "text": "area A5",
+                        "tag": "area",
+                        "attrs": [
+                          "02c",
+                          "x"
+                        ]
+                      }
+                    ],
+                    "children": [],
+                    "spatial_summary": "[Runara's Aid]: **[Overview]**: A narrative event describing a rescue and relocation. The node \"Runara's Aid\" is not a physical location, but an event that occurs in and connects two specific sites.\n\n**[Direct Connections]**: The event connects the unnamed coastal path (where the zombie encounter occurs) to the Temple in Dragon's Rest (area A5).\n\n**[Spatial Hierarchy]**:\n- (A5) Temple in Dragon's Rest: The characters are revived here after the rescue. This is a specific room within the Dragon's Rest location.\n- Coastal Path to Dragon's Rest: The site of the zombie encounter, located somewhere along the path leading to the Dragon's Rest settlement."
+                  },
+                  {
+                    "id": "019",
+                    "title": "Avoiding the Zombies",
+                    "type": "entries",
+                    "content": "If the characters decide not to fight the zombies, they easily escape from the slow, shambling monsters. The zombies don't follow them up the path toward Dragon's Rest. The characters will have another opportunity to deal with the zombies later (see \"Cloister Quests\" later in this chapter).",
+                    "links": [
+                      {
+                        "text": "Cloister Quests",
+                        "tag": "area",
+                        "attrs": [
+                          "02f",
+                          "x"
+                        ]
+                      }
+                    ],
+                    "children": [],
+                    "spatial_summary": "[Avoiding the Zombies]: **[Overview]**: This node describes a path of escape from a zombie encounter, leading toward a larger settlement. The node itself is an event/choice, not a physical location.\n\n**[Direct Connections]**: The text describes a path leading from the zombie encounter site toward **Dragon's Rest**.\n\n**[Spatial Hierarchy]**:\n- The Path to Dragon's Rest: A trail or road leading away from the zombie encounter site. It connects the encounter area to the settlement of Dragon's Rest.\n- Dragon's Rest: A settlement or key location. The path from the zombie encounter leads directly to it."
+                  }
+                ],
+                "spatial_summary": "[Untitled Section]: **[Overview]**: Region Container\n**[Direct Connections]**: None specified for this container node.\n**[Spatial Hierarchy]**:\n- (A5) Temple in Dragon's Rest: A specific room or building within the Dragon's Rest settlement. Characters are revived here.\n- Coastal Path to Dragon's Rest: A trail or road along the coast, leading to the Dragon's Rest settlement. Site of a zombie encounter.\n- Dragon's Rest: A settlement or key location. The coastal path leads to it, and it contains the Temple (A5)."
+              }
+            ],
+            "spatial_summary": "[Drowned Sailors]: **[Overview]**: A stretch of beach at the base of a cliff, where the party is ambushed by drowned sailors.\n\n**[Direct Connections]**: The beach connects to the base of a cliff (the start of a climb) and to the water's edge of the sea.\n\n**[Spatial Hierarchy]**:\n- The Beach: Connects to the base of the cliff and the water's edge.\n  - The Water's Edge: The immediate shoreline where the drowned sailors emerge. Connects to the beach and the open sea.\n- Coastal Path to Dragon's Rest: A trail or road along the coast, leading to the Dragon's Rest settlement.\n- Dragon's Rest: A settlement or key location. The coastal path leads to it.\n  - Temple in Dragon's Rest: A specific room or building within the Dragon's Rest settlement."
+          },
+          {
+            "id": "01a",
+            "title": "Meeting the Inhabitants",
+            "type": "entries",
+            "content": "Read this text when the characters first climb the path to Dragon's Rest:\nVisitors to the cloister are rare, and the kobolds' curiosity is insatiable; they keep asking questions until the characters insist they stop.\nWhen the characters quiet the kobolds (or if the players start showing signs of exasperation), the leader of the cloister approaches to welcome the characters. Read the following text:\nThis is Elder Runara, the leader of Dragon's Rest. If the characters defeated the zombies at the beach, she thanks them for their service to the cloister. Even if they did not fight the zombies, she tells them they're welcome to stay at Dragon's Rest as long as they wish, sleeping either in one of the monastic cells (area A1) or in the temple (area A5) and eating with the rest of the community in the dining room (area A3). Runara says nothing about payment of any kind. If the characters offer to give money or perform services around the cloister in exchange for her hospitality, she accepts these gifts.\nThroughout this adventure, Dragon's Rest serves as a home base for the characters. All the places they'll explore on the island are within a few miles of the cloister, and they can return here whenever they wish to rest, heal, and get information they need for the next part of their adventures. In addition, they can buy any of the equipment described in the Basic Rules from Myla (see \"Kobolds\").\nDuring their time at Dragon's Rest, the characters can interact with any of its residents. All the residents but Runara live in the small monastic cells cut into the cliff face (area A1 on the cloister map).",
+            "links": [
+              {
+                "text": "Runara",
+                "tag": "creature",
+                "attrs": [
+                  "DoSI"
+                ]
+              },
+              {
+                "text": "area A1",
+                "tag": "area",
+                "attrs": [
+                  "022",
+                  "x"
+                ]
+              },
+              {
+                "text": "area A5",
+                "tag": "area",
+                "attrs": [
+                  "02c",
+                  "x"
+                ]
+              },
+              {
+                "text": "area A3",
+                "tag": "area",
+                "attrs": [
+                  "028",
+                  "x"
+                ]
+              },
+              {
+                "text": "Myla",
+                "tag": "creature",
+                "attrs": [
+                  "DoSI"
+                ]
+              },
+              {
+                "text": "Kobolds",
+                "tag": "area",
+                "attrs": [
+                  "01e",
+                  "x"
+                ]
+              },
+              {
+                "text": "cloister map",
+                "tag": "area",
+                "attrs": [
+                  "021",
+                  "x"
+                ]
+              }
+            ],
+            "children": [
+              {
+                "id": "01b",
+                "title": "Untitled Section",
+                "type": "insetReadaloud",
+                "content": "Your arrival quickly draws the attention of the entire population of the place—which consists mostly of kobolds. These small, reptilian folk eye you curiously while a couple of humans watch from a distance. All the cloister's residents are dressed in simple clothes, and no one carries a visible weapon. One of the kobolds pipes up with, \"What's your name?\"\nAt that, all the kobolds begin barraging you with questions—\"Where are you from?\" \"What's that?\" \"Why are you here?\" and more that are lost in the din.",
+                "links": [],
+                "children": [],
+                "spatial_summary": "[Untitled Section]: **[Overview]**: A small, simple settlement or cloister inhabited primarily by kobolds, with a few humans present. The residents are unarmed and curious about newcomers.\n\n**[Direct Connections]**: Not explicitly stated. The node describes the characters' arrival, implying an entrance from the surrounding wilderness or roads.\n\n**[Spatial Hierarchy]**:\n- The Kobold Cloister: A simple settlement or communal dwelling. The residents are present in a central, open area where newcomers are greeted.\n    - (Implied) Settlement Entrance: The point of arrival for visitors.\n    - (Implied) Residential Structures: Simple buildings or huts where the kobolds and humans live."
+              },
+              {
+                "id": "01c",
+                "title": "Untitled Section",
+                "type": "insetReadaloud",
+                "content": "The chattering kobolds fall silent as a new figure comes into view, descending gracefully from the upper part of the cloister. She's an elderly human woman with weathered brown skin, white hair in tight braids, and kindly hazel eyes, dressed in a simple white robe. She smiles as she draws near and extends her arms in greeting.\n\"Welcome to Dragon's Rest,\" she says. \"May Bahamut's guidance lead you to whatever you seek.\"",
+                "links": [],
+                "children": [],
+                "spatial_summary": "[Untitled Section]: **[Overview]**: Region Container. This text describes an encounter within a larger location, but does not itself define a new, distinct physical space.\n\n**[Direct Connections]**: None specified in this text.\n\n**[Spatial Hierarchy]**:\n- **Dragon's Rest Cloister**: The elderly woman descends from the \"upper part of the cloister,\" placing this scene within this structure. The cloister is the primary spatial container here.\n  - **Upper Cloister**: The woman descends from this area, implying a higher level or balcony within the cloister structure."
+              },
+              {
+                "id": "01d",
+                "title": "Elder Runara",
+                "type": "entries",
+                "content": "Elder Runara is the leader of Dragon's Rest. She appears as a human woman, but she is actually an adult bronze dragon disguised in human form. She guides the residents of the cloister in their contemplation and study. The cloister's inhabitants know Runara's true identity, but they do not speak of it to visitors.\nRunara's initial attitude toward the characters is indifferent (see \"Social Interaction\" in the Basic Rules). She becomes friendly as soon as the characters demonstrate that they care about the cloister's safety, such as by fighting the zombies at the beach or undertaking any of the quests she offers them (see \"Cloister Quests\" later in this chapter). If the characters harm any of the residents of Dragon's Rest, she becomes hostile and insists the characters make amends for the harm they did before she is willing to deal with them in any way.\nRunara's mission is to help those whose lives have been shaped by violence find new paths forward in peace. Ultimately, she would like to see chromatic and metallic dragons find a peaceful way to coexist in the world. In the meantime, she finds comfort in helping humans and other people escape from cycles of violence.\nRunara maintains a secret lair in a cave accessed by an undersea tunnel, a short distance from the cloister and not shown on the map of Dragon's Rest. She is careful not to enter or leave the cave when anyone might spot her, and she enters and emerges from the water in the open ocean, out of sight of the cloister. The other residents of the cloister think she lives in the temple at the top of the island (area A5), or they simply laugh away queries about her accommodations, explaining that she's always in the temple, or in the library, or checking on the rest of the residents—she never seems to sleep!",
+                "links": [
+                  {
+                    "text": "Runara",
+                    "tag": "creature",
+                    "attrs": [
+                      "DoSI"
+                    ]
+                  },
+                  {
+                    "text": "Cloister Quests",
+                    "tag": "area",
+                    "attrs": [
+                      "02f",
+                      "x"
+                    ]
+                  },
+                  {
+                    "text": "area A5",
+                    "tag": "area",
+                    "attrs": [
+                      "02c",
+                      "x"
+                    ]
+                  }
+                ],
+                "children": [],
+                "spatial_summary": "[Elder Runara]: **[Overview]**: Elder Runara is a character, not a physical location. However, her description contains references to several key spatial nodes.\n\n**[Direct Connections]**: N/A (Character Node)\n\n**[Spatial Hierarchy]**:\n- Dragon's Rest (Cloister): The settlement Runara leads.\n  - Temple (A5): The structure at the island's summit where residents believe Runara resides.\n- Runara's Secret Lair: A cave accessed via an undersea tunnel, a short distance from Dragon's Rest.\n  - Undersea Tunnel: The submerged entrance to the lair.\n- The Beach: Location where characters might fight zombies to gain Runara's favor."
+              },
+              {
+                "id": "01e",
+                "title": "Kobolds",
+                "type": "entries",
+                "content": "Kobolds are small reptilian Humanoids who believe they are descended from dragons and often live near them. Over the centuries, many bands of kobolds have been drawn to Stormwreck Isle by the lingering draconic magic that suffuses the island. Nine kobolds utterly devoted to Runara now live at Dragon's Rest.\n[Image: Ever since an unfortunate incident in the kitchen, Laylee is no longer allowed to handle Myla's alchemical fire.]\nThe kobolds of Dragon's Rest are lawful good, sharing Runara's ideals of justice and compassion. Since they are sensitive to sunlight, they work at night and avoid moving about during the day. Unless otherwise noted, the kobolds are initially friendly toward the adventurers.\nThe kobolds are summarized below. They can offer a local perspective or be a way for you to pass hints to the players if they're having trouble putting things together. But don't feel like you need to bring all nine of these kobolds to life! Pick one or two of these kobolds that you and the characters like the most and let them be the focus of the characters' interactions with the kobolds:\nAgga speaks little and has no patience for nonsense. She keeps the rest of the kobolds organized and in line. She is indifferent toward visitors, but if the characters show respect for the cloister and help keep the more rambunctious kobolds in line, her attitude improves to friendly.\nBlepp has a sharp danger sense and is convinced he's supernaturally lucky. His prized possession is an ordinary dagger he claims is magical.\nFrub has limitless energy and desperately needs help finding productive directions to channel it. He loves to ask questions about everything other people are doing.\nKilnip has terrible insomnia and sleeps only a few hours each day. She is always tired but an eager conversationalist.\nLaylee has a curious mind and a talent for tools and building. She serves as Myla's helper.\nMumpo is so audaciously courageous that he stole a copper piece from Runara's hoard. He's convinced she has no idea. (He is wrong, but Runara finds the situation amusing and lets Mumpo continue to believe in her ignorance.)\nMyla (lawful good kobold tinkerer) is a winged kobold whose brothers, Mek and Minn, now follow Sparkrender, the Blue Dragon Wyrmling in Clifftop Observatory (see chapter 4). When Myla's wings were badly injured in an attack by Stirge (which she describes as \"hungry, icky, blood-sucking, bat-things\"), Runara helped in her recovery. Now Myla spends her time experimenting with alchemy, engineering, and magic.\nRix is pious and tends to the temple, acting as Runara's assistant. She adores puns. Rix recently witnessed a ship crashing on the rocks to the north (see \"Cloister Quests\" later in this chapter).\nZark is rude and fond of colorful insults. His favorites are \"Eat my sword, bugbear breath!\" and \"Your father was a gas spore!\" He is indifferent toward visitors.",
+                "links": [
+                  {
+                    "text": "Runara",
+                    "tag": "creature",
+                    "attrs": [
+                      "DoSI"
+                    ]
+                  },
+                  {
+                    "text": "Myla",
+                    "tag": "creature",
+                    "attrs": [
+                      "DoSI"
+                    ]
+                  },
+                  {
+                    "text": "kobold tinkerer",
+                    "tag": "creature",
+                    "attrs": [
+                      "DoSI"
+                    ]
+                  },
+                  {
+                    "text": "Blue Dragon Wyrmling",
+                    "tag": "creature",
+                    "attrs": [
+                      "",
+                      "blue wyrmling"
+                    ]
+                  },
+                  {
+                    "text": "chapter 4",
+                    "tag": "adventure",
+                    "attrs": [
+                      "DoSI",
+                      "4"
+                    ]
+                  },
+                  {
+                    "text": "Stirge",
+                    "tag": "creature",
+                    "attrs": [
+                      "",
+                      "stirges"
+                    ]
+                  },
+                  {
+                    "text": "Cloister Quests",
+                    "tag": "area",
+                    "attrs": [
+                      "02f",
+                      "x"
+                    ]
+                  }
+                ],
+                "children": [],
+                "spatial_summary": "[Kobolds]: **[Overview]**: A group of nine lawful good kobolds who live and work at Dragon's Rest, the temple complex on Stormwreck Isle. They are sensitive to sunlight and operate primarily at night.\n\n**[Direct Connections]**: The kobolds are located within **Dragon's Rest**. They have a direct connection to the **Clifftop Observatory** through Myla's backstory (her brothers are there). Rix witnessed a ship crash on the rocks to the north of the island.\n\n**[Spatial Hierarchy]**:\n- Dragon's Rest (Temple Complex): The primary home and workplace of the nine kobolds.\n  - Kitchen: Location of Laylee's \"unfortunate incident\" with alchemical fire.\n  - Temple: Area tended to by the pious kobold, Rix.\n- Stormwreck Isle (Island): The larger island region containing Dragon's Rest.\n  - Northern Rocky Coast: Location of the shipwreck witnessed by Rix.\n- Clifftop Observatory (Adventure Site): Located elsewhere on the island; the current lair of Sparkrender and the home of Myla's brothers, Mek and Minn."
+              },
+              {
+                "id": "01f",
+                "title": "Tarak",
+                "type": "entries",
+                "content": "Tarak is a human in late middle age. He has pale skin tanned darker with many freckles, auburn hair and a beard that is mostly gray, and gray-blue eyes. Faded tattoos in an abstract design peek up the side of his neck from beneath his dirt-stained robes.\nAn avid botanist, Tarak tends the cloister's garden plots, growing flowers, herbs, and vegetables. He is soft spoken and helpful, eager to share his knowledge of herbalism. But his kindly demeanor belies his past as a ruthless poisoner for a thieves' guild. After his work led to the death of his lover, he fled the guild and plans to spend the rest of his life atoning for his past evils.\nTarak is initially friendly toward visitors, but if a character pries into his past, his attitude shifts—first to indifferent, then to hostile if the character continues to push. When he's hostile, his demeanor becomes cold and clipped, and he avoids the characters if he can.\nA gold hangman's noose is worked into the design of Tarak's visible tattoos. A character who studies the tattoos and succeeds on a 15 Intelligence (History) check recognizes the mark as a symbol associated with the Gilded Gallows, a thieves' guild that operates in a country far to the southeast called Elturgard. A character with the Variant Criminal (Spy) automatically succeeds on this check. Tarak does not willingly discuss the details of his past with anyone but trusted friends.\nTarak frequently visits the sea caves on the south side of the island to acquire heart cap mushrooms from the myconids that live there. He uses the mushrooms to make Potion of Healing. But the myconids have installed a fearsome guardian at their caves—a fungus-covered octopus monster—that has turned him away on his latest visits, and he is worried (see \"Cloister Quests\").",
+                "links": [
+                  {
+                    "text": "Tarak",
+                    "tag": "creature",
+                    "attrs": [
+                      "DoSI"
+                    ]
+                  },
+                  {
+                    "text": "15",
+                    "tag": "dc",
+                    "attrs": []
+                  },
+                  {
+                    "text": "History",
+                    "tag": "skill",
+                    "attrs": []
+                  },
+                  {
+                    "text": "Variant Criminal (Spy)",
+                    "tag": "background",
+                    "attrs": [
+                      "",
+                      "criminal background"
+                    ]
+                  },
+                  {
+                    "text": "Potion of Healing",
+                    "tag": "item",
+                    "attrs": [
+                      "",
+                      "potions of healing"
+                    ]
+                  },
+                  {
+                    "text": "Cloister Quests",
+                    "tag": "area",
+                    "attrs": [
+                      "02f",
+                      "x"
+                    ]
+                  }
+                ],
+                "children": [],
+                "spatial_summary": "[Tarak]: **[Overview]**: Tarak is a person, not a physical location. Therefore, no spatial report can be generated for him as a node. However, the text describing him contains references to several physical locations.\n\n**[Direct Connections]**: N/A (Node is a person)\n\n**[Spatial Hierarchy]**:\nThe following valid spatial locations are mentioned in the text and are promoted to the top level:\n- **The Cloister**: The religious community where Tarak lives and tends the garden plots.\n  - **Cloister Gardens**: The garden plots tended by Tarak, growing flowers, herbs, and vegetables.\n- **Sea Caves (South Side of the Island)**: Caves on the southern coast of the island, inhabited by myconids. Tarak visits them to acquire heart cap mushrooms.\n  - **Myconid Caves**: The specific caves within the sea cave system inhabited by the myconid colony."
+              },
+              {
+                "id": "020",
+                "title": "Varnoth",
+                "type": "entries",
+                "content": "Varnoth is a muscular human whose black hair is cropped close to her scalp. Her light brown skin bears many scars—one of which runs across her left eye, which is milky and blind. An elegant prosthetic made from wood and metal replaces her right leg below the knee.\nVarnoth was a feared general at the head of a mercenary company called the Azure Wolves. Age and battle have taken a toll on her, and she is spending her twilight years in reflective contemplation at Dragon's Rest. Her demeanor is gruff, but she is observant and empathetic. Above all, Varnoth believes in second chances and redemption.\nVarnoth has a set of mason's tools that she uses to maintain the temple and other areas of the cloister. While working in the temple recently, she witnessed a ship change course and crash into the rocks to the north (see \"Cloister Quests\").\nVarnoth is indifferent to visitors, but a character can shift her attitude to friendly by engaging her in conversation on her favorite topics: history, ethics, and the impact of individual actions on the world.\nA character who learns Varnoth's name and succeeds on a 15 Intelligence (History) check recalls hearing of General Varnoth Wender and the Azure Wolves, which was a mighty force in the east about a decade ago. A character with the Soldier succeeds on this check automatically.",
+                "links": [
+                  {
+                    "text": "Varnoth",
+                    "tag": "creature",
+                    "attrs": [
+                      "DoSI"
+                    ]
+                  },
+                  {
+                    "text": "Cloister Quests",
+                    "tag": "area",
+                    "attrs": [
+                      "02f",
+                      "x"
+                    ]
+                  },
+                  {
+                    "text": "15",
+                    "tag": "dc",
+                    "attrs": []
+                  },
+                  {
+                    "text": "History",
+                    "tag": "skill",
+                    "attrs": []
+                  },
+                  {
+                    "text": "Soldier",
+                    "tag": "background",
+                    "attrs": [
+                      "",
+                      "soldier background"
+                    ]
+                  }
+                ],
+                "children": [],
+                "spatial_summary": "[Varnoth]: **[Overview]**: Varnoth is a person, not a location. She is a retired general residing at Dragon's Rest.\n\n**[Direct Connections]**: N/A (Person)\n\n**[Spatial Hierarchy]**:\n  - Dragon's Rest (Varnoth's Residence): A cloister or temple where Varnoth spends her twilight years. She maintains the temple with her mason's tools.\n    - Temple (at Dragon's Rest): Where Varnoth works and recently witnessed a shipwreck to the north.\n  - The Azure Wolves' Former Territory (Mentioned): A region in the east where Varnoth's mercenary company was once a mighty force.\n  - Northern Rocks (Mentioned): The location where Varnoth witnessed a ship crash from the temple at Dragon's Rest."
+              }
+            ],
+            "spatial_summary": "[Meeting the Inhabitants]: **[Overview]**: Region Container. This text describes the initial encounter and introduction to the settlement of Dragon's Rest, but does not define a new, distinct physical space.\n\n**[Direct Connections]**: The text describes the characters arriving at Dragon's Rest via a path. It also mentions the beach as a location where a prior event (fighting zombies) may have occurred.\n\n**[Spatial Hierarchy]**:\n  - **Dragon's Rest (Cloister)**: The primary settlement on the island, serving as the characters' home base. It contains several key areas.\n    - **Cloister Entrance / Greeting Area**: The open area where the kobolds first greet visitors and where Elder Runara descends to meet them.\n    - **Upper Cloister**: The higher level or balcony within the cloister structure from which Elder Runara descends.\n    - **Monastic Cells (A1)**: Small cells cut into the cliff face where all residents except Runara live.\n    - **Dining Room (A3)**: A communal area for eating.\n    - **Temple (A5)**: The structure at the island's summit where residents can sleep and where Varnoth works.\n    - **Kitchen**: Mentioned in a child node as the location of Laylee's alchemical incident.\n    - **Cloister Gardens**: Garden plots tended by Tarak.\n  - **The Beach**: A location on the island's coast where the characters may have fought zombies before arriving.\n  - **Runara's Secret Lair**: A cave accessed via an undersea tunnel, a short distance from Dragon's Rest.\n    - **Undersea Tunnel**: The submerged entrance to the lair.\n  - **Sea Caves (South Side of the Island)**: Caves on the southern coast inhabited by myconids, visited by Tarak.\n    - **Myconid Caves**: The specific caves within the sea cave system.\n  - **Clifftop Observatory**: An adventure site elsewhere on the island, home to Sparkrender and Myla's brothers.\n  - **Northern Rocky Coast**: The location north of Dragon's Rest where Rix and Varnoth witnessed a ship crash."
+          },
+          {
+            "id": "021",
+            "title": "Dragon's Rest Locations",
+            "type": "entries",
+            "content": "The following locations are keyed to map 2, which shows the layout of Dragon's Rest.\n**Gallery:**\n[Image (map): Map 2: Dragons Rest]\n[Image (mapPlayer): Player Version]",
+            "links": [],
+            "children": [
+              {
+                "id": "022",
+                "title": "A1: Path and Monastic Cells",
+                "type": "entries",
+                "content": "",
+                "links": [],
+                "children": [
+                  {
+                    "id": "023",
+                    "title": "Untitled Section",
+                    "type": "insetReadaloud",
+                    "content": "A long path leads from the rocky shore up the side of the cliff, with occasional stairs to ease the ascent. Here and there along the lower part of the path, well-tended garden plots hold flowers, herbs, and vegetables.\nAbout thirty feet above the bay, the path widens into a long plaza. Halfway along the plaza, a stone statue of a dragon gazes serenely down the path. Six open doorways are cut into the cliff side.",
+                    "links": [],
+                    "children": [],
+                    "spatial_summary": "[Untitled Section]: **[Overview]**: A coastal cliffside region containing a path, gardens, a plaza, and cliffside dwellings.\n\n**[Direct Connections]**: The path connects the rocky shore of the bay below to the plaza and cliffside doorways above.\n\n**[Spatial Hierarchy]**:\n- The Rocky Shore: The base of the cliff, accessible from the water. Connects to the Cliffside Path.\n- The Cliffside Path: A long, stepped path ascending the cliff face. Connects the Rocky Shore to the Cliffside Plaza. Flanked by the Garden Plots.\n  - Garden Plots: Small, cultivated plots along the lower section of the path.\n- The Cliffside Plaza: A widened area of the path about thirty feet above the bay. Contains the Dragon Statue. Connects to six cliffside doorways.\n  - Dragon Statue: A stone statue located halfway along the plaza.\n  - Cliffside Doorways: Six open doorways cut into the cliff face, accessible from the plaza."
+                  },
+                  {
+                    "id": "024",
+                    "title": "Statue",
+                    "type": "entries",
+                    "content": "The star-in-a-circle symbol on the map represents the dragon statue. A character who examines the statue and succeeds on a 10 Intelligence (Arcana) check recognizes that it depicts a bronze dragon—a member of the metallic family. If characters ask Runara about the statue, she tells them it depicts Astalagan, who died on these cliffs centuries ago. She doesn't tell them that Astalagan was her father.",
+                    "links": [
+                      {
+                        "text": "10",
+                        "tag": "dc",
+                        "attrs": []
+                      },
+                      {
+                        "text": "Arcana",
+                        "tag": "skill",
+                        "attrs": []
+                      },
+                      {
+                        "text": "Runara",
+                        "tag": "creature",
+                        "attrs": [
+                          "DoSI"
+                        ]
+                      }
+                    ],
+                    "children": [],
+                    "spatial_summary": "[Statue]: **[Overview]**: A bronze statue depicting the dragon Astalagan, located on the cliffs of the Dragon's Rest peninsula.\n\n**[Direct Connections]**: The statue is situated on the cliffs of the peninsula, likely within the grounds of the Dragon's Rest monastery complex.\n\n**[Spatial Hierarchy]**:\n- Dragon's Rest Peninsula\n  - The Cliffs: The location where the bronze dragon Astalagan died and where his statue now stands.\n    - Astalagan's Statue: A bronze statue of a dragon."
+                  },
+                  {
+                    "id": "025",
+                    "title": "Cells",
+                    "type": "entries",
+                    "content": "The doorways lead into simple monastic cells occupied by the cloister residents. Each cell is furnished with a bed, a nightstand, a small desk, and a chair.\nThe westernmost cell is vacant, and it is available to the characters if they don't mind sharing the space. Next to it is Tarak cell, then Varnoth. The fourth cell is Myla's, cluttered with junk and tools. The fifth and sixth cells are strung with hammocks, offering space for the other eight kobolds to sleep.",
+                    "links": [
+                      {
+                        "text": "Tarak",
+                        "tag": "creature",
+                        "attrs": [
+                          "DoSI",
+                          "Tarak's"
+                        ]
+                      },
+                      {
+                        "text": "Varnoth",
+                        "tag": "creature",
+                        "attrs": [
+                          "DoSI",
+                          "Varnoth's"
+                        ]
+                      },
+                      {
+                        "text": "Myla",
+                        "tag": "creature",
+                        "attrs": [
+                          "DoSI"
+                        ]
+                      }
+                    ],
+                    "children": [],
+                    "spatial_summary": "[Cells]: **[Overview]**: A row of six simple monastic cells within the cloister, furnished for residents. One is vacant, and the others are occupied by named kobolds or shared by the group.\n\n**[Direct Connections]**: The cells are accessed via doorways from the cloister's main corridor or living area (context implied).\n\n**[Spatial Hierarchy]**:\n- (1) Westernmost Cell (Vacant): Available for the characters. Adjacent to Tarak's Cell.\n- (2) Tarak's Cell: Occupied by Tarak. Between the Westernmost Cell and Varnoth's Cell.\n- (3) Varnoth's Cell: Occupied by Varnoth. Between Tarak's Cell and Myla's Cell.\n- (4) Myla's Cell: Occupied by Myla, cluttered with junk and tools. Between Varnoth's Cell and the Shared Kobold Dormitory.\n- (5) Shared Kobold Dormitory (Cells 5 & 6): Two cells combined into a space with hammocks for eight kobolds. Adjacent to Myla's Cell."
+                  }
+                ],
+                "spatial_summary": "[A1: Path and Monastic Cells]: **[Overview]**: Region Container\n**[Direct Connections]**: The path connects the rocky shore of the bay below to the plaza and cliffside doorways above.\n**[Spatial Hierarchy]**:\n- The Rocky Shore: The base of the cliff, accessible from the water. Connects to the Cliffside Path.\n- The Cliffside Path: A long, stepped path ascending the cliff face. Connects the Rocky Shore to the Cliffside Plaza. Flanked by the Garden Plots.\n  - Garden Plots: Small, cultivated plots along the lower section of the path.\n- The Cliffside Plaza: A widened area of the path about thirty feet above the bay. Contains the Dragon Statue. Connects to six cliffside doorways.\n  - Astalagan's Statue: A bronze statue of a dragon, located halfway along the plaza.\n  - Cliffside Doorways: Six open doorways cut into the cliff face, accessible from the plaza.\n    - Westernmost Cell (Vacant): Available for the characters. Adjacent to Tarak's Cell.\n    - Tarak's Cell: Occupied by Tarak. Between the Westernmost Cell and Varnoth's Cell.\n    - Varnoth's Cell: Occupied by Varnoth. Between Tarak's Cell and Myla's Cell.\n    - Myla's Cell: Occupied by Myla, cluttered with junk and tools. Between Varnoth's Cell and the Shared Kobold Dormitory.\n    - Shared Kobold Dormitory: Two cells combined into a space with hammocks for eight kobolds. Adjacent to Myla's Cell."
+              },
+              {
+                "id": "026",
+                "title": "A2: Winch House",
+                "type": "entries",
+                "content": "Inside the building is a winch that allows the pallet to be lowered down to the water, 50 feet below. When boats deliver supplies to the cloister, the residents use this pallet to haul goods both up and down.\nA lever locks the winch in place. If a character pulls the lever, the pallet falls down to the water and floats there. As an action, a character can operate the winch to pull the pallet back up 10 feet.",
+                "links": [],
+                "children": [
+                  {
+                    "id": "027",
+                    "title": "Untitled Section",
+                    "type": "insetReadaloud",
+                    "content": "A small, free-standing building halfway up the path has a peaked roof and a weathered wooden door. A sturdy wooden pallet wrapped with rope hangs beneath the building on an iron chain, lying flat against the cliff face.",
+                    "links": [],
+                    "children": [],
+                    "spatial_summary": "[Untitled Section]: **[Overview]**: A small, free-standing building built into the cliffside along a mountain path.\n\n**[Direct Connections]**: The building is accessed via the mountain path. The rope-wrapped pallet beneath it is anchored to the cliff face.\n\n**[Spatial Hierarchy]**:\n- The Cliffside Hut: A small, peaked-roof building built halfway up a mountain path. Its door is weathered wood. A sturdy wooden pallet, wrapped in rope, hangs from an iron chain beneath the structure, lying flat against the cliff."
+                  }
+                ],
+                "spatial_summary": "[A2: Winch House]: **[Overview]**: A small, free-standing building built into the cliffside along a mountain path, containing a winch and pallet system for hauling goods to the water below.\n\n**[Direct Connections]**: The building is accessed via the mountain path. The rope-wrapped pallet beneath it is anchored to the cliff face and can be lowered to the water 50 feet below.\n\n**[Spatial Hierarchy]**:\n- The Mountain Path: A path along the cliffside that provides access to the Winch House.\n- The Water Below: The body of water 50 feet below the Winch House, where the pallet can be lowered to receive or send supplies."
+              },
+              {
+                "id": "028",
+                "title": "A3: Kitchen",
+                "type": "entries",
+                "content": "The cloister residents share three daily meals here. They take turns cooking and cleaning up after meals. Nobody says it out loud, but the days when Tarak cooks are everyone's favorite.",
+                "links": [
+                  {
+                    "text": "Tarak",
+                    "tag": "creature",
+                    "attrs": [
+                      "DoSI"
+                    ]
+                  }
+                ],
+                "children": [
+                  {
+                    "id": "029",
+                    "title": "Untitled Section",
+                    "type": "insetReadaloud",
+                    "content": "A doorway in the rock opens into a dining room with a long table. Two benches run the length of the table, and a single chair sits at the table's head. A short hallway connects to a small, tidy kitchen.",
+                    "links": [],
+                    "children": [],
+                    "spatial_summary": "[Untitled Section]: **[Overview]**: A small, functional living space carved into rock, consisting of a dining area and a kitchen.\n\n**[Direct Connections]**: The primary entrance is a doorway in the rock. A short hallway connects the dining room to the kitchen.\n\n**[Spatial Hierarchy]**:\n- (1) Rock-Hewn Dining Room: Accessed via a doorway in the rock. Contains a long table with benches and a single chair. A short hallway leads to the kitchen.\n  - (1a) Kitchen: A small, tidy room connected to the dining room by a short hallway."
+                  }
+                ],
+                "spatial_summary": "[A3: Kitchen]: **[Overview]**: A small, tidy kitchen, part of the cloister's functional living space.\n\n**[Direct Connections]**: Connected to the Rock-Hewn Dining Room via a short hallway.\n\n**[Spatial Hierarchy]**:\n- (1) Rock-Hewn Dining Room: Accessed via a doorway in the rock. Contains a long table with benches and a single chair.\n  - (1a) Kitchen: Connected to the dining room by a short hallway."
+              },
+              {
+                "id": "02a",
+                "title": "A4: Library",
+                "type": "entries",
+                "content": "The cloister library holds books and scrolls covering a variety of topics, but focused on theology and history. Runara spends nearly half her time in here, studying, copying, and annotating the library's collection. Tarak and Varnoth also come here to read and discuss various works. Many of the kobolds visit as well, but mostly for the quiet; only Myla could be described as studious.",
+                "links": [
+                  {
+                    "text": "Runara",
+                    "tag": "creature",
+                    "attrs": [
+                      "DoSI"
+                    ]
+                  },
+                  {
+                    "text": "Tarak",
+                    "tag": "creature",
+                    "attrs": [
+                      "DoSI"
+                    ]
+                  },
+                  {
+                    "text": "Varnoth",
+                    "tag": "creature",
+                    "attrs": [
+                      "DoSI"
+                    ]
+                  },
+                  {
+                    "text": "Myla",
+                    "tag": "creature",
+                    "attrs": [
+                      "DoSI"
+                    ]
+                  }
+                ],
+                "children": [
+                  {
+                    "id": "02b",
+                    "title": "Untitled Section",
+                    "type": "insetReadaloud",
+                    "content": "Of all the doorways cut into the cliff face, only one has an actual door. This entry's door is made of sturdy oak with iron bands, and it swings open easily to reveal a spacious library. Bookshelves line every wall, with three free-standing shelves in the west half of the room. In the east half is a table with two benches, writing implements, book stands, and glass-shielded lamps.",
+                    "links": [],
+                    "children": [],
+                    "spatial_summary": "[Untitled Section]: **[Overview]**: A library carved into a cliff face, accessible through a single, sturdy door. The room is divided into a western half with many bookshelves and an eastern half with a study area.\n\n**[Direct Connections]**: The library is accessed via a single doorway cut into the cliff face, which is the only one with a door.\n\n**[Spatial Hierarchy]**:\n- The Cliffside Library: Accessed via a single, sturdy oak door in the cliff face."
+                  }
+                ],
+                "spatial_summary": "[A4: Library]: **[Overview]**: A library carved into a cliff face, accessible through a single, sturdy door. The room is divided into a western half with many bookshelves and an eastern half with a study area.\n\n**[Direct Connections]**: The library is accessed via a single doorway cut into the cliff face, which is the only one with a door.\n\n**[Spatial Hierarchy]**:\n- The Cliffside Library: Accessed via a single, sturdy oak door in the cliff face."
+              },
+              {
+                "id": "02c",
+                "title": "A5: Temple of Bahamut",
+                "type": "entries",
+                "content": "The temple is very simple, with the statue (represented by the star-in-a-circle symbol on the map) as its only furnishing. The statue depicts Bahamut, the Platinum Dragon, in mortal disguise, surrounded by seven canaries that represent gold dragons who accompany him on his travels. A character who examines the statue and succeeds on a 10 Intelligence (Religion) check recognizes Bahamut, and any resident of Dragon's Rest identifies the god if asked.\nDepressions in the statue's pedestal at the four cardinal directions hold offerings of incense made to Bahamut. Runara spends about half her time here, tending and maintaining the temple, offering prayers and incense, or in quiet contemplation. Other residents of the cloister help her, most often Varnoth and the kobold Rix.\nThe feeling of serenity that pervades the temple is the result of protective magic. A non-evil creature who makes a saving throw within the temple can roll a d4 and add the number rolled to the saving throw. If a character casts detect magic in the temple, the spell reveals a faint aura around the statue. Runara is the only inhabitant of Dragon's Rest who knows that this is a lingering effect of the death of a dragon on this site—her father, Astalagan.",
+                "links": [
+                  {
+                    "text": "10",
+                    "tag": "dc",
+                    "attrs": []
+                  },
+                  {
+                    "text": "Religion",
+                    "tag": "skill",
+                    "attrs": []
+                  },
+                  {
+                    "text": "Runara",
+                    "tag": "creature",
+                    "attrs": [
+                      "DoSI"
+                    ]
+                  },
+                  {
+                    "text": "Varnoth",
+                    "tag": "creature",
+                    "attrs": [
+                      "DoSI"
+                    ]
+                  },
+                  {
+                    "text": "d4",
+                    "tag": "dice",
+                    "attrs": []
+                  },
+                  {
+                    "text": "detect magic",
+                    "tag": "spell",
+                    "attrs": []
+                  }
+                ],
+                "children": [
+                  {
+                    "id": "02d",
+                    "title": "Untitled Section",
+                    "type": "insetReadaloud",
+                    "content": "The highest point of the cloister is crowned by an open-air temple that overhangs the cliff, supported by arched stone struts anchored to the cliff face. The north wall of the temple is carved directly into the rock, while the rest is open to the sea air. Heavy pillars mark the three open sides, supporting the wooden roof. In the center of the temple stands a stone statue of a kind-looking old man with canaries perched on his hands, shoulders, and head. A feeling of serenity suffuses the place.",
+                    "links": [],
+                    "children": [],
+                    "spatial_summary": "[Untitled Section]: **[Overview]**: An open-air temple built at the highest point of a cliffside cloister, projecting over the sea.\n\n**[Direct Connections]**: The temple is physically connected to the rest of the cloister (implied to be to the south, inland). It is open to the sea air on its east, south, and west sides.\n\n**[Spatial Hierarchy]**:\n- The Cloister (Cliffside): <The larger monastic complex to which this temple belongs>\n  - The Overhanging Temple: <The open-air temple at the cloister's highest point; open on three sides to the sea>"
+                  },
+                  {
+                    "id": "02e",
+                    "title": "About Bahamut",
+                    "type": "entries",
+                    "content": "Known as the Platinum Dragon, Bahamut is the patron and progenitor of metallic dragons. Adventurers and dragons alike pray to Bahamut to uphold honor and justice, or when they need courage to face a great threat. He seldom interferes in the affairs of mortal creatures, though he makes exceptions to help thwart the machinations of Tiamat the Dragon Queen and the evil dragons that serve her.",
+                    "links": [],
+                    "children": [],
+                    "spatial_summary": "NO_SPATIAL_INFO"
+                  }
+                ],
+                "spatial_summary": "[A5: Temple of Bahamut]: **[Overview]**: An open-air temple at the highest point of a cliffside cloister, projecting over the sea. It is a simple, serene space centered on a statue of Bahamut.\n\n**[Direct Connections]**: The temple is physically connected to the rest of the cliffside cloister to the south/inland. It is open to the sea air on its east, south, and west sides.\n\n**[Spatial Hierarchy]**:\n- The Cloister (Cliffside): <The larger monastic complex built into the cliffs>\n  - (A5) Temple of Bahamut: <The open-air temple at the cloister's highest point; connected to the main cloister to the south>"
+              }
+            ],
+            "spatial_summary": "[Dragon's Rest Locations]: **[Overview]**: Region Container\n**[Direct Connections]**: Not applicable for this container node.\n**[Spatial Hierarchy]**:\n- (A1) The Cliffside Path & Cells: A stepped path ascending the cliff face from the rocky shore to a plaza, flanked by monastic cells.\n  - The Rocky Shore: The base of the cliff, accessible from the water. Connects to the Cliffside Path.\n  - The Cliffside Path: A long, stepped path. Connects the Rocky Shore to the Cliffside Plaza. Flanked by Garden Plots.\n    - Garden Plots: Small cultivated plots along the lower section of the path.\n  - The Cliffside Plaza: A widened area of the path about thirty feet above the bay. Contains the Dragon Statue. Connects to six cliffside doorways.\n    - Astalagan's Statue: A bronze dragon statue on the plaza.\n    - Cliffside Doorways: Six open doorways cut into the cliff face, leading to individual cells.\n      - Westernmost Cell (Vacant): Available for the characters. Adjacent to Tarak's Cell.\n      - Tarak's Cell: Occupied by Tarak.\n      - Varnoth's Cell: Occupied by Varnoth.\n      - Myla's Cell: Occupied by Myla, cluttered with junk and tools.\n      - Shared Kobold Dormitory: Two cells combined into a space with hammocks for eight kobolds.\n- (A2) The Winch House: A small, free-standing building built into the cliffside along a mountain path, containing a winch and pallet system.\n  - The Mountain Path: A path along the cliffside that provides access to the Winch House.\n  - The Water Below: The body of water 50 feet below the Winch House, where the pallet can be lowered.\n- (A3) The Kitchen & Dining Room: A small, tidy kitchen connected to a rock-hewn dining room.\n  - Rock-Hewn Dining Room: Contains a long table with benches and a single chair. Connects to the Kitchen.\n    - The Kitchen: Connected to the dining room by a short hallway.\n- (A4) The Cliffside Library: A library carved into the cliff face, accessible through a single, sturdy oak door.\n- (A5) The Temple of Bahamut: An open-air temple at the highest point of the cliffside cloister, projecting over the sea. Connected to the main cloister to the south."
+          }
+        ],
+        "spatial_summary": "[Welcome to Dragon's Rest]: **[Overview]**: Region Container. This node is a narrative introduction and setup for the adventure, not a distinct physical location.\n\n**[Direct Connections]**: Not applicable for this container node.\n\n**[Spatial Hierarchy]**:\n  - **(1) North Harbor**: A calm harbor on the island's north side, with a rickety dock. A large rowboat is tied here. Connected to the open sea and the base of the Cliffside Path.\n    - **(1a) Rickety Dock**: The landing point within the harbor.\n  - **(2) Cliffside Path**: A long, winding path up the side of the cliff from the harbor to the temple. It is dotted with doorways cut into the rock.\n  - **(3) The Cliff-Top Temple (Temple of Bahamut)**: A large, open-air temple perched on the edge of the cliff. Contains a towering statue of a wizened man surrounded by seven songbirds. Connected to the top of the Cliffside Path.\n  - **The Beach**: A stretch of beach at the base of a cliff, where the party is ambushed by drowned sailors. Connects to the base of the cliff and the water's edge.\n    - **The Water's Edge**: The immediate shoreline where the drowned sailors emerge. Connects to the beach and the open sea.\n  - **Coastal Path to Dragon's Rest**: A trail or road along the coast, leading to the Dragon's Rest settlement.\n  - **Dragon's Rest (Cloister)**: The primary settlement on the island, serving as the characters' home base. It contains several key areas.\n    - **Cloister Entrance / Greeting Area**: The open area where the kobolds first greet visitors and where Elder Runara descends to meet them.\n    - **Upper Cloister**: The higher level or balcony within the cloister structure from which Elder Runara descends.\n    - **(A1) The Cliffside Path & Cells**: A stepped path ascending the cliff face from the rocky shore to a plaza, flanked by monastic cells.\n      - **The Rocky Shore**: The base of the cliff, accessible from the water. Connects to the Cliffside Path.\n      - **The Cliffside Path**: A long, stepped path. Connects the Rocky Shore to the Cliffside Plaza. Flanked by Garden Plots.\n        - **Garden Plots**: Small cultivated plots along the lower section of the path.\n      - **The Cliffside Plaza**: A widened area of the path about thirty feet above the bay. Contains the Dragon Statue. Connects to six cliffside doorways.\n        - **Astalagan's Statue**: A bronze dragon statue on the plaza.\n        - **Cliffside Doorways**: Six open doorways cut into the cliff face, leading to individual cells.\n          - **Westernmost Cell (Vacant)**: Available for the characters. Adjacent to Tarak's Cell.\n          - **Tarak's Cell**: Occupied by Tarak.\n          - **Varnoth's Cell**: Occupied by Varnoth.\n          - **Myla's Cell**: Occupied by Myla, cluttered with junk and tools.\n          - **Shared Kobold Dormitory**: Two cells combined into a space with hammocks for eight kobolds.\n    - **(A2) The Winch House**: A small, free-standing building built into the cliffside along a mountain path, containing a winch and pallet system.\n      - **The Mountain Path**: A path along the cliffside that provides access to the Winch House.\n      - **The Water Below**: The body of water 50 feet below the Winch House, where the pallet can be lowered.\n    - **(A3) The Kitchen & Dining Room**: A small, tidy kitchen connected to a rock-hewn dining room.\n      - **Rock-Hewn Dining Room**: Contains a long table with benches and a single chair. Connects to the Kitchen.\n        - **The Kitchen**: Connected to the dining room by a short hallway.\n    - **(A4) The Cliffside Library**: A library carved into the cliff face, accessible through a single, sturdy oak door.\n    - **(A5) The Temple of Bahamut**: An open-air temple at the highest point of the cliffside cloister, projecting over the sea. Connected to the main cloister to the south.\n    - **Cloister Gardens**: Garden plots tended by Tarak.\n  - **Runara's Secret Lair**: A cave accessed via an undersea tunnel, a short distance from Dragon's Rest.\n    - **Undersea Tunnel**: The submerged entrance to the lair.\n  - **Sea Caves (South Side of the Island)**: Caves on the southern coast inhabited by myconids, visited by Tarak.\n    - **Myconid Caves**: The specific caves within the sea cave system.\n  - **Clifftop Observatory**: An adventure site elsewhere on the island, home to Sparkrender and Myla's brothers.\n  - **Northern Rocky Coast**: The location north of Dragon's Rest where Rix and Varnoth witnessed a ship crash."
+      },
+      {
+        "id": "02f",
+        "title": "Cloister Quests",
+        "type": "section",
+        "content": "As the characters explore Dragon's Rest, the residents talk with them about the problems the cloister is facing. These conversations are opportunities for you to introduce the players to the adventures that await them in the sea caves, the shipwreck, and the ancient observatory.\nThis adventure is designed to be flexible and give the players the sense that they're in charge of their destiny on Stormwreck Isle. Ideally, the characters will spend time at Dragon's Rest and then explore both Seagrow Caves (described in chapter 2) and the wreck of Compass Rose (chapter 3). They can choose where to go first. After they've explored both of those sites, they should be ready to face Sparkrender in the Clifftop Observatory (chapter 4).\nEach character sheet includes a personal goal for that character. Some of those goals are concrete—the wizard, for example, is eager to learn the secrets of Clifftop Observatory. Others are more general and might be fulfilled gradually over the course of the adventure—both the paladin and the fighter gaining a better understanding of their role in the world, for example. Use those goals (described under \"Individual Quests\" below) to help the players bring their characters to life as they interact with Runara and the other residents of Dragon's Rest.",
+        "links": [
+          {
+            "text": "chapter 2",
+            "tag": "adventure",
+            "attrs": [
+              "DoSI",
+              "2"
+            ]
+          },
+          {
+            "text": "chapter 3",
+            "tag": "adventure",
+            "attrs": [
+              "DoSI",
+              "3"
+            ]
+          },
+          {
+            "text": "chapter 4",
+            "tag": "adventure",
+            "attrs": [
+              "DoSI",
+              "4"
+            ]
+          },
+          {
+            "text": "Individual Quests",
+            "tag": "area",
+            "attrs": [
+              "035",
+              "x"
+            ]
+          },
+          {
+            "text": "Runara",
+            "tag": "creature",
+            "attrs": [
+              "DoSI"
+            ]
+          }
+        ],
+        "children": [
+          {
+            "id": "030",
+            "title": "Zombie Resurgence",
+            "type": "entries",
+            "content": "If the adventurers did not fight the zombies when they first arrived on the island, the zombies cause trouble later. After the characters have spent some time at the cloister, they hear cries for help. Read the following text:\nThe characters have another opportunity to fight the three Zombie, this time with the lives of two new acquaintances—Blepp the kobold and Tarak the human gardener—hanging in the balance. See \"Drowned Sailors\" for help getting the encounter started.\nBlepp has 2 hit points left after a zombie hit him, and he is convinced that his good luck and his \"magical\" dagger saved him from certain death. Tarak is unarmed, and the zombies overpower both him and Blepp if the characters don't help.\nIf the characters talk to Runara about the zombies, she tells them she suspects a wrecked ship off the rocks to the north is the source of these monsters, and she asks the characters to investigate the site (see \"Shipwreck\" below).",
+            "links": [
+              {
+                "text": "Zombie",
+                "tag": "creature",
+                "attrs": [
+                  "",
+                  "zombies"
+                ]
+              },
+              {
+                "text": "kobold",
+                "tag": "creature",
+                "attrs": []
+              },
+              {
+                "text": "Tarak",
+                "tag": "creature",
+                "attrs": [
+                  "DoSI"
+                ]
+              },
+              {
+                "text": "Drowned Sailors",
+                "tag": "area",
+                "attrs": [
+                  "014",
+                  "x"
+                ]
+              },
+              {
+                "text": "Runara",
+                "tag": "creature",
+                "attrs": [
+                  "DoSI"
+                ]
+              },
+              {
+                "text": "Shipwreck",
+                "tag": "area",
+                "attrs": [
+                  "034",
+                  "x"
+                ]
+              }
+            ],
+            "children": [
+              {
+                "id": "031",
+                "title": "Untitled Section",
+                "type": "insetReadaloud",
+                "content": "Two residents of Dragon's Rest are running for their lives up the lower path, their fishing equipment discarded behind them. Blood and dirt stain their robes. Three figures shamble after them—bloated corpses dressed as sailors, moaning and gurgling.",
+                "links": [],
+                "children": [],
+                "spatial_summary": "[Untitled Section]: **[Overview]**: A section of the coastal path near Dragon's Rest, where a chase is occurring.\n\n**[Direct Connections]**: The path connects to the settlement of **Dragon's Rest** (up the path) and presumably to the **shoreline** (down the path, where the fishermen came from).\n\n**[Spatial Hierarchy]**:\n- Dragon's Rest (Settlement): The destination the residents are fleeing toward.\n- The Lower Coastal Path (Path): The specific trail where the encounter takes place. The fishermen's discarded equipment is here.\n  - Shoreline Fishing Spot (Landmark): The implied origin point down the path where the fishermen were working."
+              },
+              {
+                "id": "032",
+                "title": "More Zombies",
+                "type": "entries",
+                "content": "If the characters defeated the zombies when they first arrived on the island, you can use this encounter at any point during the adventure to add a little extra combat spice to the characters' lives. If the characters have already reached 2nd level, you can use from four to six Zombie to give them a good challenge.",
+                "links": [
+                  {
+                    "text": "Zombie",
+                    "tag": "creature",
+                    "attrs": [
+                      "",
+                      "zombies"
+                    ]
+                  }
+                ],
+                "children": [],
+                "spatial_summary": "NO_SPATIAL_INFO"
+              }
+            ],
+            "spatial_summary": "[Zombie Resurgence]: **[Overview]**: Region Container. This node describes a narrative event (a zombie attack) that occurs in a specific location, but the node itself is not a location.\n\n**[Direct Connections]**: This node does not describe a physical location with exits.\n\n**[Spatial Hierarchy]**:\n- Dragon's Rest (Settlement): The settlement the characters are near when the event occurs.\n  - The Lower Coastal Path (Path): The trail where the zombie attack on Blepp and Tarak takes place. Connects to Dragon's Rest and the shoreline.\n- The Northern Rocks (Landmark): The location of the wrecked ship mentioned by Runara as the suspected source of the zombies."
+          },
+          {
+            "id": "033",
+            "title": "Sea Caves",
+            "type": "entries",
+            "content": "Tarak is eager to reestablish contact with the myconids of the sea caves. He asks the characters to visit the caves, find out what's wrong with the myconids, and bring him back some heart cap mushrooms. He warns them about the fungal octopus the myconids have created as a guardian and tells them they'll probably have to fight the creature to gain access to the caves. He also gives them a foul-smelling sack of food scraps they can give the myconids as a gesture of friendship. Finally, he gives them two Potion of Healing.",
+            "links": [
+              {
+                "text": "Tarak",
+                "tag": "creature",
+                "attrs": [
+                  "DoSI"
+                ]
+              },
+              {
+                "text": "Potion of Healing",
+                "tag": "item",
+                "attrs": [
+                  "",
+                  "potions of healing"
+                ]
+              }
+            ],
+            "children": [],
+            "spatial_summary": "[Sea Caves]: **[Overview]**: A network of partially submerged caverns inhabited by a colony of myconids. The colony is currently in distress, and its fungal guardian, a fungal octopus, has become hostile, blocking the main entrance.\n\n**[Direct Connections]**: The caves are accessible from the coastline, likely via a submerged entrance or a cliffside opening.\n\n**[Spatial Hierarchy]**:\n- Sea Caves\n  - Main Entrance Cavern: Guarded by the fungal octopus. The primary access point from the sea.\n  - Myconid Colony Cavern: The main living area of the myconids, deeper within the cave system. Accessible after dealing with the guardian.\n  - Fungal Growth Chambers: Smaller side caves where the heart cap mushrooms and other fungi are cultivated."
+          },
+          {
+            "id": "034",
+            "title": "Shipwreck",
+            "type": "entries",
+            "content": "Several ships have recently crashed on the rocks north of Dragon's Rest and sunk with no survivors, and a few days ago both Varnoth and the kobold Rix witnessed the most recent wreck. They saw the ship abruptly veer off course and crash into the rocks, and they suggest the characters might help the island by discovering what caused the crash. If the characters ask Runara about it, she suggests that the answer is likely to be found on an older wreck—the wreck of Compass Rose.",
+            "links": [
+              {
+                "text": "Varnoth",
+                "tag": "creature",
+                "attrs": [
+                  "DoSI"
+                ]
+              },
+              {
+                "text": "Runara",
+                "tag": "creature",
+                "attrs": [
+                  "DoSI"
+                ]
+              }
+            ],
+            "children": [],
+            "spatial_summary": "[Shipwreck]: **[Overview]**: A stretch of treacherous coastline north of the island of Dragon's Rest, known for a series of recent and unexplained shipwrecks. The most significant known wreck here is the *Compass Rose*.\n\n**[Direct Connections]**: This coastline is directly north of the settlement of Dragon's Rest.\n\n**[Spatial Hierarchy]**:\n  - (1) **The Northern Rocks**: The treacherous shoals and rock formations where ships have been crashing.\n    - (1a) **Wreck of the Compass Rose**: The older, key shipwreck where clues to the recent disasters are believed to be found."
+          },
+          {
+            "id": "035",
+            "title": "Individual Quests",
+            "type": "entries",
+            "content": "As described on the character sheets, the characters have their own reasons for visiting Dragon's Rest.",
+            "links": [],
+            "children": [
+              {
+                "id": "036",
+                "title": "The Cleric",
+                "type": "entries",
+                "content": "The cleric was led here by a recurring dream involving the shadow of death. If the character talks to Runara about the dream or their quest, Runara listens closely, then pauses to think. \"Well,\" she says, \"I am no expert on interpreting dreams, but perhaps the zombies you fought are the 'hunger of death' you spoke of.\" She points the character toward the wreck of Compass Rose (see \"Shipwreck\" above) to investigate further.",
+                "links": [
+                  {
+                    "text": "Runara",
+                    "tag": "creature",
+                    "attrs": [
+                      "DoSI"
+                    ]
+                  }
+                ],
+                "children": [],
+                "spatial_summary": "[The Cleric]: **[Overview]**: This text describes a narrative interaction with the cleric character and the NPC Runara. It is not a physical location itself, but a narrative event that references a specific site.\n\n**[Direct Connections]**: None (this is a narrative node, not a spatial one).\n\n**[Spatial Hierarchy]**:\n- **Shipwreck of the Compass Rose**: Runara points the cleric to investigate the wreck of the *Compass Rose* for answers related to their dream."
+              },
+              {
+                "id": "037",
+                "title": "The Fighter",
+                "type": "entries",
+                "content": "The fighter has come to Dragon's Rest in the hope that Runara can help the character understand the sense of destiny that weighs on their shoulders. If the character talks to Runara about this on first arriving at the cloister, Runara invites the character to consider how their reaction to the zombies on the beach might reflect their destiny—or not. If the character talks to Runara after having completed one or more of the adventure's quests, she encourages the character to consider whether their heroic actions might be the first manifestations of that destiny taking shape. At the end of the adventure, Runara encourages the character to continue on their path: \"If your destiny is not clear to you yet, I'm confident it soon will be.\"",
+                "links": [
+                  {
+                    "text": "Runara",
+                    "tag": "creature",
+                    "attrs": [
+                      "DoSI"
+                    ]
+                  }
+                ],
+                "children": [],
+                "spatial_summary": "[The Fighter]: **[Overview]**: This text describes a narrative interaction between a character (The Fighter) and an NPC (Runara) that occurs at a specific location. \"The Fighter\" is not a physical location; it is a character class and narrative hook. Therefore, no spatial node is created for it. The valid spatial location described in the text is promoted.\n\n**[Direct Connections]**: N/A (Node is not a location)\n\n**[Spatial Hierarchy]**:\n- **Dragon's Rest**: The settlement where the character has arrived. The specific site of the interaction is within it.\n  - **Runara's Cloister**: The building or complex within Dragon's Rest where the conversation with Runara takes place. This is the primary spatial anchor for the described scene."
+              },
+              {
+                "id": "038",
+                "title": "The Paladin",
+                "type": "entries",
+                "content": "Disillusioned with the corruption of Neverwinter, the paladin comes to Dragon's Rest seeking rest and new resolve. Runara welcomes the character and encourages them to talk to Tarak and Varnoth, who both know about escaping lives of corruption and violence. She also encourages the paladin to spend time in the temple of Bahamut. At the end of the adventure, she asks the paladin if they have learned anything about how to live in a world plagued with such corruption. If the character has no answer, she suggests, \"Perhaps your adventures here have shown you a way to combat evil on your own terms. Perhaps other such adventures await you.\"",
+                "links": [
+                  {
+                    "text": "Runara",
+                    "tag": "creature",
+                    "attrs": [
+                      "DoSI"
+                    ]
+                  },
+                  {
+                    "text": "Tarak",
+                    "tag": "creature",
+                    "attrs": [
+                      "DoSI"
+                    ]
+                  },
+                  {
+                    "text": "Varnoth",
+                    "tag": "creature",
+                    "attrs": [
+                      "DoSI"
+                    ]
+                  }
+                ],
+                "children": [],
+                "spatial_summary": "[The Paladin]: **[Overview]**: This text describes the paladin's narrative arc within the settlement of Dragon's Rest. It is not a physical location itself, but a character-focused narrative container.\n\n**[Direct Connections]**: The text does not describe any physical exits or connections from a location called \"The Paladin.\"\n\n**[Spatial Hierarchy]**:\n- **Dragon's Rest**: The settlement where the paladin's story takes place.\n  - **Runara's Welcome**: The area where the elder dragon Runara greets and counsels newcomers.\n  - **Temple of Bahamut**: A temple within Dragon's Rest where the paladin is encouraged to seek solace and guidance.\n  - **Tarak's Dwelling**: The home or meeting place of Tarak, a former corrupt guard.\n  - **Varnoth's Dwelling**: The home or meeting place of Varnoth, a former cultist."
+              },
+              {
+                "id": "039",
+                "title": "The Rogue",
+                "type": "entries",
+                "content": "The rogue comes to Dragon's Rest in search of a lost fortune supposedly secreted away on the island by a member of the Gilded Gallows. The thieves' guild member in question is Tarak, who did in fact betray the guild, though the story has been twisted in the retelling. Tarak's last assignment for the guild was to assassinate a traitor, who was his lover. The two tried to flee Elturgard together, but his lover was killed by another assassin. Tarak escaped, but no treasure was involved. If the rogue asks him about it, he explains he has left the life of crime—and suggests perhaps it's time for the rogue to do the same.",
+                "links": [
+                  {
+                    "text": "Tarak",
+                    "tag": "creature",
+                    "attrs": [
+                      "DoSI"
+                    ]
+                  }
+                ],
+                "children": [],
+                "spatial_summary": "NO_SPATIAL_INFO"
+              },
+              {
+                "id": "03a",
+                "title": "The Wizard",
+                "type": "entries",
+                "content": "The wizard carries a letter from a colleague about lost knowledge held in the Clifftop Observatory (see chapter 4). If asked about the observatory, Runara says, \"Many have sought the knowledge contained in that place. I can direct you there, but first you need to show me you are worthy.\" She promises to direct the wizard to the observatory after the characters help deal with the other problems on the island.",
+                "links": [
+                  {
+                    "text": "chapter 4",
+                    "tag": "adventure",
+                    "attrs": [
+                      "DoSI",
+                      "4"
+                    ]
+                  },
+                  {
+                    "text": "Runara",
+                    "tag": "creature",
+                    "attrs": [
+                      "DoSI"
+                    ]
+                  }
+                ],
+                "children": [],
+                "spatial_summary": "[The Wizard]: **[Overview]**: The Wizard (Runara) is a character located somewhere on the island. She is a source of information and a quest-giver, directing adventurers to a major site.\n\n**[Direct Connections]**: The wizard's location is not specified, but she is a resident of the island and can direct travelers to the Clifftop Observatory.\n\n**[Spatial Hierarchy]**:\n- Clifftop Observatory: A major adventure site on the island, containing lost knowledge. The wizard promises to direct worthy adventurers to this location."
+              }
+            ],
+            "spatial_summary": "[Individual Quests]: **[Overview]**: Region Container. This node is a narrative container for character-specific quest hooks, not a physical location.\n\n**[Direct Connections]**: None.\n\n**[Spatial Hierarchy]**:\n- **Dragon's Rest**: The settlement where all character quests originate.\n  - **Runara's Cloister**: The building or complex where Runara counsels the Fighter and others.\n  - **Temple of Bahamut**: A temple within the settlement where the Paladin is directed.\n  - **Tarak's Dwelling**: The home or meeting place of the former guard, Tarak.\n  - **Varnoth's Dwelling**: The home or meeting place of the former cultist, Varnoth.\n- **Shipwreck of the Compass Rose**: A wrecked vessel on the coast, which the Cleric is directed to investigate.\n- **Clifftop Observatory**: A major adventure site on the island, which the wizard Runara directs worthy adventurers toward."
+          },
+          {
+            "id": "03b",
+            "title": "Lost Wyrmling",
+            "type": "entries",
+            "content": "When the characters have proven themselves trustworthy and competent by dealing with the zombies, the myconids, and the shipwreck, Runara decides it's time to confide in them. She summons them to the temple (area A5). Read the following text when the characters arrive:\nRunara outlines the history summarized in the \"Adventure Background\" section and explains that each site the characters visited is linked to the death of a dragon. Then she tells them that a bronze wyrmling named Aidron came to the island a few months ago and studied with her at Dragon's Rest. Five days before the characters' arrival, he argued with her, angrily rejected her teaching of peace, and stormed away from the cloister. She fears he went to the ancient observatory on the southeast side of the island, which is another dragon's final resting place. She suspects some evil has arisen there, but says she dares not go there herself, lest her presence reopen old wounds. She gives them a moonstone key—a 3-inch-long, 1-inch-wide hexagonal prism made from moonstone, with a dragon's head engraved on one end—and explains that they'll need it to access the observatory.",
+            "links": [
+              {
+                "text": "Runara",
+                "tag": "creature",
+                "attrs": [
+                  "DoSI"
+                ]
+              },
+              {
+                "text": "area A5",
+                "tag": "area",
+                "attrs": [
+                  "02c",
+                  "x"
+                ]
+              },
+              {
+                "text": "Adventure Background",
+                "tag": "area",
+                "attrs": [
+                  "005",
+                  "x"
+                ]
+              }
+            ],
+            "children": [
+              {
+                "id": "03c",
+                "title": "Untitled Section",
+                "type": "insetReadaloud",
+                "content": "Elder Runara smiles as you approach. \"I have something to show you,\" she says. There's a flash like a silent stroke of lightning, and the human woman is gone. In her place is an enormous dragon with bronze-colored scales. \"Now you see me as I truly am,\" she says, tilting her head with an expression that might be a smile on her scaled face.\n\"As you have discovered, this island has many old wounds. And I'm afraid the cycle of violence is starting again. I have one more favor to ask you.\"",
+                "links": [
+                  {
+                    "text": "Runara",
+                    "tag": "creature",
+                    "attrs": [
+                      "DoSI"
+                    ]
+                  }
+                ],
+                "children": [],
+                "spatial_summary": "NO_SPATIAL_INFO"
+              },
+              {
+                "id": "03d",
+                "title": "Runara Saves the Day!",
+                "type": "inset",
+                "content": "Runara is a powerful dragon, but she is dedicated to the cause of peace. She's not interested in fighting the battles that the characters might get themselves into, but she keeps an eye on them, and she can rescue them if things go badly for them on the island.\nIf any encounter on the island ends with all the characters unconscious, you can have the characters awaken in the temple (area A5), with some of the kobolds tending to their wounds. Runara prefers not to explain how she rescued the characters.\nIf this happens more than once, the characters might need extra assistance. If you haven't already, consider asking one or more players to play an additional character as a sidekick. You can explain that these additional characters have just arrived at Dragon's Rest and are eager to help.",
+                "links": [
+                  {
+                    "text": "Runara",
+                    "tag": "creature",
+                    "attrs": [
+                      "DoSI"
+                    ]
+                  },
+                  {
+                    "text": "unconscious",
+                    "tag": "condition",
+                    "attrs": []
+                  },
+                  {
+                    "text": "area A5",
+                    "tag": "area",
+                    "attrs": [
+                      "02c",
+                      "x"
+                    ]
+                  }
+                ],
+                "children": [],
+                "spatial_summary": "[Runara Saves the Day!]: **[Overview]**: This text describes a narrative event and a contingency plan, not a physical location. It is a \"Rescue Event\" container.\n\n**[Direct Connections]**: None described for this event.\n\n**[Spatial Hierarchy]**:\n- (A5) Temple of Bahamut: The location where rescued characters awaken. Connected to the wider Dragon's Rest settlement.\n  - Dragon's Rest: The broader settlement where the temple is located and where new sidekick characters might arrive."
+              }
+            ],
+            "spatial_summary": "[Lost Wyrmling]: **[Overview]**: Region Container. This node describes the quest to find the lost wyrmling, which leads to a new major location.\n\n**[Direct Connections]**: The quest is given in the Temple of Bahamut (A5) in Dragon's Rest.\n\n**[Spatial Hierarchy]**:\n- (A5) Temple of Bahamut: The quest-giver, Runara, is located here. Connected to the wider Dragon's Rest settlement.\n  - Dragon's Rest: The broader settlement where the temple is located.\n- Ancient Observatory: The suspected destination of the lost wyrmling, Aidron. Located on the southeast side of the island. Requires a moonstone key to access."
+          }
+        ],
+        "spatial_summary": "[Cloister Quests]: **[Overview]**: Region Container. This node is a narrative chapter describing quest hooks and adventure flow, not a physical location.\n\n**[Direct Connections]**: This node does not describe a physical location with exits.\n\n**[Spatial Hierarchy]**:\n- **Dragon's Rest**: The settlement where quests are given. Connected to the island's coastline and paths.\n  - **Runara's Cloister**: A building or complex within the settlement.\n  - **Temple of Bahamut**: A temple within the settlement.\n  - **Tarak's Dwelling**: A home or meeting place in the settlement.\n  - **Varnoth's Dwelling**: A home or meeting place in the settlement.\n- **Seagrow Caves**: A network of sea caves on the coastline, accessible from the shore.\n- **Wreck of the Compass Rose**: A shipwreck on the northern coastline, part of the treacherous Northern Rocks.\n- **Clifftop Observatory**: An ancient structure on the southeast side of the island."
+      },
+      {
+        "id": "03e",
+        "title": "Exploring the Island",
+        "type": "section",
+        "content": "This adventure presents Dragon's Rest and three adventure locations in detail, but Stormwreck Isle holds the possibility of excitement and danger beyond those sites. While the characters travel between locations on the island, or if they set out to explore the island, they might stumble across fantastical creatures and locations that provide an extra challenge on their journey.",
+        "links": [],
+        "children": [
+          {
+            "id": "03f",
+            "title": "Additional Encounters",
+            "type": "entries",
+            "content": "Place these encounters wherever you want to on the island, or use them as inspiration as you begin to craft your own adventures.",
+            "links": [],
+            "children": [
+              {
+                "id": "040",
+                "title": "Hot Springs Havoc",
+                "type": "entries",
+                "content": "This encounter poses a simple challenge for characters of 2nd level or higher, or a harder challenge for 1st-level characters. It's particularly appropriate if the characters are rowing around the island or making their way along the coast at sea level.\nNot immediately visible to the characters are the guardians of the spring: three Fume Drake. These mischievous creatures are initially indifferent to the characters and ignore their arrival, but if anyone attempts to gather mushrooms or enter the water of the hot spring, the fume drakes become hostile, emerging from the water to attack the group. A character who examines the water and succeeds on a 10 Wisdom (Perception) check spots the shimmering outlines of the fume drakes in the water.",
+                "links": [
+                  {
+                    "text": "Fume Drake",
+                    "tag": "creature",
+                    "attrs": [
+                      "DoSI",
+                      "fume drakes"
+                    ]
+                  },
+                  {
+                    "text": "10",
+                    "tag": "dc",
+                    "attrs": []
+                  },
+                  {
+                    "text": "Perception",
+                    "tag": "skill",
+                    "attrs": []
+                  }
+                ],
+                "children": [
+                  {
+                    "id": "041",
+                    "title": "Untitled Section",
+                    "type": "insetReadaloud",
+                    "content": "Billowing clouds of steam emerge from the rocks ahead, and the air grows thicker with moisture. As you round a bend, you see a cove where a hot spring burbles up from the rocks and spills into a pool before draining into the ocean. The turquoise water is luminescent, and the gray basalt edges of the spring are lined with vibrantly colored mushrooms, which occasionally burst in a shower of rainbow spores.",
+                    "links": [],
+                    "children": [],
+                    "spatial_summary": "[Untitled Section]: **[Overview]**: A coastal cove containing a hot spring that feeds a luminescent pool before draining into the ocean.\n\n**[Direct Connections]**: The hot spring pool drains into the ocean.\n\n**[Spatial Hierarchy]**:\n- The Luminescent Cove\n  - The Hot Spring Pool: Fed by a hot spring; drains into the ocean."
+                  },
+                  {
+                    "id": "042",
+                    "title": "Spring Waters",
+                    "type": "entries",
+                    "content": "The spring is the site of a brass dragon's death, and life-giving magic persists at the site. A character who spends 10 minutes bathing in the waters of the spring can roll one of their Hit Dice (noted on each character sheet) and regain hit points equal to the roll plus their Constitution modifier. A character can benefit from bathing in the hot spring at most once per day.",
+                    "links": [],
+                    "children": [],
+                    "spatial_summary": "[Spring Waters]: **[Overview]**: A natural hot spring located in a secluded area, imbued with life-giving magic from the death of a brass dragon. The waters have potent restorative properties.\n\n**[Direct Connections]**: The text does not specify any direct, named spatial connections (e.g., paths, roads, adjacent areas). It is implied to be a remote, self-contained site.\n\n**[Spatial Hierarchy]**:\n- **Spring Waters**: The primary location, consisting of the hot spring pool itself."
+                  },
+                  {
+                    "id": "043",
+                    "title": "Treasure",
+                    "type": "entries",
+                    "content": "A character who examines the mushrooms lining the spring and succeeds on a 15 Intelligence (Nature) check identifies these mushrooms as wind spores—a rare fungus with a unique magical property. When a creature squeezes a wind spore mushroom's cap, it releases a small cloud of spores. For 1 hour, the creature doesn't need to breathe, as the spores provide it with oxygen. A wind spore is worth 30 gp, and at any given time 2d4 wind spores are ready to be harvested.",
+                    "links": [
+                      {
+                        "text": "15",
+                        "tag": "dc",
+                        "attrs": []
+                      },
+                      {
+                        "text": "Nature",
+                        "tag": "skill",
+                        "attrs": []
+                      },
+                      {
+                        "text": "2d4",
+                        "tag": "dice",
+                        "attrs": []
+                      }
+                    ],
+                    "children": [],
+                    "spatial_summary": "NO_SPATIAL_INFO"
+                  }
+                ],
+                "spatial_summary": "[Hot Springs Havoc]: **[Overview]**: Region Container. This node describes an encounter that takes place at a specific location.\n\n**[Direct Connections]**: The text does not specify any direct, named spatial connections for the encounter itself.\n\n**[Spatial Hierarchy]**:\n- **The Luminescent Cove**: A coastal cove containing a hot spring pool that drains into the ocean.\n  - **The Hot Spring Pool**: A natural, magically restorative pool fed by a hot spring; drains into the ocean."
+              },
+              {
+                "id": "044",
+                "title": "There, There, Owlbear",
+                "type": "entries",
+                "content": "This encounter poses a medium challenge for 3rd-level characters and a difficult challenge for 2nd-level characters. Use it if your group enjoys combat or the players need a chance to practice using their characters' new abilities after gaining a level. It's particularly appropriate if the characters are traveling across the island rather than following the coast.\nThis owlbear is hostile toward the characters. It views them as intruders in its territory, though its goal is to drive them away rather than kill them. Originally a part of a performing troupe, the owlbear was stranded here after the ship carrying the troupe crashed on the northern rocks.\nAny character within 5 feet of the owlbear notices a small wooden whistle hanging around its neck. This whistle was (and still can be) used to train and command the owlbear. A character within 5 feet of the owlbear can use their action to attempt to grab the whistle. If the character succeeds on a 12 Strength check, the whistle comes free. With the whistle in hand, a character can take an action to blow into it and make a 10 Wisdom (Animal Handling) check. On a success, the owlbear calms and immediately becomes friendly toward the whistle holder and indifferent toward the other characters. However, it won't leave the area it now considers its territory, and any attempt to force it to leave makes it hostile again.",
+                "links": [
+                  {
+                    "text": "owlbear",
+                    "tag": "creature",
+                    "attrs": []
+                  },
+                  {
+                    "text": "12",
+                    "tag": "dc",
+                    "attrs": []
+                  },
+                  {
+                    "text": "10",
+                    "tag": "dc",
+                    "attrs": []
+                  },
+                  {
+                    "text": "Animal Handling",
+                    "tag": "skill",
+                    "attrs": []
+                  }
+                ],
+                "children": [
+                  {
+                    "id": "045",
+                    "title": "Untitled Section",
+                    "type": "insetReadaloud",
+                    "content": "A discordant sound—half a low growl, half a piercing screech—rips through the air. Abruptly, a hulking creature comes into view. A mix of purple feathers and deep brown fur covers its bearlike body, and its large eyes stare hungrily at you from its owlish head.",
+                    "links": [],
+                    "children": [],
+                    "spatial_summary": "NO_SPATIAL_INFO"
+                  }
+                ],
+                "spatial_summary": "[There, There, Owlbear]: **[Overview]**: A small, unnamed territory on the island, claimed by a stranded and hostile owlbear. The creature's presence makes this a dangerous spot for travelers crossing the island's interior.\n\n**[Direct Connections]**: This territory is located somewhere in the island's interior, away from the coast. It is connected to the broader island's travel routes.\n\n**[Spatial Hierarchy]**:\n- The Island\n  - The Island's Interior\n    - Owlbear's Territory: The specific area where the stranded owlbear has made its home and will defend."
+              },
+              {
+                "id": "046",
+                "title": "Kobold Renegades",
+                "type": "entries",
+                "content": "This encounter is a difficult challenge for 1st-level characters and can be scaled up for 2nd- or 3rd-level characters as noted below. It's appropriate whenever characters are traveling around the island by land.\nA group of kobolds tries to ambush the characters. They're hiding in the rocks and light foliage, hoping to get the jump on the adventurers. Make a Dexterity (Stealth) check for the kobolds, rolling once for all of them and using the Dexterity modifier (+2) of the wingless kobolds. Compare the result to the characters' passive Wisdom (Perception) scores. Any character whose score is lower than the kobolds' check result is surprised and loses their turn during the first round of combat (see \"Surprise\" in the Basic Rules). Read this text when the kobolds attack:\nFour Kobold and one winged kobold (all lawful evil) participate in this ambush. These cruel, vicious kobolds reject both the peaceful teaching of Runara and the tyrannical rule of Sparkrender, and they prey on travelers who stray away from Dragon's Rest. They haven't had much success and are desperate, so they're hostile and fight to the death.\nTheir desperation means that they can easily be persuaded to stop fighting with an offer of money or food. Otherwise, they're not interested in conversation or negotiation.",
+                "links": [
+                  {
+                    "text": "Stealth",
+                    "tag": "skill",
+                    "attrs": []
+                  },
+                  {
+                    "text": "Perception",
+                    "tag": "skill",
+                    "attrs": []
+                  },
+                  {
+                    "text": "Kobold",
+                    "tag": "creature",
+                    "attrs": [
+                      "",
+                      "kobolds"
+                    ]
+                  },
+                  {
+                    "text": "winged kobold",
+                    "tag": "creature",
+                    "attrs": []
+                  },
+                  {
+                    "text": "Runara",
+                    "tag": "creature",
+                    "attrs": [
+                      "DoSI"
+                    ]
+                  }
+                ],
+                "children": [
+                  {
+                    "id": "047",
+                    "title": "Untitled Section",
+                    "type": "insetReadaloud",
+                    "content": "A yipping sound erupts around you as angry kobolds emerge from their hiding places and attack!",
+                    "links": [],
+                    "children": [],
+                    "spatial_summary": "NO_SPATIAL_INFO"
+                  },
+                  {
+                    "id": "048",
+                    "title": "2nd-Level Characters",
+                    "type": "entries",
+                    "content": "If the characters are 2nd level, use six kobolds and two winged kobolds.",
+                    "links": [],
+                    "children": [],
+                    "spatial_summary": "NO_SPATIAL_INFO"
+                  },
+                  {
+                    "id": "049",
+                    "title": "3rd-Level Characters",
+                    "type": "entries",
+                    "content": "If the characters are 3rd level, use eight kobolds and three winged kobolds.",
+                    "links": [],
+                    "children": [],
+                    "spatial_summary": "NO_SPATIAL_INFO"
+                  }
+                ],
+                "spatial_summary": "[Kobold Renegades]: **[Overview]**: A rocky, lightly foliated area along a land route on the island, suitable for an ambush. This is the site where a desperate band of kobolds hides to attack travelers.\n\n**[Direct Connections]**: Connected to the island's overland travel routes. Leads to/from Dragon's Rest.\n\n**[Spatial Hierarchy]**:\n  - The Ambush Site: A stretch of rocky terrain with light foliage along a land route. The kobolds hide here among the rocks.\n    - (Connection: Located somewhere on the island's land routes, away from Dragon's Rest)"
+              },
+              {
+                "id": "04a",
+                "title": "What Lies Beneath",
+                "type": "entries",
+                "content": "As described in the \"Adventure Background\" section in the introduction, Stormwreck Isle was formed from magic-fueled volcanic activity in the tomb of a monstrous red dragon named Sharruth. Some legends and rumors suggest Sharruth is not actually dead, merely imprisoned beneath the island, and the activity in Seagrow Caves suggests that all is not well beneath Stormwreck Isle.\nYou can devise your own adventures around characters investigating Sharruth's tomb. Characters might scour the island until they find hidden vents they can use to access winding tunnels leading deep into the earth. More fume drakes and fire snakes might lurk below. Perhaps there's even a group of kobolds who serve mighty Sharruth.\nSuch an adventure is yours to devise, and you can put your unique spin on what the characters do and discover there. Of course, if you're not ready to craft an expedition into the caverns beneath the island, then the characters simply don't discover those subterranean passages no matter how much they search.",
+                "links": [
+                  {
+                    "text": "Adventure Background",
+                    "tag": "area",
+                    "attrs": [
+                      "005",
+                      "x"
+                    ]
+                  }
+                ],
+                "children": [],
+                "spatial_summary": "[What Lies Beneath]: **[Overview]**: Region Container. This node describes the concept of a subterranean network beneath Stormwreck Isle, accessible via hidden vents and leading to the tomb of the dragon Sharruth.\n\n**[Direct Connections]**: The subterranean network is accessed from the surface of Stormwreck Isle via hidden volcanic vents. It connects to the surface and to the deeper tomb.\n\n**[Spatial Hierarchy]**:\n- Stormwreck Isle (Surface): The island above, containing hidden volcanic vents that serve as entrances.\n  - Hidden Volcanic Vents: Surface fissures and vents that lead down into the subterranean network.\n- The Subterranean Network: A series of winding, volcanic tunnels and caves beneath the island.\n  - Sharruth's Tomb: The deepest chamber, the final resting place (or prison) of the red dragon Sharruth."
+              }
+            ],
+            "spatial_summary": "[Additional Encounters]: **[Overview]**: Region Container. This node is a collection of encounter ideas that can be placed in various locations on Stormwreck Isle.\n\n**[Direct Connections]**: The text does not specify any direct, named spatial connections for this container node.\n\n**[Spatial Hierarchy]**:\n- **The Luminescent Cove**: A coastal cove containing a magically restorative hot spring pool that drains into the ocean.\n  - **The Hot Spring Pool**: The specific pool within the cove.\n- **Owlbear's Territory**: A small, dangerous territory in the island's interior, claimed by a stranded owlbear. Connected to the island's overland travel routes.\n- **Kobold Ambush Site**: A rocky, lightly foliated stretch along a land route on the island, suitable for an ambush. Connected to the island's travel routes and leads to/from Dragon's Rest.\n- **Stormwreck Isle (Surface)**: The island above, containing hidden volcanic vents.\n  - **Hidden Volcanic Vents**: Surface fissures that serve as entrances to the tunnels below.\n- **The Subterranean Network**: A series of winding, volcanic tunnels and caves beneath Stormwreck Isle.\n  - **Sharruth's Tomb**: The deepest chamber within the network."
+          }
+        ],
+        "spatial_summary": "[Exploring the Island]: **[Overview]**: Region Container. This node is a collection of encounter ideas that can be placed in various locations on Stormwreck Isle.\n\n**[Direct Connections]**: The text does not specify any direct, named spatial connections for this container node.\n\n**[Spatial Hierarchy]**:\n- **The Luminescent Cove**: A coastal cove containing a magically restorative hot spring pool that drains into the ocean.\n  - **The Hot Spring Pool**: The specific pool within the cove.\n- **Owlbear's Territory**: A small, dangerous territory in the island's interior, claimed by a stranded owlbear. Connected to the island's overland travel routes.\n- **Kobold Ambush Site**: A rocky, lightly foliated stretch along a land route on the island, suitable for an ambush. Connected to the island's travel routes and leads to/from Dragon's Rest.\n- **Stormwreck Isle (Surface)**: The island above, containing hidden volcanic vents.\n  - **Hidden Volcanic Vents**: Surface fissures that serve as entrances to the tunnels below.\n- **The Subterranean Network**: A series of winding, volcanic tunnels and caves beneath Stormwreck Isle.\n  - **Sharruth's Tomb**: The deepest chamber within the network."
+      }
+    ],
+    "spatial_summary": "[Chapter 1: Dragon's Rest]: **[Overview]**: Region Container. This node is a narrative chapter introducing the adventure's starting point and quests.\n\n**[Direct Connections]**: Not applicable for this container node.\n\n**[Spatial Hierarchy]**:\n  - **Dragon's Rest (Cloister)**: A cliffside monastic haven on Stormwreck Isle, serving as the characters' home base.\n    - **Cloister Entrance / Greeting Area**: The open area where visitors are greeted.\n    - **Upper Cloister**: A higher level or balcony within the cloister structure.\n    - **Cliffside Path & Cells**: A stepped path ascending the cliff face from the rocky shore to a plaza, flanked by monastic cells.\n      - **The Rocky Shore**: The base of the cliff, accessible from the water.\n      - **The Cliffside Path**: A long, stepped path flanked by Garden Plots.\n        - **Garden Plots**: Small cultivated plots along the path.\n      - **The Cliffside Plaza**: A widened area about thirty feet above the bay, containing Astalagan's Statue.\n        - **Astalagan's Statue**: A bronze dragon statue on the plaza.\n        - **Cliffside Doorways**: Six open doorways cut into the cliff face, leading to individual cells.\n          - **Westernmost Cell (Vacant)**: Available for the characters.\n          - **Tarak's Cell**: Occupied by Tarak.\n          - **Varnoth's Cell**: Occupied by Varnoth.\n          - **Myla's Cell**: Occupied by Myla.\n          - **Shared Kobold Dormitory**: Two combined cells with hammocks.\n    - **The Winch House**: A small, free-standing building built into the cliffside along a mountain path, containing a winch and pallet system.\n      - **The Mountain Path**: A path along the cliffside providing access to the Winch House.\n    - **The Kitchen & Dining Room**: A small, tidy kitchen connected to a rock-hewn dining room.\n    - **The Cliffside Library**: A library carved into the cliff face.\n    - **The Temple of Bahamut**: An open-air temple at the highest point of the cliffside cloister, projecting over the sea.\n    - **Cloister Gardens**: Garden plots tended by Tarak.\n  - **North Harbor**: A calm harbor on the island's north side, with a rickety dock. Connected to the open sea and the base of the Cliffside Path.\n    - **Rickety Dock**: The landing point within the harbor.\n  - **Cliffside Path (to Temple)**: A long, winding path up the side of the cliff from the harbor to the Temple of Bahamut, dotted with doorways.\n  - **The Beach**: A stretch of beach at the base of a cliff, where the party can be ambushed.\n    - **The Water's Edge**: The immediate shoreline.\n  - **Coastal Path to Dragon's Rest**: A trail or road along the coast, leading to the Dragon's Rest settlement.\n  - **Runara's Secret Lair**: A cave accessed via an undersea tunnel, a short distance from Dragon's Rest.\n    - **Undersea Tunnel**: The submerged entrance to the lair.\n  - **Sea Caves (South Side of the Island)**: Caves on the southern coast inhabited by myconids.\n    - **Myconid Caves**: The specific caves within the sea cave system.\n  - **Clifftop Observatory**: An adventure site elsewhere on the island, home to Sparkrender and Myla's brothers.\n  - **Northern Rocky Coast**: The location north of Dragon's Rest where a ship crashed.\n  - **Seagrow Caves**: A network of sea caves on the coastline, accessible from the shore.\n  - **Wreck of the Compass Rose**: A shipwreck on the northern coastline, part of the treacherous Northern Rocks.\n  - **The Luminescent Cove**: A coastal cove containing a magically restorative hot spring pool.\n    - **The Hot Spring Pool**: The specific pool within the cove.\n  - **Owlbear's Territory**: A small, dangerous territory in the island's interior.\n  - **Kobold Ambush Site**: A rocky, lightly foliated stretch along a land route on the island.\n  - **Stormwreck Isle (Surface)**: The island above, containing hidden volcanic vents.\n    - **Hidden Volcanic Vents**: Surface fissures that serve as entrances to the tunnels below.\n  - **The Subterranean Network**: A series of winding, volcanic tunnels and caves beneath Stormwreck Isle.\n    - **Sharruth's Tomb**: The deepest chamber within the network."
+  }
+]

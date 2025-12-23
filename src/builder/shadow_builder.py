@@ -129,10 +129,34 @@ class ShadowTreeBuilder:
                     current_node.add_text(row_text)
 
             elif entry_type == "image":
-                # 提取图片标题或 Credit
+                # 仅处理具有 title 的图片（通常是地图或重要图示）
                 title = entry.get("title", "")
+                image_type = entry.get("imageType", "")
                 if title:
-                    current_node.add_text(f"[Image: {title}]")
+                    if image_type:
+                        current_node.add_text(f"[Image ({image_type}): {title}]")
+                    else: 
+                        current_node.add_text(f"[Image: {title}]")
+
+            elif entry_type == "gallery":
+                # 处理画廊，有有效图片时才处理
+                is_valid = False
+                for img in entry.get("images", []):
+                    title = img.get("title", "")
+                    if title:
+                        is_valid = True
+                        break;
+
+                if is_valid:
+                    current_node.add_text("**Gallery:**")
+                    for img in entry.get("images", []):
+                        title = img.get("title", "")
+                        image_type = img.get("imageType", "")
+                        if title:
+                            if image_type:
+                                current_node.add_text(f"[Image ({image_type}): {title}]")
+                            else: 
+                                current_node.add_text(f"[Image: {title}]")
             
             elif entry_type == "quote":
                 # 引用块

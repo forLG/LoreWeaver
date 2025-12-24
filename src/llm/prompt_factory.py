@@ -77,12 +77,12 @@ Task:
    - **Siblings vs Children**: Major adventure sites are usually **siblings**, not inside each other. Ensure they are listed as separate top-level items unless the text explicitly says one is inside the other.
    - **Deduplicate**: If the same location appears multiple times with slightly different names, **MERGE** them into a single node using the most specific or canonical name.
 
-3. **Format**: Use `(ID) Site Name` format. If no ID, use `Site Name`.
+3.  **Preserve IDs**: Keep all Area IDs (e.g., A1, B2) visible.
 
 Output Requirements:
 - If no spatial info exists anywhere (and no valid children), output: "NO_SPATIAL_INFO"
 - Otherwise, use this format:
-  **[Overview]**: <Brief description. If this node is just a container/chapter, say "Region Container">
+  **[Overview]**: <Brief description of recent spatial hierarchy.>
   **[Direct Connections]**: <Specific exits mentioned in THIS node's text>
   **[Spatial Hierarchy]**:
     - Valid Location A: <Connection info>

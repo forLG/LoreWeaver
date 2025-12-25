@@ -145,7 +145,7 @@ class ShadowTreeBuilder:
                     title = img.get("title", "")
                     if title:
                         is_valid = True
-                        break;
+                        break
 
                 if is_valid:
                     current_node.add_text("**Gallery:**")

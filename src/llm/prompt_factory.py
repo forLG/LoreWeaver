@@ -115,3 +115,25 @@ Only include IDs that need to change.
     "the_beach": "rocky_shore"
 }}
 """
+
+    @staticmethod
+    def create_section_mapping_prompt(section_context: str, location_list: str) -> str:
+        """
+        阶段四：映射章节至地点 ID
+        """
+        return f"""
+You are a D&D Knowledge Graph Assistant.
+I have a section from a book and a list of known Location IDs extracted from the same book.
+Task: Map the Section to the most likely Location ID(s) where the events in that section take place.
+
+Known Location IDs:
+{location_list}
+
+Section Info:
+{section_context}
+
+Rules:
+1. If the section clearly describes events inside one or more of the Known Locations, map it.
+2. If the section is generic or doesn't match any specific location, return an empty list.
+3. Output JSON format: {{ "location_ids": ["location_id_1", "location_id_2"] }}
+"""

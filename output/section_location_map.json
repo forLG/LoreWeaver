@@ -1,0 +1,706 @@
+{
+  "001": [
+    "stormwreck_isle"
+  ],
+  "003": [
+    "the_forgotten_realms",
+    "the_sword_coast",
+    "neverwinter",
+    "mount_hotenow",
+    "stormwreck_isle",
+    "the_crypts_of_the_fallen_dwarf_kings_of_delzoun",
+    "baldurs_gate",
+    "the_fallen_netherese_empire_ruins"
+  ],
+  "005": [
+    "the_forgotten_realms",
+    "the_sword_coast",
+    "stormwreck_isle",
+    "dragon_s_rest",
+    "sharruths_tomb"
+  ],
+  "006": [
+    "stormwreck_isle",
+    "dragon_s_rest",
+    "seagrow_caves_entrance",
+    "the_wreck_of_the_compass_rose",
+    "clifftop_observatory_tower",
+    "sharruths_tomb",
+    "myconid_caves",
+    "ships_hold",
+    "sparkrenders_spire"
+  ],
+  "007": [
+    "stormwreck_isle"
+  ],
+  "0cd": [
+    "stormwreck_isle",
+    "the_ocean"
+  ],
+  "0cf": [
+    "neverwinter",
+    "stormwreck_isle",
+    "the_ocean"
+  ],
+  "0d0": [
+    "main_deck"
+  ],
+  "0d1": [
+    "the_ocean"
+  ],
+  "0ea": [
+    "sunken_wrecks_general_area",
+    "the_wreck_of_the_compass_rose"
+  ],
+  "0ee": [
+    "the_ocean"
+  ],
+  "011": [
+    "dragon_s_rest"
+  ],
+  "012": [
+    "dragon_s_rest"
+  ],
+  "013": [
+    "dragon_s_rest",
+    "the_northern_harbor",
+    "the_rickety_dock",
+    "astalagans_statue",
+    "cliffside_temple_of_bahamut"
+  ],
+  "014": [
+    "sunken_wrecks_general_area",
+    "the_wreck_of_the_compass_rose"
+  ],
+  "015": [
+    "the_shoreline_bluffs"
+  ],
+  "018": [
+    "dragon_s_rest",
+    "cliffside_temple_of_bahamut"
+  ],
+  "019": [
+    "dragon_s_rest"
+  ],
+  "01a": [
+    "dragon_s_rest",
+    "monastic_cells",
+    "dining_room",
+    "cliffside_temple_of_bahamut"
+  ],
+  "01b": [
+    "monastic_cells"
+  ],
+  "01c": [
+    "dragon_s_rest"
+  ],
+  "01d": [
+    "dragon_s_rest"
+  ],
+  "01e": [
+    "dragon_s_rest"
+  ],
+  "01f": [
+    "cliffside_garden_plots",
+    "taraks_cell"
+  ],
+  "020": [
+    "dragon_s_rest"
+  ],
+  "021": [
+    "dragon_s_rest",
+    "monastic_cells",
+    "the_winch_house",
+    "kitchen",
+    "the_cliff_face_library",
+    "cliffside_temple_of_bahamut"
+  ],
+  "023": [
+    "cliffside_garden_plots",
+    "astalagans_statue"
+  ],
+  "024": [
+    "astalagans_statue"
+  ],
+  "025": [
+    "monastic_cells",
+    "vacant_cell",
+    "taraks_cell",
+    "varnoths_cell",
+    "mylas_cluttered_cell",
+    "kobold_barracks_fifth",
+    "kobold_barracks_sixth"
+  ],
+  "026": [
+    "the_winch_house"
+  ],
+  "027": [
+    "the_winch_house"
+  ],
+  "028": [
+    "kitchen"
+  ],
+  "029": [
+    "dining_room",
+    "kitchen"
+  ],
+  "02a": [
+    "the_cliff_face_library"
+  ],
+  "02b": [
+    "the_cliff_face_library"
+  ],
+  "02c": [
+    "cliffside_temple_of_bahamut"
+  ],
+  "02d": [
+    "cliffside_temple_of_bahamut"
+  ],
+  "02e": [
+    "cliffside_temple_of_bahamut"
+  ],
+  "02f": [
+    "dragon_s_rest"
+  ],
+  "030": [
+    "stormwreck_isle"
+  ],
+  "031": [
+    "dragon_s_rest"
+  ],
+  "033": [
+    "seagrow_caves_entrance",
+    "the_luminescent_cove",
+    "the_subterranean_complex",
+    "gaping_maw_cave",
+    "chromatic_cove",
+    "glowing_fungus_tunnel",
+    "the_fungal_cavern",
+    "fungus_pool",
+    "the_fungal_ring_cavern",
+    "the_fungal_grotto",
+    "myconid_caves"
+  ],
+  "034": [
+    "dragon_s_rest",
+    "the_wreck_of_the_compass_rose"
+  ],
+  "035": [
+    "dragon_s_rest"
+  ],
+  "036": [
+    "the_wreck_of_the_compass_rose"
+  ],
+  "037": [
+    "dragon_s_rest"
+  ],
+  "038": [
+    "dragon_s_rest",
+    "cliffside_temple_of_bahamut",
+    "taraks_cell",
+    "varnoths_cell"
+  ],
+  "039": [
+    "dragon_s_rest",
+    "taraks_cell"
+  ],
+  "03a": [
+    "clifftop_observatory_tower"
+  ],
+  "03b": [
+    "dragon_s_rest",
+    "clifftop_observatory_tower"
+  ],
+  "03c": [
+    "stormwreck_isle"
+  ],
+  "03d": [
+    "dragon_s_rest",
+    "cliffside_temple_of_bahamut"
+  ],
+  "03e": [
+    "stormwreck_isle",
+    "dragon_s_rest"
+  ],
+  "03f": [
+    "stormwreck_isle",
+    "the_islands_interior",
+    "owlbears_territory",
+    "the_northern_shoals",
+    "the_subterranean_complex",
+    "gaping_maw_cave",
+    "chromatic_cove",
+    "glowing_fungus_tunnel",
+    "the_fungal_cavern",
+    "stone_staircase",
+    "fungus_pool",
+    "northern_upper_cave",
+    "the_rot_filled_cave",
+    "the_fungal_ring_cavern",
+    "the_fungal_grotto",
+    "the_brimstone_cavern",
+    "crystal_vent",
+    "myconid_caves",
+    "spur_of_rocks_and_dragon_bones",
+    "the_basalt_columns_ruins",
+    "the_farthest_column",
+    "western_dragon_statue_pair",
+    "southwestern_dragon_statue_pair",
+    "ritual_preparation_site"
+  ],
+  "041": [
+    "the_luminescent_cove"
+  ],
+  "044": [
+    "owlbears_territory"
+  ],
+  "045": [
+    "owlbears_territory"
+  ],
+  "046": [
+    "stormwreck_isle",
+    "dragon_s_rest"
+  ],
+  "047": [
+    "kobold_barracks_fifth",
+    "kobold_barracks_sixth"
+  ],
+  "04a": [
+    "stormwreck_isle",
+    "sharruths_tomb",
+    "seagrow_caves_entrance"
+  ],
+  "04b": [
+    "seagrow_caves_entrance"
+  ],
+  "04c": [
+    "seagrow_caves_entrance",
+    "myconid_caves",
+    "sharruths_tomb"
+  ],
+  "04d": [
+    "seagrow_caves_entrance",
+    "the_subterranean_complex",
+    "gaping_maw_cave",
+    "chromatic_cove",
+    "glowing_fungus_tunnel",
+    "the_fungal_cavern",
+    "fungus_pool",
+    "northern_upper_cave",
+    "the_rot_filled_cave",
+    "the_fungal_ring_cavern",
+    "the_fungal_grotto",
+    "the_brimstone_cavern",
+    "crystal_vent",
+    "myconid_caves"
+  ],
+  "04e": [
+    "seagrow_caves_entrance"
+  ],
+  "04f": [
+    "seagrow_caves_entrance"
+  ],
+  "050": [
+    "sea_worn_cliffs",
+    "gaping_maw_cave"
+  ],
+  "052": [
+    "sea_worn_cliffs",
+    "columnar_stairways"
+  ],
+  "053": [
+    "seagrow_caves_entrance"
+  ],
+  "054": [
+    "seagrow_caves_entrance",
+    "myconid_caves"
+  ],
+  "055": [
+    "myconid_caves"
+  ],
+  "056": [
+    "myconid_caves"
+  ],
+  "057": [
+    "seagrow_caves_entrance"
+  ],
+  "058": [
+    "seagrow_caves_entrance"
+  ],
+  "059": [
+    "glowing_fungus_tunnel"
+  ],
+  "05b": [
+    "the_fungal_cavern"
+  ],
+  "05c": [
+    "the_fungal_cavern",
+    "fungus_pool"
+  ],
+  "05d": [
+    "the_fungal_cavern",
+    "the_fungal_grotto",
+    "the_fungal_ring_cavern"
+  ],
+  "05e": [
+    "the_fungal_cavern",
+    "the_fungal_grotto",
+    "the_fungal_ring_cavern"
+  ],
+  "05f": [
+    "myconid_caves"
+  ],
+  "060": [
+    "the_fungal_cavern",
+    "the_fungal_grotto",
+    "the_fungal_ring_cavern",
+    "the_rot_filled_cave"
+  ],
+  "061": [
+    "the_fungal_cavern"
+  ],
+  "062": [
+    "the_fungal_cavern",
+    "the_fungal_grotto",
+    "the_fungal_ring_cavern"
+  ],
+  "063": [
+    "seagrow_caves_entrance"
+  ],
+  "064": [
+    "the_rot_filled_cave"
+  ],
+  "066": [
+    "myconid_caves"
+  ],
+  "067": [
+    "the_fungal_cavern",
+    "the_fungal_grotto",
+    "the_fungal_ring_cavern"
+  ],
+  "068": [
+    "myconid_caves"
+  ],
+  "069": [
+    "the_fungal_cavern",
+    "myconid_caves"
+  ],
+  "06a": [
+    "taraks_cell"
+  ],
+  "06b": [
+    "crystal_vent"
+  ],
+  "06c": [
+    "the_brimstone_cavern"
+  ],
+  "06d": [
+    "crystal_vent"
+  ],
+  "06e": [
+    "crystal_vent"
+  ],
+  "06f": [
+    "crystal_vent"
+  ],
+  "070": [
+    "seagrow_caves_entrance",
+    "dragon_s_rest"
+  ],
+  "072": [
+    "the_wreck_of_the_compass_rose",
+    "main_deck",
+    "forecastle",
+    "quarterdeck",
+    "captains_quarters",
+    "galley",
+    "crew_quarters",
+    "mess_hall",
+    "lower_deck",
+    "ships_hold",
+    "tattered_rigging",
+    "gaping_hull_breach"
+  ],
+  "073": [
+    "stormwreck_isle",
+    "the_wreck_of_the_compass_rose",
+    "ships_hold",
+    "the_northern_shoals"
+  ],
+  "074": [
+    "sunken_wrecks_general_area",
+    "the_wreck_of_the_compass_rose"
+  ],
+  "075": [
+    "the_wreck_of_the_compass_rose",
+    "spur_of_rocks_and_dragon_bones"
+  ],
+  "076": [
+    "dragon_s_rest",
+    "the_wreck_of_the_compass_rose",
+    "main_deck"
+  ],
+  "077": [
+    "spur_of_rocks_and_dragon_bones",
+    "main_deck",
+    "tattered_rigging",
+    "gaping_hull_breach"
+  ],
+  "078": [
+    "the_wreck_of_the_compass_rose",
+    "main_deck",
+    "forecastle",
+    "quarterdeck",
+    "captains_quarters",
+    "galley",
+    "crew_quarters",
+    "mess_hall",
+    "lower_deck",
+    "ships_hold"
+  ],
+  "07a": [
+    "main_deck"
+  ],
+  "07b": [
+    "main_deck"
+  ],
+  "07c": [
+    "main_deck"
+  ],
+  "07d": [
+    "main_deck"
+  ],
+  "07e": [
+    "forecastle"
+  ],
+  "07f": [
+    "forecastle"
+  ],
+  "080": [
+    "quarterdeck"
+  ],
+  "081": [
+    "quarterdeck"
+  ],
+  "082": [
+    "captains_quarters"
+  ],
+  "083": [
+    "captains_quarters"
+  ],
+  "084": [
+    "captains_quarters",
+    "lower_deck",
+    "ships_hold"
+  ],
+  "085": [
+    "captains_quarters"
+  ],
+  "086": [
+    "captains_quarters"
+  ],
+  "087": [
+    "galley"
+  ],
+  "088": [
+    "galley"
+  ],
+  "089": [
+    "crew_quarters"
+  ],
+  "08a": [
+    "crew_quarters"
+  ],
+  "08b": [
+    "crew_quarters"
+  ],
+  "08c": [
+    "crew_quarters"
+  ],
+  "08d": [
+    "mess_hall"
+  ],
+  "08e": [
+    "mess_hall"
+  ],
+  "08f": [
+    "lower_deck"
+  ],
+  "090": [
+    "lower_deck"
+  ],
+  "091": [
+    "lower_deck",
+    "captains_quarters",
+    "ships_hold"
+  ],
+  "092": [
+    "lower_deck"
+  ],
+  "093": [
+    "lower_deck"
+  ],
+  "094": [
+    "ships_hold"
+  ],
+  "095": [
+    "the_wreck_of_the_compass_rose",
+    "gaping_hull_breach"
+  ],
+  "096": [
+    "ships_hold"
+  ],
+  "097": [
+    "the_wreck_of_the_compass_rose",
+    "dragon_s_rest"
+  ],
+  "099": [
+    "main_deck",
+    "lower_deck"
+  ],
+  "09a": [
+    "main_deck",
+    "lower_deck",
+    "ships_hold"
+  ],
+  "09b": [
+    "main_deck",
+    "forecastle"
+  ],
+  "09c": [
+    "the_wreck_of_the_compass_rose"
+  ],
+  "09e": [
+    "the_wreck_of_the_compass_rose",
+    "dragon_s_rest",
+    "sea_worn_cliffs"
+  ],
+  "09f": [
+    "stormwreck_isle"
+  ],
+  "0a0": [
+    "dragon_s_rest",
+    "seagrow_caves_entrance",
+    "clifftop_observatory_tower"
+  ],
+  "0a1": [
+    "clifftop_observatory_tower"
+  ],
+  "0a2": [
+    "clifftop_observatory_tower"
+  ],
+  "0a3": [
+    "clifftop_observatory_tower"
+  ],
+  "0a4": [
+    "clifftop_observatory_tower",
+    "dragon_s_rest"
+  ],
+  "0a5": [
+    "clifftop_observatory_tower",
+    "sparkrenders_spire"
+  ],
+  "0a6": [
+    "stormwreck_isle"
+  ],
+  "0a7": [
+    "sea_worn_cliffs",
+    "the_basalt_columns_ruins",
+    "the_farthest_column",
+    "western_dragon_statue_pair",
+    "southwestern_dragon_statue_pair",
+    "clifftop_observatory_tower"
+  ],
+  "0a8": [
+    "the_basalt_columns_ruins",
+    "the_farthest_column"
+  ],
+  "0a9": [
+    "clifftop_observatory_tower"
+  ],
+  "0aa": [
+    "clifftop_observatory_tower"
+  ],
+  "0ab": [
+    "clifftop_observatory_tower"
+  ],
+  "0ac": [
+    "western_dragon_statue_pair"
+  ],
+  "0ad": [
+    "clifftop_observatory_tower"
+  ],
+  "0ae": [
+    "the_basalt_columns_ruins"
+  ],
+  "0af": [
+    "the_fallen_netherese_empire_ruins"
+  ],
+  "0b0": [
+    "ritual_preparation_site"
+  ],
+  "0b1": [
+    "western_dragon_statue_pair",
+    "southwestern_dragon_statue_pair"
+  ],
+  "0b2": [
+    "clifftop_observatory_tower"
+  ],
+  "0b3": [
+    "clifftop_observatory_tower"
+  ],
+  "0b4": [
+    "clifftop_observatory_tower"
+  ],
+  "0b5": [
+    "clifftop_observatory_tower"
+  ],
+  "0b6": [
+    "clifftop_observatory_tower"
+  ],
+  "0b8": [
+    "clifftop_observatory_tower"
+  ],
+  "0b9": [
+    "clifftop_observatory_tower"
+  ],
+  "0ba": [
+    "clifftop_observatory_tower"
+  ],
+  "0bb": [
+    "clifftop_observatory_tower"
+  ],
+  "0bc": [
+    "sparkrenders_spire"
+  ],
+  "0bd": [
+    "clifftop_observatory_tower"
+  ],
+  "0be": [
+    "sparkrenders_spire"
+  ],
+  "0bf": [
+    "clifftop_observatory_tower"
+  ],
+  "0c0": [
+    "the_cliff_face_library"
+  ],
+  "0c1": [
+    "the_cliff_face_library"
+  ],
+  "0c2": [
+    "clifftop_observatory_tower"
+  ],
+  "0c3": [
+    "sparkrenders_spire"
+  ],
+  "0c6": [
+    "sparkrenders_spire"
+  ],
+  "0c8": [
+    "sparkrenders_spire"
+  ],
+  "0c9": [
+    "dragon_s_rest"
+  ]
+}

@@ -208,3 +208,110 @@ class SpatialTopologyProcessor:
         except Exception as e:
             logger.error(f"LLM call failed: {e}")
             return ""
+
+
+class SectionLocationMapper:
+    """
+    专门负责将 Shadow Tree 的章节映射到已知的 Location Graph 节点上
+    """
+    def __init__(self, api_key: str, base_url: str = None, model: str = "deepseek-chat", max_concurrent: int = 100):
+        self.async_client = AsyncOpenAI(api_key=api_key, base_url=base_url)
+        self.model = model
+        self.semaphore = asyncio.Semaphore(max_concurrent)
+
+    def process(self, shadow_tree: List[Dict], location_graph: Dict) -> Dict[str, str]:
+        """
+        同步入口
+        :return: { "section_id": "location_id" }
+        """
+        return asyncio.run(self._process_async(shadow_tree, location_graph))
+
+    async def _process_async(self, shadow_tree: List[Dict], location_graph: Dict) -> Dict[str, str]:
+        location_ids = [n["id"] for n in location_graph.get("nodes", [])]
+        if not location_ids:
+            logger.warning("No locations found in graph, skipping mapping.")
+            return {}
+
+        # 1. 收集需要映射的 Section
+        sections = self._collect_sections_info(shadow_tree)
+        logger.info(f"Mapping {len(sections)} sections to {len(location_ids)} locations...")
+
+        # 2. 并发执行映射
+        tasks = [self._map_section_to_locations(s, location_ids) for s in sections]
+        results = await asyncio.gather(*tasks)
+
+        # 3. 整理结果
+        mapping = {}
+        for sec_id, loc_ids in results:
+            valid_ids = [lid for lid in loc_ids if lid in location_ids]
+            if valid_ids:
+                mapping[sec_id] = valid_ids
+        
+        logger.info(f"Successfully mapped {len(mapping)} sections.")
+        return mapping
+
+    async def _map_section_to_locations(self, section_ctx: Dict, location_ids: List[str]) -> tuple:
+        child_titles_str = ", ".join(section_ctx.get('child_titles', [])) or "None"
+
+        context = (
+            f"ID: {section_ctx['id']}\n"
+            f"Parent Title: {section_ctx['parent_title']}\n"
+            f"Title: {section_ctx['title']}\n"
+            f"Content: {section_ctx['content']}\n"
+            f"Child Titles: {child_titles_str}"
+        )
+        
+        loc_list_str = ", ".join(location_ids)
+        prompt = PromptFactory.create_section_mapping_prompt(context, loc_list_str)
+
+        try:
+            async with self.semaphore:
+                response = await self.async_client.chat.completions.create(
+                    model=self.model,
+                    messages=[{"role": "user", "content": prompt}],
+                    response_format={"type": "json_object"},
+                    temperature=0.1
+                )
+                data = json.loads(response.choices[0].message.content)
+                
+                # 兼容性处理
+                raw_result = data.get("location_ids") or data.get("location_id")
+                
+                if isinstance(raw_result, list):
+                    loc_ids = raw_result
+                elif isinstance(raw_result, str):
+                    loc_ids = [raw_result]
+                else:
+                    loc_ids = []
+                    
+                return section_ctx["id"], loc_ids
+        except Exception as e:
+            logger.error(f"Mapping failed for section {section_ctx['id']}: {e}")
+            return section_ctx["id"], None
+
+    def _collect_sections_info(self, nodes: List[Dict], parent_title: str = "") -> List[Dict]:
+        """
+        递归收集所有包含内容或链接的 Section，并附带父级标题信息
+        """
+        collected = []
+        for node in nodes:
+            current_title = node.get("title", "Untitled")
+
+            children = node.get("children", [])
+            child_titles = [child.get("title", "Untitled") for child in children]
+            
+            context_obj = {
+                "id": node["id"],
+                "title": current_title,
+                "parent_title": parent_title,
+                "content": node.get("content", ""),
+                "child_titles": child_titles
+            }
+            
+            # 只有有内容的节点才值得映射
+            if context_obj["content"]:
+                collected.append(context_obj)
+            
+            if "children" in node:
+                collected.extend(self._collect_sections_info(node["children"], current_title))
+        return collected

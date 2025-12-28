@@ -143,7 +143,7 @@ def generate_visualizations():
     ent_path = viz.visualize_from_json(
         str(config.ENTITY_GRAPH_FILE),
         output_html=str(config.VISUALIZATION_DIR / "entity_graph.html"),
-        node_filter=['creature', 'location'],
+        node_filter=['Creature', 'Location'],
         max_nodes=150,
         title="Entity Graph - Creatures & Locations"
     )

@@ -1,0 +1,557 @@
+(qwen3) ➜  LoreWeaver git:(feat/qwen3) ✗ python -m src.main --stage all --multi-pass --max-concurrent 50
+[INFO] === Multi-Pass Extraction Mode Enabled ===
+[INFO] This mode is optimized for smaller models like qwen3-8b
+[INFO] Max concurrent requests: 50
+[WARNING] High concurrency may overload local vLLM servers!
+[INFO] ============================================================
+[INFO] Running stage: SHADOW
+[INFO] ============================================================
+[INFO] Found cached shadow tree: /inspire/hdd/project/robot-reasoning/xiangyushun-p-xiangyushun/zichen/qwen3_8b/LoreWeaver/output/shadow_tree.json
+[INFO] ============================================================
+[INFO] Running stage: SPATIAL
+[INFO] ============================================================
+[INFO] Using shadow tree with spatial summaries
+[INFO] Found intermediate file, skipping summarization...
+[INFO] Using multi-pass extraction mode (optimized for smaller models)
+[INFO] === Multi-Pass Extraction Starting ===
+[INFO] Pass 1: Extracting top-level hierarchy (World, Region, Island)...
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] Pass 2: Extracting sub-locations for each region...
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[ERROR] Sub-location extraction for The Sword Coast failed: Expecting value: line 859 column 48 (char 79713)
+[INFO]   Sub-location extraction: 586 nodes, 797 edges
+[INFO] Pass 3: Extracting additional relationships...
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[ERROR] Relationship extraction failed: Unterminated string starting at: line 449 column 21 (char 65391)
+[INFO] Pass 4: Verifying and refining...
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO]   Verification issues found:
+[INFO]     - Some locations have duplicate or conflicting IDs (e.g., 'the_farthest_column' and 'the_farthest_column' are the same node).
+[INFO]     - Missing 'part_of' relationships for some locations (e.g., 'The Crystalline Scar' is not properly linked to 'Stormwreck Isle').
+[INFO]     - Some locations are missing 'connected_to' relationships (e.g., 'The Crystalline Scar' should be connected to 'Sparkrender's Spire').
+[INFO]     - Some locations have inconsistent naming (e.g., 'the_farthest_column' vs. 'the_farthest_column').
+[INFO] === Multi-Pass Complete: 586 nodes, 805 edges ===
+[INFO] Saving location graph to /inspire/hdd/project/robot-reasoning/xiangyushun-p-xiangyushun/zichen/qwen3_8b/LoreWeaver/output/location_graph.json...
+[INFO] Done! Location graph: 586 nodes, 805 edges
+[INFO] ============================================================
+[INFO] Running stage: SECTION-MAP
+[INFO] ============================================================
+[INFO] Using shadow tree with spatial summaries
+[INFO] Location graph: 586 nodes, 805 edges
+[INFO] Mapping 234 sections to 586 locations...
+[ERROR] Task exception was never retrieved
+future: <Task finished name='Task-260' coro=<AsyncClient.aclose() done, defined at /opt/conda/envs/qwen3/lib/python3.10/site-packages/httpx/_client.py:1978> exception=RuntimeError('Event loop is closed')>
+Traceback (most recent call last):
+  File "/opt/conda/envs/qwen3/lib/python3.10/site-packages/httpx/_client.py", line 1985, in aclose
+    await self._transport.aclose()
+  File "/opt/conda/envs/qwen3/lib/python3.10/site-packages/httpx/_transports/default.py", line 406, in aclose
+    await self._pool.aclose()
+  File "/opt/conda/envs/qwen3/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 353, in aclose
+    await self._close_connections(closing_connections)
+  File "/opt/conda/envs/qwen3/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 345, in _close_connections
+    await connection.aclose()
+  File "/opt/conda/envs/qwen3/lib/python3.10/site-packages/httpcore/_async/connection.py", line 173, in aclose
+    await self._connection.aclose()
+  File "/opt/conda/envs/qwen3/lib/python3.10/site-packages/httpcore/_async/http11.py", line 258, in aclose
+    await self._network_stream.aclose()
+  File "/opt/conda/envs/qwen3/lib/python3.10/site-packages/httpcore/_backends/anyio.py", line 53, in aclose
+    await self._stream.aclose()
+  File "/opt/conda/envs/qwen3/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 1352, in aclose
+    self._transport.close()
+  File "/opt/conda/envs/qwen3/lib/python3.10/asyncio/selector_events.py", line 700, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "/opt/conda/envs/qwen3/lib/python3.10/asyncio/base_events.py", line 745, in call_soon
+    self._check_closed()
+  File "/opt/conda/envs/qwen3/lib/python3.10/asyncio/base_events.py", line 510, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[ERROR] JSON parse error for section 04d: Unterminated string starting at: line 4 column 6131 (char 6134)
+[ERROR] Raw response (first 500 chars): {
+
+
+"location_ids": ["seagrow_caves", "seagrow_caves_entrance", "glowing_fungus_tunnel", "fungal_cavern", "columnar_stairways", "sea_worn_cliffs", "gaping_maw_cave", "fungal_ring_cavern", "fungal_grotto", "brimstone_cavern", "crystal_vent", "myconid_caves", "chromatic_cove", "clifftop_cemetery", "northern_shoals", "spur_of_rocks_and_dragon_bones", "wreck_of_compass_rose", "tattered_rigging", "gaping_hull_breach", "main_deck", "forecastle", "quarterdeck", "captains_quarters", "galley", "crew_quar...
+[WARNING] Skipping section 04d due to mapping error
+[INFO] Successfully mapped 163 sections.
+[INFO] Saving section-location map to /inspire/hdd/project/robot-reasoning/xiangyushun-p-xiangyushun/zichen/qwen3_8b/LoreWeaver/output/section_location_map.json...
+[INFO] Done! Mapped 163 sections
+[INFO] ============================================================
+[INFO] Running stage: ENTITY
+[INFO] ============================================================
+[INFO] Using shadow tree with spatial summaries
+[INFO] Section map: 163 sections
+[INFO] Starting Entity Extraction for 240 sections...
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[ERROR] JSON parse error for section 056: Unterminated string starting at: line 51 column 115 (char 6956)
+[ERROR] Raw response (first 300 chars): {
+
+
+    "nodes": [
+        { "id": "party:characters", "label": "The Characters / Party", "type": "Party" },
+        { "id": "location:myconid_caves", "label": "myconid_caves", "type": "Location" },
+        { "id": "location:fungal_cavern", "label": "fungal_cavern", "type": "Location" },
+        { "...
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[ERROR] JSON parse error for section 07f: Expecting value: line 43 column 142 (char 7064)
+[ERROR] Raw response (first 300 chars): {
+
+
+    "nodes": [
+        { "id": "party:characters", "label": "The Characters / Party", "type": "Party" },
+        { "id": "location:clifftop_observatory", "label": "Clifftop Observatory", "type": "Location" },
+        { "id": "location:the_northern_rocks", "label": "The Northern Rocks", "type": "...
+[INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[ERROR] JSON parse error for section 08f: Expecting value: line 56 column 53 (char 7392)
+[ERROR] Raw response (first 300 chars): {
+
+
+    "nodes": [
+        { "id": "party:characters", "label": "The Characters / Party", "type": "Party" },
+        { "id": "creature:zombie", "label": "Zombie", "type": "Creature" },
+        { "id": "creature:ghoul", "label": "Ghoul", "type": "Creature" }
+    ],
+    "edges": [
+        { "source": ...
+[INFO] Saving entity graph to /inspire/hdd/project/robot-reasoning/xiangyushun-p-xiangyushun/zichen/qwen3_8b/LoreWeaver/output/entity_graph.json...
+[INFO] Done! Entity graph: 123 nodes, 576 edges
+[INFO] Entity type distribution:
+[INFO]   Location: 70
+[INFO]   Item: 24
+[INFO]   Creature: 22
+[INFO]   Spell: 6
+[INFO]   Party: 1

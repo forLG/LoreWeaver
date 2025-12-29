@@ -7,11 +7,12 @@ from llm.prompt_factory import PromptFactory
 from utils.logger import logger
 
 class SpatialTopologyProcessor:
-    def __init__(self, api_key: str, base_url: str = None, model: str = "deepseek-chat", max_concurrent: int = 100):
+    def __init__(self, api_key: str, base_url: str = None, model: str = "deepseek-chat", max_concurrent: int = 100, use_multi_pass: bool = False):
         self.client = OpenAI(api_key=api_key, base_url=base_url) # 保留同步客户端备用
         self.async_client = AsyncOpenAI(api_key=api_key, base_url=base_url)
         self.model = model
         self.semaphore = asyncio.Semaphore(max_concurrent) # 限制并发数
+        self.use_multi_pass = use_multi_pass  # Enable multi-pass extraction for smaller models
 
     def process(self, shadow_tree: List[Dict], skip_summary: bool = False) -> Dict:
         """
@@ -20,8 +21,14 @@ class SpatialTopologyProcessor:
         return asyncio.run(self._process_async(shadow_tree, skip_summary))
 
     async def _process_async(self, shadow_tree: List[Dict], skip_summary: bool) -> Dict:
+        # Route to multi-pass mode if enabled (for smaller models)
+        if self.use_multi_pass:
+            logger.info("Using multi-pass extraction mode (optimized for smaller models)")
+            return await self._process_multi_pass_async(shadow_tree, skip_summary)
+
+        # Standard single-pass mode (for larger models)
         full_graph = {"nodes": [], "edges": []}
-        
+
         # 1. 并行递归生成文本总结
         # 对顶层节点（通常是章节）也进行并行处理
         if not skip_summary:
@@ -209,6 +216,239 @@ class SpatialTopologyProcessor:
             logger.error(f"LLM call failed: {e}")
             return ""
 
+    # ========================================================================
+    # Multi-Pass Extraction Methods (for smaller models like qwen3-8b)
+    # ========================================================================
+
+    async def _process_multi_pass_async(self, shadow_tree: List[Dict], skip_summary: bool) -> Dict:
+        """
+        Multi-pass extraction mode for smaller models.
+        Breaks down the extraction into 4 passes to reduce cognitive load per pass.
+        """
+        # 1. Generate spatial summaries (same as standard mode)
+        if not skip_summary:
+            tasks = [self._recursive_summarize_async(root) for root in shadow_tree]
+            await asyncio.gather(*tasks)
+
+        # 2. Collect all chapter summaries
+        chapter_summaries = []
+        for root in shadow_tree:
+            if root.get("spatial_summary") and root["spatial_summary"] != "NO_SPATIAL_INFO":
+                chapter_summaries.append(root["spatial_summary"])
+
+        if not chapter_summaries:
+            return {"nodes": [], "edges": []}
+
+        # Combine all summaries for processing
+        combined_summary = "\n\n".join(chapter_summaries)
+
+        logger.info("=== Multi-Pass Extraction Starting ===")
+
+        # Pass 1: Extract top-level hierarchy
+        logger.info("Pass 1: Extracting top-level hierarchy (World, Region, Island)...")
+        top_level_graph = await self._extract_top_level_async(combined_summary)
+
+        # Pass 2: Extract sub-locations for each top-level region
+        logger.info("Pass 2: Extracting sub-locations for each region...")
+        detailed_graph = await self._extract_sub_locations_async(
+            top_level_graph,
+            combined_summary
+        )
+
+        # Pass 3: Extract additional relationships
+        logger.info("Pass 3: Extracting additional relationships...")
+        final_graph = await self._extract_relationships_async(
+            detailed_graph,
+            combined_summary
+        )
+
+        # Pass 4: Verification and refinement
+        logger.info("Pass 4: Verifying and refining...")
+        final_graph = await self._verify_and_refine_async(
+            final_graph,
+            combined_summary
+        )
+
+        logger.info(f"=== Multi-Pass Complete: {len(final_graph['nodes'])} nodes, {len(final_graph['edges'])} edges ===")
+
+        return final_graph
+
+    async def _extract_top_level_async(self, combined_summary: str) -> Dict:
+        """Pass 1: Extract only top-level locations (World, Region, Island, City)"""
+        prompt = PromptFactory.create_top_level_extraction_prompt(combined_summary)
+
+        try:
+            async with self.semaphore:
+                response = await self.async_client.chat.completions.create(
+                    model=self.model,
+                    messages=[{"role": "user", "content": prompt}],
+                    response_format={"type": "json_object"},
+                    temperature=0.1,
+                    max_tokens=8192  # Pass 1: Top-level extraction can be large
+                )
+            return json.loads(response.choices[0].message.content)
+        except Exception as e:
+            logger.error(f"Top-level extraction failed: {e}")
+            return {"nodes": [], "edges": []}
+
+    async def _extract_sub_locations_async(self, top_level_graph: Dict, combined_summary: str) -> Dict:
+        """Pass 2: Extract sub-locations for each top-level region"""
+        # Find regions/islands that need sub-location extraction
+        parent_candidates = [
+            node for node in top_level_graph.get("nodes", [])
+            if node.get("type") in ["Island", "Region", "City", "Building", "Cave System"]
+        ]
+
+        if not parent_candidates:
+            logger.info("No parent candidates found for sub-location extraction")
+            return top_level_graph
+
+        # Prepare existing nodes text for context
+        existing_nodes_text = "\n".join([
+            f"- [{n['id']}] {n.get('label', 'Unknown')} ({n.get('type', 'Location')})"
+            for n in top_level_graph.get("nodes", [])
+        ])
+
+        # Extract sub-locations for each parent (parallel)
+        sub_location_tasks = [
+            self._extract_sub_locations_for_parent_async(
+                parent["id"],
+                parent["label"],
+                combined_summary,
+                existing_nodes_text
+            )
+            for parent in parent_candidates
+        ]
+
+        sub_graphs = await asyncio.gather(*sub_location_tasks)
+
+        # Merge all sub-graphs
+        result_graph = {
+            "nodes": top_level_graph.get("nodes", []).copy(),
+            "edges": top_level_graph.get("edges", []).copy()
+        }
+
+        for sub_graph in sub_graphs:
+            result_graph["nodes"].extend(sub_graph.get("nodes", []))
+            result_graph["edges"].extend(sub_graph.get("edges", []))
+
+        logger.info(f"  Sub-location extraction: {len(result_graph['nodes'])} nodes, {len(result_graph['edges'])} edges")
+
+        return result_graph
+
+    async def _extract_sub_locations_for_parent_async(
+        self, parent_id: str, parent_label: str, combined_summary: str, existing_nodes: str
+    ) -> Dict:
+        """Extract sub-locations for a single parent location"""
+        prompt = PromptFactory.create_sub_location_extraction_prompt(
+            parent_id, parent_label, combined_summary, existing_nodes
+        )
+
+        try:
+            async with self.semaphore:
+                response = await self.async_client.chat.completions.create(
+                    model=self.model,
+                    messages=[{"role": "user", "content": prompt}],
+                    response_format={"type": "json_object"},
+                    temperature=0.1,
+                    max_tokens=8192  # Pass 2: Sub-location extraction can be large
+                )
+            return json.loads(response.choices[0].message.content)
+        except Exception as e:
+            logger.error(f"Sub-location extraction for {parent_label} failed: {e}")
+            return {"nodes": [], "edges": []}
+
+    async def _extract_relationships_async(self, graph: Dict, combined_summary: str) -> Dict:
+        """Pass 3: Extract additional relationships between locations"""
+        # Prepare nodes text
+        nodes_text = "\n".join([
+            f"- [{n['id']}] {n.get('label', 'Unknown')} ({n.get('type', 'Location')})"
+            for n in graph.get("nodes", [])
+        ])
+
+        prompt = PromptFactory.create_relationship_extraction_prompt(nodes_text, combined_summary)
+
+        try:
+            async with self.semaphore:
+                response = await self.async_client.chat.completions.create(
+                    model=self.model,
+                    messages=[{"role": "user", "content": prompt}],
+                    response_format={"type": "json_object"},
+                    temperature=0.1,
+                    max_tokens=8192  # Pass 3: Relationship extraction can be large
+                )
+            result = json.loads(response.choices[0].message.content)
+
+            # Merge new edges
+            existing_edges = graph.get("edges", [])
+            new_edges = result.get("edges", [])
+
+            # Deduplicate edges
+            seen_edges = {f"{e['source']}|{e.get('relation')}|{e['target']}" for e in existing_edges}
+            for edge in new_edges:
+                edge_key = f"{edge['source']}|{edge.get('relation')}|{edge['target']}"
+                if edge_key not in seen_edges:
+                    existing_edges.append(edge)
+                    seen_edges.add(edge_key)
+
+            graph["edges"] = existing_edges
+            logger.info(f"  Relationship extraction: added {len(new_edges)} edges")
+
+            return graph
+        except Exception as e:
+            logger.error(f"Relationship extraction failed: {e}")
+            return graph
+
+    async def _verify_and_refine_async(self, graph: Dict, combined_summary: str) -> Dict:
+        """Pass 4: Verification and refinement"""
+        # Prepare graph text
+        nodes_text = "\n".join([
+            f"- [{n['id']}] {n.get('label', 'Unknown')} ({n.get('type', 'Location')})"
+            for n in graph.get("nodes", [])
+        ])
+        edges_text = "\n".join([
+            f"- {e.get('source')} -> {e.get('target')} ({e.get('relation')})"
+            for e in graph.get("edges", [])
+        ])
+        graph_text = f"NODES:\n{nodes_text}\n\nEDGES:\n{edges_text}"
+
+        prompt = PromptFactory.create_multi_pass_verification_prompt(graph_text, combined_summary)
+
+        try:
+            async with self.semaphore:
+                response = await self.async_client.chat.completions.create(
+                    model=self.model,
+                    messages=[{"role": "user", "content": prompt}],
+                    response_format={"type": "json_object"},
+                    temperature=0.1,
+                    max_tokens=8192  # Pass 4: Verification can be large
+                )
+            result = json.loads(response.choices[0].message.content)
+
+            if result.get("revised_edges"):
+                # Merge revised edges
+                for edge in result.get("revised_edges", []):
+                    edge_key = f"{edge['source']}|{edge.get('relation')}|{edge['target']}"
+                    # Check if edge exists
+                    exists = any(
+                        e.get("source") == edge["source"] and
+                        e.get("target") == edge["target"] and
+                        e.get("relation") == edge.get("relation")
+                        for e in graph["edges"]
+                    )
+                    if not exists:
+                        graph["edges"].append(edge)
+
+            if result.get("issues"):
+                logger.info("  Verification issues found:")
+                for issue in result.get("issues", []):
+                    logger.info(f"    - {issue}")
+
+            return graph
+        except Exception as e:
+            logger.error(f"Verification failed: {e}")
+            return graph
+
 
 class SectionLocationMapper:
     """
@@ -243,24 +483,33 @@ class SectionLocationMapper:
         # 3. 整理结果
         mapping = {}
         for sec_id, loc_ids in results:
+            # Handle None from failed JSON parsing
+            if loc_ids is None:
+                logger.warning(f"Skipping section {sec_id} due to mapping error")
+                continue
             valid_ids = [lid for lid in loc_ids if lid in location_ids]
             if valid_ids:
                 mapping[sec_id] = valid_ids
-        
+
         logger.info(f"Successfully mapped {len(mapping)} sections.")
         return mapping
 
     async def _map_section_to_locations(self, section_ctx: Dict, location_ids: List[str]) -> tuple:
         child_titles_str = ", ".join(section_ctx.get('child_titles', [])) or "None"
 
+        # Truncate content to avoid overwhelming the model
+        content = section_ctx.get('content', '')
+        if len(content) > 3000:  # Limit content length for smaller models
+            content = content[:3000] + "... [truncated]"
+
         context = (
             f"ID: {section_ctx['id']}\n"
             f"Parent Title: {section_ctx['parent_title']}\n"
             f"Title: {section_ctx['title']}\n"
-            f"Content: {section_ctx['content']}\n"
+            f"Content: {content}\n"
             f"Child Titles: {child_titles_str}"
         )
-        
+
         loc_list_str = ", ".join(location_ids)
         prompt = PromptFactory.create_section_mapping_prompt(context, loc_list_str)
 
@@ -270,20 +519,30 @@ class SectionLocationMapper:
                     model=self.model,
                     messages=[{"role": "user", "content": prompt}],
                     response_format={"type": "json_object"},
-                    temperature=0.1
+                    temperature=0.1,
+                    max_tokens=4096  # Increased for very long location lists
                 )
-                data = json.loads(response.choices[0].message.content)
-                
+
+                raw_content = response.choices[0].message.content
+
+                # Log raw response for debugging (only on error)
+                try:
+                    data = json.loads(raw_content)
+                except json.JSONDecodeError as je:
+                    logger.error(f"JSON parse error for section {section_ctx['id']}: {je}")
+                    logger.error(f"Raw response (first 500 chars): {raw_content[:500]}...")
+                    return section_ctx["id"], None
+
                 # 兼容性处理
                 raw_result = data.get("location_ids") or data.get("location_id")
-                
+
                 if isinstance(raw_result, list):
                     loc_ids = raw_result
                 elif isinstance(raw_result, str):
                     loc_ids = [raw_result]
                 else:
                     loc_ids = []
-                    
+
                 return section_ctx["id"], loc_ids
         except Exception as e:
             logger.error(f"Mapping failed for section {section_ctx['id']}: {e}")

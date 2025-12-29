@@ -70,9 +70,13 @@ class EntityProcessor:
         candidate_list_str = json.dumps(candidates, indent=2, ensure_ascii=False)
         loc_list_str = ", ".join(location_ids)
 
-        # 2. 构建 Prompt
+        # 2. 构建 Prompt (truncate content for smaller models)
+        content = section.get("content", "")
+        if len(content) > 4000:
+            content = content[:4000] + "... [truncated]"
+
         prompt = PromptFactory.create_entity_enrichment_prompt(
-            section.get("content", ""),
+            content,
             candidate_list_str,
             loc_list_str
         )
@@ -84,9 +88,18 @@ class EntityProcessor:
                     model=self.model,
                     messages=[{"role": "user", "content": prompt}],
                     response_format={"type": "json_object"},
-                    temperature=0.1
+                    temperature=0.1,
+                    max_tokens=4096  # Increased for complex entity extraction with many nodes/edges
                 )
-                data = json.loads(response.choices[0].message.content)
+
+                raw_content = response.choices[0].message.content
+                try:
+                    data = json.loads(raw_content)
+                except json.JSONDecodeError as je:
+                    logger.error(f"JSON parse error for section {section['id']}: {je}")
+                    logger.error(f"Raw response (first 300 chars): {raw_content[:300]}...")
+                    return {"nodes": [], "edges": []}
+
                 return data
         except Exception as e:
             logger.error(f"Entity extraction failed for section {section['id']}: {e}")

@@ -20,6 +20,12 @@ Usage:
     # Preview what would run
     python -m main --stage all --dry-run
 
+    # Multi-pass mode for smaller models (qwen3-8b, etc.)
+    python -m main --stage all --multi-pass
+
+    # Adjust concurrency for local vLLM deployments
+    python -m main --stage all --max-concurrent 5
+
 Environment Variables (.env):
     OPENAI_API_KEY     - Your LLM API key (required)
     OPENAI_BASE_URL    - API base URL (default: https://api.openai.com/v1)
@@ -39,6 +45,18 @@ import config_neo4j as config
 
 # Load environment variables from .env file
 load_dotenv()
+
+
+def get_default_concurrency():
+    """
+    Sensible default based on model or environment.
+    Local vLLM deployments need lower concurrency than cloud APIs.
+    """
+    model = os.getenv('LLM_MODEL', 'gpt-4o').lower()
+    # Conservative defaults for local/vLLM deployments
+    if any(x in model for x in ['qwen', 'llama', 'mistral', 'local', 'deepseek']):
+        return 5  # Very conservative for local models
+    return 10  # Still conservative for self-hosted
 
 
 def parse_args():
@@ -85,6 +103,19 @@ def parse_args():
         help='LLM model (default: from LLM_MODEL env var)'
     )
 
+    # Multi-pass and concurrency options
+    parser.add_argument(
+        '--multi-pass',
+        action='store_true',
+        help='Enable multi-pass extraction mode (optimized for smaller models like qwen3-8b)'
+    )
+    parser.add_argument(
+        '--max-concurrent',
+        type=int,
+        default=get_default_concurrency(),
+        help=f'Maximum concurrent LLM requests (default: auto-detected, use 50-100 for cloud APIs)'
+    )
+
     # File paths
     parser.add_argument(
         '--input',
@@ -123,6 +154,16 @@ class Pipeline:
             raise ValueError(
                 "API key required. Set OPENAI_API_KEY in .env file or use --api-key"
             )
+
+        # Log multi-pass mode
+        if self.args.multi_pass:
+            logger.info("=== Multi-Pass Extraction Mode Enabled ===")
+            logger.info("This mode is optimized for smaller models like qwen3-8b")
+
+        # Log concurrency settings
+        logger.info(f"Max concurrent requests: {self.args.max_concurrent}")
+        if self.args.max_concurrent > 20:
+            logger.warning("High concurrency may overload local vLLM servers!")
 
     def run(self):
         """Run the pipeline with specified stages."""
@@ -203,7 +244,9 @@ class Pipeline:
         processor = SpatialTopologyProcessor(
             api_key=self.args.api_key,
             base_url=self.args.base_url,
-            model=self.args.model
+            model=self.args.model,
+            use_multi_pass=self.args.multi_pass,
+            max_concurrent=self.args.max_concurrent
         )
 
         location_graph = processor.process(self.shadow_tree, skip_summary=skip_summary)
@@ -241,7 +284,8 @@ class Pipeline:
         mapper = SectionLocationMapper(
             api_key=self.args.api_key,
             base_url=self.args.base_url,
-            model=self.args.model
+            model=self.args.model,
+            max_concurrent=self.args.max_concurrent
         )
 
         section_map = mapper.process(self.shadow_tree, location_graph)
@@ -274,7 +318,8 @@ class Pipeline:
         processor = EntityProcessor(
             api_key=self.args.api_key,
             base_url=self.args.base_url,
-            model=self.args.model
+            model=self.args.model,
+            max_concurrent=self.args.max_concurrent
         )
 
         entity_graph = processor.process(self.shadow_tree, section_map)

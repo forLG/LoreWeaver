@@ -1,0 +1,865 @@
+{
+  "nodes": [
+    {
+      "id": "the_forgotten_realms",
+      "label": "The Forgotten Realms",
+      "type": "World"
+    },
+    {
+      "id": "the_sword_coast",
+      "label": "The Sword Coast",
+      "type": "Region"
+    },
+    {
+      "id": "neverwinter",
+      "label": "Port of Neverwinter",
+      "type": "City"
+    },
+    {
+      "id": "mount_hotenow",
+      "label": "Mount Hotenow",
+      "type": "Mountain"
+    },
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Island"
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Clifftop Cemetery (Brastos's Grave)",
+      "type": "Cloister"
+    },
+    {
+      "id": "seagrow_caves_entrance",
+      "label": "Seagrow Caves Entrance (B1)",
+      "type": "Caves"
+    },
+    {
+      "id": "the_wreck_of_the_compass_rose",
+      "label": "Wreck of the Compass Rose (A1/C1-C9)",
+      "type": "Shipwreck"
+    },
+    {
+      "id": "clifftop_observatory_tower",
+      "label": "Clifftop Observatory (Ancient Observatory)",
+      "type": "Observatory"
+    },
+    {
+      "id": "the_fallen_netherese_empire_ruins",
+      "label": "The Fallen Netherese Empire Ruins",
+      "type": "Ruins"
+    },
+    {
+      "id": "the_crypts_of_the_fallen_dwarf_kings_of_delzoun",
+      "label": "The Crypts of the Fallen Dwarf Kings of Delzoun",
+      "type": "Crypts"
+    },
+    {
+      "id": "baldurs_gate",
+      "label": "Baldur's Gate",
+      "type": "City"
+    },
+    {
+      "id": "the_northern_harbor",
+      "label": "The Northern Harbor",
+      "type": "Harbor"
+    },
+    {
+      "id": "the_rickety_dock",
+      "label": "The Rickety Dock",
+      "type": "Dock"
+    },
+    {
+      "id": "the_shoreline_bluffs",
+      "label": "The Dragon's Roost Overlook (D1)",
+      "type": "Shoreline"
+    },
+    {
+      "id": "cliffside_garden_plots",
+      "label": "Cliffside Garden Plots",
+      "type": "Garden"
+    },
+    {
+      "id": "astalagans_statue",
+      "label": "Astalagan's Statue",
+      "type": "Statue"
+    },
+    {
+      "id": "monastic_cells",
+      "label": "Monastic Cells (A1)",
+      "type": "Living Quarters"
+    },
+    {
+      "id": "vacant_cell",
+      "label": "Vacant Cell (Westernmost)",
+      "type": "Cell"
+    },
+    {
+      "id": "taraks_cell",
+      "label": "Tarak's Cell",
+      "type": "Cell"
+    },
+    {
+      "id": "varnoths_cell",
+      "label": "Varnoth's Cell",
+      "type": "Cell"
+    },
+    {
+      "id": "mylas_cluttered_cell",
+      "label": "Myla's Cluttered Cell",
+      "type": "Cell"
+    },
+    {
+      "id": "kobold_barracks_fifth",
+      "label": "Kobold Barracks (Fifth Cell)",
+      "type": "Barracks"
+    },
+    {
+      "id": "kobold_barracks_sixth",
+      "label": "Kobold Barracks (Sixth Cell)",
+      "type": "Barracks"
+    },
+    {
+      "id": "the_winch_house",
+      "label": "A2: The Winch House",
+      "type": "Building"
+    },
+    {
+      "id": "the_water_below",
+      "label": "The Water Below",
+      "type": "Water Body"
+    },
+    {
+      "id": "rock_carved_dwelling",
+      "label": "Rock-Carved Dwelling",
+      "type": "Dwelling"
+    },
+    {
+      "id": "dining_room",
+      "label": "Dining Room",
+      "type": "Room"
+    },
+    {
+      "id": "kitchen",
+      "label": "A3: Kitchen",
+      "type": "Kitchen"
+    },
+    {
+      "id": "the_cliff_face_library",
+      "label": "A4: The Cliff Face Library",
+      "type": "Library"
+    },
+    {
+      "id": "cliffside_temple_of_bahamut",
+      "label": "Cliffside Temple of Bahamut (A5)",
+      "type": "Temple"
+    },
+    {
+      "id": "the_luminescent_cove",
+      "label": "The Luminescent Cove",
+      "type": "Cove"
+    },
+    {
+      "id": "the_islands_interior",
+      "label": "The Island's Interior",
+      "type": "Wilderness"
+    },
+    {
+      "id": "owlbears_territory",
+      "label": "Owlbear's Territory",
+      "type": "Territory"
+    },
+    {
+      "id": "the_northern_shoals",
+      "label": "The Northern Rocks (Shipwreck Site)",
+      "type": "Coastline"
+    },
+    {
+      "id": "the_subterranean_complex",
+      "label": "The Subterranean Complex (Beneath Stormwreck Isle)",
+      "type": "Cave System"
+    },
+    {
+      "id": "sharruths_tomb",
+      "label": "Sharruth's Tomb",
+      "type": "Tomb"
+    },
+    {
+      "id": "sea_worn_cliffs",
+      "label": "The Sea-Worn Cliffs",
+      "type": "Cliff"
+    },
+    {
+      "id": "columnar_stairways",
+      "label": "The Columnar Stairways",
+      "type": "Staircase"
+    },
+    {
+      "id": "gaping_maw_cave",
+      "label": "The Gaping Maw Cave",
+      "type": "Cave Entrance"
+    },
+    {
+      "id": "chromatic_cove",
+      "label": "The Chromatic Cove",
+      "type": "Sea Cave"
+    },
+    {
+      "id": "glowing_fungus_tunnel",
+      "label": "The Glowing Fungus Tunnel (B1)",
+      "type": "Cave Tunnel"
+    },
+    {
+      "id": "the_fungal_cavern",
+      "label": "The Fungal Cavern (B2: Fungus Farm)",
+      "type": "Cavern"
+    },
+    {
+      "id": "stone_staircase",
+      "label": "The Stone Staircase",
+      "type": "Staircase"
+    },
+    {
+      "id": "fungus_pool",
+      "label": "The Fungus Pool",
+      "type": "Pool"
+    },
+    {
+      "id": "northern_upper_cave",
+      "label": "Northern Upper Cave",
+      "type": "Cave"
+    },
+    {
+      "id": "the_rot_filled_cave",
+      "label": "The Rot-Filled Cave (B3: Larder)",
+      "type": "Cave"
+    },
+    {
+      "id": "the_fungal_ring_cavern",
+      "label": "The Fungal Ring Cavern (B4: Circle Chamber)",
+      "type": "Cavern"
+    },
+    {
+      "id": "the_fungal_grotto",
+      "label": "The Fungal Grotto (B5: Sinensa's Sanctum)",
+      "type": "Cavern"
+    },
+    {
+      "id": "the_brimstone_cavern",
+      "label": "The Brimstone Cavern (B6: Crystal Cave)",
+      "type": "Cavern"
+    },
+    {
+      "id": "crystal_vent",
+      "label": "The Crystal-Vent",
+      "type": "Cave Section"
+    },
+    {
+      "id": "myconid_caves",
+      "label": "The Myconid Caves",
+      "type": "Cave System"
+    },
+    {
+      "id": "spur_of_rocks_and_dragon_bones",
+      "label": "Spur of Rocks and Dragon Bones",
+      "type": "Geological Feature"
+    },
+    {
+      "id": "main_deck",
+      "label": "Main Deck (C1)",
+      "type": "Deck"
+    },
+    {
+      "id": "forecastle",
+      "label": "Forecastle (C2)",
+      "type": "Deck"
+    },
+    {
+      "id": "quarterdeck",
+      "label": "Quarterdeck (C3)",
+      "type": "Deck"
+    },
+    {
+      "id": "captains_quarters",
+      "label": "Captain's Quarters (C4)",
+      "type": "Room"
+    },
+    {
+      "id": "galley",
+      "label": "Galley (C5)",
+      "type": "Room"
+    },
+    {
+      "id": "crew_quarters",
+      "label": "Crew Quarters (C6)",
+      "type": "Room"
+    },
+    {
+      "id": "mess_hall",
+      "label": "Mess Hall (C7)",
+      "type": "Room"
+    },
+    {
+      "id": "lower_deck",
+      "label": "Lower Deck (C8)",
+      "type": "Deck"
+    },
+    {
+      "id": "ships_hold",
+      "label": "Ship's Hold (C9)",
+      "type": "Room"
+    },
+    {
+      "id": "sunken_wrecks_general_area",
+      "label": "Sunken Wrecks (General Area)",
+      "type": "Region"
+    },
+    {
+      "id": "tattered_rigging",
+      "label": "Tattered Rigging",
+      "type": "Entry Point"
+    },
+    {
+      "id": "gaping_hull_breach",
+      "label": "Gaping Hull Breach",
+      "type": "Entry Point"
+    },
+    {
+      "id": "sparkrenders_spire",
+      "label": "Sparkrender's Spire",
+      "type": "Spire"
+    },
+    {
+      "id": "the_basalt_columns_ruins",
+      "label": "The Pillar Tops (Areas D2, D3, D4, D5)",
+      "type": "Ruins"
+    },
+    {
+      "id": "the_farthest_column",
+      "label": "The Farthest Column",
+      "type": "Column"
+    },
+    {
+      "id": "western_dragon_statue_pair",
+      "label": "Western Dragon Statue Pair",
+      "type": "Structure"
+    },
+    {
+      "id": "southwestern_dragon_statue_pair",
+      "label": "Southwestern Dragon Statue Pair",
+      "type": "Structure"
+    },
+    {
+      "id": "ritual_preparation_site",
+      "label": "Ritual Preparation Site",
+      "type": "Site"
+    },
+    {
+      "id": "the_ocean",
+      "label": "The Ocean (Below the Cliffs)",
+      "type": "Ocean"
+    }
+  ],
+  "edges": [
+    {
+      "source": "the_sword_coast",
+      "target": "the_forgotten_realms",
+      "relation": "part_of"
+    },
+    {
+      "source": "neverwinter",
+      "target": "the_sword_coast",
+      "relation": "part_of"
+    },
+    {
+      "source": "mount_hotenow",
+      "target": "the_sword_coast",
+      "relation": "part_of"
+    },
+    {
+      "source": "stormwreck_isle",
+      "target": "the_sword_coast",
+      "relation": "part_of"
+    },
+    {
+      "source": "dragon_s_rest",
+      "target": "stormwreck_isle",
+      "relation": "part_of"
+    },
+    {
+      "source": "seagrow_caves_entrance",
+      "target": "stormwreck_isle",
+      "relation": "part_of"
+    },
+    {
+      "source": "the_wreck_of_the_compass_rose",
+      "target": "stormwreck_isle",
+      "relation": "part_of"
+    },
+    {
+      "source": "clifftop_observatory_tower",
+      "target": "stormwreck_isle",
+      "relation": "part_of"
+    },
+    {
+      "source": "the_fallen_netherese_empire_ruins",
+      "target": "the_forgotten_realms",
+      "relation": "part_of"
+    },
+    {
+      "source": "the_crypts_of_the_fallen_dwarf_kings_of_delzoun",
+      "target": "the_forgotten_realms",
+      "relation": "part_of"
+    },
+    {
+      "source": "baldurs_gate",
+      "target": "the_forgotten_realms",
+      "relation": "part_of"
+    },
+    {
+      "source": "neverwinter",
+      "target": "stormwreck_isle",
+      "relation": "connected_to",
+      "desc": "Starting point for voyages to Stormwreck Isle"
+    },
+    {
+      "source": "neverwinter",
+      "target": "mount_hotenow",
+      "relation": "connected_to",
+      "desc": "Located in the shadow of Mount Hotenow"
+    },
+    {
+      "source": "the_northern_harbor",
+      "target": "stormwreck_isle",
+      "relation": "part_of"
+    },
+    {
+      "source": "the_rickety_dock",
+      "target": "the_northern_harbor",
+      "relation": "part_of"
+    },
+    {
+      "source": "the_shoreline_bluffs",
+      "target": "stormwreck_isle",
+      "relation": "part_of"
+    },
+    {
+      "source": "cliffside_garden_plots",
+      "target": "the_shoreline_bluffs",
+      "relation": "part_of"
+    },
+    {
+      "source": "the_wreck_of_the_compass_rose",
+      "target": "dragon_s_rest",
+      "relation": "part_of"
+    },
+    {
+      "source": "astalagans_statue",
+      "target": "the_wreck_of_the_compass_rose",
+      "relation": "part_of"
+    },
+    {
+      "source": "monastic_cells",
+      "target": "the_wreck_of_the_compass_rose",
+      "relation": "part_of"
+    },
+    {
+      "source": "vacant_cell",
+      "target": "monastic_cells",
+      "relation": "part_of"
+    },
+    {
+      "source": "taraks_cell",
+      "target": "monastic_cells",
+      "relation": "part_of"
+    },
+    {
+      "source": "varnoths_cell",
+      "target": "monastic_cells",
+      "relation": "part_of"
+    },
+    {
+      "source": "mylas_cluttered_cell",
+      "target": "monastic_cells",
+      "relation": "part_of"
+    },
+    {
+      "source": "kobold_barracks_fifth",
+      "target": "monastic_cells",
+      "relation": "part_of"
+    },
+    {
+      "source": "kobold_barracks_sixth",
+      "target": "monastic_cells",
+      "relation": "part_of"
+    },
+    {
+      "source": "the_winch_house",
+      "target": "dragon_s_rest",
+      "relation": "part_of"
+    },
+    {
+      "source": "the_water_below",
+      "target": "the_winch_house",
+      "relation": "connected_to"
+    },
+    {
+      "source": "rock_carved_dwelling",
+      "target": "dragon_s_rest",
+      "relation": "part_of"
+    },
+    {
+      "source": "dining_room",
+      "target": "rock_carved_dwelling",
+      "relation": "part_of"
+    },
+    {
+      "source": "kitchen",
+      "target": "rock_carved_dwelling",
+      "relation": "part_of"
+    },
+    {
+      "source": "the_cliff_face_library",
+      "target": "dragon_s_rest",
+      "relation": "part_of"
+    },
+    {
+      "source": "cliffside_temple_of_bahamut",
+      "target": "dragon_s_rest",
+      "relation": "part_of"
+    },
+    {
+      "source": "the_luminescent_cove",
+      "target": "stormwreck_isle",
+      "relation": "part_of"
+    },
+    {
+      "source": "dragon_s_rest",
+      "target": "the_luminescent_cove",
+      "relation": "part_of"
+    },
+    {
+      "source": "the_islands_interior",
+      "target": "stormwreck_isle",
+      "relation": "part_of"
+    },
+    {
+      "source": "owlbears_territory",
+      "target": "the_islands_interior",
+      "relation": "part_of"
+    },
+    {
+      "source": "the_northern_shoals",
+      "target": "stormwreck_isle",
+      "relation": "part_of"
+    },
+    {
+      "source": "the_wreck_of_the_compass_rose",
+      "target": "the_northern_shoals",
+      "relation": "part_of"
+    },
+    {
+      "source": "the_subterranean_complex",
+      "target": "stormwreck_isle",
+      "relation": "part_of"
+    },
+    {
+      "source": "sharruths_tomb",
+      "target": "the_subterranean_complex",
+      "relation": "part_of"
+    },
+    {
+      "source": "the_rickety_dock",
+      "target": "the_shoreline_bluffs",
+      "relation": "leads_to"
+    },
+    {
+      "source": "the_shoreline_bluffs",
+      "target": "the_wreck_of_the_compass_rose",
+      "relation": "leads_to"
+    },
+    {
+      "source": "the_winch_house",
+      "target": "the_shoreline_bluffs",
+      "relation": "connected_to"
+    },
+    {
+      "source": "dining_room",
+      "target": "kitchen",
+      "relation": "connected_to"
+    },
+    {
+      "source": "sea_worn_cliffs",
+      "target": "stormwreck_isle",
+      "relation": "part_of"
+    },
+    {
+      "source": "columnar_stairways",
+      "target": "sea_worn_cliffs",
+      "relation": "part_of"
+    },
+    {
+      "source": "gaping_maw_cave",
+      "target": "sea_worn_cliffs",
+      "relation": "part_of"
+    },
+    {
+      "source": "chromatic_cove",
+      "target": "stormwreck_isle",
+      "relation": "part_of"
+    },
+    {
+      "source": "glowing_fungus_tunnel",
+      "target": "seagrow_caves_entrance",
+      "relation": "part_of"
+    },
+    {
+      "source": "the_fungal_cavern",
+      "target": "seagrow_caves_entrance",
+      "relation": "part_of"
+    },
+    {
+      "source": "stone_staircase",
+      "target": "the_fungal_cavern",
+      "relation": "part_of"
+    },
+    {
+      "source": "fungus_pool",
+      "target": "the_fungal_cavern",
+      "relation": "part_of"
+    },
+    {
+      "source": "northern_upper_cave",
+      "target": "seagrow_caves_entrance",
+      "relation": "part_of"
+    },
+    {
+      "source": "the_rot_filled_cave",
+      "target": "seagrow_caves_entrance",
+      "relation": "part_of"
+    },
+    {
+      "source": "the_fungal_ring_cavern",
+      "target": "seagrow_caves_entrance",
+      "relation": "part_of"
+    },
+    {
+      "source": "the_fungal_grotto",
+      "target": "seagrow_caves_entrance",
+      "relation": "part_of"
+    },
+    {
+      "source": "the_brimstone_cavern",
+      "target": "seagrow_caves_entrance",
+      "relation": "part_of"
+    },
+    {
+      "source": "crystal_vent",
+      "target": "the_brimstone_cavern",
+      "relation": "part_of"
+    },
+    {
+      "source": "myconid_caves",
+      "target": "seagrow_caves_entrance",
+      "relation": "part_of"
+    },
+    {
+      "source": "seagrow_caves_entrance",
+      "target": "sea_worn_cliffs",
+      "relation": "connected_to"
+    },
+    {
+      "source": "seagrow_caves_entrance",
+      "target": "chromatic_cove",
+      "relation": "connected_to"
+    },
+    {
+      "source": "seagrow_caves_entrance",
+      "target": "glowing_fungus_tunnel",
+      "relation": "leads_to"
+    },
+    {
+      "source": "glowing_fungus_tunnel",
+      "target": "the_fungal_cavern",
+      "relation": "leads_to"
+    },
+    {
+      "source": "stone_staircase",
+      "target": "northern_upper_cave",
+      "relation": "leads_to"
+    },
+    {
+      "source": "northern_upper_cave",
+      "target": "fungus_pool",
+      "relation": "connected_to"
+    },
+    {
+      "source": "the_rot_filled_cave",
+      "target": "the_fungal_ring_cavern",
+      "relation": "connected_to"
+    },
+    {
+      "source": "crystal_vent",
+      "target": "myconid_caves",
+      "relation": "connected_to"
+    },
+    {
+      "source": "spur_of_rocks_and_dragon_bones",
+      "target": "the_northern_shoals",
+      "relation": "part_of"
+    },
+    {
+      "source": "the_wreck_of_the_compass_rose",
+      "target": "spur_of_rocks_and_dragon_bones",
+      "relation": "part_of"
+    },
+    {
+      "source": "sunken_wrecks_general_area",
+      "target": "the_northern_shoals",
+      "relation": "part_of"
+    },
+    {
+      "source": "the_wreck_of_the_compass_rose",
+      "target": "sunken_wrecks_general_area",
+      "relation": "part_of"
+    },
+    {
+      "source": "main_deck",
+      "target": "the_wreck_of_the_compass_rose",
+      "relation": "part_of"
+    },
+    {
+      "source": "forecastle",
+      "target": "the_wreck_of_the_compass_rose",
+      "relation": "part_of"
+    },
+    {
+      "source": "quarterdeck",
+      "target": "the_wreck_of_the_compass_rose",
+      "relation": "part_of"
+    },
+    {
+      "source": "captains_quarters",
+      "target": "the_wreck_of_the_compass_rose",
+      "relation": "part_of"
+    },
+    {
+      "source": "galley",
+      "target": "the_wreck_of_the_compass_rose",
+      "relation": "part_of"
+    },
+    {
+      "source": "crew_quarters",
+      "target": "the_wreck_of_the_compass_rose",
+      "relation": "part_of"
+    },
+    {
+      "source": "mess_hall",
+      "target": "the_wreck_of_the_compass_rose",
+      "relation": "part_of"
+    },
+    {
+      "source": "lower_deck",
+      "target": "the_wreck_of_the_compass_rose",
+      "relation": "part_of"
+    },
+    {
+      "source": "ships_hold",
+      "target": "the_wreck_of_the_compass_rose",
+      "relation": "part_of"
+    },
+    {
+      "source": "the_wreck_of_the_compass_rose",
+      "target": "dragon_s_rest",
+      "relation": "connected_to",
+      "desc": "2.5 miles north, accessible by rowboat"
+    },
+    {
+      "source": "tattered_rigging",
+      "target": "the_wreck_of_the_compass_rose",
+      "relation": "leads_to",
+      "desc": "Primary entry point on starboard side"
+    },
+    {
+      "source": "gaping_hull_breach",
+      "target": "the_wreck_of_the_compass_rose",
+      "relation": "leads_to",
+      "desc": "Underwater entry point at stern"
+    },
+    {
+      "source": "sparkrenders_spire",
+      "target": "stormwreck_isle",
+      "relation": "part_of"
+    },
+    {
+      "source": "the_basalt_columns_ruins",
+      "target": "stormwreck_isle",
+      "relation": "part_of"
+    },
+    {
+      "source": "the_farthest_column",
+      "target": "the_basalt_columns_ruins",
+      "relation": "part_of"
+    },
+    {
+      "source": "the_shoreline_bluffs",
+      "target": "the_basalt_columns_ruins",
+      "relation": "part_of"
+    },
+    {
+      "source": "the_shoreline_bluffs",
+      "target": "clifftop_observatory_tower",
+      "relation": "part_of"
+    },
+    {
+      "source": "the_basalt_columns_ruins",
+      "target": "clifftop_observatory_tower",
+      "relation": "part_of"
+    },
+    {
+      "source": "western_dragon_statue_pair",
+      "target": "the_basalt_columns_ruins",
+      "relation": "part_of"
+    },
+    {
+      "source": "southwestern_dragon_statue_pair",
+      "target": "the_basalt_columns_ruins",
+      "relation": "part_of"
+    },
+    {
+      "source": "ritual_preparation_site",
+      "target": "the_basalt_columns_ruins",
+      "relation": "part_of"
+    },
+    {
+      "source": "the_ocean",
+      "target": "clifftop_observatory_tower",
+      "relation": "part_of"
+    },
+    {
+      "source": "the_shoreline_bluffs",
+      "target": "the_basalt_columns_ruins",
+      "relation": "connected_to",
+      "desc": "Magical bridge"
+    },
+    {
+      "source": "clifftop_observatory_tower",
+      "target": "the_basalt_columns_ruins",
+      "relation": "connected_to",
+      "desc": "Kobold-built pulley lift"
+    },
+    {
+      "source": "clifftop_observatory_tower",
+      "target": "the_basalt_columns_ruins",
+      "relation": "leads_to",
+      "desc": "Hidden spiral staircase"
+    },
+    {
+      "source": "the_basalt_columns_ruins",
+      "target": "clifftop_observatory_tower",
+      "relation": "leads_to",
+      "desc": "Clearing cave-in from exterior"
+    }
+  ]
+}

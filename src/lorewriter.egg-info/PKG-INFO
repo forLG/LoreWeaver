@@ -29,10 +29,31 @@ pip install -e .
 
 ### Json Graph Generation
 
+#### DeepSeek-Chat
+
 ```bash
-python -m main
-# or
-python src/main.py
+# Run all stages
+python -m main --stage all
+
+# Run specific stages
+python -m main --stage shadow
+python -m main --stage spatial
+python -m main --stage entity
+
+# Rerun all, ignore cache
+python -m main --stage all --force
+
+# Dry run to preview
+python -m main --stage all --dry-run
+
+# Override config via CLI
+python -m main --stage entity --model deepseek-chat
+```
+
+#### Qwen3 8B
+
+```bash
+python -m src.main --stage all --multi-pass --max-concurrent 50 --output-dir output/qwen3
 ```
 
 ### Graph Building & Visualization

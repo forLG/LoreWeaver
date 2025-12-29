@@ -13,6 +13,7 @@ src/llm/spatial_processor.py
 src/lorewriter.egg-info/PKG-INFO
 src/lorewriter.egg-info/SOURCES.txt
 src/lorewriter.egg-info/dependency_links.txt
+src/lorewriter.egg-info/entry_points.txt
 src/lorewriter.egg-info/requires.txt
 src/lorewriter.egg-info/top_level.txt
 src/utils/__init__.py

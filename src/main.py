@@ -32,6 +32,7 @@ Environment Variables (.env):
     LLM_MODEL          - Model name (default: gpt-4o)
 """
 import argparse
+import json
 import os
 from collections import Counter
 from pathlib import Path
@@ -218,7 +219,7 @@ class Pipeline:
 
         logger.info(f"Loading data from {self.input_file}...")
         with open(self.input_file, 'r', encoding='utf-8') as f:
-            raw_data = __import__('json').load(f)
+            raw_data = json.load(f)
 
         # 5eTools data is usually under 'data' key, or directly a list
         adventure_data = raw_data.get("data", []) if isinstance(raw_data, dict) else raw_data
@@ -229,7 +230,7 @@ class Pipeline:
 
         logger.info(f"Saving to {self.shadow_file}...")
         with open(self.shadow_file, 'w', encoding='utf-8') as f:
-            __import__('json').dump(self.shadow_tree, f, indent=2, ensure_ascii=False)
+            json.dump(self.shadow_tree, f, indent=2, ensure_ascii=False)
 
         logger.info(f"Done! Shadow tree has {len(self.shadow_tree)} root nodes")
 
@@ -258,11 +259,11 @@ class Pipeline:
         if not skip_summary:
             logger.info(f"Saving intermediate summaries to {self.intermediate_file}...")
             with open(self.intermediate_file, 'w', encoding='utf-8') as f:
-                __import__('json').dump(self.shadow_tree, f, indent=2, ensure_ascii=False)
+                json.dump(self.shadow_tree, f, indent=2, ensure_ascii=False)
 
         logger.info(f"Saving location graph to {self.location_graph_file}...")
         with open(self.location_graph_file, 'w', encoding='utf-8') as f:
-            __import__('json').dump(location_graph, f, indent=2, ensure_ascii=False)
+            json.dump(location_graph, f, indent=2, ensure_ascii=False)
 
         logger.info(f"Done! Location graph: {len(location_graph['nodes'])} nodes, {len(location_graph['edges'])} edges")
 
@@ -281,7 +282,7 @@ class Pipeline:
             )
 
         with open(self.location_graph_file, 'r', encoding='utf-8') as f:
-            location_graph = __import__('json').load(f)
+            location_graph = json.load(f)
 
         logger.info(f"Location graph: {len(location_graph['nodes'])} nodes, {len(location_graph['edges'])} edges")
 
@@ -296,7 +297,7 @@ class Pipeline:
 
         logger.info(f"Saving section-location map to {self.section_location_map_file}...")
         with open(self.section_location_map_file, 'w', encoding='utf-8') as f:
-            __import__('json').dump(section_map, f, indent=2, ensure_ascii=False)
+            json.dump(section_map, f, indent=2, ensure_ascii=False)
 
         logger.info(f"Done! Mapped {len(section_map)} sections")
 
@@ -315,7 +316,7 @@ class Pipeline:
             )
 
         with open(self.section_location_map_file, 'r', encoding='utf-8') as f:
-            section_map = __import__('json').load(f)
+            section_map = json.load(f)
 
         logger.info(f"Section map: {len(section_map)} sections")
 
@@ -330,7 +331,7 @@ class Pipeline:
 
         logger.info(f"Saving entity graph to {self.entity_graph_file}...")
         with open(self.entity_graph_file, 'w', encoding='utf-8') as f:
-            __import__('json').dump(entity_graph, f, indent=2, ensure_ascii=False)
+            json.dump(entity_graph, f, indent=2, ensure_ascii=False)
 
         logger.info(f"Done! Entity graph: {len(entity_graph['nodes'])} nodes, {len(entity_graph['edges'])} edges")
 
@@ -353,12 +354,12 @@ class Pipeline:
             )
 
         with open(self.shadow_file, 'r', encoding='utf-8') as f:
-            self.shadow_tree = __import__('json').load(f)
+            self.shadow_tree = json.load(f)
 
         # Load intermediate if available (has spatial summaries)
         if self.intermediate_file.exists():
             with open(self.intermediate_file, 'r', encoding='utf-8') as f:
-                self.shadow_tree = __import__('json').load(f)
+                self.shadow_tree = json.load(f)
             logger.info("Using shadow tree with spatial summaries")
 
 

@@ -93,7 +93,7 @@ def build_neo4j_graph():
         logger.info("=" * 60)
         logger.info("Neo4j 图谱构建完成!")
         logger.info("=" * 60)
-        logger.info(f"访问 Neo4j Browser: http://localhost:7474")
+        logger.info("访问 Neo4j Browser: http://localhost:7474")
         logger.info("示例查询:")
         logger.info("  MATCH (n:Creature) RETURN n LIMIT 25")
         logger.info("  MATCH (l:Location {id: 'stormwreck_isle'})-[r:PART_OF*0..3]-(sub) RETURN sub")
@@ -103,7 +103,7 @@ def build_neo4j_graph():
         logger.error(f"错误: {e}")
         logger.info("请检查:")
         logger.info("  1. Neo4j 是否正在运行")
-        logger.info(f"  2. 配置文件 config_neo4j.py 中的连接信息是否正确")
+        logger.info("  2. 配置文件 config_neo4j.py 中的连接信息是否正确")
         logger.info(f"  3. 密码是否正确 (当前: {config.NEO4J_PASSWORD})")
         return False
 

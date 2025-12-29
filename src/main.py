@@ -40,7 +40,7 @@ from dotenv import load_dotenv
 from builder.shadow_builder import ShadowTreeBuilder
 from llm.spatial_processor import SpatialTopologyProcessor, SectionLocationMapper
 from llm.entity_processor import EntityProcessor
-from utils.logger import logger
+from utils.logger import logger, setup_logger
 import config_neo4j as config
 
 # Load environment variables from .env file
@@ -138,6 +138,10 @@ class Pipeline:
         self.args = args
         self.output_dir = Path(args.output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
+
+        # Setup file logging with experiment name from output directory
+        exp_name = self.output_dir.name
+        setup_logger(exp_name=exp_name)
 
         # File paths
         self.input_file = Path(args.input)

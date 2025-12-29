@@ -18,30 +18,32 @@ pip install -e .
 
 ### Json Graph Generation
 
+#### DeepSeek-Chat
+
 ```bash
 # First, copy the example env file and add your API key
-  cp .env.example .env
-  # Edit .env with your actual API key
+cp .env.example .env
+# Edit .env with your actual API key
 
-  # Reinstall to get python-dotenv
-  pip install -e .
+# Reinstall to get python-dotenv
+pip install -e .
 
-  # Run all stages
-  python -m main --stage all
+# Run all stages
+python -m main --stage all
 
-  # Run specific stages
-  python -m main --stage shadow
-  python -m main --stage spatial
-  python -m main --stage entity
+# Run specific stages
+python -m main --stage shadow
+python -m main --stage spatial
+python -m main --stage entity
 
-  # Rerun all, ignore cache
-  python -m main --stage all --force
+# Rerun all, ignore cache
+python -m main --stage all --force
 
-  # Dry run to preview
-  python -m main --stage all --dry-run
+# Dry run to preview
+python -m main --stage all --dry-run
 
-  # Override config via CLI
-  python -m main --stage entity --model deepseek-chat
+# Override config via CLI
+python -m main --stage entity --model deepseek-chat
 ```
 
 ### Graph Building & Visualization

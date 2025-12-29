@@ -4,12 +4,11 @@ Graph Visualizer for LoreWeaver
 支持将 Neo4j 图谱导出为交互式 HTML 可视化。
 """
 import json
-import logging
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 from pyvis.network import Network
 
-logger = logging.getLogger(__name__)
+from utils.logger import logger
 
 
 class GraphVisualizer:
@@ -280,6 +279,8 @@ class GraphVisualizer:
 
         # 合并节点（去重，处理 ID 前缀问题）
         all_nodes = {}
+        # Track ID mappings: prefixed_id -> base_id for locations
+        id_mapping = {}  # entity_graph_id -> actual_key_in_all_nodes
 
         # 首先添加位置图谱的节点
         for node in loc_data.get('nodes', []):
@@ -299,9 +300,8 @@ class GraphVisualizer:
                 # 移除 location: 前缀进行匹配
                 base_id = node_id.replace('location:', '')
                 if base_id in all_nodes:
-                    # 已存在，跳过（保持位置图谱的版本）
-                    # 但需要建立 ID 映射关系
-                    all_nodes[node_id] = all_nodes[base_id]
+                    # 已存在，记录映射关系（实体图谱中的 ID -> 位置图谱中的 ID）
+                    id_mapping[node_id] = base_id
                     continue
 
             # 添加新节点
@@ -316,13 +316,22 @@ class GraphVisualizer:
 
         def normalize_id(node_id: str, nodes_dict: dict) -> str:
             """规范化节点 ID，处理 location: 前缀"""
+            # First check if we have an explicit mapping
+            if node_id in id_mapping:
+                return id_mapping[node_id]
+            # Check if ID exists directly
             if node_id in nodes_dict:
                 return node_id
-            # 尝试移除前缀
-            base_id = node_id.replace('location:', '').replace('creature:', '').replace('item:', '').replace('spell:', '')
-            if base_id in nodes_dict:
-                return base_id
-            # 如果都不存在，返回原始 ID（会导致错误，但能帮助我们发现问题）
+            # Try removing common prefixes
+            for prefix in ['location:', 'creature:', 'item:', 'spell:', 'party:']:
+                if node_id.startswith(prefix):
+                    base_id = node_id.replace(prefix, '', 1)
+                    if base_id in nodes_dict:
+                        return base_id
+                    # Check mapping for base_id
+                    if base_id in id_mapping:
+                        return id_mapping[base_id]
+            # If not found, return original (will cause edge to be filtered)
             return node_id
 
         for edge in loc_data.get('edges', []):
@@ -347,10 +356,15 @@ class GraphVisualizer:
             with open(entity_graph_file, 'r', encoding='utf-8') as f:
                 ent_data = json.load(f)
             keep_ids = {n['id'] for n in ent_data.get('nodes', [])}
+            # Also keep any base IDs that are mapped from kept IDs
+            for entity_id in list(keep_ids):
+                if entity_id in id_mapping:
+                    keep_ids.add(id_mapping[entity_id])
             all_nodes = {k: v for k, v in all_nodes.items() if k in keep_ids}
+            # Filter edges based on actual keys remaining in all_nodes
             all_edges = [
                 e for e in all_edges
-                if e['source'] in keep_ids and e['target'] in keep_ids
+                if e['source'] in all_nodes and e['target'] in all_nodes
             ]
 
         # 创建网络

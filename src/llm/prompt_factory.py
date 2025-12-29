@@ -126,16 +126,184 @@ You are a D&D Knowledge Graph Assistant.
 I have a section from a book and a list of known Location IDs extracted from the same book.
 Task: Map the Section to the most likely Location ID(s) where the events in that section take place.
 
-Known Location IDs:
+Known Location IDs (comma-separated list):
 {location_list}
 
 Section Info:
 {section_context}
 
-Rules:
-1. If the section clearly describes events inside one or more of the Known Locations, map it.
-2. If the section is generic or doesn't match any specific location, return an empty list.
-3. Output JSON format: {{ "location_ids": ["location_id_1", "location_id_2"] }}
+CRITICAL RULES:
+1. Be SELECTIVE - Only map to locations that are EXPLICITLY mentioned or clearly described in the section.
+2. Maximum 5 locations per section - prioritize the most relevant/primary locations.
+3. If a location name appears in the text, map to that specific location ID.
+4. If the section describes movement between locations, include all visited locations.
+5. If the section is generic or doesn't clearly match any specific location, return an empty list.
+6. DO NOT guess or infer locations not mentioned in the text.
+
+Output JSON format: {{ "location_ids": ["location_id_1", "location_id_2"] }}
+"""
+
+    # Multi-Pass Extraction Prompts (for smaller models like qwen3-8b)
+    @staticmethod
+    def create_top_level_extraction_prompt(spatial_summary_text: str) -> str:
+        """
+        Multi-Pass Pass 1: Extract only top-level hierarchy (World, Region, Island, City level)
+        Focus on establishing the foundational spatial structure without sub-locations.
+        """
+        return f"""
+You are a D&D Knowledge Graph Architect. This is PASS 1 of a multi-pass extraction.
+
+Input Text:
+{spatial_summary_text}
+
+TASK: Extract ONLY TOP-LEVEL locations (highest hierarchy levels).
+- Level 1: World (e.g., "The Forgotten Realms")
+- Level 2: Region/Coast (e.g., "The Sword Coast")
+- Level 3: Major Locations (e.g., "Stormwreck Isle", "Neverwinter", "Mount Hotenow")
+
+WHAT TO EXCLUDE:
+- Do NOT extract sub-locations like rooms, caves, decks, or specific areas
+- Do NOT extract features like statues, individual cells, or minor details
+- Do NOT extract any location that is "part of" another location you're extracting
+
+OUTPUT REQUIREMENTS:
+- Use snake_case IDs (e.g., "the_forgotten_realms", "stormwreck_isle")
+- Include type field (World, Region, Island, City, Mountain)
+- Create "part_of" edges showing the hierarchy
+
+Output Format (JSON ONLY):
+{{
+    "nodes": [
+        {{ "id": "the_forgotten_realms", "label": "The Forgotten Realms", "type": "World" }},
+        {{ "id": "the_sword_coast", "label": "The Sword Coast", "type": "Region" }},
+        {{ "id": "stormwreck_isle", "label": "Stormwreck Isle", "type": "Island" }}
+    ],
+    "edges": [
+        {{ "source": "the_sword_coast", "target": "the_forgotten_realms", "relation": "part_of" }},
+        {{ "source": "stormwreck_isle", "target": "the_sword_coast", "relation": "part_of" }}
+    ]
+}}
+"""
+
+    @staticmethod
+    def create_sub_location_extraction_prompt(parent_location: str, parent_label: str, spatial_summary_text: str, existing_nodes: str) -> str:
+        """
+        Multi-Pass Pass 2: Extract sub-locations for a specific parent location.
+        The existing_nodes helps maintain ID consistency and avoid duplication.
+        """
+        return f"""
+You are a D&D Knowledge Graph Architect. This is PASS 2 of a multi-pass extraction.
+
+PARENT LOCATION: {parent_label} (id: {parent_location})
+
+ALREADY EXTRACTED NODES (use these IDs for connections):
+{existing_nodes}
+
+Input Text:
+{spatial_summary_text}
+
+TASK: Extract ALL sub-locations within "{parent_label}".
+This includes: buildings, rooms, caves, decks, areas, features - ANY location that is "part_of" {parent_location}.
+
+MINIMUM DETAIL REQUIREMENTS:
+- Every ship deck should be a separate node (C1, C2, C3, etc.)
+- Every named room should be a separate node
+- Every cave chamber should be a separate node (B1, B2, B3, etc.)
+- Every NPC's personal space (cell, quarters) should be a separate node
+
+RELATIONSHIP TYPES:
+- "part_of": This location is inside the parent location
+- "connected_to": Direct access between two locations
+- "leads_to": Passage or path from one location to another
+
+ID STANDARDIZATION:
+- Use snake_case
+- Use existing IDs from the list above when connecting to known locations
+- Create new IDs for new locations following the same pattern
+
+Output Format (JSON ONLY):
+{{
+    "nodes": [
+        {{ "id": "seagrow_caves", "label": "Seagrow Caves Entrance", "type": "Caves" }},
+        {{ "id": "main_deck", "label": "Main Deck (C1)", "type": "Deck" }}
+    ],
+    "edges": [
+        {{ "source": "seagrow_caves", "target": "{parent_location}", "relation": "part_of", "desc": "Located on Stormwreck Isle" }},
+        {{ "source": "glowing_fungus_tunnel", "target": "seagrow_caves", "relation": "part_of", "desc": "Within the cave system" }}
+    ]
+}}
+"""
+
+    @staticmethod
+    def create_relationship_extraction_prompt(nodes_text: str, spatial_summary_text: str) -> str:
+        """
+        Multi-Pass Pass 3: Extract relationships between already-identified locations.
+        Focus on connections that may have been missed in earlier passes.
+        """
+        return f"""
+You are a D&D Knowledge Graph Architect. This is PASS 3 of a multi-pass extraction.
+
+KNOWN LOCATIONS:
+{nodes_text}
+
+Input Text:
+{spatial_summary_text}
+
+TASK: Extract RELATIONSHIPS (edges) between the known locations above.
+Focus on connections that show how locations relate to each other.
+
+RELATIONSHIP TYPES:
+- "connected_to": Direct access between locations (doors, passages, teleportation)
+- "leads_to": Directional movement (paths, stairs, one-way passages)
+
+DO NOT CREATE:
+- New nodes (only use the known locations listed above)
+- "part_of" edges (those were handled in earlier passes)
+
+Output Format (JSON ONLY):
+{{
+    "edges": [
+        {{ "source": "the_wreck_of_the_compass_rose", "target": "dragon_s_rest", "relation": "connected_to", "desc": "2.5 miles north, accessible by rowboat" }},
+        {{ "source": "the_winch_house", "target": "the_shoreline_bluffs", "relation": "connected_to", "desc": "Connected by a path" }}
+    ]
+}}
+"""
+
+    @staticmethod
+    def create_multi_pass_verification_prompt(full_graph_text: str, spatial_summary_text: str) -> str:
+        """
+        Multi-Pass Pass 4: Self-verification to check completeness.
+        """
+        return f"""
+You are a Quality Assurance Expert for D&D Knowledge Graphs.
+
+CURRENT GRAPH:
+{full_graph_text}
+
+SOURCE TEXT:
+{spatial_summary_text}
+
+TASK: Review the graph and answer these questions:
+1. Are all major locations from the source text included?
+2. Does every sub-location have a "part_of" relationship to its parent?
+3. Are all IDs descriptive (not generic like "loc_1", "area_2")?
+4. Are all ship deck sections (C1-C9) included as separate nodes?
+5. Are all cave areas (B1-B6) included as separate nodes?
+
+MISSING ITEMS CHECKLIST:
+- Check for: decks, caves, rooms, cells, quarters, halls, passages
+- Check for: named features like statues, altars, thrones
+- Check for: outdoor areas like gardens, courtyards, cliffs
+
+Output Format (JSON ONLY):
+{{
+    "is_complete": true/false,
+    "missing_locations": ["list", "of", "missing", "locations"],
+    "issues": ["description", "of", "issues", "found"],
+    "revised_edges": [
+        {{ "source": "id1", "target": "id2", "relation": "connected_to", "desc": "add missing edges here" }}
+    ]
+}}
 """
 
     @staticmethod

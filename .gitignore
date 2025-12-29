@@ -3,3 +3,11 @@ data_src/
 __pycache__/
 
 lib/
+
+.vscode/
+
+*.egg-info/
+*.egg
+
+# Environment variables
+.env

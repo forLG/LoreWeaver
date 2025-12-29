@@ -1,0 +1,726 @@
+{
+  "000": [
+    "the_forgotten_realms",
+    "stormwreck_isle",
+    "dragon_s_rest",
+    "seagrow_caves",
+    "cursed_shipwreck"
+  ],
+  "001": [
+    "dragon_s_rest",
+    "stormwreck_isle"
+  ],
+  "003": [
+    "the_forgotten_realms",
+    "the_sword_coast",
+    "stormwreck_isle"
+  ],
+  "005": [
+    "dragon_s_rest",
+    "stormwreck_isle",
+    "cloister",
+    "runara_s_study",
+    "cloister_entrance"
+  ],
+  "006": [
+    "dragon_s_rest",
+    "seagrow_caves",
+    "cursed_shipwreck",
+    "clifftop_observatory",
+    "runara_s_study"
+  ],
+  "007": [
+    "stormwreck_isle"
+  ],
+  "00d": [
+    "dragon_s_rest",
+    "cloister",
+    "runara_s_study",
+    "cloister_entrance",
+    "shipwreck_entrance"
+  ],
+  "0cd": [
+    "stormwreck_isle"
+  ],
+  "0ce": [
+    "stormwreck_isle"
+  ],
+  "0cf": [
+    "the_sword_coast",
+    "stormwreck_isle"
+  ],
+  "0d0": [
+    "stormwreck_isle"
+  ],
+  "0d1": [
+    "stormwreck_isle"
+  ],
+  "0d2": [
+    "stormwreck_isle"
+  ],
+  "0ea": [
+    "runara_s_study",
+    "shipwreck_hold"
+  ],
+  "0ec": [
+    "stormwreck_isle"
+  ],
+  "0ed": [
+    "stormwreck_isle"
+  ],
+  "011": [
+    "dragon_s_rest",
+    "stormwreck_isle"
+  ],
+  "012": [
+    "dragon_s_rest",
+    "cloister"
+  ],
+  "013": [
+    "dragon_s_rest"
+  ],
+  "014": [
+    "dragon_s_rest"
+  ],
+  "015": [
+    "shipwreck_deck",
+    "shipwreck_hold",
+    "shipwreck_lower_deck",
+    "shipwreck_hull",
+    "shipwreck_harpy_nest"
+  ],
+  "018": [
+    "dragon_s_rest",
+    "cloister_entrance"
+  ],
+  "019": [
+    "dragon_s_rest",
+    "cloister_entrance"
+  ],
+  "01a": [
+    "dragon_s_rest",
+    "cloister",
+    "cloister_entrance",
+    "runara_s_study"
+  ],
+  "01b": [
+    "cloister",
+    "cloister_entrance"
+  ],
+  "01c": [
+    "cloister",
+    "dragon_s_rest"
+  ],
+  "01d": [
+    "dragon_s_rest",
+    "cloister",
+    "cloister_entrance",
+    "shipwreck_entrance",
+    "compass_rose_deck"
+  ],
+  "01e": [
+    "dragon_s_rest",
+    "clifftop_observatory",
+    "cloister_entrance",
+    "shipwreck_entrance",
+    "compass_rose_deck"
+  ],
+  "01f": [
+    "cloister",
+    "seagrow_caves"
+  ],
+  "020": [
+    "dragon_s_rest",
+    "cloister",
+    "cloister_entrance",
+    "shipwreck_entrance"
+  ],
+  "021": [
+    "dragon_s_rest",
+    "dragon_s_rest",
+    "dragon_s_rest",
+    "dragon_s_rest",
+    "dragon_s_rest"
+  ],
+  "023": [
+    "clifftop_observatory",
+    "dragon_s_rest"
+  ],
+  "024": [
+    "clifftop_observatory",
+    "dragon_s_rest"
+  ],
+  "025": [
+    "cloister",
+    "cloister_entrance"
+  ],
+  "026": [
+    "dragon_s_rest",
+    "cloister"
+  ],
+  "028": [
+    "dragon_s_rest",
+    "cloister"
+  ],
+  "02a": [
+    "dragon_s_rest",
+    "cloister",
+    "runara_s_study"
+  ],
+  "02b": [
+    "clifftop_observatory"
+  ],
+  "02c": [
+    "dragon_s_rest",
+    "cloister"
+  ],
+  "02d": [
+    "cloister",
+    "cloister_entrance"
+  ],
+  "02f": [
+    "dragon_s_rest",
+    "seagrow_caves",
+    "compass_rose_deck",
+    "clifftop_observatory",
+    "sparkrender_s_den"
+  ],
+  "030": [
+    "cloister",
+    "shipwreck_tomb"
+  ],
+  "031": [
+    "dragon_s_rest",
+    "shipwreck_lower_deck"
+  ],
+  "033": [
+    "seagrow_caves"
+  ],
+  "034": [
+    "dragon_s_rest",
+    "compass_rose_deck",
+    "shipwreck_entrance",
+    "compass_rose_hold",
+    "shipwreck_entrance"
+  ],
+  "035": [
+    "dragon_s_rest",
+    "cloister",
+    "cloister_entrance"
+  ],
+  "036": [
+    "runara_s_study",
+    "compass_rose_deck",
+    "compass_rose_hold",
+    "shipwreck_entrance"
+  ],
+  "037": [
+    "dragon_s_rest",
+    "cloister",
+    "cloister_entrance"
+  ],
+  "038": [
+    "dragon_s_rest",
+    "runara_s_study"
+  ],
+  "039": [
+    "dragon_s_rest"
+  ],
+  "03a": [
+    "clifftop_observatory",
+    "runara_s_study"
+  ],
+  "03b": [
+    "cloister",
+    "dragon_s_rest",
+    "observatory_ruins"
+  ],
+  "03c": [
+    "runara_s_study",
+    "cloister"
+  ],
+  "03d": [
+    "dragon_s_rest",
+    "runara_s_study"
+  ],
+  "03e": [
+    "dragon_s_rest",
+    "stormwreck_isle"
+  ],
+  "044": [
+    "stormwreck_isle"
+  ],
+  "046": [
+    "dragon_s_rest",
+    "stormwreck_isle"
+  ],
+  "04a": [
+    "stormwreck_isle",
+    "seagrow_caves"
+  ],
+  "04b": [
+    "seagrow_caves",
+    "compass_rose_deck",
+    "cursed_shipwreck"
+  ],
+  "04c": [
+    "seagrow_caves",
+    "stormwreck_isle",
+    "dragon_s_rest",
+    "cloister",
+    "compass_rose_deck"
+  ],
+  "04d": [
+    "seagrow_caves"
+  ],
+  "04e": [
+    "the_sword_coast",
+    "seagrow_caves",
+    "dragon_s_rest"
+  ],
+  "04f": [
+    "seagrow_caves"
+  ],
+  "050": [
+    "seagrow_caves",
+    "clifftop_observatory"
+  ],
+  "053": [
+    "seagrow_caves"
+  ],
+  "054": [
+    "seagrow_caves"
+  ],
+  "056": [
+    "seagrow_caves"
+  ],
+  "057": [
+    "seagrow_caves"
+  ],
+  "058": [
+    "seagrow_caves"
+  ],
+  "05b": [
+    "seagrow_caves"
+  ],
+  "05d": [
+    "seagrow_caves"
+  ],
+  "063": [
+    "seagrow_caves"
+  ],
+  "064": [
+    "seagrow_caves"
+  ],
+  "066": [
+    "seagrow_caves"
+  ],
+  "068": [
+    "seagrow_caves"
+  ],
+  "06a": [
+    "cloister"
+  ],
+  "06b": [
+    "seagrow_caves",
+    "dragon_s_rest"
+  ],
+  "06c": [
+    "seagrow_caves"
+  ],
+  "06d": [
+    "seagrow_caves"
+  ],
+  "070": [
+    "seagrow_caves",
+    "dragon_s_rest"
+  ],
+  "071": [
+    "seagrow_caves",
+    "dragon_s_rest",
+    "compass_rose_deck",
+    "clifftop_observatory"
+  ],
+  "072": [
+    "cursed_shipwreck"
+  ],
+  "073": [
+    "stormwreck_isle",
+    "compass_rose_deck",
+    "compass_rose_hold",
+    "dragon_s_rest",
+    "cloister"
+  ],
+  "074": [
+    "compass_rose_deck",
+    "compass_rose_hold",
+    "dragon_s_rest"
+  ],
+  "075": [
+    "shipwreck_deck",
+    "shipwreck_hold",
+    "shipwreck_lower_deck",
+    "shipwreck_hull",
+    "cloister"
+  ],
+  "076": [
+    "dragon_s_rest",
+    "compass_rose_deck",
+    "compass_rose_hold"
+  ],
+  "077": [
+    "cursed_shipwreck",
+    "shipwreck_hull"
+  ],
+  "078": [
+    "shipwreck_deck",
+    "shipwreck_hold",
+    "shipwreck_lower_deck",
+    "shipwreck_hull",
+    "shipwreck_tomb"
+  ],
+  "07a": [
+    "shipwreck_deck",
+    "shipwreck_hold"
+  ],
+  "07b": [
+    "shipwreck_harpy_nest",
+    "shipwreck_deck"
+  ],
+  "07c": [
+    "cursed_shipwreck"
+  ],
+  "07d": [
+    "shipwreck_deck"
+  ],
+  "07e": [
+    "shipwreck_deck"
+  ],
+  "07f": [
+    "the_forgotten_realms",
+    "the_sword_coast"
+  ],
+  "080": [
+    "compass_rose_deck",
+    "compass_rose_hold",
+    "shipwreck_deck",
+    "shipwreck_hold",
+    "shipwreck_lower_deck"
+  ],
+  "081": [
+    "shipwreck_deck"
+  ],
+  "082": [
+    "shipwreck_deck",
+    "shipwreck_hold"
+  ],
+  "083": [
+    "shipwreck_hold",
+    "shipwreck_deck"
+  ],
+  "084": [
+    "shipwreck_hold",
+    "shipwreck_lower_deck",
+    "shipwreck_hull"
+  ],
+  "085": [
+    "dragon_s_rest",
+    "clifftop_observatory"
+  ],
+  "087": [
+    "shipwreck_deck",
+    "shipwreck_hold",
+    "shipwreck_lower_deck",
+    "shipwreck_hull",
+    "shipwreck_tomb"
+  ],
+  "088": [
+    "the_forgotten_realms",
+    "the_sword_coast"
+  ],
+  "089": [
+    "shipwreck_deck",
+    "shipwreck_hold",
+    "shipwreck_lower_deck",
+    "shipwreck_hull",
+    "shipwreck_tomb"
+  ],
+  "08b": [
+    "shipwreck_deck"
+  ],
+  "08f": [
+    "shipwreck_lower_deck"
+  ],
+  "090": [
+    "shipwreck_lower_deck"
+  ],
+  "091": [
+    "shipwreck_lower_deck",
+    "shipwreck_hold"
+  ],
+  "093": [
+    "shipwreck_lower_deck"
+  ],
+  "094": [
+    "shipwreck_hold"
+  ],
+  "095": [
+    "cursed_shipwreck",
+    "shipwreck_hull"
+  ],
+  "096": [
+    "cursed_shipwreck",
+    "shipwreck_hold"
+  ],
+  "097": [
+    "compass_rose_deck",
+    "dragon_s_rest",
+    "shipwreck_shoal"
+  ],
+  "099": [
+    "shipwreck_hold",
+    "shipwreck_lower_deck",
+    "shipwreck_harpy_nest"
+  ],
+  "09a": [
+    "shipwreck_deck",
+    "shipwreck_hold",
+    "shipwreck_lower_deck",
+    "shipwreck_hull",
+    "shipwreck_harpy_nest"
+  ],
+  "09b": [
+    "shipwreck_harpy_nest"
+  ],
+  "09c": [
+    "shipwreck_harpy_nest"
+  ],
+  "09d": [
+    "shipwreck_harpy_nest"
+  ],
+  "09e": [
+    "cursed_shipwreck",
+    "dragon_s_rest",
+    "clifftop_observatory",
+    "cloister",
+    "runara_s_study"
+  ],
+  "09f": [
+    "stormwreck_isle"
+  ],
+  "0a0": [
+    "the_sword_coast",
+    "seagrow_caves",
+    "dragon_s_rest",
+    "clifftop_observatory"
+  ],
+  "0a1": [
+    "clifftop_observatory",
+    "seagrow_caves",
+    "compass_rose_deck"
+  ],
+  "0a2": [
+    "clifftop_observatory",
+    "dragon_s_rest",
+    "observatory_ruins",
+    "observatory_spellbook_room",
+    "observatory_spellbook_chamber"
+  ],
+  "0a3": [
+    "clifftop_observatory",
+    "stormwreck_isle"
+  ],
+  "0a4": [
+    "clifftop_observatory",
+    "dragon_s_rest",
+    "shipwreck_entrance",
+    "compass_rose_deck",
+    "compass_rose_hold"
+  ],
+  "0a5": [
+    "clifftop_observatory",
+    "dragon_s_rest",
+    "observatory_ruins",
+    "observatory_spellbook_room",
+    "observatory_spellbook_chamber"
+  ],
+  "0a6": [
+    "stormwreck_isle"
+  ],
+  "0a7": [
+    "clifftop_observatory",
+    "shipwreck_entrance",
+    "compass_rose_deck",
+    "compass_rose_hold",
+    "dragon_s_rest"
+  ],
+  "0a8": [
+    "stormwreck_isle",
+    "clifftop_observatory"
+  ],
+  "0a9": [
+    "dragon_s_rest",
+    "observatory_ruins",
+    "observatory_islet_a",
+    "observatory_islet_b",
+    "observatory_bridge"
+  ],
+  "0aa": [
+    "clifftop_observatory",
+    "observatory_ruins",
+    "observatory_islet_a",
+    "observatory_islet_b",
+    "observatory_bridge"
+  ],
+  "0ab": [
+    "observatory_spellbook_room",
+    "observatory_spellbook_chamber",
+    "observatory_spellbook_shelf",
+    "observatory_spellbook_table",
+    "observatory_spellbook_window"
+  ],
+  "0ac": [
+    "clifftop_observatory"
+  ],
+  "0ad": [
+    "observatory_spellbook_room",
+    "dragon_s_rest"
+  ],
+  "0af": [
+    "the_forgotten_realms",
+    "stormwreck_isle",
+    "dragon_s_rest"
+  ],
+  "0b0": [
+    "dragon_s_rest",
+    "sparkrender_s_den",
+    "cloister",
+    "cloister_entrance",
+    "shipwreck_entrance"
+  ],
+  "0b1": [
+    "the_forgotten_realms",
+    "the_sword_coast"
+  ],
+  "0b2": [
+    "observatory_kobold_quarters"
+  ],
+  "0b4": [
+    "observatory_spellbook_room",
+    "observatory_spellbook_chamber",
+    "observatory_spellbook_shelf",
+    "observatory_spellbook_table",
+    "observatory_spellbook_window"
+  ],
+  "0b5": [
+    "cloister",
+    "cloister_entrance"
+  ],
+  "0b6": [
+    "dragon_s_rest",
+    "clifftop_observatory"
+  ],
+  "0b7": [
+    "runara_s_study",
+    "dragon_s_rest",
+    "seagrow_caves",
+    "cursed_shipwreck",
+    "clifftop_observatory"
+  ],
+  "0b8": [
+    "runara_s_study"
+  ],
+  "0b9": [
+    "observatory_spellbook_room",
+    "observatory_spellbook_chamber",
+    "observatory_spellbook_shelf",
+    "observatory_spellbook_table",
+    "observatory_spellbook_window"
+  ],
+  "0ba": [
+    "observatory_stained_glass",
+    "observatory_marble_spires",
+    "observatory_spellbook_room",
+    "observatory_spellbook_chamber",
+    "observatory_spellbook_shelf"
+  ],
+  "0bb": [
+    "clifftop_observatory",
+    "observatory_spellbook_room",
+    "observatory_spellbook_chamber",
+    "observatory_spellbook_shelf",
+    "observatory_spellbook_table"
+  ],
+  "0bc": [
+    "clifftop_observatory",
+    "observatory_spellbook_room",
+    "observatory_spellbook_chamber",
+    "observatory_spellbook_shelf",
+    "observatory_spellbook_table"
+  ],
+  "0bd": [
+    "clifftop_observatory",
+    "dragon_s_rest",
+    "observatory_spellbook_room",
+    "observatory_spellbook_chamber",
+    "observatory_spellbook_shelf"
+  ],
+  "0be": [
+    "clifftop_observatory",
+    "sparkrender_s_den",
+    "aidron_s_cell"
+  ],
+  "0bf": [
+    "observatory_spellbook_room",
+    "observatory_spellbook_chamber",
+    "observatory_spellbook_shelf",
+    "observatory_spellbook_table",
+    "observatory_spellbook_window",
+    "observatory_spellbook_door",
+    "observatory_spellbook_staircase",
+    "observatory_spellbook_corridor",
+    "dragon_s_rest",
+    "clifftop_observatory"
+  ],
+  "0c0": [
+    "cloister",
+    "runara_study"
+  ],
+  "0c1": [
+    "runara_s_study",
+    "cloister_entrance",
+    "shipwreck_entrance"
+  ],
+  "0c2": [
+    "clifftop_observatory",
+    "dragon_s_rest",
+    "runara_s_study",
+    "shipwreck_entrance",
+    "compass_rose_deck"
+  ],
+  "0c3": [
+    "clifftop_observatory",
+    "dragon_s_rest"
+  ],
+  "0c6": [
+    "dragon_s_rest",
+    "clifftop_observatory"
+  ],
+  "0c7": [
+    "aidron_s_cell"
+  ],
+  "0c8": [
+    "sparkrender_s_den",
+    "dragon_s_rest"
+  ],
+  "0c9": [
+    "dragon_s_rest",
+    "clifftop_observatory"
+  ],
+  "0ca": [
+    "stormwreck_isle"
+  ],
+  "0d3": [
+    "stormwreck_isle"
+  ]
+}

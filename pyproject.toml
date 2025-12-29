@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lorewriter"
+version = "0.1.0"
+description = "An automated pipeline to convert D&D module PDFs/Texts into Knowledge Graphs for GraphRAG"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "openai",
+    "neo4j",
+    "pyvis",
+    "python-dotenv",
+]
+
+[project.scripts]
+lorewriter = "main:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

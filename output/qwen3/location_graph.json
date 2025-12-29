@@ -1,0 +1,578 @@
+{
+  "nodes": [
+    {
+      "id": "the_forgotten_realms",
+      "label": "The Forgotten Realms",
+      "type": "World"
+    },
+    {
+      "id": "the_sword_coast",
+      "label": "The Sword Coast",
+      "type": "Region"
+    },
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Island"
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "City"
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Cave"
+    },
+    {
+      "id": "cursed_shipwreck",
+      "label": "Cursed Shipwreck",
+      "type": "Shipwreck"
+    },
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Ruins"
+    },
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Island"
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "City"
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Caves"
+    },
+    {
+      "id": "cursed_shipwreck",
+      "label": "Cursed Shipwreck",
+      "type": "Shipwreck"
+    },
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Ruins"
+    },
+    {
+      "id": "cloister",
+      "label": "Cloister",
+      "type": "Building"
+    },
+    {
+      "id": "runara_study",
+      "label": "Runara's Study",
+      "type": "Room"
+    },
+    {
+      "id": "shipwreck_deck",
+      "label": "Shipwreck Deck (C1)",
+      "type": "Deck"
+    },
+    {
+      "id": "shipwreck_hold",
+      "label": "Shipwreck Hold (C9)",
+      "type": "Hold"
+    },
+    {
+      "id": "shipwreck_lower_deck",
+      "label": "Shipwreck Lower Deck (C8)",
+      "type": "Deck"
+    },
+    {
+      "id": "shipwreck_hull",
+      "label": "Shipwreck Hull",
+      "type": "Structure"
+    },
+    {
+      "id": "shipwreck_harpy_nest",
+      "label": "Shipwreck Harpy Nest",
+      "type": "Area"
+    },
+    {
+      "id": "shipwreck_tomb",
+      "label": "Shipwreck Tomb",
+      "type": "Tomb"
+    },
+    {
+      "id": "shipwreck_shoal",
+      "label": "Shipwreck Shoal",
+      "type": "Feature"
+    },
+    {
+      "id": "observatory_ruins",
+      "label": "Observatory Ruins",
+      "type": "Ruins"
+    },
+    {
+      "id": "observatory_islet_a",
+      "label": "Observatory Islet A",
+      "type": "Islet"
+    },
+    {
+      "id": "observatory_islet_b",
+      "label": "Observatory Islet B",
+      "type": "Islet"
+    },
+    {
+      "id": "observatory_bridge",
+      "label": "Observatory Bridge",
+      "type": "Bridge"
+    },
+    {
+      "id": "observatory_cell",
+      "label": "Observatory Cell",
+      "type": "Cell"
+    },
+    {
+      "id": "observatory_prison_cell",
+      "label": "Observatory Prison Cell",
+      "type": "Cell"
+    },
+    {
+      "id": "observatory_stained_glass",
+      "label": "Observatory Stained Glass",
+      "type": "Feature"
+    },
+    {
+      "id": "observatory_marble_spires",
+      "label": "Observatory Marble Spires",
+      "type": "Feature"
+    },
+    {
+      "id": "observatory_blue_dragon_nest",
+      "label": "Observatory Blue Dragon Nest",
+      "type": "Nest"
+    },
+    {
+      "id": "observatory_kobold_quarters",
+      "label": "Observatory Kobold Quarters",
+      "type": "Quarters"
+    },
+    {
+      "id": "observatory_blue_dragon",
+      "label": "Observatory Blue Dragon",
+      "type": "Creature"
+    },
+    {
+      "id": "observatory_spellbook_room",
+      "label": "Observatory Spellbook Room",
+      "type": "Room"
+    },
+    {
+      "id": "observatory_spellbook",
+      "label": "Observatory Spellbook",
+      "type": "Item"
+    },
+    {
+      "id": "observatory_spellbook_chamber",
+      "label": "Observatory Spellbook Chamber",
+      "type": "Chamber"
+    },
+    {
+      "id": "observatory_spellbook_shelf",
+      "label": "Observatory Spellbook Shelf",
+      "type": "Shelf"
+    },
+    {
+      "id": "observatory_spellbook_table",
+      "label": "Observatory Spellbook Table",
+      "type": "Table"
+    },
+    {
+      "id": "observatory_spellbook_window",
+      "label": "Observatory Spellbook Window",
+      "type": "Window"
+    },
+    {
+      "id": "observatory_spellbook_door",
+      "label": "Observatory Spellbook Door",
+      "type": "Door"
+    },
+    {
+      "id": "observatory_spellbook_staircase",
+      "label": "Observatory Spellbook Staircase",
+      "type": "Staircase"
+    },
+    {
+      "id": "observatory_spellbook_corridor",
+      "label": "Observatory Spellbook Corridor",
+      "type": "Corridor"
+    },
+    {
+      "id": "observatory_spellbook_room",
+      "label": "Observatory Spellbook Room",
+      "type": "Room"
+    },
+    {
+      "id": "observatory_spellbook_chamber",
+      "label": "Observatory Spellbook Chamber",
+      "type": "Chamber"
+    },
+    {
+      "id": "observatory_spellbook_shelf",
+      "label": "Observatory Spellbook Shelf",
+      "type": "Shelf"
+    },
+    {
+      "id": "observatory_spellbook_table",
+      "label": "Observatory Spellbook Table",
+      "type": "Table"
+    },
+    {
+      "id": "observatory_spellbook_window",
+      "label": "Observatory Spellbook Window",
+      "type": "Window"
+    },
+    {
+      "id": "observatory_spellbook_door",
+      "label": "Observatory Spellbook Door",
+      "type": "Door"
+    },
+    {
+      "id": "observatory_spellbook_staircase",
+      "label": "Observatory Spellbook Staircase",
+      "type": "Staircase"
+    },
+    {
+      "id": "observatory_spellbook_corridor",
+      "label": "Observatory Spellbook Corridor",
+      "type": "Corridor"
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "City"
+    },
+    {
+      "id": "runara_s_study",
+      "label": "Runara's Study (A1)",
+      "type": "Room"
+    },
+    {
+      "id": "cloister_entrance",
+      "label": "Cloister Entrance",
+      "type": "Door"
+    },
+    {
+      "id": "shipwreck_entrance",
+      "label": "Shipwreck Entrance",
+      "type": "Entrance"
+    },
+    {
+      "id": "compass_rose_deck",
+      "label": "Compass Rose Deck (C1)",
+      "type": "Deck"
+    },
+    {
+      "id": "compass_rose_hold",
+      "label": "Compass Rose Hold (C9)",
+      "type": "Hold"
+    },
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Ruins"
+    },
+    {
+      "id": "sparkrender_s_den",
+      "label": "Sparkrender's Den",
+      "type": "Cell"
+    },
+    {
+      "id": "aidron_s_cell",
+      "label": "Aidron's Cell",
+      "type": "Cell"
+    }
+  ],
+  "edges": [
+    {
+      "source": "the_sword_coast",
+      "target": "the_forgotten_realms",
+      "relation": "part_of"
+    },
+    {
+      "source": "stormwreck_isle",
+      "target": "the_sword_coast",
+      "relation": "part_of"
+    },
+    {
+      "source": "dragon_s_rest",
+      "target": "the_sword_coast",
+      "relation": "part_of"
+    },
+    {
+      "source": "seagrow_caves",
+      "target": "the_sword_coast",
+      "relation": "part_of"
+    },
+    {
+      "source": "cursed_shipwreck",
+      "target": "stormwreck_isle",
+      "relation": "part_of"
+    },
+    {
+      "source": "clifftop_observatory",
+      "target": "the_sword_coast",
+      "relation": "part_of"
+    },
+    {
+      "source": "stormwreck_isle",
+      "target": "dragon_s_rest",
+      "relation": "part_of",
+      "desc": "Located on Stormwreck Isle"
+    },
+    {
+      "source": "stormwreck_isle",
+      "target": "seagrow_caves",
+      "relation": "part_of",
+      "desc": "Located on Stormwreck Isle"
+    },
+    {
+      "source": "stormwreck_isle",
+      "target": "cursed_shipwreck",
+      "relation": "part_of",
+      "desc": "Located on Stormwreck Isle"
+    },
+    {
+      "source": "stormwreck_isle",
+      "target": "clifftop_observatory",
+      "relation": "part_of",
+      "desc": "Located on Stormwreck Isle"
+    },
+    {
+      "source": "stormwreck_isle",
+      "target": "cloister",
+      "relation": "part_of",
+      "desc": "Located on Stormwreck Isle"
+    },
+    {
+      "source": "stormwreck_isle",
+      "target": "shipwreck_shoal",
+      "relation": "part_of",
+      "desc": "Located on Stormwreck Isle"
+    },
+    {
+      "source": "stormwreck_isle",
+      "target": "observatory_islet_a",
+      "relation": "part_of",
+      "desc": "Located on Stormwreck Isle"
+    },
+    {
+      "source": "stormwreck_isle",
+      "target": "observatory_islet_b",
+      "relation": "part_of",
+      "desc": "Located on Stormwreck Isle"
+    },
+    {
+      "source": "stormwreck_isle",
+      "target": "observatory_bridge",
+      "relation": "part_of",
+      "desc": "Located on Stormwreck Isle"
+    },
+    {
+      "source": "dragon_s_rest",
+      "target": "cloister",
+      "relation": "part_of",
+      "desc": "Located in Dragon's Rest"
+    },
+    {
+      "source": "seagrow_caves",
+      "target": "runara_study",
+      "relation": "part_of",
+      "desc": "Within Seagrow Caves"
+    },
+    {
+      "source": "cursed_shipwreck",
+      "target": "shipwreck_deck",
+      "relation": "part_of",
+      "desc": "Within the shipwreck"
+    },
+    {
+      "source": "cursed_shipwreck",
+      "target": "shipwreck_hold",
+      "relation": "part_of",
+      "desc": "Within the shipwreck"
+    },
+    {
+      "source": "cursed_shipwreck",
+      "target": "shipwreck_lower_deck",
+      "relation": "part_of",
+      "desc": "Within the shipwreck"
+    },
+    {
+      "source": "cursed_shipwreck",
+      "target": "shipwreck_hull",
+      "relation": "part_of",
+      "desc": "Within the shipwreck"
+    },
+    {
+      "source": "cursed_shipwreck",
+      "target": "shipwreck_harpy_nest",
+      "relation": "part_of",
+      "desc": "Within the shipwreck"
+    },
+    {
+      "source": "cursed_shipwreck",
+      "target": "shipwreck_tomb",
+      "relation": "part_of",
+      "desc": "Within the shipwreck"
+    },
+    {
+      "source": "clifftop_observatory",
+      "target": "observatory_ruins",
+      "relation": "part_of",
+      "desc": "Within the observatory"
+    },
+    {
+      "source": "clifftop_observatory",
+      "target": "observatory_islet_a",
+      "relation": "part_of",
+      "desc": "Within the observatory"
+    },
+    {
+      "source": "clifftop_observatory",
+      "target": "observatory_islet_b",
+      "relation": "part_of",
+      "desc": "Within the observatory"
+    },
+    {
+      "source": "clifftop_observatory",
+      "target": "observatory_bridge",
+      "relation": "part_of",
+      "desc": "Within the observatory"
+    },
+    {
+      "source": "clifftop_observatory",
+      "target": "observatory_cell",
+      "relation": "part_of",
+      "desc": "Within the observatory"
+    },
+    {
+      "source": "clifftop_observatory",
+      "target": "observatory_prison_cell",
+      "relation": "part_of",
+      "desc": "Within the observatory"
+    },
+    {
+      "source": "clifftop_observatory",
+      "target": "observatory_stained_glass",
+      "relation": "part_of",
+      "desc": "Within the observatory"
+    },
+    {
+      "source": "clifftop_observatory",
+      "target": "observatory_marble_spires",
+      "relation": "part_of",
+      "desc": "Within the observatory"
+    },
+    {
+      "source": "clifftop_observatory",
+      "target": "observatory_blue_dragon_nest",
+      "relation": "part_of",
+      "desc": "Within the observatory"
+    },
+    {
+      "source": "clifftop_observatory",
+      "target": "observatory_kobold_quarters",
+      "relation": "part_of",
+      "desc": "Within the observatory"
+    },
+    {
+      "source": "clifftop_observatory",
+      "target": "observatory_spellbook_room",
+      "relation": "part_of",
+      "desc": "Within the observatory"
+    },
+    {
+      "source": "clifftop_observatory",
+      "target": "observatory_spellbook_chamber",
+      "relation": "part_of",
+      "desc": "Within the observatory"
+    },
+    {
+      "source": "clifftop_observatory",
+      "target": "observatory_spellbook_shelf",
+      "relation": "part_of",
+      "desc": "Within the observatory"
+    },
+    {
+      "source": "clifftop_observatory",
+      "target": "observatory_spellbook_table",
+      "relation": "part_of",
+      "desc": "Within the observatory"
+    },
+    {
+      "source": "clifftop_observatory",
+      "target": "observatory_spellbook_window",
+      "relation": "part_of",
+      "desc": "Within the observatory"
+    },
+    {
+      "source": "clifftop_observatory",
+      "target": "observatory_spellbook_door",
+      "relation": "part_of",
+      "desc": "Within the observatory"
+    },
+    {
+      "source": "clifftop_observatory",
+      "target": "observatory_spellbook_staircase",
+      "relation": "part_of",
+      "desc": "Within the observatory"
+    },
+    {
+      "source": "clifftop_observatory",
+      "target": "observatory_spellbook_corridor",
+      "relation": "part_of",
+      "desc": "Within the observatory"
+    },
+    {
+      "source": "runara_s_study",
+      "target": "dragon_s_rest",
+      "relation": "part_of",
+      "desc": "Within the cloister"
+    },
+    {
+      "source": "cloister_entrance",
+      "target": "dragon_s_rest",
+      "relation": "connected_to",
+      "desc": "Access to the cloister"
+    },
+    {
+      "source": "shipwreck_entrance",
+      "target": "dragon_s_rest",
+      "relation": "connected_to",
+      "desc": "Access to the shipwreck"
+    },
+    {
+      "source": "compass_rose_deck",
+      "target": "compass_rose_hold",
+      "relation": "leads_to",
+      "desc": "Passage to the hold"
+    },
+    {
+      "source": "clifftop_observatory",
+      "target": "dragon_s_rest",
+      "relation": "connected_to",
+      "desc": "Located on Stormwreck Isle"
+    },
+    {
+      "source": "sparkrender_s_den",
+      "target": "clifftop_observatory",
+      "relation": "part_of",
+      "desc": "Within the ruins"
+    },
+    {
+      "source": "aidron_s_cell",
+      "target": "clifftop_observatory",
+      "relation": "part_of",
+      "desc": "Within the ruins"
+    }
+  ]
+}

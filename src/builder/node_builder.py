@@ -6,8 +6,8 @@ import copy
 from typing import List, Dict, Any, Optional, Set, Tuple
 from pathlib import Path
 
-from src.utils.logger import logger
-from src.utils.resolver import InheritanceResolver
+from utils.logger import logger
+from utils.resolver import InheritanceResolver
 
 # ==========================================
 # Utility Functions

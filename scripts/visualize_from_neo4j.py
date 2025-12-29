@@ -7,10 +7,8 @@ Usage:
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent.parent))
-
-from src.graph_builder.neo4j_builder import Neo4jBuilder
-from src.graph_builder.visualizer import GraphVisualizer
+from graph_builder import Neo4jBuilder, GraphVisualizer
+from utils.logger import logger
 import config_neo4j as config
 
 
@@ -38,7 +36,7 @@ def visualize_creatures_and_locations():
             output_html="output/visualizations/creature_locations.html",
             title="Creatures and Their Locations"
         )
-        print(f"✓ 已保存: {output_path}")
+        logger.info(f"已保存: {output_path}")
 
 
 def visualize_shortest_path():
@@ -68,7 +66,7 @@ def visualize_shortest_path():
             output_html="output/visualizations/shortest_path.html",
             title="Shortest Path: Stormwreck Isle → Runara"
         )
-        print(f"✓ 已保存: {output_path}")
+        logger.info(f"已保存: {output_path}")
 
 
 def visualize_filtered_by_type():
@@ -97,31 +95,31 @@ def visualize_filtered_by_type():
             output_html="output/visualizations/caves_only.html",
             title="Underground Locations Only"
         )
-        print(f"✓ 已保存: {output_path}")
+        logger.info(f"已保存: {output_path}")
 
 
 if __name__ == "__main__":
-    print("=" * 60)
-    print("从 Neo4j 生成可视化")
-    print("=" * 60)
+    logger.info("=" * 60)
+    logger.info("从 Neo4j 生成可视化")
+    logger.info("=" * 60)
 
     try:
-        print("\n[1/3] 生物与位置关系...")
+        logger.info("[1/3] 生物与位置关系...")
         visualize_creatures_and_locations()
 
-        print("\n[2/3] 最短路径...")
+        logger.info("[2/3] 最短路径...")
         visualize_shortest_path()
 
-        print("\n[3/3] 过滤特定类型...")
+        logger.info("[3/3] 过滤特定类型...")
         visualize_filtered_by_type()
 
-        print("\n" + "=" * 60)
-        print("完成！在浏览器中打开 output/visualizations/ 查看结果")
-        print("=" * 60)
+        logger.info("=" * 60)
+        logger.info("完成！在浏览器中打开 output/visualizations/ 查看结果")
+        logger.info("=" * 60)
 
     except Exception as e:
-        print(f"\n错误: {e}")
-        print("\n请确保:")
-        print("  1. Neo4j 正在运行")
-        print("  2. 已运行 build_graph.py --mode neo4j 导入数据")
-        print("  3. config_neo4j.py 中的密码正确")
+        logger.error(f"错误: {e}")
+        logger.info("请确保:")
+        logger.info("  1. Neo4j 正在运行")
+        logger.info("  2. 已运行 scripts/build_graph.py --mode neo4j 导入数据")
+        logger.info("  3. config_neo4j.py 中的密码正确")

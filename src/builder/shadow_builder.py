@@ -1,7 +1,7 @@
 import json
 from typing import Dict, List, Any, Optional
-from src.utils.link_processor import LinkProcessor
-from src.utils.logger import logger
+from utils.link_processor import LinkProcessor
+from utils.logger import logger
 
 class ShadowNode:
     def __init__(self, id: str, title: str, node_type: str):

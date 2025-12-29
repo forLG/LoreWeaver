@@ -20,11 +20,7 @@ import argparse
 import sys
 from pathlib import Path
 
-# 添加项目路径
-sys.path.insert(0, str(Path(__file__).parent.parent))
-
-from src.graph_builder.neo4j_builder import Neo4jBuilder
-from src.graph_builder.visualizer import GraphVisualizer
+from graph_builder import Neo4jBuilder, GraphVisualizer
 import config_neo4j as config
 
 

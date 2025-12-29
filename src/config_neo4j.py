@@ -9,8 +9,8 @@ Neo4j Configuration for LoreWeaver
 import os
 from pathlib import Path
 
-# 项目根目录（config_neo4j.py 在项目根目录下）
-PROJECT_ROOT = Path(__file__).parent
+# 项目根目录（config_neo4j.py 在 src/ 目录下）
+PROJECT_ROOT = Path(__file__).parent.parent
 
 # 数据目录
 DATA_DIR = PROJECT_ROOT / "data"

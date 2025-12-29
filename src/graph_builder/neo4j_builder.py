@@ -4,11 +4,10 @@ Neo4j Graph Builder for LoreWeaver
 使用 neo4j-python-driver 直接将 JSON 图谱导入 Neo4j 数据库。
 """
 import json
-import logging
 from typing import Dict, List, Any, Optional
 from neo4j import GraphDatabase, Result
 
-logger = logging.getLogger(__name__)
+from utils.logger import logger
 
 
 class Neo4jBuilder:

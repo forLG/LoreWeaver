@@ -4,12 +4,11 @@ Graph Visualizer for LoreWeaver
 支持将 Neo4j 图谱导出为交互式 HTML 可视化。
 """
 import json
-import logging
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 from pyvis.network import Network
 
-logger = logging.getLogger(__name__)
+from utils.logger import logger
 
 
 class GraphVisualizer:

@@ -3,8 +3,8 @@ import re
 import asyncio
 from typing import List, Dict, Any
 from openai import OpenAI, AsyncOpenAI
-from src.llm.prompt_factory import PromptFactory
-from src.utils.logger import logger
+from llm.prompt_factory import PromptFactory
+from utils.logger import logger
 
 class SpatialTopologyProcessor:
     def __init__(self, api_key: str, base_url: str = None, model: str = "deepseek-chat", max_concurrent: int = 100):

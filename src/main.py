@@ -1,10 +1,10 @@
 import json
 import os
 from collections import Counter
-from src.builder.shadow_builder import ShadowTreeBuilder
-# from src.llm.summary_processor import SummaryProcessor
-from src.llm.spatial_processor import SpatialTopologyProcessor, SectionLocationMapper
-from src.llm.entity_processor import EntityProcessor
+from builder.shadow_builder import ShadowTreeBuilder
+# from llm.summary_processor import SummaryProcessor
+from llm.spatial_processor import SpatialTopologyProcessor, SectionLocationMapper
+from llm.entity_processor import EntityProcessor
 
 def main():
     # 1. 路径配置

@@ -2,8 +2,8 @@ import json
 import asyncio
 from typing import List, Dict, Any, Set
 from openai import AsyncOpenAI
-from src.utils.logger import logger
-from src.llm.prompt_factory import PromptFactory
+from utils.logger import logger
+from llm.prompt_factory import PromptFactory
 
 class EntityProcessor:
     def __init__(self, api_key: str, base_url: str = None, model: str = "deepseek-chat", max_concurrent: int = 100):

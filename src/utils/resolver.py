@@ -3,7 +3,7 @@ import copy
 import sys
 from typing import List, Dict, Any, Optional, Union
 
-from src.utils.logger import logger
+from utils.logger import logger
 
 class InheritanceResolver:
     def __init__(self, blacklist: List[str] = None):

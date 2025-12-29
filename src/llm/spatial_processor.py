@@ -170,7 +170,7 @@ class SpatialTopologyProcessor:
             if source == target:
                 continue
                 
-            edge_key = f"{source}|{edge.get('relation')}|{target}"
+            edge_key = f"{source}|{edge.get('relation', 'related_to')}|{target}"
             
             if edge_key not in seen_edges:
                 new_edge = edge.copy()
@@ -384,9 +384,9 @@ class SpatialTopologyProcessor:
             new_edges = result.get("edges", [])
 
             # Deduplicate edges
-            seen_edges = {f"{e['source']}|{e.get('relation')}|{e['target']}" for e in existing_edges}
+            seen_edges = {f"{e['source']}|{e.get('relation', 'related_to')}|{e['target']}" for e in existing_edges}
             for edge in new_edges:
-                edge_key = f"{edge['source']}|{edge.get('relation')}|{edge['target']}"
+                edge_key = f"{edge['source']}|{edge.get('relation', 'related_to')}|{edge['target']}"
                 if edge_key not in seen_edges:
                     existing_edges.append(edge)
                     seen_edges.add(edge_key)
@@ -428,7 +428,7 @@ class SpatialTopologyProcessor:
             if result.get("revised_edges"):
                 # Merge revised edges
                 for edge in result.get("revised_edges", []):
-                    edge_key = f"{edge['source']}|{edge.get('relation')}|{edge['target']}"
+                    edge_key = f"{edge['source']}|{edge.get('relation', 'related_to')}|{edge['target']}"
                     # Check if edge exists
                     exists = any(
                         e.get("source") == edge["source"] and

@@ -253,15 +253,36 @@ class Neo4jBuilder:
         """批量创建位置关系（不依赖 APOC，兼容 Neo4j 4.4）"""
 
         def create_batch(tx, batch):
-            # 不使用 APOC，手动构建每个关系
+            # 使用 UNWIND + CASE/FOREACH 批量创建关系，避免逐条执行 Cypher
+            prepared_edges = []
+            rel_types = set()
             for edge in batch:
                 rel_type = self._normalize_relation_type(edge.get('relation', 'CONNECTED_TO'))
-                tx.run(f"""
-                    MATCH (s:Location {{id: $source}})
-                    MATCH (t:Location {{id: $target}})
-                    MERGE (s)-[r:{rel_type}]->(t)
-                """, source=edge['source'], target=edge['target'])
+                prepared_edges.append({
+                    'source': edge['source'],
+                    'target': edge['target'],
+                    'rel_type': rel_type,
+                })
+                rel_types.add(rel_type)
 
+            if not prepared_edges:
+                return
+
+            # 构建动态 Cypher，将不同关系类型展开为字面量
+            query_parts = [
+                "UNWIND $edges AS edge",
+                "MATCH (s:Location {id: edge.source})",
+                "MATCH (t:Location {id: edge.target})",
+            ]
+
+            for rel_type in sorted(rel_types):
+                query_parts.append(f"""
+            FOREACH (_ IN CASE WHEN edge.rel_type = '{rel_type}' THEN [1] ELSE [] END |
+                MERGE (s)-[:{rel_type}]->(t)
+            )""")
+
+            query = "\n".join(query_parts)
+            tx.run(query, edges=prepared_edges)
         with self._driver.session(database=self.database) as session:
             for i in range(0, len(edges), self.batch_size):
                 batch = edges[i:i + self.batch_size]

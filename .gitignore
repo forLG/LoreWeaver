@@ -5,3 +5,8 @@ __pycache__/
 lib/
 
 .vscode/
+
+*.dgg-info/
+
+# Environment variables
+# .env

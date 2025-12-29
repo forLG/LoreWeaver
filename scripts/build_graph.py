@@ -21,24 +21,25 @@ import sys
 from pathlib import Path
 
 from graph_builder import Neo4jBuilder, GraphVisualizer
+from utils.logger import logger
 import config_neo4j as config
 
 
 def build_neo4j_graph():
     """构建 Neo4j 图谱"""
-    print("=" * 60)
-    print("开始构建 Neo4j 图谱...")
-    print("=" * 60)
+    logger.info("=" * 60)
+    logger.info("开始构建 Neo4j 图谱...")
+    logger.info("=" * 60)
 
     # 检查输入文件
     if not config.LOCATION_GRAPH_FILE.exists():
-        print(f"错误: 找不到位置图谱文件 {config.LOCATION_GRAPH_FILE}")
-        print("请先运行 src/main.py 生成图谱数据")
+        logger.error(f"找不到位置图谱文件 {config.LOCATION_GRAPH_FILE}")
+        logger.info("请先运行 python -m main --stage all 生成图谱数据")
         return False
 
     if not config.ENTITY_GRAPH_FILE.exists():
-        print(f"错误: 找不到实体图谱文件 {config.ENTITY_GRAPH_FILE}")
-        print("请先运行 src/main.py 生成图谱数据")
+        logger.error(f"找不到实体图谱文件 {config.ENTITY_GRAPH_FILE}")
+        logger.info("请先运行 python -m main --stage all 生成图谱数据")
         return False
 
     # 创建建图器
@@ -53,33 +54,33 @@ def build_neo4j_graph():
     try:
         with builder:
             # 创建约束
-            print("\n[步骤 1/4] 创建数据库约束...")
+            logger.info("[步骤 1/4] 创建数据库约束...")
             builder.create_constraints()
 
             # 导入位置图谱
-            print(f"\n[步骤 2/4] 导入位置图谱: {config.LOCATION_GRAPH_FILE}")
+            logger.info(f"[步骤 2/4] 导入位置图谱: {config.LOCATION_GRAPH_FILE}")
             loc_stats = builder.import_location_graph(str(config.LOCATION_GRAPH_FILE))
-            print(f"  -> 节点: {loc_stats['nodes']}, 关系: {loc_stats['edges']}")
+            logger.info(f"  -> 节点: {loc_stats['nodes']}, 关系: {loc_stats['edges']}")
 
             # 导入实体图谱
-            print(f"\n[步骤 3/4] 导入实体图谱: {config.ENTITY_GRAPH_FILE}")
+            logger.info(f"[步骤 3/4] 导入实体图谱: {config.ENTITY_GRAPH_FILE}")
             ent_stats = builder.import_entity_graph(str(config.ENTITY_GRAPH_FILE))
-            print(f"  -> 节点: {ent_stats['nodes']}, 关系: {ent_stats['edges']}")
+            logger.info(f"  -> 节点: {ent_stats['nodes']}, 关系: {ent_stats['edges']}")
 
             # 统计信息
-            print("\n[步骤 4/4] 图谱统计:")
+            logger.info("[步骤 4/4] 图谱统计:")
             stats = builder.get_stats()
-            print(f"  总节点数: {stats['total_nodes']}")
-            print(f"  总关系数: {stats['total_relationships']}")
-            print(f"\n  节点类型分布:")
+            logger.info(f"  总节点数: {stats['total_nodes']}")
+            logger.info(f"  总关系数: {stats['total_relationships']}")
+            logger.info("  节点类型分布:")
             for label, count in stats['nodes'].items():
-                print(f"    {label}: {count}")
-            print(f"\n  关系类型分布:")
+                logger.info(f"    {label}: {count}")
+            logger.info("  关系类型分布:")
             for rel_type, count in stats['relationships'].items():
-                print(f"    {rel_type}: {count}")
+                logger.info(f"    {rel_type}: {count}")
 
             # 示例查询
-            print("\n[示例查询] 查找最短路径示例:")
+            logger.info("[示例查询] 查找最短路径示例:")
             path_examples = [
                 ("stormwreck_isle", "creature:runara"),
                 ("the_wreck_of_the_compass_rose", "clifftop_observatory_tower"),
@@ -87,55 +88,55 @@ def build_neo4j_graph():
             for start, end in path_examples:
                 path = builder.find_shortest_path(start, end)
                 if path:
-                    print(f"  {start} -> {end}: {len(path['nodes'])} 跳")
+                    logger.info(f"  {start} -> {end}: {len(path['nodes'])} 跳")
 
-        print("\n" + "=" * 60)
-        print("Neo4j 图谱构建完成!")
-        print("=" * 60)
-        print(f"\n访问 Neo4j Browser: http://localhost:7474")
-        print("示例查询:")
-        print("  MATCH (n:Creature) RETURN n LIMIT 25")
-        print("  MATCH (l:Location {id: 'stormwreck_isle'})-[r:PART_OF*0..3]-(sub) RETURN sub")
+        logger.info("=" * 60)
+        logger.info("Neo4j 图谱构建完成!")
+        logger.info("=" * 60)
+        logger.info(f"访问 Neo4j Browser: http://localhost:7474")
+        logger.info("示例查询:")
+        logger.info("  MATCH (n:Creature) RETURN n LIMIT 25")
+        logger.info("  MATCH (l:Location {id: 'stormwreck_isle'})-[r:PART_OF*0..3]-(sub) RETURN sub")
         return True
 
     except Exception as e:
-        print(f"\n错误: {e}")
-        print("\n请检查:")
-        print("  1. Neo4j 是否正在运行")
-        print(f"  2. 配置文件 config_neo4j.py 中的连接信息是否正确")
-        print(f"  3. 密码是否正确 (当前: {config.NEO4J_PASSWORD})")
+        logger.error(f"错误: {e}")
+        logger.info("请检查:")
+        logger.info("  1. Neo4j 是否正在运行")
+        logger.info(f"  2. 配置文件 config_neo4j.py 中的连接信息是否正确")
+        logger.info(f"  3. 密码是否正确 (当前: {config.NEO4J_PASSWORD})")
         return False
 
 
 def generate_visualizations():
     """生成可视化 HTML 文件"""
-    print("=" * 60)
-    print("生成图谱可视化...")
-    print("=" * 60)
+    logger.info("=" * 60)
+    logger.info("生成图谱可视化...")
+    logger.info("=" * 60)
 
     # 检查输入文件
     if not config.LOCATION_GRAPH_FILE.exists():
-        print(f"错误: 找不到位置图谱文件")
+        logger.error("找不到位置图谱文件")
         return False
 
     if not config.ENTITY_GRAPH_FILE.exists():
-        print(f"错误: 找不到实体图谱文件")
+        logger.error("找不到实体图谱文件")
         return False
 
     # 创建可视化器
     viz = GraphVisualizer(**config.VISUALIZATION_CONFIG)
 
     # 1. 位置图谱可视化
-    print("\n[1/3] 生成位置图谱可视化...")
+    logger.info("[1/3] 生成位置图谱可视化...")
     loc_path = viz.visualize_from_json(
         str(config.LOCATION_GRAPH_FILE),
         output_html=str(config.VISUALIZATION_DIR / "location_graph.html"),
         title="Location Graph - Stormwreck Isle"
     )
-    print(f"  -> {loc_path}")
+    logger.info(f"  -> {loc_path}")
 
     # 2. 实体图谱可视化（只显示生物）
-    print("\n[2/3] 生成实体图谱可视化（生物 + 位置）...")
+    logger.info("[2/3] 生成实体图谱可视化（生物 + 位置）...")
     ent_path = viz.visualize_from_json(
         str(config.ENTITY_GRAPH_FILE),
         output_html=str(config.VISUALIZATION_DIR / "entity_graph.html"),
@@ -143,37 +144,37 @@ def generate_visualizations():
         max_nodes=150,
         title="Entity Graph - Creatures & Locations"
     )
-    print(f"  -> {ent_path}")
+    logger.info(f"  -> {ent_path}")
 
     # 3. 联合可视化
-    print("\n[3/3] 生成联合可视化...")
+    logger.info("[3/3] 生成联合可视化...")
     combined_path = viz.visualize_combined(
         str(config.LOCATION_GRAPH_FILE),
         str(config.ENTITY_GRAPH_FILE),
         output_html=str(config.VISUALIZATION_DIR / "combined_graph.html"),
         max_nodes=200
     )
-    print(f"  -> {combined_path}")
+    logger.info(f"  -> {combined_path}")
 
-    print("\n" + "=" * 60)
-    print("可视化生成完成!")
-    print("=" * 60)
-    print("\n在浏览器中打开以下文件查看:")
+    logger.info("=" * 60)
+    logger.info("可视化生成完成!")
+    logger.info("=" * 60)
+    logger.info("在浏览器中打开以下文件查看:")
     for f in [loc_path, ent_path, combined_path]:
         path_str = f.replace('\\', '/')
-        print(f"  file:///{path_str}")
+        logger.info(f"  file:///{path_str}")
     return True
 
 
 def clear_neo4j_graph():
     """清空 Neo4j 图谱"""
-    print("=" * 60)
-    print("清空 Neo4j 图谱")
-    print("=" * 60)
+    logger.info("=" * 60)
+    logger.info("清空 Neo4j 图谱")
+    logger.info("=" * 60)
 
     confirm = input("确认要清空所有图谱数据吗? (输入 'yes' 确认): ")
     if confirm.lower() != 'yes':
-        print("操作已取消")
+        logger.info("操作已取消")
         return
 
     builder = Neo4jBuilder(
@@ -186,7 +187,7 @@ def clear_neo4j_graph():
     with builder:
         builder.clear_graph(confirm=True)
 
-    print("\n图谱已清空")
+    logger.info("图谱已清空")
 
 
 def main():

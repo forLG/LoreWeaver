@@ -12,6 +12,7 @@ dependencies = [
     "openai",
     "neo4j",
     "pyvis",
+    "python-dotenv",
 ]
 
 [tool.setuptools.packages.find]

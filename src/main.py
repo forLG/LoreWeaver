@@ -1,130 +1,324 @@
-import json
+"""
+LoreWeaver Main Pipeline
+
+Usage:
+    # Run all stages
+    python -m main --stage all
+
+    # Run specific stages
+    python -m main --stage shadow
+    python -m main --stage spatial
+    python -m main --stage section-map
+    python -m main --stage entity
+
+    # Run multiple stages
+    python -m main --stage spatial --stage entity
+
+    # Rerun all stages, ignore cache
+    python -m main --stage all --force
+
+    # Preview what would run
+    python -m main --stage all --dry-run
+
+Environment Variables (.env):
+    OPENAI_API_KEY     - Your LLM API key (required)
+    OPENAI_BASE_URL    - API base URL (default: https://api.openai.com/v1)
+    LLM_MODEL          - Model name (default: gpt-4o)
+"""
+import argparse
 import os
 from collections import Counter
+from pathlib import Path
+from dotenv import load_dotenv
+
 from builder.shadow_builder import ShadowTreeBuilder
-# from llm.summary_processor import SummaryProcessor
 from llm.spatial_processor import SpatialTopologyProcessor, SectionLocationMapper
 from llm.entity_processor import EntityProcessor
+from utils.logger import logger
+import config_neo4j as config
+
+# Load environment variables from .env file
+load_dotenv()
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description="LoreWeaver Knowledge Graph Pipeline",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog=__doc__
+    )
+
+    # Stage selection
+    parser.add_argument(
+        '--stage',
+        action='append',
+        choices=['shadow', 'spatial', 'section-map', 'entity', 'all'],
+        help='Pipeline stage(s) to run (can specify multiple). Default: all'
+    )
+
+    # Control flags
+    parser.add_argument(
+        '--force',
+        action='store_true',
+        help='Rerun all stages, ignore cached files'
+    )
+    parser.add_argument(
+        '--dry-run',
+        action='store_true',
+        help='Show what would run without executing'
+    )
+
+    # LLM Config (from env or CLI override)
+    parser.add_argument(
+        '--api-key',
+        default=os.getenv('OPENAI_API_KEY'),
+        help='LLM API key (default: from OPENAI_API_KEY env var)'
+    )
+    parser.add_argument(
+        '--base-url',
+        default=os.getenv('OPENAI_BASE_URL', 'https://api.openai.com/v1'),
+        help='LLM base URL (default: from OPENAI_BASE_URL env var)'
+    )
+    parser.add_argument(
+        '--model',
+        default=os.getenv('LLM_MODEL', 'gpt-4o'),
+        help='LLM model (default: from LLM_MODEL env var)'
+    )
+
+    # File paths
+    parser.add_argument(
+        '--input',
+        default='data/adventure-dosi.json',
+        help='Input adventure file (default: data/adventure-dosi.json)'
+    )
+    parser.add_argument(
+        '--output-dir',
+        default=str(config.OUTPUT_DIR),
+        help=f'Output directory (default: {config.OUTPUT_DIR})'
+    )
+
+    return parser.parse_args()
+
+
+class Pipeline:
+    """LoreWeaver pipeline for processing D&D adventures into knowledge graphs."""
+
+    def __init__(self, args):
+        self.args = args
+        self.output_dir = Path(args.output_dir)
+        self.output_dir.mkdir(parents=True, exist_ok=True)
+
+        # File paths
+        self.input_file = Path(args.input)
+        self.shadow_file = self.output_dir / "shadow_tree.json"
+        self.intermediate_file = self.output_dir / "shadow_tree_with_spatial_summary.json"
+        self.location_graph_file = self.output_dir / "location_graph.json"
+        self.section_location_map_file = self.output_dir / "section_location_map.json"
+        self.entity_graph_file = self.output_dir / "entity_graph.json"
+
+        self.shadow_tree = None
+
+        # Validate API key
+        if not self.args.api_key:
+            raise ValueError(
+                "API key required. Set OPENAI_API_KEY in .env file or use --api-key"
+            )
+
+    def run(self):
+        """Run the pipeline with specified stages."""
+        stages = self.args.stage or ['all']
+
+        if 'all' in stages:
+            self._run_stage('shadow')
+            self._run_stage('spatial')
+            self._run_stage('section-map')
+            self._run_stage('entity')
+        else:
+            for stage in stages:
+                self._run_stage(stage)
+
+    def _run_stage(self, stage: str):
+        """Run a single pipeline stage."""
+        if self.args.dry_run:
+            logger.info(f"[Dry Run] Would run stage: {stage}")
+            return
+
+        stage_map = {
+            'shadow': self.stage_shadow_tree,
+            'spatial': self.stage_spatial_topology,
+            'section-map': self.stage_section_mapping,
+            'entity': self.stage_entity_extraction,
+        }
+
+        if stage in stage_map:
+            logger.info("="*60)
+            logger.info(f"Running stage: {stage.upper()}")
+            logger.info("="*60)
+            stage_map[stage]()
+        else:
+            logger.warning(f"Unknown stage: {stage}")
+
+    # ========================================================================
+    # Stage 1: Shadow Tree
+    # ========================================================================
+
+    def stage_shadow_tree(self):
+        """Stage 1: Build shadow tree from adventure data."""
+        if self.shadow_file.exists() and not self.args.force:
+            logger.info(f"Found cached shadow tree: {self.shadow_file}")
+            return
+
+        if not self.input_file.exists():
+            raise FileNotFoundError(f"Input file not found: {self.input_file}")
+
+        logger.info(f"Loading data from {self.input_file}...")
+        with open(self.input_file, 'r', encoding='utf-8') as f:
+            raw_data = __import__('json').load(f)
+
+        # 5eTools data is usually under 'data' key, or directly a list
+        adventure_data = raw_data.get("data", []) if isinstance(raw_data, dict) else raw_data
+
+        logger.info(f"Building Shadow Tree from {len(adventure_data)} items...")
+        builder = ShadowTreeBuilder()
+        self.shadow_tree = builder.build(adventure_data)
+
+        logger.info(f"Saving to {self.shadow_file}...")
+        with open(self.shadow_file, 'w', encoding='utf-8') as f:
+            __import__('json').dump(self.shadow_tree, f, indent=2, ensure_ascii=False)
+
+        logger.info(f"Done! Shadow tree has {len(self.shadow_tree)} root nodes")
+
+    # ========================================================================
+    # Stage 2: Spatial Topology
+    # ========================================================================
+
+    def stage_spatial_topology(self):
+        """Stage 2: Extract spatial topology graph."""
+        self._load_shadow_tree()
+
+        skip_summary = self.intermediate_file.exists() and not self.args.force
+        if skip_summary:
+            logger.info("Found intermediate file, skipping summarization...")
+
+        processor = SpatialTopologyProcessor(
+            api_key=self.args.api_key,
+            base_url=self.args.base_url,
+            model=self.args.model
+        )
+
+        location_graph = processor.process(self.shadow_tree, skip_summary=skip_summary)
+
+        if not skip_summary:
+            logger.info(f"Saving intermediate summaries to {self.intermediate_file}...")
+            with open(self.intermediate_file, 'w', encoding='utf-8') as f:
+                __import__('json').dump(self.shadow_tree, f, indent=2, ensure_ascii=False)
+
+        logger.info(f"Saving location graph to {self.location_graph_file}...")
+        with open(self.location_graph_file, 'w', encoding='utf-8') as f:
+            __import__('json').dump(location_graph, f, indent=2, ensure_ascii=False)
+
+        logger.info(f"Done! Location graph: {len(location_graph['nodes'])} nodes, {len(location_graph['edges'])} edges")
+
+    # ========================================================================
+    # Stage 3: Section Mapping
+    # ========================================================================
+
+    def stage_section_mapping(self):
+        """Stage 3: Map sections to locations."""
+        self._load_shadow_tree()
+
+        if not self.location_graph_file.exists():
+            raise FileNotFoundError(
+                f"Location graph not found: {self.location_graph_file}. "
+                "Run --stage spatial first"
+            )
+
+        with open(self.location_graph_file, 'r', encoding='utf-8') as f:
+            location_graph = __import__('json').load(f)
+
+        logger.info(f"Location graph: {len(location_graph['nodes'])} nodes, {len(location_graph['edges'])} edges")
+
+        mapper = SectionLocationMapper(
+            api_key=self.args.api_key,
+            base_url=self.args.base_url,
+            model=self.args.model
+        )
+
+        section_map = mapper.process(self.shadow_tree, location_graph)
+
+        logger.info(f"Saving section-location map to {self.section_location_map_file}...")
+        with open(self.section_location_map_file, 'w', encoding='utf-8') as f:
+            __import__('json').dump(section_map, f, indent=2, ensure_ascii=False)
+
+        logger.info(f"Done! Mapped {len(section_map)} sections")
+
+    # ========================================================================
+    # Stage 4: Entity Extraction
+    # ========================================================================
+
+    def stage_entity_extraction(self):
+        """Stage 4: Extract entities and relations."""
+        self._load_shadow_tree()
+
+        if not self.section_location_map_file.exists():
+            raise FileNotFoundError(
+                f"Section map not found: {self.section_location_map_file}. "
+                "Run --stage section-map first"
+            )
+
+        with open(self.section_location_map_file, 'r', encoding='utf-8') as f:
+            section_map = __import__('json').load(f)
+
+        logger.info(f"Section map: {len(section_map)} sections")
+
+        processor = EntityProcessor(
+            api_key=self.args.api_key,
+            base_url=self.args.base_url,
+            model=self.args.model
+        )
+
+        entity_graph = processor.process(self.shadow_tree, section_map)
+
+        logger.info(f"Saving entity graph to {self.entity_graph_file}...")
+        with open(self.entity_graph_file, 'w', encoding='utf-8') as f:
+            __import__('json').dump(entity_graph, f, indent=2, ensure_ascii=False)
+
+        logger.info(f"Done! Entity graph: {len(entity_graph['nodes'])} nodes, {len(entity_graph['edges'])} edges")
+
+        # Print statistics
+        type_counts = Counter(n.get("type", "Unknown").title() for n in entity_graph["nodes"])
+        logger.info("Entity type distribution:")
+        for node_type, count in type_counts.most_common():
+            logger.info(f"  {node_type}: {count}")
+
+    # ========================================================================
+    # Helpers
+    # ========================================================================
+
+    def _load_shadow_tree(self):
+        """Load shadow tree from file (cache or intermediate)."""
+        if not self.shadow_file.exists():
+            raise FileNotFoundError(
+                f"Shadow tree not found: {self.shadow_file}. "
+                "Run --stage shadow first"
+            )
+
+        with open(self.shadow_file, 'r', encoding='utf-8') as f:
+            self.shadow_tree = __import__('json').load(f)
+
+        # Load intermediate if available (has spatial summaries)
+        if self.intermediate_file.exists():
+            with open(self.intermediate_file, 'r', encoding='utf-8') as f:
+                self.shadow_tree = __import__('json').load(f)
+            logger.info("Using shadow tree with spatial summaries")
+
 
 def main():
-    # 1. 路径配置
-    input_file = "data/adventure-dosi.json"
-    shadow_file = "output/shadow_tree.json"
-    intermediate_file = "output/shadow_tree_with_spatial_summary.json"
-    location_graph_file = "output/location_graph.json"
-    section_location_map_file = "output/section_location_map.json"
-    entity_graph_file = "output/entity_graph.json"
+    """Main entry point."""
+    args = parse_args()
+    pipeline = Pipeline(args)
+    pipeline.run()
 
-    # api_key = os.getenv("OPENAI_API_KEY")
-    # base_url = os.getenv("OPENAI_BASE_URL") 
-    api_key = "sk-dc0a809311a840459553ad6dd9607c3f"
-    base_url = "https://api.deepseek.com"
-
-    # # 2. 读取数据
-    # print(f"Loading data from {input_file}...")
-    # try:
-    #     with open(input_file, 'r', encoding='utf-8') as f:
-    #         raw_data = json.load(f)
-    # except FileNotFoundError:
-    #     print("Error: Input file not found.")
-    #     return
-
-    # # 5eTools 数据通常在 'data' 键下，或者直接是列表
-    # adventure_data = raw_data.get("data", []) if isinstance(raw_data, dict) else raw_data
-
-    # # 3. 构建影子树
-    # print("Building Shadow Tree...")
-    # builder = ShadowTreeBuilder()
-    # shadow_tree = builder.build(adventure_data)
-
-    # # 保存影子树（可选，用于调试）
-    # print(f"Saving Shadow Tree to {shadow_file}...")
-    # with open(shadow_file, 'w', encoding='utf-8') as f:
-    #     json.dump(shadow_tree, f, indent=2, ensure_ascii=False)
-
-    # 直接读取已生成的影子树
-    if os.path.exists(shadow_file):
-        with open(shadow_file, 'r', encoding='utf-8') as f:
-            shadow_tree = json.load(f)
-
-    skip_summary = False
-    if os.path.exists(intermediate_file):
-        print(f"Found intermediate file {intermediate_file}, skipping summarization step...")
-        with open(intermediate_file, 'r', encoding='utf-8') as f:
-            shadow_tree = json.load(f)
-        skip_summary = True
-
-    # # --- 步骤 3: 提取空间拓扑图谱 (核心任务) ---
-    # print("Extracting Spatial Topology Graph...")
-    # spatial_processor = SpatialTopologyProcessor(
-    #     api_key=api_key,
-    #     base_url=base_url,
-    #     model="deepseek-chat"
-    # )
-    
-    # location_graph = spatial_processor.process(shadow_tree, skip_summary=skip_summary)
-
-    # if not skip_summary:
-    #     print(f"Saving intermediate summaries to {intermediate_file}...")
-    #     with open(intermediate_file, 'w', encoding='utf-8') as f:
-    #         json.dump(shadow_tree, f, indent=2, ensure_ascii=False)
-
-    # # --- 步骤 4: 保存图谱结果 ---
-    # print(f"Saving Location Graph to {location_graph_file}...")
-    # with open(location_graph_file, 'w', encoding='utf-8') as f:
-    #     json.dump(location_graph, f, indent=2, ensure_ascii=False)
-
-    # print(f"Done! Graph contains {len(location_graph['nodes'])} nodes and {len(location_graph['edges'])} edges.")
-
-    # 提取章节到地点的映射
-    if os.path.exists(section_location_map_file):
-        with open(location_graph_file, 'r', encoding='utf-8') as f:
-            location_graph = json.load(f)
-
-    print("Mapping Sections to Locations...")
-    mapper = SectionLocationMapper(
-        api_key=api_key,
-        base_url=base_url,
-        model="deepseek-chat"
-    )
-    
-    section_map = mapper.process(shadow_tree, location_graph)
-    
-    print(f"Saving Section-Location Map to {section_location_map_file}...")
-    with open(section_location_map_file, 'w', encoding='utf-8') as f:
-        json.dump(section_map, f, indent=2, ensure_ascii=False)
-
-    if os.path.exists(section_location_map_file):
-        with open(section_location_map_file, 'r', encoding='utf-8') as f:
-            section_map = json.load(f)
-
-    # --- 步骤 6: 实体实例化与关系挖掘 ---
-    print("Extracting Entities and Relations...")
-    entity_processor = EntityProcessor(
-        api_key=api_key,
-        base_url=base_url,
-        model="deepseek-chat"
-    )
-    
-    entity_graph = entity_processor.process(shadow_tree, section_map)
-    
-    print(f"Saving Entity Graph to {entity_graph_file}...")
-    with open(entity_graph_file, 'w', encoding='utf-8') as f:
-        json.dump(entity_graph, f, indent=2, ensure_ascii=False)
-        
-    print(f"Entity Graph contains {len(entity_graph['nodes'])} nodes and {len(entity_graph['edges'])} edges.")
-
-    if os.path.exists(entity_graph_file):
-        with open(entity_graph_file, 'r', encoding='utf-8') as f:
-            entity_graph = json.load(f)
-
-    type_counts = Counter()
-    for node in entity_graph["nodes"]:
-        node_type = node.get("type", "Unknown").title()
-        type_counts[node_type] += 1
-    
-    for node_type, count in type_counts.most_common():
-        print(f"{node_type}: {count}")
 
 if __name__ == "__main__":
     main()

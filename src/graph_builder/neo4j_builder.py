@@ -139,8 +139,13 @@ class Neo4jBuilder:
             "CREATE CONSTRAINT party_id IF NOT EXISTS FOR (p:Party) REQUIRE p.id IS UNIQUE",
         ]
 
+        # Neo4j 4.4 doesn't support pipe syntax for multi-label indexes
+        # Create separate indexes for each label
         indexes = [
-            "CREATE INDEX entity_label_idx IF NOT EXISTS FOR (n:Creature|Item|Spell) ON (n.label)",
+            "CREATE INDEX entity_label_idx_creature IF NOT EXISTS FOR (n:Creature) ON (n.label)",
+            "CREATE INDEX entity_label_idx_item IF NOT EXISTS FOR (n:Item) ON (n.label)",
+            "CREATE INDEX entity_label_idx_spell IF NOT EXISTS FOR (n:Spell) ON (n.label)",
+            "CREATE INDEX location_label_idx IF NOT EXISTS FOR (n:Location) ON (n.label)",
         ]
 
         with self._driver.session(database=self.database) as session:
@@ -245,43 +250,17 @@ class Neo4jBuilder:
                     logger.info(f"位置节点: {min(i + self.batch_size, len(nodes))}/{len(nodes)}")
 
     def _create_location_edges(self, edges: List[Dict]) -> None:
-        """批量创建位置关系"""
+        """批量创建位置关系（不依赖 APOC，兼容 Neo4j 4.4）"""
 
         def create_batch(tx, batch):
-            # 动态构建关系类型
-            query = """
-            UNWIND $edges AS edge
-            MATCH (s:Location {id: edge.source})
-            MATCH (t:Location {id: edge.target})
-            CALL apoc.create.relationship(s, edge.relation_type, {}, t)
-            YIELD rel
-            RETURN count(rel)
-            """
-            # 如果没有 APOC，使用以下替代方案：
-            query_alt = """
-            UNWIND $edges AS edge
-            MATCH (s:Location {id: edge.source})
-            MATCH (t:Location {id: edge.target})
-            CALL apoc.do.when(
-                edge.relation_type = 'PART_OF',
-                'MERGE (s)-[r:PART_OF]->(t) RETURN r',
-                'MERGE (s)-[r:CONNECTED_TO]->(t) RETURN r',
-                {s: s, t: t}
-            ) YIELD r
-            RETURN count(r)
-            """
-            # 尝试使用 APOC，如果失败则手动构建
-            try:
-                tx.run(query, edges=batch)
-            except Exception:
-                # 不使用 APOC，手动构建每个关系
-                for edge in batch:
-                    rel_type = self._normalize_relation_type(edge.get('relation', 'CONNECTED_TO'))
-                    tx.run(f"""
-                        MATCH (s:Location {{id: $source}})
-                        MATCH (t:Location {{id: $target}})
-                        MERGE (s)-[r:{rel_type}]->(t)
-                    """, source=edge['source'], target=edge['target'])
+            # 不使用 APOC，手动构建每个关系
+            for edge in batch:
+                rel_type = self._normalize_relation_type(edge.get('relation', 'CONNECTED_TO'))
+                tx.run(f"""
+                    MATCH (s:Location {{id: $source}})
+                    MATCH (t:Location {{id: $target}})
+                    MERGE (s)-[r:{rel_type}]->(t)
+                """, source=edge['source'], target=edge['target'])
 
         with self._driver.session(database=self.database) as session:
             for i in range(0, len(edges), self.batch_size):
@@ -435,11 +414,12 @@ class Neo4jBuilder:
         end_id: str,
         max_depth: int = 5
     ) -> List[Dict]:
-        """查找两个节点之间的最短路径"""
+        """查找两个节点之间的最短路径（Neo4j 4.4 兼容）"""
         with self._driver.session(database=self.database) as session:
-            result = session.run("""
+            # Neo4j 4.4 不支持在路径表达式中使用参数，需要使用字符串格式化
+            query = f"""
                 MATCH path = shortestPath(
-                    (start {id: $start})-[*1..{max_depth}]-(end {id: $end})
+                    (start {{id: $start}})-[*1..{max_depth}]-(end {{id: $end}})
                 )
                 RETURN [node in nodes(path) | {{
                     id: node.id,
@@ -451,7 +431,8 @@ class Neo4jBuilder:
                     source: startNode(rel).id,
                     target: endNode(rel).id
                 }}] AS relationships
-            """, start=start_id, end=end_id, max_depth=max_depth)
+            """
+            result = session.run(query, start=start_id, end=end_id)
 
             record = result.single()
             if record:

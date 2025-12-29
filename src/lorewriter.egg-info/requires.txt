@@ -1,4 +1,0 @@
-openai
-neo4j
-pyvis
-python-dotenv

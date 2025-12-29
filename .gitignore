@@ -6,7 +6,8 @@ lib/
 
 .vscode/
 
-*.dgg-info/
+*.egg-info/
+*.egg
 
 # Environment variables
-# .env
+.env

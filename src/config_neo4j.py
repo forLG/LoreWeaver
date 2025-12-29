@@ -14,7 +14,7 @@ PROJECT_ROOT = Path(__file__).parent.parent
 
 # 数据目录
 DATA_DIR = PROJECT_ROOT / "data"
-OUTPUT_DIR = PROJECT_ROOT / "output"
+OUTPUT_DIR = PROJECT_ROOT / "output" / "qwen3"
 
 # Neo4j 连接配置
 NEO4J_URI = os.getenv("NEO4J_URI", "bolt://localhost:7687")

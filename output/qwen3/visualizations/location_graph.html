@@ -1,0 +1,127 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 900px;
+                 background-color: #1a1a1a;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"font": {"color": "white"}, "group": "World", "id": "the_forgotten_realms", "label": "The Forgotten Realms", "shape": "dot", "size": 12, "title": "World: The Forgotten Realms"}, {"font": {"color": "white"}, "group": "Region", "id": "the_sword_coast", "label": "The Sword Coast", "shape": "dot", "size": 20, "title": "Region: The Sword Coast"}, {"font": {"color": "white"}, "group": "Island", "id": "stormwreck_isle", "label": "Stormwreck Isle", "shape": "dot", "size": 32, "title": "Island: Stormwreck Isle"}, {"font": {"color": "white"}, "group": "City", "id": "dragon_s_rest", "label": "Dragon\u0027s Rest", "shape": "dot", "size": 24, "title": "City: Dragon\u0027s Rest"}, {"font": {"color": "white"}, "group": "Cave", "id": "seagrow_caves", "label": "Seagrow Caves", "shape": "dot", "size": 16, "title": "Cave: Seagrow Caves"}, {"font": {"color": "white"}, "group": "Shipwreck", "id": "cursed_shipwreck", "label": "Cursed Shipwreck", "shape": "dot", "size": 26, "title": "Shipwreck: Cursed Shipwreck"}, {"font": {"color": "white"}, "group": "Ruins", "id": "clifftop_observatory", "label": "Clifftop Observatory", "shape": "dot", "size": 40, "title": "Ruins: Clifftop Observatory"}, {"font": {"color": "white"}, "group": "Building", "id": "cloister", "label": "Cloister", "shape": "dot", "size": 14, "title": "Building: Cloister"}, {"font": {"color": "white"}, "group": "Room", "id": "runara_study", "label": "Runara\u0027s Study", "shape": "dot", "size": 12, "title": "Room: Runara\u0027s Study"}, {"font": {"color": "white"}, "group": "Deck", "id": "shipwreck_deck", "label": "Shipwreck Deck (C1)", "shape": "dot", "size": 12, "title": "Deck: Shipwreck Deck (C1)"}, {"font": {"color": "white"}, "group": "Hold", "id": "shipwreck_hold", "label": "Shipwreck Hold (C9)", "shape": "dot", "size": 12, "title": "Hold: Shipwreck Hold (C9)"}, {"font": {"color": "white"}, "group": "Deck", "id": "shipwreck_lower_deck", "label": "Shipwreck Lower Deck (C8)", "shape": "dot", "size": 12, "title": "Deck: Shipwreck Lower Deck (C8)"}, {"font": {"color": "white"}, "group": "Structure", "id": "shipwreck_hull", "label": "Shipwreck Hull", "shape": "dot", "size": 12, "title": "Structure: Shipwreck Hull"}, {"font": {"color": "white"}, "group": "Area", "id": "shipwreck_harpy_nest", "label": "Shipwreck Harpy Nest", "shape": "dot", "size": 12, "title": "Area: Shipwreck Harpy Nest"}, {"font": {"color": "white"}, "group": "Tomb", "id": "shipwreck_tomb", "label": "Shipwreck Tomb", "shape": "dot", "size": 12, "title": "Tomb: Shipwreck Tomb"}, {"font": {"color": "white"}, "group": "Feature", "id": "shipwreck_shoal", "label": "Shipwreck Shoal", "shape": "dot", "size": 12, "title": "Feature: Shipwreck Shoal"}, {"font": {"color": "white"}, "group": "Ruins", "id": "observatory_ruins", "label": "Observatory Ruins", "shape": "dot", "size": 12, "title": "Ruins: Observatory Ruins"}, {"font": {"color": "white"}, "group": "Islet", "id": "observatory_islet_a", "label": "Observatory Islet A", "shape": "dot", "size": 14, "title": "Islet: Observatory Islet A"}, {"font": {"color": "white"}, "group": "Islet", "id": "observatory_islet_b", "label": "Observatory Islet B", "shape": "dot", "size": 14, "title": "Islet: Observatory Islet B"}, {"font": {"color": "white"}, "group": "Bridge", "id": "observatory_bridge", "label": "Observatory Bridge", "shape": "dot", "size": 14, "title": "Bridge: Observatory Bridge"}, {"font": {"color": "white"}, "group": "Cell", "id": "observatory_cell", "label": "Observatory Cell", "shape": "dot", "size": 12, "title": "Cell: Observatory Cell"}, {"font": {"color": "white"}, "group": "Cell", "id": "observatory_prison_cell", "label": "Observatory Prison Cell", "shape": "dot", "size": 12, "title": "Cell: Observatory Prison Cell"}, {"font": {"color": "white"}, "group": "Feature", "id": "observatory_stained_glass", "label": "Observatory Stained Glass", "shape": "dot", "size": 12, "title": "Feature: Observatory Stained Glass"}, {"font": {"color": "white"}, "group": "Feature", "id": "observatory_marble_spires", "label": "Observatory Marble Spires", "shape": "dot", "size": 12, "title": "Feature: Observatory Marble Spires"}, {"font": {"color": "white"}, "group": "Nest", "id": "observatory_blue_dragon_nest", "label": "Observatory Blue Dragon Nest", "shape": "dot", "size": 12, "title": "Nest: Observatory Blue Dragon Nest"}, {"font": {"color": "white"}, "group": "Quarters", "id": "observatory_kobold_quarters", "label": "Observatory Kobold Quarters", "shape": "dot", "size": 12, "title": "Quarters: Observatory Kobold Quarters"}, {"font": {"color": "white"}, "group": "Creature", "id": "observatory_blue_dragon", "label": "Observatory Blue Dragon", "shape": "dot", "size": 10, "title": "Creature: Observatory Blue Dragon"}, {"font": {"color": "white"}, "group": "Room", "id": "observatory_spellbook_room", "label": "Observatory Spellbook Room", "shape": "dot", "size": 12, "title": "Room: Observatory Spellbook Room"}, {"font": {"color": "white"}, "group": "Item", "id": "observatory_spellbook", "label": "Observatory Spellbook", "shape": "dot", "size": 10, "title": "Item: Observatory Spellbook"}, {"font": {"color": "white"}, "group": "Chamber", "id": "observatory_spellbook_chamber", "label": "Observatory Spellbook Chamber", "shape": "dot", "size": 12, "title": "Chamber: Observatory Spellbook Chamber"}, {"font": {"color": "white"}, "group": "Shelf", "id": "observatory_spellbook_shelf", "label": "Observatory Spellbook Shelf", "shape": "dot", "size": 12, "title": "Shelf: Observatory Spellbook Shelf"}, {"font": {"color": "white"}, "group": "Table", "id": "observatory_spellbook_table", "label": "Observatory Spellbook Table", "shape": "dot", "size": 12, "title": "Table: Observatory Spellbook Table"}, {"font": {"color": "white"}, "group": "Window", "id": "observatory_spellbook_window", "label": "Observatory Spellbook Window", "shape": "dot", "size": 12, "title": "Window: Observatory Spellbook Window"}, {"font": {"color": "white"}, "group": "Door", "id": "observatory_spellbook_door", "label": "Observatory Spellbook Door", "shape": "dot", "size": 12, "title": "Door: Observatory Spellbook Door"}, {"font": {"color": "white"}, "group": "Staircase", "id": "observatory_spellbook_staircase", "label": "Observatory Spellbook Staircase", "shape": "dot", "size": 12, "title": "Staircase: Observatory Spellbook Staircase"}, {"font": {"color": "white"}, "group": "Corridor", "id": "observatory_spellbook_corridor", "label": "Observatory Spellbook Corridor", "shape": "dot", "size": 12, "title": "Corridor: Observatory Spellbook Corridor"}, {"font": {"color": "white"}, "group": "Room", "id": "runara_s_study", "label": "Runara\u0027s Study (A1)", "shape": "dot", "size": 12, "title": "Room: Runara\u0027s Study (A1)"}, {"font": {"color": "white"}, "group": "Door", "id": "cloister_entrance", "label": "Cloister Entrance", "shape": "dot", "size": 12, "title": "Door: Cloister Entrance"}, {"font": {"color": "white"}, "group": "Entrance", "id": "shipwreck_entrance", "label": "Shipwreck Entrance", "shape": "dot", "size": 12, "title": "Entrance: Shipwreck Entrance"}, {"font": {"color": "white"}, "group": "Deck", "id": "compass_rose_deck", "label": "Compass Rose Deck (C1)", "shape": "dot", "size": 12, "title": "Deck: Compass Rose Deck (C1)"}, {"font": {"color": "white"}, "group": "Hold", "id": "compass_rose_hold", "label": "Compass Rose Hold (C9)", "shape": "dot", "size": 12, "title": "Hold: Compass Rose Hold (C9)"}, {"font": {"color": "white"}, "group": "Cell", "id": "sparkrender_s_den", "label": "Sparkrender\u0027s Den", "shape": "dot", "size": 12, "title": "Cell: Sparkrender\u0027s Den"}, {"font": {"color": "white"}, "group": "Cell", "id": "aidron_s_cell", "label": "Aidron\u0027s Cell", "shape": "dot", "size": 12, "title": "Cell: Aidron\u0027s Cell"}]);
+                  edges = new vis.DataSet([{"color": "gray", "from": "the_sword_coast", "label": "PART_OF", "title": "PART_OF", "to": "the_forgotten_realms"}, {"color": "gray", "from": "stormwreck_isle", "label": "PART_OF", "title": "PART_OF", "to": "the_sword_coast"}, {"color": "gray", "from": "dragon_s_rest", "label": "PART_OF", "title": "PART_OF", "to": "the_sword_coast"}, {"color": "gray", "from": "seagrow_caves", "label": "PART_OF", "title": "PART_OF", "to": "the_sword_coast"}, {"color": "gray", "from": "cursed_shipwreck", "label": "PART_OF", "title": "PART_OF", "to": "stormwreck_isle"}, {"color": "gray", "from": "clifftop_observatory", "label": "PART_OF", "title": "PART_OF", "to": "the_sword_coast"}, {"color": "gray", "from": "stormwreck_isle", "label": "PART_OF", "title": "PART_OF\nLocated on Stormwreck Isle", "to": "dragon_s_rest"}, {"color": "gray", "from": "stormwreck_isle", "label": "PART_OF", "title": "PART_OF\nLocated on Stormwreck Isle", "to": "seagrow_caves"}, {"color": "gray", "from": "stormwreck_isle", "label": "PART_OF", "title": "PART_OF\nLocated on Stormwreck Isle", "to": "clifftop_observatory"}, {"color": "gray", "from": "stormwreck_isle", "label": "PART_OF", "title": "PART_OF\nLocated on Stormwreck Isle", "to": "cloister"}, {"color": "gray", "from": "stormwreck_isle", "label": "PART_OF", "title": "PART_OF\nLocated on Stormwreck Isle", "to": "shipwreck_shoal"}, {"color": "gray", "from": "stormwreck_isle", "label": "PART_OF", "title": "PART_OF\nLocated on Stormwreck Isle", "to": "observatory_islet_a"}, {"color": "gray", "from": "stormwreck_isle", "label": "PART_OF", "title": "PART_OF\nLocated on Stormwreck Isle", "to": "observatory_islet_b"}, {"color": "gray", "from": "stormwreck_isle", "label": "PART_OF", "title": "PART_OF\nLocated on Stormwreck Isle", "to": "observatory_bridge"}, {"color": "gray", "from": "dragon_s_rest", "label": "PART_OF", "title": "PART_OF\nLocated in Dragon\u0027s Rest", "to": "cloister"}, {"color": "gray", "from": "seagrow_caves", "label": "PART_OF", "title": "PART_OF\nWithin Seagrow Caves", "to": "runara_study"}, {"color": "gray", "from": "cursed_shipwreck", "label": "PART_OF", "title": "PART_OF\nWithin the shipwreck", "to": "shipwreck_deck"}, {"color": "gray", "from": "cursed_shipwreck", "label": "PART_OF", "title": "PART_OF\nWithin the shipwreck", "to": "shipwreck_hold"}, {"color": "gray", "from": "cursed_shipwreck", "label": "PART_OF", "title": "PART_OF\nWithin the shipwreck", "to": "shipwreck_lower_deck"}, {"color": "gray", "from": "cursed_shipwreck", "label": "PART_OF", "title": "PART_OF\nWithin the shipwreck", "to": "shipwreck_hull"}, {"color": "gray", "from": "cursed_shipwreck", "label": "PART_OF", "title": "PART_OF\nWithin the shipwreck", "to": "shipwreck_harpy_nest"}, {"color": "gray", "from": "cursed_shipwreck", "label": "PART_OF", "title": "PART_OF\nWithin the shipwreck", "to": "shipwreck_tomb"}, {"color": "gray", "from": "clifftop_observatory", "label": "PART_OF", "title": "PART_OF\nWithin the observatory", "to": "observatory_ruins"}, {"color": "gray", "from": "clifftop_observatory", "label": "PART_OF", "title": "PART_OF\nWithin the observatory", "to": "observatory_islet_a"}, {"color": "gray", "from": "clifftop_observatory", "label": "PART_OF", "title": "PART_OF\nWithin the observatory", "to": "observatory_islet_b"}, {"color": "gray", "from": "clifftop_observatory", "label": "PART_OF", "title": "PART_OF\nWithin the observatory", "to": "observatory_bridge"}, {"color": "gray", "from": "clifftop_observatory", "label": "PART_OF", "title": "PART_OF\nWithin the observatory", "to": "observatory_cell"}, {"color": "gray", "from": "clifftop_observatory", "label": "PART_OF", "title": "PART_OF\nWithin the observatory", "to": "observatory_prison_cell"}, {"color": "gray", "from": "clifftop_observatory", "label": "PART_OF", "title": "PART_OF\nWithin the observatory", "to": "observatory_stained_glass"}, {"color": "gray", "from": "clifftop_observatory", "label": "PART_OF", "title": "PART_OF\nWithin the observatory", "to": "observatory_marble_spires"}, {"color": "gray", "from": "clifftop_observatory", "label": "PART_OF", "title": "PART_OF\nWithin the observatory", "to": "observatory_blue_dragon_nest"}, {"color": "gray", "from": "clifftop_observatory", "label": "PART_OF", "title": "PART_OF\nWithin the observatory", "to": "observatory_kobold_quarters"}, {"color": "gray", "from": "clifftop_observatory", "label": "PART_OF", "title": "PART_OF\nWithin the observatory", "to": "observatory_spellbook_room"}, {"color": "gray", "from": "clifftop_observatory", "label": "PART_OF", "title": "PART_OF\nWithin the observatory", "to": "observatory_spellbook_chamber"}, {"color": "gray", "from": "clifftop_observatory", "label": "PART_OF", "title": "PART_OF\nWithin the observatory", "to": "observatory_spellbook_shelf"}, {"color": "gray", "from": "clifftop_observatory", "label": "PART_OF", "title": "PART_OF\nWithin the observatory", "to": "observatory_spellbook_table"}, {"color": "gray", "from": "clifftop_observatory", "label": "PART_OF", "title": "PART_OF\nWithin the observatory", "to": "observatory_spellbook_window"}, {"color": "gray", "from": "clifftop_observatory", "label": "PART_OF", "title": "PART_OF\nWithin the observatory", "to": "observatory_spellbook_door"}, {"color": "gray", "from": "clifftop_observatory", "label": "PART_OF", "title": "PART_OF\nWithin the observatory", "to": "observatory_spellbook_staircase"}, {"color": "gray", "from": "clifftop_observatory", "label": "PART_OF", "title": "PART_OF\nWithin the observatory", "to": "observatory_spellbook_corridor"}, {"color": "gray", "from": "runara_s_study", "label": "PART_OF", "title": "PART_OF\nWithin the cloister", "to": "dragon_s_rest"}, {"color": "white", "from": "cloister_entrance", "label": "CONNECTED_TO", "title": "CONNECTED_TO\nAccess to the cloister", "to": "dragon_s_rest"}, {"color": "white", "from": "shipwreck_entrance", "label": "CONNECTED_TO", "title": "CONNECTED_TO\nAccess to the shipwreck", "to": "dragon_s_rest"}, {"color": "white", "from": "compass_rose_deck", "label": "LEADS_TO", "title": "LEADS_TO\nPassage to the hold", "to": "compass_rose_hold"}, {"color": "white", "from": "clifftop_observatory", "label": "CONNECTED_TO", "title": "CONNECTED_TO\nLocated on Stormwreck Isle", "to": "dragon_s_rest"}, {"color": "gray", "from": "sparkrender_s_den", "label": "PART_OF", "title": "PART_OF\nWithin the ruins", "to": "clifftop_observatory"}, {"color": "gray", "from": "aidron_s_cell", "label": "PART_OF", "title": "PART_OF\nWithin the ruins", "to": "clifftop_observatory"}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {"physics": {"enabled": true, "barnesHut": {"gravitationalConstant": -8000, "centralGravity": 0.3, "springLength": 150, "springConstant": 0.04}}, "title": "LocationGraph-StormwreckIsle"};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

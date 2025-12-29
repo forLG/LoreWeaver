@@ -21,13 +21,6 @@ pip install -e .
 #### DeepSeek-Chat
 
 ```bash
-# First, copy the example env file and add your API key
-cp .env.example .env
-# Edit .env with your actual API key
-
-# Reinstall to get python-dotenv
-pip install -e .
-
 # Run all stages
 python -m main --stage all
 
@@ -44,6 +37,12 @@ python -m main --stage all --dry-run
 
 # Override config via CLI
 python -m main --stage entity --model deepseek-chat
+```
+
+#### Qwen3 8B
+
+```bash
+python -m src.main --stage all --multi-pass --max-concurrent 50 --output-dir output/qwen3
 ```
 
 ### Graph Building & Visualization

@@ -46,7 +46,8 @@ class SmallModelProcessor(BaseLLMProcessor):
         max_concurrent: int = 100,
         output_dir: str | Path | None = None,
         use_natural_language: bool = True,
-        max_tokens: int = 0
+        max_tokens: int = 0,
+        repetition_penalty: float | None = None
     ):
         """
         Initialize the small model processor.
@@ -59,8 +60,9 @@ class SmallModelProcessor(BaseLLMProcessor):
             output_dir: Directory to save intermediate debug outputs (optional)
             use_natural_language: Use natural language output instead of JSON (default: True)
             max_tokens: Maximum tokens per response (0 = no limit, recommended 2048 for small models)
+            repetition_penalty: Repetition penalty for vLLM (1.0 = no penalty, 1.1-1.5 recommended)
         """
-        super().__init__(api_key, base_url, model, max_concurrent)
+        super().__init__(api_key, base_url, model, max_concurrent, repetition_penalty)
         self.output_dir = Path(output_dir) if output_dir else None
         self.use_natural_language = use_natural_language
         self.max_tokens = max_tokens if max_tokens > 0 else None
@@ -271,12 +273,14 @@ class SmallModelProcessor(BaseLLMProcessor):
             # Use regular LLM call (not JSON)
             # Higher temperature (0.9) breaks repetition loop in Qwen3
             # max_tokens prevents infinite output
+            # stop sequences prevent empty template repetition
             raw_response = await self._call_llm_async(
                 prompt,
                 temperature=0.9,
                 top_p=0.95,
                 max_tokens=self.max_tokens,
-                enable_thinking=False
+                enable_thinking=False,
+                stop=["\n\nEntity: \n", "\n\nEntity:\n"]  # Stop on empty template
             )
 
             # Parse natural language output
@@ -400,12 +404,14 @@ class SmallModelProcessor(BaseLLMProcessor):
             # Use regular LLM call (not JSON)
             # Higher temperature (0.9) breaks repetition loop in Qwen3
             # max_tokens prevents infinite output
+            # stop sequences prevent empty template repetition
             raw_response = await self._call_llm_async(
                 prompt,
                 temperature=0.9,
                 top_p=0.95,
                 max_tokens=self.max_tokens,
-                enable_thinking=False
+                enable_thinking=False,
+                stop=["\n\n -> \n", "\n\n->\n"]  # Stop on empty mapping lines
             )
 
             # Parse natural language output
@@ -660,12 +666,14 @@ class SmallModelProcessor(BaseLLMProcessor):
             # Use regular LLM call (not JSON)
             # Higher temperature (0.9) breaks repetition loop in Qwen3
             # max_tokens prevents infinite output
+            # stop sequences prevent empty template repetition
             raw_response = await self._call_llm_async(
                 prompt,
                 temperature=0.9,
                 top_p=0.95,
                 max_tokens=self.max_tokens,
-                enable_thinking=False
+                enable_thinking=False,
+                stop=["\n\nRelation: \n", "\n\nRelation:\n"]  # Stop on empty relation template
             )
 
             # Parse natural language output

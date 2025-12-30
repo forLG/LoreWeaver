@@ -21,9 +21,10 @@ class SpatialTopologyProcessor(BaseLLMProcessor):
         base_url: str | None = None,
         model: str = "deepseek-chat",
         max_concurrent: int = 100,
-        use_multi_pass: bool = False
+        use_multi_pass: bool = False,
+        repetition_penalty: float | None = None
     ):
-        super().__init__(api_key, base_url, model, max_concurrent)
+        super().__init__(api_key, base_url, model, max_concurrent, repetition_penalty)
         # Keep sync client for backward compatibility (unused in current code)
         self.client = OpenAI(api_key=api_key, base_url=base_url)
         self.use_multi_pass = use_multi_pass

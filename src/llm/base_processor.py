@@ -23,7 +23,8 @@ class BaseLLMProcessor:
         api_key: str,
         base_url: str | None = None,
         model: str = "deepseek-chat",
-        max_concurrent: int = 100
+        max_concurrent: int = 100,
+        repetition_penalty: float | None = None
     ):
         """
         Initialize the LLM processor.
@@ -33,10 +34,12 @@ class BaseLLMProcessor:
             base_url: Custom API base URL (optional)
             model: Model name to use
             max_concurrent: Maximum concurrent requests
+            repetition_penalty: Repetition penalty for vLLM (1.0 = no penalty, 1.1-1.5 recommended)
         """
         self.async_client = AsyncOpenAI(api_key=api_key, base_url=base_url)
         self.model = model
         self.semaphore = asyncio.Semaphore(max_concurrent)
+        self.repetition_penalty = repetition_penalty
 
     async def _call_llm_async(
         self,
@@ -45,7 +48,8 @@ class BaseLLMProcessor:
         top_p: float | None = None,
         response_format: dict[str, str] | None = None,
         max_tokens: int | None = None,
-        enable_thinking: bool = False
+        enable_thinking: bool = False,
+        stop: list[str] | None = None
     ) -> str:
         """
         Make an async LLM call with error handling.
@@ -74,11 +78,15 @@ class BaseLLMProcessor:
                     kwargs["response_format"] = response_format
                 if max_tokens is not None:
                     kwargs["max_tokens"] = max_tokens
+                if stop:
+                    kwargs["stop"] = stop
 
-                # For vLLM with Qwen3, pass enable_thinking via extra_body
+                # For vLLM with Qwen3, pass enable_thinking and repetition_penalty via extra_body
                 extra_body = {}
                 if not enable_thinking:
                     extra_body["enable_thinking"] = False
+                if self.repetition_penalty is not None:
+                    extra_body["repetition_penalty"] = self.repetition_penalty
                 if extra_body:
                     kwargs["extra_body"] = extra_body
 
@@ -141,10 +149,12 @@ class BaseLLMProcessor:
                 if max_tokens is not None:
                     kwargs["max_tokens"] = max_tokens
 
-                # For vLLM with Qwen3, pass enable_thinking via extra_body
+                # For vLLM with Qwen3, pass enable_thinking and repetition_penalty via extra_body
                 extra_body = {}
                 if not enable_thinking:
                     extra_body["enable_thinking"] = False
+                if self.repetition_penalty is not None:
+                    extra_body["repetition_penalty"] = self.repetition_penalty
                 if extra_body:
                     kwargs["extra_body"] = extra_body
 

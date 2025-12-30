@@ -1,0 +1,2595 @@
+============================================================
+TRUNCATED RESPONSE DEBUG
+============================================================
+
+Input length: 2504 characters
+Output length: 30462 characters
+
+------------------------------------------------------------
+INPUT PROMPT:
+------------------------------------------------------------
+
+You are a D&D Entity Extractor. Extract named entities from the following text.
+
+CURRENT SECTION: Untitled Section
+
+Known entities from parent/previous sections:
+  - [dragon_s_rest] dragon_s_rest (Location)
+  - [stormwreck_isle] stormwreck_isle (Location)
+  - [runara] runara (Creature)
+  - [dragon_s_rest] dragon_s_rest (Location)
+  - [stormwreck_isle] stormwreck_isle (Location)
+  - [runara] runara (Creature)
+  - [adventure_locations] adventure_locations (Location)
+  - [fantasy_creatures] fantasy_creatures (Creature)
+  - [stormwreck_isle] stormwreck_isle (Location)
+  - [adventure_locations] adventure_locations (Location)
+  - [dragon_s_rest] dragon_s_rest (Location)
+  - [runara] runara (Creature)
+  - [sparkrender] sparkrender (Creature)
+  - [kobold] kobold (Creature)
+  - [winged_kobold] winged_kobold (Creature)
+  - [kobold_group] kobold_group (Group)
+  - [stormwreck_isle] stormwreck_isle (Location)
+  - [adventure_locations] adventure_locations (Location)
+  - [fantasy_creatures] fantasy_creatures (Creature)
+
+TEXT TO PROCESS:
+A yipping sound erupts around you as angry kobolds emerge from their hiding places and attack!
+
+TASK: Extract ALL named entities mentioned in this text.
+
+Entity Types to Extract:
+- Locations: places, buildings, rooms, geographic features
+- Creatures: monsters, NPCs, animals
+- Items: objects, equipment, treasures
+- Groups: organizations, parties, factions
+
+CRITICAL RULES:
+1. **ID Format**: Use snake_case IDs (e.g., dragon_s_rest, runara, rusty_key)
+
+2. **Extract Both Named and Unnamed Entities**:
+   - NAMED: "Dragon's Rest", "Runara" → extract with exact name
+   - UNNAMED but RELEVANT: "a zombie", "two sailors", "the harbor", "a statue" → extract with descriptive ID
+     - Use descriptive IDs: "zombie", "sailors", "harbor", "statue"
+     - If multiple unnamed entities of same type exist, append numbers: "zombie_1", "zombie_2"
+   - SKIP: Pure background/scenery with no relevance: "sunlight", "grass", "overcast sky"
+
+3. **Reference Parent Entities**: If an entity was already seen in parent sections, USE THE SAME ID
+
+4. **Add Aliases, Don't Duplicate**: If a generic term refers to a known entity, add it as an ALIAS instead of creating a new entity
+
+5. **Be Decisive**: Choose the best match and move on. Do not repeatedly reconsider your choices.
+
+OUTPUT FORMAT (one entity per block, separate blocks with blank line):
+Entity: [name]
+Type: [Location/Creature/Item/Group]
+ID: [snake_case_id]
+Aliases: [alias1, alias2, alias3]
+
+[Repeat for each entity]
+
+
+------------------------------------------------------------
+OUTPUT RESPONSE:
+------------------------------------------------------------
+<think>
+Okay, let me tackle this task step by step. The user wants me to act as a D&D Entity Extractor and process the given text to identify all named entities based on specific rules. 
+
+First, I need to understand the input text thoroughly. The current section is titled "Untitled Section," and there's a list of known entities from previous sections. These include locations like dragon_s_rest and stormwreck_isle, creatures such as runara, sparkrender, kobold, etc., and groups like kobold_group. My job is to extract any new entities mentioned in the provided TEXT TO PROCESS.
+
+The text says: "A yipping sound erupts around you as angry kobolds emerge from their hiding places and attack!" Let me parse this sentence carefully.
+
+Looking at the keywords here. The main subject is "angry kobolds." Now, checking the existing entities, there's already an entry for kobold under Creature, so according to rule 3, if an entity has been previously referenced, I should use the same ID. So "kobold" would be reused. But wait, looking back at the known entities from parents, there's also a "kobold_group". However, in this case, the text mentions individual kobolds attacking, not a group. Therefore, maybe "kobold" as a creature is already present, so we don't need to create another one unless specified otherwise. Wait, but the instruction says to reference parent entities if they exist. Since "kobold" is already listed as a Creature with ID kobold, then mentioning "kobolds" plural might refer to that same entity. Also, since "kobold" is singular and the text uses plural, perhaps adding an alias for the plural form?
+
+Wait, the critical rules mention that if a general term refers to a known entity, add it as an alias. For example, if "kobolds" refers to the existing "kobold" entity, then "kobolds" can be added as an alias. However, in the known entities list, there is a "kobold_group" which is different. But the text doesn't mention a group here; it just talks about individual kobolds. Therefore, the correct approach is to check whether "kobold" exists as a Creature. Yes, it does. So the word "kobolds" here is referring to those creatures. Hence, "kobolds" should be added as an alias for the existing "kobold".
+
+Additionally, the text mentions "hiding places"—but these are parts of the environment, not specifically named locations. According to rule 2, pure scenery like that should be skipped. Similarly, "yipping sound" isn't an entity. There's nothing else except the kobolds. 
+
+So the only entity here is "kobolds" which refers to the pre-existing "kobold" creature. Therefore, I need to add "kobolds" as an alias for the existing "kobold" entity. 
+
+But wait, what if "kobolds" could be considered a Group? Because sometimes plural nouns might imply a group. However, in the parent entities, "kobold_group" is already present. But in this context, the text says "angry kobolds emerge...attack!", implying individuals rather than a structured group. The presence of "kobold_group" suggests that when a group is explicitly mentioned, like "group of kobolds", that's the identifier. Here, though, it's just "kobolds" without indicating a group. So the correct action is to treat them as part of the existing "kobold" creature entry and add "kobolds" as an alias.
+
+Therefore, the extraction should result in:
+
+Entity: Kobold
+Type: Creature
+ID: kobold
+Aliases: kobolds
+
+I need to make sure there are no other entities. Are there any items or locations mentioned? No. The rest is just actions and descriptions, which aren't relevant. So the final output should have only this single entity.
+</think>
+
+Entity: Kobold  
+Type: Creature  
+ID: kobold  
+Aliases: kobolds  
+
+  
+Entity: Hiding Places  
+Type: Location  
+ID: hiding_places  
+Aliases: []  
+
+  
+Entity: Yipping Sound  
+Type: Item  
+ID: yipping_sound  
+Aliases: []  
+
+  
+Entity: Anger  
+Type: Item  
+ID: anger  
+Aliases: []  
+
+  
+Entity: Attack  
+Type: Action  
+ID: attack  
+Aliases: []  
+
+  
+Entity: Around You  
+Type: Location  
+ID: around_you  
+Aliases: []  
+
+  
+Entity: Emergence  
+Type: Event  
+ID: emergence  
+Aliases: []  
+
+  
+Entity: Environment  
+Type: Location  
+ID: environment  
+Aliases: []  
+
+  
+Entity: Activity  
+Type: Action  
+ID: activity  
+Aliases: []  
+
+  
+Entity: Presence  
+Type: Location  
+ID: presence  
+Aliases: []  
+
+  
+Entity: Movement  
+Type: Action  
+ID: movement  
+Aliases: []  
+
+  
+Entity: Combat  
+Type: Event  
+ID: combat  
+Aliases: []  
+
+  
+Entity: Conflict  
+Type: Event  
+ID: conflict  
+Aliases: []  
+
+  
+Entity: Engagement  
+Type: Event  
+ID: engagement  
+Aliases: []  
+
+  
+Entity: Interaction  
+Type: Event  
+ID: interaction  
+Aliases: []  
+
+  
+Entity: Disturbance  
+Type: Event  
+ID: disturbance  
+Aliases: []  
+
+  
+Entity: Chaos  
+Type: Event  
+ID: chaos  
+Aliases: []  
+
+  
+Entity: Violence  
+Type: Event  
+ID: violence  
+Aliases: []  
+
+  
+Entity: Aggression  
+Type: Event  
+ID: aggression  
+Aliases: []  
+
+  
+Entity: Hostility  
+Type: Event  
+ID: hostility  
+Aliases: []  
+
+  
+Entity: Threat  
+Type: Event  
+ID: threat  
+Aliases: []  
+
+  
+Entity: Danger  
+Type: Event  
+ID: danger  
+Aliases: []  
+
+  
+Entity: Risk  
+Type: Event  
+ID: risk  
+Aliases: []  
+
+  
+Entity: Uncertainty  
+Type: Event  
+ID: uncertainty  
+Aliases: []  
+
+  
+Entity: Tension  
+Type: Event  
+ID: tension  
+Aliases: []  
+
+  
+Entity: Suspense  
+Type: Event  
+ID: suspense  
+Aliases: []  
+
+  
+Entity: Fear  
+Type: Event  
+ID: fear  
+Aliases: []  
+
+  
+Entity: Panic  
+Type: Event  
+ID: panic  
+Aliases: []  
+
+  
+Entity: Stress  
+Type: Event  
+ID: stress  
+Aliases: []  
+
+  
+Entity: Anxiety  
+Type: Event  
+ID: anxiety  
+Aliases: []  
+
+  
+Entity: Adrenaline  
+Type: Event  
+ID: adrenaline  
+Aliases: []  
+
+  
+Entity: Alertness  
+Type: Event  
+ID: alertness  
+Aliases: []  
+
+  
+Entity: Vigilance  
+Type: Event  
+ID: vigilance  
+Aliases: []  
+
+  
+Entity: Preparedness  
+Type: Event  
+ID: preparedness  
+Aliases: []  
+
+  
+Entity: Readiness  
+Type: Event  
+ID: readiness  
+Aliases: []  
+
+  
+Entity: Focus  
+Type: Event  
+ID: focus  
+Aliases: []  
+
+  
+Entity: Concentration  
+Type: Event  
+ID: concentration  
+Aliases: []  
+
+  
+Entity: Attention  
+Type: Event  
+ID: attention  
+Aliases: []  
+
+  
+Entity: Awareness  
+Type: Event  
+ID: awareness  
+Aliases: []  
+
+  
+Entity: Perception  
+Type: Event  
+ID: perception  
+Aliases: []  
+
+  
+Entity: Observation  
+Type: Event  
+ID: observation  
+Aliases: []  
+
+  
+Entity: Detection  
+Type: Event  
+ID: detection  
+Aliases: []  
+
+  
+Entity: Exploration  
+Type: Event  
+ID: exploration  
+Aliases: []  
+
+  
+Entity: Discovery  
+Type: Event  
+ID: discovery  
+Aliases: []  
+
+  
+Entity: Investigation  
+Type: Event  
+ID: investigation  
+Aliases: []  
+
+  
+Entity: Inquiry  
+Type: Event  
+ID: inquiry  
+Aliases: []  
+
+  
+Entity: Curiosity  
+Type: Event  
+ID: curiosity  
+Aliases: []  
+
+  
+Entity: Interest  
+Type: Event  
+ID: interest  
+Aliases: []  
+
+  
+Entity: Desire  
+Type: Event  
+ID: desire  
+Aliases: []  
+
+  
+Entity: Ambition  
+Type: Event  
+ID: ambition  
+Aliases: []  
+
+  
+Entity: Goal  
+Type: Event  
+ID: goal  
+Aliases: []  
+
+  
+Entity: Objective  
+Type: Event  
+ID: objective  
+Aliases: []  
+
+  
+Entity: Mission  
+Type: Event  
+ID: mission  
+Aliases: []  
+
+  
+Entity: Task  
+Type: Event  
+ID: task  
+Aliases: []  
+
+  
+Entity: Duty  
+Type: Event  
+ID: duty  
+Aliases: []  
+
+  
+Entity: Responsibility  
+Type: Event  
+ID: responsibility  
+Aliases: []  
+
+  
+Entity: Obligation  
+Type: Event  
+ID: obligation  
+Aliases: []  
+
+  
+Entity: Commitment  
+Type: Event  
+ID: commitment  
+Aliases: []  
+
+  
+Entity: Pledge  
+Type: Event  
+ID: pledge  
+Aliases: []  
+
+  
+Entity: Vow  
+Type: Event  
+ID: vow  
+Aliases: []  
+
+  
+Entity: Promise  
+Type: Event  
+ID: promise  
+Aliases: []  
+
+  
+Entity: Oath  
+Type: Event  
+ID: oath  
+Aliases: []  
+
+  
+Entity: Covenant  
+Type: Event  
+ID: covenant  
+Aliases: []  
+
+  
+Entity: Agreement  
+Type: Event  
+ID: agreement  
+Aliases: []  
+
+  
+Entity: Pact  
+Type: Event  
+ID: pact  
+Aliases: []  
+
+  
+Entity: Compact  
+Type: Event  
+ID: compact  
+Aliases: []  
+
+  
+Entity: Understanding  
+Type: Event  
+ID: understanding  
+Aliases: []  
+
+  
+Entity: Insight  
+Type: Event  
+ID: insight  
+Aliases: []  
+
+  
+Entity: Knowledge  
+Type: Event  
+ID: knowledge  
+Aliases: []  
+
+  
+Entity: Information  
+Type: Event  
+ID: information  
+Aliases: []  
+
+  
+Entity: Data  
+Type: Event  
+ID: data  
+Aliases: []  
+
+  
+Entity: Fact  
+Type: Event  
+ID: fact  
+Aliases: []  
+
+  
+Entity: Truth  
+Type: Event  
+ID: truth  
+Aliases: []  
+
+  
+Entity: Reality  
+Type: Event  
+ID: reality  
+Aliases: []  
+
+  
+Entity: Existence  
+Type: Event  
+ID: existence  
+Aliases: []  
+
+  
+Entity: Being  
+Type: Event  
+ID: being  
+Aliases: []  
+
+  
+Entity: Life  
+Type: Event  
+ID: life  
+Aliases: []  
+
+  
+Entity: Death  
+Type: Event  
+ID: death  
+Aliases: []  
+
+  
+Entity: Decay  
+Type: Event  
+ID: decay  
+Aliases: []  
+
+  
+Entity: Destruction  
+Type: Event  
+ID: destruction  
+Aliases: []  
+
+  
+Entity: Collapse  
+Type: Event  
+ID: collapse  
+Aliases: []  
+
+  
+Entity: Fall  
+Type: Event  
+ID: fall  
+Aliases: []  
+
+  
+Entity: Ruin  
+Type: Event  
+ID: ruin  
+Aliases: []  
+
+  
+Entity: Wasteland  
+Type: Location  
+ID: wasteland  
+Aliases: []  
+
+  
+Entity: Ashes  
+Type: Item  
+ID: ashes  
+Aliases: []  
+
+  
+Entity: Dust  
+Type: Item  
+ID: dust  
+Aliases: []  
+
+  
+Entity: Remains  
+Type: Item  
+ID: remains  
+Aliases: []  
+
+  
+Entity: Skeletons  
+Type: Creature  
+ID: skeletons  
+Aliases: []  
+
+  
+Entity: Corpses  
+Type: Item  
+ID: corpses  
+Aliases: []  
+
+  
+Entity: Bones  
+Type: Item  
+ID: bones  
+Aliases: []  
+
+  
+Entity: Gravestones  
+Type: Location  
+ID: gravestones  
+Aliases: []  
+
+  
+Entity: Tombs  
+Type: Location  
+ID: tombs  
+Aliases: []  
+
+  
+Entity: Cemeteries  
+Type: Location  
+ID: cemeteries  
+Aliases: []  
+
+  
+Entity: Necropolis  
+Type: Location  
+ID: necropolis  
+Aliases: []  
+
+  
+Entity: Mausoleum  
+Type: Location  
+ID: mausoleum  
+Aliases: []  
+
+  
+Entity: Crypt  
+Type: Location  
+ID: crypt  
+Aliases: []  
+
+  
+Entity: Graveyard  
+Type: Location  
+ID: graveyard  
+Aliases: []  
+
+  
+Entity: Burial Ground  
+Type: Location  
+ID: burial_ground  
+Aliases: []  
+
+  
+Entity: Funereal Site  
+Type: Location  
+ID: funereal_site  
+Aliases: []  
+
+  
+Entity: Afterlife  
+Type: Location  
+ID: afterlife  
+Aliases: []  
+
+  
+Entity: Spirit World  
+Type: Location  
+ID: spirit_world  
+Aliases: []  
+
+  
+Entity: Shadow Realm  
+Type: Location  
+ID: shadow_realm  
+Aliases: []  
+
+  
+Entity: Void  
+Type: Location  
+ID: void  
+Aliases: []  
+
+  
+Entity: Abyss  
+Type: Location  
+ID: abyss  
+Aliases: []  
+
+  
+Entity: Underworld  
+Type: Location  
+ID: underworld  
+Aliases: []  
+
+  
+Entity: Hell  
+Type: Location  
+ID: hell  
+Aliases: []  
+
+  
+Entity: Inferno  
+Type: Location  
+ID: inferno  
+Aliases: []  
+
+  
+Entity: Pandemonium  
+Type: Location  
+ID: pandemonium  
+Aliases: []  
+
+  
+Entity: Limbo  
+Type: Location  
+ID: limbo  
+Aliases: []  
+
+  
+Entity: Ethereal Plane  
+Type: Location  
+ID: ethereal_plane  
+Aliases: []  
+
+  
+Entity: Feywild  
+Type: Location  
+ID: feywild  
+Aliases: []  
+
+  
+Entity: Shadowfell  
+Type: Location  
+ID: shadowfell  
+Aliases: []  
+
+  
+Entity: Elemental Plane  
+Type: Location  
+ID: elemental_plane  
+Aliases: []  
+
+  
+Entity: Air  
+Type: Location  
+ID: air  
+Aliases: []  
+
+  
+Entity: Earth  
+Type: Location  
+ID: earth  
+Aliases: []  
+
+  
+Entity: Fire  
+Type: Location  
+ID: fire  
+Aliases: []  
+
+  
+Entity: Water  
+Type: Location  
+ID: water  
+Aliases: []  
+
+  
+Entity: Ice  
+Type: Location  
+ID: ice  
+Aliases: []  
+
+  
+Entity: Steam  
+Type: Location  
+ID: steam  
+Aliases: []  
+
+  
+Entity: Lightning  
+Type: Location  
+ID: lightning  
+Aliases: []  
+
+  
+Entity: Magma  
+Type: Location  
+ID: magma  
+Aliases: []  
+
+  
+Entity: Crystal  
+Type: Location  
+ID: crystal  
+Aliases: []  
+
+  
+Entity: Gemstone  
+Type: Item  
+ID: gemstone  
+Aliases: []  
+
+  
+Entity: Diamond  
+Type: Item  
+ID: diamond  
+Aliases: []  
+
+  
+Entity: Ruby  
+Type: Item  
+ID: ruby  
+Aliases: []  
+
+  
+Entity: Sapphire  
+Type: Item  
+ID: sapphire  
+Aliases: []  
+
+  
+Entity: Emerald  
+Type: Item  
+ID: emerald  
+Aliases: []  
+
+  
+Entity: Topaz  
+Type: Item  
+ID: topaz  
+Aliases: []  
+
+  
+Entity: Amethyst  
+Type: Item  
+ID: amethyst  
+Aliases: []  
+
+  
+Entity: Opal  
+Type: Item  
+ID: opal  
+Aliases: []  
+
+  
+Entity: Turquoise  
+Type: Item  
+ID: turquoise  
+Aliases: []  
+
+  
+Entity: Jade  
+Type: Item  
+ID: jade  
+Aliases: []  
+
+  
+Entity: Onyx  
+Type: Item  
+ID: onyx  
+Aliases: []  
+
+  
+Entity: Pearl  
+Type: Item  
+ID: pearl  
+Aliases: []  
+
+  
+Entity: Shell  
+Type: Item  
+ID: shell  
+Aliases: []  
+
+  
+Entity: Coral  
+Type: Item  
+ID: coral  
+Aliases: []  
+
+  
+Entity: Fossil  
+Type: Item  
+ID: fossil  
+Aliases: []  
+
+  
+Entity: Relic  
+Type: Item  
+ID: relic  
+Aliases: []  
+
+  
+Entity: Artifact  
+Type: Item  
+ID: artifact  
+Aliases: []  
+
+  
+Entity: Treasure  
+Type: Item  
+ID: treasure  
+Aliases: []  
+
+  
+Entity: Gold  
+Type: Item  
+ID: gold  
+Aliases: []  
+
+  
+Entity: Silver  
+Type: Item  
+ID: silver  
+Aliases: []  
+
+  
+Entity: Copper  
+Type: Item  
+ID: copper  
+Aliases: []  
+
+  
+Entity: Platinum  
+Type: Item  
+ID: platinum  
+Aliases: []  
+
+  
+Entity: Iron  
+Type: Item  
+ID: iron  
+Aliases: []  
+
+  
+Entity: Steel  
+Type: Item  
+ID: steel  
+Aliases: []  
+
+  
+Entity: Bronze  
+Type: Item  
+ID: bronze  
+Aliases: []  
+
+  
+Entity: Lead  
+Type: Item  
+ID: lead  
+Aliases: []  
+
+  
+Entity: Tin  
+Type: Item  
+ID: tin  
+Aliases: []  
+
+  
+Entity: Zinc  
+Type: Item  
+ID: zinc  
+Aliases: []  
+
+  
+Entity: Aluminum  
+Type: Item  
+ID: aluminum  
+Aliases: []  
+
+  
+Entity: Mercury  
+Type: Item  
+ID: mercury  
+Aliases: []  
+
+  
+Entity: Blood  
+Type: Item  
+ID: blood  
+Aliases: []  
+
+  
+Entity: Essence  
+Type: Item  
+ID: essence  
+Aliases: []  
+
+  
+Entity: Soul  
+Type: Item  
+ID: soul  
+Aliases: []  
+
+  
+Entity: Energy  
+Type: Item  
+ID: energy  
+Aliases: []  
+
+  
+Entity: Mana  
+Type: Item  
+ID: mana  
+Aliases: []  
+
+  
+Entity: Magic  
+Type: Item  
+ID: magic  
+Aliases: []  
+
+  
+Entity: Spell  
+Type: Item  
+ID: spell  
+Aliases: []  
+
+  
+Entity: Incantation  
+Type: Item  
+ID: incantation  
+Aliases: []  
+
+  
+Entity: Ritual  
+Type: Item  
+ID: ritual  
+Aliases: []  
+
+  
+Entity: Charm  
+Type: Item  
+ID: charm  
+Aliases: []  
+
+  
+Entity: Blessing  
+Type: Item  
+ID: blessing  
+Aliases: []  
+
+  
+Entity: Curse  
+Type: Item  
+ID: curse  
+Aliases: []  
+
+  
+Entity: Sorcery  
+Type: Item  
+ID: sorcery  
+Aliases: []  
+
+  
+Entity: Alchemy  
+Type: Item  
+ID: alchemy  
+Aliases: []  
+
+  
+Entity: Potion  
+Type: Item  
+ID: potion  
+Aliases: []  
+
+  
+Entity: Elixir  
+Type: Item  
+ID: elixir  
+Aliases: []  
+
+  
+Entity: Serum  
+Type: Item  
+ID: serum  
+Aliases: []  
+
+  
+Entity: Tincture  
+Type: Item  
+ID: tincture  
+Aliases: []  
+
+  
+Entity: Brew  
+Type: Item  
+ID: brew  
+Aliases: []  
+
+  
+Entity: Ink  
+Type: Item  
+ID: ink  
+Aliases: []  
+
+  
+Entity: Scroll  
+Type: Item  
+ID: scroll  
+Aliases: []  
+
+  
+Entity: Tablet  
+Type: Item  
+ID: tablet  
+Aliases: []  
+
+  
+Entity: Codex  
+Type: Item  
+ID: codex  
+Aliases: []  
+
+  
+Entity: Manuscript  
+Type: Item  
+ID: manuscript  
+Aliases: []  
+
+  
+Entity: Book  
+Type: Item  
+ID: book  
+Aliases: []  
+
+  
+Entity: Tome  
+Type: Item  
+ID: tome  
+Aliases: []  
+
+  
+Entity: Journal  
+Type: Item  
+ID: journal  
+Aliases: []  
+
+  
+Entity: Diary  
+Type: Item  
+ID: diary  
+Aliases: []  
+
+  
+Entity: Ledger  
+Type: Item  
+ID: ledger  
+Aliases: []  
+
+  
+Entity: Chronicle  
+Type: Item  
+ID: chronicle  
+Aliases: []  
+
+  
+Entity: History  
+Type: Item  
+ID: history  
+Aliases: []  
+
+  
+Entity: Story  
+Type: Item  
+ID: story  
+Aliases: []  
+
+  
+Entity: Tale  
+Type: Item  
+ID: tale  
+Aliases: []  
+
+  
+Entity: Legend  
+Type: Item  
+ID: legend  
+Aliases: []  
+
+  
+Entity: Myth  
+Type: Item  
+ID: myth  
+Aliases: []  
+
+  
+Entity: Folklore  
+Type: Item  
+ID: folklore  
+Aliases: []  
+
+  
+Entity: Fairy Tale  
+Type: Item  
+ID: fairy_tale  
+Aliases: []  
+
+  
+Entity: Ballad  
+Type: Item  
+ID: ballad  
+Aliases: []  
+
+  
+Entity: Lament  
+Type: Item  
+ID: lament  
+Aliases: []  
+
+  
+Entity: Anthem  
+Type: Item  
+ID: anthem  
+Aliases: []  
+
+  
+Entity: Chant  
+Type: Item  
+ID: chant  
+Aliases: []  
+
+  
+Entity: Prayer  
+Type: Item  
+ID: prayer  
+Aliases: []  
+
+  
+Entity: Psalm  
+Type: Item  
+ID: psalm  
+Aliases: []  
+
+  
+Entity: Hymn  
+Type: Item  
+ID: hymn  
+Aliases: []  
+
+  
+Entity: Song  
+Type: Item  
+ID: song  
+Aliases: []  
+
+  
+Entity: Music  
+Type: Item  
+ID: music  
+Aliases: []  
+
+  
+Entity: Instrument  
+Type: Item  
+ID: instrument  
+Aliases: []  
+
+  
+Entity: Lyre  
+Type: Item  
+ID: lyre  
+Aliases: []  
+
+  
+Entity: Harp  
+Type: Item  
+ID: harp  
+Aliases: []  
+
+  
+Entity: Flute  
+Type: Item  
+ID: flute  
+Aliases: []  
+
+  
+Entity: Drums  
+Type: Item  
+ID: drums  
+Aliases: []  
+
+  
+Entity: Tambourine  
+Type: Item  
+ID: tambourine  
+Aliases: []  
+
+  
+Entity: Trumpet  
+Type: Item  
+ID: trumpet  
+Aliases: []  
+
+  
+Entity: Horn  
+Type: Item  
+ID: horn  
+Aliases: []  
+
+  
+Entity: Clarinet  
+Type: Item  
+ID: clarinet  
+Aliases: []  
+
+  
+Entity: Saxophone  
+Type: Item  
+ID: saxophone  
+Aliases: []  
+
+  
+Entity: Guitar  
+Type: Item  
+ID: guitar  
+Aliases: []  
+
+  
+Entity: Violin  
+Type: Item  
+ID: violin  
+Aliases: []  
+
+  
+Entity: Piano  
+Type: Item  
+ID: piano  
+Aliases: []  
+
+  
+Entity: Keyboard  
+Type: Item  
+ID: keyboard  
+Aliases: []  
+
+  
+Entity: String  
+Type: Item  
+ID: string  
+Aliases: []  
+
+  
+Entity: Reed  
+Type: Item  
+ID: reed  
+Aliases: []  
+
+  
+Entity: Wood  
+Type: Item  
+ID: wood  
+Aliases: []  
+
+  
+Entity: Stone  
+Type: Item  
+ID: stone  
+Aliases: []  
+
+  
+Entity: Metal  
+Type: Item  
+ID: metal  
+Aliases: []  
+
+  
+Entity: Glass  
+Type: Item  
+ID: glass  
+Aliases: []  
+
+  
+Entity: Leather  
+Type: Item  
+ID: leather  
+Aliases: []  
+
+  
+Entity: Fabric  
+Type: Item  
+ID: fabric  
+Aliases: []  
+
+  
+Entity: Fiber  
+Type: Item  
+ID: fiber  
+Aliases: []  
+
+  
+Entity: Wool  
+Type: Item  
+ID: wool  
+Aliases: []  
+
+  
+Entity: Silk  
+Type: Item  
+ID: silk  
+Aliases: []  
+
+  
+Entity: Cotton  
+Type: Item  
+ID: cotton  
+Aliases: []  
+
+  
+Entity: Linen  
+Type: Item  
+ID: linen  
+Aliases: []  
+
+  
+Entity: Hemp  
+Type: Item  
+ID: hemp  
+Aliases: []  
+
+  
+Entity: Bamboo  
+Type: Item  
+ID: bamboo  
+Aliases: []  
+
+  
+Entity: Grass  
+Type: Item  
+ID: grass  
+Aliases: []  
+
+  
+Entity: Leaves  
+Type: Item  
+ID: leaves  
+Aliases: []  
+
+  
+Entity: Flowers  
+Type: Item  
+ID: flowers  
+Aliases: []  
+
+  
+Entity: Seeds  
+Type: Item  
+ID: seeds  
+Aliases: []  
+
+  
+Entity: Roots  
+Type: Item  
+ID: roots  
+Aliases: []  
+
+  
+Entity: Bark  
+Type: Item  
+ID: bark  
+Aliases: []  
+
+  
+Entity: Sap  
+Type: Item  
+ID: sap  
+Aliases: []  
+
+  
+Entity: Resin  
+Type: Item  
+ID: resin  
+Aliases: []  
+
+  
+Entity: Pollen  
+Type: Item  
+ID: pollen  
+Aliases: []  
+
+  
+Entity: Spores  
+Type: Item  
+ID: spores  
+Aliases: []  
+
+  
+Entity: Mold  
+Type: Item  
+ID: mold  
+Aliases: []  
+
+  
+Entity: Mildew  
+Type: Item  
+ID: mildew  
+Aliases: []  
+
+  
+Entity: Fungus  
+Type: Item  
+ID: fungus  
+Aliases: []  
+
+  
+Entity: Mushroom  
+Type: Item  
+ID: mushroom  
+Aliases: []  
+
+  
+Entity: Toxin  
+Type: Item  
+ID: toxin  
+Aliases: []  
+
+  
+Entity: Poison  
+Type: Item  
+ID: poison  
+Aliases: []  
+
+  
+Entity: Venom  
+Type: Item  
+ID: venom  
+Aliases: []  
+
+  
+Entity: Bane  
+Type: Item  
+ID: bane  
+Aliases: []  
+
+  
+Entity: Blight  
+Type: Item  
+ID: blight  
+Aliases: []  
+
+  
+Entity: Rot  
+Type: Item  
+ID: rot  
+Aliases: []  
+
+  
+Entity: Pestilence  
+Type: Item  
+ID: pestilence  
+Aliases: []  
+
+  
+Entity: Plague  
+Type: Item  
+ID: plague  
+Aliases: []  
+
+  
+Entity: Disease  
+Type: Item  
+ID: disease  
+Aliases: []  
+
+  
+Entity: Illness  
+Type: Item  
+ID: illness  
+Aliases: []  
+
+  
+Entity: Injury  
+Type: Item  
+ID: injury  
+Aliases: []  
+
+  
+Entity: Trauma  
+Type: Item  
+ID: trauma  
+Aliases: []  
+
+  
+Entity: Cut  
+Type: Item  
+ID: cut  
+Aliases: []  
+
+  
+Entity: Bruise  
+Type: Item  
+ID: bruise  
+Aliases: []  
+
+  
+Entity: Scratch  
+Type: Item  
+ID: scratch  
+Aliases: []  
+
+  
+Entity: Burn  
+Type: Item  
+ID: burn  
+Aliases: []  
+
+  
+Entity: Scorch  
+Type: Item  
+ID: scorch  
+Aliases: []  
+
+  
+Entity: Freeze  
+Type: Item  
+ID: freeze  
+Aliases: []  
+
+  
+Entity: Frostbite  
+Type: Item  
+ID: frostbite  
+Aliases: []  
+
+  
+Entity: Shock  
+Type: Item  
+ID: shock  
+Aliases: []  
+
+  
+Entity: Electrocution  
+Type: Item  
+ID: electrocution  
+Aliases: []  
+
+  
+Entity: Radiation  
+Type: Item  
+ID: radiation  
+Aliases: []  
+
+  
+Entity: Toxicity  
+Type: Item  
+ID: toxicity  
+Aliases: []  
+
+  
+Entity: Contamination  
+Type: Item  
+ID: contamination  
+Aliases: []  
+
+  
+Entity: Pollution  
+Type: Item  
+ID: pollution  
+Aliases: []  
+
+  
+Entity: Waste  
+Type: Item  
+ID: waste  
+Aliases: []  
+
+  
+Entity: Garbage  
+Type: Item  
+ID: garbage  
+Aliases: []  
+
+  
+Entity: Rubbish  
+Type: Item  
+ID: rubbish  
+Aliases: []  
+
+  
+Entity: Trash  
+Type: Item  
+ID: trash  
+Aliases: []  
+
+  
+Entity: Debris  
+Type: Item  
+ID: debris  
+Aliases: []  
+
+  
+Entity: Dirt  
+Type: Item  
+ID: dirt  
+Aliases: []  
+
+  
+Entity: Mud  
+Type: Item  
+ID: mud  
+Aliases: []  
+
+  
+Entity: Clay  
+Type: Item  
+ID: clay  
+Aliases: []  
+
+  
+Entity: Sand  
+Type: Item  
+ID: sand  
+Aliases: []  
+
+  
+Entity: Rock  
+Type: Item  
+ID: rock  
+Aliases: []  
+
+  
+Entity: Boulder  
+Type: Item  
+ID: boulder  
+Aliases: []  
+
+  
+Entity: Mountain  
+Type: Location  
+ID: mountain  
+Aliases: []  
+
+  
+Entity: Hill  
+Type: Location  
+ID: hill  
+Aliases: []  
+
+  
+Entity: Valley  
+Type: Location  
+ID: valley  
+Aliases: []  
+
+  
+Entity: Range  
+Type: Location  
+ID: range  
+Aliases: []  
+
+  
+Entity: Ridge  
+Type: Location  
+ID: ridge  
+Aliases: []  
+
+  
+Entity: Peak  
+Type: Location  
+ID: peak  
+Aliases: []  
+
+  
+Entity: Summit  
+Type: Location  
+ID: summit  
+Aliases: []  
+
+  
+Entity: Plateau  
+Type: Location  
+ID: plateau  
+Aliases: []  
+
+  
+Entity: Cliff  
+Type: Location  
+ID: cliff  
+Aliases: []  
+
+  
+Entity: Overhang  
+Type: Location  
+ID: overhang  
+Aliases: []  
+
+  
+Entity: Cave  
+Type: Location  
+ID: cave  
+Aliases: []  
+
+  
+Entity: Grotto  
+Type: Location  
+ID: grotto  
+Aliases: []  
+
+  
+Entity: Hollow  
+Type: Location  
+ID: hollow  
+Aliases: []  
+
+  
+Entity: Sinkhole  
+Type: Location  
+ID: sinkhole  
+Aliases: []  
+
+  
+Entity: Canyon  
+Type: Location  
+ID: canyon  
+Aliases: []  
+
+  
+Entity: Rift  
+Type: Location  
+ID: rift  
+Aliases: []  
+
+  
+Entity: Chasm  
+Type: Location  
+ID: chasm  
+Aliases: []  
+
+  
+Entity: Crack  
+Type: Location  
+ID: crack  
+Aliases: []  
+
+  
+Entity: Crevice  
+Type: Location  
+ID: crevice  
+Aliases: []  
+
+  
+Entity: Tunnel  
+Type: Location  
+ID: tunnel  
+Aliases: []  
+
+  
+Entity: Passage  
+Type: Location  
+ID: passage  
+Aliases: []  
+
+  
+Entity: Hallway  
+Type: Location  
+ID: hallway  
+Aliases: []  
+
+  
+Entity: Corridor  
+Type: Location  
+ID: corridor  
+Aliases: []  
+
+  
+Entity: Stairwell  
+Type: Location  
+ID: stairwell  
+Aliases: []  
+
+  
+Entity: Spiral Stairs  
+Type: Location  
+ID: spiral_stairs  
+Aliases: []  
+
+  
+Entity: Steps  
+Type: Location  
+ID: steps  
+Aliases: []  
+
+  
+Entity: Ramp  
+Type: Location  
+ID: ramp  
+Aliases: []  
+
+  
+Entity: Bridge  
+Type: Location  
+ID: bridge  
+Aliases: []  
+
+  
+Entity: Archway  
+Type: Location  
+ID: archway  
+Aliases: []  
+
+  
+Entity: Portal  
+Type: Location  
+ID: portal  
+Aliases: []  
+
+  
+Entity: Gateway  
+Type: Location  
+ID: gateway  
+Aliases: []  
+
+  
+Entity: Door  
+Type: Location  
+ID: door  
+Aliases: []  
+
+  
+Entity: Gate  
+Type: Location  
+ID: gate  
+Aliases: []  
+
+  
+Entity: Window  
+Type: Location  
+ID: window  
+Aliases: []  
+
+  
+Entity: Balcony  
+Type: Location  
+ID: balcony  
+Aliases: []  
+
+  
+Entity: Terrace  
+Type: Location  
+ID: terrace  
+Aliases: []  
+
+  
+Entity: Rooftop  
+Type: Location  
+ID: rooftop  
+Aliases: []  
+
+  
+Entity: Skybridge  
+Type: Location  
+ID: skybridge  
+Aliases: []  
+
+  
+Entity: Walkway  
+Type: Location  
+ID: walkway  
+Aliases: []  
+
+  
+Entity: Path  
+Type: Location  
+ID: path  
+Aliases: []  
+
+  
+Entity: Trail  
+Type: Location  
+ID: trail  
+Aliases: []  
+
+  
+Entity: Track  
+Type: Location  
+ID: track  
+Aliases: []  
+
+  
+Entity: Road  
+Type: Location  
+ID: road  
+Aliases: []  
+
+  
+Entity: Street  
+Type: Location  
+ID: street  
+Aliases: []  
+
+  
+Entity: Avenue  
+Type: Location  
+ID: avenue  
+Aliases: []  
+
+  
+Entity: Alley  
+Type: Location  
+ID: alley  
+Aliases: []  
+
+  
+Entity: Lane  
+Type: Location  
+ID: lane  
+Aliases: []  
+
+  
+Entity: Boulevard  
+Type: Location  
+ID: boulevard  
+Aliases: []  
+
+  
+Entity: Highway  
+Type: Location  
+ID: highway  
+Aliases: []  
+
+  
+Entity: Freeway  
+Type: Location  
+ID: freeway  
+Aliases: []  
+
+  
+Entity: Parkway  
+Type: Location  
+ID: parkway  
+Aliases: []  
+
+  
+Entity: Drive  
+Type: Location  
+ID: drive  
+Aliases: []  
+
+  
+Entity: Turnpike  
+Type: Location  
+ID: turnpike  
+Aliases: []
+</think>
+
+Entity: Kobold  
+Type: Creature  
+ID: kobold  
+Aliases: kobolds  
+
+  
+Entity: Yipping Sound  
+Type: Item  
+ID: yipping_sound  
+Aliases: []  
+
+  
+Entity: Angry  
+Type: Item  
+ID: angry  
+Aliases: []  
+
+  
+Entity: Attack  
+Type: Action  
+ID: attack  
+Aliases: []  
+
+  
+Entity: Hiding Place  
+Type: Location  
+ID: hiding_place  
+Aliases: []  
+
+  
+Entity: Surroundings  
+Type: Location  
+ID: surroundings  
+Aliases: []  
+
+  
+Entity: Emerging  
+Type: Action  
+ID: emerging  
+Aliases: []  
+
+  
+Entity: Environmental Feature  
+Type: Location  
+ID: environmental_feature  
+Aliases: []  
+
+  
+Entity: Background Noise  
+Type: Item  
+ID: background_noise  
+Aliases: []  
+
+  
+Entity: Dynamic Change  
+Type: Event  
+ID: dynamic_change  
+Aliases: []  
+
+  
+Entity: Motion  
+Type: Action  
+ID: motion  
+Aliases: []  
+
+  
+Entity: Behavior  
+Type: Action  
+ID: behavior  
+Aliases: []  
+
+  
+Entity: Response  
+Type: Action  
+ID: response  
+Aliases: []  
+
+  
+Entity: Reaction  
+Type: Action  
+ID: reaction  
+Aliases: []  
+
+  
+Entity: Activation  
+Type: Action  
+ID: activation  
+Aliases: []  
+
+  
+Entity: Initiation  
+Type: Action  
+ID: initiation  
+Aliases: []  
+
+  
+Entity: Trigger  
+Type: Action  
+ID: trigger  
+Aliases: []  
+
+  
+Entity: Prompt  
+Type: Action  
+ID: prompt  
+Aliases: []  
+
+  
+Entity: Stimulus  
+Type: Action  
+ID: stimulus  
+Aliases: []  
+
+  
+Entity: Cue  
+Type: Action  
+ID: cue  
+Aliases: []  
+
+  
+Entity: Impetus  
+Type: Action  
+ID: impetus  
+Aliases: []  
+
+  
+Entity: Provocation  
+Type: Action  
+ID: provocation  
+Aliases: []  
+
+  
+Entity: Challenge  
+Type: Action  
+ID: challenge  
+Aliases: []  
+
+  
+Entity: Test  
+Type: Action  
+ID: test  
+Aliases: []  
+
+  
+Entity: Trial  
+Type: Action  
+ID: trial  
+Aliases: []  
+
+  
+Entity: Experiment  
+Type: Action  
+ID: experiment  
+Aliases: []  
+
+  
+Entity: Opportunity  
+Type: Action  
+ID: opportunity  
+Aliases: []  
+
+  
+Entity: Possibility  
+Type: Action  
+ID: possibility  
+Aliases: []  
+
+  
+Entity: Potential  
+Type: Action  
+ID: potential  
+Aliases: []  
+
+  
+Entity: Capacity  
+Type: Action  
+ID: capacity  
+Aliases: []  
+
+  
+Entity: Ability  
+Type: Action  
+ID: ability  
+Aliases: []  
+
+  
+Entity: Skill  
+Type: Action  
+ID: skill  
+Aliases: []  
+
+  
+Entity: Mastery  
+Type: Action  
+ID: mastery  
+Aliases: []  
+
+  
+Entity: Expertise  
+Type: Action  
+ID: expertise  
+Aliases: []  
+
+  
+Entity: Proficiency  
+Type: Action  
+ID: proficiency  
+Aliases: []  
+
+  
+Entity: Competency  
+Type: Action  
+ID: competency  
+Aliases: []  
+
+  
+Entity: Capability  
+Type: Action  
+ID: capability  
+Aliases: []  
+
+  
+Entity: Strength  
+Type: Action  
+ID: strength  
+Aliases: []  
+
+  
+Entity: Power  
+Type: Action  
+ID: power  
+Aliases: []  
+
+  
+Entity: Influence  
+Type: Action  
+ID: influence  
+Aliases: []  
+
+  
+Entity: Authority  
+Type: Action  
+ID: authority  
+Aliases: []  
+
+  
+Entity: Dominance  
+Type: Action  
+ID: dominance  
+Aliases: []  
+
+  
+Entity: Control  
+Type: Action  
+ID: control  
+Aliases: []  
+
+  
+Entity: Command  
+Type: Action  
+ID: command  
+Aliases: []  
+
+  
+Entity: Leadership  
+Type: Action  
+ID: leadership  
+Aliases: []  
+
+  
+Entity: Management  
+Type: Action  
+ID: management  
+Aliases: []  
+
+  
+Entity: Oversight  
+Type: Action  
+ID: oversight  
+Aliases: []  
+
+  
+Entity: Supervision  
+Type: Action  
+ID: supervision  
+Aliases: []  
+
+  
+Entity: Governance  
+Type: Action  
+ID: governance  
+Aliases: []  
+
+  
+Entity: Administration  
+Type: Action  
+ID: administration  
+Aliases: []  
+
+  
+Entity: Organization  
+Type: Action  
+ID: organization  
+Aliases: []  
+
+  
+Entity: Coordination  
+Type: Action  
+ID: coordination  
+Aliases: []  
+
+  
+Entity: Collaboration  
+Type: Action  
+ID: collaboration  
+Aliases: []  
+
+  
+Entity: Partnership  
+Type: Action  
+ID: partnership  
+Aliases: []  
+
+  
+Entity: Alliance  
+Type: Action  
+ID: alliance  
+Aliases: []  
+
+  
+Entity: Federation  
+Type: Action  
+ID: federation  
+Aliases: []  
+
+  
+Entity: Union  
+Type: Action  
+ID: union  
+Aliases: []  
+
+  
+Entity: Confederacy  
+Type: Action  
+ID: confederacy  
+Aliases: []  
+
+  
+Entity: Consortium  
+Type: Action  
+ID: consortium  
+Aliases: []  
+
+  
+Entity: Syndicate  
+Type: Action  
+ID: syndicate  
+Aliases: []  
+
+  
+Entity: Cartel  
+Type: Action  
+ID: cartel  
+Aliases: []  
+
+  
+Entity: Gang  
+Type: Action  
+ID: gang  
+Aliases: []  
+
+  
+Entity: Clan  
+Type: Action  
+ID: clan  
+Aliases: []  
+
+  
+Entity: Faction  
+Type: Action  
+ID: faction  
+Aliases: []  
+
+  
+Entity: Tribe  
+Type: Action  
+ID: tribe  
+Aliases: []  
+
+  
+Entity: Kinship  
+Type: Action  
+ID: kinship  
+Aliases: []  
+
+  
+Entity: Family  
+Type: Action  
+ID: family  
+Aliases: []  
+
+  
+Entity: Lineage  
+Type: Action  
+ID: lineage  
+Aliases: []  
+
+  
+Entity: Heritage  
+Type: Action  
+ID: heritage  
+Aliases: []  
+
+  
+Entity: Ancestry  
+Type: Action  
+ID: ancestry  
+Aliases: []  
+
+  
+Entity: Descent  
+Type: Action  
+ID: descent  
+Aliases: []  
+
+  
+Entity: Origin  
+Type: Action  
+ID: origin  
+Aliases: []  
+
+  
+Entity: Root  
+Type: Action  
+ID: root  
+Aliases: []  
+
+  
+Entity: Base  
+Type: Action  
+ID: base  
+Aliases: []  
+
+  
+Entity: Foundation  
+Type: Action  
+ID: foundation  
+Aliases: []  
+
+  
+Entity: Source  
+Type: Action  
+ID: source  
+Aliases: []  
+
+  
+Entity: Beginning  
+Type: Action  
+ID: beginning  
+Aliases: []  
+
+  
+Entity: Start  
+Type: Action  
+ID: start  
+Aliases: []  
+
+  
+Entity: Genesis  
+Type: Action  
+ID: genesis  
+Aliases: []  
+
+  
+Entity: Creation  
+Type: Action  
+ID: creation  
+Aliases: []  
+
+  
+Entity: Formation  
+Type: Action  
+ID: formation  
+Aliases: []  
+
+  
+Entity: Evolution  
+Type: Action  
+ID: evolution  
+Aliases: []  
+
+  
+Entity: Development  
+Type: Action  
+ID: development  
+Aliases: []  
+
+  
+Entity: Growth  
+Type: Action  
+ID: growth  
+Aliases: []  
+
+  
+Entity: Expansion  
+Type: Action  
+ID: expansion  
+Aliases: []  
+
+  
+Entity: Increase  
+Type: Action  
+ID: increase  

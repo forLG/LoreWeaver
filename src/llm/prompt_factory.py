@@ -524,13 +524,15 @@ CRITICAL RULES:
 
 5. **Be Decisive**: Choose the best match and move on. Do not repeatedly reconsider your choices.
 
+6. **STOP WHEN DONE**: After extracting ALL entities, STOP IMMEDIATELY. Do not continue with empty templates.
+
 OUTPUT FORMAT (one entity per block, separate blocks with blank line):
 Entity: [name]
 Type: [Location/Creature/Item/Group]
 ID: [snake_case_id]
 Aliases: [alias1, alias2, alias3]
 
-[Repeat for each entity]
+[Repeat for each entity, then STOP]
 """
 
     @staticmethod

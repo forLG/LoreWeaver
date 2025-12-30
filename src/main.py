@@ -126,6 +126,12 @@ def parse_args():
         default=int(os.getenv('LLM_MAX_TOKENS', '0')),
         help='Maximum tokens per LLM response (default: from LLM_MAX_TOKENS env var, 0 = no limit)'
     )
+    parser.add_argument(
+        '--repetition-penalty',
+        type=float,
+        default=float(os.getenv('LLM_REPETITION_PENALTY', '0')) if os.getenv('LLM_REPETITION_PENALTY') else None,
+        help='Repetition penalty for vLLM (default: from LLM_REPETITION_PENALTY env var, 1.0 = no penalty)'
+    )
 
     # File paths
     parser.add_argument(
@@ -271,7 +277,8 @@ class Pipeline:
                 model=self.args.model,
                 max_concurrent=self.args.max_concurrent,
                 output_dir=self.output_dir,  # Save debug outputs
-                max_tokens=self.args.max_tokens
+                max_tokens=self.args.max_tokens,
+                repetition_penalty=self.args.repetition_penalty
             )
             location_graph = processor.process(self.shadow_tree, skip_summary=False)
         else:
@@ -280,7 +287,8 @@ class Pipeline:
                 api_key=self.args.api_key,
                 base_url=self.args.base_url,
                 model=self.args.model,
-                max_concurrent=self.args.max_concurrent
+                max_concurrent=self.args.max_concurrent,
+                repetition_penalty=self.args.repetition_penalty
             )
             location_graph = processor.process(self.shadow_tree, skip_summary=skip_summary)
 
@@ -318,7 +326,8 @@ class Pipeline:
             api_key=self.args.api_key,
             base_url=self.args.base_url,
             model=self.args.model,
-            max_concurrent=self.args.max_concurrent
+            max_concurrent=self.args.max_concurrent,
+            repetition_penalty=self.args.repetition_penalty
         )
 
         section_map = mapper.process(self.shadow_tree, location_graph)
@@ -352,7 +361,8 @@ class Pipeline:
             api_key=self.args.api_key,
             base_url=self.args.base_url,
             model=self.args.model,
-            max_concurrent=self.args.max_concurrent
+            max_concurrent=self.args.max_concurrent,
+            repetition_penalty=self.args.repetition_penalty
         )
 
         entity_graph = processor.process(self.shadow_tree, section_map)

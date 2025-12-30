@@ -24,6 +24,7 @@ Pipeline (two-phase):
 """
 import asyncio
 import json
+import re
 from pathlib import Path
 from typing import Any
 
@@ -179,7 +180,9 @@ class SmallModelProcessor(BaseLLMProcessor):
         logger.info(f"  Resolved to {len(unique_entities)} unique entities")
 
         # Build ID mapping for updating event references
-        id_mapping = self._build_entity_id_mapping(all_entities, unique_entities)
+        # Also filters out meaningless entities and merges similar ones (cliff_top vs clifftop)
+        id_mapping, meaningful_entities = self._build_entity_id_mapping(all_entities, unique_entities)
+        logger.info(f"  After filtering and merging: {len(meaningful_entities)} meaningful entities")
 
         # ====================================================================
         # Phase 3: Event processing and edge generation
@@ -210,9 +213,9 @@ class SmallModelProcessor(BaseLLMProcessor):
         logger.info("Phase 4: Building and validating unified heterogeneous graph...")
 
         try:
-            # Create validated graph using Pydantic
+            # Create validated graph using Pydantic with filtered meaningful entities
             validated_graph = create_validated_graph(
-                entities=unique_entities,
+                entities=meaningful_entities,
                 events=valid_events,
                 edges=edges
             )
@@ -229,7 +232,7 @@ class SmallModelProcessor(BaseLLMProcessor):
 
             # Fallback: return plain dict without validation
             all_nodes = []
-            for entity in unique_entities:
+            for entity in meaningful_entities:
                 entity["node_type"] = "entity"
                 all_nodes.append(entity)
             for event in valid_events:
@@ -929,39 +932,293 @@ class SmallModelProcessor(BaseLLMProcessor):
             for child in node["children"]:
                 await self._unified_extraction_recursive(child, all_entities, all_events)
 
+    def _normalize_entity_label(self, label: str) -> str:
+        """
+        Normalize entity label for similarity comparison.
+
+        Handles:
+        - Underscore vs space: cliff_top -> cliff top
+        - Case insensitivity
+        - Extra whitespace
+        - Common contractions: observation -> observatory (optional)
+
+        Returns:
+            Normalized label string
+        """
+        if not label:
+            return ""
+
+        # Replace underscores with spaces
+        normalized = label.replace('_', ' ')
+
+        # Convert to lowercase
+        normalized = normalized.lower()
+
+        # Remove extra whitespace
+        normalized = ' '.join(normalized.split())
+
+        # Remove possessive markers
+        normalized = normalized.replace("'", "").replace("`", "")
+
+        return normalized
+
+    def _are_labels_similar(self, label1: str, label2: str) -> bool:
+        """
+        Check if two entity labels refer to the same entity.
+
+        Similarity criteria:
+        - Exact match after normalization
+        - One is a substring of the other (after normalization)
+        - Edit distance threshold (for typos like clifftop vs cliff_top)
+
+        Examples:
+        - cliff_top_observation ≈ clifftop_observation
+        - dragon_s_rest ≈ dragons_rest
+        """
+        norm1 = self._normalize_entity_label(label1)
+        norm2 = self._normalize_entity_label(label2)
+
+        if not norm1 or not norm2:
+            return False
+
+        # Exact match after normalization
+        if norm1 == norm2:
+            return True
+
+        # Substring match (one contains the other)
+        # This handles cases like "dragon" vs "dragon_rest"
+        if norm1 in norm2 or norm2 in norm1:
+            # Require significant overlap (at least 50% of the longer string)
+            min_len = min(len(norm1), len(norm2))
+            max_len = max(len(norm1), len(norm2))
+            if min_len / max_len >= 0.5:
+                return True
+
+        # Simple edit distance for close matches
+        # cliff_top (9) vs clifftop (8) - should match
+        distance = self._levenshtein_distance(norm1, norm2)
+        max_len = max(len(norm1), len(norm2))
+
+        # Allow up to 20% difference (e.g., 2 chars in a 10-char string)
+        if distance <= 2 or (distance / max_len) <= 0.2:
+            return True
+
+        return False
+
+    def _levenshtein_distance(self, s1: str, s2: str) -> int:
+        """Calculate Levenshtein distance between two strings."""
+        if len(s1) < len(s2):
+            return self._levenshtein_distance(s2, s1)
+
+        if len(s2) == 0:
+            return len(s1)
+
+        previous_row = range(len(s2) + 1)
+        for i, c1 in enumerate(s1):
+            current_row = [i + 1]
+            for j, c2 in enumerate(s2):
+                insertions = previous_row[j + 1] + 1
+                deletions = current_row[j] + 1
+                substitutions = previous_row[j] + (c1 != c2)
+                current_row.append(min(insertions, deletions, substitutions))
+            previous_row = current_row
+
+        return previous_row[-1]
+
+    def _is_meaningless_entity(self, entity: dict) -> bool:
+        """
+        Detect meaningless/generic placeholder entities that should be removed.
+
+        Patterns to filter:
+        - Numbered locations: location_1, location_2, adventure_location_1, area_1, a_1
+        - Generic category names: adventure_locations, unknown_entities
+        - Template placeholders: entity_1, node_1, object_1
+
+        Returns:
+            True if entity should be filtered out
+        """
+        eid = entity.get("id", "")
+        label = entity.get("label", "")
+
+        # Pattern 1: Generic numbered locations (location_1, adventure_location_2, area_3)
+        numbered_patterns = [
+            r'^location_\d+$',
+            r'^location\d+$',
+            r'^area_[a-zA-Z]\d+$',  # area_A1, area_b2
+            r'^area\d+$',
+            r'^adventure_location_\d+$',
+            r'^adventure_location\d+$',
+            r'^loc_\d+$',
+            r'^loc\d+$',
+            r'^zone_\d+$',
+            r'^zone\d+$',
+            r'^region_\d+$',
+            r'^region\d+$',
+            r'^section_\d+$',
+            r'^section\d+$',
+        ]
+
+        for pattern in numbered_patterns:
+            if re.match(pattern, eid.lower()):
+                return True
+
+        # Pattern 2: Generic category entities (no specific identity)
+        generic_categories = [
+            'adventure_locations',
+            'unknown_entities',
+            'unknown_locations',
+            'generic_entities',
+            'miscellaneous_entities',
+            'other_entities',
+            'various_locations',
+            'several_locations',
+            'multiple_entities',
+        ]
+
+        if eid.lower() in generic_categories:
+            return True
+
+        # Pattern 3: Template placeholders
+        placeholder_patterns = [
+            r'^entity_\d+$',
+            r'^node_\d+$',
+            r'^object_\d+$',
+            r'^item_\d+$',
+            r'^thing_\d+$',
+            r'^placeholder_\d+$',
+            r'^temp_\d+$',
+            r'^unknown_\d+$',
+        ]
+
+        for pattern in placeholder_patterns:
+            if re.match(pattern, eid.lower()):
+                return True
+
+        # Pattern 4: Labels that look like generic descriptions
+        # E.g., "a location", "an area", "unknown entity"
+        if label:
+            label_lower = label.lower().strip()
+            generic_label_patterns = [
+                r'^an? (area|location|place|spot|region|zone)$',
+                r'^unknown (area|location|place|entity|object)$',
+                r'^generic (area|location|place|entity|object)$',
+                r'^unspecified (area|location|place|entity|object)$',
+                r'^unnamed (area|location|place|entity|object)$',
+            ]
+
+            for pattern in generic_label_patterns:
+                if re.match(pattern, label_lower):
+                    return True
+
+        return False
+
     def _build_entity_id_mapping(
         self,
         raw_entities: list[dict],
         unique_entities: list[dict]
-    ) -> dict[str, str]:
+    ) -> tuple[dict[str, str], list[dict]]:
         """
         Build a mapping from raw entity IDs to canonical entity IDs.
 
+        Improvements:
+        - Uses fuzzy label similarity matching (handles cliff_top vs clifftop)
+        - Filters out meaningless/placeholder entities (adventure_location_1, etc.)
+
         After deduplication, multiple raw entities may map to the same canonical entity.
         This mapping is used to update relation source/target IDs.
+
+        Returns:
+            Tuple of (mapping dict {raw_id: canonical_id, ...}, filtered_entities list)
         """
         mapping = {}
+
+        # First, filter out meaningless entities from unique_entities
+        meaningful_entities = []
+        filtered_count = 0
+
+        for entity in unique_entities:
+            if self._is_meaningless_entity(entity):
+                filtered_count += 1
+                logger.debug(f"  Filtering meaningless entity: {entity.get('id')} ({entity.get('label')})")
+            else:
+                meaningful_entities.append(entity)
+
+        if filtered_count > 0:
+            logger.info(f"  Filtered out {filtered_count} meaningless/placeholder entities")
+
+        # Build similarity index for faster matching
+        # Group entities by normalized label prefix
+        entity_groups = {}
+
+        for canonical_entity in meaningful_entities:
+            canonical_id = canonical_entity.get("id", "")
+            canonical_label = canonical_entity.get("label", "")
+
+            # Create normalized key for grouping
+            norm_label = self._normalize_entity_label(canonical_label)
+            prefix = norm_label[:5] if len(norm_label) >= 5 else norm_label  # First 5 chars
+
+            if prefix not in entity_groups:
+                entity_groups[prefix] = []
+            entity_groups[prefix].append(canonical_entity)
 
         # Group raw entities by their canonical ID
         for raw_entity in raw_entities:
             raw_id = raw_entity.get("id", "")
+            raw_label = raw_entity.get("label", "")
+
+            if not raw_id:
+                continue
+
+            # Skip meaningless entities in mapping (they won't be in meaningful_entities)
+            if self._is_meaningless_entity(raw_entity):
+                mapping[raw_id] = None  # Mark for removal
+                continue
 
             # Find the canonical entity this maps to
-            for unique_entity in unique_entities:
-                unique_id = unique_entity.get("id", "")
+            mapped = False
 
-                # Check if they're the same entity (by ID or label similarity)
-                if raw_id == unique_id or raw_entity.get("label") == unique_entity.get("label"):
-                    mapping[raw_id] = unique_id
-                    break
+            # Check exact ID match first
+            if any(raw_id == e.get("id") for e in meaningful_entities):
+                mapping[raw_id] = raw_id
+                mapped = True
 
-        # For any unmapped entities, map to themselves
-        for raw_entity in raw_entities:
-            raw_id = raw_entity.get("id", "")
-            if raw_id and raw_id not in mapping:
+            # Check exact label match
+            if not mapped:
+                for canonical_entity in meaningful_entities:
+                    if raw_label == canonical_entity.get("label"):
+                        mapping[raw_id] = canonical_entity.get("id")
+                        mapped = True
+                        break
+
+            # Check fuzzy label similarity
+            if not mapped:
+                # Only check entities with similar prefix (optimization)
+                norm_label = self._normalize_entity_label(raw_label)
+                prefix = norm_label[:5] if len(norm_label) >= 5 else norm_label
+
+                candidates = entity_groups.get(prefix, [])
+                # Also check neighboring prefixes (in case of slight variations)
+                for p in [prefix, prefix[:-1], prefix + 'a']:
+                    candidates.extend(entity_groups.get(p, []))
+
+                for canonical_entity in candidates:
+                    canonical_label = canonical_entity.get("label", "")
+                    if self._are_labels_similar(raw_label, canonical_label):
+                        mapping[raw_id] = canonical_entity.get("id")
+                        mapped = True
+                        logger.debug(f"  Merged '{raw_id}' -> '{canonical_entity.get('id')}' "
+                                   f"(similar labels: {raw_label} ≈ {canonical_label})")
+                        break
+
+            # For any unmapped entities, map to themselves
+            if not mapped and raw_id not in mapping:
                 mapping[raw_id] = raw_id
 
-        return mapping
+        # Remove entities marked for filtering (mapped to None)
+        mapping = {k: v for k, v in mapping.items() if v is not None}
+
+        return mapping, meaningful_entities
 
     def _update_relation_ids(
         self,

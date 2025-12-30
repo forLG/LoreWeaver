@@ -1,0 +1,2667 @@
+[
+  {
+    "label": "Learning About Island Threats",
+    "type": "discovery",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "dragon_s_rest",
+    "description": "Characters discover information about dangers threatening Stormwreck Isle while at the cloister",
+    "id": "learning_about_island_threats",
+    "source_node": "Chapter 1: Dragon's Rest"
+  },
+  {
+    "label": "Player Character Introduction",
+    "type": "dialogue",
+    "participants": [
+      "dm_adventure",
+      "party_players"
+    ],
+    "location": "dragon_s_rest",
+    "description": "DM encourages players to introduce their characters and discuss reasons for visiting Dragon's Rest",
+    "id": "player_character_introduction",
+    "source_node": "Welcome to Dragon's Rest"
+  },
+  {
+    "label": "Marching Order Discussion",
+    "type": "dialogue",
+    "participants": [
+      "dm_adventure",
+      "party_players"
+    ],
+    "location": "dragon_s_rest",
+    "description": "DM requests players to establish their marching order as they prepare to approach the cloister",
+    "id": "marching_order_discussion",
+    "source_node": "Welcome to Dragon's Rest"
+  },
+  {
+    "label": "Environmental Inquiry Resolution",
+    "type": "discovery",
+    "participants": [
+      "party_players"
+    ],
+    "location": "dragon_s_rest",
+    "description": "Players consult map 2 and \"Dragon's Rest Locations\" to understand the cloister's visible features from the boat",
+    "id": "environmental_inquiry_resolution",
+    "source_node": "Welcome to Dragon's Rest"
+  },
+  {
+    "label": "Exploration Toward Cloister",
+    "type": "exploration",
+    "participants": [
+      "party_players"
+    ],
+    "location": "dragon_s_rest",
+    "description": "Party begins movement toward the cloister while organizing their formation",
+    "id": "exploration_toward_cloister",
+    "source_node": "Welcome to Dragon's Rest"
+  },
+  {
+    "label": "Approach to Dragon's Rest",
+    "type": "exploration",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "dragon_s_rest",
+    "description": "Adventurers sail toward the island, noting vibrant seaweed and illuminated landscapes",
+    "id": "approach_to_dragon_s_rest",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Anchor Drop at Harbor",
+    "type": "exploration",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "harbor",
+    "description": "Ship anchors at the harbor entrance while observing cliffs and rocky formations",
+    "id": "anchor_drop_at_harbor",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Shore Leave by Sailors",
+    "type": "encounter",
+    "participants": [
+      "adventurers",
+      "sailors_group"
+    ],
+    "location": "dock",
+    "description": "Sailors transport adventurers to the dock where they bid farewell",
+    "id": "shore_leave_by_sailors",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Statue Inspection",
+    "type": "observation",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "temple",
+    "description": "Adventurers examine the central statue featuring a wizened man and songbirds",
+    "id": "statue_inspection",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Path Discovery",
+    "type": "discovery",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "dragon_s_rest",
+    "description": "Identification of the stone-paved trail ascending the cliffside to the temple",
+    "id": "path_discovery",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Directional Guidance",
+    "type": "dialogue",
+    "participants": [
+      "adventurers",
+      "sailors_group"
+    ],
+    "location": "dock",
+    "description": "Sailors point toward the path and offer wishes for safe travels",
+    "id": "directional_guidance",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Initial_Zombie_Encounter",
+    "type": "encounter",
+    "participants": [
+      "zombies_group",
+      "player_characters"
+    ],
+    "location": "shipwreck_site",
+    "description": "The party faces three shambling zombies originating from a shipwreck, presented with the choice to fight or continue along the upward path.",
+    "id": "initial_zombie_encounter",
+    "source_node": "Drowned Sailors"
+  },
+  {
+    "label": "Combat_Initiated",
+    "type": "combat",
+    "participants": [
+      "zombies_group",
+      "player_characters"
+    ],
+    "location": "upward_path",
+    "description": "Upon deciding to engage, the zombies begin moving toward the party, initiating a combat sequence with initiative checks and melee attacks.",
+    "id": "combat_initiated",
+    "source_node": "Drowned Sailors"
+  },
+  {
+    "label": "Strategic_Movement_Decision",
+    "type": "exploration",
+    "participants": [
+      "player_characters"
+    ],
+    "location": "upward_path",
+    "description": "The party chooses to bypass the zombies by advancing along the upward path, avoiding direct conflict.",
+    "id": "strategic_movement_decision",
+    "source_node": "Drowned Sailors"
+  },
+  {
+    "label": "Hearing Ruckus",
+    "type": "observation",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "beach",
+    "description": "Characters hear splashing and a wet, gurgling moan behind them",
+    "id": "hearing_ruckus",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Encounter with Drowned Sailors",
+    "type": "encounter",
+    "participants": [
+      "adventurers",
+      "drowned_sailor_1",
+      "drowned_sailor_2",
+      "drowned_sailor_3"
+    ],
+    "location": "beach",
+    "description": "Three figures shambling up from the water's edge wearing sailor attire, with gray skin and seawater dripping from their mouths",
+    "id": "encounter_with_drowned_sailors",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Observing Drowned Figures",
+    "type": "observation",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "beach",
+    "description": "Characters notice the figures' unnatural appearance, including gray skin, wet clothing, and predatory lurching motion toward them",
+    "id": "observing_drowned_figures",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Zombie Resists Death",
+    "type": "observation",
+    "participants": [
+      "zombies"
+    ],
+    "location": null,
+    "description": "A zombie's Undead Fortitude trait causes it to survive lethal damage, prompting the DM to inform players about the phenomenon",
+    "id": "zombie_resists_death",
+    "source_node": "Tip: Undead Fortitude"
+  },
+  {
+    "label": "Radiant Damage Effect",
+    "type": "observation",
+    "participants": [
+      "zombies"
+    ],
+    "location": null,
+    "description": "A zombie reacts painfully to radiant damage (like sacred flame), allowing the DM to explain its vulnerability to radiant energy",
+    "id": "radiant_damage_effect",
+    "source_node": "Tip: Undead Fortitude"
+  },
+  {
+    "label": "Intelligence Check for Zombie Tactics",
+    "type": "discovery",
+    "participants": [
+      "players_group"
+    ],
+    "location": null,
+    "description": "Players must make Intelligence checks to learn that critical hits or radiant damage bypasses Undead Fortitude",
+    "id": "intelligence_check_for_zombie_tactics",
+    "source_node": "Tip: Undead Fortitude"
+  },
+  {
+    "label": "Combat_Between_Zombies_And_Adventurers",
+    "type": "combat",
+    "participants": [
+      "adventurers",
+      "zombies_group"
+    ],
+    "location": "temple_area_a5",
+    "description": "The zombies engage in combat with the adventurers",
+    "id": "combat_between_zombies_and_adventurers",
+    "source_node": "Runara's Aid"
+  },
+  {
+    "label": "Adventurers_Wake_Up_In_Temple",
+    "type": "discovery",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "temple_area_a5",
+    "description": "The characters awaken in the temple after being rescued",
+    "id": "adventurers_wake_up_in_temple",
+    "source_node": "Runara's Aid"
+  },
+  {
+    "label": "Runara_Rescues_Adventurers",
+    "type": "encounter",
+    "participants": [
+      "adventurers",
+      "runara"
+    ],
+    "location": "temple_area_a5",
+    "description": "Runara arrives to rescue the adventurers from the zombies",
+    "id": "runara_rescues_adventurers",
+    "source_node": "Runara's Aid"
+  },
+  {
+    "label": "Dialogue_With_Runara",
+    "type": "dialogue",
+    "participants": [
+      "runara",
+      "adventurers"
+    ],
+    "location": "temple_area_a5",
+    "description": "Runara explains she heard combat sounds and arrived to prevent the zombies from dragging them into the sea",
+    "id": "dialogue_with_runara",
+    "source_node": "Runara's Aid"
+  },
+  {
+    "label": "Observing_Combat_Sounds",
+    "type": "observation",
+    "participants": [
+      "runara"
+    ],
+    "location": "temple_area_a5",
+    "description": "Runara notices the sounds of combat leading her to intervene",
+    "id": "observing_combat_sounds",
+    "source_node": "Runara's Aid"
+  },
+  {
+    "label": "Encountering_Zombies",
+    "type": "encounter",
+    "participants": [
+      "characters",
+      "zombies"
+    ],
+    "location": "path_to_dragon_s_rest",
+    "description": "Characters encounter zombies and choose not to fight, allowing easy escape.",
+    "id": "encountering_zombies",
+    "source_node": "Avoiding the Zombies"
+  },
+  {
+    "label": "Observing_Zombies_Not_Following",
+    "type": "observation",
+    "participants": [
+      "characters"
+    ],
+    "location": "path_to_dragon_s_rest",
+    "description": "Characters observe that zombies do not follow them up the path toward Dragon's Rest.",
+    "id": "observing_zombies_not_following",
+    "source_node": "Avoiding the Zombies"
+  },
+  {
+    "label": "Curious_Kobold_Questions",
+    "type": "dialogue",
+    "participants": [
+      "characters",
+      "kobolds"
+    ],
+    "location": "dragon_s_rest",
+    "description": "The kobolds repeatedly ask questions, prompting the characters to insist they stop.",
+    "id": "curious_kobold_questions",
+    "source_node": "Meeting the Inhabitants"
+  },
+  {
+    "label": "Encounter_with_Elder_Runara",
+    "type": "encounter",
+    "participants": [
+      "characters",
+      "elder_runara"
+    ],
+    "location": "dragon_s_rest",
+    "description": "After silencing the kobolds, Elder Runara approaches to greet the characters.",
+    "id": "encounter_with_elder_runara",
+    "source_node": "Meeting the Inhabitants"
+  },
+  {
+    "label": "Dialogue_about_Hospitality",
+    "type": "dialogue",
+    "participants": [
+      "characters",
+      "elder_runara"
+    ],
+    "location": "dragon_s_rest",
+    "description": "Elder Runara acknowledges the characters’ service (if zombies were defeated) or invites them to stay at Dragon’s Rest, specifying accommodations in areas A1/A5 and shared meals in A3.",
+    "id": "dialogue_about_hospitality",
+    "source_node": "Meeting the Inhabitants"
+  },
+  {
+    "label": "Offer_of_Gifts_Accepted",
+    "type": "dialogue",
+    "participants": [
+      "characters",
+      "elder_runara"
+    ],
+    "location": "dragon_s_rest",
+    "description": "If characters propose paying or serving in exchange for lodging, Elder Runara accepts their offerings.",
+    "id": "offer_of_gifts_accepted",
+    "source_node": "Meeting the Inhabitants"
+  },
+  {
+    "label": "Access_to_Basic_Rules_Equipment",
+    "type": "discovery",
+    "participants": [
+      "characters"
+    ],
+    "location": "dragon_s_rest",
+    "description": "The characters learn they can purchase equipment from Myla, referencing resources in the Basic Rules.",
+    "id": "access_to_basic_rules_equipment",
+    "source_node": "Meeting the Inhabitants"
+  },
+  {
+    "label": "Arriving_at_Cloister",
+    "type": "encounter",
+    "participants": [
+      "adventurer",
+      "kobolds",
+      "humans_watching"
+    ],
+    "location": "cloister",
+    "description": "The adventurer's arrival attracts the attention of the cloister's inhabitants, consisting primarily of kobolds and a couple of distant observers.",
+    "id": "arriving_at_cloister",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Dialogue_with_Kobolds",
+    "type": "dialogue",
+    "participants": [
+      "adventurer",
+      "kobolds"
+    ],
+    "location": "cloister",
+    "description": "A curious kobold initiates conversation by asking the adventurer's name, prompting rapid questioning from the rest of the kobolds.",
+    "id": "dialogue_with_kobolds",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Kobolds Fall Silent",
+    "type": "encounter",
+    "participants": [
+      "kobolds_chattering",
+      "elderly_human_woman"
+    ],
+    "location": "cloister",
+    "description": "The chattering kobolds cease their noise as an elderly human woman descends from the cloister.",
+    "id": "kobolds_fall_silent",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Welcome Dialogue",
+    "type": "dialogue",
+    "participants": [
+      "elderly_human_woman",
+      "adventurers"
+    ],
+    "location": "dragons_rest",
+    "description": "The elderly human woman extends her arms in greeting and addresses the adventurers with a welcome message referencing Bahamut's guidance.",
+    "id": "welcome_dialogue",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Initial Encounters With Runara",
+    "type": "encounter",
+    "participants": [
+      "runara",
+      "adventurers"
+    ],
+    "location": "dragon_s_rest",
+    "description": "Runara meets the characters with indifference, as stated in basic rules social interaction",
+    "id": "initial_encounters_with_runara",
+    "source_node": "Elder Runara"
+  },
+  {
+    "label": "Zombie Combat On Beach",
+    "type": "combat",
+    "participants": [
+      "adventurers",
+      "zombies_at_beach"
+    ],
+    "location": "beach_area",
+    "description": "Characters engage in battle against zombies threatening the cloister",
+    "id": "zombie_combat_on_beach",
+    "source_node": "Elder Runara"
+  },
+  {
+    "label": "Friendly Transition From Indifference",
+    "type": "encounter",
+    "participants": [
+      "runara",
+      "adventurers"
+    ],
+    "location": "dragon_s_rest",
+    "description": "Runara becomes friendly after characters prove concern for cloister's safety through actions",
+    "id": "friendly_transition_from_indifference",
+    "source_node": "Elder Runara"
+  },
+  {
+    "label": "Hostile Reaction To Resident Harm",
+    "type": "encounter",
+    "participants": [
+      "runara",
+      "adventurers"
+    ],
+    "location": "dragon_s_rest",
+    "description": "Runara turns hostile if characters injure cloister residents, demanding reparations",
+    "id": "hostile_reaction_to_resident_harm",
+    "source_node": "Elder Runara"
+  },
+  {
+    "label": "Observation Of Hidden Residence",
+    "type": "observation",
+    "participants": [
+      "inhabitants_of_cloister"
+    ],
+    "location": "dragon_s_rest",
+    "description": "Residences note Runara's constant presence in public spaces while maintaining secrecy about her aquatic habitat",
+    "id": "observation_of_hidden_residence",
+    "source_node": "Elder Runara"
+  },
+  {
+    "label": "Inquiry About Living Arrangements",
+    "type": "dialogue",
+    "participants": [
+      "inhabitants_of_cloister",
+      "adventurers"
+    ],
+    "location": "dragon_s_rest",
+    "description": "Characters ask about Runara's dwelling, prompting humorous denials from cloister inhabitants",
+    "id": "inquiry_about_living_arrangements",
+    "source_node": "Elder Runara"
+  },
+  {
+    "label": "Kitchen Incident Involving Laylee",
+    "type": "observation",
+    "participants": [
+      "laylee"
+    ],
+    "location": "unknown",
+    "description": "An incident in the kitchen resulted in Laylee being prohibited from handling Myla's alchemical fire.",
+    "id": "kitchen_incident_involving_laylee",
+    "source_node": "Kobolds"
+  },
+  {
+    "label": "Initial_Dialogue_with_Tarak",
+    "type": "dialogue",
+    "participants": [
+      "characters",
+      "tarak"
+    ],
+    "location": "cloister",
+    "description": "Characters interact with Tarak, who is initially friendly but becomes hostile if questioned about his past",
+    "id": "initial_dialogue_with_tarak",
+    "source_node": "Tarak"
+  },
+  {
+    "label": "Exploration_of_Sea_Caves",
+    "type": "exploration",
+    "participants": [
+      "tarak"
+    ],
+    "location": "sea_caves",
+    "description": "Tarak ventures to the sea caves to harvest heart cap mushrooms from myconids",
+    "id": "exploration_of_sea_caves",
+    "source_node": "Tarak"
+  },
+  {
+    "label": "Observation_of_Fungal_Octopus_Guardian",
+    "type": "observation",
+    "participants": [
+      "tarak"
+    ],
+    "location": "sea_caves",
+    "description": "Tarak notices a fearsome fungus-covered octopus monster guarding the myconid caves",
+    "id": "observation_of_fungal_octopus_guardian",
+    "source_node": "Tarak"
+  },
+  {
+    "label": "Recognition_of_Gilded_Gallows_Symbol",
+    "type": "discovery",
+    "participants": [
+      "characters"
+    ],
+    "location": "tarak",
+    "description": "A successful Intelligence (History) check identifies the gold hangman's noose tattoo as a symbol of the Gilded Gallows",
+    "id": "recognition_of_gilded_gallows_symbol",
+    "source_node": "Tarak"
+  },
+  {
+    "label": "Past_Poisoner_Discovered",
+    "type": "discovery",
+    "participants": [
+      "characters"
+    ],
+    "location": "cloister",
+    "description": "Characters learn of Tarak's former role as a ruthless poisoner for the Gilded Gallows",
+    "id": "past_poisoner_discovered",
+    "source_node": "Tarak"
+  },
+  {
+    "label": "Observing Ship Crash",
+    "type": "observation",
+    "participants": [
+      "varnonth"
+    ],
+    "location": "temple",
+    "description": "Varnoth witnesses a ship altering its course and crashing into northern rocks during her temple maintenance duties",
+    "id": "observing_ship_crash",
+    "source_node": "Varnoth"
+  },
+  {
+    "label": "Historical Information Discovery",
+    "type": "discovery",
+    "participants": [
+      "character"
+    ],
+    "location": "dragons_rest",
+    "description": "Learning Varnoth's name and succeeding on a History check reveals information about her past as General Varnoth Wender and the Azure Wolves",
+    "id": "historical_information_discovery",
+    "source_node": "Varnoth"
+  },
+  {
+    "label": "Attitude Shift Through Dialogue",
+    "type": "dialogue",
+    "participants": [
+      "varnonth",
+      "character"
+    ],
+    "location": "dragons_rest",
+    "description": "Engaging Varnoth in conversations about history, ethics, and global impacts shifts her disposition from indifferent to friendly",
+    "id": "attitude_shift_through_dialogue",
+    "source_node": "Varnoth"
+  },
+  {
+    "label": "Temple Maintenance Activity",
+    "type": "exploration",
+    "participants": [
+      "varnonth"
+    ],
+    "location": "temple",
+    "description": "Varnoth regularly performs repairs and upkeep tasks at the temple using her mason's tools",
+    "id": "temple_maintenance_activity",
+    "source_node": "Varnoth"
+  },
+  {
+    "label": "Observation of Garden Plots",
+    "type": "observation",
+    "participants": [],
+    "location": "lower_part_path",
+    "description": "Small, well-maintained garden areas containing flowers, herbs, and vegetables are noticed along the path.",
+    "id": "observation_of_garden_plots",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Discovery of Plaza Structure",
+    "type": "discovery",
+    "participants": [],
+    "location": "plaza_above_bay",
+    "description": "A widened plaza located approximately thirty feet above the bay is identified, featuring architectural elements like doorways.",
+    "id": "discovery_of_plaza_structure",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Observation of Statue",
+    "type": "observation",
+    "participants": [],
+    "location": "plaza_above_bay",
+    "description": "A serene stone statue depicting a dragon is noted midway along the plaza.",
+    "id": "observation_of_statue",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Identification of Doorways",
+    "type": "discovery",
+    "participants": [],
+    "location": "cliff_side",
+    "description": "Six open doorways carved into the cliff face are detected during examination.",
+    "id": "identification_of_doorways",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Observes Bronze Dragon Depiction",
+    "type": "observation",
+    "participants": [
+      "character"
+    ],
+    "location": "cliffs",
+    "description": "A character successfully identifies the dragon statue as depicting a bronze dragon after examining it",
+    "id": "observes_bronze_dragon_depiction",
+    "source_node": "Statue"
+  },
+  {
+    "label": "Dialog About Statue Identity",
+    "type": "dialogue",
+    "participants": [
+      "characters",
+      "runara"
+    ],
+    "location": "cliffs",
+    "description": "Characters question Runara about the statue; she reveals it portrays Astalagan, who died on the cliffs centuries ago, but keeps secret that Astalagan was her father",
+    "id": "dialog_about_statue_identity",
+    "source_node": "Statue"
+  },
+  {
+    "label": "Exploring_Cloisters_Cells",
+    "type": "exploration",
+    "participants": [
+      "characters"
+    ],
+    "location": "cloister",
+    "description": "Characters investigate the monastic cells within the cloister, examining their layouts and contents.",
+    "id": "exploring_cloisters_cells",
+    "source_node": "Cells"
+  },
+  {
+    "label": "Discovered_Vacant_Cell",
+    "type": "discovery",
+    "participants": [
+      "characters"
+    ],
+    "location": "westernmost_cell",
+    "description": "Characters learn the westernmost cell is unoccupied and potentially usable.",
+    "id": "discovered_vacant_cell",
+    "source_node": "Cells"
+  },
+  {
+    "label": "Observed_Mylas_Cluttered_Cell",
+    "type": "observation",
+    "participants": [
+      "characters"
+    ],
+    "location": "mylas_cell",
+    "description": "Characters notice Myla's cell is disorganized, containing scattered junk and tools.",
+    "id": "observed_mylas_cluttered_cell",
+    "source_node": "Cells"
+  },
+  {
+    "label": "Noticed_Hammock_Equipped_Cells",
+    "type": "observation",
+    "participants": [
+      "characters"
+    ],
+    "location": "fifth_cell, sixth_cell",
+    "description": "Characters observe the fifth and sixth cells feature hammocks designated for the kobold inhabitants.",
+    "id": "noticed_hammock_equipped_cells",
+    "source_node": "Cells"
+  },
+  {
+    "label": "Observing Favorite Cooking Days",
+    "type": "observation",
+    "participants": [
+      "cloister_residents"
+    ],
+    "location": "kitchen",
+    "description": "The cloister residents express quiet fondness for the days when Tarak cooks, although they never verbalize it",
+    "id": "observing_favorite_cooking_days",
+    "source_node": "A3: Kitchen"
+  },
+  {
+    "label": "Dialogue_Between_Tarak_And_Varnoth",
+    "type": "dialogue",
+    "participants": [
+      "tarak",
+      "varnonth"
+    ],
+    "location": "cloister_library",
+    "description": "Tarak and Varnoth read and discuss various works in the library.",
+    "id": "dialogue_between_tarak_and_varnoth",
+    "source_node": "A4: Library"
+  },
+  {
+    "label": "Observation_Of_Myla_Studious_Nature",
+    "type": "observation",
+    "participants": [
+      "myla"
+    ],
+    "location": "cloister_library",
+    "description": "Myla is described as studious.",
+    "id": "observation_of_myla_studious_nature",
+    "source_node": "A4: Library"
+  },
+  {
+    "label": "Discovering_the_Library",
+    "type": "discovery",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "library",
+    "description": "Adventurers discover a spacious library behind an oak door with iron bands",
+    "id": "discovering_the_library",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Exploring_the_Room",
+    "type": "exploration",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "library",
+    "description": "Adventurers explore the library, noting bookshelves lining every wall",
+    "id": "exploring_the_room",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Observing_Specific_Features",
+    "type": "observation",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "library",
+    "description": "Adventurers notice three free-standing shelves in the western half, a central table with two benches, writing implements, book stands, and glass-shielded lamps in the eastern half",
+    "id": "observing_specific_features",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Recognizing Bahamut",
+    "type": "discovery",
+    "participants": [
+      "character",
+      "bahamut"
+    ],
+    "location": "temple_of_bahamut",
+    "description": "Character successfully identifies Bahamut after examining the statue with a Religion check",
+    "id": "recognizing_bahamut",
+    "source_node": "A5: Temple of Bahamut"
+  },
+  {
+    "label": "Detect Magic Revelation",
+    "type": "discovery",
+    "participants": [
+      "character"
+    ],
+    "location": "temple_of_bahamut",
+    "description": "Casting detect magic reveals a faint aura around the statue",
+    "id": "detect_magic_revelation",
+    "source_node": "A5: Temple of Bahamut"
+  },
+  {
+    "label": "Magical Protection Activation",
+    "type": "observation",
+    "participants": [
+      "non_evil_creature"
+    ],
+    "location": "temple_of_bahamut",
+    "description": "Non-evil creatures gain bonus dice on saving throws due to protective magic",
+    "id": "magical_protection_activation",
+    "source_node": "A5: Temple of Bahamut"
+  },
+  {
+    "label": "Offering Maintenance",
+    "type": "exploration",
+    "participants": [
+      "runara",
+      "varnonth",
+      "rix"
+    ],
+    "location": "temple_of_bahamut",
+    "description": "Runara and assistants tend to the temple's incense offerings and maintain its upkeep",
+    "id": "offering_maintenance",
+    "source_node": "A5: Temple of Bahamut"
+  },
+  {
+    "label": "Historical Awareness",
+    "type": "discovery",
+    "participants": [
+      "runara"
+    ],
+    "location": "temple_of_bahamut",
+    "description": "Runara recognizes the lingering magical effect from her late father Astalagan's death",
+    "id": "historical_awareness",
+    "source_node": "A5: Temple of Bahamut"
+  },
+  {
+    "label": "Observing_Serenity",
+    "type": "observation",
+    "participants": [],
+    "location": "open_air_temple",
+    "description": "A feeling of serenity pervades the temple",
+    "id": "observing_serenity",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Initial_Conversation_with_Residents",
+    "type": "dialogue",
+    "participants": [
+      "adventurers",
+      "residents_of_dragons_rest"
+    ],
+    "location": "dragons_rest",
+    "description": "Characters engage in discussions with Dragon's Rest residents about the cloister's challenges",
+    "id": "initial_conversation_with_residents",
+    "source_node": "Cloister Quests"
+  },
+  {
+    "label": "Exploration_of_Dragons_Rest",
+    "type": "exploration",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "dragons_rest",
+    "description": "Party investigates Dragon's Rest area",
+    "id": "exploration_of_dragons_rest",
+    "source_node": "Cloister Quests"
+  },
+  {
+    "label": "Introduction_to_Seagrow_Caves_Adventure",
+    "type": "discovery",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "dragons_rest",
+    "description": "Residences reveal potential adventures in the sea caves",
+    "id": "introduction_to_seagrow_caves_adventure",
+    "source_node": "Cloister Quests"
+  },
+  {
+    "label": "Introduction_to_Compass_Rose_Wreck",
+    "type": "discovery",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "dragons_rest",
+    "description": "Discussions hint at the shipwreck adventure",
+    "id": "introduction_to_compass_rose_wreck",
+    "source_node": "Cloister Quests"
+  },
+  {
+    "label": "Journey_to_Clifftop_Observatory",
+    "type": "exploration",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "clifftop_observatory",
+    "description": "Final destination after completing cave and wreck expeditions",
+    "id": "journey_to_clifftop_observatory",
+    "source_node": "Cloister Quests"
+  },
+  {
+    "label": "Confrontation_with_Sparkrender",
+    "type": "encounter",
+    "participants": [
+      "adventurers",
+      "sparkrender"
+    ],
+    "location": "clifftop_observatory",
+    "description": "Climactic showdown against Sparkrender in the observatory",
+    "id": "confrontation_with_sparkrender",
+    "source_node": "Cloister Quests"
+  },
+  {
+    "label": "Character_Goal_Interaction",
+    "type": "dialogue",
+    "participants": [
+      "adventurers",
+      "runara"
+    ],
+    "location": "dragons_rest",
+    "description": "Personal objectives influence interactions with Runara and other inhabitants",
+    "id": "character_goal_interaction",
+    "source_node": "Cloister Quests"
+  },
+  {
+    "label": "Hearing Cries For Help",
+    "type": "observation",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "cloister",
+    "description": "Adventurers hear cries for help while staying at the cloister",
+    "id": "hearing_cries_for_help",
+    "source_node": "Zombie Resurgence"
+  },
+  {
+    "label": "Second Zombie Encounter",
+    "type": "combat",
+    "participants": [
+      "adventurers",
+      "zombies_causin_trouble_later",
+      "blepp",
+      "tarak"
+    ],
+    "location": "cloister",
+    "description": "Adventurers confront three zombies threatening Blepp and Tarak",
+    "id": "second_zombie_encounter",
+    "source_node": "Zombie Resurgence"
+  },
+  {
+    "label": "Dialogue With Runara",
+    "type": "dialogue",
+    "participants": [
+      "adventurers",
+      "runara"
+    ],
+    "location": "cloister",
+    "description": "Characters discuss zombies with Runara who reveals the shipwreck connection",
+    "id": "dialogue_with_runara",
+    "source_node": "Zombie Resurgence"
+  },
+  {
+    "label": "Discovering Shipwreck Source",
+    "type": "discovery",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "cloister",
+    "description": "Runara informs characters that a wrecked ship off the rocks is the zombie origin",
+    "id": "discovering_shipwreck_source",
+    "source_node": "Zombie Resurgence"
+  },
+  {
+    "label": "Fleeing Up Lower Path",
+    "type": "exploration",
+    "participants": [
+      "residents_of_dragons_rest"
+    ],
+    "location": "lower_path",
+    "description": "Two residents flee upward along the lower path",
+    "id": "fleeing_up_lower_path",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Stained Robes Observed",
+    "type": "observation",
+    "participants": [
+      "residents_of_dragons_rest"
+    ],
+    "location": "lower_path",
+    "description": "Blood and dirt stains their clothing from the struggle",
+    "id": "stained_robes_observed",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Abandoned Fishing Gear Found",
+    "type": "discovery",
+    "participants": [
+      "residents_of_dragons_rest"
+    ],
+    "location": "lower_path",
+    "description": "Their fishing equipment is discovered discarded behind them",
+    "id": "abandoned_fishing_gear_found",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Pursuit By Sailor Corpses",
+    "type": "encounter",
+    "participants": [
+      "residents_of_dragons_rest",
+      "sailor_corpse_group"
+    ],
+    "location": "lower_path",
+    "description": "Three bloated corpse-sailors begin chasing the fleeing residents",
+    "id": "pursuit_by_sailor_corpses",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Using Zombie Encounter",
+    "type": "encounter",
+    "participants": [
+      "characters",
+      "zombie"
+    ],
+    "location": "island",
+    "description": "The DM recommends using zombie encounters to introduce additional combat challenges during the adventure",
+    "id": "using_zombie_encounter",
+    "source_node": "More Zombies"
+  },
+  {
+    "label": "Dialogue About Quest",
+    "type": "dialogue",
+    "participants": [
+      "tarak",
+      "adventurers"
+    ],
+    "location": "sea_caves",
+    "description": "Tarak instructs the characters to investigate the sea caves, uncover the plight of the myconids, retrieve heart cap mushrooms, and prepare for potential conflict with the fungal octopus.",
+    "id": "dialogue_about_quest",
+    "source_node": "Sea Caves"
+  },
+  {
+    "label": "Receiving Gifted Sacks",
+    "type": "dialogue",
+    "participants": [
+      "tarak",
+      "adventurers"
+    ],
+    "location": "undefined",
+    "description": "Tarak presents the adventurers with a foul-smelling sack of food scraps as a token of goodwill toward the myconids.",
+    "id": "receiving_gifted_sacks",
+    "source_node": "Sea Caves"
+  },
+  {
+    "label": "Receiving Potions",
+    "type": "dialogue",
+    "participants": [
+      "tarak",
+      "adventurers"
+    ],
+    "location": "undefined",
+    "description": "Tarak provides the adventurers with two vials of healing potion for their journey.",
+    "id": "receiving_potions",
+    "source_node": "Sea Caves"
+  },
+  {
+    "label": "Journey To Sea Caves",
+    "type": "exploration",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "sea_caves",
+    "description": "The party travels to the sea caves to fulfill Tarak’s request and assess the situation with the myconids.",
+    "id": "journey_to_sea_caves",
+    "source_node": "Sea Caves"
+  },
+  {
+    "label": "Observing Guardian Threat",
+    "type": "observation",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "sea_caves",
+    "description": "The adventurers note the presence of the fungal octopus, a dangerous guardian constructed by the myconids.",
+    "id": "observing_guardian_threat",
+    "source_node": "Sea Caves"
+  },
+  {
+    "label": "Combat Against Fungal Octopus",
+    "type": "combat",
+    "participants": [
+      "adventurers",
+      "fungal_octopus"
+    ],
+    "location": "sea_caves",
+    "description": "The party engages in battle against the fungal octopus to secure entry into the myconid territory.",
+    "id": "combat_against_fungal_octopus",
+    "source_node": "Sea Caves"
+  },
+  {
+    "label": "Witnessing Recent Wreck",
+    "type": "observation",
+    "participants": [
+      "varnonth",
+      "rix_kobold"
+    ],
+    "location": "rocks",
+    "description": "Varnoth and Rix observe a ship abruptly veer off course and crash into the rocks",
+    "id": "witnessing_recent_wreck",
+    "source_node": "Shipwreck"
+  },
+  {
+    "label": "Suggesting Investigation",
+    "type": "dialogue",
+    "participants": [
+      "varnonth",
+      "rix_kobold",
+      "adventurers"
+    ],
+    "location": "rocks",
+    "description": "Varnoth and Rix advise the characters to investigate the cause of the crash to help the island",
+    "id": "suggesting_investigation",
+    "source_node": "Shipwreck"
+  },
+  {
+    "label": "Consulting Runara",
+    "type": "dialogue",
+    "participants": [
+      "runara",
+      "adventurers"
+    ],
+    "location": "dragon_s_rest",
+    "description": "When questioned by the characters, Runara recommends examining the wreck of Compass Rose",
+    "id": "consulting_runara",
+    "source_node": "Shipwreck"
+  },
+  {
+    "label": "Arriving_at_Temple",
+    "type": "exploration",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "temple_area_a5",
+    "description": "Characters arrive at the temple (area A5) summoned by Runara",
+    "id": "arriving_at_temple",
+    "source_node": "Lost Wyrmling"
+  },
+  {
+    "label": "Dialog_with_Runara",
+    "type": "dialogue",
+    "participants": [
+      "runara",
+      "adventurers"
+    ],
+    "location": "temple_area_a5",
+    "description": "Runara reveals the history of dragon-linked sites and discusses Aidron's disappearance",
+    "id": "dialog_with_runara",
+    "source_node": "Lost Wyrmling"
+  },
+  {
+    "label": "Receiving_Moonstone_Key",
+    "type": "discovery",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "temple_area_a5",
+    "description": "Runara hands over the moonstone key to unlock the observatory",
+    "id": "receiving_moonstone_key",
+    "source_node": "Lost Wyrmling"
+  },
+  {
+    "label": "Learning_of_Aidrons_Argument",
+    "type": "observation",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "temple_area_a5",
+    "description": "Adventurers learn Aidron rejected Runara's teachings and fled to the observatory",
+    "id": "learning_of_aidrons_argument",
+    "source_node": "Lost Wyrmling"
+  },
+  {
+    "label": "Proving_Trustworthiness",
+    "type": "discovery",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "[unknown_location]",
+    "description": "Characters demonstrate competence by overcoming zombies, myconids, and navigating the shipwreck",
+    "id": "proving_trustworthiness",
+    "source_node": "Lost Wyrmling"
+  },
+  {
+    "label": "Dialogue With Runara",
+    "type": "dialogue",
+    "participants": [
+      "adventurers",
+      "runara"
+    ],
+    "location": "island_with_old_wounds",
+    "description": "Runara explains her true nature as a bronze dragon, references the island's unresolved conflicts, and requests assistance",
+    "id": "dialogue_with_runara",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Sudden Transformation Observed",
+    "type": "observation",
+    "participants": [
+      "adventurers",
+      "runara"
+    ],
+    "location": "island_with_old_wounds",
+    "description": "A flash of lightning causes Runara to transform from a human woman into an enormous bronze dragon, revealing her true form",
+    "id": "sudden_transformation_observed",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Unsuccessful_Encounter_On_Island",
+    "type": "encounter",
+    "participants": [
+      "adventure_party"
+    ],
+    "location": "island_location",
+    "description": "An encounter on the island results in all characters becoming unconscious.",
+    "id": "unsuccessful_encounter_on_island",
+    "source_node": "Runara Saves the Day!"
+  },
+  {
+    "label": "Awakening_In_Temple",
+    "type": "discovery",
+    "participants": [
+      "adventure_party"
+    ],
+    "location": "temple_area_a5",
+    "description": "The characters awaken in the temple, discovering they are tended to by kobolds.",
+    "id": "awakening_in_temple",
+    "source_node": "Runara Saves the Day!"
+  },
+  {
+    "label": "Sidekick_Introduction",
+    "type": "exploration",
+    "participants": [
+      "adventure_party"
+    ],
+    "location": "dragon_s_rest",
+    "description": "Additional characters join the party as sidekicks upon arriving at Dragon's Rest.",
+    "id": "sidekick_introduction",
+    "source_node": "Runara Saves the Day!"
+  },
+  {
+    "label": "Exploration of Stormwreck Isle",
+    "type": "exploration",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "stormwreck_isle",
+    "description": "Characters traverse the island, uncovering uncharted areas and risks beyond designated locations",
+    "id": "exploration_of_stormwreck_isle",
+    "source_node": "Exploring the Island"
+  },
+  {
+    "label": "Runara Refuses Information",
+    "type": "dialogue",
+    "participants": [
+      "adventurers",
+      "runara"
+    ],
+    "location": "clifftop_observatory",
+    "description": "Runara declines to give the moonstone key or information about the observatory until the characters complete other objectives on the island.",
+    "id": "runara_refuses_information",
+    "source_node": "Chapter 4: Clifftop Observatory"
+  },
+  {
+    "label": "Conditional Combat Difficulty",
+    "type": "observation",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "clifftop_observatory",
+    "description": "The text notes that encountering the observatory prematurely results in overly challenging combat encounters, suggesting a potential future conflict.",
+    "id": "conditional_combat_difficulty",
+    "source_node": "Chapter 4: Clifftop Observatory"
+  },
+  {
+    "label": "Observatory Destroyed By Battle",
+    "type": "combat",
+    "participants": [
+      "runara",
+      "runaras_rival"
+    ],
+    "location": "clifftop_observatory",
+    "description": "Runara battled her blue dragon rival, reducing the observatory to rubble.",
+    "id": "observatory_destroyed_by_battle",
+    "source_node": "Observatory Overview"
+  },
+  {
+    "label": "Aidron Arrives At Observatory",
+    "type": "exploration",
+    "participants": [
+      "aidron"
+    ],
+    "location": "clifftop_observatory",
+    "description": "Aidron traveled from Dragon's Rest to investigate the observatory.",
+    "id": "aidron_arrives_at_observatory",
+    "source_node": "Observatory Overview"
+  },
+  {
+    "label": "Conflict Between Aidron And Sparkrender",
+    "type": "combat",
+    "participants": [
+      "aidron",
+      "sparkrender"
+    ],
+    "location": "clifftop_observatory",
+    "description": "Aidron and Sparkrender engaged in a fierce fight upon their first meeting.",
+    "id": "conflict_between_aidron_and_sparkrender",
+    "source_node": "Observatory Overview"
+  },
+  {
+    "label": "Sparkrender Attempts To Influence Aidron",
+    "type": "encounter",
+    "participants": [
+      "sparkrender",
+      "aidron"
+    ],
+    "location": "clifftop_observatory",
+    "description": "Sparkrender tried to manipulate Aidron against Runara, but failed due to Aidron's prejudice.",
+    "id": "sparkrender_attempts_to_influence_aidron",
+    "source_node": "Observatory Overview"
+  },
+  {
+    "label": "Sparkrender Captures Aidron",
+    "type": "combat",
+    "participants": [
+      "sparkrender",
+      "aidron"
+    ],
+    "location": "clifftop_observatory",
+    "description": "Sparkrender subdued and imprisoned Aidron in the observatory ruins.",
+    "id": "sparkrender_captures_aidron",
+    "source_node": "Observatory Overview"
+  },
+  {
+    "label": "Exploration_Via_Rowboat",
+    "type": "exploration",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "cliff_top_observatory",
+    "description": "Adventurers take a rowboat from Dragon's Rest to the Clifftop Observatory, sailing around the eastern end of the island.",
+    "id": "exploration_via_rowboat",
+    "source_node": "Running This Chapter"
+  },
+  {
+    "label": "Exploration_Along_Coast",
+    "type": "exploration",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "cliff_top_observatory",
+    "description": "Adventurers walk around the coastline of the island, circumventing the eastern bay to reach the Clifftop Observatory.",
+    "id": "exploration_along_coast",
+    "source_node": "Running This Chapter"
+  },
+  {
+    "label": "Exploration_Overland",
+    "type": "exploration",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "cliff_top_observatory",
+    "description": "Adventurers traverse a rough path across the island's rocky terrain from Dragon's Rest to the head of the eastern bay, directly approaching the Clifftop Observatory.",
+    "id": "exploration_overland",
+    "source_node": "Running This Chapter"
+  },
+  {
+    "label": "Observation_of_Sparkrender",
+    "type": "observation",
+    "participants": [
+      "sparkrender"
+    ],
+    "location": "observatory",
+    "description": "Characters observe Sparkrender flying by, causing unease due to potential detection",
+    "id": "observation_of_sparkrender",
+    "source_node": "Approaching by Land"
+  },
+  {
+    "label": "Lightning_Breath_Revelation",
+    "type": "discovery",
+    "participants": [
+      "unknown_character"
+    ],
+    "location": "rocky_spire_off_coast",
+    "description": "Character identifies crystalline protrusions/scarred vegetation as signs of lightning strikes or dragon breath via Nature check",
+    "id": "lightning_breath_revelation",
+    "source_node": "Approaching by Land"
+  },
+  {
+    "label": "Approach_to_Observatory",
+    "type": "exploration",
+    "participants": [
+      "unknown_character"
+    ],
+    "location": "path_to_observatory",
+    "description": "Characters move toward the observatory after Sparkrender's departure",
+    "id": "approach_to_observatory",
+    "source_node": "Approaching by Land"
+  },
+  {
+    "label": "Exploring Rocky Terrain",
+    "type": "exploration",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "stormwreck_isle",
+    "description": "Adventurers climb over rocky ground on Stormwreck Isle",
+    "id": "exploring_rocky_terrain",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Discovering Crystalline Protrusions",
+    "type": "discovery",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "stormwreck_isle",
+    "description": "Adventurers spot glassy crystal protrusions emerging from the earth",
+    "id": "discovering_crystalline_protrusions",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Observing Reddish Scarred Vegetation",
+    "type": "observation",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "stormwreck_isle",
+    "description": "Adventurers notice vegetation with reddish branching scars forming similar shapes to the crystals",
+    "id": "observing_reddish_scarred_vegetation",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Hearing Screech and Sighting Winged Creature",
+    "type": "encounter",
+    "participants": [
+      "adventurers",
+      "glittering_blue_creature"
+    ],
+    "location": "stormwreck_isle",
+    "description": "A screeching roar prompts adventurers to see a winged, glittering blue creature soaring overhead",
+    "id": "hearing_screech_and_sighting_winged_creature",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Sparkrender Does Not Notice Characters",
+    "type": "observation",
+    "participants": [
+      "characters",
+      "sparkrender"
+    ],
+    "location": "sparkrender_lair",
+    "description": "Sparkrender fails to notice the characters as he retreats to his lair",
+    "id": "sparkrender_does_not_notice_characters",
+    "source_node": "Approaching by Water"
+  },
+  {
+    "label": "Climb Bluffs to Reach D1",
+    "type": "exploration",
+    "participants": [
+      "characters"
+    ],
+    "location": "bluffs",
+    "description": "Characters move along the bluffs toward area D1",
+    "id": "climb_bluffs_to_reach_d1",
+    "source_node": "Approaching by Water"
+  },
+  {
+    "label": "Ascend Pillar to Access D2-D5",
+    "type": "exploration",
+    "participants": [
+      "characters"
+    ],
+    "location": "observatory",
+    "description": "By securing the boat at a pillar, characters gain access to areas D2, D3, D4, or D5",
+    "id": "ascend_pillar_to_access_d2_d5",
+    "source_node": "Approaching by Water"
+  },
+  {
+    "label": "Exploring Southeast Tip",
+    "type": "exploration",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "stormwreck_isle",
+    "description": "Adventurers round the southeastern tip of the island and observe crumbling ruins atop basalt columns off the main island body.",
+    "id": "exploring_southeast_tip",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Observing Winged Creature",
+    "type": "observation",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "basalt_columns",
+    "description": "Adventurers hear a screeching roar and notice a winged, glittering blue shape soaring through the air.",
+    "id": "observing_winged_creature",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Encountering Celestial Being",
+    "type": "encounter",
+    "participants": [
+      "adventurers",
+      "glittering_blue_shape"
+    ],
+    "location": "basalt_columns",
+    "description": "The winged, glittering blue creature descends onto the column farthest from Stormwreck Isle and vanishes from view.",
+    "id": "encountering_celestial_being",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "kobold_hostility_observation",
+    "type": "observation",
+    "participants": [
+      "sparkrenders_kobold_allies"
+    ],
+    "location": "rotunda_ruins",
+    "description": "Observers notice kobolds display hostility toward outsiders but often issue warnings instead of immediate attacks",
+    "id": "kobold_hostility_observation",
+    "source_node": "Sparkrender's Kobold Allies"
+  },
+  {
+    "label": "charisama_check_dialogue_attempt",
+    "type": "dialogue",
+    "participants": [
+      "characters",
+      "sparkrenders_kobold_allies"
+    ],
+    "location": "rotunda_ruins",
+    "description": "Characters attempt to negotiate with kobolds using Charisma checks (Deception/Intimidation/Persuasion skills)",
+    "id": "charisama_check_dialogue_attempt",
+    "source_node": "Sparkrender's Kobold Allies"
+  },
+  {
+    "label": "dragon_argument_encounter",
+    "type": "encounter",
+    "participants": [
+      "sparkrender",
+      "metallic_green_dragon"
+    ],
+    "location": "observatory_tower",
+    "description": "Sparkrender argues with the metallic-green dragon at the observatory tower",
+    "id": "dragon_argument_encounter",
+    "source_node": "Sparkrender's Kobold Allies"
+  },
+  {
+    "label": "secret_plan_discovery",
+    "type": "discovery",
+    "participants": [
+      "characters"
+    ],
+    "location": "rotunda_ruins",
+    "description": "Characters learn of Sparkrender's plan to manifest full power tied to the sculpture in rotunda ruins",
+    "id": "secret_plan_discovery",
+    "source_node": "Sparkrender's Kobold Allies"
+  },
+  {
+    "label": "dragon_activity_observation",
+    "type": "observation",
+    "participants": [
+      "sparkrenders_kobold_allies"
+    ],
+    "location": "base_of_observatory_tower",
+    "description": "Kobolds report hearing violent activity from the metallic dragon in the observatory tower",
+    "id": "dragon_activity_observation",
+    "source_node": "Sparkrender's Kobold Allies"
+  },
+  {
+    "label": "Magical_Light_Sparks",
+    "type": "observation",
+    "participants": [
+      "moonstone_key",
+      "statues"
+    ],
+    "location": "overlook",
+    "description": "Magical light sparks ignite in both statues' open mouths when the key is inserted",
+    "id": "magical_light_sparks",
+    "source_node": "D1: Overlook"
+  },
+  {
+    "label": "Bridge_Formation_Discovered",
+    "type": "discovery",
+    "participants": [
+      "moonstone_key",
+      "statues"
+    ],
+    "location": "overlook",
+    "description": "A shimmering bridge of iridescent magical energy emerges connecting the overlook to the observatory ruins",
+    "id": "bridge_formation_discovered",
+    "source_node": "D1: Overlook"
+  },
+  {
+    "label": "Exploring Path To Cliff Edge",
+    "type": "exploration",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "broken_overgrown_path",
+    "description": "Adventurers traverse a broken and overgrown path toward the edge of the cliff",
+    "id": "exploring_path_to_cliff_edge",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Observing Marble Statues At Overlook",
+    "type": "observation",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "overlook",
+    "description": "Adventurers notice two marble statues veined with gold, depicting dragons roaring silently",
+    "id": "observing_marble_statues_at_overlook",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Initial_Kobold_Stirge_Battle",
+    "type": "combat",
+    "participants": [
+      "winged_kobold_1",
+      "winged_kobold_2",
+      "stirge_group"
+    ],
+    "location": "rotunda_ruins",
+    "description": "The two winged kobolds initiate a battle with eight stirges.",
+    "id": "initial_kobold_stirge_battle",
+    "source_node": "D2: Rotunda Ruins"
+  },
+  {
+    "label": "Stirges_Shift_Attention_To_Characters",
+    "type": "observation",
+    "participants": [
+      "characters"
+    ],
+    "location": "rotunda_ruins",
+    "description": "Six of the stirges notice the characters and redirect their attacks toward them.",
+    "id": "stirges_shift_attention_to_characters",
+    "source_node": "D2: Rotunda Ruins"
+  },
+  {
+    "label": "Kobolds_Handle_Remaining_Stirges",
+    "type": "combat",
+    "participants": [
+      "winged_kobold_1",
+      "winged_kobold_2"
+    ],
+    "location": "rotunda_ruins",
+    "description": "The kobolds eliminate the last two stirges before assessing the characters’ actions.",
+    "id": "kobolds_handle_remaining_stirges",
+    "source_node": "D2: Rotunda Ruins"
+  },
+  {
+    "label": "Character_Action_Affects_Kobold_Response",
+    "type": "encounter",
+    "participants": [
+      "characters",
+      "winged_kobold_1",
+      "winged_kobold_2"
+    ],
+    "location": "rotunda_ruins",
+    "description": "The kobolds react to whether characters aid, attack, or avoid them, altering their stance accordingly.",
+    "id": "character_action_affects_kobold_response",
+    "source_node": "D2: Rotunda Ruins"
+  },
+  {
+    "label": "Kobolds_Approach_Characters_Post_Victory",
+    "type": "encounter",
+    "participants": [
+      "characters",
+      "winged_kobold_1",
+      "winged_kobold_2"
+    ],
+    "location": "rotunda_ruins",
+    "description": "Surviving kobolds approach the characters, revealing themselves as Mek and Minn.",
+    "id": "kobolds_approach_characters_post_victory",
+    "source_node": "D2: Rotunda Ruins"
+  },
+  {
+    "label": "Revelation_of_Mek_and_Minns_Backstory",
+    "type": "dialogue",
+    "participants": [
+      "characters",
+      "mek",
+      "minn"
+    ],
+    "location": "rotunda_ruins",
+    "description": "Mek and Minn explain their abandonment of their wounded sister, Myla, and their allegiance to Sparkrender.",
+    "id": "revelation_of_mek_and_minns_backstory",
+    "source_node": "D2: Rotunda Ruins"
+  },
+  {
+    "label": "Conditional_Friendly_Dialogue_with_Kobolds",
+    "type": "dialogue",
+    "participants": [
+      "characters",
+      "mek",
+      "minn"
+    ],
+    "location": "rotunda_ruins",
+    "description": "If characters aided the kobolds or hinted at Myla’s survival, the kobolds become allies and offer guidance.",
+    "id": "conditional_friendly_dialogue_with_kobolds",
+    "source_node": "D2: Rotunda Ruins"
+  },
+  {
+    "label": "Retrieval_of_Moonstone_Key_from_D1",
+    "type": "discovery",
+    "participants": [
+      "characters"
+    ],
+    "location": "d1",
+    "description": "Characters obtain the moonstone key from Area D1 to enable progress to D4.",
+    "id": "retrieval_of_moonstone_key_from_d1",
+    "source_node": "D2: Rotunda Ruins"
+  },
+  {
+    "label": "Bridge_Activation_to_D4",
+    "type": "exploration",
+    "participants": [
+      "characters"
+    ],
+    "location": "rotunda_ruins",
+    "description": "Using the moonstone key, characters unlock access to the bridge connecting to Area D4.",
+    "id": "bridge_activation_to_d4",
+    "source_node": "D2: Rotunda Ruins"
+  },
+  {
+    "label": "Observing Plaza Structure",
+    "type": "observation",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "plaza",
+    "description": "The plaza features broken stone lines, fragments of statues, pillars, and a central sculpture.",
+    "id": "observing_plaza_structure",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Hearing Screech",
+    "type": "observation",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "plaza",
+    "description": "A loud screech erupts from across the plaza.",
+    "id": "hearing_screech",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Encountering Batlike Creatures and Kobolds",
+    "type": "encounter",
+    "participants": [
+      "adventurers",
+      "batlike_creatures_swarm",
+      "winged_kobolds_with_blue_paint"
+    ],
+    "location": "plaza",
+    "description": "A half-dozen batlike creatures swarm around two winged kobolds with blue-painted snouts.",
+    "id": "encountering_batlike_creatures_and_kobolds",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Kobolds vs. Batlike Creatures Combat",
+    "type": "combat",
+    "participants": [
+      "batlike_creatures_swarm",
+      "winged_kobolds_with_blue_paint"
+    ],
+    "location": "plaza",
+    "description": "The kobolds engage in fierce combat against the batlike creatures but struggle to prevail.",
+    "id": "kobolds_vs_batlike_creatures_combat",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Observing_Golden_Sculpture",
+    "type": "observation",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "rotunda",
+    "description": "A character studies the sculpture and succeeds in an Intelligence (Arcana) check to decipher its significance.",
+    "id": "observing_golden_sculpture",
+    "source_node": "Golden Sculpture"
+  },
+  {
+    "label": "Discovering_Comet_Trail",
+    "type": "discovery",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "rotunda",
+    "description": "The adventurers learn that the comet's position predicts it will pass extremely close to Toril.",
+    "id": "discovering_comet_trail",
+    "source_node": "Golden Sculpture"
+  },
+  {
+    "label": "Planning_Ritual_For_Kingkiller_Star",
+    "type": "discovery",
+    "participants": [
+      "sparkrender"
+    ],
+    "location": "unknown",
+    "description": "Sparkrender intends to perform a ritual when the comet (King-Killer Star) reaches its closest point to Toril, believing it grants control over dragons.",
+    "id": "planning_ritual_for_kingkiller_star",
+    "source_node": "Golden Sculpture"
+  },
+  {
+    "label": "Stirge_Attack_Interrupts_Task",
+    "type": "encounter",
+    "participants": [
+      "stirge",
+      "kobolds"
+    ],
+    "location": null,
+    "description": "A stirge attack disrupts the kobolds' preparations for Sparkrender's ritual.",
+    "id": "stirge_attack_interrupts_task",
+    "source_node": "Dragon Effigies"
+  },
+  {
+    "label": "Kobolds_Explain_Dragon_Effigies",
+    "type": "dialogue",
+    "participants": [
+      "characters",
+      "kobolds"
+    ],
+    "location": null,
+    "description": "If asked, Mek and Minn reveal the kobolds created the dragon effigies based on Sparkrender's instructions.",
+    "id": "kobolds_explain_dragon_effigies",
+    "source_node": "Dragon Effigies"
+  },
+  {
+    "label": "Encountering_Kobold_Group",
+    "type": "encounter",
+    "participants": [
+      "characters",
+      "ekrash",
+      "erp",
+      "hev",
+      "nuhro",
+      "snirke"
+    ],
+    "location": "kobold_camp",
+    "description": "The kobolds are hostile toward the characters and determined to scare off intruders.",
+    "id": "encountering_kobold_group",
+    "source_node": "D3: Kobold Camp"
+  },
+  {
+    "label": "Intimidation_Successful",
+    "type": "encounter",
+    "participants": [
+      "characters",
+      "ekrash",
+      "erp",
+      "hev",
+      "nuhro",
+      "snirke"
+    ],
+    "location": "kobold_camp",
+    "description": "A successful Charisma (Intimidation) check causes the kobolds to back down.",
+    "id": "intimidation_successful",
+    "source_node": "D3: Kobold Camp"
+  },
+  {
+    "label": "Discovering_Sling_Bullet",
+    "type": "discovery",
+    "participants": [
+      "characters"
+    ],
+    "location": "kobold_camp",
+    "description": "The characters observe the kobolds polishing the Sling Bullet.",
+    "id": "discovering_sling_bullet",
+    "source_node": "D3: Kobold Camp"
+  },
+  {
+    "label": "Exploring_Bridge_Path",
+    "type": "exploration",
+    "participants": [
+      "characters"
+    ],
+    "location": "bridge_between_rotunda_and_kobold_camp",
+    "description": "Characters traverse the rickety bridge linking the rotunda to the kobold camp.",
+    "id": "exploring_bridge_path",
+    "source_node": "D3: Kobold Camp"
+  },
+  {
+    "label": "Observing_Ritual_Preparations",
+    "type": "observation",
+    "participants": [
+      "characters"
+    ],
+    "location": "kobold_camp",
+    "description": "Characters notice the kobolds actively preparing for Sparkrender's ritual.",
+    "id": "observing_ritual_preparations",
+    "source_node": "D3: Kobold Camp"
+  },
+  {
+    "label": "Observing_Skittering_Noises",
+    "type": "observation",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "ruined_tower",
+    "description": "Adversaries detect skittering sounds and whispered voices emanating from within the ruined tower",
+    "id": "observing_skittering_noises",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Exploring_Ruins_Structure",
+    "type": "exploration",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "ruined_tower",
+    "description": "Adversaries examine the deteriorated tower and note gaps sealed with wooden planks and frayed fabric",
+    "id": "exploring_ruins_structure",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Observation_Sparkrender_Sleeping",
+    "type": "observation",
+    "participants": [
+      "sparkrender_the_blue_drake_wyrmling",
+      "adventurers"
+    ],
+    "location": "observatory_tower",
+    "description": "Adventurers notice Sparkrender the blue dragon wyrmling sleeping against the northeast wall",
+    "id": "observation_sparkrender_sleeping",
+    "source_node": "D5: Observatory Tower"
+  },
+  {
+    "label": "Discovery_Caved_In_Wall_to_D6",
+    "type": "discovery",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "observatory_tower",
+    "description": "Players discover a caved-in wall beneath the tower revealing access to the secret library (area D6)",
+    "id": "discovery_caved_in_wall_to_d6",
+    "source_node": "D5: Observatory Tower"
+  },
+  {
+    "label": "Pulley_Lift_Construction_By_Kobolds",
+    "type": "discovery",
+    "participants": [
+      "kobolds_from_d2"
+    ],
+    "location": "observatory_tower",
+    "description": "A rough pulley lift created by kobolds allows wingless members to ascend to the main floor",
+    "id": "pulley_lift_construction_by_kobolds",
+    "source_node": "D5: Observatory Tower"
+  },
+  {
+    "label": "Observation_Light_Effects_On_Walls",
+    "type": "observation",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "tower_ruins",
+    "description": "Rays of light dance across the stained glass dome, creating iridescent color shifts on the crumbling walls",
+    "id": "observation_light_effects_on_walls",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Observation_Star_Map_Floor",
+    "type": "observation",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "tower_ruins",
+    "description": "A gilded star map covers the dust-covered floor, formed by intricate lines and inlays",
+    "id": "observation_star_map_floor",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Observation_Scholar_Statues",
+    "type": "observation",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "tower_ruins",
+    "description": "Four tall alabaster statues depicting scholars face different cardinal directions",
+    "id": "observation_scholar_statues",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Observation_Blue_Dragon_Slumbering",
+    "type": "observation",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "tower_ruins",
+    "description": "A lithe blue dragon sleeps in the northeast corner, surrounded by scattered treasure",
+    "id": "observation_blue_dragon_slumbering",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Observation_Lightning_Around_Dragon",
+    "type": "observation",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "tower_ruins",
+    "description": "Arcs of electricity flicker along the dragon's horns and snout",
+    "id": "observation_lightning_around_dragon",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Exploring to Avoid Awakening Dragon",
+    "type": "exploration",
+    "participants": [
+      "characters"
+    ],
+    "location": "dragon_sleeping_area",
+    "description": "Characters move quietly around the area to avoid waking the Blue Dragon Wyrmling, requiring successful stealth checks.",
+    "id": "exploring_to_avoid_awakening_dragon",
+    "source_node": "Sneaking Around"
+  },
+  {
+    "label": "Attempting to Turn Statues",
+    "type": "exploration",
+    "participants": [
+      "characters"
+    ],
+    "location": "hidden_entrance",
+    "description": "Characters attempt to turn north and east statues without waking Sparkrender. Failed checks result in noisy activation that awakens the dragon.",
+    "id": "attempting_to_turn_statues",
+    "source_node": "Sneaking Around"
+  },
+  {
+    "label": "Awakening_Sparkrender",
+    "type": "encounter",
+    "participants": [
+      "sparkrender",
+      "adventure_party"
+    ],
+    "location": "unknown_location",
+    "description": "Sparkrender awakens and becomes hostile toward the characters, growling and threatening them in Draconic.",
+    "id": "awakening_sparkrender",
+    "source_node": "Waking the Dragon"
+  },
+  {
+    "label": "Skill_Check_Attempt",
+    "type": "encounter",
+    "participants": [
+      "adventure_party",
+      "sparkrender"
+    ],
+    "location": "unknown_location",
+    "description": "Characters who know Draconic attempt to persuade Sparkrender via Deception, Intimidation, or Persuasion skills. A success halts the attack temporarily.",
+    "id": "skill_check_attempt",
+    "source_node": "Waking the Dragon"
+  },
+  {
+    "label": "Failed_Intervention_Or_Mention_Of_Names",
+    "type": "encounter",
+    "participants": [
+      "sparkrender",
+      "adventure_party"
+    ],
+    "location": "unknown_location",
+    "description": "If no skill check succeeds or if Aidron/Runara is mentioned, Sparkrender attacks.",
+    "id": "failed_intervention_or_mention_of_names",
+    "source_node": "Waking the Dragon"
+  },
+  {
+    "label": "Breath_Weapon_Attack",
+    "type": "combat",
+    "participants": [
+      "sparkrender",
+      "adventure_party"
+    ],
+    "location": "unknown_location",
+    "description": "Sparkrender uses its Breath Weapon on subsequent rounds, requiring cover from statues.",
+    "id": "breath_weapon_attack",
+    "source_node": "Waking the Dragon"
+  },
+  {
+    "label": "Dragon_Dialogue_Turns",
+    "type": "dialogue",
+    "participants": [
+      "sparkrender",
+      "adventure_party"
+    ],
+    "location": "unknown_location",
+    "description": "Sparkrender delivers thematic dialogue each turn, expressing ambition and disdain for the characters.",
+    "id": "dragon_dialogue_turns",
+    "source_node": "Waking the Dragon"
+  },
+  {
+    "label": "Low_HP_Flight_Response",
+    "type": "combat",
+    "participants": [
+      "sparkrender",
+      "adventure_party"
+    ],
+    "location": "unknown_location",
+    "description": "When reduced to ≤10 HP, Sparkrender vows vengeance and attempts to flee, disengaging mid-combat.",
+    "id": "low_hp_flight_response",
+    "source_node": "Waking the Dragon"
+  },
+  {
+    "label": "Character_Flee_Response",
+    "type": "dialogue",
+    "participants": [
+      "sparkrender",
+      "adventure_party"
+    ],
+    "location": "unknown_location",
+    "description": "Sparkrender taunts retreating characters, mocking their inability to resist his power.",
+    "id": "character_flee_response",
+    "source_node": "Waking the Dragon"
+  },
+  {
+    "label": "Post_Defeat_Noise_Discovery",
+    "type": "discovery",
+    "participants": [
+      "adventure_party"
+    ],
+    "location": "area_d6",
+    "description": "After defeating Sparkrender, characters hear growling/yelling emanating from Area D6.",
+    "id": "post_defeat_noise_discovery",
+    "source_node": "Waking the Dragon"
+  },
+  {
+    "label": "Discover_Clue_In_Isolated_Study",
+    "type": "discovery",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "isolate_study_d4",
+    "description": "Characters find a clue exhorting \"four scholars\" to \"point your eyes toward the Dragon's light\"",
+    "id": "discover_clue_in_isolated_study",
+    "source_node": "Hidden Entrance"
+  },
+  {
+    "label": "Identify_Dragon_Constellation_On_Starmap",
+    "type": "discovery",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "observatory_secret_archive",
+    "description": "Character successfully identifies a dragon-shaped constellation in the southeast quadrant of the star map after investigating",
+    "id": "identify_dragon_constellation_on_starmap",
+    "source_node": "Hidden Entrance"
+  },
+  {
+    "label": "Notice_Grooves_On_Statues",
+    "type": "observation",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "observatory_secret_archive",
+    "description": "Character detects worn grooves indicating statues can pivot on their bases after performing a perception check",
+    "id": "notice_grooves_on_statues",
+    "source_node": "Hidden Entrance"
+  },
+  {
+    "label": "Detect_Alignment_With_Seasonal_Qualifier",
+    "type": "observation",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "observatory_secret_archive",
+    "description": "Successful perception check while adjusting statues reveals slight settling when aligned with southeast quadrant",
+    "id": "detect_alignment_with_seasonal_qualifier",
+    "source_node": "Hidden Entrance"
+  },
+  {
+    "label": "Activate_Hidden_Mechanism",
+    "type": "discovery",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "observatory_secret_archive",
+    "description": "All statues correctly oriented trigger a glowing section to descend forming a spiral staircase to the library",
+    "id": "activate_hidden_mechanism",
+    "source_node": "Hidden Entrance"
+  },
+  {
+    "label": "Seal_Library_Shut",
+    "type": "discovery",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "library_d6",
+    "description": "Staircase ascends when any statue is displaced, lifting anyone on it back to the observatory level",
+    "id": "seal_library_shut",
+    "source_node": "Hidden Entrance"
+  },
+  {
+    "label": "GatheringTreasureAfterDefeat",
+    "type": "discovery",
+    "participants": [
+      "adventurers"
+    ],
+    "location": null,
+    "description": "Characters gather Sparkrender's hoard after he no longer defends it",
+    "id": "gatheringtreasureafterdefeat",
+    "source_node": "Treasure"
+  },
+  {
+    "label": "sparkrender_traps_aidron",
+    "type": "combat",
+    "participants": [
+      "sparkrender",
+      "aidron"
+    ],
+    "location": "secret_library",
+    "description": "Sparkrender weakens Aidron, forces him into the library, and collapses a wall to seal the exit, trapping him",
+    "id": "sparkrender_traps_aidron",
+    "source_node": "D6: Secret Library"
+  },
+  {
+    "label": "characters_clear_rubble",
+    "type": "exploration",
+    "participants": [
+      "characters"
+    ],
+    "location": "secret_library",
+    "description": "Characters attempt to remove rubble blocking the library entrance by climbing from area D5 or swimming to the base",
+    "id": "characters_clear_rubble",
+    "source_node": "D6: Secret Library"
+  },
+  {
+    "label": "discovery_of_secret_library_interior",
+    "type": "discovery",
+    "participants": [
+      "characters"
+    ],
+    "location": "secret_library",
+    "description": "Characters successfully clear rubble to reveal the library's interior",
+    "id": "discovery_of_secret_library_interior",
+    "source_node": "D6: Secret Library"
+  },
+  {
+    "label": "meeting_aidron",
+    "type": "encounter",
+    "participants": [
+      "characters",
+      "aidron"
+    ],
+    "location": "secret_library",
+    "description": "Characters greet Aidron, who explains his failed escape attempts and conflict with Sparkrender",
+    "id": "meeting_aidron",
+    "source_node": "D6: Secret Library"
+  },
+  {
+    "label": "aidrons_dialogue_with_characters",
+    "type": "dialogue",
+    "participants": [
+      "characters",
+      "aidron"
+    ],
+    "location": "secret_library",
+    "description": "Aidron reveals his regrets about failing to defeat Sparkrender and fears of becoming a conduit for Sparkrender's powers",
+    "id": "aidrons_dialogue_with_characters",
+    "source_node": "D6: Secret Library"
+  },
+  {
+    "label": "aidron_decides_to_confront_sparkrender",
+    "type": "encounter",
+    "participants": [
+      "aidron",
+      "sparkrender"
+    ],
+    "location": "observatory_tower",
+    "description": "Aidron prepares to challenge Sparkrender directly despite knowing his weakness",
+    "id": "aidron_decides_to_confront_sparkrender",
+    "source_node": "D6: Secret Library"
+  },
+  {
+    "label": "Environmental_Observation",
+    "type": "observation",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "ruined_space",
+    "description": "Adversaries detect stale air with the scent of old parchment, observe book-filled shelves, and note shattered glass cases scattering contents across the stone floor",
+    "id": "environmental_observation",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Encounter_Bronze_Dragon",
+    "type": "encounter",
+    "participants": [
+      "adventurers",
+      "agitated_bronze_dragon"
+    ],
+    "location": "ruined_space",
+    "description": "An agitated bronze dragon emerges from wreckage near an overturned desk, indicating recent impact",
+    "id": "encounter_bronze_dragon",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Exploring_Treasure_Room",
+    "type": "exploration",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "ancient_library",
+    "description": "Characters explore the library room, searching for concealed items",
+    "id": "exploring_treasure_room",
+    "source_node": "Treasure"
+  },
+  {
+    "label": "Discovering_Magical_Items",
+    "type": "discovery",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "ancient_library",
+    "description": "Successful Investigation check reveals the presence of a +1 battleaxe and a 2nd-level hold person spell scroll",
+    "id": "discovering_magical_items",
+    "source_node": "Treasure"
+  },
+  {
+    "label": "Detecting_Item_Location",
+    "type": "observation",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "ancient_library",
+    "description": "Casters use detect magic spell to locate hidden items without requiring an ability check",
+    "id": "detecting_item_location",
+    "source_node": "Treasure"
+  },
+  {
+    "label": "Receiving_Catalog_Info",
+    "type": "dialogue",
+    "participants": [
+      "aidron",
+      "adventurers"
+    ],
+    "location": "ancient_library",
+    "description": "Aidron provides directional guidance to the discovered magical items",
+    "id": "receiving_catalog_info",
+    "source_node": "Treasure"
+  },
+  {
+    "label": "Return_to_Observatory_During_Ritual",
+    "type": "observation",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "observatory",
+    "description": "Characters arrive at the observatory to find Sparkrender's ritual underway",
+    "id": "return_to_observatory_during_ritual",
+    "source_node": "Sparkrender's Ritual"
+  },
+  {
+    "label": "Drive_Sparkrender_Away_Encounter",
+    "type": "encounter",
+    "participants": [
+      "adventurers",
+      "sparkrender_blue_wyrmling"
+    ],
+    "location": null,
+    "description": "Characters force Sparkrender off the island without killing him",
+    "id": "drive_sparkrender_away_encounter",
+    "source_node": "Sparkrender's Ritual"
+  },
+  {
+    "label": "Leave_Aidron_Imprisoned",
+    "type": "discovery",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "area_d6",
+    "description": "Characters choose to leave Aidron imprisoned in area D6",
+    "id": "leave_aidron_imprisoned",
+    "source_node": "Sparkrender's Ritual"
+  },
+  {
+    "label": "Runara_Urges_Return",
+    "type": "dialogue",
+    "participants": [
+      "adventurers",
+      "runara"
+    ],
+    "location": "area_d6",
+    "description": "Runara instructs characters to return to the observatory",
+    "id": "runara_urges_return",
+    "source_node": "Sparkrender's Ritual"
+  },
+  {
+    "label": "Discover_Replacement_Effigies",
+    "type": "discovery",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "area_d2",
+    "description": "Characters find crude replacements for dragon effigies if previously destroyed",
+    "id": "discover_replacement_effigies",
+    "source_node": "Sparkrender's Ritual"
+  },
+  {
+    "label": "Confront_Sparkrender",
+    "type": "combat",
+    "participants": [
+      "adventurers",
+      "sparkrender_blue_wyrmling]",
+      "optional[aidron_bronze_wyrmling"
+    ],
+    "location": "observatory",
+    "description": "Final showdown with Sparkrender, who fights to the death",
+    "id": "confront_sparkrender",
+    "source_node": "Sparkrender's Ritual"
+  },
+  {
+    "label": "Sparkrender_Unleash_BreathWeapon",
+    "type": "combat",
+    "participants": [
+      "sparkrender_blue_wyrmling"
+    ],
+    "location": "observatory",
+    "description": "Sparkrender releases lightning-based Breath Weapon attack as characters approach",
+    "id": "sparkrender_unleash_breathweapon",
+    "source_node": "Sparkrender's Ritual"
+  },
+  {
+    "label": "Notice_Kobold_Presence",
+    "type": "observation",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "observatory",
+    "description": "Characters detect lingering kobolds and winged kobolds near the site",
+    "id": "notice_kobold_presence",
+    "source_node": "Sparkrender's Ritual"
+  },
+  {
+    "label": "Observing Colorful Light Display",
+    "type": "observation",
+    "participants": [
+      "red_dragon_effigy",
+      "gold_dragon_effigy",
+      "brass_dragon_effigy",
+      "blue_dragon_effigy",
+      "bronze_dragon_effigy"
+    ],
+    "location": "ruined_rotunda",
+    "description": "Streams of colored light swirl around the golden statue, matching the colors of the dragon effigies",
+    "id": "observing_colorful_light_display",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Lightning Bolt Emission",
+    "type": "combat",
+    "participants": [
+      "blue_dragon"
+    ],
+    "location": "ruined_rotunda",
+    "description": "The blue dragon releases a bolt of lightning upward after displaying signs of pain/ecstasy",
+    "id": "lightning_bolt_emission",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Agony of Bound Dragon",
+    "type": "observation",
+    "participants": [
+      "bronze_dragon"
+    ],
+    "location": "ruined_rotunda",
+    "description": "The bronze dragon is visibly struggling against three heavy chains tied to the ground",
+    "id": "agony_of_bound_dragon",
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Random Magical Effect During Combat",
+    "type": "combat",
+    "participants": [
+      "sparkrender",
+      "aidron",
+      "characters"
+    ],
+    "location": "rotunda",
+    "description": "At the end of each combat round (initiative count 0), a random magical effect occurs due to dragon spirits swirling in the rotunda.",
+    "id": "random_magical_effect_during_combat",
+    "source_node": "Dragon Spirits"
+  },
+  {
+    "label": "Astalagan's Blessing",
+    "type": "encounter",
+    "participants": [
+      "aidron",
+      "characters"
+    ],
+    "location": "rotunda",
+    "description": "Aidron and the characters regain 1d4 + 4 hp as bronze light surrounds them.",
+    "id": "astalagan_s_blessing",
+    "source_node": "Dragon Spirits"
+  },
+  {
+    "label": "Clyssavar's Flames",
+    "type": "combat",
+    "participants": [
+      "sparkrender"
+    ],
+    "location": "rotunda",
+    "description": "Sparkrender takes 7 (2d6) fire damage if failing a Dexterity save from golden light crashing into him.",
+    "id": "clyssavar_s_flames",
+    "source_node": "Dragon Spirits"
+  },
+  {
+    "label": "Eldenemir's Gift",
+    "type": "encounter",
+    "participants": [
+      "sparkrender"
+    ],
+    "location": "rotunda",
+    "description": "Sparkrender's breath weapon recharges as blue light enfolds him.",
+    "id": "eldenemir_s_gift",
+    "source_node": "Dragon Spirits"
+  },
+  {
+    "label": "Sharruth's Fury",
+    "type": "combat",
+    "participants": [
+      "characters"
+    ],
+    "location": "rotunda",
+    "description": "Characters take 3 (1d6) fire damage if failing a Dexterity save from red light erupting with fire.",
+    "id": "sharruth_s_fury",
+    "source_node": "Dragon Spirits"
+  },
+  {
+    "label": "Turadaer's Tricks",
+    "type": "encounter",
+    "participants": [
+      "aidron",
+      "characters"
+    ],
+    "location": "rotunda",
+    "description": "Aidron and the characters gain advantage on attack/saving throws until next round’s initiative 0 from brass light sparking around them.",
+    "id": "turadaer_s_tricks",
+    "source_node": "Dragon Spirits"
+  },
+  {
+    "label": "Attempting to Remove Chains",
+    "type": "Exploration",
+    "participants": [
+      "adventure_party"
+    ],
+    "location": "unspecified_location",
+    "description": "Characters attempt to undo the clasps attaching Aidron's chains to the ground, requiring an action per clasp.",
+    "id": "attempting_to_remove_chains",
+    "source_node": "Freeing Aidron"
+  },
+  {
+    "label": "Aidron Regains Mobility",
+    "type": "Observation",
+    "participants": [
+      "aidron"
+    ],
+    "location": "unspecified_location",
+    "description": "After all three clasps are removed, Aidron is no longer restrained, though his speed is reduced by 10 feet due to lingering chains.",
+    "id": "aidron_regains_mobility",
+    "source_node": "Freeing Aidron"
+  },
+  {
+    "label": "Potential Use of Repulsion Breath",
+    "type": "Observation",
+    "participants": [
+      "aidron"
+    ],
+    "location": "unspecified_location",
+    "description": "Aidron retains the capability to use his Repulsion Breath if strategically advantageous, despite being unable to target Sparkrender with his lightning Breath Weapon.",
+    "id": "potential_use_of_repulsion_breath",
+    "source_node": "Freeing Aidron"
+  },
+  {
+    "label": "Manipulate_Effigies",
+    "type": "encounter",
+    "participants": [
+      "player_characters_group",
+      "effigies"
+    ],
+    "location": "ritual_location",
+    "description": "Characters interact with effigies to invoke effects from the Dragon Spirits Table",
+    "id": "manipulate_effigies",
+    "source_node": "Disrupting the Ritual"
+  },
+  {
+    "label": "Destroy_Effigies",
+    "type": "combat",
+    "participants": [
+      "player_characters_group",
+      "effigies"
+    ],
+    "location": "ritual_location",
+    "description": "Characters destroy effigies to permanently negate their effects",
+    "id": "destroy_effigies",
+    "source_node": "Disrupting the Ritual"
+  },
+  {
+    "label": "Disturb_Sculpture",
+    "type": "encounter",
+    "participants": [
+      "player_characters_group",
+      "sparkrender"
+    ],
+    "location": "ritual_location",
+    "description": "Attempts to alter the golden sculpture cause temporary distractions to Sparkrender",
+    "id": "disturb_sculpture",
+    "source_node": "Disrupting the Ritual"
+  },
+  {
+    "label": "Return to Dragon's Rest",
+    "type": "exploration",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "dragon_s_rest",
+    "description": "The characters return to Dragon's Rest with Aidron, marking the end of their mission.",
+    "id": "return_to_dragon_s_rest",
+    "source_node": "Ending the Adventure"
+  },
+  {
+    "label": "Meeting Runara",
+    "type": "encounter",
+    "participants": [
+      "adventurers",
+      "runara"
+    ],
+    "location": "dragon_s_rest",
+    "description": "Runara greets the characters, expressing pleasure at Aidron’s return and offering rewards.",
+    "id": "meeting_runara",
+    "source_node": "Ending the Adventure"
+  },
+  {
+    "label": "Reward Distribution",
+    "type": "dialogue",
+    "participants": [
+      "runara",
+      "adventurers"
+    ],
+    "location": "dragon_s_rest",
+    "description": "Runara grants each adventurer a potion of healing and an exquisite pearl valued at 100 gp.",
+    "id": "reward_distribution",
+    "source_node": "Ending the Adventure"
+  },
+  {
+    "label": "Conditional Reaction to Sparkrender's Fate",
+    "type": "observation",
+    "participants": [
+      "runara"
+    ],
+    "location": "dragon_s_rest",
+    "description": "Runara expresses grief if Sparkrender is dead, acknowledging the loss while refraining from blaming the characters.",
+    "id": "conditional_reaction_to_sparkrender_s_fate",
+    "source_node": "Ending the Adventure"
+  },
+  {
+    "label": "Future Adventure Options Mentioned",
+    "type": "exploration",
+    "participants": [
+      "adventure_master"
+    ],
+    "location": "undefined",
+    "description": "Text hints at potential post-adventure scenarios involving Sparkrender's relatives or discoveries in the secret library.",
+    "id": "future_adventure_options_mentioned",
+    "source_node": "Ending the Adventure"
+  }
+]

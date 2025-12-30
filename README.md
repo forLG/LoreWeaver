@@ -44,6 +44,7 @@ python -m main --stage entity --model deepseek-chat
 ```bash
 python -m src.main --stage all --multi-pass --max-concurrent 50 --output-dir output/qwen3
 ```
+max output token is 32768 for Qwen3-8B, context window is 
 
 ### Graph Building & Visualization
 

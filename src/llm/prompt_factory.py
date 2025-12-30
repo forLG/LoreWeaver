@@ -1,20 +1,20 @@
 import re
-from typing import Dict, List
+
 
 class PromptFactory:
     # 预编译正则，匹配 "A1: Name", "B2 Name", "Area C3" 等格式
     AREA_PATTERN = re.compile(r"^(?:Area\s+)?([A-Z][0-9]+)[:\s]\s*(.+)$", re.IGNORECASE)
 
     @staticmethod
-    def create_spatial_summary_prompt(node: Dict, child_summaries: List[str]) -> str:
+    def create_spatial_summary_prompt(node: dict, child_summaries: list[str]) -> str:
         """
         阶段一：递归生成纯文本的空间关系总结
         """
         title = node.get("title", "Untitled")
         content = node.get("content", "")
-        
+
         # 基础 Prompt 结构
-        return f"""
+        return f"""/no_think
 You are a D&D Cartographer. Generate a SPATIAL REPORT for the node: "{title}".
 
 Current Text:
@@ -24,7 +24,7 @@ Sub-area Reports (from children nodes):
 {child_summaries}
 
 Task:
-1. **STRICTLY Filter Non-Locations**: 
+1. **STRICTLY Filter Non-Locations**:
    - **ONLY** physical locations (Rooms, Buildings, Islands, Caves, Landmarks, etc) can be nodes in the hierarchy.
    - **EXCLUDE** abstract concepts, narratives, or containers such as: "Quests", "Events", "Encounters", "Chapters", "Introductions", "Welcome to...".
    - If the current node "{title}" is NOT a physical location (e.g., "Cloister Quests"), **DO NOT** create a hierarchy node for it. Instead, **PROMOTE** (hoist) its valid spatial children to the top level of the list.
@@ -53,7 +53,7 @@ Output Requirements:
         """
         阶段二：从单章总结文本中提取 JSON
         """
-        return f"""
+        return f"""/no_think
 You are a D&D Knowledge Graph Architect.
 Extract a Location Knowledge Graph (JSON) from the provided text.
 
@@ -63,7 +63,7 @@ Input Text:
 Rules for Extraction:
 1. **Nodes (Locations)**:
    - Extract all physical locations.
-   - **CRITICAL - ID Standardization**: 
+   - **CRITICAL - ID Standardization**:
      - You MUST use **snake_case** for IDs to ensure consistency.
      - Example: "Dragon's Rest" -> "dragons_rest", "Area A1" -> "a1", "The Beach" -> "the_beach".
      - If a specific code exists (A1, B2), use it as the primary ID (lowercase).
@@ -85,7 +85,7 @@ Output Format (JSON ONLY):
     ]
 }}
 """
-    
+
     @staticmethod
     def create_entity_resolution_prompt(node_list_text: str) -> str:
         """
@@ -311,7 +311,7 @@ Output Format (JSON ONLY):
         """
         阶段五：实体实例化与关系挖掘
         """
-        return f"""
+        return f"""/no_think
 You are a D&D Knowledge Graph Builder.
 Context: The following text describes events occurring at these Location(s): [{location_list}].
 
@@ -326,12 +326,12 @@ Task:
    - You must **ONLY** use Node IDs provided in the "Candidate Entities" list or the "Context Locations" list.
    - **DO NOT** invent new Node IDs.
    - If the text mentions an entity (e.g., "a mysterious guard") but it is NOT in the candidate list, **IGNORE IT**. Do not create a node for it.
-   - **Exception**: Always map "you", "characters", "party" to the ID "**party:characters**".
-   - ID Format: Use the 'suggested_id' from candidates if available.
+   - **Exception**: Always map "you", "characters", "party" to the ID "**characters**".
+   - ID Format: Use the 'suggested_id' from candidates if available (snake_case, no prefix).
 
 2. **Extract Relations (Edges)**:
    - **DO NOT** extract relationships between two Location nodes (e.g., "connected_to", "part_of"). Spatial topology is already handled.
-   - **CRITICAL PRIORITY**: Focus on the **Ecology and State of the World** first. 
+   - **CRITICAL PRIORITY**: Focus on the **Ecology and State of the World** first.
      - How do NPCs relate to each other? (e.g., leader/minion, rivals)
      - Where are items physically located? (e.g., inside a chest, worn by a statue)
      - What are monsters doing in the location? (e.g., sleeping, guarding)
@@ -347,15 +347,391 @@ Task:
 Output JSON Format:
 {{
     "nodes": [
-        {{ "id": "creature:goblin_boss", "label": "Goblin Boss", "type": "Monster" }},
-        {{ "id": "creature:goblin_minion", "label": "Goblin Minion", "type": "Monster" }},
-        {{ "id": "item:rusty_key", "label": "Rusty Key", "type": "Item" }},
-        {{ "id": "location:iron_chest", "label": "Iron Chest", "type": "Container" }}
+        {{ "id": "goblin_boss", "label": "Goblin Boss", "type": "Creature" }},
+        {{ "id": "goblin_minion", "label": "Goblin Minion", "type": "Creature" }},
+        {{ "id": "rusty_key", "label": "Rusty Key", "type": "Item" }},
+        {{ "id": "iron_chest", "label": "Iron Chest", "type": "Location" }}
     ],
     "edges": [
-        {{ "source": "creature:goblin_boss", "target": "creature:goblin_minion", "relation": "commands", "desc": "shouts orders to the minions" }},
-        {{ "source": "item:rusty_key", "target": "location:iron_chest", "relation": "unlocks", "desc": "opens the locked chest in the corner" }},
-        {{ "source": "creature:goblin_boss", "target": "location:throne_room", "relation": "inhabits", "desc": "sits lazily on the throne" }}
+        {{ "source": "goblin_boss", "target": "goblin_minion", "relation": "commands", "desc": "shouts orders to the minions" }},
+        {{ "source": "rusty_key", "target": "iron_chest", "relation": "unlocks", "desc": "opens the locked chest in the corner" }},
+        {{ "source": "goblin_boss", "target": "throne_room", "relation": "inhabits", "desc": "sits lazily on the throne" }}
     ]
 }}
+"""
+
+    # ========================================================================
+    # Entity-First Pipeline Prompts (for small models like qwen3-8b)
+    # ========================================================================
+
+    @staticmethod
+    def create_ner_prompt(
+        title: str,
+        content: str,
+        parent_context: str | None = None,  # noqa: ARG004 - kept for interface consistency
+        known_entities: str | None = None
+    ) -> str:
+        """
+        Entity-First Phase 1: Named Entity Recognition.
+
+        Extract all named entities from text (pure bottom-up - no parent context).
+        Duplicates will be resolved during aggregation phase.
+        """
+        known_section = known_entities if known_entities else "No known entities from previous sections."
+
+        return f"""
+You are a D&D Entity Extractor. Extract named entities from the following text.
+
+CURRENT SECTION: {title}
+
+{known_section}
+
+TEXT TO PROCESS:
+{content}
+
+TASK: Extract ALL named entities mentioned in this text.
+
+Entity Types to Extract:
+- Locations: places, buildings, rooms, geographic features (e.g., "Dragon's Rest", "The Cave", "Cliffside Path")
+- Creatures: monsters, NPCs, animals (e.g., "Runara", "Goblin Boss", "a zombie")
+- Items: objects, equipment, treasures (e.g., "Rusty Key", "Magic Sword")
+- Groups: organizations, parties, factions (e.g., "The Party", "Kobolds")
+
+CRITICAL RULES:
+1. **ID Format**: Use snake_case IDs (e.g., "dragon_s_rest", "runara", "rusty_key")
+
+2. **Extract Both Named and Unnamed Entities**:
+   - NAMED: "Dragon's Rest", "Runara" → extract with exact name
+   - UNNAMED but RELEVANT: "a zombie", "two sailors", "the harbor", "a statue" → extract with descriptive ID
+     - Use descriptive IDs: "zombie", "sailors", "harbor", "statue"
+     - If multiple unnamed entities of same type exist, append numbers: "zombie_1", "zombie_2"
+   - SKIP: Pure background/scenery with no relevance: "sunlight", "grass", "overcast sky"
+
+3. **Be Decisive**: Extract entities confidently. Duplicates will be resolved later.
+
+Output Format (JSON ONLY):
+{{
+    "entities": [
+        {{"id": "dragon_s_rest", "label": "Dragon's Rest", "type": "Location", "aliases": ["temple", "monastery"]}},
+        {{"id": "runara", "label": "Runara", "type": "Creature", "aliases": ["bronze dragon", "elder"]}},
+        {{"id": "zombie", "label": "Zombie", "type": "Creature", "aliases": []}},
+        {{"id": "sailors", "label": "Sailors", "type": "Creature", "aliases": ["two sailors"]}},
+        {{"id": "harbor", "label": "Harbor", "type": "Location", "aliases": ["calm harbor"]}},
+        {{"id": "statue", "label": "Statue", "type": "Item", "aliases": ["towering statue"]}}
+    ]
+}}
+"""
+
+    @staticmethod
+    def create_relation_extraction_prompt(
+        title: str,
+        content: str,
+        entities_text: str
+    ) -> str:
+        """
+        Entity-First Phase 3: Extract relations between known entities.
+
+        Given a list of known entities, find relationships between them in the text.
+        """
+        return f"""/no_think
+You are a D&D Relation Extractor. Extract relationships between known entities.
+
+CURRENT SECTION: {title}
+
+KNOWN ENTITIES:
+{entities_text}
+
+TEXT TO PROCESS:
+{content}
+
+TASK: Find relationships between the known entities mentioned in this text.
+
+RELATIONSHIP TYPES:
+- Spatial: "part_of" (inside), "connected_to" (adjacent), "leads_to" (path)
+- Social: "commands" (authority), "serves" (loyalty), "allied_with" (friendship)
+- State: "inhabits" (lives in), "guards" (protects), "stored_in" (contained)
+- Action: "attacks" (hostile), "gives_quest_to" (interaction)
+
+CRITICAL RULES:
+1. **Only use entities from the KNOWN ENTITIES list above**
+2. **Create edges only for relationships EXPLICITLY stated in the text**
+3. **Include descriptions**: Add a "desc" field with context for each relation
+4. **Be conservative**: Don't invent relationships that aren't clearly stated
+
+Output Format (JSON ONLY):
+{{
+    "relations": [
+        {{"source": "dragon_s_rest", "target": "stormwreck_isle", "relation": "part_of", "desc": "Located on the island"}},
+        {{"source": "runara", "target": "dragon_s_rest", "relation": "inhabits", "desc": "Lives in the temple"}},
+        {{"source": "goblin_boss", "target": "goblin_minion", "relation": "commands", "desc": "Leads the goblins"}}
+    ]
+}}
+"""
+
+    # ========================================================================
+    # Natural Language Output Prompts (for small models like qwen3-8b)
+    # More robust to truncation than JSON
+    # ========================================================================
+
+    @staticmethod
+    def create_ner_prompt_natural(
+        title: str,
+        content: str,
+        known_entities: str | None = None
+    ) -> str:
+        """
+        Natural language NER prompt (no JSON required).
+
+        Pure bottom-up: Extract independently, duplicates resolved later.
+        """
+        known_section = known_entities if known_entities else "No known entities from previous sections."
+
+        return f"""
+ROLE: You are a D&D Entity Extractor. Extract named entities from the following text.
+
+CURRENT SECTION: {title}
+<known_entities>
+{known_section}
+</known_entities>
+
+TEXT TO PROCESS:
+{content}
+
+TASK: Extract ALL named entities mentioned in this text.
+
+Entity Types to Extract:
+- Locations: places, buildings, rooms, geographic features
+- Creatures: monsters, NPCs, animals
+- Items: objects, equipment, treasures
+- Groups: organizations, parties, factions
+
+CRITICAL RULES:
+1. **ID Format**: Use snake_case IDs (e.g., dragon_s_rest, runara, rusty_key)
+
+2. **Extract Both Named and Unnamed Entities**:
+   - NAMED: "Dragon's Rest", "Runara" → extract with exact name
+   - UNNAMED GROUPS: If entities appear as a group in a specific context, use contextual ID
+     - Example: "zombies in the ship" → "zombies_in_ship"
+     - Example: "sailors on the dock" → "sailors_on_dock"
+     - Example: "goblins guarding the entrance" → "goblins_at_entrance"
+   - UNNAMED INDIVIDUALS: If entities act differently (distinct behaviors), treat separately
+     - Example: If one zombie attacks and another guards, create "attacking_zombie" and "guarding_zombie"
+     - Only use numbers (_1, _2, _3) when entities are truly indistinguishable and less than 10
+   - SKIP: Pure background/scenery with no relevance: "sunlight", "grass", "overcast sky"
+
+3. **IF NO ENTITIES FOUND**: If the text contains no relevant entities, output <summary> instead
+   - Explain why (text too short, only scenery, no named content, etc.)
+   - This helps with debugging and tracing
+
+4. **OUTPUT FORMAT**:
+   - If entities found: Wrap in <entities> tags
+   - If no entities: Use <summary> tags with explanation
+
+OUTPUT EXAMPLE (with entities):
+<entities>
+Entity: The Waterdeep
+Type: Location
+ID: the_waterdeep
+Aliases: []
+
+Entity: Goblin Warrior
+Type: Creature
+ID: goblin_warrior
+Aliases: ["goblin soldier"]
+</entities>
+
+OUTPUT EXAMPLE (no entities):
+<summary>
+Text contains no extractable entities. Only generic background descriptions of weather and scenery with no specific names.
+</summary>
+"""
+
+    @staticmethod
+    def create_relation_extraction_prompt_natural(
+        title: str,
+        content: str,
+        entities_text: str
+    ) -> str:
+        """
+        Natural language relation extraction prompt (no JSON required).
+        """
+        return f"""
+You are a D&D Relation Extractor. Extract relationships between known entities.
+
+CURRENT SECTION: {title}
+
+KNOWN ENTITIES:
+{entities_text}
+
+TEXT TO PROCESS:
+{content}
+
+TASK: Find relationships between the known entities mentioned in this text.
+
+RELATIONSHIP TYPES:
+- Spatial: part_of (inside), connected_to (adjacent), leads_to (path)
+- Social: commands (authority), serves (loyalty), allied_with (friendship)
+- State: inhabits (lives in), guards (protects), stored_in (contained)
+- Action: attacks (hostile), gives_quest_to (interaction)
+
+CRITICAL RULES:
+1. **Only use entities from the KNOWN ENTITIES list above**
+2. **Create edges only for relationships EXPLICITLY stated in the text**
+3. **Include descriptions** with context for each relation
+4. **Be conservative**: Don't invent relationships
+
+OUTPUT FORMAT (one relation per block, separate blocks with blank line):
+Relation: [relation_type]
+Source: [entity_id]
+Target: [entity_id]
+Description: [context description]
+
+[Repeat for each relationship]
+"""
+
+    @staticmethod
+    def create_entity_resolution_prompt_natural(node_list_text: str) -> str:
+        """
+        Natural language entity resolution prompt (no JSON required).
+        """
+        return f"""
+You are a Data Deduplication Expert for a Knowledge Graph.
+
+Below is a list of raw nodes extracted from different chapters of a D&D book.
+Many nodes refer to the SAME location but have different IDs or slightly different names.
+
+RAW NODE LIST:
+{node_list_text}
+
+TASK: Identify duplicates and map them to a single CANONICAL ID.
+
+RULES:
+- If "dragon_s_rest" and "dragons_rest_ch1" are the same place, map: dragans_rest_ch1 -> dragon_s_rest
+- If "A1" and "area_a1" are the same, map: area_a1 -> A1
+- Prefer shorter, cleaner IDs (e.g., "A1" over "area_a1_cliff")
+- Ignore distinct locations (do not merge "A1" and "A2")
+
+OUTPUT FORMAT:
+[duplicate_id] -> [canonical_id]
+
+EXAMPLE:
+dragon_rest -> dragon_s_rest
+area_a1 -> A1
+the_beach -> rocky_shore
+
+[Output mappings below, one per line]
+"""
+
+    # ========================================================================
+    # Unified Entity + Event Extraction (Heterogeneous Graph)
+    # ========================================================================
+
+    @staticmethod
+    def create_unified_extraction_prompt_natural(
+        title: str,
+        content: str
+    ) -> str:
+        """
+        Unified Entity + Event extraction for heterogeneous graph.
+
+        Extracts:
+        - Entity nodes (static knowledge): locations, creatures, items
+        - Event nodes (dynamic narrative): encounters, discoveries, actions
+
+        Both become nodes in the same graph, linked by edges.
+        """
+        # Pure bottom-up: no parent context passed
+        return f"""
+ROLE: You are a D&D Knowledge Graph Extractor. Extract entities AND events from the following text.
+
+CURRENT SECTION: {title}
+
+TEXT TO PROCESS:
+{content}
+
+TASK: Extract ALL named entities AND narrative events in this text.
+
+ENTITY TYPES (static knowledge nodes):
+- Locations: places, buildings, rooms, geographic features
+- Creatures: monsters, NPCs, animals
+- Items: objects, equipment, treasures
+- Groups: organizations, parties, factions
+
+EVENT TYPES (dynamic narrative nodes):
+- encounter: Meeting or confrontation with entities
+- combat: Fight or battle
+- discovery: Finding something (item, location, information)
+- dialogue: Conversation or exchange of information
+- exploration: Moving through or observing a location
+- observation: Noticing details (not an action)
+
+CRITICAL RULES:
+1. **Extract Entities First**:
+   - NAMED: "The WaterDeep", "Tav" → extract with exact name
+   - UNNAMED GROUPS: Use contextual IDs (e.g., "zombies in ship" → "zombies_in_ship")
+   - UNNAMED INDIVIDUALS: If different behaviors, separate (e.g., "attacking_zombie")
+   - Only use numbers (_1, _2) for truly indistinguishable entities
+
+2. **Extract Events**:
+   - Events describe WHAT HAPPENS in the text
+   - Link events to participating entities and locations
+   - Include brief description of what occurred
+
+3. **IF NO ENTITIES OR EVENTS FOUND**: Output <summary> with explanation
+
+OUTPUT FORMAT:
+<entities>
+Entity: name
+Type: Location/Creature/Item/Group
+ID: snake_case_id
+Aliases: [alias1, alias2]
+</entities>
+
+<events>
+Event: event_name
+Type: encounter/combat/discovery/dialogue/exploration/observation
+Participants: entity_id1, entity_id2
+Location: location_id
+Description: what happened
+
+Event: next_event
+...
+</events>
+
+EXAMPLE:
+<entities>
+Entity: Dragon's Rest
+Type: Location
+ID: dragon_s_rest
+Aliases: [temple]
+
+Entity: Runara
+Type: Creature
+ID: runara
+Aliases: [bronze dragon]
+
+Entity: Rusty Key
+Type: Item
+ID: rusty_key
+Aliases: []
+</entities>
+
+<events>
+Event: Meeting Runara
+Type: encounter
+Participants: [adventurers, runara]
+Location: dragon_s_rest
+Description: The party meets a bronze dragon named Runara in the ruined temple
+
+Event: Finding the Key
+Type: discovery
+Participants: [adventurers]
+Location: dragon_s_rest
+Description: While searching, the party discovers a rusty key hidden under debris
+</events>
+
+OUTPUT EXAMPLE (no entities/events):
+<summary>
+Text contains only generic atmospheric description with no specific entities or events.
+</summary>
 """

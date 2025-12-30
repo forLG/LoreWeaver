@@ -5,7 +5,8 @@ Graph Visualizer for LoreWeaver
 """
 import json
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import ClassVar
+
 from pyvis.network import Network
 
 from utils.logger import logger
@@ -23,7 +24,7 @@ class GraphVisualizer:
     """
 
     # 默认颜色配置（按节点类型）
-    DEFAULT_COLORS = {
+    DEFAULT_COLORS: ClassVar[dict[str, str]] = {
         'Location': '#3498db',      # 蓝色
         'Creature': '#e74c3c',      # 红色
         'Item': '#f39c12',          # 橙色
@@ -68,8 +69,8 @@ class GraphVisualizer:
         self,
         graph_file: str,
         output_html: str = "output/graph_visualization.html",
-        node_filter: Optional[List[str]] = None,
-        max_nodes: int = None,
+        node_filter: list[str] | None = None,
+        max_nodes: int | None = None,
         title: str = "LoreWeaver Knowledge Graph"
     ) -> str:
         """
@@ -87,7 +88,7 @@ class GraphVisualizer:
         """
         logger.info(f"读取图谱文件: {graph_file}")
 
-        with open(graph_file, 'r', encoding='utf-8') as f:
+        with open(graph_file, encoding='utf-8') as f:
             data = json.load(f)
 
         nodes = data.get('nodes', [])
@@ -133,7 +134,12 @@ class GraphVisualizer:
             )
 
         # 添加边
+        node_ids = {n['id'] for n in nodes}
         for edge in edges:
+            # Skip edges with non-existent nodes
+            if edge['source'] not in node_ids or edge['target'] not in node_ids:
+                continue
+
             rel_type = edge.get('relation', 'connected').upper()
             title = f"{rel_type}"
             if 'desc' in edge:
@@ -152,6 +158,10 @@ class GraphVisualizer:
         output_path.parent.mkdir(parents=True, exist_ok=True)
 
         net.save_graph(str(output_path))
+
+        # Add interactive filter UI
+        self._add_filter_ui(str(output_path), nodes)
+
         logger.info(f"可视化已保存: {output_path}")
 
         return str(output_path)
@@ -193,7 +203,7 @@ class GraphVisualizer:
 
             for record in result:
                 # 处理节点
-                for key in record.keys():
+                for key in record:
                     value = record[key]
                     if hasattr(value, 'element_type') and value.element_type == 'node':
                         node_id = value.element_id
@@ -272,9 +282,9 @@ class GraphVisualizer:
         logger.info("生成联合可视化...")
 
         # 读取两个图谱
-        with open(location_graph_file, 'r', encoding='utf-8') as f:
+        with open(location_graph_file, encoding='utf-8') as f:
             loc_data = json.load(f)
-        with open(entity_graph_file, 'r', encoding='utf-8') as f:
+        with open(entity_graph_file, encoding='utf-8') as f:
             ent_data = json.load(f)
 
         # 合并节点（去重，处理 ID 前缀问题）
@@ -353,7 +363,7 @@ class GraphVisualizer:
         # 采样
         if len(all_nodes) > max_nodes:
             # 简单策略：保留实体图谱中的节点
-            with open(entity_graph_file, 'r', encoding='utf-8') as f:
+            with open(entity_graph_file, encoding='utf-8') as f:
                 ent_data = json.load(f)
             keep_ids = {n['id'] for n in ent_data.get('nodes', [])}
             # Also keep any base IDs that are mapped from kept IDs
@@ -433,22 +443,614 @@ class GraphVisualizer:
                         "springConstant": 0.04
                     }
                 },
-                "title": title
+                "title": title,
+                "interaction": {
+                    "hover": True,
+                    "tooltipDelay": 200,
+                    "hoverConnectedEdges": True
+                },
+                "nodes": {
+                    "borderWidth": 2,
+                    "borderWidthSelected": 4,
+                    "chosen": True
+                },
+                "edges": {
+                    "width": 1,
+                    "selectionWidth": 2,
+                    "smooth": {
+                        "type": "continuous"
+                    }
+                }
             }
         else:
             options = {
                 "physics": {"enabled": False},
-                "title": title
+                "title": title,
+                "interaction": {
+                    "hover": True,
+                    "tooltipDelay": 200,
+                    "hoverConnectedEdges": True
+                },
+                "nodes": {
+                    "borderWidth": 2,
+                    "borderWidthSelected": 4,
+                    "chosen": True
+                },
+                "edges": {
+                    "width": 1,
+                    "selectionWidth": 2
+                }
             }
 
         net.set_options(json.dumps(options))
 
         return net
 
+    def _add_filter_ui(self, html_path: str, nodes: list[dict]) -> None:
+        """
+        Inject interactive filter UI and highlighting into the HTML file.
 
-# ---------------------------------------------------------------------
-# 使用示例
-# ---------------------------------------------------------------------
+        Adds:
+        1. Filter panel with checkboxes for each node type
+        2. Interactive highlighting on node click
+        3. Show/hide functionality for nodes by type
+        """
+        # Collect unique node types
+        node_types = set()
+        for node in nodes:
+            node_type = node.get('type', node.get('node_type', 'Entity'))
+            node_types.add(node_type.title() if node_type else 'Unknown')
+
+        sorted_types = sorted(node_types)
+        type_colors = {t: self.DEFAULT_COLORS.get(t, self.DEFAULT_COLORS['default']) for t in sorted_types}
+
+        # Read the existing HTML
+        with open(html_path, encoding='utf-8') as f:
+            html_content = f.read()
+
+        # Custom CSS and JavaScript to inject
+        custom_css = """
+        <style>
+        /* Filter Panel Styles */
+        #filter-panel {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(34, 34, 34, 0.95);
+            border: 1px solid #555;
+            border-radius: 8px;
+            padding: 15px;
+            z-index: 1000;
+            min-width: 200px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+
+        #filter-panel h3 {
+            margin: 0 0 10px 0;
+            color: #fff;
+            font-size: 14px;
+            border-bottom: 1px solid #555;
+            padding-bottom: 8px;
+        }
+
+        #filter-panel .filter-item {
+            display: flex;
+            align-items: center;
+            margin: 6px 0;
+            cursor: pointer;
+        }
+
+        #filter-panel .filter-item input {
+            margin-right: 8px;
+            cursor: pointer;
+        }
+
+        #filter-panel .filter-item label {
+            color: #ccc;
+            cursor: pointer;
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        #filter-panel .color-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+
+        #filter-panel .filter-buttons {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+            padding-top: 10px;
+            border-top: 1px solid #555;
+        }
+
+        #filter-panel button {
+            flex: 1;
+            padding: 6px 12px;
+            background: #444;
+            color: #fff;
+            border: 1px solid #666;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        #filter-panel button:hover {
+            background: #555;
+        }
+
+        #filter-panel button.active {
+            background: #3498db;
+            border-color: #3498db;
+        }
+
+        #node-info-panel {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(34, 34, 34, 0.95);
+            border: 1px solid #555;
+            border-radius: 8px;
+            padding: 15px;
+            z-index: 1000;
+            min-width: 250px;
+            max-width: 400px;
+            display: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+
+        #node-info-panel h3 {
+            margin: 0 0 10px 0;
+            color: #fff;
+            font-size: 14px;
+            border-bottom: 1px solid #555;
+            padding-bottom: 8px;
+        }
+
+        #node-info-panel .info-row {
+            margin: 6px 0;
+            color: #ccc;
+            font-size: 13px;
+        }
+
+        #node-info-panel .info-label {
+            color: #888;
+            margin-right: 8px;
+        }
+
+        #node-info-panel .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            color: #888;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 0;
+            width: 24px;
+            height: 24px;
+        }
+
+        #node-info-panel .close-btn:hover {
+            color: #fff;
+        }
+
+        #stats-panel {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background: rgba(34, 34, 34, 0.95);
+            border: 1px solid #555;
+            border-radius: 8px;
+            padding: 12px 15px;
+            z-index: 1000;
+            color: #ccc;
+            font-size: 13px;
+        }
+
+        #stats-panel .stat-item {
+            margin: 4px 0;
+        }
+
+        #stats-panel .stat-value {
+            color: #3498db;
+            font-weight: bold;
+            margin-left: 8px;
+        }
+        </style>
+        """
+
+        custom_js = f"""
+        <script>
+        // Store enhancement state in window object to avoid scope issues
+        window.lwEnhancement = {{}};
+
+        // Node type colors (must match Python DEFAULT_COLORS)
+        window.lwEnhancement.typeColors = {{ {', '.join([f"'{t}': '{c}'" for t, c in type_colors.items()])} }};
+
+        // Original nodes data (stored for filtering)
+        window.lwEnhancement.originalNodes = null;
+        window.lwEnhancement.originalEdges = null;
+        window.lwEnhancement.selectedNodeId = null;
+
+        // Get network reference and store original data
+        window.lwEnhancement.init = function() {{
+            // Get the global network variable created by pyvis
+            // pyvis creates it as 'var network = new vis.Network(...)'
+            let net = null;
+
+            // Try different ways to access the network
+            if (typeof network !== 'undefined' && network && typeof network.body === 'object') {{
+                net = network;
+                console.log("Found network via global variable");
+            }} else if (window.network && typeof window.network.body === 'object') {{
+                net = window.network;
+                console.log("Found network via window.network");
+            }}
+
+            if (!net) {{
+                console.error("Could not find network object. Available globals:", Object.keys(window).filter(k => k.includes('net')));
+                return;
+            }}
+
+            // Store reference
+            window.lwEnhancement.network = net;
+
+            // Store original nodes and edges data
+            const nodesData = net.body.data.nodes;
+            const edgesData = net.body.data.edges;
+
+            window.lwEnhancement.originalNodes = nodesData.get({{ returnType: "Object" }});
+            window.lwEnhancement.originalEdges = edgesData.get({{ returnType: "Object" }});
+
+            console.log("Network initialized with", Object.keys(window.lwEnhancement.originalNodes).length, "nodes");
+
+            // Setup click event for highlighting
+            net.on("click", function(params) {{
+                if (params.nodes.length > 0) {{
+                    window.lwEnhancement.highlightNode(params.nodes[0]);
+                }} else {{
+                    window.lwEnhancement.clearHighlight();
+                }}
+            }});
+
+            // Setup double-click to zoom to node
+            net.on("doubleClick", function(params) {{
+                if (params.nodes.length > 0) {{
+                    net.focus(params.nodes[0], {{ scale: 1.5, animation: true }});
+                }}
+            }});
+
+            window.lwEnhancement.updateStats();
+        }};
+
+        // Highlight selected node and its connections
+        window.lwEnhancement.highlightNode = function(nodeId) {{
+            window.lwEnhancement.selectedNodeId = nodeId;
+            const net = window.lwEnhancement.network;
+            if (!net) return;
+
+            const allNodes = net.body.data.nodes.get();
+            const allEdges = net.body.data.edges.get();
+
+            // Get connected nodes and edges
+            const connected = net.getConnectedNodes(nodeId);
+            const connectedEdgeIds = [];
+
+            allEdges.forEach(edge => {{
+                if (edge.from === nodeId || edge.to === nodeId) {{
+                    connectedEdgeIds.push(edge.id);
+                }}
+            }});
+
+            // Dim all nodes first
+            const updateNodes = allNodes.map(node => {{
+                const isConnected = connected.includes(node.id) || node.id === nodeId;
+                return {{
+                    ...node,
+                    opacity: isConnected ? 1 : 0.2,
+                    borderWidth: node.id === nodeId ? 4 : (isConnected ? 3 : 1),
+                    size: node.id === nodeId ? (node.size || 20) * 1.3 : (isConnected ? (node.size || 15) * 1.1 : (node.size || 15))
+                }};
+            }});
+
+            // Highlight connected edges
+            const updateEdges = allEdges.map(edge => {{
+                const isHighlighted = connectedEdgeIds.includes(edge.id);
+                return {{
+                    ...edge,
+                    opacity: isHighlighted ? 1 : 0.1,
+                    width: isHighlighted ? 2 : 1
+                }};
+            }});
+
+            net.body.data.nodes.update(updateNodes);
+            net.body.data.edges.update(updateEdges);
+
+            // Show node info panel
+            window.lwEnhancement.showNodeInfo(nodeId, connected);
+        }};
+
+        // Clear highlight and restore all nodes
+        window.lwEnhancement.clearHighlight = function() {{
+            window.lwEnhancement.selectedNodeId = null;
+            const net = window.lwEnhancement.network;
+            const originalNodes = window.lwEnhancement.originalNodes;
+
+            if (!net || !originalNodes) return;
+
+            const allNodes = net.body.data.nodes.get();
+            const allEdges = net.body.data.edges.get();
+
+            const restoreNodes = allNodes.map(node => {{
+                const original = originalNodes[node.id];
+                return {{
+                    ...node,
+                    opacity: 1,
+                    borderWidth: original ? original.borderWidth : 2,
+                    size: original ? original.size : node.size
+                }};
+            }});
+
+            const restoreEdges = allEdges.map(edge => {{
+                return {{
+                    ...edge,
+                    opacity: 1,
+                    width: 1
+                }};
+            }});
+
+            net.body.data.nodes.update(restoreNodes);
+            net.body.data.edges.update(restoreEdges);
+
+            // Hide node info panel
+            document.getElementById('node-info-panel').style.display = 'none';
+        }};
+
+        // Show node info panel
+        window.lwEnhancement.showNodeInfo = function(nodeId, connectedNodes) {{
+            const net = window.lwEnhancement.network;
+            if (!net) return;
+
+            const node = net.body.data.nodes.get(nodeId);
+            const panel = document.getElementById('node-info-panel');
+
+            let html = '<button class="close-btn" onclick="document.getElementById(\\'node-info-panel\\').style.display=\\'none\\'">&times;</button>';
+            html += `<h3>${{node.label || nodeId}}</h3>`;
+            html += `<div class="info-row"><span class="info-label">ID:</span>${{nodeId}}</div>`;
+            html += `<div class="info-row"><span class="info-label">Type:</span>${{node.group || 'Unknown'}}</div>`;
+            html += `<div class="info-row"><span class="info-label">Connections:</span>${{connectedNodes.length}}</div>`;
+
+            if (connectedNodes.length > 0) {{
+                html += '<div class="info-row" style="margin-top:10px;"><span class="info-label">Connected to:</span></div>';
+                connectedNodes.slice(0, 10).forEach(connId => {{
+                    const connNode = net.body.data.nodes.get(connId);
+                    html += `<div class="info-row" style="margin-left:10px;">• ${{connNode ? connNode.label : connId}}</div>`;
+                }});
+                if (connectedNodes.length > 10) {{
+                    html += `<div class="info-row" style="margin-left:10px; color:#888;">... and ${{connectedNodes.length - 10}} more</div>`;
+                }}
+            }}
+
+            panel.innerHTML = html;
+            panel.style.display = 'block';
+        }};
+
+        // Filter nodes by type
+        window.lwEnhancement.filterByType = function(selectedTypes) {{
+            const net = window.lwEnhancement.network;
+            const originalNodes = window.lwEnhancement.originalNodes;
+
+            if (!net || !originalNodes) return;
+
+            const allEdges = net.body.data.edges.get();
+
+            // Get visible node IDs based on selected types
+            const visibleNodeIds = Object.keys(originalNodes).filter(id => {{
+                const node = originalNodes[id];
+                const nodeType = node.group || 'Unknown';
+                return selectedTypes.includes(nodeType);
+            }});
+
+            console.log("Filtering by types:", selectedTypes, "visible nodes:", visibleNodeIds.length);
+
+            // Filter nodes: only show selected types
+            const filteredNodes = Object.values(originalNodes).map(node => ({{
+                ...node,
+                hidden: !visibleNodeIds.includes(node.id)
+            }}));
+
+            // Filter edges: only show edges between visible nodes
+            const visibleNodeIdSet = new Set(visibleNodeIds);
+            const filteredEdges = allEdges.map(edge => ({{
+                ...edge,
+                hidden: !(visibleNodeIdSet.has(edge.from) && visibleNodeIdSet.has(edge.to))
+            }}));
+
+            net.body.data.nodes.update(filteredNodes);
+            net.body.data.edges.update(filteredEdges);
+
+            // Clear any highlight
+            window.lwEnhancement.clearHighlight();
+            window.lwEnhancement.updateStats(visibleNodeIds.length);
+        }};
+
+        // Show all nodes
+        window.lwEnhancement.showAllTypes = function() {{
+            const net = window.lwEnhancement.network;
+            const originalNodes = window.lwEnhancement.originalNodes;
+
+            if (!net || !originalNodes) return;
+
+            const filteredNodes = Object.values(originalNodes).map(node => ({{
+                ...node,
+                hidden: false
+            }}));
+
+            const filteredEdges = net.body.data.edges.get().map(edge => ({{
+                ...edge,
+                hidden: false
+            }}));
+
+            net.body.data.nodes.update(filteredNodes);
+            net.body.data.edges.update(filteredEdges);
+
+            window.lwEnhancement.clearHighlight();
+            window.lwEnhancement.updateStats(Object.keys(originalNodes).length);
+        }};
+
+        // Update stats display
+        window.lwEnhancement.updateStats = function(visibleCount) {{
+            const originalNodes = window.lwEnhancement.originalNodes;
+            const originalEdges = window.lwEnhancement.originalEdges;
+
+            const totalNodes = originalNodes ? Object.keys(originalNodes).length : 0;
+            const totalEdges = originalEdges ? Object.keys(originalEdges).length : 0;
+            const count = visibleCount !== null ? visibleCount : totalNodes;
+
+            document.getElementById('stats-visible-nodes').textContent = count;
+            document.getElementById('stats-total-nodes').textContent = totalNodes;
+            document.getElementById('stats-total-edges').textContent = totalEdges;
+        }};
+
+        // Initialize after page load
+        if (document.readyState === 'loading') {{
+            document.addEventListener('DOMContentLoaded', function() {{
+                setTimeout(window.lwEnhancement.init, 100);
+            }});
+        }} else {{
+            setTimeout(window.lwEnhancement.init, 100);
+        }}
+        </script>
+        """
+
+        # Global functions for filter buttons (need to be global for onclick attributes)
+        filter_js = """
+        <script>
+        function toggleFilter(type) {{
+            const checkboxes = document.querySelectorAll('.type-checkbox');
+            const selected = [];
+            checkboxes.forEach(cb => {{
+                if (cb.checked) selected.push(cb.value);
+            }});
+
+            console.log("Selected types:", selected);
+
+            if (selected.length === 0) {{
+                // If nothing selected, show all
+                window.lwEnhancement.showAllTypes();
+            }} else {{
+                window.lwEnhancement.filterByType(selected);
+            }}
+        }}
+
+        function selectAllFilters() {{
+            document.querySelectorAll('.type-checkbox').forEach(cb => cb.checked = true);
+            window.lwEnhancement.showAllTypes();
+        }}
+
+        function clearAllFilters() {{
+            document.querySelectorAll('.type-checkbox').forEach(cb => cb.checked = false);
+            window.lwEnhancement.showAllTypes();
+        }}
+        </script>
+        """
+
+        # Global functions for filter buttons (need to be global for onclick attributes)
+        filter_js = """
+        <script>
+        function toggleFilter(type) {{
+            const checkboxes = document.querySelectorAll('.type-checkbox');
+            const selected = [];
+            checkboxes.forEach(cb => {{
+                if (cb.checked) selected.push(cb.value);
+            }});
+
+            console.log("Selected types:", selected);
+
+            if (selected.length === 0) {{
+                // If nothing selected, show all
+                window.lwEnhancement.showAllTypes();
+            }} else {{
+                window.lwEnhancement.filterByType(selected);
+            }}
+        }}
+
+        function selectAllFilters() {{
+            document.querySelectorAll('.type-checkbox').forEach(cb => cb.checked = true);
+            window.lwEnhancement.showAllTypes();
+        }}
+
+        function clearAllFilters() {{
+            document.querySelectorAll('.type-checkbox').forEach(cb => cb.checked = false);
+            window.lwEnhancement.showAllTypes();
+        }}
+        </script>
+        """
+
+        # HTML for filter panel
+        filter_html = """
+        <div id="filter-panel">
+            <h3>🔍 Filter by Type</h3>
+            <div id="filter-items">
+        """
+
+        for node_type in sorted_types:
+            color = type_colors.get(node_type, '#bdc3c7')
+            filter_html += f"""
+                <div class="filter-item">
+                    <input type="checkbox" class="type-checkbox" value="{node_type}" checked onchange="toggleFilter()">
+                    <label>
+                        <span class="color-dot" style="background: {color}"></span>
+                        {node_type}
+                    </label>
+                </div>
+            """
+
+        filter_html += """
+            </div>
+            <div class="filter-buttons">
+                <button onclick="selectAllFilters()">All</button>
+                <button onclick="clearAllFilters()">None</button>
+            </div>
+        </div>
+
+        <div id="node-info-panel">
+        </div>
+
+        <div id="stats-panel">
+            <div class="stat-item">
+                Visible Nodes: <span class="stat-value" id="stats-visible-nodes">-</span>
+            </div>
+            <div class="stat-item">
+                Total Nodes: <span class="stat-value" id="stats-total-nodes">-</span>
+            </div>
+            <div class="stat-item">
+                Total Edges: <span class="stat-value" id="stats-total-edges">-</span>
+            </div>
+        </div>
+        """
+
+        # Inject CSS, JS, and HTML into the file
+        # Insert CSS after <head>
+        html_content = html_content.replace('</head>', custom_css + '</head>')
+
+        # Insert JS before </body> (both custom_js and filter_js)
+        html_content = html_content.replace('</body>', custom_js + filter_js + '</body>')
+
+        # Insert filter HTML after <body>
+        html_content = html_content.replace('<body>', '<body>' + filter_html)
+
+        # Write the modified HTML
+        with open(html_path, 'w', encoding='utf-8') as f:
+            f.write(html_content)
 
 if __name__ == "__main__":
     visualizer = GraphVisualizer()

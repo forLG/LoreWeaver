@@ -1,13 +1,12 @@
+import hashlib
 import json
 import re
-import hashlib
-import sys
-import copy
-from typing import List, Dict, Any, Optional, Set, Tuple
 from pathlib import Path
+from typing import Any
 
 from utils.logger import logger
 from utils.resolver import InheritanceResolver
+
 
 # ==========================================
 # Utility Functions
@@ -34,24 +33,24 @@ class NodeBuilder:
         self.nodes = []
         self.stats = {"Monster": 0, "Item": 0, "Spell": 0}
         self.adventure_file_path = adventure_file_path
-        
+
         # 存储扫描到的引用 (Name, Source)
         self.referenced_entities = {
             "creature": set(),
             "item": set(),
             "spell": set()
         }
-        
+
         # 初始化 Resolvers
         # 根据要求，属性黑名单位于此处
         common_blacklist = ["otherSources", "variant", "environment", "traitTags", "senseTags", "actionTags", "languageTags", "damageTags", "damageTagsLegendary", "miscTags", "hasToken", "hasFluff", "hasFluffImages"]
         self.monster_resolver = InheritanceResolver(blacklist=common_blacklist)
-        self.item_resolver = InheritanceResolver(blacklist=common_blacklist + ["reqAttuneTags"])
-        self.spell_resolver = InheritanceResolver(blacklist=common_blacklist + ["classes", "classTags"])
+        self.item_resolver = InheritanceResolver(blacklist=[*common_blacklist, "reqAttuneTags"])
+        self.spell_resolver = InheritanceResolver(blacklist=[*common_blacklist, "classes", "classTags"])
 
-    def _load_json(self, path: str) -> Dict[str, Any]:
+    def _load_json(self, path: str) -> dict[str, Any]:
         try:
-            with open(path, 'r', encoding='utf-8') as f:
+            with open(path, encoding='utf-8') as f:
                 return json.load(f)
         except FileNotFoundError:
             logger.error(f"File not found: {path}. skipping.")
@@ -71,7 +70,7 @@ class NodeBuilder:
 
         # 2. Monsters
         # 注意：这里需要根据实际文件名修改，或者扫描文件夹
-        monster_files = ["bestiary-mm.json", "bestiary-dosi.json"] 
+        monster_files = ["bestiary-mm.json", "bestiary-dosi.json"]
         monster_data = [self._load_json(f) for f in monster_files]
         self.monster_resolver.build_index(monster_data, ["monster"])
 
@@ -97,7 +96,7 @@ class NodeBuilder:
                     _scan_recursive(value)
 
         _scan_recursive(adventure_data)
-        
+
         logger.info(f"Scan complete. Found: "
                     f"{len(self.referenced_entities['creature'])} creatures, "
                     f"{len(self.referenced_entities['item'])} items, "
@@ -116,7 +115,7 @@ class NodeBuilder:
             parts = content.split('|')
             name = parts[0].strip()
             source = parts[1].strip() if len(parts) > 1 and parts[1].strip() else None
-            
+
             # 保存到对应的集合中
             self.referenced_entities[tag_type].add((name, source))
 
@@ -127,7 +126,7 @@ class NodeBuilder:
         for name, source in self.referenced_entities[entity_type]:
             # 1. 尝试从 Resolver 获取原始数据
             raw_entry = resolver.get_entry_by_tag(name, source)
-            
+
             if not raw_entry:
                 logger.warning(f"Could not resolve {label}: {name} ({source})")
                 continue
@@ -145,7 +144,7 @@ class NodeBuilder:
 
             # 4. 生成 UUID
             node_id = generate_uuid(prefix, final_name, final_source)
-            
+
             # 5. 构建节点
             if node_id not in unique_nodes:
                 node = {
@@ -182,26 +181,26 @@ class NodeBuilder:
             },
             "nodes": self.nodes
         }
-        
+
         output_filename = "1_vertices_output.json"
         with open(output_filename, 'w', encoding='utf-8') as f:
             json.dump(output, f, ensure_ascii=False, indent=2)
-        
+
         logger.info(f"Exported result to {output_filename}")
 
     def run(self):
         """执行完整的构建流程"""
         # 1. 初始化子系统
         self._init_subsystems()
-        
+
         # 1.5 扫描引用
         self._scan_references()
-        
+
         # 2. 处理各类型数据
         self._process_monsters()
         self._process_items()
         self._process_spells()
-        
+
         # 3. 导出结果
         self._export()
 
@@ -212,12 +211,12 @@ if __name__ == "__main__":
     # 假设你的 adventure json 文件名为 adventure-dosi.json (龙之风暴岛)
     # 如果没有这个文件，脚本会报错，请确保文件存在或修改此处文件名
     # 对于测试，你可以创建一个包含 {@creature Runara} 的 dummy.json
-    
+
     # 这里演示使用你上传的文件之一作为 adventure file 的场景，或者你需要指定那个包含剧情的 json
     # 既然题目说 "会传入一份 adventure-xxx.json"，这里我们模拟传入参数
-    
-    target_adventure = "adventure-dosi.json" 
-    
+
+    target_adventure = "adventure-dosi.json"
+
     # 为了演示方便，如果找不到 adventure 文件，我们创建一个假的用于测试
     if not Path(target_adventure).exists():
         logger.warning(f"{target_adventure} not found. Creating a dummy file for demonstration.")
@@ -232,5 +231,5 @@ if __name__ == "__main__":
             json.dump(dummy_data, f)
 
     builder = NodeBuilder(adventure_file_path=target_adventure)
-    
+
     builder.run()

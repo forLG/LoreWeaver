@@ -1,0 +1,3257 @@
+[
+  {
+    "relation": "part_of",
+    "source": "dragons_rest",
+    "target": "stormwreak_isle",
+    "desc": "Dragon's Rest is a location on Stormwreck Isle",
+    "source_node": "Overview"
+  },
+  {
+    "relation": "part_of",
+    "source": "crypts_delzoun",
+    "target": "delzoun",
+    "desc": "The crypts are part of Delzoun",
+    "source_node": "The Forgotten Realms"
+  },
+  {
+    "relation": "part_of",
+    "source": "stormwreck_isle",
+    "target": "sword_coast",
+    "desc": "Stormwreck Isle is part of the Sword Coast",
+    "source_node": "The Forgotten Realms"
+  },
+  {
+    "relation": "part_of",
+    "source": "ruins_netherese_empire",
+    "target": "netherese_empire",
+    "desc": "The ruins are part of the Netherese Empire (implied through context)",
+    "source_node": "The Forgotten Realms"
+  },
+  {
+    "relation": "inhabits",
+    "source": "fighters",
+    "target": "crypts_delzoun",
+    "desc": "Fighters dwell in the crypts of Delzoun",
+    "source_node": "The Forgotten Realms"
+  },
+  {
+    "relation": "inhabits",
+    "source": "rogues",
+    "target": "neverwinter",
+    "desc": "Rogues prowl the dark alleyways of Neverwinter",
+    "source_node": "The Forgotten Realms"
+  },
+  {
+    "relation": "inhabits",
+    "source": "rogues",
+    "target": "baldurs_gate",
+    "desc": "Rogues prowl the dark alleyways of Baldur's Gate",
+    "source_node": "The Forgotten Realms"
+  },
+  {
+    "relation": "serves",
+    "source": "clerics",
+    "target": "gods",
+    "desc": "Clerics serve the gods",
+    "source_node": "The Forgotten Realms"
+  },
+  {
+    "relation": "attacks",
+    "source": "monstrous_beasts",
+    "target": "farmers",
+    "desc": "Monstrous beasts attack farms and freeholds",
+    "source_node": "The Forgotten Realms"
+  },
+  {
+    "relation": "attacks",
+    "source": "dragons",
+    "target": "settlements",
+    "desc": "Dragons pose threats to settlements",
+    "source_node": "The Forgotten Realms"
+  },
+  {
+    "relation": "inhabits",
+    "source": "stormwreck_isle",
+    "target": "<unknown>",
+    "desc": "Text references the adventure module associated with the location, but no explicit inhabitants are described",
+    "source_node": "Number of Players"
+  },
+  {
+    "relation": "attacks",
+    "source": "metallic_dragons",
+    "target": "sharruth",
+    "desc": "Three metallic dragons battled and imprisoned Sharruth beneath the ocean floor",
+    "source_node": "Adventure Background"
+  },
+  {
+    "relation": "attacks",
+    "source": "runara",
+    "target": "blue_dragon",
+    "desc": "Runara killed the blue dragon attempting to harness destructive magic",
+    "source_node": "Adventure Background"
+  },
+  {
+    "relation": "inhabited_by",
+    "source": "stormwreck_isle",
+    "target": "sharruth",
+    "desc": "Sharruth was imprisoned beneath the island",
+    "source_node": "Adventure Background"
+  },
+  {
+    "relation": "associated_with",
+    "source": "stormwreck_isle",
+    "target": "chromatic_dragons",
+    "desc": "Chromatic dragons claim Sharruth might still live and return to the island",
+    "source_node": "Adventure Background"
+  },
+  {
+    "relation": "inhabited_by",
+    "source": "dragon_s_rest",
+    "target": "runara",
+    "desc": "Runara dwells at Dragon's Rest, devoted to healing the island's wounds",
+    "source_node": "Adventure Background"
+  },
+  {
+    "relation": "ancestral_rivalry",
+    "source": "metallic_dragons",
+    "target": "chromatic_dragons",
+    "desc": "Mutual animosity between metallic and chromatic dragons stemming from Bahamut vs Tiamat",
+    "source_node": "Adventure Background"
+  },
+  {
+    "relation": "inhabits",
+    "source": "runara",
+    "target": "dragons_rest",
+    "desc": "Runara resides in the cloister of Dragon's Rest",
+    "source_node": "Story Information"
+  },
+  {
+    "relation": "stored_in",
+    "source": "magic_items",
+    "target": "appendix_a",
+    "desc": "Appendix A contains the descriptions of magic items",
+    "source_node": "Treasure"
+  },
+  {
+    "relation": "leads_to",
+    "source": "ship_at_sea",
+    "target": "stormwreck_isle",
+    "desc": "The ship travels toward Stormwreck Isle",
+    "source_node": "Voyage to Stormwreck Isle"
+  },
+  {
+    "relation": "leads_to",
+    "source": "neverwinter",
+    "target": "stormwreck_isle",
+    "desc": "The party is traveling from Neverwinter to Stormwreck Isle",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "monster",
+    "target": "deck",
+    "desc": "The monster moves onto the deck, indicating proximity to this location",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "owns",
+    "source": "scaled_queen",
+    "target": "unknown_location",
+    "desc": "These waters belong to the Scaled Queen, indicating ownership",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "serves",
+    "source": "merrow_extortionist",
+    "target": "scaled_queen",
+    "desc": "The Merrow Extortionist demands tribute to the Scaled Queen, implying allegiance or servitude to her",
+    "source_node": "Negotiate with the Merrow"
+  },
+  {
+    "relation": "attacks",
+    "source": "players_group",
+    "target": "merrow_extortionist",
+    "desc": "Players attack the Merrow Extortionist during combat",
+    "source_node": "Attack the Merrow"
+  },
+  {
+    "relation": "part_of",
+    "source": "sailors_group",
+    "target": "ship",
+    "desc": "Sailors are aboard the ship",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "merrow",
+    "target": "ocean_deeps",
+    "desc": "The merrow disappears into the ocean deeps",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "inhabits",
+    "source": "runara",
+    "target": "dragon_s_rest",
+    "desc": "Runara resides in Dragon's Rest",
+    "source_node": "Chapter 1: Dragon's Rest"
+  },
+  {
+    "relation": "part_of",
+    "source": "cloister",
+    "target": "dragon_s_rest",
+    "desc": "The cloister is part of Dragon's Rest",
+    "source_node": "Welcome to Dragon's Rest"
+  },
+  {
+    "relation": "connected_to",
+    "source": "boat",
+    "target": "cloister",
+    "desc": "The boat is adjacent to the cloister, allowing visibility from the water",
+    "source_node": "Welcome to Dragon's Rest"
+  },
+  {
+    "relation": "part_of",
+    "source": "harbor",
+    "target": "dragon_s_rest",
+    "desc": "The harbor is situated on the island",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "temple",
+    "target": "dragon_s_rest",
+    "desc": "The temple is built on the island",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "leads_to",
+    "source": "path",
+    "target": "temple",
+    "desc": "The winding path ascends to the temple",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "connected_to",
+    "source": "dock",
+    "target": "harbor",
+    "desc": "The dock is within the harbor",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "tied_to",
+    "source": "rowboat",
+    "target": "dock",
+    "desc": "The rowboat is secured to the dock",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "connected_to",
+    "source": "zombies_from_shipwreck",
+    "target": "path_upward",
+    "desc": "The zombies are encountered on the upward path",
+    "source_node": "Drowned Sailors"
+  },
+  {
+    "relation": "connected_to",
+    "source": "beach",
+    "target": "water_edge",
+    "desc": "The beach is adjacent to the water's edge",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "attacks",
+    "source": "sacred_flame_cantrip",
+    "target": "zombies",
+    "desc": "Sacred Flame cantrip deals radiant damage to zombies, allowing it to bypass Undead Fortitude",
+    "source_node": "Tip: Undead Fortitude"
+  },
+  {
+    "relation": "part_of",
+    "source": "temple_a5",
+    "target": "dragon_s_rest",
+    "desc": "The temple (area A5) is located within Dragon's Rest",
+    "source_node": "Runara's Aid"
+  },
+  {
+    "relation": "avoids",
+    "source": "player_characters",
+    "target": "zombies",
+    "desc": "Players evade combat with zombies",
+    "source_node": "Avoiding the Zombies"
+  },
+  {
+    "relation": "part_of",
+    "source": "area_a1",
+    "target": "dragon_s_rest",
+    "desc": "Monastic cells are part of the cloister",
+    "source_node": "Meeting the Inhabitants"
+  },
+  {
+    "relation": "part_of",
+    "source": "area_a3",
+    "target": "dragon_s_rest",
+    "desc": "Dining room is part of the cloister",
+    "source_node": "Meeting the Inhabitants"
+  },
+  {
+    "relation": "part_of",
+    "source": "area_a5",
+    "target": "dragon_s_rest",
+    "desc": "Temple is part of the cloister",
+    "source_node": "Meeting the Inhabitants"
+  },
+  {
+    "relation": "commands",
+    "source": "runara",
+    "target": "dragon_s_rest",
+    "desc": "Runara is the leader of the cloister",
+    "source_node": "Meeting the Inhabitants"
+  },
+  {
+    "relation": "inhabits",
+    "source": "kobolds_cloister",
+    "target": "area_a1",
+    "desc": "Kobolds reside in the monastic cells",
+    "source_node": "Meeting the Inhabitants"
+  },
+  {
+    "relation": "inhabits",
+    "source": "myla",
+    "target": "dragon_s_rest",
+    "desc": "Myla operates within the cloister",
+    "source_node": "Meeting the Inhabitants"
+  },
+  {
+    "relation": "inhabits",
+    "source": "kobolds_group",
+    "target": "cloister",
+    "desc": "The kobolds reside within the cloister",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "connected_to",
+    "source": "humans_watching",
+    "target": "cloister",
+    "desc": "Humans observe the cloister from a distance",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "cloister",
+    "target": "dragon_s_rest",
+    "desc": "The cloister is part of Dragon's Rest",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "inhabits",
+    "source": "elderly_human_woman",
+    "target": "dragon_s_rest",
+    "desc": "The elderly human woman resides at Dragon's Rest",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "kobolds_group",
+    "target": "cloister",
+    "desc": "The kobolds are located within the cloister",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "wears",
+    "source": "elderly_human_woman",
+    "target": "white_robe",
+    "desc": "The elderly human woman is wearing a simple white robe",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "inhabits",
+    "source": "runara",
+    "target": "cave_secret_lair",
+    "desc": "Runara hides in her secret underground lair",
+    "source_node": "Elder Runara"
+  },
+  {
+    "relation": "connected_to",
+    "source": "cave_secret_lair",
+    "target": "undersea_tunnel",
+    "desc": "Secret lair accesses the undersea tunnel",
+    "source_node": "Elder Runara"
+  },
+  {
+    "relation": "connected_to",
+    "source": "undersea_tunnel",
+    "target": "ocean",
+    "desc": "Tunnel opens to the open ocean",
+    "source_node": "Elder Runara"
+  },
+  {
+    "relation": "part_of",
+    "source": "area_a5",
+    "target": "dragon_s_rest",
+    "desc": "Temple at area A5 is part of Dragon's Rest",
+    "source_node": "Elder Runara"
+  },
+  {
+    "relation": "part_of",
+    "source": "cloister",
+    "target": "dragon_s_rest",
+    "desc": "Cloister exists within Dragon's Rest complex",
+    "source_node": "Elder Runara"
+  },
+  {
+    "relation": "commanded_by",
+    "source": "inhabitants_of_cloister",
+    "target": "runara",
+    "desc": "Runara oversees the cloister residents",
+    "source_node": "Elder Runara"
+  },
+  {
+    "relation": "guarded_by",
+    "source": "dragon_s_rest",
+    "target": "runara",
+    "desc": "Runara protects the cloister residents",
+    "source_node": "Elder Runara"
+  },
+  {
+    "relation": "inhabits",
+    "source": "dragon_s_rest",
+    "target": "agga",
+    "desc": "Agga resides at Dragon's Rest",
+    "source_node": "Kobolds"
+  },
+  {
+    "relation": "inhabits",
+    "source": "dragon_s_rest",
+    "target": "blepp",
+    "desc": "Blepp resides at Dragon's Rest",
+    "source_node": "Kobolds"
+  },
+  {
+    "relation": "inhabits",
+    "source": "dragon_s_rest",
+    "target": "frub",
+    "desc": "Frub resides at Dragon's Rest",
+    "source_node": "Kobolds"
+  },
+  {
+    "relation": "inhabits",
+    "source": "dragon_s_rest",
+    "target": "kilnip",
+    "desc": "Kilnip resides at Dragon's Rest",
+    "source_node": "Kobolds"
+  },
+  {
+    "relation": "inhabits",
+    "source": "dragon_s_rest",
+    "target": "laylee",
+    "desc": "Laylee resides at Dragon's Rest",
+    "source_node": "Kobolds"
+  },
+  {
+    "relation": "inhabits",
+    "source": "dragon_s_rest",
+    "target": "mumpo",
+    "desc": "Mumpo resides at Dragon's Rest",
+    "source_node": "Kobolds"
+  },
+  {
+    "relation": "allied_with",
+    "source": "dragon_s_rest",
+    "target": "runara",
+    "desc": "The kobolds of Dragon's Rest share Runara's ideals of justice and compassion",
+    "source_node": "Kobolds"
+  },
+  {
+    "relation": "serves",
+    "source": "laylee",
+    "target": "myla",
+    "desc": "Laylee serves as Myla's helper",
+    "source_node": "Kobolds"
+  },
+  {
+    "relation": "commands",
+    "source": "agga",
+    "target": "blepp",
+    "desc": "Agga keeps the rest of the kobolds organized and in line",
+    "source_node": "Kobolds"
+  },
+  {
+    "relation": "commands",
+    "source": "agga",
+    "target": "frub",
+    "desc": "Agga keeps the rest of the kobolds organized and in line",
+    "source_node": "Kobolds"
+  },
+  {
+    "relation": "commands",
+    "source": "agga",
+    "target": "kilnip",
+    "desc": "Agga keeps the rest of the kobolds organized and in line",
+    "source_node": "Kobolds"
+  },
+  {
+    "relation": "commands",
+    "source": "agga",
+    "target": "mumpo",
+    "desc": "Agga keeps the rest of the kobolds organized and in line",
+    "source_node": "Kobolds"
+  },
+  {
+    "relation": "stores_in",
+    "source": "mylas_alchemical_fire",
+    "target": "myla",
+    "desc": "Myla possesses the alchemical fire",
+    "source_node": "Kobolds"
+  },
+  {
+    "relation": "commands",
+    "source": "varneth",
+    "target": "azure_wolves",
+    "desc": "Varnoth commanded the Azure Wolves",
+    "source_node": "Varnoth"
+  },
+  {
+    "relation": "inhabits",
+    "source": "varneth",
+    "target": "dragons_rest",
+    "desc": "Varnoth resides at Dragon's Rest",
+    "source_node": "Varnoth"
+  },
+  {
+    "relation": "state_guards",
+    "source": "varneth",
+    "target": "temple",
+    "desc": "Varnoth maintains the temple",
+    "source_node": "Varnoth"
+  },
+  {
+    "relation": "leads_to",
+    "source": "rocky_shore",
+    "target": "path_up_cliff_side",
+    "desc": "The path begins at the rocky shore",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "connected_to",
+    "source": "garden_plots",
+    "target": "path_up_cliff_side",
+    "desc": "Garden plots are positioned along the lower portion of the path",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "leads_to",
+    "source": "path_up_cliff_side",
+    "target": "plaza_above_bay",
+    "desc": "The path widens into the plaza above the bay",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "stone_statue_of_dragon",
+    "target": "plaza_above_bay",
+    "desc": "The stone statue is located within the plaza",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "describes",
+    "source": "dragon_statue",
+    "target": "astalagan",
+    "desc": "The dragon statue depicts Astalagan, a bronze dragon",
+    "source_node": "Statue"
+  },
+  {
+    "relation": "parent_of",
+    "source": "astalagan",
+    "target": "runara",
+    "desc": "Astalagan is the biological father of Runara",
+    "source_node": "Statue"
+  },
+  {
+    "relation": "part_of",
+    "source": "winch",
+    "target": "winch_house",
+    "desc": "The winch is located inside the winch house",
+    "source_node": "A2: Winch House"
+  },
+  {
+    "relation": "connected_to",
+    "source": "winch",
+    "target": "pallet",
+    "desc": "The winch is mechanically connected to the pallet",
+    "source_node": "A2: Winch House"
+  },
+  {
+    "relation": "part_of",
+    "source": "lever",
+    "target": "winch",
+    "desc": "The lever is physically part of the winch",
+    "source_node": "A2: Winch House"
+  },
+  {
+    "relation": "inhabits",
+    "source": "residents",
+    "target": "cloister",
+    "desc": "The residents reside in the cloister",
+    "source_node": "A2: Winch House"
+  },
+  {
+    "relation": "connected_to",
+    "source": "building_halfway_path",
+    "target": "path_location",
+    "desc": "The building is situated halfway up the path",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "connected_to",
+    "source": "building_halfway_path",
+    "target": "iron_chain",
+    "desc": "An iron chain is attached to the building",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "connected_to",
+    "source": "iron_chain",
+    "target": "wooden_pallet_wrapped_rope",
+    "desc": "The iron chain holds the pallet",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "connected_to",
+    "source": "wooden_pallet_wrapped_rope",
+    "target": "cliff_face",
+    "desc": "The pallet lies flat against the cliff face",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "cloister_residents",
+    "target": "kitchen",
+    "desc": "The cloister residents associate with the kitchen (implied by the context of sharing meals)",
+    "source_node": "A3: Kitchen"
+  },
+  {
+    "relation": "part_of",
+    "source": "long_table",
+    "target": "dining_room",
+    "desc": "The long table is located within the dining room",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "benches",
+    "target": "dining_room",
+    "desc": "The benches are located within the dining room",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "chair",
+    "target": "dining_room",
+    "desc": "The chair is located within the dining room",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "connected_to",
+    "source": "hallway",
+    "target": "kitchen",
+    "desc": "The hallway directly connects to the kitchen",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "runara",
+    "target": "cloister_library",
+    "desc": "Runara spends nearly half her time in the library",
+    "source_node": "A4: Library"
+  },
+  {
+    "relation": "part_of",
+    "source": "tarak",
+    "target": "cloister_library",
+    "desc": "Tarak comes to the library to read",
+    "source_node": "A4: Library"
+  },
+  {
+    "relation": "part_of",
+    "source": "varnonth",
+    "target": "cloister_library",
+    "desc": "Varnoth comes to the library to read",
+    "source_node": "A4: Library"
+  },
+  {
+    "relation": "part_of",
+    "source": "myla",
+    "target": "cloister_library",
+    "desc": "Myla visits the library and is described as studious",
+    "source_node": "A4: Library"
+  },
+  {
+    "relation": "part_of",
+    "source": "kobolds",
+    "target": "cloister_library",
+    "desc": "Many kobolds visit the library primarily for quiet",
+    "source_node": "A4: Library"
+  },
+  {
+    "relation": "part_of",
+    "source": "open_air_temple",
+    "target": "cloister",
+    "desc": "Open-air temple is part of the cloister",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "connected_to",
+    "source": "open_air_temple",
+    "target": "cliff_face",
+    "desc": "Temple is connected to the cliff face via carved walls",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "supports",
+    "source": "heavy_pillars",
+    "target": "wooden_roof",
+    "desc": "Pillars support the wooden roof",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "positioned_at",
+    "source": "stone_statue_old_man",
+    "target": "open_air_temple",
+    "desc": "Statue is centrally located in the temple",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "perched_on",
+    "source": "canaries_perching_on_statue",
+    "target": "stone_statue_old_man",
+    "desc": "Canaries perch on the statue",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "inhabits",
+    "source": "residents_of_dragon_s_rest",
+    "target": "dragon_s_rest",
+    "desc": "The residents of Dragon's Rest reside in the location",
+    "source_node": "Cloister Quests"
+  },
+  {
+    "relation": "interacts_with",
+    "source": "runara",
+    "target": "residents_of_dragon_s_rest",
+    "desc": "Runara interacts with the other residents of Dragon's Rest",
+    "source_node": "Cloister Quests"
+  },
+  {
+    "relation": "connected_to",
+    "source": "dragon_s_rest",
+    "target": "seagrow_caves",
+    "desc": "Dragon's Rest is adjacent to Seagrow Caves",
+    "source_node": "Cloister Quests"
+  },
+  {
+    "relation": "connected_to",
+    "source": "dragon_s_rest",
+    "target": "compass_rose",
+    "desc": "Dragon's Rest is adjacent to Compass Rose (shipwreck)",
+    "source_node": "Cloister Quests"
+  },
+  {
+    "relation": "leads_to",
+    "source": "seagrow_caves",
+    "target": "cliff_top_observatory",
+    "desc": "Exploration of Seagrow Caves connects to the Clifftop Observatory",
+    "source_node": "Cloister Quests"
+  },
+  {
+    "relation": "leads_to",
+    "source": "compass_rose",
+    "target": "cliff_top_observatory",
+    "desc": "Exploration of Compass Rose (shipwreck) connects to the Clifftop Observatory",
+    "source_node": "Cloister Quests"
+  },
+  {
+    "relation": "attacks",
+    "source": "zombies",
+    "target": "blepp_the_kobold",
+    "desc": "Zombies attack Blepp the kobold",
+    "source_node": "Zombie Resurgence"
+  },
+  {
+    "relation": "attacks",
+    "source": "zombies",
+    "target": "tarak_the_human_gardener",
+    "desc": "Zombies attack Tarak the human gardener",
+    "source_node": "Zombie Resurgence"
+  },
+  {
+    "relation": "gives_quest_to",
+    "source": "runara",
+    "target": "shipwreck",
+    "desc": "Runara assigns a quest to investigate the shipwreck",
+    "source_node": "Zombie Resurgence"
+  },
+  {
+    "relation": "inhabits",
+    "source": "resident_1",
+    "target": "dragon_s_rest",
+    "desc": "One of the villagers resides in Dragon's Rest",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "inhabits",
+    "source": "resident_2",
+    "target": "dragon_s_rest",
+    "desc": "Another villager resides in Dragon's Rest",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "leaves_behind",
+    "source": "resident_1",
+    "target": "fishing_equipment",
+    "desc": "Villager abandons fishing gear during escape",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "leaves_behind",
+    "source": "resident_2",
+    "target": "fishing_equipment",
+    "desc": "Second villager abandons fishing gear during escape",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "pursues",
+    "source": "zombies_as_sailors",
+    "target": "resident_1",
+    "desc": "Undead sailors chase the fleeing villager",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "pursues",
+    "source": "zombies_as_sailors",
+    "target": "resident_2",
+    "desc": "Undead sailors pursue the second villager",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "inhabits",
+    "source": "zombies_on_island",
+    "target": "unknown_island",
+    "desc": "Zombies reside on the island",
+    "source_node": "More Zombies"
+  },
+  {
+    "relation": "guards",
+    "source": "fungal_octopus",
+    "target": "sea_caves",
+    "desc": "The fungal octopus protects the sea caves",
+    "source_node": "Sea Caves"
+  },
+  {
+    "relation": "inhabits",
+    "source": "myconids",
+    "target": "sea_caves",
+    "desc": "The myconids dwell within the sea caves",
+    "source_node": "Sea Caves"
+  },
+  {
+    "relation": "connected_to",
+    "source": "rocks_north_of_dragon_s_rest",
+    "target": "dragon_s_rest",
+    "desc": "The rocks north of Dragon's Rest are adjacent to the town",
+    "source_node": "Shipwreck"
+  },
+  {
+    "relation": "gives_quest_to",
+    "source": "runara",
+    "target": "compass_rose_wreck",
+    "desc": "Runara directs adventurers to investigate the wreck of Compass Rose",
+    "source_node": "Shipwreck"
+  },
+  {
+    "relation": "gives_quest_to",
+    "source": "runara",
+    "target": "compass_rose_wreck",
+    "desc": "Runara directs the character to investigate the wreck of Compass Rose after discussing the dream",
+    "source_node": "The Cleric"
+  },
+  {
+    "relation": "part_of",
+    "source": "cloister",
+    "target": "dragon_s_rest",
+    "desc": "The cloister is part of Dragon's Rest",
+    "source_node": "The Fighter"
+  },
+  {
+    "relation": "part_of",
+    "source": "paladin",
+    "target": "dragons_rest",
+    "desc": "The paladin comes to Dragon's Rest seeking rest",
+    "source_node": "The Paladin"
+  },
+  {
+    "relation": "part_of",
+    "source": "paladin",
+    "target": "temple_of_bahamut",
+    "desc": "The paladin spends time in the temple of Bahamut",
+    "source_node": "The Paladin"
+  },
+  {
+    "relation": "part_of",
+    "source": "runara",
+    "target": "dragons_rest",
+    "desc": "Runara welcomes the paladin at Dragon's Rest",
+    "source_node": "The Paladin"
+  },
+  {
+    "relation": "recommends",
+    "source": "runara",
+    "target": "tarak",
+    "desc": "Runara encourages the paladin to talk to Tarak",
+    "source_node": "The Paladin"
+  },
+  {
+    "relation": "recommends",
+    "source": "runara",
+    "target": "varnoth",
+    "desc": "Runara encourages the paladin to talk to Varnoth",
+    "source_node": "The Paladin"
+  },
+  {
+    "relation": "serves",
+    "source": "tarak",
+    "target": "gilded_gallows",
+    "desc": "Tarak was a member of the Gilded Gallows before betraying them",
+    "source_node": "The Rogue"
+  },
+  {
+    "relation": "stored_in",
+    "source": "lost_fortune",
+    "target": "island",
+    "desc": "The lost fortune is alleged to be hidden on the island",
+    "source_node": "The Rogue"
+  },
+  {
+    "relation": "inhabits",
+    "source": "runara",
+    "target": "dragon_s_rest",
+    "desc": "Runara resides at Dragon's Rest",
+    "source_node": "Lost Wyrmling"
+  },
+  {
+    "relation": "gives_quest_to",
+    "source": "runara",
+    "target": "moonstone_key",
+    "desc": "Runara provides the moonstone key to the characters",
+    "source_node": "Lost Wyrmling"
+  },
+  {
+    "relation": "moves_toward",
+    "source": "aidron",
+    "target": "ancient_observatory",
+    "desc": "Aidron fled toward the ancient observatory",
+    "source_node": "Lost Wyrmling"
+  },
+  {
+    "relation": "leads_to",
+    "source": "dragon_s_rest",
+    "target": "ancient_observatory",
+    "desc": "The ancient observatory is a second dragon's resting place near Dragon's Rest",
+    "source_node": "Lost Wyrmling"
+  },
+  {
+    "relation": "part_of",
+    "source": "zombies_encountered",
+    "target": "shipwreck",
+    "desc": "Zombies were encountered at the shipwreck",
+    "source_node": "Lost Wyrmling"
+  },
+  {
+    "relation": "part_of",
+    "source": "dragon_s_rest",
+    "target": "stormwreck_isle",
+    "desc": "Dragon's Rest is part of Stormwreck Isle",
+    "source_node": "Exploring the Island"
+  },
+  {
+    "relation": "part_of",
+    "source": "adventure_location_1",
+    "target": "stormwreck_isle",
+    "desc": "One of the adventure locations is part of Stormwreck Isle",
+    "source_node": "Exploring the Island"
+  },
+  {
+    "relation": "part_of",
+    "source": "adventure_location_2",
+    "target": "stormwreck_isle",
+    "desc": "Another adventure location is part of Stormwreck Isle",
+    "source_node": "Exploring the Island"
+  },
+  {
+    "relation": "part_of",
+    "source": "adventure_location_3",
+    "target": "stormwreck_isle",
+    "desc": "A third adventure location is part of Stormwreck Isle",
+    "source_node": "Exploring the Island"
+  },
+  {
+    "relation": "guards",
+    "source": "fume_drake_guardians",
+    "target": "hot_spring",
+    "desc": "The Fume Drake guardians protect the hot spring",
+    "source_node": "Hot Springs Havoc"
+  },
+  {
+    "relation": "located_near",
+    "source": "island",
+    "target": "hot_spring",
+    "desc": "The hot spring is situated on/in the island",
+    "source_node": "Hot Springs Havoc"
+  },
+  {
+    "relation": "interacts_with",
+    "source": "mushrooms",
+    "target": "fume_drake_guardians",
+    "desc": "Attempting to gather mushrooms provokes the Fume Drake guardians to attack",
+    "source_node": "Hot Springs Havoc"
+  },
+  {
+    "relation": "inhabits",
+    "source": "brass_dragon",
+    "target": "spring_waters",
+    "desc": "The brass dragon resided at the spring before its death",
+    "source_node": "Spring Waters"
+  },
+  {
+    "relation": "part_of",
+    "source": "wind_spore",
+    "target": "spring",
+    "desc": "Wind spores are found in association with the spring",
+    "source_node": "Treasure"
+  },
+  {
+    "relation": "inhabits",
+    "source": "owlbear",
+    "target": "northern_rocks",
+    "desc": "The owlbear resides in the northern rocks after being stranded there",
+    "source_node": "There, There, Owlbear"
+  },
+  {
+    "relation": "serves",
+    "source": "owlbear",
+    "target": "performing_troupe",
+    "desc": "The owlbear was formerly a member of the performing troupe",
+    "source_node": "There, There, Owlbear"
+  },
+  {
+    "relation": "stored_in",
+    "source": "whistle",
+    "target": "owlbear",
+    "desc": "The whistle is attached to the owlbear's neck",
+    "source_node": "There, There, Owlbear"
+  },
+  {
+    "relation": "part_of",
+    "source": "performing_troupe",
+    "target": "island",
+    "desc": "The performing troupe originated from the island (implied by characters traveling across it)",
+    "source_node": "There, There, Owlbear"
+  },
+  {
+    "relation": "rejects",
+    "source": "kobold_renegades_group",
+    "target": "runara",
+    "desc": "The kobold renegades reject the peaceful teaching of Runara",
+    "source_node": "Kobold Renegades"
+  },
+  {
+    "relation": "rejects",
+    "source": "kobold_renegades_group",
+    "target": "sparkrender",
+    "desc": "The kobold renegades reject the tyrannical rule of Sparkrender",
+    "source_node": "Kobold Renegades"
+  },
+  {
+    "relation": "attacks",
+    "source": "kobold_renegades_group",
+    "target": "<unknown>",
+    "desc": "The kobold renegades attempt to ambush and attack travelers",
+    "source_node": "Kobold Renegades"
+  },
+  {
+    "relation": "resides_near",
+    "source": "dragon_s_rest",
+    "target": "kobold_renegades_group",
+    "desc": "The kobold renegades prey on travelers who stray away from Dragon's Rest",
+    "source_node": "Kobold Renegades"
+  },
+  {
+    "relation": "attacks",
+    "source": "kobolds_emerging_from_hiding_places",
+    "target": "undefined_target",
+    "desc": "The kobolds attack the player (implied target not explicitly defined in text)",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "none",
+    "source": "null",
+    "target": "null",
+    "desc": "No explicit relationships defined in the text",
+    "source_node": "3rd-Level Characters"
+  },
+  {
+    "relation": "part_of",
+    "source": "seagrow_caves",
+    "target": "stormwreck_isle",
+    "desc": "Seagrow Caves are part of Stormwreck Isle",
+    "source_node": "What Lies Beneath"
+  },
+  {
+    "relation": "stores_in",
+    "source": "sharruth",
+    "target": "stormwreck_isle",
+    "desc": "Sharruth is imprisoned beneath Stormwreck Isle",
+    "source_node": "What Lies Beneath"
+  },
+  {
+    "relation": "inhabits",
+    "source": "fume_drake",
+    "target": "seagrow_caves",
+    "desc": "Fume drakes lurk in Seagrow Caves",
+    "source_node": "What Lies Beneath"
+  },
+  {
+    "relation": "inhabits",
+    "source": "fire_snake",
+    "target": "seagrow_caves",
+    "desc": "Fire snakes lurk in Seagrow Caves",
+    "source_node": "What Lies Beneath"
+  },
+  {
+    "relation": "serves",
+    "source": "kobolds_serving_sharruth",
+    "target": "sharruth",
+    "desc": "Kobolds serve Sharruth",
+    "source_node": "What Lies Beneath"
+  },
+  {
+    "relation": "part_of",
+    "source": "seagrow_caves",
+    "target": "stormwreck_isle",
+    "desc": "Seagrow Caves are located on the southwest side of Stormwreck Isle",
+    "source_node": "Caves Overview"
+  },
+  {
+    "relation": "inhabits",
+    "source": "myconids_colony",
+    "target": "seagrow_caves",
+    "desc": "Myconids colonize the caves",
+    "source_node": "Caves Overview"
+  },
+  {
+    "relation": "trading_exchange",
+    "source": "myconids_colony",
+    "target": "tarak",
+    "desc": "Myconids give rare fungi to Tarak in exchange for waste",
+    "source_node": "Caves Overview"
+  },
+  {
+    "relation": "originates_from",
+    "source": "tomb_of_sharruth",
+    "target": "seagrow_caves",
+    "desc": "Blighted fumes from the tomb spill into the caves",
+    "source_node": "Caves Overview"
+  },
+  {
+    "relation": "protects",
+    "source": "myconids_colony",
+    "target": "guarded_monster",
+    "desc": "Myconids placed a guardian to block access to their caves",
+    "source_node": "Caves Overview"
+  },
+  {
+    "relation": "threatens",
+    "source": "stirges",
+    "target": "visitors",
+    "desc": "Stirges pose a danger to intruders in the caves",
+    "source_node": "Caves Overview"
+  },
+  {
+    "relation": "stores_in",
+    "source": "cloister",
+    "target": "myconids_colony",
+    "desc": "Food scraps and waste from the cloister nourish the fungi",
+    "source_node": "Caves Overview"
+  },
+  {
+    "relation": "originates_from",
+    "source": "seagrow_caves_walls_material",
+    "target": "sharruth_undersea_tomb",
+    "desc": "The basalt forming the cave walls originated from Sharruth's undersea tomb",
+    "source_node": "Seagrow Caves Features"
+  },
+  {
+    "relation": "part_of",
+    "source": "area_b6",
+    "target": "seagrow_caves",
+    "desc": "Area B6 is a subsection of the Seagrow Caves",
+    "source_node": "Seagrow Caves Features"
+  },
+  {
+    "relation": "illuminates",
+    "source": "bioluminescent_fungi",
+    "target": "seagrow_caves",
+    "desc": "Bioluminescent fungi provide dim light throughout the caves",
+    "source_node": "Seagrow Caves Features"
+  },
+  {
+    "relation": "causes_condition",
+    "source": "toxic_volcanic_fumes",
+    "target": "poisoned_state",
+    "desc": "Toxic fumes cause a poisonous condition upon exposure",
+    "source_node": "Seagrow Caves Features"
+  },
+  {
+    "relation": "removes_condition",
+    "source": "lesser_restoration_spell",
+    "target": "poisoned_state",
+    "desc": "Lesser restoration spell ends the poison condition",
+    "source_node": "Seagrow Caves Features"
+  },
+  {
+    "relation": "triggers_effect",
+    "source": "long_rest_in_seagrow_caves",
+    "target": "poisoned_state",
+    "desc": "Taking a long rest in the caves before opening B6's vent may trigger poisoning",
+    "source_node": "Seagrow Caves Features"
+  },
+  {
+    "relation": "connected_to",
+    "source": "dragon_s_rest",
+    "target": "seagrow_caves",
+    "desc": "Characters can take a rowboat from Dragon's Rest to reach Seagrow Caves.",
+    "source_node": "Running This Chapter"
+  },
+  {
+    "relation": "stored_in",
+    "source": "rowboat",
+    "target": "dragon_s_rest",
+    "desc": "The rowboat is available at Dragon's Rest.",
+    "source_node": "Running This Chapter"
+  },
+  {
+    "relation": "connected_to",
+    "source": "dark_gray_cliff",
+    "target": "gaping_cave",
+    "desc": "The cliff is positioned above the cave mouth where waves enter and exit",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "cliff_face_opening",
+    "target": "cliff_face",
+    "desc": "The opening is situated in the cliff face",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "connected_to",
+    "source": "area_b1",
+    "target": "area_b2",
+    "desc": "Flooding allows access from area B1 to area B2",
+    "source_node": "Entering the Caves"
+  },
+  {
+    "relation": "connected_to",
+    "source": "cliffs",
+    "target": "sea",
+    "desc": "Natural stairways descend from cliffs into the sea",
+    "source_node": "Entering the Caves"
+  },
+  {
+    "relation": "connected_to",
+    "source": "pathway_low_tide",
+    "target": "cliffs",
+    "desc": "Pathway follows base of cliffs during low tide",
+    "source_node": "Entering the Caves"
+  },
+  {
+    "relation": "connected_to",
+    "source": "pathway_low_tide",
+    "target": "area_b1",
+    "desc": "Pathway runs along edge of tunnel during low tide",
+    "source_node": "Entering the Caves"
+  },
+  {
+    "relation": "part_of",
+    "source": "myconid",
+    "target": "cave",
+    "desc": "The myconid's activity is tied to the cave environment",
+    "source_node": "Rapport Spores"
+  },
+  {
+    "relation": "spatial_connected_to",
+    "source": "cave",
+    "target": "characters",
+    "desc": "Communication effect extends beyond the cave boundary",
+    "source_node": "Rapport Spores"
+  },
+  {
+    "relation": "leads_to",
+    "source": "area_b2",
+    "target": "area_b4",
+    "desc": "Myconids in area B2 move to area B4 when detecting distress spores",
+    "source_node": "Distress Spores"
+  },
+  {
+    "relation": "leads_to",
+    "source": "area_b3",
+    "target": "area_b4",
+    "desc": "Myconids in area B3 move to area B4 when detecting distress spores",
+    "source_node": "Distress Spores"
+  },
+  {
+    "relation": "stored_in",
+    "source": "multicolored_fungus",
+    "target": "tunnel",
+    "desc": "The multicolored fungus is contained within the tunnel",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "stored_in",
+    "source": "water",
+    "target": "cavern",
+    "desc": "The water is contained within the cavern",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "stored_in",
+    "source": "colorful_spores",
+    "target": "water",
+    "desc": "The colorful spores are suspended in the water",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "stirges_clinging_tunnel_ceiling",
+    "target": "tunnel_ceiling",
+    "desc": "The stirges are clinging to the tunnel ceiling",
+    "source_node": "2nd-Level Characters"
+  },
+  {
+    "relation": "connected_to",
+    "source": "cavern",
+    "target": "upper_cave_area",
+    "desc": "A natural staircase leads from the cavern to the upper cave area",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "large_pool",
+    "target": "upper_cave_area",
+    "desc": "Water collects in the large pool within the upper cave area",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "connected_to",
+    "source": "mushroom_like_people",
+    "target": "large_pool",
+    "desc": "Two mushroom-like people work near the large pool",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "mushroom",
+    "target": "cave",
+    "desc": "The mushroom is located within the cave",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "inhabits",
+    "source": "violet_fungus_1",
+    "target": "fungus_farm",
+    "desc": "The active violet fungus resides in the fungus farm",
+    "source_node": "Running the Combat"
+  },
+  {
+    "relation": "inhabits",
+    "source": "violet_fungus_2",
+    "target": "fungus_farm",
+    "desc": "An inactive violet fungus resides in the fungus farm",
+    "source_node": "Running the Combat"
+  },
+  {
+    "relation": "inhabits",
+    "source": "violet_fungus_3",
+    "target": "fungus_farm",
+    "desc": "Another inactive violet fungus resides in the fungus farm",
+    "source_node": "Running the Combat"
+  },
+  {
+    "relation": "part_of",
+    "source": "stirge_nest",
+    "target": "b3_larder",
+    "desc": "The stirge nest is physically located in the larder",
+    "source_node": "B3: Larder"
+  },
+  {
+    "relation": "inhabits",
+    "source": "bispo_myconid_sprout",
+    "target": "b3_larder",
+    "desc": "One of the Myconid Sprouts resides in the larder",
+    "source_node": "B3: Larder"
+  },
+  {
+    "relation": "inhabits",
+    "source": "valup_myconid_sprout",
+    "target": "b3_larder",
+    "desc": "Another Myconid Sprout resides in the larder",
+    "source_node": "B3: Larder"
+  },
+  {
+    "relation": "inhabits",
+    "source": "popple_myconid_sprout",
+    "target": "b3_larder",
+    "desc": "The third Myconid Sprout resides in the larder",
+    "source_node": "B3: Larder"
+  },
+  {
+    "relation": "connected_to",
+    "source": "b3_larder",
+    "target": "b4_area",
+    "desc": "The larder is spatially adjacent to area B4",
+    "source_node": "B3: Larder"
+  },
+  {
+    "relation": "attacks",
+    "source": "stirge_nest",
+    "target": "unknown",
+    "desc": "Six Stirge emerge from the nest and attack intruders",
+    "source_node": "B3: Larder"
+  },
+  {
+    "relation": "inhabits",
+    "source": "mushroom_folk_group",
+    "target": "decaying_cave",
+    "desc": "The mushroom-folk work amid the filth in the cave",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "bulbous_object",
+    "target": "decaying_cave",
+    "desc": "The bulbous object clings to the wall and ceiling of the cave",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "connected_to",
+    "source": "giant_mushrooms_clusters",
+    "target": "cavern",
+    "desc": "Six clusters of giant mushrooms are arranged in a rough circle around this cavern",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "mushroom_folk_group",
+    "target": "cavern",
+    "desc": "Several human-sized mushroom folk stand in a circle in the center of the cave",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "serves",
+    "source": "auranta",
+    "target": "sinensa",
+    "desc": "Auranta tends to Sinensa",
+    "source_node": "B5: Sinensa's Sanctum"
+  },
+  {
+    "relation": "serves",
+    "source": "enok",
+    "target": "sinensa",
+    "desc": "Enok tends to Sinensa",
+    "source_node": "B5: Sinensa's Sanctum"
+  },
+  {
+    "relation": "collects_spores_from",
+    "source": "auranta",
+    "target": "glowing_red_fungus",
+    "desc": "Auranta collects spores from the glowing red fungus",
+    "source_node": "B5: Sinensa's Sanctum"
+  },
+  {
+    "relation": "collects_spores_from",
+    "source": "enok",
+    "target": "glowing_red_fungus",
+    "desc": "Enok collects spores from the glowing red fungus",
+    "source_node": "B5: Sinensa's Sanctum"
+  },
+  {
+    "relation": "guards",
+    "source": "auranta",
+    "target": "sinensa",
+    "desc": "Auranta defends Sinensa",
+    "source_node": "B5: Sinensa's Sanctum"
+  },
+  {
+    "relation": "guards",
+    "source": "enok",
+    "target": "sinensa",
+    "desc": "Enok defends Sinensa",
+    "source_node": "B5: Sinensa's Sanctum"
+  },
+  {
+    "relation": "attacks",
+    "source": "auranta",
+    "target": "unaccompanied_intruders",
+    "desc": "Auranta attacks intruders not accompanied by other myconids",
+    "source_node": "B5: Sinensa's Sanctum"
+  },
+  {
+    "relation": "attacks",
+    "source": "enok",
+    "target": "unaccompanied_intruders",
+    "desc": "Enok attacks intruders not accompanied by other myconids",
+    "source_node": "B5: Sinensa's Sanctum"
+  },
+  {
+    "relation": "part_of",
+    "source": "glowing_fungus",
+    "target": "cave",
+    "desc": "Glowing fungus grows from the walls and ceilings of the cave",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "colorful_crystals",
+    "target": "cave",
+    "desc": "Colorful crystals grow from the walls and ceilings of the cave",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "inhabits",
+    "source": "mushroom_folk_01",
+    "target": "cave",
+    "desc": "A mushroom folk resides in the cave",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "inhabits",
+    "source": "mushroom_folk_02",
+    "target": "cave",
+    "desc": "Another mushroom folk resides in the cave",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "inhabits",
+    "source": "large_specimen",
+    "target": "cave",
+    "desc": "The large mushroom specimen resides in the cave",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "stored_in",
+    "source": "ruby_morel",
+    "target": "cloister",
+    "desc": "The ruby morel is brought to the cloister",
+    "source_node": "Treasure"
+  },
+  {
+    "relation": "inhabits",
+    "source": "fume_drake",
+    "target": "crystal_cave",
+    "desc": "The Fume Drake reside in the Crystal Cave",
+    "source_node": "B6: Crystal Cave"
+  },
+  {
+    "relation": "part_of",
+    "source": "tomb_of_sharruth",
+    "target": "island",
+    "desc": "The tomb of Sharruth is located beneath the island",
+    "source_node": "B6: Crystal Cave"
+  },
+  {
+    "relation": "generates",
+    "source": "tomb_of_sharruth",
+    "target": "crystal_cave",
+    "desc": "The tomb's presence causes volcanic activity producing fumes in the cave",
+    "source_node": "B6: Crystal Cave"
+  },
+  {
+    "relation": "source_of",
+    "source": "crystal_cave",
+    "target": "myconid_colony",
+    "desc": "The cave is the source of the blight spreading through the myconid colony",
+    "source_node": "B6: Crystal Cave"
+  },
+  {
+    "relation": "origins_from",
+    "source": "orange_crystal",
+    "target": "elemental_plane_of_fire",
+    "desc": "The orange crystal originates from the Elemental Plane of Fire",
+    "source_node": "B6: Crystal Cave"
+  },
+  {
+    "relation": "part_of",
+    "source": "orange_glowing_crystal",
+    "target": "fissure_in_cave_wall",
+    "desc": "The glowing orange crystal is wedged into the fissure",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "fissure_in_cave_wall",
+    "target": "cave",
+    "desc": "The fissure is located in the cave wall",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "connected_to",
+    "source": "purple_crystal_cluster",
+    "target": "fissure_in_cave_wall",
+    "desc": "Soot traces a path between the purple crystals and the fissure",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "connected_to",
+    "source": "orange_crystal",
+    "target": "western_fissure",
+    "desc": "The orange crystal blocks the western fissure",
+    "source_node": "Fire Crystal"
+  },
+  {
+    "relation": "part_of",
+    "source": "orange_crystal",
+    "target": "cave",
+    "desc": "The orange crystal is found in the cave",
+    "source_node": "Fire Crystal"
+  },
+  {
+    "relation": "attacks",
+    "source": "fire_snake",
+    "target": "player_characters",
+    "desc": "The fire snake attacks the characters",
+    "source_node": "Fire Crystal"
+  },
+  {
+    "relation": "transforms_into",
+    "source": "fire_snake_egg",
+    "target": "obsidian",
+    "desc": "The fire snake's egg breaks into chunks of obsidian",
+    "source_node": "Treasure"
+  },
+  {
+    "relation": "part_of",
+    "source": "fume_drake_added_room",
+    "target": "room",
+    "desc": "The third fume drake is added to the room when characters arrive",
+    "source_node": "2nd-Level Characters"
+  },
+  {
+    "relation": "part_of",
+    "source": "fire_snake",
+    "target": "room",
+    "desc": "The fire snake is in the room",
+    "source_node": "2nd-Level Characters"
+  },
+  {
+    "relation": "stored_in",
+    "source": "fume_drake_emerged_clustern1",
+    "target": "cluster_purple_crystals",
+    "desc": "One fume drake emerges from the cluster of purple crystals",
+    "source_node": "2nd-Level Characters"
+  },
+  {
+    "relation": "stored_in",
+    "source": "fume_drake_emerged_clustern2",
+    "target": "cluster_purple_crystals",
+    "desc": "Another fume drake emerges from the cluster of purple crystals",
+    "source_node": "2nd-Level Characters"
+  },
+  {
+    "relation": "leads_to",
+    "source": "cursed_shipwreck",
+    "target": "seagrow_caves",
+    "desc": "Characters proceed to Seagrow Caves after exploring the Cursed Shipwreck",
+    "source_node": "Chapter 3: Cursed Shipwreck"
+  },
+  {
+    "relation": "connected_to",
+    "source": "wreck_of_compass_rose",
+    "target": "cloister",
+    "desc": "The wreck is located approximately 2½ miles from the cloister",
+    "source_node": "Shipwreck Features"
+  },
+  {
+    "relation": "part_of",
+    "source": "dragon_bones",
+    "target": "wreck_of_compass_rose",
+    "desc": "The wreck is held up by ancient dragon bones that tore its hull",
+    "source_node": "Shipwreck Features"
+  },
+  {
+    "relation": "part_of",
+    "source": "hold",
+    "target": "wreck_of_compass_rose",
+    "desc": "The hold is a portion of the wreck's interior space",
+    "source_node": "Shipwreck Features"
+  },
+  {
+    "relation": "has_item",
+    "source": "dragon_s_rest",
+    "target": "rowboat",
+    "desc": "Dragon's Rest possesses a rowboat for accessing Compass Rose",
+    "source_node": "Running This Chapter"
+  },
+  {
+    "relation": "part_of",
+    "source": "area_c1",
+    "target": "compass_rose",
+    "desc": "Main deck (area C1) is part of the Compass Rose wreck",
+    "source_node": "Running This Chapter"
+  },
+  {
+    "relation": "part_of",
+    "source": "area_c9",
+    "target": "compass_rose",
+    "desc": "Hold (area C9) is part of the Compass Rose wreck",
+    "source_node": "Running This Chapter"
+  },
+  {
+    "relation": "connected_to",
+    "source": "derelict_ship",
+    "target": "ridge_of_rocks",
+    "desc": "The derelict ship is lodged against the ridge of rocks",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "tattered_sails_and_rigging",
+    "target": "derelict_ship",
+    "desc": "Tattered sails and rigging hang off the starboard side of the main deck",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "leads_to",
+    "source": "staircase_near_mast",
+    "target": "upper_decks_fore_and_aft",
+    "desc": "Stairs near the mast lead to upper decks",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "leads_to",
+    "source": "doors",
+    "target": "cabins_under_upper_decks",
+    "desc": "Doors lead into cabins under upper decks",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "crows_nest",
+    "target": "mainmast",
+    "desc": "Crow's nest is topped on the mainmast",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "leads_to",
+    "source": "staircase_near_mast",
+    "target": "hold",
+    "desc": "Staircase near mast leads down into the hold",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "leads_to",
+    "source": "large_hatch_port_side",
+    "target": "hold",
+    "desc": "Large hatch on port side leads down into the hold",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "connected_to",
+    "source": "boots",
+    "target": "deck",
+    "desc": "Boots are found on the deck",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "connected_to",
+    "source": "bones",
+    "target": "deck",
+    "desc": "Bones are found on the deck",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "connected_to",
+    "source": "bits_of_gore",
+    "target": "deck",
+    "desc": "Bits of gore are found on the deck",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "mast",
+    "target": "compass_rose",
+    "desc": "The mast is part of the ship",
+    "source_node": "Crow's Nest"
+  },
+  {
+    "relation": "connected_to",
+    "source": "rope_ladder",
+    "target": "mast",
+    "desc": "A rope ladder is attached to the mast",
+    "source_node": "Crow's Nest"
+  },
+  {
+    "relation": "leads_to",
+    "source": "rope_ladder",
+    "target": "crow_s_nest",
+    "desc": "The rope ladder ascends to the crow's nest",
+    "source_node": "Crow's Nest"
+  },
+  {
+    "relation": "inhabited_by",
+    "source": "crow_s_nest",
+    "target": "harpy",
+    "desc": "The harpy resides in the crow's nest",
+    "source_node": "Crow's Nest"
+  },
+  {
+    "relation": "stored_in",
+    "source": "wood_shavings",
+    "target": "crow_s_nest",
+    "desc": "Wood shavings are stored in the crow's nest",
+    "source_node": "Crow's Nest"
+  },
+  {
+    "relation": "stored_in",
+    "source": "dry_grass",
+    "target": "crow_s_nest",
+    "desc": "Dry grass is stored in the crow's nest",
+    "source_node": "Crow's Nest"
+  },
+  {
+    "relation": "stored_in",
+    "source": "shredded_canvas",
+    "target": "crow_s_nest",
+    "desc": "Shredded canvas is stored in the crow's nest",
+    "source_node": "Crow's Nest"
+  },
+  {
+    "relation": "stored_in",
+    "source": "bones",
+    "target": "crow_s_nest",
+    "desc": "Bones are stored in the crow's nest",
+    "source_node": "Crow's Nest"
+  },
+  {
+    "relation": "stored_in",
+    "source": "tuft_of_hair",
+    "target": "crow_s_nest",
+    "desc": "A tuft of hair is stored in the crow's nest",
+    "source_node": "Crow's Nest"
+  },
+  {
+    "relation": "stored_in",
+    "source": "baubles",
+    "target": "crow_s_nest",
+    "desc": "Baubles are stored in the crow's nest",
+    "source_node": "Crow's Nest"
+  },
+  {
+    "relation": "stored_in",
+    "source": "small_gold_bracelet",
+    "target": "crow_s_nest",
+    "desc": "A small gold bracelet is found in the crow's nest",
+    "source_node": "Treasure"
+  },
+  {
+    "relation": "stored_in",
+    "source": "gold_hoop_earring",
+    "target": "crow_s_nest",
+    "desc": "A golden hoop earring is found in the crow's nest",
+    "source_node": "Treasure"
+  },
+  {
+    "relation": "stored_in",
+    "source": "tiger_eye_gem_1",
+    "target": "crow_s_nest",
+    "desc": "One tiger eye gem is found in the crow's nest",
+    "source_node": "Treasure"
+  },
+  {
+    "relation": "stored_in",
+    "source": "tiger_eye_gem_2",
+    "target": "crow_s_nest",
+    "desc": "Another tiger eye gem is found in the crow's nest",
+    "source_node": "Treasure"
+  },
+  {
+    "relation": "stored_in",
+    "source": "bloodstone_gem",
+    "target": "crow_s_nest",
+    "desc": "A bloodstone gem is found in the crow's nest",
+    "source_node": "Treasure"
+  },
+  {
+    "relation": "connected_to",
+    "source": "broken_foremast",
+    "target": "broken_railing",
+    "desc": "The broken foremast leans out across the broken railing",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "connected_to",
+    "source": "tangle_of_rigging",
+    "target": "rocks_and_dragon_bones",
+    "desc": "The tangle of rigging trails down to the rocks and dragon bones",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "connected_to",
+    "source": "tattered_canvas",
+    "target": "rocks_and_dragon_bones",
+    "desc": "The tattered canvas trails down to the rocks and dragon bones",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "connected_to",
+    "source": "rusted_rotting_ballista",
+    "target": "broken_mast",
+    "desc": "The ballista stands near the broken mast",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "wheel",
+    "target": "compass_rose",
+    "desc": "The wheel is part of the ship Compass Rose",
+    "source_node": "C3: Quarterdeck"
+  },
+  {
+    "relation": "inhabits",
+    "source": "zombie_in_area_c4",
+    "target": "c4",
+    "desc": "The zombie resides in area C4",
+    "source_node": "C3: Quarterdeck"
+  },
+  {
+    "relation": "connected_to",
+    "source": "mast",
+    "target": "rear_deck",
+    "desc": "Mast protrudes from the rear deck",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "mast",
+    "target": "ship",
+    "desc": "Mast is part of the ship",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "ship_wheel",
+    "target": "ship",
+    "desc": "Ship's wheel is part of the ship",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "connected_to",
+    "source": "area_c3",
+    "target": "captains_quarters",
+    "desc": "The door connecting area C3 to the captain's quarters",
+    "source_node": "C4: Captain's Quarters"
+  },
+  {
+    "relation": "inhabits",
+    "source": "zombies_in_captains_quarters",
+    "target": "captains_quarters",
+    "desc": "The zombies are in the captain's quarters cabin",
+    "source_node": "C4: Captain's Quarters"
+  },
+  {
+    "relation": "part_of",
+    "source": "drowned_sailors",
+    "target": "cabin",
+    "desc": "The drowned sailors are located inside the cabin",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "bookcase",
+    "target": "cabin",
+    "desc": "The bookcase is situated within the cabin",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "desk",
+    "target": "cabin",
+    "desc": "The desk is positioned inside the cabin",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "bed",
+    "target": "cabin",
+    "desc": "The bed occupies space within the cabin",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "stored_in",
+    "source": "books_and_scrolls",
+    "target": "bookcase",
+    "desc": "Waterlogged books and scrolls are contained within the bookcase",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "stored_in",
+    "source": "compass",
+    "target": "desk",
+    "desc": "An ornate compass is embedded in the desk's surface",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "drawers",
+    "target": "desk",
+    "desc": "The drawers are part of the desk",
+    "source_node": "Treasure"
+  },
+  {
+    "relation": "part_of",
+    "source": "desktop",
+    "target": "desk",
+    "desc": "The desktop is part of the desk",
+    "source_node": "Treasure"
+  },
+  {
+    "relation": "stored_in",
+    "source": "pouch",
+    "target": "drawers",
+    "desc": "The pouch is stored in the drawers",
+    "source_node": "Treasure"
+  },
+  {
+    "relation": "stored_in",
+    "source": "cartographers_tools",
+    "target": "drawers",
+    "desc": "The cartographer's tools are stored in the drawers",
+    "source_node": "Treasure"
+  },
+  {
+    "relation": "stored_in",
+    "source": "dagger",
+    "target": "drawers",
+    "desc": "The dagger is stored in the drawers",
+    "source_node": "Treasure"
+  },
+  {
+    "relation": "part_of",
+    "source": "compass",
+    "target": "desktop",
+    "desc": "The compass is set in the desktop",
+    "source_node": "Treasure"
+  },
+  {
+    "relation": "connected_to",
+    "source": "harmless_crabs",
+    "target": "skeletal_remains",
+    "desc": "Small harmless crabs crawl over skeletal remains",
+    "source_node": "C5: Galley"
+  },
+  {
+    "relation": "connected_to",
+    "source": "skeleton",
+    "target": "counter",
+    "desc": "The skeleton is propped up against the counter",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "counter",
+    "target": "galley",
+    "desc": "The counter is part of the galley",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "inhabits",
+    "source": "skeleton",
+    "target": "galley",
+    "desc": "The skeleton resides in the galley",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "allied_with",
+    "source": "aleitha",
+    "target": "brastos",
+    "desc": "The young couple is shown smiling and embracing, indicating an affectionate relationship",
+    "source_node": "C6: Crew Quarters"
+  },
+  {
+    "relation": "part_of",
+    "source": "zombies_in_ship",
+    "target": "ship_aboard",
+    "desc": "Zombies are aboard the ship",
+    "source_node": "C6: Crew Quarters"
+  },
+  {
+    "relation": "part_of",
+    "source": "double_bunks",
+    "target": "cabin",
+    "desc": "Double bunks are arranged along the edges of the cabin",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "room",
+    "target": "cabin",
+    "desc": "A room exists within the cabin",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "personal_effects",
+    "target": "room",
+    "desc": "Personal effects are scattered throughout the room",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "faded_painted_portrait",
+    "target": "room",
+    "desc": "The portrait is displayed on a wall within the room",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "floorboard",
+    "target": "cabin",
+    "desc": "Floorboard is part of the cabin",
+    "source_node": "Floorboard Stash"
+  },
+  {
+    "relation": "attacks",
+    "source": "dart",
+    "target": "characters_in_cabin",
+    "desc": "Dart attacks characters who trigger the trap",
+    "source_node": "Floorboard Stash"
+  },
+  {
+    "relation": "stored_in",
+    "source": "sack",
+    "target": "small_compartment",
+    "desc": "The sack is placed inside the small compartment",
+    "source_node": "Treasure"
+  },
+  {
+    "relation": "connected_to",
+    "source": "small_compartment",
+    "target": "raised_floorboard",
+    "desc": "The small compartment is situated beneath the raised floorboard",
+    "source_node": "Treasure"
+  },
+  {
+    "relation": "part_of",
+    "source": "long_table",
+    "target": "cabin",
+    "desc": "A long table occupies most of the cabin",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "chairs_decaying",
+    "target": "cabin",
+    "desc": "Decaying chairs are scattered throughout the cabin",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "broken_glass",
+    "target": "cabin",
+    "desc": "Broken glass litters the cabin floor",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "crockery",
+    "target": "cabin",
+    "desc": "Crockery fragments litter the cabin floor",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "ghoul",
+    "target": "hold",
+    "desc": "The ghoul lurks in the aft part of the hold",
+    "source_node": "C8: Lower Deck"
+  },
+  {
+    "relation": "part_of",
+    "source": "walking_corpse",
+    "target": "lower_deck",
+    "desc": "The walking corpse is located in the lower deck",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "decaying_crates_and_barrels",
+    "target": "lower_deck",
+    "desc": "Decaying crates and barrels are scattered throughout the lower deck",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "leads_to",
+    "source": "ceiling_nw_hole",
+    "target": "captain_quarters_c4",
+    "desc": "A hole leads up to the captain's quarters",
+    "source_node": "Hole to the Hold"
+  },
+  {
+    "relation": "connected_to",
+    "source": "ceiling_nw_hole",
+    "target": "floorboard_lower_hole",
+    "desc": "A similar hole is directly below the ceiling hole",
+    "source_node": "Hole to the Hold"
+  },
+  {
+    "relation": "stored_in",
+    "source": "captains_chest",
+    "target": "hold_c9",
+    "desc": "The captain's chest came to rest in the hold",
+    "source_node": "Hole to the Hold"
+  },
+  {
+    "relation": "state_action",
+    "source": "zombies_added_to_encounter",
+    "target": "<unknown>",
+    "desc": "Two zombies are added to the encounter as a result of characters being 2nd level",
+    "source_node": "2nd-Level Characters"
+  },
+  {
+    "relation": "stored_in",
+    "source": "five_bottles_fine_wine",
+    "target": "crates_here",
+    "desc": "The five bottles of fine wine are stored in the crates",
+    "source_node": "Treasure"
+  },
+  {
+    "relation": "stored_in",
+    "source": "twenty_pound_clove_bag",
+    "target": "crates_here",
+    "desc": "The 20-pound sack of whole cloves is stored in the crates",
+    "source_node": "Treasure"
+  },
+  {
+    "relation": "stored_in",
+    "source": "ten_small_silver_bars",
+    "target": "crates_here",
+    "desc": "The ten small silver bars are stored in the crates",
+    "source_node": "Treasure"
+  },
+  {
+    "relation": "stored_in",
+    "source": "dragon_carved_candlesticks",
+    "target": "crates_here",
+    "desc": "The dragon-carved candlesticks are stored in the crates",
+    "source_node": "Treasure"
+  },
+  {
+    "relation": "stored_in",
+    "source": "mother_of_pearl_lute",
+    "target": "crates_here",
+    "desc": "The mother-of-pearl lute is stored in the crates",
+    "source_node": "Treasure"
+  },
+  {
+    "relation": "stored_in",
+    "source": "command_spell_scroll",
+    "target": "crates_here",
+    "desc": "The spell scroll of command is stored in the crates",
+    "source_node": "Treasure"
+  },
+  {
+    "relation": "connected_to",
+    "source": "submerged_hold",
+    "target": "hole_in_area_c8_floor",
+    "desc": "Characters can surface at the hole in area C8's floor",
+    "source_node": "C9: Hold"
+  },
+  {
+    "relation": "connected_to",
+    "source": "submerged_hold",
+    "target": "stairs_up_to_c8",
+    "desc": "Characters can surface at the top of the stairs up to C8",
+    "source_node": "C9: Hold"
+  },
+  {
+    "relation": "part_of",
+    "source": "hole_in_area_c8_floor",
+    "target": "area_c8",
+    "desc": "The hole is located in area C8's floor",
+    "source_node": "C9: Hold"
+  },
+  {
+    "relation": "leads_to",
+    "source": "stairs_up_to_c8",
+    "target": "area_c8",
+    "desc": "The stairs lead up to area C8",
+    "source_node": "C9: Hold"
+  },
+  {
+    "relation": "part_of",
+    "source": "broken_ship",
+    "target": "undersea_world",
+    "desc": "The ruined ship is part of the undersea world",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "connected_to",
+    "source": "colorful_seaweed",
+    "target": "broken_ship",
+    "desc": "Colorful seaweed grows over the ship's shattered hull",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "connected_to",
+    "source": "tiny_fish",
+    "target": "debris_and_cargo",
+    "desc": "Tiny fish dart among fragments of debris and cargo",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "captains_chest",
+    "target": "hold_location",
+    "desc": "The chest is located in the hold",
+    "source_node": "Captain's Chest"
+  },
+  {
+    "relation": "stored_in",
+    "source": "packet",
+    "target": "captains_chest",
+    "desc": "The packet is inside the chest",
+    "source_node": "Captain's Chest"
+  },
+  {
+    "relation": "stored_in",
+    "source": "pouch",
+    "target": "captains_chest",
+    "desc": "The pouch is inside the chest",
+    "source_node": "Captain's Chest"
+  },
+  {
+    "relation": "stored_in",
+    "source": "turquoise_1",
+    "target": "pouch",
+    "desc": "One turquoise gem is in the pouch",
+    "source_node": "Captain's Chest"
+  },
+  {
+    "relation": "stored_in",
+    "source": "turquoise_2",
+    "target": "pouch",
+    "desc": "Another turquoise gem is in the pouch",
+    "source_node": "Captain's Chest"
+  },
+  {
+    "relation": "stored_in",
+    "source": "turquoise_3",
+    "target": "pouch",
+    "desc": "The third turquoise gem is in the pouch",
+    "source_node": "Captain's Chest"
+  },
+  {
+    "relation": "stored_in",
+    "source": "boots_of_elvenkind",
+    "target": "captains_chest",
+    "desc": "The boots are inside the chest",
+    "source_node": "Captain's Chest"
+  },
+  {
+    "relation": "stored_in",
+    "source": "journal",
+    "target": "packet",
+    "desc": "The journal is inside the packet",
+    "source_node": "Captain's Chest"
+  },
+  {
+    "relation": "stored_in",
+    "source": "braid_of_hair",
+    "target": "journal",
+    "desc": "The braid is embedded in the journal",
+    "source_node": "Captain's Chest"
+  },
+  {
+    "relation": "part_of",
+    "source": "compass_rose",
+    "target": "shoal",
+    "desc": "The Compass Rose wrecked on the shoal",
+    "source_node": "19 Tarsakh"
+  },
+  {
+    "relation": "connected_to",
+    "source": "shoal",
+    "target": "neverwinter",
+    "desc": "The shoal lies south of Neverwinter",
+    "source_node": "19 Tarsakh"
+  },
+  {
+    "relation": "part_of",
+    "source": "zombies_in_ship",
+    "target": "compass_rose",
+    "desc": "Dead sailors became zombies on the wrecked ship",
+    "source_node": "19 Tarsakh"
+  },
+  {
+    "relation": "stored_in",
+    "source": "talisman",
+    "target": "book",
+    "desc": "The talisman is secured within the book",
+    "source_node": "19 Tarsakh"
+  },
+  {
+    "relation": "serves",
+    "source": "aleithas_husband",
+    "target": "dragon_at_dragons_rest",
+    "desc": "Aleitha's husband pledged service to the dragon at Dragon's Rest",
+    "source_node": "19 Tarsakh"
+  },
+  {
+    "relation": "inhabits",
+    "source": "aleithas_husband",
+    "target": "dragons_rest",
+    "desc": "Aleitha's husband awaits her at Dragon's Rest",
+    "source_node": "19 Tarsakh"
+  },
+  {
+    "relation": "commands",
+    "source": "orcus",
+    "target": "demons",
+    "desc": "Orcus rules over hordes of demons in the Abyss",
+    "source_node": "About Orcus"
+  },
+  {
+    "relation": "inhabits",
+    "source": "orcus",
+    "target": "abyss",
+    "desc": "Orcus resides in the Abyss, ruling its demonic inhabitants",
+    "source_node": "About Orcus"
+  },
+  {
+    "relation": "serves",
+    "source": "ghouls",
+    "target": "orcus",
+    "desc": "Many undead creatures, including ghouls, worship Orcus or seek to bargain with him",
+    "source_node": "About Orcus"
+  },
+  {
+    "relation": "leads_to",
+    "source": "hold",
+    "target": "lower_deck",
+    "desc": "Characters move from the hold to the lower deck",
+    "source_node": "A New Threat"
+  },
+  {
+    "relation": "connected_to",
+    "source": "lower_deck",
+    "target": "main_deck",
+    "desc": "The deck above the lower deck (implied to be the main deck) is adjacent",
+    "source_node": "A New Threat"
+  },
+  {
+    "relation": "inhabits",
+    "source": "harpy",
+    "target": "main_deck",
+    "desc": "The harpy lands on the main deck",
+    "source_node": "A New Threat"
+  },
+  {
+    "relation": "connected_to",
+    "source": "terrifying_monster",
+    "target": "crows_nest",
+    "desc": "The monster perches on the crow's nest",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "inhabits",
+    "source": "harpy_single",
+    "target": "compass_rose_wreck",
+    "desc": "The harpy resides in the Compass Rose wreck",
+    "source_node": "Talking to the Harpy"
+  },
+  {
+    "relation": "stored_in",
+    "source": "treasure_from_crow_nest",
+    "target": "compass_rose_wreck",
+    "desc": "The treasure is contained in the Compass Rose wreck",
+    "source_node": "Talking to the Harpy"
+  },
+  {
+    "relation": "connected_to",
+    "source": "harpy_1",
+    "target": "ballista",
+    "desc": "Harpy perches on the ballista",
+    "source_node": "2nd-Level Characters"
+  },
+  {
+    "relation": "part_of",
+    "source": "ballista",
+    "target": "area_c2",
+    "desc": "Ballista is located in area C2",
+    "source_node": "2nd-Level Characters"
+  },
+  {
+    "relation": "allied_with",
+    "source": "harpy_1",
+    "target": "harpy_2",
+    "desc": "Harpies are allies despite distrust",
+    "source_node": "2nd-Level Characters"
+  },
+  {
+    "relation": "connected_to",
+    "source": "ship",
+    "target": "stormwreck_isle",
+    "desc": "The ship approaches Stormwreck Isle as the sailor sails closer",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "leads_to",
+    "source": "compass_rose",
+    "target": "seagrow_caves",
+    "desc": "Characters must visit Compass Rose before proceeding to Seagrow Caves",
+    "source_node": "Gain a Level"
+  },
+  {
+    "relation": "leads_to",
+    "source": "seagrow_caves",
+    "target": "clifftop_observatory",
+    "desc": "After exploring Seagrow Caves, characters become prepared to visit Clifftop Observatory",
+    "source_node": "Gain a Level"
+  },
+  {
+    "relation": "sees",
+    "source": "dragon_s_rest",
+    "target": "sea_caves",
+    "desc": "Residents of Dragon's Rest recommend visiting Sea Caves (indirectly referencing the location)",
+    "source_node": "Gain a Level"
+  },
+  {
+    "relation": "stored_in",
+    "source": "runara",
+    "target": "moonstone_key",
+    "desc": "Runara stores the moonstone key",
+    "source_node": "Chapter 4: Clifftop Observatory"
+  },
+  {
+    "relation": "inhibits_access",
+    "source": "combat_encounters",
+    "target": "clifftop_observatory",
+    "desc": "Combat encounters prevent access to the observatory until higher levels",
+    "source_node": "Chapter 4: Clifftop Observatory"
+  },
+  {
+    "relation": "connected_to",
+    "source": "clifftop_observatory",
+    "target": "islets",
+    "desc": "Observatories towers are located on separate islets connected by magical bridges",
+    "source_node": "Observatory Overview"
+  },
+  {
+    "relation": "inhabits",
+    "source": "sparkrender",
+    "target": "clifftop_observatory",
+    "desc": "Sparkrender resides in the ruined observatory",
+    "source_node": "Observatory Overview"
+  },
+  {
+    "relation": "commands",
+    "source": "sparkrender",
+    "target": "kobolds",
+    "desc": "Sparkrender recruits and directs kobolds",
+    "source_node": "Observatory Overview"
+  },
+  {
+    "relation": "inhabits",
+    "source": "runara",
+    "target": "dragon_s_rest",
+    "desc": "Runara lived in Dragon's Rest before aiding Aidron",
+    "source_node": "Observatory Overview"
+  },
+  {
+    "relation": "leaves",
+    "source": "aidron",
+    "target": "dragon_s_rest",
+    "desc": "Aidron departed Dragon's Rest seeking the observatory",
+    "source_node": "Observatory Overview"
+  },
+  {
+    "relation": "attacks",
+    "source": "sparkrender",
+    "target": "aidron",
+    "desc": "Sparkrender fought Aidron during their encounter",
+    "source_node": "Observatory Overview"
+  },
+  {
+    "relation": "imprisons",
+    "source": "sparkrender",
+    "target": "aidron",
+    "desc": "Sparkrender subdues Aidron and confines him in the ruins",
+    "source_node": "Observatory Overview"
+  },
+  {
+    "relation": "allies_with",
+    "source": "sparkrender",
+    "target": "kobolds",
+    "desc": "Sparkrender collaborates with kobolds for his schemes",
+    "source_node": "Observatory Overview"
+  },
+  {
+    "relation": "part_of",
+    "source": "observatory",
+    "target": "stormwreck_isle",
+    "desc": "The observatory is located on Stormwreck Isle",
+    "source_node": "Observatory Features"
+  },
+  {
+    "relation": "leads_to",
+    "source": "dragons_rest",
+    "target": "clifftop_observatory",
+    "desc": "Reaching the observatory via boat using the rowboat available at Dragon's Rest",
+    "source_node": "Running This Chapter"
+  },
+  {
+    "relation": "leads_to",
+    "source": "dragons_rest",
+    "target": "clifftop_observatory",
+    "desc": "Walking around the coast of the island provides access to the observatory",
+    "source_node": "Running This Chapter"
+  },
+  {
+    "relation": "leads_to",
+    "source": "dragons_rest",
+    "target": "clifftop_observatory",
+    "desc": "Crossing the island via a rocky overland path leads directly to the observatory",
+    "source_node": "Running This Chapter"
+  },
+  {
+    "relation": "stored_in",
+    "source": "rowboat",
+    "target": "dragons_rest",
+    "desc": "Dragon's Rest contains a rowboat for maritime travel",
+    "source_node": "Running This Chapter"
+  },
+  {
+    "relation": "connected_to",
+    "source": "sparkrender",
+    "target": "rocky_spire",
+    "desc": "Sparkrender flies by and lands on the rocky spire",
+    "source_node": "Approaching by Land"
+  },
+  {
+    "relation": "connected_to",
+    "source": "sparkrender",
+    "target": "ruins",
+    "desc": "Sparkrender returns to his hoard among the ruins (area D5)",
+    "source_node": "Approaching by Land"
+  },
+  {
+    "relation": "leads_to",
+    "source": "observatory",
+    "target": "area_d1",
+    "desc": "Characters approach the observatory by land and eventually arrive at area D1",
+    "source_node": "Approaching by Land"
+  },
+  {
+    "relation": "spatial_connected_to",
+    "source": "glittering_blue_shape",
+    "target": "stormwreck_isle",
+    "desc": "A winged, glittering blue shape is observed soaring overhead near Stormwreck Isle",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "connected_to",
+    "source": "shore",
+    "target": "bluffs",
+    "desc": "Characters beach the boat on the shore and climb the bluffs",
+    "source_node": "Approaching by Water"
+  },
+  {
+    "relation": "leads_to",
+    "source": "bluffs",
+    "target": "d1",
+    "desc": "Climbing the bluffs leads to area D1",
+    "source_node": "Approaching by Water"
+  },
+  {
+    "relation": "connected_to",
+    "source": "boat",
+    "target": "pillars",
+    "desc": "Boats are tied up at the base of pillars (implicitly defined)",
+    "source_node": "Approaching by Water"
+  },
+  {
+    "relation": "leads_to",
+    "source": "pillars",
+    "target": "d2",
+    "desc": "Climbing the pillar leads to area D2",
+    "source_node": "Approaching by Water"
+  },
+  {
+    "relation": "leads_to",
+    "source": "pillars",
+    "target": "d3",
+    "desc": "Climbing the pillar leads to area D3",
+    "source_node": "Approaching by Water"
+  },
+  {
+    "relation": "leads_to",
+    "source": "pillars",
+    "target": "d4",
+    "desc": "Climbing the pillar leads to area D4",
+    "source_node": "Approaching by Water"
+  },
+  {
+    "relation": "leads_to",
+    "source": "pillars",
+    "target": "d5",
+    "desc": "Climbing the pillar leads to area D5",
+    "source_node": "Approaching by Water"
+  },
+  {
+    "relation": "serves",
+    "source": "kobolds_alienated_with_sparkrender",
+    "target": "sparkrender",
+    "desc": "The kobolds serve Sparkrender",
+    "source_node": "Sparkrender's Kobold Allies"
+  },
+  {
+    "relation": "commands",
+    "source": "sparkrender",
+    "target": "kobolds_alienated_with_sparkrender",
+    "desc": "Sparkrender commands the kobolds not to clean the caved-in wall in area D6",
+    "source_node": "Sparkrender's Kobold Allies"
+  },
+  {
+    "relation": "allied_with",
+    "source": "kobolds_alienated_with_sparkrender",
+    "target": "sparkrender",
+    "desc": "The kobolds are allies with Sparkrender",
+    "source_node": "Sparkrender's Kobold Allies"
+  },
+  {
+    "relation": "located_in",
+    "source": "other_dragon",
+    "target": "observatory_tower_area_d5",
+    "desc": "The other dragon was seen arguing at the observatory tower (area D5)",
+    "source_node": "Sparkrender's Kobold Allies"
+  },
+  {
+    "relation": "located_in",
+    "source": "other_dragon",
+    "target": "caved_in_wall_area_d6",
+    "desc": "The other dragon is roaring and crashing around in area D6",
+    "source_node": "Sparkrender's Kobold Allies"
+  },
+  {
+    "relation": "contains_item",
+    "source": "rotunda_ruins_area_d2",
+    "target": "sculpture",
+    "desc": "The sculpture is located in area D2",
+    "source_node": "Sparkrender's Kobold Allies"
+  },
+  {
+    "relation": "gives_quest_to",
+    "source": "runara",
+    "target": "party_group",
+    "desc": "Runara gave the moonstone key to the party",
+    "source_node": "D1: Overlook"
+  },
+  {
+    "relation": "connected_to",
+    "source": "overlook",
+    "target": "observatory_ruins",
+    "desc": "A shimmering bridge made of magical energy connects the overlook to the observatory ruins when the moonstone key is inserted into the statues' bases",
+    "source_node": "D1: Overlook"
+  },
+  {
+    "relation": "leads_to",
+    "source": "broken_overgrown_path",
+    "target": "edge_of_cliff",
+    "desc": "The broken and overgrown path leads to the edge of the cliff",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "marble_statue_1",
+    "target": "overlook",
+    "desc": "One of the marble statues is part of the overlook",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "marble_statue_2",
+    "target": "overlook",
+    "desc": "The second marble statue is part of the overlook",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "sculpture_of_rusted_planets_and_gilded_stars",
+    "target": "plaza",
+    "desc": "The sculpture is part of the plaza's structure",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "connected_to",
+    "source": "batlike_creatures_swarming_plaza",
+    "target": "winged_kobolds_fighting",
+    "desc": "Batlike creatures are swarming around the kobolds",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "attacks",
+    "source": "batlike_creatures_swarming_plaza",
+    "target": "winged_kobolds_fighting",
+    "desc": "Batlike creatures are attacking the kobolds",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "connected_to",
+    "source": "dragon_statues_west_pair",
+    "target": "rotunda",
+    "desc": "Stands on the west side of the rotunda",
+    "source_node": "Energy Bridge Anchors"
+  },
+  {
+    "relation": "connected_to",
+    "source": "dragon_statues_southwest_pair",
+    "target": "rotunda",
+    "desc": "Stands on the southwest side of the rotunda",
+    "source_node": "Energy Bridge Anchors"
+  },
+  {
+    "relation": "connected_to",
+    "source": "rotunda",
+    "target": "kobold_camp",
+    "desc": "A bridge spans the 15-foot gap between the rotunda and the kobold camp",
+    "source_node": "D3: Kobold Camp"
+  },
+  {
+    "relation": "inhabits",
+    "source": "ekrash_kobold",
+    "target": "kobold_camp",
+    "desc": "Ekrash is an inhabitant of the kobold camp",
+    "source_node": "D3: Kobold Camp"
+  },
+  {
+    "relation": "inhabits",
+    "source": "erp_kobold",
+    "target": "kobold_camp",
+    "desc": "Erp is an inhabitant of the kobold camp",
+    "source_node": "D3: Kobold Camp"
+  },
+  {
+    "relation": "inhabits",
+    "source": "hev_kobold",
+    "target": "kobold_camp",
+    "desc": "Hev is an inhabitant of the kobold camp",
+    "source_node": "D3: Kobold Camp"
+  },
+  {
+    "relation": "inhabits",
+    "source": "nuhro_winged_kobold",
+    "target": "kobold_camp",
+    "desc": "Nuhro is an inhabitant of the kobold camp",
+    "source_node": "D3: Kobold Camp"
+  },
+  {
+    "relation": "inhabits",
+    "source": "snirke_winged_kobold",
+    "target": "kobold_camp",
+    "desc": "Snirke is an inhabitant of the kobold camp",
+    "source_node": "D3: Kobold Camp"
+  },
+  {
+    "relation": "stored_in",
+    "source": "sling_bullet",
+    "target": "kobold_camp",
+    "desc": "The sling bullet is stored in the kobold camp",
+    "source_node": "D3: Kobold Camp"
+  },
+  {
+    "relation": "part_of",
+    "source": "wooden_planks",
+    "target": "ruined_tower",
+    "desc": "Wooden planks are part of the repaired structure of the tower",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "threadbare_cloth",
+    "target": "ruined_tower",
+    "desc": "Threadbare cloth covers cracks in the tower's stonework",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "energy_bridge",
+    "target": "area_d2",
+    "desc": "The energy bridge is located in area d2",
+    "source_node": "D4: Isolated Study"
+  },
+  {
+    "relation": "connected_to",
+    "source": "energy_bridge",
+    "target": "rotunda",
+    "desc": "The energy bridge spans the gap between the rotunda and spire",
+    "source_node": "D4: Isolated Study"
+  },
+  {
+    "relation": "connected_to",
+    "source": "energy_bridge",
+    "target": "spire",
+    "desc": "The energy bridge spans the gap between the rotunda and spire",
+    "source_node": "D4: Isolated Study"
+  },
+  {
+    "relation": "connected_to",
+    "source": "cramped_tower",
+    "target": "chamber_beneath_tower",
+    "desc": "A portion of the tower collapses into the chamber below",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "stored_in",
+    "source": "collapsed_bookcases",
+    "target": "chamber_beneath_tower",
+    "desc": "Collapsed bookcases are scattered within the chamber",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "stored_in",
+    "source": "moldering_books",
+    "target": "chamber_beneath_tower",
+    "desc": "Moldy books are spread across the chamber floor",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "arcane_rune",
+    "target": "journal_black_ornate_lock",
+    "desc": "The arcane rune is engraved on the journal's lock",
+    "source_node": "Scholar's Journal"
+  },
+  {
+    "relation": "part_of",
+    "source": "passage_clue",
+    "target": "journal_black_ornate_lock",
+    "desc": "The passage is physically located within the journal",
+    "source_node": "Scholar's Journal"
+  },
+  {
+    "relation": "gives_quest_to",
+    "source": "passage_clue",
+    "target": "observatory_tower_d5",
+    "desc": "The passage provides directions to locate the hidden entrance in the observatory tower",
+    "source_node": "Scholar's Journal"
+  },
+  {
+    "relation": "stored_in",
+    "source": "moonstone_key",
+    "target": "area_d1",
+    "desc": "The moonstone key is stored in area D1.",
+    "source_node": "Clever Solutions"
+  },
+  {
+    "relation": "inhabits",
+    "source": "blue_dragon",
+    "target": "tower",
+    "desc": "The blue dragon slumbers in the tower",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "room_inside_tower",
+    "target": "tower",
+    "desc": "The room is part of the tower",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "alabaster_statues",
+    "target": "room_inside_tower",
+    "desc": "The alabaster statues are arranged around the perimeter of the room",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "connected_to",
+    "source": "blue_dragon",
+    "target": "coins_and_jewels",
+    "desc": "The blue dragon lies amidst the scattered collection of coins and jewels",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "star_map_floor",
+    "target": "room_inside_tower",
+    "desc": "The star map spans the dusty floor of the room",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "inhabits",
+    "source": "blue_dragon_wyrmling",
+    "target": "hidden_entrance",
+    "desc": "The Blue Dragon Wyrmling inhabits the Hidden Entrance",
+    "source_node": "Sneaking Around"
+  },
+  {
+    "relation": "inhabits",
+    "source": "sparkrender",
+    "target": "hidden_entrance",
+    "desc": "Sparkrender inhabits the Hidden Entrance",
+    "source_node": "Sneaking Around"
+  },
+  {
+    "relation": "part_of",
+    "source": "north_statue",
+    "target": "hidden_entrance",
+    "desc": "North statue is part of the Hidden Entrance",
+    "source_node": "Sneaking Around"
+  },
+  {
+    "relation": "part_of",
+    "source": "east_statue",
+    "target": "hidden_entrance",
+    "desc": "East statue is part of the Hidden Entrance",
+    "source_node": "Sneaking Around"
+  },
+  {
+    "relation": "inhabits",
+    "source": "sparkrender",
+    "target": "island",
+    "desc": "Sparkrender resides on the island",
+    "source_node": "Waking the Dragon"
+  },
+  {
+    "relation": "flees_from",
+    "source": "sparkrender",
+    "target": "island",
+    "desc": "Sparkrender attempts to flee the island when injured",
+    "source_node": "Waking the Dragon"
+  },
+  {
+    "relation": "originates_from",
+    "source": "sparkrender",
+    "target": "area_d6",
+    "desc": "After defeating Sparkrender, growling noises emanate from area D6",
+    "source_node": "Waking the Dragon"
+  },
+  {
+    "relation": "connected_to",
+    "source": "observatory_tower",
+    "target": "secret_library",
+    "desc": "The secret library is physically connected to the observatory tower via a collapsing wall",
+    "source_node": "D6: Secret Library"
+  },
+  {
+    "relation": "connected_to",
+    "source": "spire",
+    "target": "observatory_tower",
+    "desc": "Climbers can travel between the spire and the observatory tower",
+    "source_node": "D6: Secret Library"
+  },
+  {
+    "relation": "inhabits",
+    "source": "aidron",
+    "target": "secret_library",
+    "desc": "Aidron resides in the secret library after being trapped",
+    "source_node": "D6: Secret Library"
+  },
+  {
+    "relation": "spatial_adjacency",
+    "source": "spire",
+    "target": "secret_library",
+    "desc": "Characters can reach the library by climbing from the spire's base",
+    "source_node": "D6: Secret Library"
+  },
+  {
+    "relation": "causal_relationship",
+    "source": "sparkrender",
+    "target": "secret_library",
+    "desc": "Sparkrender intentionally caused structural damage to seal the library",
+    "source_node": "D6: Secret Library"
+  },
+  {
+    "relation": "inhabits",
+    "source": "bronze_dragon",
+    "target": "collapsed_study",
+    "desc": "The bronze dragon is active in the collapsed study",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "stored_in",
+    "source": "old_tomes",
+    "target": "collapsed_study",
+    "desc": "Old tomes are contained in the study",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "stored_in",
+    "source": "yellowing_scrolls",
+    "target": "collapsed_study",
+    "desc": "Yellowing scrolls are contained in the study",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "stored_in",
+    "source": "old_desk",
+    "target": "collapsed_study",
+    "desc": "An old desk is positioned in the study",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "shattered_glass_cases",
+    "target": "collapsed_study",
+    "desc": "Shattered glass cases are physically located in the study",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "part_of",
+    "source": "plus_one_battle_axe",
+    "target": "library_location",
+    "desc": "The +1 battleaxe is located within the library",
+    "source_node": "Treasure"
+  },
+  {
+    "relation": "part_of",
+    "source": "spell_scroll_hold_person_level_2",
+    "target": "library_location",
+    "desc": "The 2nd-level hold person spell scroll is located within the library",
+    "source_node": "Treasure"
+  },
+  {
+    "relation": "uses_item",
+    "source": "detect_magic_spell",
+    "target": "plus_one_battle_axe",
+    "desc": "Detect magic spell can reveal the hidden +1 battleaxe",
+    "source_node": "Treasure"
+  },
+  {
+    "relation": "uses_item",
+    "source": "detect_magic_spell",
+    "target": "spell_scroll_hold_person_level_2",
+    "desc": "Detect magic spell can reveal the hidden spell scroll",
+    "source_node": "Treasure"
+  },
+  {
+    "relation": "assists",
+    "source": "aidron",
+    "target": "plus_one_battle_axe",
+    "desc": "Aidron directs characters to the +1 battleaxe",
+    "source_node": "Treasure"
+  },
+  {
+    "relation": "assists",
+    "source": "aidron",
+    "target": "spell_scroll_hold_person_level_2",
+    "desc": "Aidron directs characters to the spell scroll",
+    "source_node": "Treasure"
+  },
+  {
+    "relation": "stored_in",
+    "source": "golden_statue",
+    "target": "ruined_rotunda",
+    "desc": "The golden statue is stored in the ruined rotunda",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "connected_to",
+    "source": "blue_dragon",
+    "target": "golden_statue",
+    "desc": "The blue dragon is perched atop the golden statue",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "connected_to",
+    "source": "bronze_dragon",
+    "target": "golden_statue",
+    "desc": "The bronze dragon is at the base of the golden statue",
+    "source_node": "Untitled Section"
+  },
+  {
+    "relation": "connected_to",
+    "source": "heavy_chains",
+    "target": "clasps",
+    "desc": "Chains are attached to clasps",
+    "source_node": "Freeing Aidron"
+  },
+  {
+    "relation": "connected_to",
+    "source": "clasps",
+    "target": "iron_rings",
+    "desc": "Clasps are attached to iron rings",
+    "source_node": "Freeing Aidron"
+  },
+  {
+    "relation": "restrains",
+    "source": "heavy_chains",
+    "target": "aidron",
+    "desc": "Chains restrain Aidron",
+    "source_node": "Freeing Aidron"
+  },
+  {
+    "relation": "attacks",
+    "source": "player_characters",
+    "target": "effigies",
+    "desc": "Players manipulate effigies to trigger magical effects from the Dragon Spirits Table",
+    "source_node": "Disrupting the Ritual"
+  },
+  {
+    "relation": "attacks",
+    "source": "player_characters",
+    "target": "golden_sculpture",
+    "desc": "Players attempt to disturb the sculpture to distract Sparkrender",
+    "source_node": "Disrupting the Ritual"
+  },
+  {
+    "relation": "affects",
+    "source": "golden_sculpture",
+    "target": "sparkrender",
+    "desc": "Disturbing the sculpture temporarily hinders Sparkrender's abilities",
+    "source_node": "Disrupting the Ritual"
+  },
+  {
+    "relation": "inhabits",
+    "source": "runara",
+    "target": "dragon_s_rest",
+    "desc": "Runara resides in Dragon's Rest",
+    "source_node": "Ending the Adventure"
+  },
+  {
+    "relation": "allied_with",
+    "source": "runara",
+    "target": "characters_group",
+    "desc": "Runara expresses pleasure with the characters' success",
+    "source_node": "Ending the Adventure"
+  },
+  {
+    "relation": "gives_quest_to",
+    "source": "runara",
+    "target": "characters_group",
+    "desc": "Runara rewards characters with healing potion and valuable pearl",
+    "source_node": "Ending the Adventure"
+  },
+  {
+    "relation": "state",
+    "source": "potions",
+    "target": "magic_item",
+    "desc": "Potions are an exception to the general rule of needing concentration to learn properties",
+    "source_node": "Using a Magic Item"
+  },
+  {
+    "relation": "referenced_by",
+    "source": "basic_rules",
+    "target": "ability_scores_and_modifiers",
+    "desc": "The Basic Rules contains information about ability scores and modifiers",
+    "source_node": "Ability Scores"
+  }
+]

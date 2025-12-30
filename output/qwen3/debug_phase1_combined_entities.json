@@ -1,0 +1,7393 @@
+[
+  {
+    "label": "Stormwreck_Isle",
+    "type": "Location",
+    "id": "stormwreck_isle",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Overview"
+  },
+  {
+    "label": "Dragons_Rest",
+    "type": "Location",
+    "id": "dragons_rest",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Overview"
+  },
+  {
+    "label": "forgotten_realms",
+    "type": "Location",
+    "id": "forgotten_realms",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "The Forgotten Realms"
+  },
+  {
+    "label": "delzoun",
+    "type": "Location",
+    "id": "delzoun",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "The Forgotten Realms"
+  },
+  {
+    "label": "neverwinter",
+    "type": "Location",
+    "id": "neverwinter",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "The Forgotten Realms"
+  },
+  {
+    "label": "baldurs_gate",
+    "type": "Location",
+    "id": "baldurs_gate",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "The Forgotten Realms"
+  },
+  {
+    "label": "mount_hotenow",
+    "type": "Location",
+    "id": "mount_hotenow",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "The Forgotten Realms"
+  },
+  {
+    "label": "stormwreck_isle",
+    "type": "Location",
+    "id": "stormwreck_isle",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "The Forgotten Realms"
+  },
+  {
+    "label": "sword_coast",
+    "type": "Location",
+    "id": "sword_coast",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "The Forgotten Realms"
+  },
+  {
+    "label": "crypts_delzoun",
+    "type": "Location",
+    "id": "crypts_delzoun",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "The Forgotten Realms"
+  },
+  {
+    "label": "ruins_netherese_empire",
+    "type": "Location",
+    "id": "ruins_netherese_empire",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "The Forgotten Realms"
+  },
+  {
+    "label": "stormwreck_isle",
+    "type": "Location",
+    "id": "stormwreck_isle",
+    "aliases": [
+      "[\"dragons_of_stormwreck_isle\"]"
+    ],
+    "source_node": "Number of Players"
+  },
+  {
+    "label": "bahamut",
+    "type": "Creature",
+    "id": "bahamut",
+    "aliases": [
+      "[platinum dragon",
+      "king of metallic dragons]"
+    ],
+    "source_node": "Adventure Background"
+  },
+  {
+    "label": "tiamat",
+    "type": "Creature",
+    "id": "tiamat",
+    "aliases": [
+      "[queen of chromatic dragons",
+      "five-headed]"
+    ],
+    "source_node": "Adventure Background"
+  },
+  {
+    "label": "sharruth",
+    "type": "Creature",
+    "id": "sharruth",
+    "aliases": [
+      "[red dragon]"
+    ],
+    "source_node": "Adventure Background"
+  },
+  {
+    "label": "runara",
+    "type": "Creature",
+    "id": "runara",
+    "aliases": [
+      "[bronze dragon]"
+    ],
+    "source_node": "Adventure Background"
+  },
+  {
+    "label": "stormwreck_isle",
+    "type": "Location",
+    "id": "stormwreck_isle",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Adventure Background"
+  },
+  {
+    "label": "dragon_s_rest",
+    "type": "Location",
+    "id": "dragon_s_rest",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Adventure Background"
+  },
+  {
+    "label": "metallic_dragons",
+    "type": "Group",
+    "id": "metallic_dragons",
+    "aliases": [
+      "[metallic dragons]"
+    ],
+    "source_node": "Adventure Background"
+  },
+  {
+    "label": "chromatic_dragons",
+    "type": "Group",
+    "id": "chromatic_dragons",
+    "aliases": [
+      "[chromatic dragons]"
+    ],
+    "source_node": "Adventure Background"
+  },
+  {
+    "label": "blue_dragon",
+    "type": "Creature",
+    "id": "blue_dragon",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Adventure Background"
+  },
+  {
+    "label": "Stormwreck Isle",
+    "type": "Location",
+    "id": "stormwreck_isle",
+    "aliases": [
+      "[island]"
+    ],
+    "source_node": "Adventure Maps"
+  },
+  {
+    "label": "fire_snake",
+    "type": "Creature",
+    "id": "fire_snake",
+    "aliases": [
+      "[immune_to_fire_damage]"
+    ],
+    "source_node": "Creature Stat Blocks"
+  },
+  {
+    "label": "Dragon's Rest",
+    "type": "Location",
+    "id": "dragons_rest",
+    "aliases": [
+      "[cloister]"
+    ],
+    "source_node": "Story Information"
+  },
+  {
+    "label": "Runara",
+    "type": "Creature",
+    "id": "runara",
+    "aliases": [
+      "[bronze_dragon]"
+    ],
+    "source_node": "Story Information"
+  },
+  {
+    "label": "magic_items",
+    "type": "Item",
+    "id": "magic_items",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "appendix_a",
+    "type": "Item",
+    "id": "appendix_a",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "Stormwreck_Islе",
+    "type": "Location",
+    "id": "stormwreck_isle",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Voyage to Stormwreck Isle"
+  },
+  {
+    "label": "Merrow_Extortionist",
+    "type": "Creature",
+    "id": "merrow_extortionist",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Voyage to Stormwreck Isle"
+  },
+  {
+    "label": "heroes_group",
+    "type": "Group",
+    "id": "heroes_group",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Neverwinter",
+    "type": "Location",
+    "id": "neverwinter",
+    "aliases": [
+      "[port]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Stormwreck_Isle",
+    "type": "Location",
+    "id": "stormwreck_isle",
+    "aliases": [
+      "[island]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "monster",
+    "type": "Creature",
+    "id": "monster",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "deck",
+    "type": "Location",
+    "id": "deck",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Scaled_Queen",
+    "type": "Creature",
+    "id": "scaled_queen",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "merrow",
+    "type": "Creature",
+    "id": "merrow",
+    "aliases": [
+      "[monster]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Scaled_Queen",
+    "type": "Creature",
+    "id": "scaled_queen",
+    "aliases": [
+      "[two_headed_merrow]"
+    ],
+    "source_node": "Negotiate with the Merrow"
+  },
+  {
+    "label": "Merrow_Extortionist",
+    "type": "Creature",
+    "id": "merrow_extortionist",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Negotiate with the Merrow"
+  },
+  {
+    "label": "Demogorgon",
+    "type": "Creature",
+    "id": "demogorgon",
+    "aliases": [
+      "[prince_of_demons]"
+    ],
+    "source_node": "Negotiate with the Merrow"
+  },
+  {
+    "label": "Merrow_Extortionist",
+    "type": "Creature",
+    "id": "merrow_extortionist",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Attack the Merrow"
+  },
+  {
+    "label": "players_group",
+    "type": "Group",
+    "id": "players_group",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Attack the Merrow"
+  },
+  {
+    "label": "merrow",
+    "type": "Creature",
+    "id": "merrow",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Shenanigans"
+  },
+  {
+    "label": "Merrow_Extortionist",
+    "type": "Creature",
+    "id": "merrow_extortionist",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Wrap Up"
+  },
+  {
+    "label": "merrow",
+    "type": "Creature",
+    "id": "merrow",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "ocean_deeps",
+    "type": "Location",
+    "id": "ocean_deeps",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "ship",
+    "type": "Location",
+    "id": "ship",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "sailors_group",
+    "type": "Group",
+    "id": "sailors_group",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Dragon's Rest",
+    "type": "Location",
+    "id": "dragon_s_rest",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Chapter 1: Dragon's Rest"
+  },
+  {
+    "label": "Stormwreck Isle",
+    "type": "Location",
+    "id": "stormwreck_isle",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Chapter 1: Dragon's Rest"
+  },
+  {
+    "label": "Runara",
+    "type": "Creature",
+    "id": "runara",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Chapter 1: Dragon's Rest"
+  },
+  {
+    "label": "Dragon's Rest",
+    "type": "Location",
+    "id": "dragon_s_rest",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Welcome to Dragon's Rest"
+  },
+  {
+    "label": "Cloister",
+    "type": "Location",
+    "id": "cloister",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Welcome to Dragon's Rest"
+  },
+  {
+    "label": "Boat",
+    "type": "Location",
+    "id": "boat",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Welcome to Dragon's Rest"
+  },
+  {
+    "label": "Map_2",
+    "type": "Item",
+    "id": "map_2",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Welcome to Dragon's Rest"
+  },
+  {
+    "label": "Player_Party_Group",
+    "type": "Group",
+    "id": "player_party_group",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Welcome to Dragon's Rest"
+  },
+  {
+    "label": "dragon_s_rest",
+    "type": "Location",
+    "id": "dragon_s_rest",
+    "aliases": [
+      "[island",
+      "island_off_bow]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "harbor",
+    "type": "Location",
+    "id": "harbor",
+    "aliases": [
+      "[calm_harbor]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "temple",
+    "type": "Location",
+    "id": "temple",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "path",
+    "type": "Location",
+    "id": "path",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "dock",
+    "type": "Location",
+    "id": "dock",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "rowboat",
+    "type": "Item",
+    "id": "rowboat",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "sailors",
+    "type": "Group",
+    "id": "sailors",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "zombies_from_shipwreck",
+    "type": "Creature",
+    "id": "zombies_from_shipwreck",
+    "aliases": [
+      "[shambling_sailors",
+      "zombies]"
+    ],
+    "source_node": "Drowned Sailors"
+  },
+  {
+    "label": "shipwreck",
+    "type": "Location",
+    "id": "shipwreck",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Drowned Sailors"
+  },
+  {
+    "label": "path_upward",
+    "type": "Location",
+    "id": "path_upward",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Drowned Sailors"
+  },
+  {
+    "label": "beach",
+    "type": "Location",
+    "id": "beach",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "water_edge",
+    "type": "Location",
+    "id": "water_edge",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "drowned_sailors",
+    "type": "Creature",
+    "id": "drowned_sailors",
+    "aliases": [
+      "[\"gray_skinned_npcs\"]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "zombies",
+    "type": "Creature",
+    "id": "zombies",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Tip: Undead Fortitude"
+  },
+  {
+    "label": "sacred_flame_cantrip",
+    "type": "Item",
+    "id": "sacred_flame_cantrip",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Tip: Undead Fortitude"
+  },
+  {
+    "label": "players_group",
+    "type": "Group",
+    "id": "players_group",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Tip: Undead Fortitude"
+  },
+  {
+    "label": "Dragon's Rest",
+    "type": "Location",
+    "id": "dragon_s_rest",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Runara's Aid"
+  },
+  {
+    "label": "temple",
+    "type": "Location",
+    "id": "temple_a5",
+    "aliases": [
+      "[\"area_A5\"]"
+    ],
+    "source_node": "Runara's Aid"
+  },
+  {
+    "label": "Runara",
+    "type": "Creature",
+    "id": "runara",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Runara's Aid"
+  },
+  {
+    "label": "zombies",
+    "type": "Group",
+    "id": "zombies",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Runara's Aid"
+  },
+  {
+    "label": "sea",
+    "type": "Location",
+    "id": "sea",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Runara's Aid"
+  },
+  {
+    "label": "player_characters",
+    "type": "Group",
+    "id": "player_characters",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Avoiding the Zombies"
+  },
+  {
+    "label": "zombies",
+    "type": "Creature",
+    "id": "zombies",
+    "aliases": [
+      "[\"shambling_monsters\"]"
+    ],
+    "source_node": "Avoiding the Zombies"
+  },
+  {
+    "label": "dragon_s_rest",
+    "type": "Location",
+    "id": "dragon_s_rest",
+    "aliases": [
+      "[\"temple\"]"
+    ],
+    "source_node": "Avoiding the Zombies"
+  },
+  {
+    "label": "dragon_s_rest",
+    "type": "Location",
+    "id": "dragon_s_rest",
+    "aliases": [
+      "[cloister]"
+    ],
+    "source_node": "Meeting the Inhabitants"
+  },
+  {
+    "label": "runara",
+    "type": "Creature",
+    "id": "runara",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Meeting the Inhabitants"
+  },
+  {
+    "label": "kobolds_cloister",
+    "type": "Group",
+    "id": "kobolds_cloister",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Meeting the Inhabitants"
+  },
+  {
+    "label": "myla",
+    "type": "Creature",
+    "id": "myla",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Meeting the Inhabitants"
+  },
+  {
+    "label": "zombies_at_beach",
+    "type": "Creature",
+    "id": "zombies_at_beach",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Meeting the Inhabitants"
+  },
+  {
+    "label": "cloister",
+    "type": "Location",
+    "id": "cloister",
+    "aliases": [
+      "[place]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "kobolds_group",
+    "type": "Group",
+    "id": "kobolds_group",
+    "aliases": [
+      "[kobolds]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "humans_watching",
+    "type": "Group",
+    "id": "humans_watching",
+    "aliases": [
+      "[humans]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "cloister",
+    "type": "Location",
+    "id": "cloister",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "dragon_s_rest",
+    "type": "Location",
+    "id": "dragon_s_rest",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "kobolds_group",
+    "type": "Group",
+    "id": "kobolds_group",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "elderly_human_woman",
+    "type": "Creature",
+    "id": "elderly_human_woman",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "white_robe",
+    "type": "Item",
+    "id": "white_robe",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Dragon's Rest",
+    "type": "Location",
+    "id": "dragon_s_rest",
+    "aliases": [
+      "[cloister",
+      "temple]"
+    ],
+    "source_node": "Elder Runara"
+  },
+  {
+    "label": "Runara",
+    "type": "Creature",
+    "id": "runara",
+    "aliases": [
+      "[adult_brone_dragon]"
+    ],
+    "source_node": "Elder Runara"
+  },
+  {
+    "label": "zombies_at_beach",
+    "type": "Creature",
+    "id": "zombies_at_beach",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Elder Runara"
+  },
+  {
+    "label": "cave_secret_lair",
+    "type": "Location",
+    "id": "cave_secret_lair",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Elder Runara"
+  },
+  {
+    "label": "undersea_tunnel",
+    "type": "Location",
+    "id": "undersea_tunnel",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Elder Runara"
+  },
+  {
+    "label": "area_a5",
+    "type": "Location",
+    "id": "area_a5",
+    "aliases": [
+      "[temple]"
+    ],
+    "source_node": "Elder Runara"
+  },
+  {
+    "label": "stormwreck_isle",
+    "type": "Location",
+    "id": "stormwreck_isle",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Kobolds"
+  },
+  {
+    "label": "dragon_s_rest",
+    "type": "Location",
+    "id": "dragon_s_rest",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Kobolds"
+  },
+  {
+    "label": "runara",
+    "type": "Creature",
+    "id": "runara",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Kobolds"
+  },
+  {
+    "label": "laylee",
+    "type": "Creature",
+    "id": "laylee",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Kobolds"
+  },
+  {
+    "label": "agga",
+    "type": "Creature",
+    "id": "agga",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Kobolds"
+  },
+  {
+    "label": "blepp",
+    "type": "Creature",
+    "id": "blepp",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Kobolds"
+  },
+  {
+    "label": "frub",
+    "type": "Creature",
+    "id": "frub",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Kobolds"
+  },
+  {
+    "label": "kilnip",
+    "type": "Creature",
+    "id": "kilnip",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Kobolds"
+  },
+  {
+    "label": "mumpo",
+    "type": "Creature",
+    "id": "mumpo",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Kobolds"
+  },
+  {
+    "label": "myla",
+    "type": "Creature",
+    "id": "myla",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Kobolds"
+  },
+  {
+    "label": "mylas_alchemical_fire",
+    "type": "Item",
+    "id": "mylas_alchemical_fire",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Kobolds"
+  },
+  {
+    "label": "tarak",
+    "type": "Creature",
+    "id": "tarak",
+    "aliases": [
+      "[\"human\"]"
+    ],
+    "source_node": "Tarak"
+  },
+  {
+    "label": "gilded_gallows",
+    "type": "Group",
+    "id": "gilded_gallows",
+    "aliases": [
+      "[\"thieves' guild\"]"
+    ],
+    "source_node": "Tarak"
+  },
+  {
+    "label": "sea_caves_on_island_south_side",
+    "type": "Location",
+    "id": "sea_caves_on_island_south_side",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Tarak"
+  },
+  {
+    "label": "elturgard",
+    "type": "Location",
+    "id": "elturgard",
+    "aliases": [
+      "[\"country\"]"
+    ],
+    "source_node": "Tarak"
+  },
+  {
+    "label": "myconids_at_sea_caves",
+    "type": "Creature",
+    "id": "myconids_at_sea_caves",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Tarak"
+  },
+  {
+    "label": "octopus_monster_guard",
+    "type": "Creature",
+    "id": "octopus_monster_guard",
+    "aliases": [
+      "[\"fungus-covered octopus monster\"]"
+    ],
+    "source_node": "Tarak"
+  },
+  {
+    "label": "heart_cap_mushroom",
+    "type": "Item",
+    "id": "heart_cap_mushroom",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Tarak"
+  },
+  {
+    "label": "potion_of_healing",
+    "type": "Item",
+    "id": "potion_of_healing",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Tarak"
+  },
+  {
+    "label": "Varnoth",
+    "type": "Creature",
+    "id": "varneth",
+    "aliases": [
+      "[general_varnonth_wender]"
+    ],
+    "source_node": "Varnoth"
+  },
+  {
+    "label": "azure_wolves",
+    "type": "Group",
+    "id": "azure_wolves",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Varnoth"
+  },
+  {
+    "label": "dragons_rest",
+    "type": "Location",
+    "id": "dragons_rest",
+    "aliases": [
+      "[cloister]"
+    ],
+    "source_node": "Varnoth"
+  },
+  {
+    "label": "temple",
+    "type": "Location",
+    "id": "temple",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Varnoth"
+  },
+  {
+    "label": "cloister",
+    "type": "Location",
+    "id": "cloister",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Varnoth"
+  },
+  {
+    "label": "rocks_north",
+    "type": "Location",
+    "id": "rocks_north",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Varnoth"
+  },
+  {
+    "label": "masons_tools",
+    "type": "Item",
+    "id": "masons_tools",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Varnoth"
+  },
+  {
+    "label": "Dragon's Rest",
+    "type": "Location",
+    "id": "dragon_s_rest",
+    "aliases": [
+      "[map_2_location]"
+    ],
+    "source_node": "Dragon's Rest Locations"
+  },
+  {
+    "label": "rocky_shore",
+    "type": "Location",
+    "id": "rocky_shore",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "path_up_cliff_side",
+    "type": "Location",
+    "id": "path_up_cliff_side",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "garden_plots",
+    "type": "Location",
+    "id": "garden_plots",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "plaza_above_bay",
+    "type": "Location",
+    "id": "plaza_above_bay",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "stone_statue_of_dragon",
+    "type": "Item",
+    "id": "stone_statue_of_dragon",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "open_doorways",
+    "type": "Location",
+    "id": "open_doorways",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "dragon_statue",
+    "type": "Item",
+    "id": "dragon_statue",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Statue"
+  },
+  {
+    "label": "runara",
+    "type": "Creature",
+    "id": "runara",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Statue"
+  },
+  {
+    "label": "astalagan",
+    "type": "Creature",
+    "id": "astalagan",
+    "aliases": [
+      "[bronze_dragon]"
+    ],
+    "source_node": "Statue"
+  },
+  {
+    "label": "winch_house",
+    "type": "Location",
+    "id": "winch_house",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "A2: Winch House"
+  },
+  {
+    "label": "cloister",
+    "type": "Location",
+    "id": "cloister",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "A2: Winch House"
+  },
+  {
+    "label": "winch",
+    "type": "Item",
+    "id": "winch",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "A2: Winch House"
+  },
+  {
+    "label": "pallet",
+    "type": "Item",
+    "id": "pallet",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "A2: Winch House"
+  },
+  {
+    "label": "lever",
+    "type": "Item",
+    "id": "lever",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "A2: Winch House"
+  },
+  {
+    "label": "residents",
+    "type": "Group",
+    "id": "residents",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "A2: Winch House"
+  },
+  {
+    "label": "building_halfway_path",
+    "type": "Location",
+    "id": "building_halfway_path",
+    "aliases": [
+      "[free_standing_building]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "path_location",
+    "type": "Location",
+    "id": "path_location",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "cliff_face",
+    "type": "Location",
+    "id": "cliff_face",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "wooden_pallet_wrapped_rope",
+    "type": "Item",
+    "id": "wooden_pallet_wrapped_rope",
+    "aliases": [
+      "[pallet]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "iron_chain",
+    "type": "Item",
+    "id": "iron_chain",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "cloister_residents",
+    "type": "Group",
+    "id": "cloister_residents",
+    "aliases": [
+      "[residents]"
+    ],
+    "source_node": "A3: Kitchen"
+  },
+  {
+    "label": "tarak",
+    "type": "Creature",
+    "id": "tarak",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "A3: Kitchen"
+  },
+  {
+    "label": "dining_room",
+    "type": "Location",
+    "id": "dining_room",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "kitchen",
+    "type": "Location",
+    "id": "kitchen",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "hallway",
+    "type": "Location",
+    "id": "hallway",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "long_table",
+    "type": "Item",
+    "id": "long_table",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "benches",
+    "type": "Item",
+    "id": "benches",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "chair",
+    "type": "Item",
+    "id": "chair",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "cloister_library",
+    "type": "Location",
+    "id": "cloister_library",
+    "aliases": [
+      "[library]"
+    ],
+    "source_node": "A4: Library"
+  },
+  {
+    "label": "runara",
+    "type": "Creature",
+    "id": "runara",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "A4: Library"
+  },
+  {
+    "label": "tarak",
+    "type": "Creature",
+    "id": "tarak",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "A4: Library"
+  },
+  {
+    "label": "varnonth",
+    "type": "Creature",
+    "id": "varnonth",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "A4: Library"
+  },
+  {
+    "label": "myla",
+    "type": "Creature",
+    "id": "myla",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "A4: Library"
+  },
+  {
+    "label": "kobolds",
+    "type": "Group",
+    "id": "kobolds",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "A4: Library"
+  },
+  {
+    "label": "cloister",
+    "type": "Location",
+    "id": "cloister",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "open_air_temple",
+    "type": "Location",
+    "id": "open_air_temple",
+    "aliases": [
+      "[temple]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "cliff_face",
+    "type": "Location",
+    "id": "cliff_face",
+    "aliases": [
+      "[cliff]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "canaries_perching_on_statue",
+    "type": "Creature",
+    "id": "canaries_perching_on_statue",
+    "aliases": [
+      "[canaries]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "stone_statue_old_man",
+    "type": "Item",
+    "id": "stone_statue_old_man",
+    "aliases": [
+      "[statue",
+      "old_man雕像]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "stone_struts_supporting_temple",
+    "type": "Item",
+    "id": "stone_struts_supporting_temple",
+    "aliases": [
+      "[struts]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "wooden_roof",
+    "type": "Item",
+    "id": "wooden_roof",
+    "aliases": [
+      "[roof]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "heavy_pillars",
+    "type": "Item",
+    "id": "heavy_pillars",
+    "aliases": [
+      "[pillars]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Dragon's Rest",
+    "type": "Location",
+    "id": "dragon_s_rest",
+    "aliases": [
+      "[cloister]"
+    ],
+    "source_node": "Cloister Quests"
+  },
+  {
+    "label": "Seagrow Caves",
+    "type": "Location",
+    "id": "seagrow_caves",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Cloister Quests"
+  },
+  {
+    "label": "Compass Rose",
+    "type": "Location",
+    "id": "compass_rose",
+    "aliases": [
+      "[shipwreck]"
+    ],
+    "source_node": "Cloister Quests"
+  },
+  {
+    "label": "Clifftop Observatory",
+    "type": "Location",
+    "id": "cliff_top_observatory",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Cloister Quests"
+  },
+  {
+    "label": "Runara",
+    "type": "Creature",
+    "id": "runara",
+    "aliases": [
+      "[resident]"
+    ],
+    "source_node": "Cloister Quests"
+  },
+  {
+    "label": "residents_of_dragon_s_rest",
+    "type": "Group",
+    "id": "residents_of_dragon_s_rest",
+    "aliases": [
+      "[dragon_s_rest_residents]"
+    ],
+    "source_node": "Cloister Quests"
+  },
+  {
+    "label": "cloister",
+    "type": "Location",
+    "id": "cloister",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Zombie Resurgence"
+  },
+  {
+    "label": "island",
+    "type": "Location",
+    "id": "island",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Zombie Resurgence"
+  },
+  {
+    "label": "shipwreck",
+    "type": "Location",
+    "id": "shipwreck",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Zombie Resurgence"
+  },
+  {
+    "label": "zombies",
+    "type": "Creature",
+    "id": "zombies",
+    "aliases": [
+      "[\"zombie_army\"]"
+    ],
+    "source_node": "Zombie Resurgence"
+  },
+  {
+    "label": "blepp_the_kobold",
+    "type": "Creature",
+    "id": "blepp_the_kobold",
+    "aliases": [
+      "[\"kobold\"]"
+    ],
+    "source_node": "Zombie Resurgence"
+  },
+  {
+    "label": "tarak_the_human_gardener",
+    "type": "Creature",
+    "id": "tarak_the_human_gardener",
+    "aliases": [
+      "[\"gardener\"]"
+    ],
+    "source_node": "Zombie Resurgence"
+  },
+  {
+    "label": "runara",
+    "type": "Creature",
+    "id": "runara",
+    "aliases": [
+      "[\"npc_runara\"]"
+    ],
+    "source_node": "Zombie Resurgence"
+  },
+  {
+    "label": "magical_dagger",
+    "type": "Item",
+    "id": "magical_dagger",
+    "aliases": [
+      "[\"dagger\"]"
+    ],
+    "source_node": "Zombie Resurgence"
+  },
+  {
+    "label": "Dragon's Rest",
+    "type": "Location",
+    "id": "dragon_s_rest",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "resident_1",
+    "type": "Creature",
+    "id": "resident_1",
+    "aliases": [
+      "[person",
+      "villager]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "resident_2",
+    "type": "Creature",
+    "id": "resident_2",
+    "aliases": [
+      "[person",
+      "villager]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "fishing_equipment",
+    "type": "Item",
+    "id": "fishing_equipment",
+    "aliases": [
+      "[rods",
+      "net",
+      "hooks]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "zombies_as_sailors",
+    "type": "Creature",
+    "id": "zombies_as_sailors",
+    "aliases": [
+      "[undead",
+      "corrupted]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "zombies_on_island",
+    "type": "Group",
+    "id": "zombies_on_island",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "More Zombies"
+  },
+  {
+    "label": "unknown_island",
+    "type": "Location",
+    "id": "unknown_island",
+    "aliases": [
+      "[\"the island\"]"
+    ],
+    "source_node": "More Zombies"
+  },
+  {
+    "label": "tarak",
+    "type": "Creature",
+    "id": "tarak",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Sea Caves"
+  },
+  {
+    "label": "sea_caves",
+    "type": "Location",
+    "id": "sea_caves",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Sea Caves"
+  },
+  {
+    "label": "myconids",
+    "type": "Creature",
+    "id": "myconids",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Sea Caves"
+  },
+  {
+    "label": "fungal_octopus",
+    "type": "Creature",
+    "id": "fungal_octopus",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Sea Caves"
+  },
+  {
+    "label": "heart_cap_mushrooms",
+    "type": "Item",
+    "id": "heart_cap_mushrooms",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Sea Caves"
+  },
+  {
+    "label": "sack_of_food_scraps",
+    "type": "Item",
+    "id": "sack_of_food_scraps",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Sea Caves"
+  },
+  {
+    "label": "potion_of_healing",
+    "type": "Item",
+    "id": "potion_of_healing",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Sea Caves"
+  },
+  {
+    "label": "Dragon's Rest",
+    "type": "Location",
+    "id": "dragon_s_rest",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Shipwreck"
+  },
+  {
+    "label": "rocks_north_of_dragon_s_rest",
+    "type": "Location",
+    "id": "rocks_north_of_dragon_s_rest",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Shipwreck"
+  },
+  {
+    "label": "Varnoth",
+    "type": "Creature",
+    "id": "varnoth",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Shipwreck"
+  },
+  {
+    "label": "rix_kobold",
+    "type": "Creature",
+    "id": "rix_kobold",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Shipwreck"
+  },
+  {
+    "label": "compass_rose_wreck",
+    "type": "Location",
+    "id": "compass_rose_wreck",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Shipwreck"
+  },
+  {
+    "label": "Runara",
+    "type": "Creature",
+    "id": "runara",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Shipwreck"
+  },
+  {
+    "label": "Dragon's Rest",
+    "type": "Location",
+    "id": "dragon_s_rest",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Individual Quests"
+  },
+  {
+    "label": "Runara",
+    "type": "Creature",
+    "id": "runara",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "The Cleric"
+  },
+  {
+    "label": "Compass_Rose_Wreck",
+    "type": "Location",
+    "id": "compass_rose_wreck",
+    "aliases": [
+      "[compass_rose",
+      "wreck]"
+    ],
+    "source_node": "The Cleric"
+  },
+  {
+    "label": "zombies_fought",
+    "type": "Creature",
+    "id": "zombies_fought",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "The Cleric"
+  },
+  {
+    "label": "cleric",
+    "type": "Creature",
+    "id": "cleric",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "The Cleric"
+  },
+  {
+    "label": "Dragon's Rest",
+    "type": "Location",
+    "id": "dragon_s_rest",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "The Fighter"
+  },
+  {
+    "label": "Cloister",
+    "type": "Location",
+    "id": "cloister",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "The Fighter"
+  },
+  {
+    "label": "Runara",
+    "type": "Creature",
+    "id": "runara",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "The Fighter"
+  },
+  {
+    "label": "zombies_on_beach",
+    "type": "Creature",
+    "id": "zombies_on_beach",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "The Fighter"
+  },
+  {
+    "label": "Neverwinter",
+    "type": "Location",
+    "id": "neverwinter",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "The Paladin"
+  },
+  {
+    "label": "Dragon's Rest",
+    "type": "Location",
+    "id": "dragons_rest",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "The Paladin"
+  },
+  {
+    "label": "Temple Of Bahamut",
+    "type": "Location",
+    "id": "temple_of_bahamut",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "The Paladin"
+  },
+  {
+    "label": "Runara",
+    "type": "Creature",
+    "id": "runara",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "The Paladin"
+  },
+  {
+    "label": "Tarak",
+    "type": "Creature",
+    "id": "tarak",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "The Paladin"
+  },
+  {
+    "label": "Varnoth",
+    "type": "Creature",
+    "id": "varnoth",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "The Paladin"
+  },
+  {
+    "label": "Paladin",
+    "type": "Creature",
+    "id": "paladin",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "The Paladin"
+  },
+  {
+    "label": "Dragon's Rest",
+    "type": "Location",
+    "id": "dragon_s_rest",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "The Rogue"
+  },
+  {
+    "label": "Gilded_Gallows",
+    "type": "Group",
+    "id": "gilded_gallows",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "The Rogue"
+  },
+  {
+    "label": "Tarak",
+    "type": "Creature",
+    "id": "tarak",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "The Rogue"
+  },
+  {
+    "label": "Rogue",
+    "type": "Creature",
+    "id": "rogue",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "The Rogue"
+  },
+  {
+    "label": "Island",
+    "type": "Location",
+    "id": "island",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "The Rogue"
+  },
+  {
+    "label": "Lost_Fortune",
+    "type": "Item",
+    "id": "lost_fortune",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "The Rogue"
+  },
+  {
+    "label": "Clifftop_Observatory",
+    "type": "Location",
+    "id": "clifftop_observatory",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "The Wizard"
+  },
+  {
+    "label": "Runara",
+    "type": "Creature",
+    "id": "runara",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "The Wizard"
+  },
+  {
+    "label": "Wizard",
+    "type": "Creature",
+    "id": "wizard",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "The Wizard"
+  },
+  {
+    "label": "Letter",
+    "type": "Item",
+    "id": "letter",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "The Wizard"
+  },
+  {
+    "label": "zombies_encountered",
+    "type": "Creature",
+    "id": "zombies_encountered",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Lost Wyrmling"
+  },
+  {
+    "label": "myconids_encountered",
+    "type": "Creature",
+    "id": "myconids_encountered",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Lost Wyrmling"
+  },
+  {
+    "label": "shipwreck",
+    "type": "Location",
+    "id": "shipwreck",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Lost Wyrmling"
+  },
+  {
+    "label": "temple_area_a5",
+    "type": "Location",
+    "id": "temple_area_a5",
+    "aliases": [
+      "[area_A5]"
+    ],
+    "source_node": "Lost Wyrmling"
+  },
+  {
+    "label": "dragon_s_rest",
+    "type": "Location",
+    "id": "dragon_s_rest",
+    "aliases": [
+      "[cloister]"
+    ],
+    "source_node": "Lost Wyrmling"
+  },
+  {
+    "label": "ancient_observatory",
+    "type": "Location",
+    "id": "ancient_observatory",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Lost Wyrmling"
+  },
+  {
+    "label": "runara",
+    "type": "Creature",
+    "id": "runara",
+    "aliases": [
+      "[bronze_dragon]"
+    ],
+    "source_node": "Lost Wyrmling"
+  },
+  {
+    "label": "aidron",
+    "type": "Creature",
+    "id": "aidron",
+    "aliases": [
+      "[bronze_wyrmling]"
+    ],
+    "source_node": "Lost Wyrmling"
+  },
+  {
+    "label": "moonstone_key",
+    "type": "Item",
+    "id": "moonstone_key",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Lost Wyrmling"
+  },
+  {
+    "label": "runara",
+    "type": "Creature",
+    "id": "runara",
+    "aliases": [
+      "[\"elder_runara\"",
+      "\"human_woman\"",
+      "\"bronze_dragon\"]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Dragon's Rest",
+    "type": "Location",
+    "id": "dragon_s_rest",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Exploring the Island"
+  },
+  {
+    "label": "Stormwreck Isle",
+    "type": "Location",
+    "id": "stormwreck_isle",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Exploring the Island"
+  },
+  {
+    "label": "adventure_location_1",
+    "type": "Location",
+    "id": "adventure_location_1",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Exploring the Island"
+  },
+  {
+    "label": "adventure_location_2",
+    "type": "Location",
+    "id": "adventure_location_2",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Exploring the Island"
+  },
+  {
+    "label": "adventure_location_3",
+    "type": "Location",
+    "id": "adventure_location_3",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Exploring the Island"
+  },
+  {
+    "label": "hot_spring",
+    "type": "Location",
+    "id": "hot_spring",
+    "aliases": [
+      "[spring]"
+    ],
+    "source_node": "Hot Springs Havoc"
+  },
+  {
+    "label": "island",
+    "type": "Location",
+    "id": "island",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Hot Springs Havoc"
+  },
+  {
+    "label": "mushrooms",
+    "type": "Item",
+    "id": "mushrooms",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Hot Springs Havoc"
+  },
+  {
+    "label": "fume_drake_guardians",
+    "type": "Group",
+    "id": "fume_drake_guardians",
+    "aliases": [
+      "[Fume Drake]"
+    ],
+    "source_node": "Hot Springs Havoc"
+  },
+  {
+    "label": "Spring Waters",
+    "type": "Location",
+    "id": "spring_waters",
+    "aliases": [
+      "[spring]"
+    ],
+    "source_node": "Spring Waters"
+  },
+  {
+    "label": "Brass Dragon",
+    "type": "Creature",
+    "id": "brass_dragon",
+    "aliases": [
+      "[brass dragon]"
+    ],
+    "source_node": "Spring Waters"
+  },
+  {
+    "label": "spring",
+    "type": "Location",
+    "id": "spring",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "wind_spore",
+    "type": "Item",
+    "id": "wind_spore",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "owlbear",
+    "type": "Creature",
+    "id": "owlbear",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "There, There, Owlbear"
+  },
+  {
+    "label": "performing_troupe",
+    "type": "Group",
+    "id": "performing_troupe",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "There, There, Owlbear"
+  },
+  {
+    "label": "northern_rocks",
+    "type": "Location",
+    "id": "northern_rocks",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "There, There, Owlbear"
+  },
+  {
+    "label": "island",
+    "type": "Location",
+    "id": "island",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "There, There, Owlbear"
+  },
+  {
+    "label": "whistle",
+    "type": "Item",
+    "id": "whistle",
+    "aliases": [
+      "['small_wooden_whistle']"
+    ],
+    "source_node": "There, There, Owlbear"
+  },
+  {
+    "label": "hulking_beast",
+    "type": "Creature",
+    "id": "hulking_beast",
+    "aliases": [
+      "[purple_feathered_brown_furred",
+      "owlish_headed]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Dragon's_Rest",
+    "type": "Location",
+    "id": "dragon_s_rest",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Kobold Renegades"
+  },
+  {
+    "label": "Kobold_Renegades_Group",
+    "type": "Group",
+    "id": "kobold_renegades_group",
+    "aliases": [
+      "[\"kobolds\"]"
+    ],
+    "source_node": "Kobold Renegades"
+  },
+  {
+    "label": "Regular_Kobold",
+    "type": "Creature",
+    "id": "regular_kobold",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Kobold Renegades"
+  },
+  {
+    "label": "Winged_Kobold",
+    "type": "Creature",
+    "id": "winged_kobold",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Kobold Renegades"
+  },
+  {
+    "label": "Runara",
+    "type": "Location",
+    "id": "runara",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Kobold Renegades"
+  },
+  {
+    "label": "Sparkrender",
+    "type": "Location",
+    "id": "sparkrender",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Kobold Renegades"
+  },
+  {
+    "label": "kobolds_emerging_from_hiding_places",
+    "type": "Creature",
+    "id": "kobolds_emerging_from_hiding_places",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "kobolds",
+    "type": "Creature",
+    "id": "kobolds",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "2nd-Level Characters"
+  },
+  {
+    "label": "winged_kobolds",
+    "type": "Creature",
+    "id": "winged_kobolds",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "2nd-Level Characters"
+  },
+  {
+    "label": "kobolds",
+    "type": "Creature",
+    "id": "kobolds",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "3rd-Level Characters"
+  },
+  {
+    "label": "winged_kobolds",
+    "type": "Creature",
+    "id": "winged_kobolds",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "3rd-Level Characters"
+  },
+  {
+    "label": "stormwreck_isle",
+    "type": "Location",
+    "id": "stormwreck_isle",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "What Lies Beneath"
+  },
+  {
+    "label": "seagrow_caves",
+    "type": "Location",
+    "id": "seagrow_caves",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "What Lies Beneath"
+  },
+  {
+    "label": "sharruth",
+    "type": "Creature",
+    "id": "sharruth",
+    "aliases": [
+      "[red_dragon]"
+    ],
+    "source_node": "What Lies Beneath"
+  },
+  {
+    "label": "fume_drake",
+    "type": "Creature",
+    "id": "fume_drake",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "What Lies Beneath"
+  },
+  {
+    "label": "fire_snake",
+    "type": "Creature",
+    "id": "fire_snake",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "What Lies Beneath"
+  },
+  {
+    "label": "kobolds_serving_sharruth",
+    "type": "Group",
+    "id": "kobolds_serving_sharruth",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "What Lies Beneath"
+  },
+  {
+    "label": "Seagrow Caves",
+    "type": "Location",
+    "id": "seagrow_caves",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Chapter 2: Seagrow Caves"
+  },
+  {
+    "label": "Compass_Rose_Wreck",
+    "type": "Location",
+    "id": "compass_rose_wreck",
+    "aliases": [
+      "[\"wreck of Compass Rose\"]"
+    ],
+    "source_node": "Chapter 2: Seagrow Caves"
+  },
+  {
+    "label": "Cursed_Shipwreck",
+    "type": "Location",
+    "id": "cursed_shipwreck",
+    "aliases": [
+      "[\"chapter 3\"]"
+    ],
+    "source_node": "Chapter 2: Seagrow Caves"
+  },
+  {
+    "label": "Stormwreck Isle",
+    "type": "Location",
+    "id": "stormwreck_isle",
+    "aliases": [
+      "[island]"
+    ],
+    "source_node": "Caves Overview"
+  },
+  {
+    "label": "Seagrow Caves",
+    "type": "Location",
+    "id": "seagrow_caves",
+    "aliases": [
+      "[sea_caves]"
+    ],
+    "source_node": "Caves Overview"
+  },
+  {
+    "label": "Dragon's Rest",
+    "type": "Location",
+    "id": "dragons_rest",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Caves Overview"
+  },
+  {
+    "label": "Tomb of Sharruth",
+    "type": "Location",
+    "id": "tomb_of_sharruth",
+    "aliases": [
+      "[dragon_tomb]"
+    ],
+    "source_node": "Caves Overview"
+  },
+  {
+    "label": "Myconids Colony",
+    "type": "Group",
+    "id": "myconids_colony",
+    "aliases": [
+      "[fungus_people]"
+    ],
+    "source_node": "Caves Overview"
+  },
+  {
+    "label": "Sinensa",
+    "type": "Creature",
+    "id": "sinensa",
+    "aliases": [
+      "[myconid_leader]"
+    ],
+    "source_node": "Caves Overview"
+  },
+  {
+    "label": "Guarded Monster",
+    "type": "Creature",
+    "id": "guarded_monster",
+    "aliases": [
+      "[monstrous_guardian]"
+    ],
+    "source_node": "Caves Overview"
+  },
+  {
+    "label": "Stirges",
+    "type": "Creature",
+    "id": "stirges",
+    "aliases": [
+      "[blood_suckers]"
+    ],
+    "source_node": "Caves Overview"
+  },
+  {
+    "label": "Tarak",
+    "type": "Creature",
+    "id": "tarak",
+    "aliases": [
+      "[npc_trader]"
+    ],
+    "source_node": "Caves Overview"
+  },
+  {
+    "label": "Rare Fungi",
+    "type": "Item",
+    "id": "rare_fungi",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Caves Overview"
+  },
+  {
+    "label": "Food Scraps and Waste",
+    "type": "Item",
+    "id": "food_scrap_and_waste",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Caves Overview"
+  },
+  {
+    "label": "Cloister",
+    "type": "Location",
+    "id": "cloister",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Caves Overview"
+  },
+  {
+    "label": "seagrow_caves",
+    "type": "Location",
+    "id": "seagrow_caves",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Seagrow Caves Features"
+  },
+  {
+    "label": "sharruth_undersea_tomb",
+    "type": "Location",
+    "id": "sharruth_undersea_tomb",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Seagrow Caves Features"
+  },
+  {
+    "label": "area_b6",
+    "type": "Location",
+    "id": "area_b6",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Seagrow Caves Features"
+  },
+  {
+    "label": "bioluminescent_fungi",
+    "type": "Item",
+    "id": "bioluminescent_fungi",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Seagrow Caves Features"
+  },
+  {
+    "label": "lesser_restoration_spell",
+    "type": "Item",
+    "id": "lesser_restoration_spell",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Seagrow Caves Features"
+  },
+  {
+    "label": "Dragon's Rest",
+    "type": "Location",
+    "id": "dragon_s_rest",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Running This Chapter"
+  },
+  {
+    "label": "Seagrow Caves",
+    "type": "Location",
+    "id": "seagrow_caves",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Running This Chapter"
+  },
+  {
+    "label": "Tarak",
+    "type": "Creature",
+    "id": "tarak",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Running This Chapter"
+  },
+  {
+    "label": "Rowboat",
+    "type": "Item",
+    "id": "rowboat",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Running This Chapter"
+  },
+  {
+    "label": "Seagrow Caves",
+    "type": "Location",
+    "id": "seagrow_caves",
+    "aliases": [
+      "[cave system]"
+    ],
+    "source_node": "Approaching at Sea Level"
+  },
+  {
+    "label": "dark_gray_cliff",
+    "type": "Location",
+    "id": "dark_gray_cliff",
+    "aliases": [
+      "[towering_cliff]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "gaping_cave",
+    "type": "Location",
+    "id": "gaping_cave",
+    "aliases": [
+      "[cave_with_yawning_mouth]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "cliff_face_opening",
+    "type": "Location",
+    "id": "cliff_face_opening",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "cliff_face",
+    "type": "Location",
+    "id": "cliff_face",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "stairway_1",
+    "type": "Location",
+    "id": "stairway_1",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "stairway_2",
+    "type": "Location",
+    "id": "stairway_2",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "seagrow_caves",
+    "type": "Location",
+    "id": "seagrow_caves",
+    "aliases": [
+      "[caves]"
+    ],
+    "source_node": "Entering the Caves"
+  },
+  {
+    "label": "area_b1",
+    "type": "Location",
+    "id": "area_b1",
+    "aliases": [
+      "[tunnel]"
+    ],
+    "source_node": "Entering the Caves"
+  },
+  {
+    "label": "area_b2",
+    "type": "Location",
+    "id": "area_b2",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Entering the Caves"
+  },
+  {
+    "label": "cliffs",
+    "type": "Location",
+    "id": "cliffs",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Entering the Caves"
+  },
+  {
+    "label": "sea",
+    "type": "Location",
+    "id": "sea",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Entering the Caves"
+  },
+  {
+    "label": "pathway_low_tide",
+    "type": "Location",
+    "id": "pathway_low_tide",
+    "aliases": [
+      "[exposed_pathway]"
+    ],
+    "source_node": "Entering the Caves"
+  },
+  {
+    "label": "myconid",
+    "type": "Creature",
+    "id": "myconid",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Rapport Spores"
+  },
+  {
+    "label": "characters",
+    "type": "Group",
+    "id": "characters",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Rapport Spores"
+  },
+  {
+    "label": "cave",
+    "type": "Location",
+    "id": "cave",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Rapport Spores"
+  },
+  {
+    "label": "area_b2",
+    "type": "Location",
+    "id": "area_b2",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Distress Spores"
+  },
+  {
+    "label": "area_b3",
+    "type": "Location",
+    "id": "area_b3",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Distress Spores"
+  },
+  {
+    "label": "area_b4",
+    "type": "Location",
+    "id": "area_b4",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Distress Spores"
+  },
+  {
+    "label": "myconids_in_b2",
+    "type": "Group",
+    "id": "myconids_in_b2",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Distress Spores"
+  },
+  {
+    "label": "myconids_in_b3",
+    "type": "Group",
+    "id": "myconids_in_b3",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Distress Spores"
+  },
+  {
+    "label": "Seagrow Caves",
+    "type": "Location",
+    "id": "seagrow_caves",
+    "aliases": [
+      "[caves]"
+    ],
+    "source_node": "Seagrow Caves Locations"
+  },
+  {
+    "label": "tunnel",
+    "type": "Location",
+    "id": "tunnel",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "cavern",
+    "type": "Location",
+    "id": "cavern",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "multicolored_fungus",
+    "type": "Item",
+    "id": "multicolored_fungus",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "colorful_spores",
+    "type": "Item",
+    "id": "colorful_spores",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "water",
+    "type": "Item",
+    "id": "water",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "stirges_clinging_tunnel_ceiling",
+    "type": "Creature",
+    "id": "stirges_clinging_tunnel_ceiling",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "2nd-Level Characters"
+  },
+  {
+    "label": "spore_servant",
+    "type": "Creature",
+    "id": "spore_servant",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "2nd-Level Characters"
+  },
+  {
+    "label": "tunnel_ceiling",
+    "type": "Location",
+    "id": "tunnel_ceiling",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "2nd-Level Characters"
+  },
+  {
+    "label": "cavern",
+    "type": "Location",
+    "id": "cavern",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "upper_cave_area",
+    "type": "Location",
+    "id": "upper_cave_area",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "large_pool",
+    "type": "Location",
+    "id": "large_pool",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "mushroom_like_people",
+    "type": "Creature",
+    "id": "mushroom_like_people",
+    "aliases": [
+      "[\"mushroom_people\"]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "cave",
+    "type": "Location",
+    "id": "cave",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "mushroom",
+    "type": "Creature",
+    "id": "mushroom",
+    "aliases": [
+      "[sickly_mushroom]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "fungus_farm",
+    "type": "Location",
+    "id": "fungus_farm",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Running the Combat"
+  },
+  {
+    "label": "violet_fungus_1",
+    "type": "Creature",
+    "id": "violet_fungus_1",
+    "aliases": [
+      "[\"active_violet_fungus\"]"
+    ],
+    "source_node": "Running the Combat"
+  },
+  {
+    "label": "violet_fungus_2",
+    "type": "Creature",
+    "id": "violet_fungus_2",
+    "aliases": [
+      "[\"inactive_violet_fungus\"]"
+    ],
+    "source_node": "Running the Combat"
+  },
+  {
+    "label": "violet_fungus_3",
+    "type": "Creature",
+    "id": "violet_fungus_3",
+    "aliases": [
+      "[\"inactive_violet_fungus\"]"
+    ],
+    "source_node": "Running the Combat"
+  },
+  {
+    "label": "blighted_fungi",
+    "type": "Group",
+    "id": "blighted_fungi",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Blighted Fungi"
+  },
+  {
+    "label": "violet_fungus_group",
+    "type": "Creature",
+    "id": "violet_fungus_group",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "2nd-Level Characters"
+  },
+  {
+    "label": "bispo_myconid_sprout",
+    "type": "Creature",
+    "id": "bispo_myconid_sprout",
+    "aliases": [
+      "[\"Myconid Sprout\"]"
+    ],
+    "source_node": "B3: Larder"
+  },
+  {
+    "label": "valup_myconid_sprout",
+    "type": "Creature",
+    "id": "valup_myconid_sprout",
+    "aliases": [
+      "[\"Myconid Sprout\"]"
+    ],
+    "source_node": "B3: Larder"
+  },
+  {
+    "label": "popple_myconid_sprout",
+    "type": "Creature",
+    "id": "popple_myconid_sprout",
+    "aliases": [
+      "[\"Myconid Sprout\"]"
+    ],
+    "source_node": "B3: Larder"
+  },
+  {
+    "label": "stirge_nest",
+    "type": "Item",
+    "id": "stirge_nest",
+    "aliases": [
+      "[\"bulbous object\"]"
+    ],
+    "source_node": "B3: Larder"
+  },
+  {
+    "label": "b3_larder",
+    "type": "Location",
+    "id": "b3_larder",
+    "aliases": [
+      "[\"chamber\"",
+      "\"current section\"]"
+    ],
+    "source_node": "B3: Larder"
+  },
+  {
+    "label": "b2_area",
+    "type": "Location",
+    "id": "b2_area",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "B3: Larder"
+  },
+  {
+    "label": "b4_area",
+    "type": "Location",
+    "id": "b4_area",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "B3: Larder"
+  },
+  {
+    "label": "decaying_cave",
+    "type": "Location",
+    "id": "decaying_cave",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "mushroom_folk_group",
+    "type": "Group",
+    "id": "mushroom_folk_group",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "bulbous_object",
+    "type": "Item",
+    "id": "bulbous_object",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "stirges",
+    "type": "Creature",
+    "id": "stirges",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "2nd-Level Characters"
+  },
+  {
+    "label": "Cavern",
+    "type": "Location",
+    "id": "cavern",
+    "aliases": [
+      "[ ]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Giant_Mushrooms_Clusters",
+    "type": "Group",
+    "id": "giant_mushrooms_clusters",
+    "aliases": [
+      "[\"clusters_of_giant_mushrooms\"]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Mushroom_Folk_Group",
+    "type": "Group",
+    "id": "mushroom_folk_group",
+    "aliases": [
+      "[\"human_size_mushroom_folks\"]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "auranta",
+    "type": "Creature",
+    "id": "auranta",
+    "aliases": [
+      "[myconid_adult]"
+    ],
+    "source_node": "B5: Sinensa's Sanctum"
+  },
+  {
+    "label": "enok",
+    "type": "Creature",
+    "id": "enok",
+    "aliases": [
+      "[myconid_adult]"
+    ],
+    "source_node": "B5: Sinensa's Sanctum"
+  },
+  {
+    "label": "sinensa",
+    "type": "Creature",
+    "id": "sinensa",
+    "aliases": [
+      "[unconscious_leader",
+      "myconid]"
+    ],
+    "source_node": "B5: Sinensa's Sanctum"
+  },
+  {
+    "label": "glowing_red_fungus",
+    "type": "Item",
+    "id": "glowing_red_fungus",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "B5: Sinensa's Sanctum"
+  },
+  {
+    "label": "myconid_colony",
+    "type": "Group",
+    "id": "myconid_colony",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "B5: Sinensa's Sanctum"
+  },
+  {
+    "label": "cave",
+    "type": "Location",
+    "id": "cave",
+    "aliases": [
+      "[\"smaller cave\"]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "glowing_fungus",
+    "type": "Item",
+    "id": "glowing_fungus",
+    "aliases": [
+      "[\"glowing fungus\"]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "colorful_crystals",
+    "type": "Item",
+    "id": "colorful_crystals",
+    "aliases": [
+      "[\"colorful crystals\"]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "mushroom_folk_01",
+    "type": "Creature",
+    "id": "mushroom_folk_01",
+    "aliases": [
+      "[\"human-sized mushroom folk\"]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "mushroom_folk_02",
+    "type": "Creature",
+    "id": "mushroom_folk_02",
+    "aliases": [
+      "[\"human-sized mushroom folk\"]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "large_specimen",
+    "type": "Creature",
+    "id": "large_specimen",
+    "aliases": [
+      "[\"larger mushroom\"]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "ruby_morel",
+    "type": "Item",
+    "id": "ruby_morel",
+    "aliases": [
+      "[glowing_red_fungus",
+      "ruby_morl]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "cloister",
+    "type": "Location",
+    "id": "cloister",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "tarak",
+    "type": "Creature",
+    "id": "tarak",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "elixir_of_health",
+    "type": "Item",
+    "id": "elixir_of_health",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "fume_drake",
+    "type": "Creature",
+    "id": "fume_drake",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "B6: Crystal Cave"
+  },
+  {
+    "label": "crystal_cave",
+    "type": "Location",
+    "id": "crystal_cave",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "B6: Crystal Cave"
+  },
+  {
+    "label": "myconid_colony",
+    "type": "Location",
+    "id": "myconid_colony",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "B6: Crystal Cave"
+  },
+  {
+    "label": "purple_crystals",
+    "type": "Item",
+    "id": "purple_crystals",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "B6: Crystal Cave"
+  },
+  {
+    "label": "orange_crystal",
+    "type": "Item",
+    "id": "orange_crystal",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "B6: Crystal Cave"
+  },
+  {
+    "label": "sharruth",
+    "type": "Creature",
+    "id": "sharruth",
+    "aliases": [
+      "[\"red dragon\"]"
+    ],
+    "source_node": "B6: Crystal Cave"
+  },
+  {
+    "label": "tomb_of_sharruth",
+    "type": "Location",
+    "id": "tomb_of_sharruth",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "B6: Crystal Cave"
+  },
+  {
+    "label": "elemental_plane_of_fire",
+    "type": "Location",
+    "id": "elemental_plane_of_fire",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "B6: Crystal Cave"
+  },
+  {
+    "label": "island",
+    "type": "Location",
+    "id": "island",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "B6: Crystal Cave"
+  },
+  {
+    "label": "cave",
+    "type": "Location",
+    "id": "cave",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "purple_crystal_cluster",
+    "type": "Item",
+    "id": "purple_crystal_cluster",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "orange_glowing_crystal",
+    "type": "Item",
+    "id": "orange_glowing_crystal",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "fissure_in_cave_wall",
+    "type": "Location",
+    "id": "fissure_in_cave_wall",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "orange_crystal",
+    "type": "Item",
+    "id": "orange_crystal",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Fire Crystal"
+  },
+  {
+    "label": "western_fissure",
+    "type": "Location",
+    "id": "western_fissure",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Fire Crystal"
+  },
+  {
+    "label": "cave",
+    "type": "Location",
+    "id": "cave",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Fire Crystal"
+  },
+  {
+    "label": "fire_snake",
+    "type": "Creature",
+    "id": "fire_snake",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Fire Crystal"
+  },
+  {
+    "label": "myconids",
+    "type": "Group",
+    "id": "myconids",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Fire Crystal"
+  },
+  {
+    "label": "player_characters",
+    "type": "Group",
+    "id": "player_characters",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Fire Crystal"
+  },
+  {
+    "label": "fire_snake",
+    "type": "Creature",
+    "id": "fire_snake",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "fire_snake_egg",
+    "type": "Item",
+    "id": "fire_snake_egg",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "obsidian",
+    "type": "Item",
+    "id": "obsidian",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "room",
+    "type": "Location",
+    "id": "room",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "2nd-Level Characters"
+  },
+  {
+    "label": "fume_drake_added_room",
+    "type": "Creature",
+    "id": "fume_drake_added_room",
+    "aliases": [
+      "[\"third_fume_drake\"]"
+    ],
+    "source_node": "2nd-Level Characters"
+  },
+  {
+    "label": "fire_snake",
+    "type": "Creature",
+    "id": "fire_snake",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "2nd-Level Characters"
+  },
+  {
+    "label": "fume_drake_emerged_clustern1",
+    "type": "Creature",
+    "id": "fume_drake_emerged_clustern1",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "2nd-Level Characters"
+  },
+  {
+    "label": "fume_drake_emerged_clustern2",
+    "type": "Creature",
+    "id": "fume_drake_emerged_clustern2",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "2nd-Level Characters"
+  },
+  {
+    "label": "cluster_purple_crystals",
+    "type": "Item",
+    "id": "cluster_purple_crystals",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "2nd-Level Characters"
+  },
+  {
+    "label": "Cursed Shipwreck",
+    "type": "Location",
+    "id": "cursed_shipwreck",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Chapter 3: Cursed Shipwreck"
+  },
+  {
+    "label": "Seagrow Caves",
+    "type": "Location",
+    "id": "seagrow_caves",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Chapter 3: Cursed Shipwreck"
+  },
+  {
+    "label": "stormwreck_isle",
+    "type": "Location",
+    "id": "stormwreck_isle",
+    "aliases": [
+      "[island",
+      "rocky shoal region]"
+    ],
+    "source_node": "Shipwreck Overview"
+  },
+  {
+    "label": "cloister",
+    "type": "Location",
+    "id": "cloister",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Shipwreck Overview"
+  },
+  {
+    "label": "dragons_rest",
+    "type": "Location",
+    "id": "dragons_rest",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Shipwreck Overview"
+  },
+  {
+    "label": "compass_rose_wreck",
+    "type": "Location",
+    "id": "compass_rose_wreck",
+    "aliases": [
+      "[shipwreck]"
+    ],
+    "source_node": "Shipwreck Overview"
+  },
+  {
+    "label": "harpy",
+    "type": "Creature",
+    "id": "harpy",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Shipwreck Overview"
+  },
+  {
+    "label": "zombies_from_compass_rose",
+    "type": "Creature",
+    "id": "zombies_from_compass_rose",
+    "aliases": [
+      "[shambling zombies",
+      "drowned sailors]"
+    ],
+    "source_node": "Shipwreck Overview"
+  },
+  {
+    "label": "zombies_from_recent_shipwrecks",
+    "type": "Creature",
+    "id": "zombies_from_recent_shipwrecks",
+    "aliases": [
+      "[zombie sailors",
+      "menacing zombies]"
+    ],
+    "source_node": "Shipwreck Overview"
+  },
+  {
+    "label": "cursed_talisman",
+    "type": "Item",
+    "id": "cursed_talisman",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Shipwreck Overview"
+  },
+  {
+    "label": "Compass_Rose",
+    "type": "Item",
+    "id": "compass_rose",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Shipwreck Features"
+  },
+  {
+    "label": "Wreck_Of_Compass_Rose",
+    "type": "Location",
+    "id": "wreck_of_compass_rose",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Shipwreck Features"
+  },
+  {
+    "label": "Cloister",
+    "type": "Location",
+    "id": "cloister",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Shipwreck Features"
+  },
+  {
+    "label": "Dragon_Bones",
+    "type": "Item",
+    "id": "dragon_bones",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Shipwreck Features"
+  },
+  {
+    "label": "Dragon's Rest",
+    "type": "Location",
+    "id": "dragon_s_rest",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Running This Chapter"
+  },
+  {
+    "label": "Compass Rose",
+    "type": "Location",
+    "id": "compass_rose",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Running This Chapter"
+  },
+  {
+    "label": "Rowboat",
+    "type": "Item",
+    "id": "rowboat",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Running This Chapter"
+  },
+  {
+    "label": "Area C1",
+    "type": "Location",
+    "id": "area_c1",
+    "aliases": [
+      "[main_deck]"
+    ],
+    "source_node": "Running This Chapter"
+  },
+  {
+    "label": "Area C9",
+    "type": "Location",
+    "id": "area_c9",
+    "aliases": [
+      "[hold]"
+    ],
+    "source_node": "Running This Chapter"
+  },
+  {
+    "label": "derelict_ship",
+    "type": "Location",
+    "id": "derelict_ship",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "ridge_of_rocks",
+    "type": "Location",
+    "id": "ridge_of_rocks",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "seagulls",
+    "type": "Creature",
+    "id": "seagulls",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "tattered_sails_and_rigging",
+    "type": "Item",
+    "id": "tattered_sails_and_rigging",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "type": "Location",
+    "id": "compass_rose",
+    "aliases": [
+      "[shipwreck",
+      "wreck]>"
+    ],
+    "source_node": "Shipwreck Locations"
+  },
+  {
+    "label": "deck",
+    "type": "Location",
+    "id": "deck",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "upper_decks_fore_and_aft",
+    "type": "Location",
+    "id": "upper_decks_fore_and_aft",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "cabins_under_upper_decks",
+    "type": "Location",
+    "id": "cabins_under_upper_decks",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "mainmast",
+    "type": "Location",
+    "id": "mainmast",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "crows_nest",
+    "type": "Location",
+    "id": "crows_nest",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "staircase_near_mast",
+    "type": "Location",
+    "id": "staircase_near_mast",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "large_hatch_port_side",
+    "type": "Location",
+    "id": "large_hatch_port_side",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "hold",
+    "type": "Location",
+    "id": "hold",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "boots",
+    "type": "Item",
+    "id": "boots",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "bones",
+    "type": "Item",
+    "id": "bones",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "bits_of_gore",
+    "type": "Item",
+    "id": "bits_of_gore",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "compass_rose",
+    "type": "Location",
+    "id": "compass_rose",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Crow's Nest"
+  },
+  {
+    "label": "crow_s_nest",
+    "type": "Location",
+    "id": "crow_s_nest",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Crow's Nest"
+  },
+  {
+    "label": "harpy",
+    "type": "Creature",
+    "id": "harpy",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Crow's Nest"
+  },
+  {
+    "label": "wood_shavings",
+    "type": "Item",
+    "id": "wood_shavings",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Crow's Nest"
+  },
+  {
+    "label": "dry_grass",
+    "type": "Item",
+    "id": "dry_grass",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Crow's Nest"
+  },
+  {
+    "label": "shredded_canvas",
+    "type": "Item",
+    "id": "shredded_canvas",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Crow's Nest"
+  },
+  {
+    "label": "bones",
+    "type": "Item",
+    "id": "bones",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Crow's Nest"
+  },
+  {
+    "label": "tuft_of_hair",
+    "type": "Item",
+    "id": "tuft_of_hair",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Crow's Nest"
+  },
+  {
+    "label": "baubles",
+    "type": "Item",
+    "id": "baubles",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Crow's Nest"
+  },
+  {
+    "label": "rope_ladder",
+    "type": "Item",
+    "id": "rope_ladder",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Crow's Nest"
+  },
+  {
+    "label": "mast",
+    "type": "Item",
+    "id": "mast",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Crow's Nest"
+  },
+  {
+    "label": "shipwreck",
+    "type": "Location",
+    "id": "shipwreck",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Harpy's Return"
+  },
+  {
+    "label": "rocks",
+    "type": "Location",
+    "id": "rocks",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Harpy's Return"
+  },
+  {
+    "label": "harpy",
+    "type": "Creature",
+    "id": "harpy",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Harpy's Return"
+  },
+  {
+    "label": "characters_group",
+    "type": "Group",
+    "id": "characters_group",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Harpy's Return"
+  },
+  {
+    "label": "small_gold_bracelet",
+    "type": "Item",
+    "id": "small_gold_bracelet",
+    "aliases": [
+      "[\"bracer\"]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "gold_hoop_earring",
+    "type": "Item",
+    "id": "gold_hoop_earring",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "tiger_eye_gem_1",
+    "type": "Item",
+    "id": "tiger_eye_gem_1",
+    "aliases": [
+      "[\"gem_1\"]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "tiger_eye_gem_2",
+    "type": "Item",
+    "id": "tiger_eye_gem_2",
+    "aliases": [
+      "[\"gem_2\"]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "bloodstone_gem",
+    "type": "Item",
+    "id": "bloodstone_gem",
+    "aliases": [
+      "[\"gem_3\"]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "crow_s_nest",
+    "type": "Location",
+    "id": "crow_s_nest",
+    "aliases": [
+      "[\"ship_crows_nest\"]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "ballista",
+    "type": "Item",
+    "id": "ballista",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "C2: Forecastle"
+  },
+  {
+    "label": "broken_foremast",
+    "type": "Item",
+    "id": "broken_foremast",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "broken_railing",
+    "type": "Item",
+    "id": "broken_railing",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "tangle_of_rigging",
+    "type": "Item",
+    "id": "tangle_of_rigging",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "tattered_canvas",
+    "type": "Item",
+    "id": "tattered_canvas",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "rusted_rotting_ballista",
+    "type": "Item",
+    "id": "rusted_rotting_ballista",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "broken_mast",
+    "type": "Item",
+    "id": "broken_mast",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "rocks_and_dragon_bones",
+    "type": "Location",
+    "id": "rocks_and_dragon_bones",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Compass_Rose",
+    "type": "Location",
+    "id": "compass_rose",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "C3: Quarterdeck"
+  },
+  {
+    "label": "Wheel",
+    "type": "Item",
+    "id": "wheel",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "C3: Quarterdeck"
+  },
+  {
+    "label": "Zombie_In_Area_C4",
+    "type": "Creature",
+    "id": "zombie_in_area_c4",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "C3: Quarterdeck"
+  },
+  {
+    "label": "C4",
+    "type": "Location",
+    "id": "c4",
+    "aliases": [
+      "[\"area_c4\"]"
+    ],
+    "source_node": "C3: Quarterdeck"
+  },
+  {
+    "label": "mast",
+    "type": "Item",
+    "id": "mast",
+    "aliases": [
+      "[splintered_mast_remains]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "rear_deck",
+    "type": "Location",
+    "id": "rear_deck",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "ship",
+    "type": "Location",
+    "id": "ship",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "ship_wheel",
+    "type": "Item",
+    "id": "ship_wheel",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "captains_quarters",
+    "type": "Location",
+    "id": "captains_quarters",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "C4: Captain's Quarters"
+  },
+  {
+    "label": "area_c3",
+    "type": "Location",
+    "id": "area_c3",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "C4: Captain's Quarters"
+  },
+  {
+    "label": "zombies_in_captains_quarters",
+    "type": "Creature",
+    "id": "zombies_in_captains_quarters",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "C4: Captain's Quarters"
+  },
+  {
+    "label": "heavy_wooden_bar",
+    "type": "Item",
+    "id": "heavy_wooden_bar",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "C4: Captain's Quarters"
+  },
+  {
+    "label": "wheel",
+    "type": "Item",
+    "id": "wheel",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "C4: Captain's Quarters"
+  },
+  {
+    "label": "cabin",
+    "type": "Location",
+    "id": "cabin",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "drowned_sailors",
+    "type": "Creature",
+    "id": "drowned_sailors",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "bookcase",
+    "type": "Item",
+    "id": "bookcase",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "books_and_scrolls",
+    "type": "Item",
+    "id": "books_and_scrolls",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "desk",
+    "type": "Item",
+    "id": "desk",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "compass",
+    "type": "Item",
+    "id": "compass",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "bed",
+    "type": "Item",
+    "id": "bed",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Hole",
+    "type": "Location",
+    "id": "hole",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Hole to the Hold"
+  },
+  {
+    "label": "Lower Deck",
+    "type": "Location",
+    "id": "lower_deck",
+    "aliases": [
+      "[area_c8]"
+    ],
+    "source_node": "Hole to the Hold"
+  },
+  {
+    "label": "Hold",
+    "type": "Location",
+    "id": "hold",
+    "aliases": [
+      "[area_c9]"
+    ],
+    "source_node": "Hole to the Hold"
+  },
+  {
+    "label": "Captain's Bed",
+    "type": "Item",
+    "id": "captains_bed",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Hole to the Hold"
+  },
+  {
+    "label": "Captain's Sea Chest",
+    "type": "Item",
+    "id": "captains_sea_chest",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Hole to the Hold"
+  },
+  {
+    "label": "desk",
+    "type": "Item",
+    "id": "desk",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "drawers",
+    "type": "Item",
+    "id": "drawers",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "desktop",
+    "type": "Item",
+    "id": "desktop",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "pouch",
+    "type": "Item",
+    "id": "pouch",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "cartographers_tools",
+    "type": "Item",
+    "id": "cartographers_tools",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "dagger",
+    "type": "Item",
+    "id": "dagger",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "compass",
+    "type": "Item",
+    "id": "compass",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "zombies",
+    "type": "Group",
+    "id": "zombies",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "2nd-Level Characters"
+  },
+  {
+    "label": "harmless_crabs",
+    "type": "Creature",
+    "id": "harmless_crabs",
+    "aliases": [
+      "[small_crabs",
+      "nonthreatening_crabs]"
+    ],
+    "source_node": "C5: Galley"
+  },
+  {
+    "label": "skeletal_remains",
+    "type": "Item",
+    "id": "skeletal_remains",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "C5: Galley"
+  },
+  {
+    "label": "skeleton",
+    "type": "Creature",
+    "id": "skeleton",
+    "aliases": [
+      "[headless_skeleton",
+      "long_dead_skeleton]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "galley",
+    "type": "Location",
+    "id": "galley",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "counter",
+    "type": "Item",
+    "id": "counter",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "aleitha",
+    "type": "Creature",
+    "id": "aleitha",
+    "aliases": [
+      "[\"black_haired_woman\"]"
+    ],
+    "source_node": "C6: Crew Quarters"
+  },
+  {
+    "label": "brastos",
+    "type": "Creature",
+    "id": "brastos",
+    "aliases": [
+      "[\"blond_haired_man\"]"
+    ],
+    "source_node": "C6: Crew Quarters"
+  },
+  {
+    "label": "zombies_in_ship",
+    "type": "Creature",
+    "id": "zombies_in_ship",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "C6: Crew Quarters"
+  },
+  {
+    "label": "portrait",
+    "type": "Item",
+    "id": "portrait",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "C6: Crew Quarters"
+  },
+  {
+    "label": "cabin",
+    "type": "Location",
+    "id": "cabin",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "room",
+    "type": "Location",
+    "id": "room",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "double_bunks",
+    "type": "Item",
+    "id": "double_bunks",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "faded_painted_portrait",
+    "type": "Item",
+    "id": "faded_painted_portrait",
+    "aliases": [
+      "[painting]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "personal_effects",
+    "type": "Item",
+    "id": "personal_effects",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "cabin",
+    "type": "Location",
+    "id": "cabin",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Floorboard Stash"
+  },
+  {
+    "label": "floorboard",
+    "type": "Item",
+    "id": "floorboard",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Floorboard Stash"
+  },
+  {
+    "label": "dart",
+    "type": "Item",
+    "id": "dart",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Floorboard Stash"
+  },
+  {
+    "label": "characters_in_cabin",
+    "type": "Group",
+    "id": "characters_in_cabin",
+    "aliases": [
+      "[\"interacting_characters\"]"
+    ],
+    "source_node": "Floorboard Stash"
+  },
+  {
+    "label": "sack",
+    "type": "Item",
+    "id": "sack",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "small_compartment",
+    "type": "Location",
+    "id": "small_compartment",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "raised_floorboard",
+    "type": "Location",
+    "id": "raised_floorboard",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "cabin",
+    "type": "Location",
+    "id": "cabin",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "long_table",
+    "type": "Item",
+    "id": "long_table",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "chairs_decaying",
+    "type": "Item",
+    "id": "chairs_decaying",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "broken_glass",
+    "type": "Item",
+    "id": "broken_glass",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "crockery",
+    "type": "Item",
+    "id": "crockery",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "zombie",
+    "type": "Creature",
+    "id": "zombie",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "C8: Lower Deck"
+  },
+  {
+    "label": "ghoul",
+    "type": "Creature",
+    "id": "ghoul",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "C8: Lower Deck"
+  },
+  {
+    "label": "hold",
+    "type": "Location",
+    "id": "hold",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "C8: Lower Deck"
+  },
+  {
+    "label": "lower_deck",
+    "type": "Location",
+    "id": "lower_deck",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "C8: Lower Deck"
+  },
+  {
+    "label": "lower_deck",
+    "type": "Location",
+    "id": "lower_deck",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "walking_corpse",
+    "type": "Creature",
+    "id": "walking_corpse",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "decaying_crates_and_barrels",
+    "type": "Item",
+    "id": "decaying_crates_and_barrels",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "ceiling_nw_hole",
+    "type": "Location",
+    "id": "ceiling_nw_hole",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Hole to the Hold"
+  },
+  {
+    "label": "floorboard_lower_hole",
+    "type": "Location",
+    "id": "floorboard_lower_hole",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Hole to the Hold"
+  },
+  {
+    "label": "captain_quarters_c4",
+    "type": "Location",
+    "id": "captain_quarters_c4",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Hole to the Hold"
+  },
+  {
+    "label": "hold_c9",
+    "type": "Location",
+    "id": "hold_c9",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Hole to the Hold"
+  },
+  {
+    "label": "captains_chest",
+    "type": "Item",
+    "id": "captains_chest",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Hole to the Hold"
+  },
+  {
+    "label": "zombies_added_to_encounter",
+    "type": "Creature",
+    "id": "zombies_added_to_encounter",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "2nd-Level Characters"
+  },
+  {
+    "label": "crowbar_tool",
+    "type": "Item",
+    "id": "crowbar_tool",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "crates_here",
+    "type": "Group",
+    "id": "crates_here",
+    "aliases": [
+      "[\"crates\"]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "five_bottles_fine_wine",
+    "type": "Item",
+    "id": "five_bottles_fine_wine",
+    "aliases": [
+      "[\"five bottles of fine wine\"]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "twenty_pound_clove_bag",
+    "type": "Item",
+    "id": "twenty_pound_clove_bag",
+    "aliases": [
+      "[\"20-pound sack of whole cloves\"]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "ten_small_silver_bars",
+    "type": "Item",
+    "id": "ten_small_silver_bars",
+    "aliases": [
+      "[\"ten small",
+      "1-pound bars of silver\"]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "dragon_carved_candlesticks",
+    "type": "Item",
+    "id": "dragon_carved_candlesticks",
+    "aliases": [
+      "[\"pair of candlestick holders carved from bone to resemble dragons\"]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "mother_of_pearl_lute",
+    "type": "Item",
+    "id": "mother_of_pearl_lute",
+    "aliases": [
+      "[\"fine lute with mother-of-pearl inlay\"]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "command_spell_scroll",
+    "type": "Item",
+    "id": "command_spell_scroll",
+    "aliases": [
+      "[\"spell scroll of command\"]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "submerged_hold",
+    "type": "Location",
+    "id": "submerged_hold",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "C9: Hold"
+  },
+  {
+    "label": "area_c8",
+    "type": "Location",
+    "id": "area_c8",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "C9: Hold"
+  },
+  {
+    "label": "hole_in_area_c8_floor",
+    "type": "Location",
+    "id": "hole_in_area_c8_floor",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "C9: Hold"
+  },
+  {
+    "label": "stairs_up_to_c8",
+    "type": "Location",
+    "id": "stairs_up_to_c8",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "C9: Hold"
+  },
+  {
+    "label": "undersea_world",
+    "type": "Location",
+    "id": "undersea_world",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "broken_ship",
+    "type": "Location",
+    "id": "broken_ship",
+    "aliases": [
+      "[shattered_hull",
+      "ship_wreck]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "colorful_seaweed",
+    "type": "Item",
+    "id": "colorful_seaweed",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "tiny_fish",
+    "type": "Creature",
+    "id": "tiny_fish",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "debris_and_cargo",
+    "type": "Item",
+    "id": "debris_and_cargo",
+    "aliases": [
+      "[hunks_of_debris_and_cargo]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "captains_chest",
+    "type": "Item",
+    "id": "captains_chest",
+    "aliases": [
+      "[iron_chest]"
+    ],
+    "source_node": "Captain's Chest"
+  },
+  {
+    "label": "hold_location",
+    "type": "Location",
+    "id": "hold_location",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Captain's Chest"
+  },
+  {
+    "label": "packet",
+    "type": "Item",
+    "id": "packet",
+    "aliases": [
+      "[floating_packet]"
+    ],
+    "source_node": "Captain's Chest"
+  },
+  {
+    "label": "pouch",
+    "type": "Item",
+    "id": "pouch",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Captain's Chest"
+  },
+  {
+    "label": "turquoise_1",
+    "type": "Item",
+    "id": "turquoise_1",
+    "aliases": [
+      "[turquoise]"
+    ],
+    "source_node": "Captain's Chest"
+  },
+  {
+    "label": "turquoise_2",
+    "type": "Item",
+    "id": "turquoise_2",
+    "aliases": [
+      "[turquoise]"
+    ],
+    "source_node": "Captain's Chest"
+  },
+  {
+    "label": "turquoise_3",
+    "type": "Item",
+    "id": "turquoise_3",
+    "aliases": [
+      "[turquoise]"
+    ],
+    "source_node": "Captain's Chest"
+  },
+  {
+    "label": "boots_of_elvenkind",
+    "type": "Item",
+    "id": "boots_of_elvenkind",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Captain's Chest"
+  },
+  {
+    "label": "journal",
+    "type": "Item",
+    "id": "journal",
+    "aliases": [
+      "[captain_journal]"
+    ],
+    "source_node": "Captain's Chest"
+  },
+  {
+    "label": "braid_of_hair",
+    "type": "Item",
+    "id": "braid_of_hair",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Captain's Chest"
+  },
+  {
+    "label": "talisman",
+    "type": "Item",
+    "id": "talisman",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Captain's Chest"
+  },
+  {
+    "label": "Neverwinter",
+    "type": "Location",
+    "id": "neverwinter",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "19 Tarsakh"
+  },
+  {
+    "label": "Dragon's Rest",
+    "type": "Location",
+    "id": "dragons_rest",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "19 Tarsakh"
+  },
+  {
+    "label": "Shoal",
+    "type": "Location",
+    "id": "shoal",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "19 Tarsakh"
+  },
+  {
+    "label": "Compass Rose",
+    "type": "Item",
+    "id": "compass_rose",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "19 Tarsakh"
+  },
+  {
+    "label": "Talisman",
+    "type": "Item",
+    "id": "talisman",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "19 Tarsakh"
+  },
+  {
+    "label": "Book",
+    "type": "Item",
+    "id": "book",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "19 Tarsakh"
+  },
+  {
+    "label": "Aleitha",
+    "type": "Creature",
+    "id": "aleitha",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "19 Tarsakh"
+  },
+  {
+    "label": "Orcus",
+    "type": "Creature",
+    "id": "orcus",
+    "aliases": [
+      "[Prince of Undeath]"
+    ],
+    "source_node": "19 Tarsakh"
+  },
+  {
+    "label": "Aleithas_Husband",
+    "type": "Creature",
+    "id": "aleithas_husband",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "19 Tarsakh"
+  },
+  {
+    "label": "Zombies_In_Ship",
+    "type": "Creature",
+    "id": "zombies_in_ship",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "19 Tarsakh"
+  },
+  {
+    "label": "orcus",
+    "type": "Creature",
+    "id": "orcus",
+    "aliases": [
+      "[\"demon_prince_of_undeath\"",
+      "\"blood_lord\"]"
+    ],
+    "source_node": "About Orcus"
+  },
+  {
+    "label": "abyss",
+    "type": "Location",
+    "id": "abyss",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "About Orcus"
+  },
+  {
+    "label": "ghouls",
+    "type": "Creature",
+    "id": "ghouls",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "About Orcus"
+  },
+  {
+    "label": "demons",
+    "type": "Group",
+    "id": "demons",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "About Orcus"
+  },
+  {
+    "label": "hold",
+    "type": "Location",
+    "id": "hold",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "A New Threat"
+  },
+  {
+    "label": "lower_deck",
+    "type": "Location",
+    "id": "lower_deck",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "A New Threat"
+  },
+  {
+    "label": "main_deck",
+    "type": "Location",
+    "id": "main_deck",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "A New Threat"
+  },
+  {
+    "label": "harpy",
+    "type": "Creature",
+    "id": "harpy",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "A New Threat"
+  },
+  {
+    "label": "captains_chest",
+    "type": "Item",
+    "id": "captains_chest",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "A New Threat"
+  },
+  {
+    "label": "crows_nest",
+    "type": "Location",
+    "id": "crows_nest",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "terrifying_monster",
+    "type": "Creature",
+    "id": "terrifying_monster",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "large_bone_club",
+    "type": "Item",
+    "id": "large_bone_club",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "harpy_single",
+    "type": "Creature",
+    "id": "harpy_single",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Talking to the Harpy"
+  },
+  {
+    "label": "harpies_pair",
+    "type": "Group",
+    "id": "harpies_pair",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Talking to the Harpy"
+  },
+  {
+    "label": "compass_rose_wreck",
+    "type": "Location",
+    "id": "compass_rose_wreck",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Talking to the Harpy"
+  },
+  {
+    "label": "treasure_from_crow_nest",
+    "type": "Item",
+    "id": "treasure_from_crow_nest",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Talking to the Harpy"
+  },
+  {
+    "label": "harpy_1",
+    "type": "Creature",
+    "id": "harpy_1",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "2nd-Level Characters"
+  },
+  {
+    "label": "harpy_2",
+    "type": "Creature",
+    "id": "harpy_2",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "2nd-Level Characters"
+  },
+  {
+    "label": "ballista",
+    "type": "Item",
+    "id": "ballista",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "2nd-Level Characters"
+  },
+  {
+    "label": "area_c2",
+    "type": "Location",
+    "id": "area_c2",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "2nd-Level Characters"
+  },
+  {
+    "label": "Stormwreck Isle",
+    "type": "Location",
+    "id": "stormwreck_isle",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Ship",
+    "type": "Location",
+    "id": "ship",
+    "aliases": [
+      "[\"deck_of_ship\"]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "Compass_Rose",
+    "type": "Location",
+    "id": "compass_rose",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Gain a Level"
+  },
+  {
+    "label": "Seagrow_Caves",
+    "type": "Location",
+    "id": "seagrow_caves",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Gain a Level"
+  },
+  {
+    "label": "Dragon_s_Rest",
+    "type": "Location",
+    "id": "dragon_s_rest",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Gain a Level"
+  },
+  {
+    "label": "Clifftop_Observatory",
+    "type": "Location",
+    "id": "clifftop_observatory",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Gain a Level"
+  },
+  {
+    "label": "Lost_Wyrmling",
+    "type": "Location",
+    "id": "lost_wyrmling",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Gain a Level"
+  },
+  {
+    "label": "Sea_Caves",
+    "type": "Location",
+    "id": "sea_caves",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Gain a Level"
+  },
+  {
+    "label": "Player_Characters",
+    "type": "Group",
+    "id": "player_characters",
+    "aliases": [
+      "[\"Characters\"]"
+    ],
+    "source_node": "Gain a Level"
+  },
+  {
+    "label": "Clifftop Observatory",
+    "type": "Location",
+    "id": "clifftop_observatory",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Chapter 4: Clifftop Observatory"
+  },
+  {
+    "label": "Seagrow Caves",
+    "type": "Location",
+    "id": "seagrow_caves",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Chapter 4: Clifftop Observatory"
+  },
+  {
+    "label": "Compass Rose",
+    "type": "Location",
+    "id": "compass_rose",
+    "aliases": [
+      "[\"wreck\"]"
+    ],
+    "source_node": "Chapter 4: Clifftop Observatory"
+  },
+  {
+    "label": "Runara",
+    "type": "Creature",
+    "id": "runara",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Chapter 4: Clifftop Observatory"
+  },
+  {
+    "label": "Moonstone Key",
+    "type": "Item",
+    "id": "moonstone_key",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Chapter 4: Clifftop Observatory"
+  },
+  {
+    "label": "Combat_Encounters",
+    "type": "Group",
+    "id": "combat_encounters",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Chapter 4: Clifftop Observatory"
+  },
+  {
+    "label": "Clifftop_Observatory",
+    "type": "Location",
+    "id": "clifftop_observatory",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Observatory Overview"
+  },
+  {
+    "label": "Churning_Sea",
+    "type": "Location",
+    "id": "churning_sea",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Observatory Overview"
+  },
+  {
+    "label": "Islets",
+    "type": "Location",
+    "id": "islets",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Observatory Overview"
+  },
+  {
+    "label": "Dragon_S_Rest",
+    "type": "Location",
+    "id": "dragon_s_rest",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Observatory Overview"
+  },
+  {
+    "label": "Sparkrender",
+    "type": "Creature",
+    "id": "sparkrender",
+    "aliases": [
+      "[blue dragon wyrmling]"
+    ],
+    "source_node": "Observatory Overview"
+  },
+  {
+    "label": "Aidron",
+    "type": "Creature",
+    "id": "aidron",
+    "aliases": [
+      "[bronze dragon wyrmling]"
+    ],
+    "source_node": "Observatory Overview"
+  },
+  {
+    "label": "Runara",
+    "type": "Creature",
+    "id": "runara",
+    "aliases": [
+      "[chromatic dragon]"
+    ],
+    "source_node": "Observatory Overview"
+  },
+  {
+    "label": "Kobolds",
+    "type": "Group",
+    "id": "kobolds",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Observatory Overview"
+  },
+  {
+    "label": "observatory",
+    "type": "Location",
+    "id": "observatory",
+    "aliases": [
+      "[ruins]"
+    ],
+    "source_node": "Observatory Features"
+  },
+  {
+    "label": "stormwreck_isle",
+    "type": "Location",
+    "id": "stormwreck_isle",
+    "aliases": [
+      "[island]"
+    ],
+    "source_node": "Observatory Features"
+  },
+  {
+    "label": "Clifftop Observatory",
+    "type": "Location",
+    "id": "clifftop_observatory",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Running This Chapter"
+  },
+  {
+    "label": "Dragon's Rest",
+    "type": "Location",
+    "id": "dragons_rest",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Running This Chapter"
+  },
+  {
+    "label": "rowboat",
+    "type": "Item",
+    "id": "rowboat",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Running This Chapter"
+  },
+  {
+    "label": "observatory",
+    "type": "Location",
+    "id": "observatory",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Approaching by Land"
+  },
+  {
+    "label": "area_d1",
+    "type": "Location",
+    "id": "area_d1",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Approaching by Land"
+  },
+  {
+    "label": "area_d5",
+    "type": "Location",
+    "id": "area_d5",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Approaching by Land"
+  },
+  {
+    "label": "rocky_spire",
+    "type": "Location",
+    "id": "rocky_spire",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Approaching by Land"
+  },
+  {
+    "label": "ruins",
+    "type": "Location",
+    "id": "ruins",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Approaching by Land"
+  },
+  {
+    "label": "sparkrender",
+    "type": "Creature",
+    "id": "sparkrender",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Approaching by Land"
+  },
+  {
+    "label": "Stormwreck Isle",
+    "type": "Location",
+    "id": "stormwreck_isle",
+    "aliases": [
+      "[rocky_ground]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "observatory",
+    "type": "Location",
+    "id": "observatory",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Approaching by Water"
+  },
+  {
+    "label": "shore",
+    "type": "Location",
+    "id": "shore",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Approaching by Water"
+  },
+  {
+    "label": "bluffs",
+    "type": "Location",
+    "id": "bluffs",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Approaching by Water"
+  },
+  {
+    "label": "d1",
+    "type": "Location",
+    "id": "d1",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Approaching by Water"
+  },
+  {
+    "label": "d2",
+    "type": "Location",
+    "id": "d2",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Approaching by Water"
+  },
+  {
+    "label": "d3",
+    "type": "Location",
+    "id": "d3",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Approaching by Water"
+  },
+  {
+    "label": "d4",
+    "type": "Location",
+    "id": "d4",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Approaching by Water"
+  },
+  {
+    "label": "d5",
+    "type": "Location",
+    "id": "d5",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Approaching by Water"
+  },
+  {
+    "label": "boat",
+    "type": "Item",
+    "id": "boat",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Approaching by Water"
+  },
+  {
+    "label": "sparkrender",
+    "type": "Creature",
+    "id": "sparkrender",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Approaching by Water"
+  },
+  {
+    "label": "sparkrender",
+    "type": "Creature",
+    "id": "sparkrender",
+    "aliases": [
+      "[blue dragon]"
+    ],
+    "source_node": "Sparkrender's Kobold Allies"
+  },
+  {
+    "label": "other_dragon",
+    "type": "Creature",
+    "id": "other_dragon",
+    "aliases": [
+      "[greenish-yellow metal]"
+    ],
+    "source_node": "Sparkrender's Kobold Allies"
+  },
+  {
+    "label": "kobolds_alienated_with_sparkrender",
+    "type": "Group",
+    "id": "kobolds_alienated_with_sparkrender",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Sparkrender's Kobold Allies"
+  },
+  {
+    "label": "rotunda_ruins_area_d2",
+    "type": "Location",
+    "id": "rotunda_ruins_area_d2",
+    "aliases": [
+      "[area_d2]"
+    ],
+    "source_node": "Sparkrender's Kobold Allies"
+  },
+  {
+    "label": "observatory_tower_area_d5",
+    "type": "Location",
+    "id": "observatory_tower_area_d5",
+    "aliases": [
+      "[area_d5]"
+    ],
+    "source_node": "Sparkrender's Kobold Allies"
+  },
+  {
+    "label": "caved_in_wall_area_d6",
+    "type": "Location",
+    "id": "caved_in_wall_area_d6",
+    "aliases": [
+      "[area_d6]"
+    ],
+    "source_node": "Sparkrender's Kobold Allies"
+  },
+  {
+    "label": "sculpture",
+    "type": "Item",
+    "id": "sculpture",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Sparkrender's Kobold Allies"
+  },
+  {
+    "label": "Clifftop Observatory",
+    "type": "Location",
+    "id": "clifftop_observatory",
+    "aliases": [
+      "[map_5_location]"
+    ],
+    "source_node": "Observatory Locations"
+  },
+  {
+    "label": "Overlook",
+    "type": "Location",
+    "id": "overlook",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "D1: Overlook"
+  },
+  {
+    "label": "Observatory_Ruins",
+    "type": "Location",
+    "id": "observatory_ruins",
+    "aliases": [
+      "[area_d2]"
+    ],
+    "source_node": "D1: Overlook"
+  },
+  {
+    "label": "Moonstone_Key",
+    "type": "Item",
+    "id": "moonstone_key",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "D1: Overlook"
+  },
+  {
+    "label": "Runara",
+    "type": "Creature",
+    "id": "runara",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "D1: Overlook"
+  },
+  {
+    "label": "broken_overgrown_path",
+    "type": "Location",
+    "id": "broken_overgrown_path",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "edge_of_cliff",
+    "type": "Location",
+    "id": "edge_of_cliff",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "overlook",
+    "type": "Location",
+    "id": "overlook",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "marble_statue_1",
+    "type": "Item",
+    "id": "marble_statue_1",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "marble_statue_2",
+    "type": "Item",
+    "id": "marble_statue_2",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "plaza",
+    "type": "Location",
+    "id": "plaza",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "sculpture_of_rusted_planets_and_gilded_stars",
+    "type": "Item",
+    "id": "sculpture_of_rusted_planets_and_gilded_stars",
+    "aliases": [
+      "[central_scupture]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "batlike_creatures_swarming_plaza",
+    "type": "Creature",
+    "id": "batlike_creatures_swarming_plaza",
+    "aliases": [
+      "[swarm_of_bats]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "winged_kobolds_fighting",
+    "type": "Creature",
+    "id": "winged_kobolds_fighting",
+    "aliases": [
+      "[kobolds_with_blue_paint]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "moonstone_key",
+    "type": "Item",
+    "id": "moonstone_key",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Energy Bridge Anchors"
+  },
+  {
+    "label": "rotunda",
+    "type": "Location",
+    "id": "rotunda",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Energy Bridge Anchors"
+  },
+  {
+    "label": "overlook",
+    "type": "Location",
+    "id": "overlook",
+    "aliases": [
+      "[d1_area]"
+    ],
+    "source_node": "Energy Bridge Anchors"
+  },
+  {
+    "label": "crumbled_tower",
+    "type": "Location",
+    "id": "crumbled_tower",
+    "aliases": [
+      "[d4_area]"
+    ],
+    "source_node": "Energy Bridge Anchors"
+  },
+  {
+    "label": "dragon_statues_west_pair",
+    "type": "Item",
+    "id": "dragon_statues_west_pair",
+    "aliases": [
+      "[similar_to_d1]"
+    ],
+    "source_node": "Energy Bridge Anchors"
+  },
+  {
+    "label": "dragon_statues_southwest_pair",
+    "type": "Item",
+    "id": "dragon_statues_southwest_pair",
+    "aliases": [
+      "[similar_to_d1]"
+    ],
+    "source_node": "Energy Bridge Anchors"
+  },
+  {
+    "label": "rotunda",
+    "type": "Location",
+    "id": "rotunda",
+    "aliases": [
+      "[\"area D2\"]"
+    ],
+    "source_node": "D3: Kobold Camp"
+  },
+  {
+    "label": "kobold_camp",
+    "type": "Location",
+    "id": "kobold_camp",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "D3: Kobold Camp"
+  },
+  {
+    "label": "ekrash_kobold",
+    "type": "Creature",
+    "id": "ekrash_kobold",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "D3: Kobold Camp"
+  },
+  {
+    "label": "erp_kobold",
+    "type": "Creature",
+    "id": "erp_kobold",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "D3: Kobold Camp"
+  },
+  {
+    "label": "hev_kobold",
+    "type": "Creature",
+    "id": "hev_kobold",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "D3: Kobold Camp"
+  },
+  {
+    "label": "nuhro_winged_kobold",
+    "type": "Creature",
+    "id": "nuhro_winged_kobold",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "D3: Kobold Camp"
+  },
+  {
+    "label": "snirke_winged_kobold",
+    "type": "Creature",
+    "id": "snirke_winged_kobold",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "D3: Kobold Camp"
+  },
+  {
+    "label": "sling_bullet",
+    "type": "Item",
+    "id": "sling_bullet",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "D3: Kobold Camp"
+  },
+  {
+    "label": "ruined_tower",
+    "type": "Location",
+    "id": "ruined_tower",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "wooden_planks",
+    "type": "Item",
+    "id": "wooden_planks",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "threadbare_cloth",
+    "type": "Item",
+    "id": "threadbare_cloth",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "rotunda",
+    "type": "Location",
+    "id": "rotunda",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "D4: Isolated Study"
+  },
+  {
+    "label": "spire",
+    "type": "Location",
+    "id": "spire",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "D4: Isolated Study"
+  },
+  {
+    "label": "area_d2",
+    "type": "Location",
+    "id": "area_d2",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "D4: Isolated Study"
+  },
+  {
+    "label": "moonstone_key",
+    "type": "Item",
+    "id": "moonstone_key",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "D4: Isolated Study"
+  },
+  {
+    "label": "energy_bridge",
+    "type": "Item",
+    "id": "energy_bridge",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "D4: Isolated Study"
+  },
+  {
+    "label": "cramped_tower",
+    "type": "Location",
+    "id": "cramped_tower",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "chamber_beneath_tower",
+    "type": "Location",
+    "id": "chamber_beneath_tower",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "collapsed_bookcases",
+    "type": "Item",
+    "id": "collapsed_bookcases",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "moldering_books",
+    "type": "Item",
+    "id": "moldering_books",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "journal_black_ornate_lock",
+    "type": "Item",
+    "id": "journal_black_ornate_lock",
+    "aliases": [
+      "[\"small black journal\"]"
+    ],
+    "source_node": "Scholar's Journal"
+  },
+  {
+    "label": "arcane_rune",
+    "type": "Item",
+    "id": "arcane_rune",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Scholar's Journal"
+  },
+  {
+    "label": "passage_clue",
+    "type": "Item",
+    "id": "passage_clue",
+    "aliases": [
+      "[\"underlined passage\"",
+      "\"note about scholars\"]"
+    ],
+    "source_node": "Scholar's Journal"
+  },
+  {
+    "label": "observatory_tower_d5",
+    "type": "Location",
+    "id": "observatory_tower_d5",
+    "aliases": [
+      "[\"hidden entrance\"",
+      "\"area D5\"]"
+    ],
+    "source_node": "Scholar's Journal"
+  },
+  {
+    "label": "isolated_study",
+    "type": "Location",
+    "id": "isolated_study",
+    "aliases": [
+      "[area_d4]"
+    ],
+    "source_node": "Clever Solutions"
+  },
+  {
+    "label": "area_d1",
+    "type": "Location",
+    "id": "area_d1",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Clever Solutions"
+  },
+  {
+    "label": "moonstone_key",
+    "type": "Item",
+    "id": "moonstone_key",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Clever Solutions"
+  },
+  {
+    "label": "winged_kobolds",
+    "type": "Creature",
+    "id": "winged_kobolds",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Clever Solutions"
+  },
+  {
+    "label": "misty_step_spell",
+    "type": "Item",
+    "id": "misty_step_spell",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Clever Solutions"
+  },
+  {
+    "label": "tower",
+    "type": "Location",
+    "id": "tower",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "northwest_wall",
+    "type": "Location",
+    "id": "northwest_wall",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "loose_brick",
+    "type": "Item",
+    "id": "loose_brick",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "hidden_compartment",
+    "type": "Item",
+    "id": "hidden_compartment",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "potion_lightning_resistance",
+    "type": "Item",
+    "id": "potion_lightning_resistance",
+    "aliases": [
+      "[\"Potion of Lightning Resistance\"]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "pouch_holding_10_gp",
+    "type": "Item",
+    "id": "pouch_holding_10_gp",
+    "aliases": [
+      "[\"pouch\"]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "tower",
+    "type": "Location",
+    "id": "tower",
+    "aliases": [
+      "[stained_glass_tower",
+      "crumbled_marble_walls]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "room_inside_tower",
+    "type": "Location",
+    "id": "room_inside_tower",
+    "aliases": [
+      "[perimeter_room]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "blue_dragon",
+    "type": "Creature",
+    "id": "blue_dragon",
+    "aliases": [
+      "[lithe_blue_dragon]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "coins_and_jewels",
+    "type": "Item",
+    "id": "coins_and_jewels",
+    "aliases": [
+      "[scattered_coins_jewels]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "star_map_floor",
+    "type": "Item",
+    "id": "star_map_floor",
+    "aliases": [
+      "[gilded_lines_star_map]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "alabaster_statues",
+    "type": "Item",
+    "id": "alabaster_statues",
+    "aliases": [
+      "[scholars_statues]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "blue_dragon_wyrmling",
+    "type": "Creature",
+    "id": "blue_dragon_wyrmling",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Sneaking Around"
+  },
+  {
+    "label": "sparkrender",
+    "type": "Creature",
+    "id": "sparkrender",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Sneaking Around"
+  },
+  {
+    "label": "hidden_entrance",
+    "type": "Location",
+    "id": "hidden_entrance",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Sneaking Around"
+  },
+  {
+    "label": "north_statue",
+    "type": "Item",
+    "id": "north_statue",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Sneaking Around"
+  },
+  {
+    "label": "east_statue",
+    "type": "Item",
+    "id": "east_statue",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Sneaking Around"
+  },
+  {
+    "label": "characters",
+    "type": "Group",
+    "id": "characters",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Sneaking Around"
+  },
+  {
+    "label": "sparkrender",
+    "type": "Creature",
+    "id": "sparkrender",
+    "aliases": [
+      "[\"Blue Dragon Wyrmling\"]"
+    ],
+    "source_node": "Waking the Dragon"
+  },
+  {
+    "label": "aidron",
+    "type": "Creature",
+    "id": "aidron",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Waking the Dragon"
+  },
+  {
+    "label": "runara",
+    "type": "Creature",
+    "id": "runara",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Waking the Dragon"
+  },
+  {
+    "label": "island",
+    "type": "Location",
+    "id": "island",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Waking the Dragon"
+  },
+  {
+    "label": "area_d6",
+    "type": "Location",
+    "id": "area_d6",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Waking the Dragon"
+  },
+  {
+    "label": "observatory_secret_archive",
+    "type": "Location",
+    "id": "observatory_secret_archive",
+    "aliases": [
+      "[secret_archive]"
+    ],
+    "source_node": "Hidden Entrance"
+  },
+  {
+    "label": "isolated_study",
+    "type": "Location",
+    "id": "isolated_study",
+    "aliases": [
+      "[study_d4",
+      "d4]"
+    ],
+    "source_node": "Hidden Entrance"
+  },
+  {
+    "label": "library",
+    "type": "Location",
+    "id": "library",
+    "aliases": [
+      "[library_d6",
+      "d6]"
+    ],
+    "source_node": "Hidden Entrance"
+  },
+  {
+    "label": "star_map",
+    "type": "Item",
+    "id": "star_map",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Hidden Entrance"
+  },
+  {
+    "label": "statues",
+    "type": "Item",
+    "id": "statues",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Hidden Entrance"
+  },
+  {
+    "label": "sparkrender",
+    "type": "Creature",
+    "id": "sparkrender",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "hoard",
+    "type": "Group",
+    "id": "hoard",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "water_proof_leather_case",
+    "type": "Item",
+    "id": "water_proof_leather_case",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "blue_silk_fan",
+    "type": "Item",
+    "id": "blue_silk_fan",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "crude_flute",
+    "type": "Item",
+    "id": "crude_flute",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "hour_glass",
+    "type": "Item",
+    "id": "hour_glass",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "seven_candle_sticks",
+    "type": "Item",
+    "id": "seven_candle_sticks",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "pale_blue_quartz_crystals",
+    "type": "Item",
+    "id": "pale_blue_quartz_crystals",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "blue_jasper_stones",
+    "type": "Item",
+    "id": "blue_jasper_stones",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "secret_library",
+    "type": "Location",
+    "id": "secret_library",
+    "aliases": [
+      "[dungeon_area_d6",
+      "hidden_archive]"
+    ],
+    "source_node": "D6: Secret Library"
+  },
+  {
+    "label": "observatory_tower",
+    "type": "Location",
+    "id": "observatory_tower",
+    "aliases": [
+      "[area_d5",
+      "tower]"
+    ],
+    "source_node": "D6: Secret Library"
+  },
+  {
+    "label": "spire",
+    "type": "Location",
+    "id": "spire",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "D6: Secret Library"
+  },
+  {
+    "label": "aidron",
+    "type": "Creature",
+    "id": "aidron",
+    "aliases": [
+      "[bronze_wyrmling",
+      "dragon_aidron]"
+    ],
+    "source_node": "D6: Secret Library"
+  },
+  {
+    "label": "sparkrender",
+    "type": "Creature",
+    "id": "sparkrender",
+    "aliases": [
+      "[blue_wyrmling",
+      "drake_sparkrender]"
+    ],
+    "source_node": "D6: Secret Library"
+  },
+  {
+    "label": "collapsed_study",
+    "type": "Location",
+    "id": "collapsed_study",
+    "aliases": [
+      "[study",
+      "ruined_library]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "bronze_dragon",
+    "type": "Creature",
+    "id": "bronze_dragon",
+    "aliases": [
+      "[agitated_bronze_dragon]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "old_tomes",
+    "type": "Item",
+    "id": "old_tomes",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "yellowing_scrolls",
+    "type": "Item",
+    "id": "yellowing_scrolls",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "shattered_glass_cases",
+    "type": "Item",
+    "id": "shattered_glass_cases",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "old_desk",
+    "type": "Item",
+    "id": "old_desk",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "library_location",
+    "type": "Location",
+    "id": "library_location",
+    "aliases": [
+      "[room",
+      "ancient_library]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "plus_one_battle_axe",
+    "type": "Item",
+    "id": "plus_one_battle_axe",
+    "aliases": [
+      "[battleaxe_plus_1]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "spell_scroll_hold_person_level_2",
+    "type": "Item",
+    "id": "spell_scroll_hold_person_level_2",
+    "aliases": [
+      "[spell_scroll_of_hold_person_2nd_level]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "aidron",
+    "type": "Creature",
+    "id": "aidron",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "detect_magic_spell",
+    "type": "Item",
+    "id": "detect_magic_spell",
+    "aliases": [
+      "[detect_mana_spell]"
+    ],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "ruined_rotunda",
+    "type": "Location",
+    "id": "ruined_rotunda",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "golden_statue",
+    "type": "Item",
+    "id": "golden_statue",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "red_dragon_effigy",
+    "type": "Item",
+    "id": "red_dragon_effigy",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "gold_dragon_effigy",
+    "type": "Item",
+    "id": "gold_dragon_effigy",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "brass_dragon_effigy",
+    "type": "Item",
+    "id": "brass_dragon_effigy",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "blue_dragon_effigy",
+    "type": "Item",
+    "id": "blue_dragon_effigy",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "bronze_dragon_effigy",
+    "type": "Item",
+    "id": "bronze_dragon_effigy",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "blue_dragon",
+    "type": "Creature",
+    "id": "blue_dragon",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "bronze_dragon",
+    "type": "Creature",
+    "id": "bronze_dragon",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Untitled Section"
+  },
+  {
+    "label": "aidron",
+    "type": "Creature",
+    "id": "aidron",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Freeing Aidron"
+  },
+  {
+    "label": "heavy_chains",
+    "type": "Item",
+    "id": "heavy_chains",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Freeing Aidron"
+  },
+  {
+    "label": "clasps",
+    "type": "Item",
+    "id": "clasps",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Freeing Aidron"
+  },
+  {
+    "label": "iron_rings",
+    "type": "Item",
+    "id": "iron_rings",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Freeing Aidron"
+  },
+  {
+    "label": "sparkrender",
+    "type": "Creature",
+    "id": "sparkrender",
+    "aliases": [
+      "[blue_dragon]"
+    ],
+    "source_node": "Disrupting the Ritual"
+  },
+  {
+    "label": "golden_sculpture",
+    "type": "Item",
+    "id": "golden_sculpture",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Disrupting the Ritual"
+  },
+  {
+    "label": "effigies",
+    "type": "Item",
+    "id": "effigies",
+    "aliases": [
+      "[dragon_effigies]"
+    ],
+    "source_node": "Disrupting the Ritual"
+  },
+  {
+    "label": "ocean",
+    "type": "Location",
+    "id": "ocean",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Disrupting the Ritual"
+  },
+  {
+    "label": "crumbling_wall",
+    "type": "Location",
+    "id": "crumbling_wall",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Disrupting the Ritual"
+  },
+  {
+    "label": "player_characters",
+    "type": "Group",
+    "id": "player_characters",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Disrupting the Ritual"
+  },
+  {
+    "label": "Dragon's Rest",
+    "type": "Location",
+    "id": "dragon_s_rest",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Ending the Adventure"
+  },
+  {
+    "label": "Stormwreck Isle",
+    "type": "Location",
+    "id": "stormwreck_isle",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Ending the Adventure"
+  },
+  {
+    "label": "Secret Library",
+    "type": "Location",
+    "id": "secret_library",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Ending the Adventure"
+  },
+  {
+    "label": "Runara",
+    "type": "Creature",
+    "id": "runara",
+    "aliases": [
+      "[\"bronze dragon\"]"
+    ],
+    "source_node": "Ending the Adventure"
+  },
+  {
+    "label": "Sparkrender",
+    "type": "Creature",
+    "id": "sparkrender",
+    "aliases": [
+      "[\"dragon\"]"
+    ],
+    "source_node": "Ending the Adventure"
+  },
+  {
+    "label": "Potion of Healing",
+    "type": "Item",
+    "id": "potion_of_healing",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Ending the Adventure"
+  },
+  {
+    "label": "Exquisite Pearl Worth 100 gp",
+    "type": "Item",
+    "id": "exquisite_pearl_worth_100_gp",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Ending the Adventure"
+  },
+  {
+    "label": "Characters Group",
+    "type": "Group",
+    "id": "characters_group",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Ending the Adventure"
+  },
+  {
+    "label": "Stormwreck_Isle",
+    "type": "Location",
+    "id": "stormwreck_isle",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Appendix A: Magic Items"
+  },
+  {
+    "label": "Magic_Item",
+    "type": "Item",
+    "id": "magic_item",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Using a Magic Item"
+  },
+  {
+    "label": "Potions",
+    "type": "Item",
+    "id": "potions",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Using a Magic Item"
+  },
+  {
+    "label": "boots_of_elvenkind",
+    "type": "Item",
+    "id": "boots_of_elvenkind",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Item Descriptions"
+  },
+  {
+    "label": "elixir_of_health",
+    "type": "Item",
+    "id": "elixir_of_health",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Item Descriptions"
+  },
+  {
+    "label": "potion_of_healing",
+    "type": "Item",
+    "id": "potion_of_healing",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Item Descriptions"
+  },
+  {
+    "label": "potion_of_resistance",
+    "type": "Item",
+    "id": "potion_of_resistance",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Item Descriptions"
+  },
+  {
+    "label": "spell_scroll",
+    "type": "Item",
+    "id": "spell_scroll",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Item Descriptions"
+  },
+  {
+    "label": "plus_1_weapon",
+    "type": "Item",
+    "id": "plus_1_weapon",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Item Descriptions"
+  },
+  {
+    "label": "Aberration",
+    "type": "Creature",
+    "id": "aberration",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Type"
+  },
+  {
+    "label": "Beast",
+    "type": "Creature",
+    "id": "beast",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Type"
+  },
+  {
+    "label": "Celestial",
+    "type": "Creature",
+    "id": "celestial",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Type"
+  },
+  {
+    "label": "Construct",
+    "type": "Creature",
+    "id": "construct",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Type"
+  },
+  {
+    "label": "Dragon",
+    "type": "Creature",
+    "id": "dragon",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Type"
+  },
+  {
+    "label": "Elemental",
+    "type": "Creature",
+    "id": "elemental",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Type"
+  },
+  {
+    "label": "Fey",
+    "type": "Creature",
+    "id": "fey",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Type"
+  },
+  {
+    "label": "Fiend",
+    "type": "Creature",
+    "id": "fiend",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Type"
+  },
+  {
+    "label": "Giant",
+    "type": "Creature",
+    "id": "giant",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Type"
+  },
+  {
+    "label": "Humanoid",
+    "type": "Creature",
+    "id": "humanoid",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Type"
+  },
+  {
+    "label": "Monstrosity",
+    "type": "Creature",
+    "id": "monstrosity",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Type"
+  },
+  {
+    "label": "Ooze",
+    "type": "Creature",
+    "id": "ooze",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Type"
+  },
+  {
+    "label": "Plant",
+    "type": "Creature",
+    "id": "plant",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Type"
+  },
+  {
+    "label": "Undead",
+    "type": "Creature",
+    "id": "undead",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Type"
+  },
+  {
+    "label": "basic_rules",
+    "type": "Item",
+    "id": "basic_rules",
+    "aliases": [
+      "[rulebook",
+      "guide]"
+    ],
+    "source_node": "Ability Scores"
+  },
+  {
+    "label": "party_of_four_adventurers",
+    "type": "Group",
+    "id": "party_of_four_adventurers",
+    "aliases": [
+      "[adventurers]"
+    ],
+    "source_node": "Challenge"
+  },
+  {
+    "label": "longsword",
+    "type": "Item",
+    "id": "longsword",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Melee and Ranged Attacks"
+  },
+  {
+    "label": "blue_dragon_wyrmling",
+    "type": "Creature",
+    "id": "blue_dragon_wyrmling",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Creature Descriptions"
+  },
+  {
+    "label": "bronze_dragon_wyrmling",
+    "type": "Creature",
+    "id": "bronze_dragon_wyrmling",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Creature Descriptions"
+  },
+  {
+    "label": "fire_snake",
+    "type": "Creature",
+    "id": "fire_snake",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Creature Descriptions"
+  },
+  {
+    "label": "fume_drake",
+    "type": "Creature",
+    "id": "fume_drake",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Creature Descriptions"
+  },
+  {
+    "label": "ghoul",
+    "type": "Creature",
+    "id": "ghoul",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Creature Descriptions"
+  },
+  {
+    "label": "harpy",
+    "type": "Creature",
+    "id": "harpy",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Creature Descriptions"
+  },
+  {
+    "label": "kobold_tinkerer",
+    "type": "Creature",
+    "id": "kobold_tinkerer",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Creature Descriptions"
+  },
+  {
+    "label": "kobold",
+    "type": "Creature",
+    "id": "kobold",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Creature Descriptions"
+  },
+  {
+    "label": "myconid_adult",
+    "type": "Creature",
+    "id": "myconid_adult",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Creature Descriptions"
+  },
+  {
+    "label": "myconid_sprout",
+    "type": "Creature",
+    "id": "myconid_sprout",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Creature Descriptions"
+  },
+  {
+    "label": "owlbear",
+    "type": "Creature",
+    "id": "owlbear",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Creature Descriptions"
+  },
+  {
+    "label": "runara",
+    "type": "Creature",
+    "id": "runara",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Creature Descriptions"
+  },
+  {
+    "label": "sinensa",
+    "type": "Creature",
+    "id": "sinensa",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Creature Descriptions"
+  },
+  {
+    "label": "spore_servant_octopus",
+    "type": "Creature",
+    "id": "spore_servant_octopus",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Creature Descriptions"
+  },
+  {
+    "label": "stirge",
+    "type": "Creature",
+    "id": "stirge",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Creature Descriptions"
+  },
+  {
+    "label": "tarak",
+    "type": "Creature",
+    "id": "tarak",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Creature Descriptions"
+  },
+  {
+    "label": "varnoth",
+    "type": "Creature",
+    "id": "varnoth",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Creature Descriptions"
+  },
+  {
+    "label": "violet_fungus",
+    "type": "Creature",
+    "id": "violet_fungus",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Creature Descriptions"
+  },
+  {
+    "label": "winged_kobold",
+    "type": "Creature",
+    "id": "winged_kobold",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Creature Descriptions"
+  },
+  {
+    "label": "zombie",
+    "type": "Creature",
+    "id": "zombie",
+    "aliases": [
+      "[]"
+    ],
+    "source_node": "Creature Descriptions"
+  }
+]

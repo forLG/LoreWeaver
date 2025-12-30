@@ -132,6 +132,11 @@ def parse_args():
         default=float(os.getenv('LLM_REPETITION_PENALTY', '0')) if os.getenv('LLM_REPETITION_PENALTY') else None,
         help='Repetition penalty for vLLM (default: from LLM_REPETITION_PENALTY env var, 1.0 = no penalty)'
     )
+    parser.add_argument(
+        '--single-phase',
+        action='store_true',
+        help='Use single-phase extraction (entities + relations in one pass) for small models. Experimental.'
+    )
 
     # File paths
     parser.add_argument(
@@ -278,7 +283,8 @@ class Pipeline:
                 max_concurrent=self.args.max_concurrent,
                 output_dir=self.output_dir,  # Save debug outputs
                 max_tokens=self.args.max_tokens,
-                repetition_penalty=self.args.repetition_penalty
+                repetition_penalty=self.args.repetition_penalty,
+                single_phase=self.args.single_phase  # Enable single-phase if requested
             )
             location_graph = processor.process(self.shadow_tree, skip_summary=False)
         else:

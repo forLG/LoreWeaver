@@ -507,6 +507,7 @@ Entity Types to Extract:
 
 CRITICAL RULES:
 1. **ID Format**: Use snake_case IDs (e.g., dragon_s_rest, runara, rusty_key)
+
 2. **Extract Both Named and Unnamed Entities**:
    - NAMED: "Dragon's Rest", "Runara" → extract with exact name
    - UNNAMED GROUPS: If entities appear as a group in a specific context, use contextual ID
@@ -517,9 +518,16 @@ CRITICAL RULES:
      - Example: If one zombie attacks and another guards, create "attacking_zombie" and "guarding_zombie"
      - Only use numbers (_1, _2, _3) when entities are truly indistinguishable and less than 10
    - SKIP: Pure background/scenery with no relevance: "sunlight", "grass", "overcast sky"
-3. **OUTPUT FORMAT**: Wrap entities in <entities> tags
 
-OUTPUT EXAMPLE:
+3. **IF NO ENTITIES FOUND**: If the text contains no relevant entities, output <summary> instead
+   - Explain why (text too short, only scenery, no named content, etc.)
+   - This helps with debugging and tracing
+
+4. **OUTPUT FORMAT**:
+   - If entities found: Wrap in <entities> tags
+   - If no entities: Use <summary> tags with explanation
+
+OUTPUT EXAMPLE (with entities):
 <entities>
 Entity: The Waterdeep
 Type: Location
@@ -531,6 +539,11 @@ Type: Creature
 ID: goblin_warrior
 Aliases: ["goblin soldier"]
 </entities>
+
+OUTPUT EXAMPLE (no entities):
+<summary>
+Text contains no extractable entities. Only generic background descriptions of weather and scenery with no specific names.
+</summary>
 """
 
     @staticmethod
@@ -607,4 +620,118 @@ area_a1 -> A1
 the_beach -> rocky_shore
 
 [Output mappings below, one per line]
+"""
+
+    # ========================================================================
+    # Unified Entity + Event Extraction (Heterogeneous Graph)
+    # ========================================================================
+
+    @staticmethod
+    def create_unified_extraction_prompt_natural(
+        title: str,
+        content: str
+    ) -> str:
+        """
+        Unified Entity + Event extraction for heterogeneous graph.
+
+        Extracts:
+        - Entity nodes (static knowledge): locations, creatures, items
+        - Event nodes (dynamic narrative): encounters, discoveries, actions
+
+        Both become nodes in the same graph, linked by edges.
+        """
+        # Pure bottom-up: no parent context passed
+        return f"""
+ROLE: You are a D&D Knowledge Graph Extractor. Extract entities AND events from the following text.
+
+CURRENT SECTION: {title}
+
+TEXT TO PROCESS:
+{content}
+
+TASK: Extract ALL named entities AND narrative events in this text.
+
+ENTITY TYPES (static knowledge nodes):
+- Locations: places, buildings, rooms, geographic features
+- Creatures: monsters, NPCs, animals
+- Items: objects, equipment, treasures
+- Groups: organizations, parties, factions
+
+EVENT TYPES (dynamic narrative nodes):
+- encounter: Meeting or confrontation with entities
+- combat: Fight or battle
+- discovery: Finding something (item, location, information)
+- dialogue: Conversation or exchange of information
+- exploration: Moving through or observing a location
+- observation: Noticing details (not an action)
+
+CRITICAL RULES:
+1. **Extract Entities First**:
+   - NAMED: "Dragon's Rest", "Runara" → extract with exact name
+   - UNNAMED GROUPS: Use contextual IDs (e.g., "zombies in ship" → "zombies_in_ship")
+   - UNNAMED INDIVIDUALS: If different behaviors, separate (e.g., "attacking_zombie")
+   - Only use numbers (_1, _2) for truly indistinguishable entities
+
+2. **Extract Events**:
+   - Events describe WHAT HAPPENS in the text
+   - Link events to participating entities and locations
+   - Include brief description of what occurred
+
+3. **IF NO ENTITIES OR EVENTS FOUND**: Output <summary> with explanation
+
+OUTPUT FORMAT:
+<entities>
+Entity: [name]
+Type: [Location/Creature/Item/Group]
+ID: [snake_case_id]
+Aliases: [alias1, alias2]
+</entities>
+
+<events>
+Event: [event_name]
+Type: [encounter/combat/discovery/dialogue/exploration/observation]
+Participants: [entity_id1, entity_id2]
+Location: [location_id]
+Description: [what happened]
+
+Event: [next_event]
+...
+</events>
+
+EXAMPLE:
+<entities>
+Entity: Dragon's Rest
+Type: Location
+ID: dragon_s_rest
+Aliases: [temple]
+
+Entity: Runara
+Type: Creature
+ID: runara
+Aliases: [bronze dragon]
+
+Entity: Rusty Key
+Type: Item
+ID: rusty_key
+Aliases: []
+</entities>
+
+<events>
+Event: Meeting Runara
+Type: encounter
+Participants: [adventurers, runara]
+Location: dragon_s_rest
+Description: The party meets a bronze dragon named Runara in the ruined temple
+
+Event: Finding the Key
+Type: discovery
+Participants: [adventurers]
+Location: dragon_s_rest
+Description: While searching, the party discovers a rusty key hidden under debris
+</events>
+
+OUTPUT EXAMPLE (no entities/events):
+<summary>
+Text contains only generic atmospheric description with no specific entities or events.
+</summary>
 """

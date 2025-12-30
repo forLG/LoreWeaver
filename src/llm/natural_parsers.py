@@ -13,6 +13,7 @@ def parse_ner_entities(text: str) -> dict[str, Any]:
     Parse natural language entity extraction output.
 
     Expected format (compact, no blank lines):
+        <entities>
         Entity: Dragon's Rest
         Type: Location
         ID: dragon_s_rest
@@ -21,10 +22,27 @@ def parse_ner_entities(text: str) -> dict[str, Any]:
         Type: Creature
         ID: runara
         Aliases: bronze dragon, elder
+        </entities>
+
+    Or if no entities found:
+        <summary>
+        Text contains no extractable entities. Only generic background descriptions.
+        </summary>
 
     Returns:
-        {"entities": [...]}
+        {"entities": [...], "summary": str or None}
     """
+    # Check for summary section first (no entities found)
+    summary_match = re.search(r'<summary>(.*?)</summary>', text, re.DOTALL)
+    if summary_match:
+        summary = summary_match.group(1).strip()
+        return {"entities": [], "summary": summary}
+
+    # Extract entities section if present
+    entities_match = re.search(r'<entities>(.*?)</entities>', text, re.DOTALL)
+    if entities_match:
+        text = entities_match.group(1)
+
     entities = []
     current = {}
 
@@ -82,7 +100,111 @@ def parse_ner_entities(text: str) -> dict[str, Any]:
             current['aliases'] = []
         entities.append(current)
 
-    return {"entities": entities}
+    return {"entities": entities, "summary": None}
+
+
+def parse_events(text: str) -> dict[str, Any]:
+    """
+    Parse event extraction output.
+
+    Expected format:
+        <events>
+        Event: Meeting Runara
+        Type: encounter
+        Participants: [adventurers, runara]
+        Location: dragon_s_rest
+        Description: The party meets a bronze dragon in the temple
+
+        Event: Finding the Key
+        Type: discovery
+        Participants: [adventurers]
+        Location: dragon_s_rest
+        Description: While searching, the party discovers a rusty key
+        </events>
+
+    Returns:
+        {"events": [...]}
+    """
+    events = []
+
+    # Extract events section if present
+    events_match = re.search(r'<events>(.*?)</events>', text, re.DOTALL)
+    if not events_match:
+        return {"events": events}
+
+    events_text = events_match.group(1)
+    current = {}
+
+    for line in events_text.strip().split('\n'):
+        line = line.strip()
+        if not line:
+            continue
+
+        # Check if this is a new event block
+        if line.lower().startswith('event:'):
+            # Save previous event if valid
+            if current.get('label'):
+                # Generate ID from label if not present
+                if 'id' not in current:
+                    label = current.get('label', '').lower()
+                    current['id'] = re.sub(r'[^a-z0-9]+', '_', label).strip('_')
+
+                # Set defaults
+                if 'type' not in current:
+                    current['type'] = 'event'
+                if 'participants' not in current:
+                    current['participants'] = []
+                if 'location' not in current:
+                    current['location'] = None
+                if 'description' not in current:
+                    current['description'] = ''
+
+                events.append(current)
+
+            # Start new event
+            current = {}
+
+        # Parse key: value pairs
+        if ':' in line:
+            key, value = line.split(':', 1)
+            key = key.strip().lower()
+            value = value.strip()
+
+            if key == 'event':
+                current['label'] = value
+            elif key == 'type':
+                current['type'] = value
+            elif key == 'id':
+                current['id'] = value
+            elif key == 'participants':
+                # Parse list format: [item1, item2] or comma-separated
+                value = value.strip('[]()')
+                if value:
+                    participants = [p.strip() for p in value.split(',')]
+                    current['participants'] = participants
+                else:
+                    current['participants'] = []
+            elif key == 'location':
+                current['location'] = value if value else None
+            elif key == 'description':
+                current['description'] = value
+
+    # Don't forget the last event
+    if current.get('label'):
+        if 'id' not in current:
+            label = current.get('label', '').lower()
+            current['id'] = re.sub(r'[^a-z0-9]+', '_', label).strip('_')
+        if 'type' not in current:
+            current['type'] = 'event'
+        if 'participants' not in current:
+            current['participants'] = []
+        if 'location' not in current:
+            current['location'] = None
+        if 'description' not in current:
+            current['description'] = ''
+        events.append(current)
+
+    return {"events": events}
 
 
 def parse_relations(text: str) -> dict[str, Any]:
@@ -227,6 +349,120 @@ def parse_verification(text: str) -> dict[str, Any]:
                 result['missing_locations'].append(item)
             elif current_section == 'issues':
                 result['issues'].append(item)
+
+    return result
+
+
+def parse_combined_extraction(text: str) -> dict[str, Any]:
+    """
+    Parse combined entity and relation extraction output.
+
+    Expected format:
+        <entities>
+        Entity: Dragon's Rest
+        Type: Location
+        ID: dragon_s_rest
+        Aliases: [temple, monastery]
+
+        Entity: Runara
+        Type: Creature
+        ID: runara
+        Aliases: [bronze dragon]
+        </entities>
+
+        <relations>
+        Relation: inhabits
+        Source: runara
+        Target: dragon_s_rest
+        Description: Lives in the temple
+
+        Relation: commands
+        Source: goblin_boss
+        Target: goblin_minion
+        Description: Leads the goblins
+        </relations>
+
+    Or if no entities:
+        <summary>
+        Text contains no extractable entities.
+        </summary>
+
+    Returns:
+        {"entities": [...], "relations": [...], "summary": str or None}
+    """
+    result = {"entities": [], "relations": [], "summary": None}
+
+    # Check for summary first (no entities found)
+    summary_match = re.search(r'<summary>(.*?)</summary>', text, re.DOTALL)
+    if summary_match:
+        result["summary"] = summary_match.group(1).strip()
+        return result
+
+    # Extract entities section
+    entities_match = re.search(r'<entities>(.*?)</entities>', text, re.DOTALL)
+    if entities_match:
+        entities_text = entities_match.group(1)
+        entities_result = parse_ner_entities(entities_text)
+        result["entities"] = entities_result.get("entities", [])
+        # Also capture summary if present in entities section
+        result["summary"] = entities_result.get("summary")
+
+    # Extract relations section
+    relations_match = re.search(r'<relations>(.*?)</relations>', text, re.DOTALL)
+    if relations_match:
+        relations_text = relations_match.group(1)
+        relations_result = parse_relations(relations_text)
+        result["relations"] = relations_result.get("relations", [])
+
+    return result
+
+
+def parse_unified_extraction(text: str) -> dict[str, Any]:
+    """
+    Parse unified entity + event extraction output for heterogeneous graph.
+
+    Expected format:
+        <entities>
+        Entity: Dragon's Rest
+        Type: Location
+        ID: dragon_s_rest
+        Aliases: [temple]
+        </entities>
+
+        <events>
+        Event: Meeting Runara
+        Type: encounter
+        Participants: [adventurers, runara]
+        Location: dragon_s_rest
+        Description: The party meets a bronze dragon
+        </events>
+
+    Or if no content:
+        <summary>
+        Text contains only generic atmospheric description.
+        </summary>
+
+    Returns:
+        {"entities": [...], "events": [...], "summary": str or None}
+    """
+    result = {"entities": [], "events": [], "summary": None}
+
+    # Check for summary first (no entities/events found)
+    summary_match = re.search(r'<summary>(.*?)</summary>', text, re.DOTALL)
+    if summary_match:
+        result["summary"] = summary_match.group(1).strip()
+        return result
+
+    # Extract entities section
+    entities_match = re.search(r'<entities>(.*?)</entities>', text, re.DOTALL)
+    if entities_match:
+        entities_text = entities_match.group(1)
+        entities_result = parse_ner_entities(entities_text)
+        result["entities"] = entities_result.get("entities", [])
+
+    # Extract events section
+    events_result = parse_events(text)
+    result["events"] = events_result.get("events", [])
 
     return result
 

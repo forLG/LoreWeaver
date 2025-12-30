@@ -1,11 +1,22 @@
 """
 Small Model Processor - Entity-first pipeline for models with limited context (e.g., qwen3-8b).
 
-Uses pure bottom-up tree traversal:
-1. Bottom-up: Each node extracts entities independently
-2. Bottom-up: Aggregate and resolve entities at each level
+Supports two modes:
+1. Two-phase mode (default): NER → Relations
+2. Single-phase unified mode (--single-phase): Entities + Events (heterogeneous graph)
 
-Pipeline:
+Unified Heterogeneous Graph:
+- Entity nodes: Static knowledge (locations, creatures, items)
+- Event nodes: Dynamic narrative (encounters, discoveries, combat)
+- Edges: Event → Entity (has_participant, occurs_at)
+
+Pipeline (single-phase):
+1. Unified entity + event extraction (no parent context)
+2. Entity deduplication and resolution
+3. Event processing with edge generation
+4. Build heterogeneous graph
+
+Pipeline (two-phase):
 1. Independent NER extraction (no parent context)
 2. Bottom-up entity aggregation and resolution
 3. Relation extraction with known entities
@@ -21,6 +32,7 @@ from llm.natural_parsers import (
     parse_entity_resolution,
     parse_ner_entities,
     parse_relations,
+    parse_unified_extraction,
 )
 from llm.prompt_factory import PromptFactory
 from utils.graph_utils import deduplicate_graph
@@ -31,10 +43,14 @@ class SmallModelProcessor(BaseLLMProcessor):
     """
     Entity-first processor optimized for small models (qwen3-8b, etc.).
 
+    Modes:
+    - Two-phase (default): Extract entities, then relations
+    - Single-phase unified: Extract entities + events (heterogeneous graph)
+
     Key differences from standard processor:
-    - Extracts entities first (NER), then relations
-    - Uses tree structure for context propagation
-    - Processes layer-by-layer to bound context size
+    - Pure bottom-up: No parent context passed between nodes
+    - Heterogeneous graph: Entity nodes + Event nodes
+    - Events as peripheral nodes: Don't clutter core entity relationships
     - Saves intermediate outputs for debugging
     """
 
@@ -47,7 +63,8 @@ class SmallModelProcessor(BaseLLMProcessor):
         output_dir: str | Path | None = None,
         use_natural_language: bool = True,
         max_tokens: int = 0,
-        repetition_penalty: float | None = None
+        repetition_penalty: float | None = None,
+        single_phase: bool = False
     ):
         """
         Initialize the small model processor.
@@ -61,14 +78,18 @@ class SmallModelProcessor(BaseLLMProcessor):
             use_natural_language: Use natural language output instead of JSON (default: True)
             max_tokens: Maximum tokens per response (0 = no limit, recommended 2048 for small models)
             repetition_penalty: Repetition penalty for vLLM (1.0 = no penalty, 1.1-1.5 recommended)
+            single_phase: If True, extract entities + relations in one pass (experimental)
         """
         super().__init__(api_key, base_url, model, max_concurrent, repetition_penalty)
         self.output_dir = Path(output_dir) if output_dir else None
         self.use_natural_language = use_natural_language
         self.max_tokens = max_tokens if max_tokens > 0 else None
+        self.single_phase = single_phase
 
         if use_natural_language:
             logger.info("Natural language mode enabled (more robust for small models)")
+        if single_phase:
+            logger.info("Single-phase mode enabled (entities + relations in one pass)")
 
     def _save_debug(self, name: str, data: Any) -> None:
         """
@@ -111,15 +132,122 @@ class SmallModelProcessor(BaseLLMProcessor):
         """
         Entity-first pipeline for small models.
 
-        Phase 1: Independent NER extraction (pure bottom-up)
-        Phase 2: Bottom-up aggregation and resolution
-        Phase 3: Relation extraction with known entities
-        Phase 4: Build spatial graph
+        Single-phase mode (experimental):
+        - Phase 1: Combined entity + relation extraction
+        - Phase 2: Entity resolution and relation ID update
+        - Phase 3: Build final graph
+
+        Two-phase mode (default):
+        - Phase 1: Independent NER extraction (pure bottom-up)
+        - Phase 2: Bottom-up aggregation and resolution
+        - Phase 3: Relation extraction with known entities
+        - Phase 4: Build spatial graph
         """
         logger.info("=" * 60)
-        logger.info("SMALL MODEL PIPELINE: Entity-first approach")
+        mode = "SINGLE-PHASE" if self.single_phase else "TWO-PHASE"
+        logger.info(f"SMALL MODEL PIPELINE: {mode}")
         logger.info("=" * 60)
 
+        if self.single_phase:
+            return await self._process_single_phase(shadow_tree)
+        else:
+            return await self._process_two_phase(shadow_tree)
+
+    async def _process_single_phase(
+        self,
+        shadow_tree: list[dict]
+    ) -> dict:
+        """
+        Single-phase unified pipeline: Extract entities + events in one pass.
+        Builds a heterogeneous graph with both entity and event nodes.
+        """
+        # ====================================================================
+        # Phase 1: Unified entity + event extraction
+        # ====================================================================
+        logger.info("Phase 1: Unified entity + event extraction...")
+
+        extraction_result = await self._unified_extraction(shadow_tree)
+
+        all_entities = extraction_result["entities"]
+        all_events = extraction_result["events"]
+
+        logger.info(f"  Extracted {len(all_entities)} raw entities")
+        logger.info(f"  Extracted {len(all_events)} raw events")
+
+        # Save raw extractions for debugging
+        self._save_debug("phase1_unified_entities", all_entities)
+        self._save_debug("phase1_unified_events", all_events)
+
+        # ====================================================================
+        # Phase 2: Entity resolution
+        # ====================================================================
+        logger.info("Phase 2: Resolving entities...")
+
+        # Deduplicate entities by ID
+        unique_entities = self._deduplicate_entities(all_entities)
+        logger.info(f"  Resolved to {len(unique_entities)} unique entities")
+
+        # Build ID mapping for updating event references
+        id_mapping = self._build_entity_id_mapping(all_entities, unique_entities)
+
+        # ====================================================================
+        # Phase 3: Event processing and edge generation
+        # ====================================================================
+        logger.info("Phase 3: Processing events and generating edges...")
+
+        edges = []
+        valid_events = []
+
+        for event in all_events:
+            # Update event entity references to use canonical IDs
+            updated_event = self._update_event_entity_refs(event, id_mapping)
+
+            # Generate edges from event to participants and location
+            event_edges = self._generate_event_edges(updated_event)
+
+            # Only add event if it has valid edges (connected to real entities)
+            if event_edges:
+                edges.extend(event_edges)
+                valid_events.append(updated_event)
+
+        logger.info(f"  Valid events after ID update: {len(valid_events)}")
+        logger.info(f"  Generated {len(edges)} edges from events")
+
+        # ====================================================================
+        # Phase 4: Build unified heterogeneous graph
+        # ====================================================================
+        logger.info("Phase 4: Building unified heterogeneous graph...")
+
+        # Combine entity nodes and event nodes
+        all_nodes = []
+
+        # Add entity nodes with a "node_type" field
+        for entity in unique_entities:
+            entity["node_type"] = "entity"
+            all_nodes.append(entity)
+
+        # Add event nodes with a "node_type" field
+        for event in valid_events:
+            event["node_type"] = "event"
+            all_nodes.append(event)
+
+        final_graph = {
+            "nodes": all_nodes,
+            "edges": edges
+        }
+
+        logger.info(f"  Final graph: {len(all_nodes)} nodes ({len(unique_entities)} entities + {len(valid_events)} events)")
+        logger.info(f"              {len(edges)} edges")
+
+        return final_graph
+
+    async def _process_two_phase(
+        self,
+        shadow_tree: list[dict]
+    ) -> dict:
+        """
+        Two-phase pipeline: Extract entities first, then relations.
+        """
         # ====================================================================
         # Phase 1: Independent NER extraction (no parent context)
         # ====================================================================
@@ -241,15 +369,22 @@ class SmallModelProcessor(BaseLLMProcessor):
         Duplicates will be resolved during bottom-up aggregation.
         """
         title = node.get("title", "Untitled")
+        node_id = node.get("id", "unknown")
         content = node.get("content", "")
 
         # Skip if content is empty or just whitespace
         if not content or not content.strip():
-            logger.debug(f"Skipping NER for node {title}: empty content")
+            logger.debug(f"Skipping NER for node '{title}' (id: {node_id}): empty content")
+            return []
+
+        # Check if content is too short
+        if len(content.strip()) < 50:
+            logger.debug(f"Skipping NER for node '{title}' (id: {node_id}): content too short ({len(content)} chars)")
             return []
 
         # Truncate content if too long
-        if len(content) > 2000:
+        original_len = len(content)
+        if original_len > 2000:
             content = content[:2000] + "... [truncated]"
 
         # Choose prompt based on mode
@@ -270,11 +405,21 @@ class SmallModelProcessor(BaseLLMProcessor):
                 top_p=0.95,
                 max_tokens=self.max_tokens,
                 enable_thinking=False,
-                stop=["\nEntity: \n", "\nEntity:\n"]  # Stop on empty entity (compact format)
+                stop=[]  # No stop sequences for XML-tagged output
             )
 
             # Parse natural language output
             result = parse_ner_entities(raw_response)
+
+            # Check if LLM returned a summary (no entities found)
+            if result.get("summary"):
+                summary = result["summary"]
+                logger.warning(
+                    f"No entities found in node '{title}' (id: {node_id}). "
+                    f"Reason: {summary} "
+                    f"[Content length: {original_len} chars]"
+                )
+                return []
         else:
             prompt = PromptFactory.create_ner_prompt(
                 title=title,
@@ -287,12 +432,18 @@ class SmallModelProcessor(BaseLLMProcessor):
                 prompt,
                 temperature=0.9,
                 top_p=0.95,
-                error_context=f"NER for node {node.get('id')}",
+                error_context=f"NER for node {node_id}",
                 max_tokens=self.max_tokens,
                 enable_thinking=False
             )
 
-        return result.get("entities", []) if result else []
+        entities = result.get("entities", []) if result else []
+
+        # Warn if no entities extracted (but content exists)
+        if not entities:
+            logger.debug(f"No entities extracted from node '{title}' (id: {node_id})")
+
+        return entities
 
     # ========================================================================
     # Phase 2: Bottom-up aggregation and entity resolution
@@ -676,3 +827,284 @@ class SmallModelProcessor(BaseLLMProcessor):
                 unique.append(e)
 
         return unique
+
+    # ========================================================================
+    # Single-Phase Combined Extraction (Experimental)
+    # ========================================================================
+
+    async def _unified_extraction(
+        self,
+        shadow_tree: list[dict]
+    ) -> dict[str, Any]:
+        """
+        Extract entities and events in a single pass per node (unified heterogeneous graph).
+
+        Returns:
+            {"entities": [...], "events": [...]}
+        """
+        all_entities = []
+        all_events = []
+
+        for root in shadow_tree:
+            await self._unified_extraction_recursive(root, all_entities, all_events)
+
+        return {"entities": all_entities, "events": all_events}
+
+    async def _unified_extraction_recursive(
+        self,
+        node: dict,
+        all_entities: list[dict],
+        all_events: list[dict]
+    ) -> None:
+        """
+        Recursively extract entities and events from each node.
+        """
+        title = node.get("title", "Untitled")
+        node_id = node.get("id", "unknown")
+        content = node.get("content", "")
+
+        # Skip if content is empty
+        if not content or not content.strip():
+            logger.debug(f"Skipping combined extraction for node '{title}' (id: {node_id}): empty content")
+        else:
+            original_len = len(content)
+
+            # Check if content is too short
+            if len(content.strip()) < 50:
+                logger.debug(f"Skipping combined extraction for node '{title}' (id: {node_id}): content too short ({original_len} chars)")
+            else:
+                # Truncate content if too long
+                if original_len > 2000:
+                    content = content[:2000] + "... [truncated]"
+                    logger.warning(f"Truncated content for node '{title}' (id: {node_id}) from {original_len} to {len(content)} chars")
+
+                # Extract entities and events in one call (unified extraction)
+                if self.use_natural_language:
+                    prompt = PromptFactory.create_unified_extraction_prompt_natural(
+                        title=title,
+                        content=content
+                    )
+
+                    raw_response = await self._call_llm_async(
+                        prompt,
+                        temperature=0.75,
+                        top_p=0.90,
+                        max_tokens=self.max_tokens,
+                        enable_thinking=False,
+                        stop=[]  # No specific stop sequences for XML-tagged output
+                    )
+
+                    result = parse_unified_extraction(raw_response)
+
+                    # Check if LLM returned a summary (no entities/events found)
+                    if result.get("summary"):
+                        summary = result["summary"]
+                        logger.warning(
+                            f"No entities/events found in node '{title}' (id: {node_id}). "
+                            f"Reason: {summary} "
+                            f"[Content length: {original_len} chars]"
+                        )
+                        return  # Skip adding entities/events
+                else:
+                    # JSON mode not implemented for unified extraction yet
+                    logger.warning("Unified extraction only supports natural language mode")
+                    result = {"entities": [], "events": []}
+
+                # Add entities with source node info
+                for entity in result.get("entities", []):
+                    entity["source_node"] = title
+                    all_entities.append(entity)
+
+                # Add events with source node info
+                for event in result.get("events", []):
+                    event["source_node"] = title
+                    all_events.append(event)
+
+                logger.debug(f"  Unified extraction for {title}: "
+                            f"{len(result.get('entities', []))} entities, "
+                            f"{len(result.get('events', []))} events")
+
+        # Recurse to children
+        if node.get("children"):
+            for child in node["children"]:
+                await self._unified_extraction_recursive(child, all_entities, all_events)
+
+    def _build_entity_id_mapping(
+        self,
+        raw_entities: list[dict],
+        unique_entities: list[dict]
+    ) -> dict[str, str]:
+        """
+        Build a mapping from raw entity IDs to canonical entity IDs.
+
+        After deduplication, multiple raw entities may map to the same canonical entity.
+        This mapping is used to update relation source/target IDs.
+        """
+        mapping = {}
+
+        # Group raw entities by their canonical ID
+        for raw_entity in raw_entities:
+            raw_id = raw_entity.get("id", "")
+
+            # Find the canonical entity this maps to
+            for unique_entity in unique_entities:
+                unique_id = unique_entity.get("id", "")
+
+                # Check if they're the same entity (by ID or label similarity)
+                if raw_id == unique_id or raw_entity.get("label") == unique_entity.get("label"):
+                    mapping[raw_id] = unique_id
+                    break
+
+        # For any unmapped entities, map to themselves
+        for raw_entity in raw_entities:
+            raw_id = raw_entity.get("id", "")
+            if raw_id and raw_id not in mapping:
+                mapping[raw_id] = raw_id
+
+        return mapping
+
+    def _update_relation_ids(
+        self,
+        relations: list[dict],
+        id_mapping: dict[str, str]
+    ) -> list[dict]:
+        """
+        Update relation source/target IDs to use canonical entity IDs.
+
+        Args:
+            relations: List of relations with possibly non-canonical entity IDs
+            id_mapping: Mapping from raw IDs to canonical IDs
+
+        Returns:
+            List of relations with updated IDs
+        """
+        updated = []
+
+        for relation in relations:
+            new_relation = relation.copy()
+
+            # Update source ID
+            source_id = relation.get("source", "")
+            new_relation["source"] = id_mapping.get(source_id, source_id)
+
+            # Update target ID
+            target_id = relation.get("target", "")
+            new_relation["target"] = id_mapping.get(target_id, target_id)
+
+            updated.append(new_relation)
+
+        return updated
+
+    def _update_event_entity_refs(
+        self,
+        event: dict,
+        id_mapping: dict[str, str]
+    ) -> dict:
+        """
+        Update event entity references to use canonical entity IDs.
+
+        Args:
+            event: Event dict with participants list and location field
+            id_mapping: Mapping from raw IDs to canonical IDs
+
+        Returns:
+            Updated event dict with canonical entity IDs
+        """
+        updated_event = event.copy()
+
+        # Update participant IDs
+        participants = event.get("participants", [])
+        updated_participants = []
+        for pid in participants:
+            canonical_id = id_mapping.get(pid, pid)
+            updated_participants.append(canonical_id)
+        updated_event["participants"] = updated_participants
+
+        # Update location ID
+        location = event.get("location")
+        if location:
+            updated_event["location"] = id_mapping.get(location, location)
+
+        return updated_event
+
+    def _generate_event_edges(
+        self,
+        event: dict
+    ) -> list[dict]:
+        """
+        Generate edges from an event to its participants and location.
+
+        Args:
+            event: Event dict with id, type, participants, location, description
+
+        Returns:
+            List of edge dicts: {source, target, relation, description}
+        """
+        edges = []
+        event_id = event.get("id", "")
+        event_type = event.get("type", "event")
+        description = event.get("description", "")
+
+        if not event_id:
+            return edges
+
+        # Edge: event --[has_participant]--> entity
+        for participant_id in event.get("participants", []):
+            if participant_id:  # Skip empty participant IDs
+                edges.append({
+                    "source": event_id,
+                    "target": participant_id,
+                    "relation": "has_participant",
+                    "description": f"Participant in {event_type}"
+                })
+
+        # Edge: event --[occurs_at]--> location
+        location_id = event.get("location")
+        if location_id:
+            edges.append({
+                "source": event_id,
+                "target": location_id,
+                "relation": "occurs_at",
+                "description": description or f"{event_type} at this location"
+            })
+
+        return edges
+
+# ========================================================================
+# Graph Filtering Utilities (for heterogeneous graphs)
+# ========================================================================
+
+def filter_graph_to_entities(graph: dict) -> dict:
+    """
+    Filter a heterogeneous graph to only entity nodes (remove events).
+
+    Args:
+        graph: Heterogeneous graph with nodes and edges
+
+    Returns:
+        Filtered graph with only entity nodes and entity-entity edges
+    """
+    # Get all event node IDs
+    event_ids = {
+        node["id"] for node in graph.get("nodes", [])
+        if node.get("node_type") == "event"
+    }
+
+    # Filter to only entity nodes
+    entity_nodes = [
+        node for node in graph.get("nodes", [])
+        if node.get("node_type") != "event"
+    ]
+
+    # Filter edges to remove those involving events
+    entity_edges = [
+        edge for edge in graph.get("edges", [])
+        if edge.get("source") not in event_ids
+        and edge.get("target") not in event_ids
+    ]
+
+    return {
+        "nodes": entity_nodes,
+        "edges": entity_edges
+    }
+

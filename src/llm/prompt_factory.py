@@ -326,8 +326,8 @@ Task:
    - You must **ONLY** use Node IDs provided in the "Candidate Entities" list or the "Context Locations" list.
    - **DO NOT** invent new Node IDs.
    - If the text mentions an entity (e.g., "a mysterious guard") but it is NOT in the candidate list, **IGNORE IT**. Do not create a node for it.
-   - **Exception**: Always map "you", "characters", "party" to the ID "**party:characters**".
-   - ID Format: Use the 'suggested_id' from candidates if available.
+   - **Exception**: Always map "you", "characters", "party" to the ID "**characters**".
+   - ID Format: Use the 'suggested_id' from candidates if available (snake_case, no prefix).
 
 2. **Extract Relations (Edges)**:
    - **DO NOT** extract relationships between two Location nodes (e.g., "connected_to", "part_of"). Spatial topology is already handled.
@@ -347,15 +347,15 @@ Task:
 Output JSON Format:
 {{
     "nodes": [
-        {{ "id": "creature:goblin_boss", "label": "Goblin Boss", "type": "Monster" }},
-        {{ "id": "creature:goblin_minion", "label": "Goblin Minion", "type": "Monster" }},
-        {{ "id": "item:rusty_key", "label": "Rusty Key", "type": "Item" }},
-        {{ "id": "location:iron_chest", "label": "Iron Chest", "type": "Container" }}
+        {{ "id": "goblin_boss", "label": "Goblin Boss", "type": "Creature" }},
+        {{ "id": "goblin_minion", "label": "Goblin Minion", "type": "Creature" }},
+        {{ "id": "rusty_key", "label": "Rusty Key", "type": "Item" }},
+        {{ "id": "iron_chest", "label": "Iron Chest", "type": "Location" }}
     ],
     "edges": [
-        {{ "source": "creature:goblin_boss", "target": "creature:goblin_minion", "relation": "commands", "desc": "shouts orders to the minions" }},
-        {{ "source": "item:rusty_key", "target": "location:iron_chest", "relation": "unlocks", "desc": "opens the locked chest in the corner" }},
-        {{ "source": "creature:goblin_boss", "target": "location:throne_room", "relation": "inhabits", "desc": "sits lazily on the throne" }}
+        {{ "source": "goblin_boss", "target": "goblin_minion", "relation": "commands", "desc": "shouts orders to the minions" }},
+        {{ "source": "rusty_key", "target": "iron_chest", "relation": "unlocks", "desc": "opens the locked chest in the corner" }},
+        {{ "source": "goblin_boss", "target": "throne_room", "relation": "inhabits", "desc": "sits lazily on the throne" }}
     ]
 }}
 """

@@ -100,7 +100,7 @@ class EntityProcessor(BaseLLMProcessor):
             {
                 "tag": "party",
                 "text": "The Characters / Party",
-                "suggested_id": "party:characters"
+                "suggested_id": "characters"
             }
         ]
 
@@ -109,7 +109,7 @@ class EntityProcessor(BaseLLMProcessor):
                 candidates.append({
                     "tag": link["tag"],
                     "text": link["text"],
-                    "suggested_id": f"{link['tag']}:{link['text'].lower().replace(' ', '_')}"
+                    "suggested_id": link["text"].lower().replace(" ", "_")
                 })
 
         # Truncate if too many candidates to prevent token overflow

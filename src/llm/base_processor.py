@@ -74,6 +74,12 @@ class BaseLLMProcessor:
                         "Response truncated (finish_reason=length). "
                         "Model hit max output limit. Consider using a model with higher output capacity."
                     )
+                    # Log the input prompt for analysis
+                    prompt_preview = prompt[:500] + "..." if len(prompt) > 500 else prompt
+                    logger.warning(f"Input text preview:\n{prompt_preview}")
+                    logger.warning(f"Input text length: {len(prompt)} characters")
+                    # Save full input to debug file for analysis
+                    self._save_truncation_debug(prompt, choice.message.content)
 
                 return choice.message.content.strip()
         except Exception as e:
@@ -116,6 +122,10 @@ class BaseLLMProcessor:
                         f"{error_context}: Response truncated (finish_reason=length). "
                         f"Model hit max output limit. JSON may be incomplete."
                     )
+                    # Log the input prompt for analysis (truncated to avoid huge logs)
+                    prompt_preview = prompt[:500] + "..." if len(prompt) > 500 else prompt
+                    logger.warning(f"{error_context}: Input text preview:\n{prompt_preview}")
+                    logger.warning(f"{error_context}: Input text length: {len(prompt)} characters")
 
                 return json.loads(raw_content)
         except json.JSONDecodeError as je:
@@ -132,6 +142,42 @@ class BaseLLMProcessor:
         except Exception as e:
             logger.error(f"{error_context} failed: {e}")
             return None
+
+    def _save_truncation_debug(self, prompt: str, response: str) -> None:
+        """
+        Save full prompt and response for debugging truncation issues.
+
+        Creates a timestamped debug file with the input that caused truncation.
+        """
+        try:
+            import time
+            from pathlib import Path
+
+            debug_dir = Path("output/truncation_debug")
+            debug_dir.mkdir(parents=True, exist_ok=True)
+
+            timestamp = time.strftime("%Y%m%d_%H%M%S")
+            debug_file = debug_dir / f"truncated_{timestamp}.txt"
+
+            with open(debug_file, 'w', encoding='utf-8') as f:
+                f.write("=" * 60 + "\n")
+                f.write("TRUNCATED RESPONSE DEBUG\n")
+                f.write("=" * 60 + "\n\n")
+                f.write(f"Input length: {len(prompt)} characters\n")
+                f.write(f"Output length: {len(response)} characters\n\n")
+                f.write("-" * 60 + "\n")
+                f.write("INPUT PROMPT:\n")
+                f.write("-" * 60 + "\n")
+                f.write(prompt)
+                f.write("\n\n")
+                f.write("-" * 60 + "\n")
+                f.write("OUTPUT RESPONSE:\n")
+                f.write("-" * 60 + "\n")
+                f.write(response)
+
+            logger.info(f"Saved truncation debug info to: {debug_file}")
+        except Exception as e:
+            logger.debug(f"Could not save truncation debug: {e}")
 
     async def close(self):
         """

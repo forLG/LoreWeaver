@@ -45,7 +45,8 @@ class SmallModelProcessor(BaseLLMProcessor):
         model: str = "deepseek-chat",
         max_concurrent: int = 100,
         output_dir: str | Path | None = None,
-        use_natural_language: bool = True
+        use_natural_language: bool = True,
+        max_tokens: int = 0
     ):
         """
         Initialize the small model processor.
@@ -57,10 +58,12 @@ class SmallModelProcessor(BaseLLMProcessor):
             max_concurrent: Maximum concurrent requests
             output_dir: Directory to save intermediate debug outputs (optional)
             use_natural_language: Use natural language output instead of JSON (default: True)
+            max_tokens: Maximum tokens per response (0 = no limit, recommended 2048 for small models)
         """
         super().__init__(api_key, base_url, model, max_concurrent)
         self.output_dir = Path(output_dir) if output_dir else None
         self.use_natural_language = use_natural_language
+        self.max_tokens = max_tokens if max_tokens > 0 else None
 
         if use_natural_language:
             logger.info("Natural language mode enabled (more robust for small models)")
@@ -266,10 +269,14 @@ class SmallModelProcessor(BaseLLMProcessor):
             )
 
             # Use regular LLM call (not JSON)
+            # Higher temperature (0.9) breaks repetition loop in Qwen3
+            # max_tokens prevents infinite output
             raw_response = await self._call_llm_async(
                 prompt,
-                temperature=0.7,
-                top_p=0.8
+                temperature=0.9,
+                top_p=0.95,
+                max_tokens=self.max_tokens,
+                enable_thinking=False
             )
 
             # Parse natural language output
@@ -284,9 +291,11 @@ class SmallModelProcessor(BaseLLMProcessor):
 
             result = await self._call_llm_json_async(
                 prompt,
-                temperature=0.7,
-                top_p=0.8,
-                error_context=f"NER for node {node.get('id')}"
+                temperature=0.9,
+                top_p=0.95,
+                error_context=f"NER for node {node.get('id')}",
+                max_tokens=self.max_tokens,
+                enable_thinking=False
             )
 
         return result.get("entities", []) if result else []
@@ -389,10 +398,14 @@ class SmallModelProcessor(BaseLLMProcessor):
             prompt = PromptFactory.create_entity_resolution_prompt_natural(entities_text)
 
             # Use regular LLM call (not JSON)
+            # Higher temperature (0.9) breaks repetition loop in Qwen3
+            # max_tokens prevents infinite output
             raw_response = await self._call_llm_async(
                 prompt,
-                temperature=0.7,
-                top_p=0.8
+                temperature=0.9,
+                top_p=0.95,
+                max_tokens=self.max_tokens,
+                enable_thinking=False
             )
 
             # Parse natural language output
@@ -402,9 +415,11 @@ class SmallModelProcessor(BaseLLMProcessor):
 
             mapping = await self._call_llm_json_async(
                 prompt,
-                temperature=0.7,
-                top_p=0.8,
-                error_context=f"Entity resolution for {context_id}"
+                temperature=0.9,
+                top_p=0.95,
+                error_context=f"Entity resolution for {context_id}",
+                max_tokens=2048,
+                enable_thinking=False
             )
 
         if not mapping:
@@ -643,10 +658,14 @@ class SmallModelProcessor(BaseLLMProcessor):
             )
 
             # Use regular LLM call (not JSON)
+            # Higher temperature (0.9) breaks repetition loop in Qwen3
+            # max_tokens prevents infinite output
             raw_response = await self._call_llm_async(
                 prompt,
-                temperature=0.7,
-                top_p=0.8
+                temperature=0.9,
+                top_p=0.95,
+                max_tokens=self.max_tokens,
+                enable_thinking=False
             )
 
             # Parse natural language output
@@ -660,9 +679,11 @@ class SmallModelProcessor(BaseLLMProcessor):
 
             result = await self._call_llm_json_async(
                 prompt,
-                temperature=0.7,
-                top_p=0.8,
-                error_context=f"Relation extraction for node {node.get('id')}"
+                temperature=0.9,
+                top_p=0.95,
+                error_context=f"Relation extraction for node {node.get('id')}",
+                max_tokens=2048,
+                enable_thinking=False
             )
 
         return result.get("relations", []) if result else []

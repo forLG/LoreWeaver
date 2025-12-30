@@ -43,7 +43,9 @@ class BaseLLMProcessor:
         prompt: str,
         temperature: float = 0.3,
         top_p: float | None = None,
-        response_format: dict[str, str] | None = None
+        response_format: dict[str, str] | None = None,
+        max_tokens: int | None = None,
+        enable_thinking: bool = False
     ) -> str:
         """
         Make an async LLM call with error handling.
@@ -53,6 +55,8 @@ class BaseLLMProcessor:
             temperature: Sampling temperature
             top_p: Nucleus sampling parameter (0.8 recommended for non-thinking mode)
             response_format: Optional response format (e.g., {"type": "json_object"})
+            max_tokens: Maximum tokens to generate (prevents infinite loops)
+            enable_thinking: Whether to enable Qwen3 thinking mode (default: False)
 
         Returns:
             The response content as string
@@ -68,6 +72,15 @@ class BaseLLMProcessor:
                     kwargs["top_p"] = top_p
                 if response_format:
                     kwargs["response_format"] = response_format
+                if max_tokens is not None:
+                    kwargs["max_tokens"] = max_tokens
+
+                # For vLLM with Qwen3, pass enable_thinking via extra_body
+                extra_body = {}
+                if not enable_thinking:
+                    extra_body["enable_thinking"] = False
+                if extra_body:
+                    kwargs["extra_body"] = extra_body
 
                 response = await self.async_client.chat.completions.create(**kwargs)
 
@@ -97,7 +110,9 @@ class BaseLLMProcessor:
         prompt: str,
         temperature: float = 0.1,
         top_p: float | None = None,
-        error_context: str = "LLM call"
+        error_context: str = "LLM call",
+        max_tokens: int | None = None,
+        enable_thinking: bool = False
     ) -> dict[str, Any] | None:
         """
         Make an async LLM call expecting JSON response.
@@ -107,6 +122,8 @@ class BaseLLMProcessor:
             temperature: Sampling temperature (default 0.1 for more deterministic output)
             top_p: Nucleus sampling parameter (0.8 recommended for non-thinking mode)
             error_context: Context string for error logging
+            max_tokens: Maximum tokens to generate (prevents infinite loops)
+            enable_thinking: Whether to enable Qwen3 thinking mode (default: False)
 
         Returns:
             Parsed JSON dict, or None if parsing failed
@@ -121,6 +138,15 @@ class BaseLLMProcessor:
                 }
                 if top_p is not None:
                     kwargs["top_p"] = top_p
+                if max_tokens is not None:
+                    kwargs["max_tokens"] = max_tokens
+
+                # For vLLM with Qwen3, pass enable_thinking via extra_body
+                extra_body = {}
+                if not enable_thinking:
+                    extra_body["enable_thinking"] = False
+                if extra_body:
+                    kwargs["extra_body"] = extra_body
 
                 response = await self.async_client.chat.completions.create(**kwargs)
                 raw_content = response.choices[0].message.content
@@ -145,12 +171,7 @@ class BaseLLMProcessor:
             logger.error(f"JSON parse error in {error_context}: {je}")
             logger.error(f"Raw response (first 300 chars): {raw_content[:300]}...")
 
-            # Try to recover partial JSON from truncated response
-            recovered = self._try_parse_partial_json(raw_content)
-            if recovered:
-                logger.info(f"Recovered partial data from truncated response: {len(recovered.get('nodes', []))} nodes, {len(recovered.get('edges', []))} edges")
-                return recovered
-
+            # For natural language mode, we can't recover from truncation
             return None
         except Exception as e:
             logger.error(f"{error_context} failed: {e}")

@@ -120,6 +120,12 @@ def parse_args():
         default=get_default_concurrency(),
         help='Maximum concurrent LLM requests (default: auto-detected, use 50-100 for cloud APIs)'
     )
+    parser.add_argument(
+        '--max-tokens',
+        type=int,
+        default=int(os.getenv('LLM_MAX_TOKENS', '0')),
+        help='Maximum tokens per LLM response (default: from LLM_MAX_TOKENS env var, 0 = no limit)'
+    )
 
     # File paths
     parser.add_argument(
@@ -264,7 +270,8 @@ class Pipeline:
                 base_url=self.args.base_url,
                 model=self.args.model,
                 max_concurrent=self.args.max_concurrent,
-                output_dir=self.output_dir  # Save debug outputs
+                output_dir=self.output_dir,  # Save debug outputs
+                max_tokens=self.args.max_tokens
             )
             location_graph = processor.process(self.shadow_tree, skip_summary=False)
         else:

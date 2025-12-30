@@ -14,7 +14,7 @@ class PromptFactory:
         content = node.get("content", "")
 
         # 基础 Prompt 结构
-        return f"""
+        return f"""/no_think
 You are a D&D Cartographer. Generate a SPATIAL REPORT for the node: "{title}".
 
 Current Text:
@@ -53,7 +53,7 @@ Output Requirements:
         """
         阶段二：从单章总结文本中提取 JSON
         """
-        return f"""
+        return f"""/no_think
 You are a D&D Knowledge Graph Architect.
 Extract a Location Knowledge Graph (JSON) from the provided text.
 
@@ -311,7 +311,7 @@ Output Format (JSON ONLY):
         """
         阶段五：实体实例化与关系挖掘
         """
-        return f"""
+        return f"""/no_think
 You are a D&D Knowledge Graph Builder.
 Context: The following text describes events occurring at these Location(s): [{location_list}].
 
@@ -376,7 +376,7 @@ Output JSON Format:
 
         Extract all named entities from text, using parent context for reference resolution.
         """
-        return f"""
+        return f"""/no_think
 You are a D&D Entity Extractor. Extract named entities from the following text.
 
 CURRENT SECTION: {title}
@@ -396,10 +396,18 @@ Entity Types to Extract:
 
 CRITICAL RULES:
 1. **ID Format**: Use snake_case IDs (e.g., "dragon_s_rest", "runara", "rusty_key")
-2. **Reference Parent Entities**: If an entity mentioned here was already seen in parent sections, USE THE SAME ID from the known entities list above
-3. **Be Specific**: Extract specific names, not generic terms (e.g., "Myla's Cell" not "a cell")
-4. **Include All**: Don't miss any named entity, even if it seems minor
-5. **Extract Aliases**: For each entity, include common aliases and alternative names (e.g., "Runara" might have aliases: "bronze dragon", "elder", "the leader")
+
+2. **Extract ONLY Proper/Specific Names**:
+   - EXTRACT: "Dragon's Rest", "Runara", "Rusty Key", "Myla's Cell"
+   - SKIP: generic descriptions like "a temple", "the path", "a statue", "two sailors"
+   - If something only has a generic description (e.g., "a large, open-air temple"), DO NOT create a new entity for it
+
+3. **Reference Parent Entities**: If an entity mentioned here was already seen in parent sections, USE THE SAME ID from the known entities list above
+
+4. **Add Aliases, Don't Duplicate**: If a generic term refers to a known entity, add it as an ALIAS instead of creating a new entity
+   - Example: If parent has "cloister" and text mentions "the temple", add "temple" as an alias to cloister, don't create new "temple" entity
+
+5. **Be Decisive**: Choose the best match and move on. Do not repeatedly reconsider your choices.
 
 Output Format (JSON ONLY):
 {{
@@ -422,7 +430,7 @@ Output Format (JSON ONLY):
 
         Given a list of known entities, find relationships between them in the text.
         """
-        return f"""
+        return f"""/no_think
 You are a D&D Relation Extractor. Extract relationships between known entities.
 
 CURRENT SECTION: {title}
@@ -497,9 +505,17 @@ Entity Types to Extract:
 
 CRITICAL RULES:
 1. **ID Format**: Use snake_case IDs (e.g., dragon_s_rest, runara, rusty_key)
-2. **Reference Parent Entities**: If an entity was already seen in parent sections, USE THE SAME ID
-3. **Be Specific**: Extract specific names, not generic terms
-4. **Extract Aliases**: Include common alternative names
+
+2. **Extract ONLY Proper/Specific Names**:
+   - EXTRACT: "Dragon's Rest", "Runara", "Rusty Key", "Myla's Cell"
+   - SKIP: generic descriptions like "a temple", "the path", "a statue", "two sailors"
+   - If something only has a generic description (e.g., "a large, open-air temple"), DO NOT create a new entity for it
+
+3. **Reference Parent Entities**: If an entity was already seen in parent sections, USE THE SAME ID
+
+4. **Add Aliases, Don't Duplicate**: If a generic term refers to a known entity, add it as an ALIAS instead of creating a new entity
+
+5. **Be Decisive**: Choose the best match and move on. Do not repeatedly reconsider your choices.
 
 OUTPUT FORMAT (one entity per block, separate blocks with blank line):
 Entity: [name]

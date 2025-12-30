@@ -42,6 +42,7 @@ class BaseLLMProcessor:
         self,
         prompt: str,
         temperature: float = 0.3,
+        top_p: float | None = None,
         response_format: dict[str, str] | None = None
     ) -> str:
         """
@@ -50,6 +51,7 @@ class BaseLLMProcessor:
         Args:
             prompt: The prompt to send
             temperature: Sampling temperature
+            top_p: Nucleus sampling parameter (0.8 recommended for non-thinking mode)
             response_format: Optional response format (e.g., {"type": "json_object"})
 
         Returns:
@@ -62,6 +64,8 @@ class BaseLLMProcessor:
                     "messages": [{"role": "user", "content": prompt}],
                     "temperature": temperature,
                 }
+                if top_p is not None:
+                    kwargs["top_p"] = top_p
                 if response_format:
                     kwargs["response_format"] = response_format
 
@@ -81,7 +85,9 @@ class BaseLLMProcessor:
                     # Save full input to debug file for analysis
                     self._save_truncation_debug(prompt, choice.message.content)
 
-                return choice.message.content.strip()
+                # Parse Qwen3 thinking blocks if present
+                content = self._parse_qwen3_thinking(choice.message.content)
+                return content.strip()
         except Exception as e:
             logger.error(f"LLM call failed: {e}")
             return ""
@@ -90,6 +96,7 @@ class BaseLLMProcessor:
         self,
         prompt: str,
         temperature: float = 0.1,
+        top_p: float | None = None,
         error_context: str = "LLM call"
     ) -> dict[str, Any] | None:
         """
@@ -98,6 +105,7 @@ class BaseLLMProcessor:
         Args:
             prompt: The prompt to send
             temperature: Sampling temperature (default 0.1 for more deterministic output)
+            top_p: Nucleus sampling parameter (0.8 recommended for non-thinking mode)
             error_context: Context string for error logging
 
         Returns:
@@ -111,10 +119,15 @@ class BaseLLMProcessor:
                     "response_format": {"type": "json_object"},
                     "temperature": temperature,
                 }
+                if top_p is not None:
+                    kwargs["top_p"] = top_p
 
                 response = await self.async_client.chat.completions.create(**kwargs)
                 raw_content = response.choices[0].message.content
                 finish_reason = response.choices[0].finish_reason
+
+                # Parse Qwen3 thinking blocks if present
+                parsed_content = self._parse_qwen3_thinking(raw_content)
 
                 # Warn if response was truncated
                 if finish_reason == "length":
@@ -127,7 +140,7 @@ class BaseLLMProcessor:
                     logger.warning(f"{error_context}: Input text preview:\n{prompt_preview}")
                     logger.warning(f"{error_context}: Input text length: {len(prompt)} characters")
 
-                return json.loads(raw_content)
+                return json.loads(parsed_content)
         except json.JSONDecodeError as je:
             logger.error(f"JSON parse error in {error_context}: {je}")
             logger.error(f"Raw response (first 300 chars): {raw_content[:300]}...")
@@ -178,6 +191,40 @@ class BaseLLMProcessor:
             logger.info(f"Saved truncation debug info to: {debug_file}")
         except Exception as e:
             logger.debug(f"Could not save truncation debug: {e}")
+
+    def _parse_qwen3_thinking(self, content: str) -> str:
+        """
+        Parse Qwen3 thinking blocks and extract the final response.
+
+        Qwen3 with thinking mode outputs content in this format:
+        <think>
+        ...thinking content...
+        </think>
+        final response
+
+        This method extracts and returns only the final response.
+        """
+        # Handle <think>...</think> blocks
+        think_start = content.find("<think>")
+        if think_start == -1:
+            # No thinking block, return content as-is
+            return content
+
+        think_end = content.find("</think>", think_start)
+        if think_end == -1:
+            # Malformed thinking block, log warning and return as-is
+            logger.warning("Malformed Qwen3 thinking block: <think> without </think>")
+            return content
+
+        # Extract content after </think>
+        final_content = content[think_end + len("</think>"):].strip()
+        thinking_content = content[think_start + len("<think>"):think_end].strip()
+
+        # Log thinking size for debugging
+        if thinking_content:
+            logger.debug(f"Qwen3 thinking block: {len(thinking_content)} chars, final: {len(final_content)} chars")
+
+        return final_content if final_content else content
 
     async def close(self):
         """

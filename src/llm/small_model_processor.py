@@ -248,6 +248,11 @@ class SmallModelProcessor(BaseLLMProcessor):
         title = node.get("title", "Untitled")
         content = node.get("content", "")
 
+        # Skip if content is empty or just whitespace
+        if not content or not content.strip():
+            logger.debug(f"Skipping NER for node {title}: empty content")
+            return []
+
         # Truncate content if too long
         if len(content) > 2000:
             content = content[:2000] + "... [truncated]"
@@ -263,7 +268,8 @@ class SmallModelProcessor(BaseLLMProcessor):
             # Use regular LLM call (not JSON)
             raw_response = await self._call_llm_async(
                 prompt,
-                temperature=0.1
+                temperature=0.7,
+                top_p=0.8
             )
 
             # Parse natural language output
@@ -278,7 +284,8 @@ class SmallModelProcessor(BaseLLMProcessor):
 
             result = await self._call_llm_json_async(
                 prompt,
-                temperature=0.1,
+                temperature=0.7,
+                top_p=0.8,
                 error_context=f"NER for node {node.get('id')}"
             )
 
@@ -384,7 +391,8 @@ class SmallModelProcessor(BaseLLMProcessor):
             # Use regular LLM call (not JSON)
             raw_response = await self._call_llm_async(
                 prompt,
-                temperature=0.1
+                temperature=0.7,
+                top_p=0.8
             )
 
             # Parse natural language output
@@ -394,7 +402,8 @@ class SmallModelProcessor(BaseLLMProcessor):
 
             mapping = await self._call_llm_json_async(
                 prompt,
-                temperature=0.1,
+                temperature=0.7,
+                top_p=0.8,
                 error_context=f"Entity resolution for {context_id}"
             )
 
@@ -606,6 +615,11 @@ class SmallModelProcessor(BaseLLMProcessor):
         title = node.get("title", "")
         content = node.get("content", "")
 
+        # Skip if content is empty or just whitespace
+        if not content or not content.strip():
+            logger.debug(f"Skipping relation extraction for node {title}: empty content")
+            return []
+
         # Truncate content
         if len(content) > 2000:
             content = content[:2000] + "... [truncated]"
@@ -631,7 +645,8 @@ class SmallModelProcessor(BaseLLMProcessor):
             # Use regular LLM call (not JSON)
             raw_response = await self._call_llm_async(
                 prompt,
-                temperature=0.1
+                temperature=0.7,
+                top_p=0.8
             )
 
             # Parse natural language output
@@ -645,7 +660,8 @@ class SmallModelProcessor(BaseLLMProcessor):
 
             result = await self._call_llm_json_async(
                 prompt,
-                temperature=0.1,
+                temperature=0.7,
+                top_p=0.8,
                 error_context=f"Relation extraction for node {node.get('id')}"
             )
 

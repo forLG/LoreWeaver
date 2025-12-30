@@ -61,12 +61,15 @@ def parse_ner_entities(text: str) -> dict[str, Any]:
                     aliases = [a.strip() for a in value.split(',') if a.strip()]
                     current['aliases'] = aliases
 
-        # Only add if we have at least an ID or label
-        if current and ('id' in current or 'label' in current):
+        # Only add if we have at least a non-empty ID or label
+        label = current.get('label', '').strip()
+        eid = current.get('id', '').strip()
+
+        if label or eid:
             # Generate ID if missing
-            if 'id' not in current:
-                label = current.get('label', 'unknown')
-                current['id'] = label.lower().replace(' ', '_').replace("'", "")
+            if not eid:
+                eid = label.lower().replace(' ', '_').replace("'", "")
+                current['id'] = eid
 
             # Ensure type has a default
             if 'type' not in current:
@@ -131,8 +134,12 @@ def parse_relations(text: str) -> dict[str, Any]:
                 elif key in ('description', 'desc'):
                     current['desc'] = value
 
-        # Only add if we have source, target, and relation
-        if current and all(k in current for k in ['source', 'target', 'relation']):
+        # Only add if we have non-empty source, target, and relation
+        source = current.get('source', '').strip()
+        target = current.get('target', '').strip()
+        relation = current.get('relation', '').strip()
+
+        if source and target and relation:
             relations.append(current)
 
     return {"relations": relations}

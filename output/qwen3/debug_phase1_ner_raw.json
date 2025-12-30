@@ -1,0 +1,9323 @@
+{
+  "000": [],
+  "001": [
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Location",
+      "aliases": [
+        "island",
+        "battlefield"
+      ]
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "home base",
+        "resting place"
+      ]
+    },
+    {
+      "id": "dungeon_master",
+      "label": "Dungeon Master",
+      "type": "Group",
+      "aliases": [
+        "DM",
+        "Game Master"
+      ]
+    },
+    {
+      "id": "magic_items",
+      "label": "Magic Items",
+      "type": "Item",
+      "aliases": [
+        "enchanted objects",
+        "artifacts"
+      ]
+    },
+    {
+      "id": "monsters",
+      "label": "Monsters",
+      "type": "Creature",
+      "aliases": [
+        "creatures",
+        "beasts"
+      ]
+    }
+  ],
+  "002": [],
+  "003": [
+    {
+      "id": "forgotten_realms",
+      "label": "The Forgotten Realms",
+      "type": "Location",
+      "aliases": [
+        "multiverse",
+        "D&D world"
+      ]
+    },
+    {
+      "id": "delzoun",
+      "label": "Delzoun",
+      "type": "Location",
+      "aliases": [
+        "fallen dwarf kings"
+      ]
+    },
+    {
+      "id": "neverwinter",
+      "label": "Neverwinter",
+      "type": "Location",
+      "aliases": [
+        "teeming city",
+        "bastion of civilization"
+      ]
+    },
+    {
+      "id": "baldurs_gate",
+      "label": "Baldur's Gate",
+      "type": "Location",
+      "aliases": [
+        "teeming city"
+      ]
+    },
+    {
+      "id": "mount_hotenow",
+      "label": "Mount Hotenow",
+      "type": "Location",
+      "aliases": [
+        "fuming volcano"
+      ]
+    },
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Location",
+      "aliases": [
+        "small island",
+        "region of Sword Coast"
+      ]
+    },
+    {
+      "id": "sword_coast",
+      "label": "Sword Coast",
+      "type": "Location",
+      "aliases": [
+        "region",
+        "place of adventure"
+      ]
+    },
+    {
+      "id": "netherese_empire",
+      "label": "Netherese Empire",
+      "type": "Location",
+      "aliases": [
+        "fallen empire",
+        "ruins"
+      ]
+    },
+    {
+      "id": "dragon",
+      "label": "Dragon",
+      "type": "Creature",
+      "aliases": [
+        "wrath of a dragon",
+        "terrifying power"
+      ]
+    },
+    {
+      "id": "elf",
+      "label": "Elf",
+      "type": "Creature",
+      "aliases": [
+        "folk",
+        "high fantasy race"
+      ]
+    },
+    {
+      "id": "dwarf",
+      "label": "Dwarf",
+      "type": "Creature",
+      "aliases": [
+        "folk",
+        "high fantasy race"
+      ]
+    },
+    {
+      "id": "halfling",
+      "label": "Halfling",
+      "type": "Creature",
+      "aliases": [
+        "folk",
+        "high fantasy race"
+      ]
+    },
+    {
+      "id": "human",
+      "label": "Human",
+      "type": "Creature",
+      "aliases": [
+        "folk",
+        "high fantasy race"
+      ]
+    },
+    {
+      "id": "fighter",
+      "label": "Fighter",
+      "type": "Creature",
+      "aliases": [
+        "adventurer",
+        "daredevil"
+      ]
+    },
+    {
+      "id": "rogue",
+      "label": "Rogue",
+      "type": "Creature",
+      "aliases": [
+        "adventurer",
+        "prowler"
+      ]
+    },
+    {
+      "id": "cleric",
+      "label": "Cleric",
+      "type": "Creature",
+      "aliases": [
+        "adventurer",
+        "defender"
+      ]
+    },
+    {
+      "id": "wizard",
+      "label": "Wizard",
+      "type": "Creature",
+      "aliases": [
+        "adventurer",
+        "explorer"
+      ]
+    },
+    {
+      "id": "minstrel",
+      "label": "Minstrel",
+      "type": "Creature",
+      "aliases": [
+        "traveler",
+        "performer"
+      ]
+    },
+    {
+      "id": "peddler",
+      "label": "Peddler",
+      "type": "Creature",
+      "aliases": [
+        "traveler",
+        "merchant"
+      ]
+    },
+    {
+      "id": "merchant",
+      "label": "Merchant",
+      "type": "Creature",
+      "aliases": [
+        "traveler",
+        "trader"
+      ]
+    },
+    {
+      "id": "guard",
+      "label": "Guard",
+      "type": "Creature",
+      "aliases": [
+        "traveler",
+        "protector"
+      ]
+    },
+    {
+      "id": "soldier",
+      "label": "Soldier",
+      "type": "Creature",
+      "aliases": [
+        "traveler",
+        "warrior"
+      ]
+    },
+    {
+      "id": "sailor",
+      "label": "Sailor",
+      "type": "Creature",
+      "aliases": [
+        "traveler",
+        "seafarer"
+      ]
+    },
+    {
+      "id": "adventurer",
+      "label": "Adventurer",
+      "type": "Creature",
+      "aliases": [
+        "traveler",
+        "explorer"
+      ]
+    },
+    {
+      "id": "monster",
+      "label": "Monster",
+      "type": "Creature",
+      "aliases": [
+        "fell magic",
+        "deadly threat"
+      ]
+    },
+    {
+      "id": "dragon",
+      "label": "Dragon",
+      "type": "Creature",
+      "aliases": [
+        "wrath of a dragon",
+        "terrifying power"
+      ]
+    },
+    {
+      "id": "farm",
+      "label": "Farm",
+      "type": "Location",
+      "aliases": [
+        "freehold",
+        "village"
+      ]
+    },
+    {
+      "id": "freehold",
+      "label": "Freehold",
+      "type": "Location",
+      "aliases": [
+        "farm",
+        "village"
+      ]
+    },
+    {
+      "id": "ancient_stronghold",
+      "label": "Ancient Stronghold",
+      "type": "Location",
+      "aliases": [
+        "ruins",
+        "fortress"
+      ]
+    },
+    {
+      "id": "ruins",
+      "label": "Ruins",
+      "type": "Location",
+      "aliases": [
+        "ancient stronghold",
+        "long-lost kingdom"
+      ]
+    },
+    {
+      "id": "long_lost_kingdom",
+      "label": "Long-lost Kingdom",
+      "type": "Location",
+      "aliases": [
+        "ruins",
+        "ancient stronghold"
+      ]
+    },
+    {
+      "id": "alpine_forest",
+      "label": "Alpine Forest",
+      "type": "Location",
+      "aliases": [
+        "wilderness",
+        "snow-capped peaks"
+      ]
+    },
+    {
+      "id": "jagged_peaks",
+      "label": "Jagged Peaks",
+      "type": "Location",
+      "aliases": [
+        "wilderness",
+        "snow-capped peaks"
+      ]
+    },
+    {
+      "id": "snow_capped_peaks",
+      "label": "Snow-capped Peaks",
+      "type": "Location",
+      "aliases": [
+        "wilderness",
+        "jagged peaks"
+      ]
+    },
+    {
+      "id": "bitter_winds",
+      "label": "Bitter Winds",
+      "type": "Location",
+      "aliases": [
+        "wilderness",
+        "lawless wilderness"
+      ]
+    },
+    {
+      "id": "lawless_wilderness",
+      "label": "Lawless Wilderness",
+      "type": "Location",
+      "aliases": [
+        "wilderness",
+        "bitter winds"
+      ]
+    },
+    {
+      "id": "mountain",
+      "label": "Mountain",
+      "type": "Location",
+      "aliases": [
+        "Mount Hotenow",
+        "snow-capped peaks"
+      ]
+    },
+    {
+      "id": "volcano",
+      "label": "Volcano",
+      "type": "Location",
+      "aliases": [
+        "Mount Hotenow",
+        "fuming volcano"
+      ]
+    },
+    {
+      "id": "city",
+      "label": "City",
+      "type": "Location",
+      "aliases": [
+        "Neverwinter",
+        "Baldur's Gate"
+      ]
+    },
+    {
+      "id": "castle",
+      "label": "Castle",
+      "type": "Location",
+      "aliases": [
+        "stronghold",
+        "fortress"
+      ]
+    },
+    {
+      "id": "cave",
+      "label": "Cave",
+      "type": "Location",
+      "aliases": [
+        "crypt",
+        "ruins"
+      ]
+    },
+    {
+      "id": "crypt",
+      "label": "Crypt",
+      "type": "Location",
+      "aliases": [
+        "cave",
+        "ruins"
+      ]
+    },
+    {
+      "id": "ruin",
+      "label": "Ruin",
+      "type": "Location",
+      "aliases": [
+        "ruins",
+        "ancient stronghold"
+      ]
+    },
+    {
+      "id": "empire",
+      "label": "Empire",
+      "type": "Location",
+      "aliases": [
+        "Netherese Empire",
+        "fallen empire"
+      ]
+    },
+    {
+      "id": "kingdom",
+      "label": "Kingdom",
+      "type": "Location",
+      "aliases": [
+        "long-lost kingdom",
+        "ruins"
+      ]
+    },
+    {
+      "id": "island",
+      "label": "Island",
+      "type": "Location",
+      "aliases": [
+        "Stormwreck Isle",
+        "small island"
+      ]
+    },
+    {
+      "id": "coast",
+      "label": "Coast",
+      "type": "Location",
+      "aliases": [
+        "Sword Coast",
+        "region"
+      ]
+    },
+    {
+      "id": "region",
+      "label": "Region",
+      "type": "Location",
+      "aliases": [
+        "Sword Coast",
+        "coast"
+      ]
+    },
+    {
+      "id": "multiverse",
+      "label": "Multiverse",
+      "type": "Location",
+      "aliases": [
+        "D&D game",
+        "many worlds"
+      ]
+    },
+    {
+      "id": "dwarf_king",
+      "label": "Dwarf King",
+      "type": "Creature",
+      "aliases": [
+        "fallen dwarf kings",
+        "king"
+      ]
+    },
+    {
+      "id": "god",
+      "label": "God",
+      "type": "Creature",
+      "aliases": [
+        "divine being",
+        "deity"
+      ]
+    },
+    {
+      "id": "mace",
+      "label": "Mace",
+      "type": "Item",
+      "aliases": [
+        "weapon",
+        "cleric weapon"
+      ]
+    },
+    {
+      "id": "spell",
+      "label": "Spell",
+      "type": "Item",
+      "aliases": [
+        "magic",
+        "cleric power"
+      ]
+    },
+    {
+      "id": "treasure",
+      "label": "Treasure",
+      "type": "Item",
+      "aliases": [
+        "glory",
+        "gold"
+      ]
+    },
+    {
+      "id": "map",
+      "label": "Map",
+      "type": "Item",
+      "aliases": [
+        "good map",
+        "guide"
+      ]
+    },
+    {
+      "id": "trail",
+      "label": "Trail",
+      "type": "Item",
+      "aliases": [
+        "clear trail",
+        "path"
+      ]
+    },
+    {
+      "id": "glory",
+      "label": "Glory",
+      "type": "Item",
+      "aliases": [
+        "treasure",
+        "reward"
+      ]
+    },
+    {
+      "id": "gold",
+      "label": "Gold",
+      "type": "Item",
+      "aliases": [
+        "treasure",
+        "currency"
+      ]
+    },
+    {
+      "id": "magic",
+      "label": "Magic",
+      "type": "Item",
+      "aliases": [
+        "fell magic",
+        "spells"
+      ]
+    },
+    {
+      "id": "sword",
+      "label": "Sword",
+      "type": "Item",
+      "aliases": [
+        "weapon",
+        "weapon of choice"
+      ]
+    },
+    {
+      "id": "key",
+      "label": "Key",
+      "type": "Item",
+      "aliases": [
+        "Rusty Key",
+        "tool"
+      ]
+    },
+    {
+      "id": "rusty_key",
+      "label": "Rusty Key",
+      "type": "Item",
+      "aliases": [
+        "key",
+        "tool"
+      ]
+    },
+    {
+      "id": "empire",
+      "label": "Empire",
+      "type": "Location",
+      "aliases": [
+        "Netherese Empire",
+        "fallen empire"
+      ]
+    },
+    {
+      "id": "kingdom",
+      "label": "Kingdom",
+      "type": "Location",
+      "aliases": [
+        "long-lost kingdom",
+        "ruins"
+      ]
+    },
+    {
+      "id": "island",
+      "label": "Island",
+      "type": "Location",
+      "aliases": [
+        "Stormwreck Isle",
+        "small island"
+      ]
+    },
+    {
+      "id": "coast",
+      "label": "Coast",
+      "type": "Location",
+      "aliases": [
+        "Sword Coast",
+        "region"
+      ]
+    },
+    {
+      "id": "region",
+      "label": "Region",
+      "type": "Location",
+      "aliases": [
+        "Sword Coast",
+        "coast"
+      ]
+    },
+    {
+      "id": "multiverse",
+      "label": "Multiverse",
+      "type": "Location",
+      "aliases": [
+        "D&D game",
+        "many worlds"
+      ]
+    },
+    {
+      "id": "dwarf_king",
+      "label": "Dwarf King",
+      "type": "Creature",
+      "aliases": [
+        "fallen dwarf kings",
+        "king"
+      ]
+    },
+    {
+      "id": "god",
+      "label": "God",
+      "type": "Creature",
+      "aliases": [
+        "divine being",
+        "deity"
+      ]
+    },
+    {
+      "id": "mace",
+      "label": "Mace",
+      "type": "Item",
+      "aliases": [
+        "weapon",
+        "cleric weapon"
+      ]
+    },
+    {
+      "id": "spell",
+      "label": "Spell",
+      "type": "Item",
+      "aliases": [
+        "magic",
+        "cleric power"
+      ]
+    },
+    {
+      "id": "treasure",
+      "label": "Treasure",
+      "type": "Item",
+      "aliases": [
+        "glory",
+        "gold"
+      ]
+    },
+    {
+      "id": "map",
+      "label": "Map",
+      "type": "Item",
+      "aliases": [
+        "good map",
+        "guide"
+      ]
+    },
+    {
+      "id": "trail",
+      "label": "Trail",
+      "type": "Item",
+      "aliases": [
+        "clear trail",
+        "path"
+      ]
+    },
+    {
+      "id": "glory",
+      "label": "Glory",
+      "type": "Item",
+      "aliases": [
+        "treasure",
+        "reward"
+      ]
+    },
+    {
+      "id": "gold",
+      "label": "Gold",
+      "type": "Item",
+      "aliases": [
+        "treasure",
+        "currency"
+      ]
+    },
+    {
+      "id": "magic",
+      "label": "Magic",
+      "type": "Item",
+      "aliases": [
+        "fell magic",
+        "spells"
+      ]
+    },
+    {
+      "id": "sword",
+      "label": "Sword",
+      "type": "Item",
+      "aliases": [
+        "weapon",
+        "weapon of choice"
+      ]
+    },
+    {
+      "id": "key",
+      "label": "Key",
+      "type": "Item",
+      "aliases": [
+        "Rusty Key",
+        "tool"
+      ]
+    },
+    {
+      "id": "rusty_key",
+      "label": "Rusty Key",
+      "type": "Item",
+      "aliases": [
+        "key",
+        "tool"
+      ]
+    }
+  ],
+  "004": [
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "player",
+      "label": "Player",
+      "type": "Group",
+      "aliases": [
+        "group",
+        "party",
+        "adventurer"
+      ]
+    },
+    {
+      "id": "character",
+      "label": "Character",
+      "type": "Creature",
+      "aliases": [
+        "player character",
+        "PC",
+        "hero"
+      ]
+    }
+  ],
+  "005": [
+    {
+      "id": "bahamut",
+      "label": "Bahamut",
+      "type": "Creature",
+      "aliases": [
+        "king of metallic dragons",
+        "platinum dragon"
+      ]
+    },
+    {
+      "id": "tiamat",
+      "label": "Tiamat",
+      "type": "Creature",
+      "aliases": [
+        "queen of chromatic dragons",
+        "five-headed dragon"
+      ]
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "stormwreck_isle",
+        "battlefield"
+      ]
+    },
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Location",
+      "aliases": [
+        "dragon_s_rest",
+        "battlefield"
+      ]
+    },
+    {
+      "id": "sharruth",
+      "label": "Sharruth",
+      "type": "Creature",
+      "aliases": [
+        "red dragon",
+        "prisoner",
+        "ancient dragon"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "blue_dragon",
+      "label": "Blue Dragon",
+      "type": "Creature",
+      "aliases": [
+        "dragon",
+        "schemer"
+      ]
+    },
+    {
+      "id": "metallic_dragons",
+      "label": "Metallic Dragons",
+      "type": "Group",
+      "aliases": [
+        "dragons",
+        "allies"
+      ]
+    },
+    {
+      "id": "chromatic_dragons",
+      "label": "Chromatic Dragons",
+      "type": "Group",
+      "aliases": [
+        "dragons",
+        "enemies"
+      ]
+    }
+  ],
+  "006": [
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Location",
+      "aliases": [
+        "island"
+      ]
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "cloister"
+      ]
+    },
+    {
+      "id": "sharruth",
+      "label": "Sharruth",
+      "type": "Creature",
+      "aliases": [
+        "brass dragon"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "blue_dragon",
+      "label": "Blue Dragon",
+      "type": "Creature",
+      "aliases": [
+        "blue dragon's grandson"
+      ]
+    },
+    {
+      "id": "gold_dragon",
+      "label": "Gold Dragon",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "bronze_wyrmling",
+      "label": "Bronze Wyrmling",
+      "type": "Creature",
+      "aliases": [
+        "bronze wyrmling",
+        "rejected Runara's teachings"
+      ]
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": [
+        "caves"
+      ]
+    },
+    {
+      "id": "cursed_shipwreck",
+      "label": "Cursed Shipwreck",
+      "type": "Location",
+      "aliases": [
+        "shipwreck"
+      ]
+    },
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Location",
+      "aliases": [
+        "observatory"
+      ]
+    },
+    {
+      "id": "magical_hot_spring",
+      "label": "Magical Hot Spring",
+      "type": "Location",
+      "aliases": [
+        "hot spring"
+      ]
+    },
+    {
+      "id": "myconids",
+      "label": "Myconids",
+      "type": "Creature",
+      "aliases": [
+        "mushroom-like myconids"
+      ]
+    },
+    {
+      "id": "bronze_wyrmling",
+      "label": "Bronze Wyrmling",
+      "type": "Creature",
+      "aliases": [
+        "bronze wyrmling",
+        "rejected Runara's teachings"
+      ]
+    }
+  ],
+  "007": [
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "player_version",
+      "label": "Player Version",
+      "type": "Item",
+      "aliases": []
+    }
+  ],
+  "008": [],
+  "009": [],
+  "00a": [],
+  "00b": [],
+  "00c": [],
+  "00d": [
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "cloister"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "the leader"
+      ]
+    }
+  ],
+  "00e": [],
+  "00f": [],
+  "010": [],
+  "0cd": [],
+  "0ce": [],
+  "0cf": [
+    {
+      "id": "neverwinter",
+      "label": "Neverwinter",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Location",
+      "aliases": []
+    }
+  ],
+  "0d0": [],
+  "0d1": [
+    {
+      "id": "scaled_queen",
+      "label": "Scaled Queen",
+      "type": "Creature",
+      "aliases": [
+        "queen of scales",
+        "sovereign of the scales",
+        "the ruler"
+      ]
+    }
+  ],
+  "0d2": [],
+  "0e8": [],
+  "0e9": [],
+  "0ea": [
+    {
+      "id": "scaled_queen",
+      "label": "Scaled Queen",
+      "type": "Creature",
+      "aliases": [
+        "two-headed merrow",
+        "blessed by demogorgon"
+      ]
+    },
+    {
+      "id": "merrow_extortionist",
+      "label": "Merrow Extortionist",
+      "type": "Creature",
+      "aliases": [
+        "merrow",
+        "extortionist"
+      ]
+    },
+    {
+      "id": "demogorgon",
+      "label": "Demogorgon",
+      "type": "Creature",
+      "aliases": [
+        "prince of demons",
+        "blessing source"
+      ]
+    }
+  ],
+  "0eb": [],
+  "0ec": [],
+  "0ed": [],
+  "0ee": [],
+  "011": [
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "cloister",
+        "haven",
+        "monastery"
+      ]
+    },
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    }
+  ],
+  "012": [
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "cloister"
+      ]
+    },
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    }
+  ],
+  "013": [],
+  "014": [
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "temple",
+        "monastery",
+        "cloister"
+      ]
+    },
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Location",
+      "aliases": [
+        "shipwreck site",
+        "wrecked ship area"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "zombie",
+      "label": "Zombie",
+      "type": "Creature",
+      "aliases": [
+        "shambling sailor",
+        "animated corpse"
+      ]
+    }
+  ],
+  "015": [
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "zombie",
+      "label": "Zombie",
+      "type": "Creature",
+      "aliases": [
+        "sailor zombie",
+        "drowned sailor"
+      ]
+    }
+  ],
+  "016": [
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "temple",
+        "monastery",
+        "cloister"
+      ]
+    },
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Location",
+      "aliases": [
+        "island",
+        "storm island",
+        "wrecked island"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "zombie",
+      "label": "Zombie",
+      "type": "Creature",
+      "aliases": [
+        "undead",
+        "reanimated corpse",
+        "zombified"
+      ]
+    },
+    {
+      "id": "rusty_key",
+      "label": "Rusty Key",
+      "type": "Item",
+      "aliases": [
+        "old key",
+        "corroded key",
+        "key"
+      ]
+    }
+  ],
+  "017": [
+    {
+      "id": "zombie",
+      "label": "Zombie",
+      "type": "Creature",
+      "aliases": [
+        "undead corpse",
+        "walking corpse"
+      ]
+    },
+    {
+      "id": "cleric",
+      "label": "Cleric",
+      "type": "Creature",
+      "aliases": [
+        "sacred flame caster",
+        "radiant damage source"
+      ]
+    },
+    {
+      "id": "radiant_damage",
+      "label": "Radiant Damage",
+      "type": "Item",
+      "aliases": [
+        "sacred flame cantrip",
+        "divine energy"
+      ]
+    }
+  ],
+  "018": [
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "temple"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "zombie",
+      "label": "Zombie",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "rusty_key",
+      "label": "Rusty Key",
+      "type": "Item",
+      "aliases": []
+    }
+  ],
+  "019": [
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "temple",
+        "monastery",
+        "cloister"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "rusty_key",
+      "label": "Rusty Key",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "zombie",
+      "label": "Zombie",
+      "type": "Creature",
+      "aliases": [
+        "shambling monster"
+      ]
+    }
+  ],
+  "01a": [
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "cloister",
+        "temple",
+        "monastery"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "myla",
+      "label": "Myla",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "area_a1",
+      "label": "area A1",
+      "type": "Location",
+      "aliases": [
+        "monastic cells",
+        "cells"
+      ]
+    },
+    {
+      "id": "area_a3",
+      "label": "area A3",
+      "type": "Location",
+      "aliases": [
+        "dining room"
+      ]
+    },
+    {
+      "id": "area_a5",
+      "label": "area A5",
+      "type": "Location",
+      "aliases": [
+        "temple"
+      ]
+    }
+  ],
+  "01b": [
+    {
+      "id": "area_a1",
+      "label": "area A1",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "area_a3",
+      "label": "area A3",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "area_a5",
+      "label": "area A5",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "myla",
+      "label": "Myla",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "kobolds",
+      "label": "kobolds",
+      "type": "Group",
+      "aliases": [
+        "kobold tribe",
+        "kobold clan"
+      ]
+    }
+  ],
+  "01c": [
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "cloister"
+      ]
+    },
+    {
+      "id": "myla",
+      "label": "Myla",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "kobolds",
+      "label": "kobolds",
+      "type": "Creature",
+      "aliases": [
+        "chattering kobolds"
+      ]
+    }
+  ],
+  "01d": [
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "cloister",
+        "temple",
+        "monastery"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "adult bronze dragon",
+        "elder",
+        "the leader",
+        "human woman"
+      ]
+    },
+    {
+      "id": "area_a5",
+      "label": "area A5",
+      "type": "Location",
+      "aliases": [
+        "temple at the top of the island"
+      ]
+    },
+    {
+      "id": "undersea_tunnel",
+      "label": "undersea tunnel",
+      "type": "Location",
+      "aliases": [
+        "cave entrance"
+      ]
+    },
+    {
+      "id": "cave",
+      "label": "cave",
+      "type": "Location",
+      "aliases": [
+        "secret lair"
+      ]
+    },
+    {
+      "id": "zombies",
+      "label": "zombies",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "cloister",
+      "label": "cloister",
+      "type": "Location",
+      "aliases": [
+        "Dragon's Rest",
+        "temple",
+        "monastery"
+      ]
+    },
+    {
+      "id": "library",
+      "label": "library",
+      "type": "Location",
+      "aliases": []
+    }
+  ],
+  "01e": [
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Location",
+      "aliases": [
+        "island with draconic magic"
+      ]
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "cloister",
+        "monastery",
+        "temple"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "myla",
+      "label": "Myla",
+      "type": "Creature",
+      "aliases": [
+        "alchemist",
+        "helper"
+      ]
+    },
+    {
+      "id": "area_a1",
+      "label": "area A1",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "area_a3",
+      "label": "area A3",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "area_a5",
+      "label": "area A5",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "kobolds",
+      "label": "Kobolds",
+      "type": "Group",
+      "aliases": [
+        "kobold band",
+        "kobold clan"
+      ]
+    },
+    {
+      "id": "alchemical_fire",
+      "label": "Myla's alchemical fire",
+      "type": "Item",
+      "aliases": [
+        "alchemical fire",
+        "fire"
+      ]
+    },
+    {
+      "id": "dagger",
+      "label": "dagger",
+      "type": "Item",
+      "aliases": [
+        "prized possession",
+        "magical dagger"
+      ]
+    },
+    {
+      "id": "copper_piece",
+      "label": "copper piece",
+      "type": "Item",
+      "aliases": [
+        "stolen item",
+        "Runara's hoard"
+      ]
+    },
+    {
+      "id": "agga",
+      "label": "Agga",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "blepp",
+      "label": "Blepp",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "frub",
+      "label": "Frub",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "kilnip",
+      "label": "Kilnip",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "laylee",
+      "label": "Laylee",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "mumpo",
+      "label": "Mumpo",
+      "type": "Creature",
+      "aliases": []
+    }
+  ],
+  "01f": [
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "cloister"
+      ]
+    },
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Location",
+      "aliases": [
+        "island"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "fungus-covered octopus monster"
+      ]
+    },
+    {
+      "id": "myla",
+      "label": "Myla",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "area_a1",
+      "label": "area A1",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "area_a3",
+      "label": "area A3",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "area_a5",
+      "label": "area A5",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "gilded_gallows",
+      "label": "Gilded Gallows",
+      "type": "Group",
+      "aliases": [
+        "thieves' guild"
+      ]
+    },
+    {
+      "id": "elturgard",
+      "label": "Elturgard",
+      "type": "Location",
+      "aliases": [
+        "country far to the southeast"
+      ]
+    },
+    {
+      "id": "heart_cap_mushrooms",
+      "label": "heart cap mushrooms",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "potion_of_healing",
+      "label": "Potion of Healing",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "gold_hangman_s_noose",
+      "label": "gold hangman's noose",
+      "type": "Item",
+      "aliases": [
+        "tattoo symbol"
+      ]
+    },
+    {
+      "id": "fungus_covered_octopus_monster",
+      "label": "fungus-covered octopus monster",
+      "type": "Creature",
+      "aliases": [
+        "myconid guardian"
+      ]
+    }
+  ],
+  "020": [
+    {
+      "id": "varnoth",
+      "label": "Varnoth",
+      "type": "Creature",
+      "aliases": [
+        "General Varnoth Wender"
+      ]
+    },
+    {
+      "id": "azure_wolves",
+      "label": "Azure Wolves",
+      "type": "Group",
+      "aliases": [
+        "mercenary company"
+      ]
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "temple",
+        "cloister"
+      ]
+    },
+    {
+      "id": "mason_s_tools",
+      "label": "Mason's Tools",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "area_a1",
+      "label": "area A1",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "area_a3",
+      "label": "area A3",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "area_a5",
+      "label": "area A5",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "cloister_quests",
+      "label": "Cloister Quests",
+      "type": "Location",
+      "aliases": []
+    }
+  ],
+  "021": [
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "temple",
+        "monastery",
+        "cloister"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "map_2",
+      "label": "Map 2",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "player_version",
+      "label": "Player Version",
+      "type": "Location",
+      "aliases": []
+    }
+  ],
+  "022": [
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "temple",
+        "monastery",
+        "cloister"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Location",
+      "aliases": [
+        "island",
+        "storm island"
+      ]
+    },
+    {
+      "id": "map_2",
+      "label": "Map 2",
+      "type": "Location",
+      "aliases": [
+        "map",
+        "player map"
+      ]
+    },
+    {
+      "id": "player_version",
+      "label": "Player Version",
+      "type": "Location",
+      "aliases": [
+        "version",
+        "player's version"
+      ]
+    }
+  ],
+  "023": [
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "temple",
+        "monastery",
+        "cloister"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "rusty_key",
+      "label": "Rusty Key",
+      "type": "Item",
+      "aliases": []
+    }
+  ],
+  "024": [
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "cliffs"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "astalagan",
+      "label": "Astalagan",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon"
+      ]
+    }
+  ],
+  "025": [
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "temple",
+        "monastery",
+        "cloister"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "rusty_key",
+      "label": "Rusty Key",
+      "type": "Item",
+      "aliases": []
+    }
+  ],
+  "026": [
+    {
+      "id": "winch_house",
+      "label": "Winch House",
+      "type": "Location",
+      "aliases": [
+        "building",
+        "structure"
+      ]
+    },
+    {
+      "id": "pallet",
+      "label": "Pallet",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "lever",
+      "label": "Lever",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "water",
+      "label": "Water",
+      "type": "Location",
+      "aliases": [
+        "ocean",
+        "sea"
+      ]
+    }
+  ],
+  "027": [
+    {
+      "id": "pallet",
+      "label": "pallet",
+      "type": "Item",
+      "aliases": [
+        "wooden pallet wrapped with rope"
+      ]
+    },
+    {
+      "id": "lever",
+      "label": "lever",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "water",
+      "label": "water",
+      "type": "Location",
+      "aliases": []
+    }
+  ],
+  "028": [
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "cloister"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "map_2",
+      "label": "Map 2",
+      "type": "Location",
+      "aliases": []
+    }
+  ],
+  "029": [],
+  "02a": [
+    {
+      "id": "cloister_library",
+      "label": "cloister library",
+      "type": "Location",
+      "aliases": [
+        "cloister"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "tarak",
+      "label": "Tarak",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "varnonth",
+      "label": "Varnoth",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "kobolds",
+      "label": "kobolds",
+      "type": "Group",
+      "aliases": [
+        "kobold tribe",
+        "kobold faction"
+      ]
+    },
+    {
+      "id": "myla",
+      "label": "Myla",
+      "type": "Creature",
+      "aliases": [
+        "studious kobold"
+      ]
+    }
+  ],
+  "02b": [
+    {
+      "id": "cloister_library",
+      "label": "cloister library",
+      "type": "Location",
+      "aliases": [
+        "library",
+        "spacious library",
+        "bookshelves room"
+      ]
+    },
+    {
+      "id": "player_version",
+      "label": "Player Version",
+      "type": "Location",
+      "aliases": [
+        "map 2",
+        "player's map"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "kobolds",
+      "label": "kobolds",
+      "type": "Group",
+      "aliases": [
+        "kobold band",
+        "kobold gang"
+      ]
+    }
+  ],
+  "02c": [
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "temple",
+        "cloister"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "map_2",
+      "label": "Map 2",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "player_version",
+      "label": "Player Version",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "varnoth",
+      "label": "Varnoth",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "rix",
+      "label": "Rix",
+      "type": "Creature",
+      "aliases": [
+        "kobold"
+      ]
+    },
+    {
+      "id": "astalagan",
+      "label": "Astalagan",
+      "type": "Creature",
+      "aliases": [
+        "dragon"
+      ]
+    }
+  ],
+  "02d": [
+    {
+      "id": "cloister",
+      "label": "cloister",
+      "type": "Location",
+      "aliases": [
+        "temple",
+        "monastery",
+        "cloister"
+      ]
+    },
+    {
+      "id": "temple",
+      "label": "temple",
+      "type": "Location",
+      "aliases": [
+        "cloister",
+        "monastery",
+        "temple"
+      ]
+    },
+    {
+      "id": "cliff",
+      "label": "cliff",
+      "type": "Location",
+      "aliases": [
+        "cliffside",
+        "rock face"
+      ]
+    },
+    {
+      "id": "north_wall",
+      "label": "north wall",
+      "type": "Location",
+      "aliases": [
+        "north wall",
+        "rock wall"
+      ]
+    },
+    {
+      "id": "sea_air",
+      "label": "sea air",
+      "type": "Location",
+      "aliases": [
+        "sea air",
+        "open sea"
+      ]
+    },
+    {
+      "id": "pillars",
+      "label": "pillars",
+      "type": "Item",
+      "aliases": [
+        "wooden pillars",
+        "support pillars"
+      ]
+    },
+    {
+      "id": "wooden_roof",
+      "label": "wooden roof",
+      "type": "Item",
+      "aliases": [
+        "roof",
+        "wooden structure"
+      ]
+    },
+    {
+      "id": "stone_statue",
+      "label": "stone statue",
+      "type": "Item",
+      "aliases": [
+        "statue",
+        "stone figure"
+      ]
+    },
+    {
+      "id": "old_man",
+      "label": "old man",
+      "type": "Creature",
+      "aliases": [
+        "statue figure",
+        "kind-looking man"
+      ]
+    },
+    {
+      "id": "canaries",
+      "label": "canaries",
+      "type": "Creature",
+      "aliases": [
+        "birds",
+        "small birds"
+      ]
+    }
+  ],
+  "02e": [
+    {
+      "id": "bahamut",
+      "label": "Bahamut",
+      "type": "Creature",
+      "aliases": [
+        "Platinum Dragon"
+      ]
+    },
+    {
+      "id": "tiamat",
+      "label": "Tiamat",
+      "type": "Creature",
+      "aliases": [
+        "Dragon Queen"
+      ]
+    }
+  ],
+  "02f": [
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "cloister"
+      ]
+    },
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Location",
+      "aliases": [
+        "island"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": [
+        "caves"
+      ]
+    },
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": [
+        "wreck",
+        "shipwreck"
+      ]
+    },
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Location",
+      "aliases": [
+        "observatory"
+      ]
+    },
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Location",
+      "aliases": [
+        "observatory"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    }
+  ],
+  "030": [
+    {
+      "id": "cloister",
+      "label": "cloister",
+      "type": "Location",
+      "aliases": [
+        "cloister"
+      ]
+    },
+    {
+      "id": "zombie",
+      "label": "Zombie",
+      "type": "Creature",
+      "aliases": [
+        "zombies"
+      ]
+    },
+    {
+      "id": "blepp",
+      "label": "Blepp",
+      "type": "Creature",
+      "aliases": [
+        "kobold"
+      ]
+    },
+    {
+      "id": "tarak",
+      "label": "Tarak",
+      "type": "Creature",
+      "aliases": [
+        "human gardener"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "shipwreck",
+      "label": "shipwreck",
+      "type": "Location",
+      "aliases": [
+        "wrecked ship"
+      ]
+    }
+  ],
+  "031": [
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "temple",
+        "monastery",
+        "cloister"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "rusty_key",
+      "label": "Rusty Key",
+      "type": "Item",
+      "aliases": []
+    }
+  ],
+  "032": [
+    {
+      "id": "zombie",
+      "label": "Zombie",
+      "type": "Creature",
+      "aliases": [
+        "undead",
+        "reanimated corpse"
+      ]
+    }
+  ],
+  "033": [
+    {
+      "id": "seagrow_caves",
+      "label": "Sea Caves",
+      "type": "Location",
+      "aliases": [
+        "the caves"
+      ]
+    },
+    {
+      "id": "myconids",
+      "label": "Myconids",
+      "type": "Creature",
+      "aliases": [
+        "fungus creatures",
+        "myconid colony"
+      ]
+    },
+    {
+      "id": "fungal_octopus",
+      "label": "Fungal Octopus",
+      "type": "Creature",
+      "aliases": [
+        "guardian",
+        "myconid guardian"
+      ]
+    },
+    {
+      "id": "potion_of_healing",
+      "label": "Potion of Healing",
+      "type": "Item",
+      "aliases": [
+        "healing potion",
+        "restorative potion"
+      ]
+    },
+    {
+      "id": "heart_cap_mushrooms",
+      "label": "Heart Cap Mushrooms",
+      "type": "Item",
+      "aliases": [
+        "mushrooms",
+        "cap mushrooms"
+      ]
+    }
+  ],
+  "034": [
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "temple",
+        "monastery",
+        "cloister"
+      ]
+    },
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "varnoth",
+      "label": "Varnoth",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "rix",
+      "label": "Rix",
+      "type": "Creature",
+      "aliases": []
+    }
+  ],
+  "035": [
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": []
+    }
+  ],
+  "036": [
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": [
+        "wreck",
+        "shipwreck"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "zombies",
+      "label": "Zombies",
+      "type": "Creature",
+      "aliases": []
+    }
+  ],
+  "037": [
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "cloister"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "zombies",
+      "label": "zombies",
+      "type": "Creature",
+      "aliases": []
+    }
+  ],
+  "038": [
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "temple",
+        "monastery",
+        "cloister"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "tarak",
+      "label": "Tarak",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "varnonth",
+      "label": "Varnoth",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "temple_of_bahamut",
+      "label": "temple of Bahamut",
+      "type": "Location",
+      "aliases": [
+        "temple",
+        "Bahamut's temple"
+      ]
+    }
+  ],
+  "039": [
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "gilded_gallows",
+      "label": "Gilded Gallows",
+      "type": "Group",
+      "aliases": []
+    },
+    {
+      "id": "tarak",
+      "label": "Tarak",
+      "type": "Creature",
+      "aliases": []
+    }
+  ],
+  "03a": [
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Location",
+      "aliases": [
+        "observatory",
+        "research facility"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "letter",
+      "label": "letter",
+      "type": "Item",
+      "aliases": []
+    }
+  ],
+  "03b": [
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "cloister"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Location",
+      "aliases": [
+        "ancient observatory"
+      ]
+    },
+    {
+      "id": "moonstone_key",
+      "label": "Moonstone Key",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "aidron",
+      "label": "Aidron",
+      "type": "Creature",
+      "aliases": [
+        "bronze wyrmling"
+      ]
+    },
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Location",
+      "aliases": []
+    }
+  ],
+  "03c": [
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Location",
+      "aliases": [
+        "the island"
+      ]
+    }
+  ],
+  "03d": [
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "dragon",
+        "powerful dragon"
+      ]
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "temple",
+        "area A5"
+      ]
+    },
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "moonstone_key",
+      "label": "Moonstone Key",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "aidron",
+      "label": "Aidron",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "kobolds",
+      "label": "Kobolds",
+      "type": "Group",
+      "aliases": []
+    }
+  ],
+  "03e": [
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "temple",
+        "monastery",
+        "cloister"
+      ]
+    },
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Location",
+      "aliases": [
+        "island",
+        "coastal region"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    }
+  ],
+  "03f": [],
+  "040": [
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Location",
+      "aliases": [
+        "island"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "fume_draake",
+      "label": "Fume Drake",
+      "type": "Creature",
+      "aliases": [
+        "three fume drakes",
+        "guardians of the spring"
+      ]
+    }
+  ],
+  "041": [
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "temple",
+        "monastery",
+        "cloister"
+      ]
+    },
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Location",
+      "aliases": [
+        "island",
+        "coastal region"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "fume_draake",
+      "label": "Fume Drake",
+      "type": "Creature",
+      "aliases": [
+        "smoke dragon",
+        "volcanic creature"
+      ]
+    },
+    {
+      "id": "hot_spring",
+      "label": "Hot Spring",
+      "type": "Location",
+      "aliases": [
+        "geothermal pool",
+        "thermal spring"
+      ]
+    },
+    {
+      "id": "cove",
+      "label": "Cove",
+      "type": "Location",
+      "aliases": [
+        "bay",
+        "inlet"
+      ]
+    },
+    {
+      "id": "pool",
+      "label": "Pool",
+      "type": "Location",
+      "aliases": [
+        "water pool",
+        "lagoon"
+      ]
+    },
+    {
+      "id": "basalt",
+      "label": "Basalt",
+      "type": "Location",
+      "aliases": [
+        "rock formation",
+        "volcanic rock"
+      ]
+    },
+    {
+      "id": "mushrooms",
+      "label": "Mushrooms",
+      "type": "Item",
+      "aliases": [
+        "fungi",
+        "spore-bearing plants"
+      ]
+    },
+    {
+      "id": "rainbow_spores",
+      "label": "Rainbow Spores",
+      "type": "Item",
+      "aliases": [
+        "colored spores",
+        "luminescent spores"
+      ]
+    }
+  ],
+  "042": [
+    {
+      "id": "spring_waters",
+      "label": "Spring Waters",
+      "type": "Location",
+      "aliases": [
+        "spring",
+        "hot spring"
+      ]
+    },
+    {
+      "id": "fume_draake",
+      "label": "Fume Drake",
+      "type": "Creature",
+      "aliases": [
+        "dragon",
+        "smoky dragon"
+      ]
+    }
+  ],
+  "043": [
+    {
+      "id": "wind_spore_mushroom",
+      "label": "wind spore mushroom",
+      "type": "Item",
+      "aliases": [
+        "wind spore"
+      ]
+    },
+    {
+      "id": "wind_spore",
+      "label": "wind spore",
+      "type": "Item",
+      "aliases": [
+        "wind spore mushroom"
+      ]
+    }
+  ],
+  "044": [
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Location",
+      "aliases": [
+        "island"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "owlbear",
+      "label": "Owlbear",
+      "type": "Creature",
+      "aliases": [
+        "the performing troupe's owlbear",
+        "stranded owlbear"
+      ]
+    },
+    {
+      "id": "whistle",
+      "label": "Whistle",
+      "type": "Item",
+      "aliases": [
+        "training whistle",
+        "command whistle"
+      ]
+    }
+  ],
+  "045": [
+    {
+      "id": "owlbear",
+      "label": "Owlbear",
+      "type": "Creature",
+      "aliases": [
+        "hulking creature",
+        "bearlike creature",
+        "owl and bear hybrid"
+      ]
+    },
+    {
+      "id": "whistle",
+      "label": "Whistle",
+      "type": "Item",
+      "aliases": []
+    }
+  ],
+  "046": [
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "temple",
+        "monastery",
+        "cloister"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Location",
+      "aliases": [
+        "island",
+        "coastal region"
+      ]
+    },
+    {
+      "id": "kobold_renegades",
+      "label": "Kobold Renegades",
+      "type": "Group",
+      "aliases": [
+        "ambushers",
+        "desperate kobolds",
+        "rebel kobolds"
+      ]
+    },
+    {
+      "id": "sparkrender",
+      "label": "Sparkrender",
+      "type": "Creature",
+      "aliases": [
+        "tyrant",
+        "ruler",
+        "lawful evil leader"
+      ]
+    }
+  ],
+  "047": [
+    {
+      "id": "kobold_renegades",
+      "label": "Kobold Renegades",
+      "type": "Group",
+      "aliases": [
+        "kobolds"
+      ]
+    }
+  ],
+  "048": [
+    {
+      "id": "kobold_renegades",
+      "label": "Kobold Renegades",
+      "type": "Group",
+      "aliases": [
+        "kobolds",
+        "winged kobolds"
+      ]
+    }
+  ],
+  "049": [
+    {
+      "id": "kobold_renegades",
+      "label": "Kobold Renegades",
+      "type": "Group",
+      "aliases": [
+        "kobolds",
+        "winged kobolds"
+      ]
+    }
+  ],
+  "04a": [
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Location",
+      "aliases": [
+        "tomb of Sharruth",
+        "volcanic island"
+      ]
+    },
+    {
+      "id": "sharruth",
+      "label": "Sharruth",
+      "type": "Creature",
+      "aliases": [
+        "monstrous red dragon",
+        "imprisoned dragon"
+      ]
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": [
+        "hidden vents",
+        "tunnels"
+      ]
+    },
+    {
+      "id": "fume_drakes",
+      "label": "Fume Drakes",
+      "type": "Creature",
+      "aliases": [
+        "fire-breathing creatures",
+        "volcanic monsters"
+      ]
+    },
+    {
+      "id": "fire_snakes",
+      "label": "Fire Snakes",
+      "type": "Creature",
+      "aliases": [
+        "serpentine creatures",
+        "volcanic serpents"
+      ]
+    },
+    {
+      "id": "kobolds",
+      "label": "Kobolds",
+      "type": "Group",
+      "aliases": [
+        "servants of Sharruth",
+        "underground dwellers"
+      ]
+    }
+  ],
+  "04b": [],
+  "04c": [
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Location",
+      "aliases": [
+        "island"
+      ]
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": [
+        "caves"
+      ]
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "cloister"
+      ]
+    },
+    {
+      "id": "myconids",
+      "label": "Myconids",
+      "type": "Creature",
+      "aliases": [
+        "fungus people",
+        "fungi",
+        "myconid colony"
+      ]
+    },
+    {
+      "id": "tarak",
+      "label": "Tarak",
+      "type": "Creature",
+      "aliases": [
+        "trader",
+        "visitor"
+      ]
+    },
+    {
+      "id": "sharruth",
+      "label": "Sharruth",
+      "type": "Creature",
+      "aliases": [
+        "red dragon",
+        "dragon",
+        "tomb occupant"
+      ]
+    },
+    {
+      "id": "sinensa",
+      "label": "Sinensa",
+      "type": "Creature",
+      "aliases": [
+        "myconid leader",
+        "leader"
+      ]
+    },
+    {
+      "id": "stirges",
+      "label": "Stirges",
+      "type": "Creature",
+      "aliases": [
+        "blood-sucking monsters",
+        "monsters"
+      ]
+    },
+    {
+      "id": "tomb_of_sharruth",
+      "label": "Tomb of Sharruth",
+      "type": "Location",
+      "aliases": [
+        "dragon's tomb",
+        "tomb"
+      ]
+    },
+    {
+      "id": "blight",
+      "label": "Blight",
+      "type": "Item",
+      "aliases": [
+        "poison",
+        "toxin"
+      ]
+    }
+  ],
+  "04d": [
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": [
+        "caves"
+      ]
+    },
+    {
+      "id": "sharruth",
+      "label": "Sharruth",
+      "type": "Creature",
+      "aliases": [
+        "undersea tomb",
+        "volcanic source"
+      ]
+    },
+    {
+      "id": "tomb_of_sharruth",
+      "label": "Tomb of Sharruth",
+      "type": "Location",
+      "aliases": [
+        "undersea tomb"
+      ]
+    },
+    {
+      "id": "blight",
+      "label": "Blight",
+      "type": "Item",
+      "aliases": [
+        "poison",
+        "toxic fumes"
+      ]
+    }
+  ],
+  "04e": [
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "tarak",
+      "label": "Tarak",
+      "type": "Creature",
+      "aliases": [
+        "preferred method"
+      ]
+    },
+    {
+      "id": "tides_table",
+      "label": "Tides table",
+      "type": "Item",
+      "aliases": []
+    }
+  ],
+  "04f": [
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": []
+    }
+  ],
+  "050": [
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": [
+        "cave",
+        "yawning cave mouth"
+      ]
+    },
+    {
+      "id": "tides_table",
+      "label": "Tides table",
+      "type": "Item",
+      "aliases": [
+        "swirling slick of colors"
+      ]
+    }
+  ],
+  "051": [],
+  "052": [],
+  "053": [
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": [
+        "caves",
+        "tunnels"
+      ]
+    },
+    {
+      "id": "tides_table",
+      "label": "Tides table",
+      "type": "Item",
+      "aliases": [
+        "tide table",
+        "tide chart"
+      ]
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "dragon's rest",
+        "dragon rest"
+      ]
+    }
+  ],
+  "054": [
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": [
+        "crystal cave"
+      ]
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "temple",
+        "monastery",
+        "cloister"
+      ]
+    },
+    {
+      "id": "tarak",
+      "label": "Tarak",
+      "type": "Creature",
+      "aliases": [
+        "sender of offering"
+      ]
+    },
+    {
+      "id": "tides_table",
+      "label": "Tides table",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "sinensa",
+      "label": "Sinensa",
+      "type": "Creature",
+      "aliases": [
+        "leader"
+      ]
+    },
+    {
+      "id": "rapport_spores",
+      "label": "Rapport Spores",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "crystal_cave",
+      "label": "crystal cave",
+      "type": "Location",
+      "aliases": [
+        "area B6"
+      ]
+    }
+  ],
+  "055": [
+    {
+      "id": "rapport_spores",
+      "label": "Rapport Spores",
+      "type": "Item",
+      "aliases": [
+        "telepathic communication spores",
+        "myconid spores"
+      ]
+    },
+    {
+      "id": "myconid",
+      "label": "Myconid",
+      "type": "Creature",
+      "aliases": [
+        "fungus creature",
+        "mushroom creature",
+        "spore creature"
+      ]
+    },
+    {
+      "id": "characters",
+      "label": "Characters",
+      "type": "Group",
+      "aliases": [
+        "player characters",
+        "party members",
+        "adventurers"
+      ]
+    }
+  ],
+  "056": [
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "tarak",
+      "label": "Tarak",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "tides_table",
+      "label": "Tides table",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "sinensa",
+      "label": "Sinensa",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "rapport_spores",
+      "label": "Rapport Spores",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "crystal_cave",
+      "label": "crystal cave",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "distress_spores",
+      "label": "Distress Spores",
+      "type": "Item",
+      "aliases": [
+        "myconid distress spores"
+      ]
+    }
+  ],
+  "057": [
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": [
+        "Seagrow Caves"
+      ]
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "temple",
+        "monastery",
+        "cloister"
+      ]
+    },
+    {
+      "id": "tarak",
+      "label": "Tarak",
+      "type": "Creature",
+      "aliases": [
+        "dragon",
+        "beast",
+        "monster"
+      ]
+    },
+    {
+      "id": "tides_table",
+      "label": "Tides table",
+      "type": "Item",
+      "aliases": [
+        "table",
+        "artifact",
+        "ancient relic"
+      ]
+    }
+  ],
+  "058": [
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "tarak",
+      "label": "Tarak",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "tides_table",
+      "label": "Tides table",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "spore_servant_octopus",
+      "label": "Spore Servant Octopus",
+      "type": "Creature",
+      "aliases": [
+        "guardian",
+        "myconid guardian"
+      ]
+    },
+    {
+      "id": "myconid_leader",
+      "label": "Myconid Leader",
+      "type": "Creature",
+      "aliases": [
+        "leader",
+        "former leader"
+      ]
+    }
+  ],
+  "059": [
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "tarak",
+      "label": "Tarak",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "tides_table",
+      "label": "Tides table",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "spore_servant_octopus",
+      "label": "Spore Servant Octopus",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "myconid_leader",
+      "label": "Myconid Leader",
+      "type": "Creature",
+      "aliases": []
+    }
+  ],
+  "05a": [
+    {
+      "id": "stirge",
+      "label": "Stirge",
+      "type": "Creature",
+      "aliases": [
+        "blood drinker",
+        "vampire bat"
+      ]
+    },
+    {
+      "id": "spore_servant_octopus",
+      "label": "Spore Servant Octopus",
+      "type": "Creature",
+      "aliases": []
+    }
+  ],
+  "05b": [
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "tarak",
+      "label": "Tarak",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "tides_table",
+      "label": "Tides table",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "myconid_sprout",
+      "label": "Myconid Sprout",
+      "type": "Creature",
+      "aliases": [
+        "mushroom people",
+        "sprout"
+      ]
+    },
+    {
+      "id": "molen",
+      "label": "Molen",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "kraz",
+      "label": "Kraz",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "myconid_adult",
+      "label": "Myconid Adult",
+      "type": "Creature",
+      "aliases": [
+        "mushroom people",
+        "adult"
+      ]
+    },
+    {
+      "id": "hipsiz",
+      "label": "Hipsiz",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "rugoso",
+      "label": "Rugoso",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "violet_fungus",
+      "label": "Violet Fungus",
+      "type": "Creature",
+      "aliases": [
+        "true threat",
+        "fungus"
+      ]
+    },
+    {
+      "id": "upper_cave",
+      "label": "Upper Cave",
+      "type": "Location",
+      "aliases": [
+        "upper pool area",
+        "area near upper pool"
+      ]
+    }
+  ],
+  "05c": [
+    {
+      "id": "upper_cave",
+      "label": "Upper Cave",
+      "type": "Location",
+      "aliases": [
+        "higher cave area"
+      ]
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": [
+        "cavern"
+      ]
+    },
+    {
+      "id": "mushroom_like_people",
+      "label": "Mushroom-like People",
+      "type": "Creature",
+      "aliases": [
+        "two small mushroom-like people"
+      ]
+    },
+    {
+      "id": "sulfur_smell",
+      "label": "Sulfur Smell",
+      "type": "Item",
+      "aliases": []
+    }
+  ],
+  "05d": [
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "tarak",
+      "label": "Tarak",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "tides_table",
+      "label": "Tides table",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "myconid_sprout",
+      "label": "Myconid Sprout",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "molen",
+      "label": "Molen",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "kraz",
+      "label": "Kraz",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "myconid_adult",
+      "label": "Myconid Adult",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "hipsiz",
+      "label": "Hipsiz",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "rugoso",
+      "label": "Rugoso",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "violet_fungus",
+      "label": "Violet Fungus",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "upper_cave",
+      "label": "Upper Cave",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "violet_fungus",
+      "label": "Violet Fungus",
+      "type": "Creature",
+      "aliases": [
+        "mushroom",
+        "purple mushroom",
+        "sickly mushroom"
+      ]
+    }
+  ],
+  "05e": [
+    {
+      "id": "violet_fungus",
+      "label": "Violet Fungus",
+      "type": "Creature",
+      "aliases": [
+        "fungus monsters"
+      ]
+    },
+    {
+      "id": "upper_cave",
+      "label": "Upper Cave",
+      "type": "Location",
+      "aliases": []
+    }
+  ],
+  "05f": [
+    {
+      "id": "myconid_sprout",
+      "label": "Myconid Sprout",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "violet_fungus",
+      "label": "Violet Fungus",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "myconid_adult",
+      "label": "Myconid Adult",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "tides_table",
+      "label": "Tides table",
+      "type": "Item",
+      "aliases": [
+        "Rapport Spores"
+      ]
+    },
+    {
+      "id": "rapport_spores",
+      "label": "Rapport Spores",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "distress_spores",
+      "label": "Distress Spores",
+      "type": "Item",
+      "aliases": []
+    }
+  ],
+  "060": [],
+  "061": [
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "tarak",
+      "label": "Tarak",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "tides_table",
+      "label": "Tides table",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "myconid_sprout",
+      "label": "Myconid Sprout",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "molen",
+      "label": "Molen",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "kraz",
+      "label": "Kraz",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "myconid_adult",
+      "label": "Myconid Adult",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "hipsiz",
+      "label": "Hipsiz",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "rugoso",
+      "label": "Rugoso",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "violet_fungus",
+      "label": "Violet Fungus",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "upper_cave",
+      "label": "Upper Cave",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "heart_cap_mushrooms",
+      "label": "Heart Cap Mushrooms",
+      "type": "Item",
+      "aliases": [
+        "mushrooms resembling human hearts",
+        "healing mushrooms"
+      ]
+    },
+    {
+      "id": "tarak",
+      "label": "Tarak",
+      "type": "Creature",
+      "aliases": []
+    }
+  ],
+  "062": [
+    {
+      "id": "violet_fungus",
+      "label": "Violet Fungus",
+      "type": "Creature",
+      "aliases": []
+    }
+  ],
+  "063": [
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "tarak",
+      "label": "Tarak",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "tides_table",
+      "label": "Tides table",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "bispo",
+      "label": "Bispo",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "valup",
+      "label": "Valup",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "popple",
+      "label": "Popple",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "stirge_nest",
+      "label": "stirge nest",
+      "type": "Item",
+      "aliases": [
+        "bulbous object"
+      ]
+    },
+    {
+      "id": "stirge",
+      "label": "Stirge",
+      "type": "Creature",
+      "aliases": []
+    }
+  ],
+  "064": [
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "bispo",
+      "label": "Bispo",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "valup",
+      "label": "Valup",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "popple",
+      "label": "Popple",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "stirge_nest",
+      "label": "stirge nest",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "stirge",
+      "label": "Stirge",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "tides_table",
+      "label": "Tides table",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "tarak",
+      "label": "Tarak",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": []
+    }
+  ],
+  "065": [
+    {
+      "id": "stirge",
+      "label": "Stirge",
+      "type": "Creature",
+      "aliases": [
+        "stirge nest"
+      ]
+    }
+  ],
+  "066": [
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "tarak",
+      "label": "Tarak",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "tides_table",
+      "label": "Tides table",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "agrinc",
+      "label": "Agric",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "omphalo",
+      "label": "Omphalo",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "craterel",
+      "label": "Craterel",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "pleuro",
+      "label": "Pleuro",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "subrufus",
+      "label": "Subrufus",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "virosa",
+      "label": "Virosa",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "myconid_adult",
+      "label": "Myconid Adult",
+      "type": "Creature",
+      "aliases": [
+        "Myconid",
+        "Fungus Creature"
+      ]
+    }
+  ],
+  "067": [
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "tarak",
+      "label": "Tarak",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "tides_table",
+      "label": "Tides table",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "agrinc",
+      "label": "Agric",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "omphalo",
+      "label": "Omphalo",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "craterel",
+      "label": "Craterel",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "pleuro",
+      "label": "Pleuro",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "subrufus",
+      "label": "Subrufus",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "virosa",
+      "label": "Virosa",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "myconid_adult",
+      "label": "Myconid Adult",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "cavern",
+      "label": "cavern",
+      "type": "Location",
+      "aliases": [
+        "cave"
+      ]
+    }
+  ],
+  "068": [
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "tarak",
+      "label": "Tarak",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "tides_table",
+      "label": "Tides table",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "sinensa",
+      "label": "Sinensa",
+      "type": "Creature",
+      "aliases": [
+        "leader",
+        "myconid leader"
+      ]
+    },
+    {
+      "id": "auranta",
+      "label": "Auranta",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "enok",
+      "label": "Enok",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "myconid",
+      "label": "Myconid",
+      "type": "Creature",
+      "aliases": [
+        "fungus creature",
+        "spore creature"
+      ]
+    },
+    {
+      "id": "barrel-sized_glowing_red_fungus",
+      "label": "barrel-sized, glowing red fungus",
+      "type": "Item",
+      "aliases": [
+        "human brain-like fungus",
+        "spore source"
+      ]
+    }
+  ],
+  "069": [
+    {
+      "id": "barrel-sized_glowing_red_fungus",
+      "label": "barrel-sized, glowing red fungus",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "myconid",
+      "label": "Myconid",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "sinensa",
+      "label": "Sinensa",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "auranta",
+      "label": "Auranta",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "enok",
+      "label": "Enok",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "tarak",
+      "label": "Tarak",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "tides_table",
+      "label": "Tides table",
+      "type": "Item",
+      "aliases": []
+    }
+  ],
+  "06a": [
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "cloister"
+      ]
+    },
+    {
+      "id": "tarak",
+      "label": "Tarak",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "barrel-sized_glowing_red_fungus",
+      "label": "barrel-sized, glowing red fungus",
+      "type": "Item",
+      "aliases": [
+        "ruby morel"
+      ]
+    },
+    {
+      "id": "elixir_of_health",
+      "label": "elixir of health",
+      "type": "Item",
+      "aliases": []
+    }
+  ],
+  "06b": [
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "tarak",
+      "label": "Tarak",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "tides_table",
+      "label": "Tides table",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "fume_draake",
+      "label": "Fume Drake",
+      "type": "Creature",
+      "aliases": [
+        "elemental creatures",
+        "little dragons formed entirely of greenish smoke"
+      ]
+    },
+    {
+      "id": "crystal_cave",
+      "label": "Crystal Cave",
+      "type": "Location",
+      "aliases": [
+        "source of the blight spreading through the myconid colony",
+        "the cave"
+      ]
+    },
+    {
+      "id": "sharruth",
+      "label": "Sharruth",
+      "type": "Creature",
+      "aliases": [
+        "red dragon",
+        "tomb occupant"
+      ]
+    },
+    {
+      "id": "elemental_plane_of_fire",
+      "label": "Elemental Plane of Fire",
+      "type": "Location",
+      "aliases": [
+        "cosmic source of fiery energy",
+        "another dimension of reality"
+      ]
+    }
+  ],
+  "06c": [
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "crystal_cave",
+      "label": "Crystal Cave",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "tarak",
+      "label": "Tarak",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "fume_draake",
+      "label": "Fume Drake",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "sharruth",
+      "label": "Sharruth",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "elemental_plane_of_fire",
+      "label": "Elemental Plane of Fire",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "tides_table",
+      "label": "Tides table",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "tarak",
+      "label": "Tarak",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "tides_table",
+      "label": "Tides table",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "tarak",
+      "label": "Tarak",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "tides_table",
+      "label": "Tides table",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "fume_draake",
+      "label": "Fume Drake",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "crystal_cave",
+      "label": "Crystal Cave",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "sharruth",
+      "label": "Sharruth",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "elemental_plane_of_fire",
+      "label": "Elemental Plane of Fire",
+      "type": "Location",
+      "aliases": []
+    }
+  ],
+  "06d": [
+    {
+      "id": "fire_crystal",
+      "label": "Fire Crystal",
+      "type": "Item",
+      "aliases": [
+        "orange crystal",
+        "crystal blocking the western fissure"
+      ]
+    },
+    {
+      "id": "myconids",
+      "label": "Myconids",
+      "type": "Creature",
+      "aliases": [
+        "fungi",
+        "myconid fungi"
+      ]
+    },
+    {
+      "id": "fire_snake",
+      "label": "Fire Snake",
+      "type": "Creature",
+      "aliases": [
+        "smoldering obsidian",
+        "stony egg"
+      ]
+    },
+    {
+      "id": "crystal_cave",
+      "label": "Crystal Cave",
+      "type": "Location",
+      "aliases": [
+        "cave filled with shimmering sunlight",
+        "cave with crystals lining the vent"
+      ]
+    },
+    {
+      "id": "western_fissure",
+      "label": "Western Fissure",
+      "type": "Location",
+      "aliases": [
+        "fissure blocking the orange crystal"
+      ]
+    }
+  ],
+  "06e": [],
+  "06f": [
+    {
+      "id": "fume_draake",
+      "label": "fume drake",
+      "type": "Creature",
+      "aliases": [
+        "fume drake"
+      ]
+    },
+    {
+      "id": "fire_snake",
+      "label": "fire snake",
+      "type": "Creature",
+      "aliases": [
+        "fire snake"
+      ]
+    }
+  ],
+  "070": [
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "temple",
+        "monastery",
+        "cloister"
+      ]
+    },
+    {
+      "id": "sinensa",
+      "label": "Sinensa",
+      "type": "Creature",
+      "aliases": [
+        "myconid leader",
+        "leader of the myconids"
+      ]
+    },
+    {
+      "id": "ruby_morel",
+      "label": "ruby morel",
+      "type": "Item",
+      "aliases": [
+        "treasure",
+        "mushroom"
+      ]
+    },
+    {
+      "id": "elixir_of_health",
+      "label": "elixir of health",
+      "type": "Item",
+      "aliases": [
+        "health potion",
+        "restorative elixir"
+      ]
+    },
+    {
+      "id": "myconids",
+      "label": "myconids",
+      "type": "Creature",
+      "aliases": [
+        "fungus creatures",
+        "mushroom people"
+      ]
+    }
+  ],
+  "071": [
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "temple",
+        "monastery",
+        "cloister"
+      ]
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": [
+        "caves",
+        "underwater caves"
+      ]
+    },
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": [
+        "wreck",
+        "shipwreck"
+      ]
+    },
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Location",
+      "aliases": [
+        "observatory",
+        "tower"
+      ]
+    },
+    {
+      "id": "lost_wyrmling",
+      "label": "Lost Wyrmling",
+      "type": "Location",
+      "aliases": [
+        "wyrmling lair",
+        "abandoned lair"
+      ]
+    },
+    {
+      "id": "myconids",
+      "label": "Myconids",
+      "type": "Creature",
+      "aliases": [
+        "fungus creatures",
+        "forest guardians"
+      ]
+    },
+    {
+      "id": "sinensa",
+      "label": "Sinensa",
+      "type": "Creature",
+      "aliases": [
+        "shadow creature",
+        "demon"
+      ]
+    },
+    {
+      "id": "ruby_morel",
+      "label": "Ruby Morel",
+      "type": "Item",
+      "aliases": [
+        "magic mushroom",
+        "healing mushroom"
+      ]
+    },
+    {
+      "id": "elixir_of_health",
+      "label": "Elixir of Health",
+      "type": "Item",
+      "aliases": [
+        "health potion",
+        "restorative elixir"
+      ]
+    }
+  ],
+  "072": [],
+  "073": [
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Location",
+      "aliases": [
+        "rocky shoal"
+      ]
+    },
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Item",
+      "aliases": [
+        "ship",
+        "wrecked ship"
+      ]
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "cloister"
+      ]
+    },
+    {
+      "id": "harpy",
+      "label": "Harpy",
+      "type": "Creature",
+      "aliases": [
+        "magically entrancing voice",
+        "feasting on sailors"
+      ]
+    },
+    {
+      "id": "zombie_sailors",
+      "label": "Zombie Sailors",
+      "type": "Creature",
+      "aliases": [
+        "shambling zombies",
+        "zombies menacing people"
+      ]
+    },
+    {
+      "id": "cursed_talisman",
+      "label": "Cursed Talisman",
+      "type": "Item",
+      "aliases": [
+        "magic imbued by sailor",
+        "curse responsible for zombies"
+      ]
+    },
+    {
+      "id": "demon_lord",
+      "label": "Demon Lord",
+      "type": "Creature",
+      "aliases": [
+        "long-dead sailor's prayers"
+      ]
+    },
+    {
+      "id": "cloister",
+      "label": "Cloister",
+      "type": "Location",
+      "aliases": [
+        "residents' place"
+      ]
+    }
+  ],
+  "074": [
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "cloister"
+      ]
+    },
+    {
+      "id": "zombie_sailors",
+      "label": "Zombie Sailors",
+      "type": "Creature",
+      "aliases": [
+        "animated sailors",
+        "zombies"
+      ]
+    },
+    {
+      "id": "cursed_talisman",
+      "label": "Cursed Talisman",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "giant_octopuses",
+      "label": "Giant Octopuses",
+      "type": "Creature",
+      "aliases": [
+        "spore servant octopus"
+      ]
+    },
+    {
+      "id": "ghoul",
+      "label": "Ghoul",
+      "type": "Creature",
+      "aliases": []
+    }
+  ],
+  "075": [
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": [
+        "wreck"
+      ]
+    },
+    {
+      "id": "cloister",
+      "label": "Cloister",
+      "type": "Location",
+      "aliases": [
+        "cloister"
+      ]
+    },
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Location",
+      "aliases": [
+        "island"
+      ]
+    },
+    {
+      "id": "zombie_sailors",
+      "label": "Zombie Sailors",
+      "type": "Creature",
+      "aliases": [
+        "zombie sailors"
+      ]
+    },
+    {
+      "id": "demon_lord",
+      "label": "Demon Lord",
+      "type": "Creature",
+      "aliases": [
+        "demon lord"
+      ]
+    },
+    {
+      "id": "cursed_talisman",
+      "label": "Cursed Talisman",
+      "type": "Item",
+      "aliases": [
+        "talisman"
+      ]
+    },
+    {
+      "id": "harpy",
+      "label": "Harpy",
+      "type": "Creature",
+      "aliases": [
+        "harpy"
+      ]
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "dragon's rest"
+      ]
+    },
+    {
+      "id": "vision_and_light",
+      "label": "Vision and Light",
+      "type": "Item",
+      "aliases": [
+        "vision and light"
+      ]
+    }
+  ],
+  "076": [
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "rowboat",
+      "label": "rowboat",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "main_deck",
+      "label": "main deck",
+      "type": "Location",
+      "aliases": [
+        "area C1"
+      ]
+    },
+    {
+      "id": "hold",
+      "label": "hold",
+      "type": "Location",
+      "aliases": [
+        "area C9"
+      ]
+    }
+  ],
+  "077": [
+    {
+      "id": "main_deck",
+      "label": "main deck",
+      "type": "Location",
+      "aliases": [
+        "starboard side"
+      ]
+    },
+    {
+      "id": "hold",
+      "label": "hold",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "rowboat",
+      "label": "rowboat",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": []
+    }
+  ],
+  "078": [
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": [
+        "The Wreck of Compass Rose"
+      ]
+    }
+  ],
+  "079": [
+    {
+      "id": "main_deck",
+      "label": "main deck",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "hold",
+      "label": "hold",
+      "type": "Location",
+      "aliases": []
+    }
+  ],
+  "07a": [
+    {
+      "id": "main_deck",
+      "label": "main deck",
+      "type": "Location",
+      "aliases": [
+        "deck"
+      ]
+    },
+    {
+      "id": "hold",
+      "label": "hold",
+      "type": "Location",
+      "aliases": [
+        "ship's hold"
+      ]
+    },
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": [
+        "navigation hub",
+        "central point"
+      ]
+    },
+    {
+      "id": "rowboat",
+      "label": "rowboat",
+      "type": "Item",
+      "aliases": [
+        "boat",
+        "small vessel"
+      ]
+    }
+  ],
+  "07b": [
+    {
+      "id": "crow_s_nest",
+      "label": "Crow's Nest",
+      "type": "Location",
+      "aliases": [
+        "nest",
+        "platform"
+      ]
+    },
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": [
+        "ship",
+        "vessel"
+      ]
+    },
+    {
+      "id": "harpy",
+      "label": "Harpy",
+      "type": "Creature",
+      "aliases": [
+        "bird",
+        "monster"
+      ]
+    },
+    {
+      "id": "rowboat",
+      "label": "Rowboat",
+      "type": "Item",
+      "aliases": [
+        "boat",
+        "craft"
+      ]
+    },
+    {
+      "id": "main_deck",
+      "label": "Main Deck",
+      "type": "Location",
+      "aliases": [
+        "deck",
+        "platform"
+      ]
+    },
+    {
+      "id": "hold",
+      "label": "Hold",
+      "type": "Location",
+      "aliases": [
+        "cabin",
+        "storage"
+      ]
+    },
+    {
+      "id": "mast",
+      "label": "Mast",
+      "type": "Item",
+      "aliases": [
+        "pole",
+        "structure"
+      ]
+    },
+    {
+      "id": "wood_shavings",
+      "label": "Wood Shavings",
+      "type": "Item",
+      "aliases": [
+        "shavings",
+        "wood scraps"
+      ]
+    },
+    {
+      "id": "dry_grass",
+      "label": "Dry Grass",
+      "type": "Item",
+      "aliases": [
+        "grass",
+        "dried grass"
+      ]
+    },
+    {
+      "id": "shredded_canvas",
+      "label": "Shredded Canvas",
+      "type": "Item",
+      "aliases": [
+        "canvas",
+        "shredded material"
+      ]
+    },
+    {
+      "id": "bones",
+      "label": "Bones",
+      "type": "Item",
+      "aliases": [
+        "remains",
+        "skeletal parts"
+      ]
+    },
+    {
+      "id": "tufts_of_hair",
+      "label": "Tufts of Hair",
+      "type": "Item",
+      "aliases": [
+        "hair",
+        "strands"
+      ]
+    },
+    {
+      "id": "shiny_baubles",
+      "label": "Shiny Baubles",
+      "type": "Item",
+      "aliases": [
+        "jewelry",
+        "ornaments"
+      ]
+    }
+  ],
+  "07c": [
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "main_deck",
+      "label": "main deck",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "hold",
+      "label": "hold",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "rowboat",
+      "label": "rowboat",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "harpy",
+      "label": "harpy",
+      "type": "Creature",
+      "aliases": [
+        "bird-like monster",
+        "mythical creature"
+      ]
+    }
+  ],
+  "07d": [
+    {
+      "id": "rowboat",
+      "label": "rowboat",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "main_deck",
+      "label": "main deck",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "hold",
+      "label": "hold",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "gold_bracelet",
+      "label": "gold bracelet",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "gold_hoop_earring",
+      "label": "gold hoop earring",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "tiger_eye_gem",
+      "label": "tiger eye gem",
+      "type": "Item",
+      "aliases": [
+        "small tiger eye gem"
+      ]
+    },
+    {
+      "id": "bloodstone_gem",
+      "label": "bloodstone gem",
+      "type": "Item",
+      "aliases": []
+    }
+  ],
+  "07e": [],
+  "07f": [
+    {
+      "id": "main_deck",
+      "label": "main deck",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "hold",
+      "label": "hold",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "rowboat",
+      "label": "rowboat",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "ballista",
+      "label": "ballista",
+      "type": "Item",
+      "aliases": [
+        "rusted and rotting ballista"
+      ]
+    }
+  ],
+  "080": [
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": [
+        "ship"
+      ]
+    },
+    {
+      "id": "zombie",
+      "label": "Zombie",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "rowboat",
+      "label": "rowboat",
+      "type": "Item",
+      "aliases": []
+    }
+  ],
+  "081": [],
+  "082": [
+    {
+      "id": "main_deck",
+      "label": "main deck",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "hold",
+      "label": "hold",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "rowboat",
+      "label": "rowboat",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "zombie",
+      "label": "Zombie",
+      "type": "Creature",
+      "aliases": [
+        "two zombies"
+      ]
+    }
+  ],
+  "083": [
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "main_deck",
+      "label": "main deck",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "hold",
+      "label": "hold",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "rowboat",
+      "label": "rowboat",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "zombie",
+      "label": "Zombie",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "cabin",
+      "label": "cabin",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "bookcase",
+      "label": "bookcase",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "desk",
+      "label": "desk",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "compass",
+      "label": "compass",
+      "type": "Item",
+      "aliases": [
+        "ornate compass"
+      ]
+    }
+  ],
+  "084": [
+    {
+      "id": "main_deck",
+      "label": "main deck",
+      "type": "Location",
+      "aliases": [
+        "main deck"
+      ]
+    },
+    {
+      "id": "hold",
+      "label": "hold",
+      "type": "Location",
+      "aliases": [
+        "hold"
+      ]
+    },
+    {
+      "id": "rowboat",
+      "label": "rowboat",
+      "type": "Item",
+      "aliases": [
+        "rowboat"
+      ]
+    }
+  ],
+  "085": [
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "rowboat",
+      "label": "rowboat",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "main_deck",
+      "label": "main deck",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "hold",
+      "label": "hold",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "zombie",
+      "label": "Zombie",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "pouch",
+      "label": "pouch",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "cartographer_s_tools",
+      "label": "cartographer's tools",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "dagger",
+      "label": "dagger",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "compass_set",
+      "label": "compass set",
+      "type": "Item",
+      "aliases": []
+    }
+  ],
+  "086": [
+    {
+      "id": "zombie",
+      "label": "Zombie",
+      "type": "Creature",
+      "aliases": [
+        "undead",
+        "reanimated corpse",
+        "ghoul"
+      ]
+    }
+  ],
+  "087": [],
+  "088": [],
+  "089": [
+    {
+      "id": "aleitha",
+      "label": "Aleitha",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "brastos",
+      "label": "Brastos",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "sailor_s_uniform",
+      "label": "sailor's uniform",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "merchant_s_clothes",
+      "label": "merchant's clothes",
+      "type": "Item",
+      "aliases": []
+    }
+  ],
+  "08a": [],
+  "08b": [
+    {
+      "id": "main_deck",
+      "label": "main deck",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "hold",
+      "label": "hold",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "floorboard",
+      "label": "floorboard",
+      "type": "Item",
+      "aliases": [
+        "trap mechanism",
+        "hidden panel"
+      ]
+    }
+  ],
+  "08c": [
+    {
+      "id": "sack",
+      "label": "sack",
+      "type": "Item",
+      "aliases": []
+    }
+  ],
+  "08d": [],
+  "08e": [],
+  "08f": [
+    {
+      "id": "main_deck",
+      "label": "main deck",
+      "type": "Location",
+      "aliases": [
+        "main deck"
+      ]
+    },
+    {
+      "id": "hold",
+      "label": "hold",
+      "type": "Location",
+      "aliases": [
+        "hold"
+      ]
+    },
+    {
+      "id": "zombie",
+      "label": "zombie",
+      "type": "Creature",
+      "aliases": [
+        "zombie"
+      ]
+    },
+    {
+      "id": "ghoul",
+      "label": "ghoul",
+      "type": "Creature",
+      "aliases": [
+        "ghoul"
+      ]
+    },
+    {
+      "id": "rowboat",
+      "label": "rowboat",
+      "type": "Item",
+      "aliases": [
+        "rowboat"
+      ]
+    },
+    {
+      "id": "compass_rose",
+      "label": "compass rose",
+      "type": "Location",
+      "aliases": [
+        "compass rose"
+      ]
+    }
+  ],
+  "090": [
+    {
+      "id": "main_deck",
+      "label": "main deck",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "hold",
+      "label": "hold",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "zombie",
+      "label": "zombie",
+      "type": "Creature",
+      "aliases": [
+        "walking corpse"
+      ]
+    },
+    {
+      "id": "rowboat",
+      "label": "rowboat",
+      "type": "Item",
+      "aliases": []
+    }
+  ],
+  "091": [
+    {
+      "id": "main_deck",
+      "label": "main deck",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "hold",
+      "label": "hold",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "captain_s_quarters",
+      "label": "captain's quarters",
+      "type": "Location",
+      "aliases": [
+        "area C4"
+      ]
+    },
+    {
+      "id": "area_c9",
+      "label": "area C9",
+      "type": "Location",
+      "aliases": [
+        "hold"
+      ]
+    }
+  ],
+  "092": [
+    {
+      "id": "zombie",
+      "label": "zombie",
+      "type": "Creature",
+      "aliases": [
+        "undead",
+        "reanimated corpse"
+      ]
+    }
+  ],
+  "093": [
+    {
+      "id": "rowboat",
+      "label": "rowboat",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "compass_rose",
+      "label": "compass rose",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "main_deck",
+      "label": "main deck",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "hold",
+      "label": "hold",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "zombie",
+      "label": "zombie",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "ghoul",
+      "label": "ghoul",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "crowbar",
+      "label": "crowbar",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "crate",
+      "label": "crate",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "d6",
+      "label": "d6",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "bottle_of_fine_wine",
+      "label": "bottle of fine wine",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "sack_of_whole_cloves",
+      "label": "sack of whole cloves",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "silver_bar",
+      "label": "silver bar",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "candlestick_holder",
+      "label": "candlestick holder",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "lute",
+      "label": "lute",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "spell_scroll_of_command",
+      "label": "spell scroll of command",
+      "type": "Item",
+      "aliases": []
+    }
+  ],
+  "094": [
+    {
+      "id": "hold",
+      "label": "hold",
+      "type": "Location",
+      "aliases": [
+        "submerged hold"
+      ]
+    },
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": [
+        "C8's floor",
+        "top of the stairs up to C8"
+      ]
+    },
+    {
+      "id": "main_deck",
+      "label": "main deck",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "rowboat",
+      "label": "rowboat",
+      "type": "Item",
+      "aliases": []
+    }
+  ],
+  "095": [
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "main_deck",
+      "label": "main deck",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "hold",
+      "label": "hold",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "rowboat",
+      "label": "rowboat",
+      "type": "Item",
+      "aliases": []
+    }
+  ],
+  "096": [
+    {
+      "id": "hold",
+      "label": "hold",
+      "type": "Location",
+      "aliases": [
+        "the hold"
+      ]
+    },
+    {
+      "id": "rowboat",
+      "label": "rowboat",
+      "type": "Item",
+      "aliases": [
+        "boat",
+        "craft"
+      ]
+    },
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": [
+        "compass rose"
+      ]
+    },
+    {
+      "id": "main_deck",
+      "label": "main deck",
+      "type": "Location",
+      "aliases": [
+        "deck"
+      ]
+    },
+    {
+      "id": "captain_s_journal",
+      "label": "captain's journal",
+      "type": "Item",
+      "aliases": [
+        "journal"
+      ]
+    },
+    {
+      "id": "boots_of_elvenkind",
+      "label": "boots of elvenkind",
+      "type": "Item",
+      "aliases": [
+        "elven boots"
+      ]
+    },
+    {
+      "id": "talismans",
+      "label": "talismans",
+      "type": "Item",
+      "aliases": [
+        "hair talisman",
+        "braided hair"
+      ]
+    },
+    {
+      "id": "tarsakh",
+      "label": "Tarsakh",
+      "type": "Location",
+      "aliases": [
+        "month",
+        "calendar month"
+      ]
+    },
+    {
+      "id": "gold_piece",
+      "label": "gold piece",
+      "type": "Item",
+      "aliases": [
+        "gp",
+        "gold coin"
+      ]
+    },
+    {
+      "id": "turquoise",
+      "label": "turquoise",
+      "type": "Item",
+      "aliases": [
+        "gem",
+        "stone"
+      ]
+    },
+    {
+      "id": "captain_s_chest",
+      "label": "captain's chest",
+      "type": "Item",
+      "aliases": [
+        "chest",
+        "iron chest"
+      ]
+    }
+  ],
+  "097": [
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "temple",
+        "monastery",
+        "cloister"
+      ]
+    },
+    {
+      "id": "tarsakh",
+      "label": "Tarsakh",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "aleitha",
+      "label": "Aleitha",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "orcus",
+      "label": "Orcus",
+      "type": "Creature",
+      "aliases": [
+        "Prince of Undeath"
+      ]
+    },
+    {
+      "id": "talismans",
+      "label": "talismans",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "captain_s_chest",
+      "label": "captain's chest",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "gold_piece",
+      "label": "gold piece",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "turquoise",
+      "label": "turquoise",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "boots_of_elvenkind",
+      "label": "boots of elvenkind",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "captain_s_journal",
+      "label": "captain's journal",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "rowboat",
+      "label": "rowboat",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "hold",
+      "label": "hold",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "main_deck",
+      "label": "main deck",
+      "type": "Location",
+      "aliases": []
+    }
+  ],
+  "098": [
+    {
+      "id": "orcus",
+      "label": "Orcus",
+      "type": "Creature",
+      "aliases": [
+        "Demon Prince of Undeath",
+        "Blood Lord"
+      ]
+    },
+    {
+      "id": "abyss",
+      "label": "Abyss",
+      "type": "Location",
+      "aliases": [
+        "nightmarish plane of existence"
+      ]
+    }
+  ],
+  "099": [
+    {
+      "id": "main_deck",
+      "label": "main deck",
+      "type": "Location",
+      "aliases": [
+        "deck",
+        "upper deck"
+      ]
+    },
+    {
+      "id": "harpy",
+      "label": "harpy",
+      "type": "Creature",
+      "aliases": [
+        "mythical creature",
+        "bird-woman",
+        "scavenger"
+      ]
+    }
+  ],
+  "09a": [
+    {
+      "id": "harpy",
+      "label": "harpy",
+      "type": "Creature",
+      "aliases": [
+        "harpy"
+      ]
+    },
+    {
+      "id": "crow_s_nest",
+      "label": "crow's nest",
+      "type": "Location",
+      "aliases": [
+        "area C1"
+      ]
+    },
+    {
+      "id": "hold",
+      "label": "hold",
+      "type": "Location",
+      "aliases": [
+        "area C9"
+      ]
+    },
+    {
+      "id": "main_deck",
+      "label": "main deck",
+      "type": "Location",
+      "aliases": [
+        "area C8"
+      ]
+    },
+    {
+      "id": "captain_s_chest",
+      "label": "captain's chest",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "luring_song",
+      "label": "Luring Song",
+      "type": "Item",
+      "aliases": []
+    }
+  ],
+  "09b": [
+    {
+      "id": "crow_s_nest",
+      "label": "crow's nest",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "harpy",
+      "label": "harpy",
+      "type": "Creature",
+      "aliases": [
+        "vulture",
+        "screeching monster",
+        "winged creature"
+      ]
+    }
+  ],
+  "09c": [
+    {
+      "id": "harpy",
+      "label": "harpy",
+      "type": "Creature",
+      "aliases": [
+        "bloodthirsty monster"
+      ]
+    },
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": [
+        "wreck"
+      ]
+    },
+    {
+      "id": "crow_s_nest",
+      "label": "crow's nest",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "luring_song",
+      "label": "Luring Song",
+      "type": "Item",
+      "aliases": []
+    }
+  ],
+  "09d": [
+    {
+      "id": "harpy",
+      "label": "harpy",
+      "type": "Creature",
+      "aliases": [
+        "harpy",
+        "ally harpy"
+      ]
+    },
+    {
+      "id": "luring_song",
+      "label": "Luring Song",
+      "type": "Item",
+      "aliases": [
+        "luring song",
+        "song"
+      ]
+    }
+  ],
+  "09e": [
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": [
+        "shipwreck"
+      ]
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "northern point of the island"
+      ]
+    },
+    {
+      "id": "aleitha_s_talisman",
+      "label": "Aleitha's Talisman",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "brastos",
+      "label": "Brastos",
+      "type": "Creature",
+      "aliases": [
+        "Aleitha's husband"
+      ]
+    },
+    {
+      "id": "graveyard",
+      "label": "Graveyard",
+      "type": "Location",
+      "aliases": [
+        "clifftop cemetery"
+      ]
+    },
+    {
+      "id": "clifftop_cemetery",
+      "label": "Clifftop Cemetery",
+      "type": "Location",
+      "aliases": [
+        "graveyard"
+      ]
+    },
+    {
+      "id": "northern_point_of_the_island",
+      "label": "Northern Point of the Island",
+      "type": "Location",
+      "aliases": [
+        "dragon_s_rest"
+      ]
+    },
+    {
+      "id": "zombie",
+      "label": "Zombie",
+      "type": "Creature",
+      "aliases": []
+    }
+  ],
+  "09f": [],
+  "0a0": [
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": [
+        "seagrow caves"
+      ]
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "temple",
+        "monastery",
+        "cloister"
+      ]
+    },
+    {
+      "id": "clifftop_cemetery",
+      "label": "Clifftop Cemetery",
+      "type": "Location",
+      "aliases": [
+        "cemetery",
+        "cliffside burial ground"
+      ]
+    },
+    {
+      "id": "northern_point_of_the_island",
+      "label": "Northern Point of the Island",
+      "type": "Location",
+      "aliases": [
+        "northern tip",
+        "island's northernmost point"
+      ]
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": [
+        "sea caves",
+        "caves"
+      ]
+    },
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Location",
+      "aliases": [
+        "observatory",
+        "cliffside observatory"
+      ]
+    },
+    {
+      "id": "lost_wyrmling",
+      "label": "Lost Wyrmling",
+      "type": "Location",
+      "aliases": [
+        "wyrmling lair",
+        "abandoned nest"
+      ]
+    }
+  ],
+  "0a1": [
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Location",
+      "aliases": [
+        "observatory",
+        "observatory site"
+      ]
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": [
+        "caves",
+        "seagrow caves"
+      ]
+    },
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": [
+        "wreck of Compass Rose",
+        "compass rose wreck"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "moonstone_key",
+      "label": "Moonstone Key",
+      "type": "Item",
+      "aliases": [
+        "key",
+        "moonstone key"
+      ]
+    }
+  ],
+  "0a2": [
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Location",
+      "aliases": [
+        "observatory ruins",
+        "ancient observatory"
+      ]
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "ancient rival",
+        "blue dragon",
+        "dragon"
+      ]
+    },
+    {
+      "id": "moonstone_key",
+      "label": "Moonstone Key",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "sparkrender",
+      "label": "Sparkrender",
+      "type": "Creature",
+      "aliases": [
+        "blue dragon wyrmling",
+        "descendant of Runara's rival"
+      ]
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "safe haven",
+        "training ground"
+      ]
+    },
+    {
+      "id": "aidron",
+      "label": "Aidron",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon wyrmling",
+        "descendant of Runara"
+      ]
+    },
+    {
+      "id": "kobolds",
+      "label": "Kobolds",
+      "type": "Creature",
+      "aliases": [
+        "Sparkrender's followers",
+        "enemies of Runara"
+      ]
+    }
+  ],
+  "0a3": [
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Location",
+      "aliases": [
+        "observatory",
+        "ruins"
+      ]
+    },
+    {
+      "id": "stormwreck_isle",
+      "label": "Stormwreck Isle",
+      "type": "Location",
+      "aliases": [
+        "island"
+      ]
+    },
+    {
+      "id": "ocean",
+      "label": "Ocean",
+      "type": "Location",
+      "aliases": [
+        "sea"
+      ]
+    }
+  ],
+  "0a4": [
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Location",
+      "aliases": [
+        "observatory",
+        "cliff top site"
+      ]
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "dragon's rest",
+        "dragon rest"
+      ]
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": [
+        "seagrow caves"
+      ]
+    },
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": [
+        "compass rose"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "moonstone_key",
+      "label": "Moonstone Key",
+      "type": "Item",
+      "aliases": [
+        "moonstone key"
+      ]
+    }
+  ],
+  "0a5": [
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Location",
+      "aliases": [
+        "observatory",
+        "ruins"
+      ]
+    },
+    {
+      "id": "sparkrender",
+      "label": "Sparkrender",
+      "type": "Creature",
+      "aliases": [
+        "blue dragon",
+        "dragon"
+      ]
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "ruins",
+        "area D5"
+      ]
+    },
+    {
+      "id": "area_d1",
+      "label": "area D1",
+      "type": "Location",
+      "aliases": [
+        "D1",
+        "observatory area"
+      ]
+    }
+  ],
+  "0a6": [],
+  "0a7": [
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Location",
+      "aliases": [
+        "observatory",
+        "clifftop"
+      ]
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "rest",
+        "dragon's rest"
+      ]
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": [
+        "caves",
+        "seagrow"
+      ]
+    },
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": [
+        "rose",
+        "compass"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "moonstone_key",
+      "label": "Moonstone Key",
+      "type": "Item",
+      "aliases": [
+        "key",
+        "moonstone"
+      ]
+    }
+  ],
+  "0a8": [
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "winged",
+        "glittering blue shape"
+      ]
+    },
+    {
+      "id": "moonstone_key",
+      "label": "Moonstone Key",
+      "type": "Item",
+      "aliases": []
+    }
+  ],
+  "0a9": [
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Location",
+      "aliases": [
+        "observatory tower",
+        "observatory tower (area D5)",
+        "observatory tower (area D6)"
+      ]
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": [
+        "caves"
+      ]
+    },
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "blue dragon",
+        "semidivine figure"
+      ]
+    },
+    {
+      "id": "moonstone_key",
+      "label": "Moonstone Key",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "kobolds",
+      "label": "Kobolds",
+      "type": "Group",
+      "aliases": [
+        "Sparkrender's allies",
+        "kobold allies"
+      ]
+    },
+    {
+      "id": "sparkrender",
+      "label": "Sparkrender",
+      "type": "Creature",
+      "aliases": [
+        "blue dragon",
+        "semidivine figure"
+      ]
+    },
+    {
+      "id": "rotunda_ruins",
+      "label": "Rotunda Ruins",
+      "type": "Location",
+      "aliases": [
+        "area D2"
+      ]
+    },
+    {
+      "id": "observatory_tower",
+      "label": "Observatory Tower",
+      "type": "Location",
+      "aliases": [
+        "area D5",
+        "area D6"
+      ]
+    },
+    {
+      "id": "caved_in_wall",
+      "label": "Caved-In Wall",
+      "type": "Location",
+      "aliases": [
+        "base of the observatory tower",
+        "area D6"
+      ]
+    }
+  ],
+  "0aa": [
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Location",
+      "aliases": [
+        "Clifftop Observatory",
+        "Map 5"
+      ]
+    },
+    {
+      "id": "map_5",
+      "label": "Map 5",
+      "type": "Location",
+      "aliases": [
+        "Map 5",
+        "Clifftop Observatory"
+      ]
+    }
+  ],
+  "0ab": [
+    {
+      "id": "moonstone_key",
+      "label": "moonstone key",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Location",
+      "aliases": [
+        "observatory ruins"
+      ]
+    },
+    {
+      "id": "overlook",
+      "label": "Overlook",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "d2",
+      "label": "D2",
+      "type": "Location",
+      "aliases": []
+    }
+  ],
+  "0ac": [
+    {
+      "id": "overlook",
+      "label": "Overlook",
+      "type": "Location",
+      "aliases": [
+        "edge of the cliff",
+        "marble statues location"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    }
+  ],
+  "0ad": [
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "temple",
+        "monastery",
+        "cloister"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "moonstone_key",
+      "label": "Moonstone Key",
+      "type": "Item",
+      "aliases": [
+        "key",
+        "ancient artifact"
+      ]
+    },
+    {
+      "id": "winged_kobold",
+      "label": "Winged Kobold",
+      "type": "Creature",
+      "aliases": [
+        "kobold",
+        "flying kobold"
+      ]
+    },
+    {
+      "id": "stirge",
+      "label": "Stirge",
+      "type": "Creature",
+      "aliases": [
+        "bloodsucker",
+        "vampire bat"
+      ]
+    },
+    {
+      "id": "mek",
+      "label": "Mek",
+      "type": "Creature",
+      "aliases": [
+        "kobold",
+        "brother"
+      ]
+    },
+    {
+      "id": "minn",
+      "label": "Minn",
+      "type": "Creature",
+      "aliases": [
+        "kobold",
+        "brother"
+      ]
+    },
+    {
+      "id": "sparkrender",
+      "label": "Sparkrender",
+      "type": "Creature",
+      "aliases": [
+        "dragon",
+        "leader"
+      ]
+    },
+    {
+      "id": "myla",
+      "label": "Myla",
+      "type": "Creature",
+      "aliases": [
+        "kobold tinkerer",
+        "sister"
+      ]
+    }
+  ],
+  "0ae": [
+    {
+      "id": "plaza",
+      "label": "plaza",
+      "type": "Location",
+      "aliases": [
+        "plaza"
+      ]
+    },
+    {
+      "id": "winged_kobold",
+      "label": "winged kobold",
+      "type": "Creature",
+      "aliases": [
+        "winged kobold"
+      ]
+    },
+    {
+      "id": "batlike_creatures",
+      "label": "batlike creatures",
+      "type": "Creature",
+      "aliases": [
+        "batlike creatures"
+      ]
+    },
+    {
+      "id": "blue_paint",
+      "label": "blue paint",
+      "type": "Item",
+      "aliases": [
+        "blue paint"
+      ]
+    }
+  ],
+  "0af": [
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "map_5",
+      "label": "Map 5",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "winged_kobold",
+      "label": "Winged Kobold",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "stirge",
+      "label": "Stirge",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "mek",
+      "label": "Mek",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "minn",
+      "label": "Minn",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "sparkrender",
+      "label": "Sparkrender",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "myla",
+      "label": "Myla",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "moonstone_key",
+      "label": "Moonstone Key",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "king_killer_star",
+      "label": "King-Killer Star",
+      "type": "Item",
+      "aliases": [
+        "comet",
+        "the comet",
+        "comet with a very eccentric orbit"
+      ]
+    },
+    {
+      "id": "toril",
+      "label": "Toril",
+      "type": "Location",
+      "aliases": [
+        "world of the Forgotten Realms"
+      ]
+    },
+    {
+      "id": "selune",
+      "label": "Selûne",
+      "type": "Location",
+      "aliases": [
+        "moon of Toril"
+      ]
+    }
+  ],
+  "0b0": [
+    {
+      "id": "stirge",
+      "label": "Stirge",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "winged_kobold",
+      "label": "Winged Kobold",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "sparkrender",
+      "label": "Sparkrender",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "mek",
+      "label": "Mek",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "minn",
+      "label": "Minn",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "dragon_effigies",
+      "label": "Dragon Effigies",
+      "type": "Item",
+      "aliases": [
+        "dragon effigies",
+        "ritual items",
+        "sculptures"
+      ]
+    },
+    {
+      "id": "astalagan",
+      "label": "Astalagan",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "dragon effigy",
+        "Astalagan"
+      ]
+    },
+    {
+      "id": "clyssavar",
+      "label": "Clyssavar",
+      "type": "Creature",
+      "aliases": [
+        "gold dragon",
+        "dragon effigy",
+        "Clyssavar"
+      ]
+    },
+    {
+      "id": "eldenemir",
+      "label": "Eldenemir",
+      "type": "Creature",
+      "aliases": [
+        "blue dragon",
+        "dragon effigy",
+        "Eldenemir"
+      ]
+    },
+    {
+      "id": "sharruth",
+      "label": "Sharruth",
+      "type": "Creature",
+      "aliases": [
+        "red dragon",
+        "dragon effigy",
+        "Sharruth"
+      ]
+    },
+    {
+      "id": "turadaer",
+      "label": "Turadaer",
+      "type": "Creature",
+      "aliases": [
+        "brass dragon",
+        "dragon effigy",
+        "Turadaer"
+      ]
+    }
+  ],
+  "0b1": [
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "temple",
+        "monastery",
+        "cloister"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "rusty_key",
+      "label": "Rusty Key",
+      "type": "Item",
+      "aliases": []
+    }
+  ],
+  "0b2": [
+    {
+      "id": "kobold_camp",
+      "label": "Kobold Camp",
+      "type": "Location",
+      "aliases": [
+        "structure",
+        "campsite"
+      ]
+    },
+    {
+      "id": "ekrash",
+      "label": "Ekrash",
+      "type": "Creature",
+      "aliases": [
+        "kobold",
+        "member"
+      ]
+    },
+    {
+      "id": "erp",
+      "label": "Erp",
+      "type": "Creature",
+      "aliases": [
+        "kobold",
+        "member"
+      ]
+    },
+    {
+      "id": "hev",
+      "label": "Hev",
+      "type": "Creature",
+      "aliases": [
+        "kobold",
+        "member"
+      ]
+    },
+    {
+      "id": "nuhro",
+      "label": "Nuhro",
+      "type": "Creature",
+      "aliases": [
+        "winged kobold",
+        "member"
+      ]
+    },
+    {
+      "id": "snirke",
+      "label": "Snirke",
+      "type": "Creature",
+      "aliases": [
+        "winged kobold",
+        "member"
+      ]
+    },
+    {
+      "id": "slingshot_bullet",
+      "label": "Sling Bullet",
+      "type": "Item",
+      "aliases": [
+        "bullet",
+        "projectile"
+      ]
+    },
+    {
+      "id": "sparkrender",
+      "label": "Sparkrender",
+      "type": "Creature",
+      "aliases": [
+        "ritual leader",
+        "kobold leader"
+      ]
+    }
+  ],
+  "0b3": [],
+  "0b4": [
+    {
+      "id": "moonstone_key",
+      "label": "moonstone key",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "clifftop_observatory",
+      "label": "clifftop observatory",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "dragon_s_rest",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "seagrow_caves",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "compass_rose",
+      "label": "compass_rose",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "runara",
+      "label": "runara",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "map_5",
+      "label": "map_5",
+      "type": "Location",
+      "aliases": []
+    }
+  ],
+  "0b5": [],
+  "0b6": [
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "observatory tower",
+        "area D5"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "moonstone_key",
+      "label": "Moonstone Key",
+      "type": "Item",
+      "aliases": [
+        "original key",
+        "key to the journal"
+      ]
+    },
+    {
+      "id": "map_5",
+      "label": "Map 5",
+      "type": "Location",
+      "aliases": [
+        "observatory tower",
+        "area D5"
+      ]
+    }
+  ],
+  "0b7": [
+    {
+      "id": "moonstone_key",
+      "label": "moonstone key",
+      "type": "Item",
+      "aliases": [
+        "Moonstone Key"
+      ]
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "Dragon's Rest"
+      ]
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": [
+        "Seagrow Caves"
+      ]
+    },
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": [
+        "Compass Rose"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "Runara"
+      ]
+    },
+    {
+      "id": "map_5",
+      "label": "Map 5",
+      "type": "Location",
+      "aliases": [
+        "Map 5"
+      ]
+    },
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Location",
+      "aliases": [
+        "Clifftop Observatory"
+      ]
+    },
+    {
+      "id": "area_d4",
+      "label": "area D4",
+      "type": "Location",
+      "aliases": [
+        "area D4"
+      ]
+    },
+    {
+      "id": "area_d1",
+      "label": "area D1",
+      "type": "Location",
+      "aliases": [
+        "area D1"
+      ]
+    },
+    {
+      "id": "area_d2",
+      "label": "area D2",
+      "type": "Location",
+      "aliases": [
+        "area D2"
+      ]
+    }
+  ],
+  "0b8": [
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "map_5",
+      "label": "Map 5",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "moonstone_key",
+      "label": "Moonstone Key",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "potion_of_lightning_resistance",
+      "label": "Potion of Lightning Resistance",
+      "type": "Item",
+      "aliases": [
+        "lightning resistance potion"
+      ]
+    },
+    {
+      "id": "pouch",
+      "label": "Pouch",
+      "type": "Item",
+      "aliases": []
+    }
+  ],
+  "0b9": [
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Location",
+      "aliases": [
+        "observatory tower",
+        "tower"
+      ]
+    },
+    {
+      "id": "sparkrender",
+      "label": "Sparkrender",
+      "type": "Creature",
+      "aliases": [
+        "blue dragon wyrmling",
+        "dragon"
+      ]
+    },
+    {
+      "id": "aidron",
+      "label": "Aidron",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon wyrmling",
+        "dragon"
+      ]
+    },
+    {
+      "id": "kobolds",
+      "label": "Kobolds",
+      "type": "Group",
+      "aliases": [
+        "Mek and Minn",
+        "kobolds from D2"
+      ]
+    },
+    {
+      "id": "d2",
+      "label": "D2",
+      "type": "Location",
+      "aliases": [
+        "rotunda",
+        "area D2"
+      ]
+    },
+    {
+      "id": "d6",
+      "label": "D6",
+      "type": "Location",
+      "aliases": [
+        "secret library",
+        "area D6"
+      ]
+    }
+  ],
+  "0ba": [
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "map_5",
+      "label": "Map 5",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "sparkrender",
+      "label": "Sparkrender",
+      "type": "Creature",
+      "aliases": [
+        "lithe blue dragon"
+      ]
+    },
+    {
+      "id": "aidron",
+      "label": "Aidron",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "kobolds",
+      "label": "Kobolds",
+      "type": "Group",
+      "aliases": []
+    },
+    {
+      "id": "d2",
+      "label": "D2",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "d6",
+      "label": "D6",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "moonstone_key",
+      "label": "Moonstone Key",
+      "type": "Item",
+      "aliases": []
+    }
+  ],
+  "0bb": [
+    {
+      "id": "blue_dragon_wyrmling",
+      "label": "Blue Dragon Wyrmling",
+      "type": "Creature",
+      "aliases": [
+        "blue dragon",
+        "wyrmling"
+      ]
+    },
+    {
+      "id": "sparkrender",
+      "label": "Sparkrender",
+      "type": "Creature",
+      "aliases": [
+        "statue",
+        "guardian"
+      ]
+    },
+    {
+      "id": "d2",
+      "label": "D2",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "d6",
+      "label": "D6",
+      "type": "Location",
+      "aliases": []
+    }
+  ],
+  "0bc": [
+    {
+      "id": "sparkrender",
+      "label": "Sparkrender",
+      "type": "Creature",
+      "aliases": [
+        "blue dragon wyrmling",
+        "young dragon"
+      ]
+    },
+    {
+      "id": "aidron",
+      "label": "Aidron",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "d6",
+      "label": "D6",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "temple",
+        "monastery",
+        "cloister"
+      ]
+    },
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Location",
+      "aliases": [
+        "observatory",
+        "tower"
+      ]
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": [
+        "caves",
+        "underground"
+      ]
+    },
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": [
+        "compass",
+        "rose"
+      ]
+    },
+    {
+      "id": "map_5",
+      "label": "Map 5",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "kobolds",
+      "label": "Kobolds",
+      "type": "Group",
+      "aliases": []
+    },
+    {
+      "id": "moonstone_key",
+      "label": "Moonstone Key",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "d2",
+      "label": "D2",
+      "type": "Location",
+      "aliases": []
+    }
+  ],
+  "0bd": [
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Location",
+      "aliases": [
+        "observatory",
+        "secret archive"
+      ]
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "moonstone_key",
+      "label": "Moonstone Key",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "map_5",
+      "label": "Map 5",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "sparkrender",
+      "label": "Sparkrender",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "aidron",
+      "label": "Aidron",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "kobolds",
+      "label": "Kobolds",
+      "type": "Group",
+      "aliases": []
+    },
+    {
+      "id": "d2",
+      "label": "D2",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "d6",
+      "label": "D6",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "d4",
+      "label": "D4",
+      "type": "Location",
+      "aliases": [
+        "isolated study"
+      ]
+    },
+    {
+      "id": "dragon_s_light",
+      "label": "Dragon's Light",
+      "type": "Location",
+      "aliases": [
+        "constellation",
+        "Dragon of Dawn"
+      ]
+    },
+    {
+      "id": "southeast_quadrant",
+      "label": "Southeast Quadrant",
+      "type": "Location",
+      "aliases": [
+        "quadrant",
+        "southeast area"
+      ]
+    },
+    {
+      "id": "library",
+      "label": "Library",
+      "type": "Location",
+      "aliases": [
+        "floor of the library"
+      ]
+    }
+  ],
+  "0be": [
+    {
+      "id": "sparkrender",
+      "label": "Sparkrender",
+      "type": "Creature",
+      "aliases": [
+        "fledgling hoard defender"
+      ]
+    },
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "map_5",
+      "label": "Map 5",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "d2",
+      "label": "D2",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "d6",
+      "label": "D6",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "moonstone_key",
+      "label": "Moonstone Key",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "blue_silk_fan",
+      "label": "Blue Silk Fan",
+      "type": "Item",
+      "aliases": [
+        "fan painted with powdered blue gems"
+      ]
+    },
+    {
+      "id": "crude_flute",
+      "label": "Crude Flute",
+      "type": "Item",
+      "aliases": [
+        "flute with a pleasing sound"
+      ]
+    },
+    {
+      "id": "hourglass",
+      "label": "Hourglass",
+      "type": "Item",
+      "aliases": [
+        "hourglass filled with sparkling sand"
+      ]
+    },
+    {
+      "id": "candlesticks",
+      "label": "Candlesticks",
+      "type": "Item",
+      "aliases": [
+        "set of seven candlesticks"
+      ]
+    },
+    {
+      "id": "quartz_crystals",
+      "label": "Quartz Crystals",
+      "type": "Item",
+      "aliases": [
+        "pale blue quartz crystals"
+      ]
+    },
+    {
+      "id": "jasper_stones",
+      "label": "Jasper Stones",
+      "type": "Item",
+      "aliases": [
+        "blue jasper stones"
+      ]
+    },
+    {
+      "id": "waterproof_leather_case",
+      "label": "Waterproof Leather Case",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "coins",
+      "label": "Coins",
+      "type": "Item",
+      "aliases": [
+        "4,500 cp",
+        "2,200 sp",
+        "130 gp"
+      ]
+    }
+  ],
+  "0bf": [
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Location",
+      "aliases": [
+        "observatory tower",
+        "tower"
+      ]
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": [
+        "caves"
+      ]
+    },
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": [
+        "rose"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "blue wyrmling",
+        "blue dragon"
+      ]
+    },
+    {
+      "id": "moonstone_key",
+      "label": "Moonstone Key",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "rest"
+      ]
+    },
+    {
+      "id": "map_5",
+      "label": "Map 5",
+      "type": "Location",
+      "aliases": [
+        "area D5",
+        "D5"
+      ]
+    },
+    {
+      "id": "aidron",
+      "label": "Aidron",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon wyrmling",
+        "bronze dragon"
+      ]
+    },
+    {
+      "id": "sparkrender",
+      "label": "Sparkrender",
+      "type": "Creature",
+      "aliases": [
+        "blue wyrmling",
+        "blue dragon"
+      ]
+    }
+  ],
+  "0c0": [
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "map_5",
+      "label": "Map 5",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "agitated bronze dragon",
+        "the leader"
+      ]
+    },
+    {
+      "id": "aidron",
+      "label": "Aidron",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "sparkrender",
+      "label": "Sparkrender",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "moonstone_key",
+      "label": "Moonstone Key",
+      "type": "Item",
+      "aliases": []
+    }
+  ],
+  "0c1": [
+    {
+      "id": "aidron",
+      "label": "Aidron",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "map_5",
+      "label": "Map 5",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "moonstone_key",
+      "label": "Moonstone Key",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "sparkrender",
+      "label": "Sparkrender",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "battleaxe_1",
+      "label": "+1 Battleaxe",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "spell_scroll_hold_person_2",
+      "label": "Spell Scroll (2nd Level) of Hold Person",
+      "type": "Item",
+      "aliases": []
+    }
+  ],
+  "0c2": [
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Location",
+      "aliases": [
+        "observatory",
+        "observatory building"
+      ]
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": [
+        "caves",
+        "seagrow caves"
+      ]
+    },
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": [
+        "compass rose",
+        "rose"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon wyrmling",
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "moonstone_key",
+      "label": "Moonstone Key",
+      "type": "Item",
+      "aliases": [
+        "key",
+        "moonstone key"
+      ]
+    },
+    {
+      "id": "blue_dragon_wyrmling",
+      "label": "Blue Dragon Wyrmling",
+      "type": "Creature",
+      "aliases": [
+        "blue wyrmling",
+        "sparkrender",
+        "dragon effigies"
+      ]
+    },
+    {
+      "id": "aidron",
+      "label": "Aidron",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon wyrmling",
+        "bronze dragon",
+        "prisoner",
+        "imprisoned"
+      ]
+    },
+    {
+      "id": "kobolds",
+      "label": "Kobolds",
+      "type": "Creature",
+      "aliases": [
+        "kobolds",
+        "winged kobolds",
+        "lurking kobolds"
+      ]
+    },
+    {
+      "id": "sparkrender",
+      "label": "Sparkrender",
+      "type": "Creature",
+      "aliases": [
+        "blue dragon wyrmling",
+        "dragon effigies",
+        "ritualist",
+        "ritual performer"
+      ]
+    },
+    {
+      "id": "area_d6",
+      "label": "Area D6",
+      "type": "Location",
+      "aliases": [
+        "area d6",
+        "prison cell",
+        "imprisonment area"
+      ]
+    },
+    {
+      "id": "d2",
+      "label": "D2",
+      "type": "Location",
+      "aliases": [
+        "area d2",
+        "dragon effigies area"
+      ]
+    },
+    {
+      "id": "d5",
+      "label": "D5",
+      "type": "Location",
+      "aliases": [
+        "area d5",
+        "waking the dragon area"
+      ]
+    }
+  ],
+  "0c3": [
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "moonstone_key",
+      "label": "Moonstone Key",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "blue_dragon_wyrmling",
+      "label": "Blue Dragon Wyrmling",
+      "type": "Creature",
+      "aliases": [
+        "blue dragon"
+      ]
+    },
+    {
+      "id": "aidron",
+      "label": "Aidron",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "kobolds",
+      "label": "Kobolds",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "sparkrender",
+      "label": "Sparkrender",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "area_d6",
+      "label": "Area D6",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "d2",
+      "label": "D2",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "d5",
+      "label": "D5",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "ruined_rotunda",
+      "label": "Ruined Rotunda",
+      "type": "Location",
+      "aliases": [
+        "rotunda"
+      ]
+    },
+    {
+      "id": "golden_statue",
+      "label": "Golden Statue",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "dragon_effigies",
+      "label": "Dragon Effigies",
+      "type": "Item",
+      "aliases": [
+        "five dragon effigies"
+      ]
+    },
+    {
+      "id": "blue_dragon",
+      "label": "Blue Dragon",
+      "type": "Creature",
+      "aliases": [
+        "blue dragon wyrmling",
+        "blue dragon"
+      ]
+    },
+    {
+      "id": "bronze_dragon",
+      "label": "Bronze Dragon",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "bronze dragon bound to ground"
+      ]
+    }
+  ],
+  "0c4": [],
+  "0c5": [
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "moonstone_key",
+      "label": "Moonstone Key",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "blue_dragon_wyrmling",
+      "label": "Blue Dragon Wyrmling",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "aidron",
+      "label": "Aidron",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "kobolds",
+      "label": "Kobolds",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "sparkrender",
+      "label": "Sparkrender",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "area_d6",
+      "label": "Area D6",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "d2",
+      "label": "D2",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "d5",
+      "label": "D5",
+      "type": "Location",
+      "aliases": []
+    }
+  ],
+  "0c6": [
+    {
+      "id": "sparkrender",
+      "label": "Sparkrender",
+      "type": "Creature",
+      "aliases": [
+        "bronze light",
+        "manifestation of dragon spirits"
+      ]
+    },
+    {
+      "id": "aidron",
+      "label": "Aidron",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "ally"
+      ]
+    },
+    {
+      "id": "dragon_spirits_table",
+      "label": "Dragon Spirits Table",
+      "type": "Item",
+      "aliases": [
+        "table",
+        "dragon spirits table"
+      ]
+    },
+    {
+      "id": "d10",
+      "label": "d10",
+      "type": "Item",
+      "aliases": [
+        "die",
+        "10-sided die"
+      ]
+    },
+    {
+      "id": "astalagan_s_blessing",
+      "label": "Astalagan's Blessing",
+      "type": "Item",
+      "aliases": [
+        "blessing",
+        "healing effect"
+      ]
+    },
+    {
+      "id": "clyssavar_s_flames",
+      "label": "Clyssavar's Flames",
+      "type": "Item",
+      "aliases": [
+        "flames",
+        "fire damage effect"
+      ]
+    },
+    {
+      "id": "eldenemir_s_gift",
+      "label": "Eldenemir's Gift",
+      "type": "Item",
+      "aliases": [
+        "gift",
+        "breath weapon recharge"
+      ]
+    },
+    {
+      "id": "sharruth_s_fury",
+      "label": "Sharruth's Fury",
+      "type": "Item",
+      "aliases": [
+        "fury",
+        "fire damage effect"
+      ]
+    },
+    {
+      "id": "turadaer_s_tricks",
+      "label": "Turadaer's Tricks",
+      "type": "Item",
+      "aliases": [
+        "tricks",
+        "advantage effect"
+      ]
+    },
+    {
+      "id": "dexterity_saving_throw",
+      "label": "Dexterity Saving Throw",
+      "type": "Item",
+      "aliases": [
+        "saving throw",
+        "dexterity check"
+      ]
+    },
+    {
+      "id": "hit_points",
+      "label": "Hit Points",
+      "type": "Item",
+      "aliases": [
+        "hp",
+        "health points"
+      ]
+    },
+    {
+      "id": "breath_weapon",
+      "label": "Breath Weapon",
+      "type": "Item",
+      "aliases": [
+        "dragon breath",
+        "special attack"
+      ]
+    },
+    {
+      "id": "initiative_count",
+      "label": "Initiative Count",
+      "type": "Item",
+      "aliases": [
+        "turn order",
+        "combat order"
+      ]
+    },
+    {
+      "id": "round",
+      "label": "Round",
+      "type": "Item",
+      "aliases": [
+        "combat round",
+        "turn"
+      ]
+    },
+    {
+      "id": "combat",
+      "label": "Combat",
+      "type": "Item",
+      "aliases": [
+        "battle",
+        "fight"
+      ]
+    },
+    {
+      "id": "rotunda",
+      "label": "Rotunda",
+      "type": "Location",
+      "aliases": [
+        "central chamber",
+        "hall"
+      ]
+    },
+    {
+      "id": "dragon_spirits",
+      "label": "Dragon Spirits",
+      "type": "Creature",
+      "aliases": [
+        "manifestations",
+        "spirit entities"
+      ]
+    }
+  ],
+  "0c7": [
+    {
+      "id": "aidron",
+      "label": "Aidron",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "sparkrender",
+      "label": "Sparkrender",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "chains",
+      "label": "Chains",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "clasps",
+      "label": "Clasps",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "iron_rings",
+      "label": "Iron Rings",
+      "type": "Item",
+      "aliases": []
+    }
+  ],
+  "0c8": [
+    {
+      "id": "sparkrender",
+      "label": "Sparkrender",
+      "type": "Creature",
+      "aliases": [
+        "blue dragon wyrmling"
+      ]
+    },
+    {
+      "id": "dragon_spirits_table",
+      "label": "Dragon Spirits Table",
+      "type": "Item",
+      "aliases": [
+        "table",
+        "dragon spirits table"
+      ]
+    },
+    {
+      "id": "sculpture",
+      "label": "Sculpture",
+      "type": "Location",
+      "aliases": [
+        "golden sculpture",
+        "central sculpture"
+      ]
+    },
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "moonstone_key",
+      "label": "Moonstone Key",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "blue_dragon_wyrmling",
+      "label": "Blue Dragon Wyrmling",
+      "type": "Creature",
+      "aliases": [
+        "sparkrender"
+      ]
+    },
+    {
+      "id": "kobolds",
+      "label": "Kobolds",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "aidron",
+      "label": "Aidron",
+      "type": "Creature",
+      "aliases": []
+    },
+    {
+      "id": "area_d6",
+      "label": "Area D6",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "d2",
+      "label": "D2",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "d5",
+      "label": "D5",
+      "type": "Location",
+      "aliases": []
+    }
+  ],
+  "0c9": [
+    {
+      "id": "dragon_s_rest",
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "aliases": [
+        "temple",
+        "monastery",
+        "cloister"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "bronze wyrmling",
+        "elder",
+        "the leader"
+      ]
+    },
+    {
+      "id": "potion_of_healing",
+      "label": "potion of healing",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "pearl",
+      "label": "pearl",
+      "type": "Item",
+      "aliases": [
+        "exquisite pearl",
+        "100 gp pearl"
+      ]
+    },
+    {
+      "id": "sparkrender",
+      "label": "Sparkrender",
+      "type": "Creature",
+      "aliases": [
+        "dragon",
+        "relative of Runara"
+      ]
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "compass_rose",
+      "label": "Compass Rose",
+      "type": "Location",
+      "aliases": []
+    },
+    {
+      "id": "moonstone_key",
+      "label": "Moonstone Key",
+      "type": "Item",
+      "aliases": []
+    }
+  ],
+  "0ca": [],
+  "0cb": [],
+  "0cc": [
+    {
+      "id": "boots_of_elvenkind",
+      "label": "Boots of Elvenkind",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "elixir_of_health",
+      "label": "Elixir of Health",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "potion_of_healing",
+      "label": "Potion of Healing",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "potion_of_resistance",
+      "label": "Potion of Resistance",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "spell_scroll",
+      "label": "Spell Scroll",
+      "type": "Item",
+      "aliases": []
+    },
+    {
+      "id": "plus_1_weapon",
+      "label": "+1 Weapon",
+      "type": "Item",
+      "aliases": []
+    }
+  ],
+  "0d3": [],
+  "0d4": [],
+  "0d5": [],
+  "0d6": [],
+  "0d7": [],
+  "0d8": [],
+  "0d9": [],
+  "0da": [],
+  "0db": [],
+  "0dc": [],
+  "0dd": [],
+  "0de": [],
+  "0df": [],
+  "0e0": [],
+  "0e1": [],
+  "0e2": [],
+  "0e3": [],
+  "0e4": [],
+  "0e5": [],
+  "0e6": [],
+  "0e7": [
+    {
+      "id": "blue_dragon_wyrmling",
+      "label": "Blue Dragon Wyrmling",
+      "type": "Creature",
+      "aliases": [
+        "blue dragon",
+        "wyrmling"
+      ]
+    },
+    {
+      "id": "bronze_dragon_wyrmling",
+      "label": "Bronze Dragon Wyrmling",
+      "type": "Creature",
+      "aliases": [
+        "bronze dragon",
+        "wyrmling"
+      ]
+    },
+    {
+      "id": "fire_snake",
+      "label": "Fire Snake",
+      "type": "Creature",
+      "aliases": [
+        "fire snake"
+      ]
+    },
+    {
+      "id": "fume_drake",
+      "label": "Fume Drake",
+      "type": "Creature",
+      "aliases": [
+        "fume drake"
+      ]
+    },
+    {
+      "id": "ghoul",
+      "label": "Ghoul",
+      "type": "Creature",
+      "aliases": [
+        "ghoul"
+      ]
+    },
+    {
+      "id": "harpy",
+      "label": "Harpy",
+      "type": "Creature",
+      "aliases": [
+        "harpy"
+      ]
+    },
+    {
+      "id": "kobold_tinkerer",
+      "label": "Kobold Tinkerer",
+      "type": "Creature",
+      "aliases": [
+        "kobold",
+        "tinkerer"
+      ]
+    },
+    {
+      "id": "kobold",
+      "label": "Kobold",
+      "type": "Creature",
+      "aliases": [
+        "kobold"
+      ]
+    },
+    {
+      "id": "myconid_adult",
+      "label": "Myconid Adult",
+      "type": "Creature",
+      "aliases": [
+        "myconid",
+        "adult"
+      ]
+    },
+    {
+      "id": "myconid_sprout",
+      "label": "Myconid Sprout",
+      "type": "Creature",
+      "aliases": [
+        "myconid",
+        "sprout"
+      ]
+    },
+    {
+      "id": "owlbear",
+      "label": "Owlbear",
+      "type": "Creature",
+      "aliases": [
+        "owlbear"
+      ]
+    },
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "aliases": [
+        "runara"
+      ]
+    },
+    {
+      "id": "sinensa",
+      "label": "Sinensa",
+      "type": "Creature",
+      "aliases": [
+        "sinensa"
+      ]
+    },
+    {
+      "id": "spore_servant_octopus",
+      "label": "Spore Servant Octopus",
+      "type": "Creature",
+      "aliases": [
+        "spore servant",
+        "octopus"
+      ]
+    },
+    {
+      "id": "stirge",
+      "label": "Stirge",
+      "type": "Creature",
+      "aliases": [
+        "stirge"
+      ]
+    },
+    {
+      "id": "tarak",
+      "label": "Tarak",
+      "type": "Creature",
+      "aliases": [
+        "tarak"
+      ]
+    },
+    {
+      "id": "varnoth",
+      "label": "Varnoth",
+      "type": "Creature",
+      "aliases": [
+        "varnoth"
+      ]
+    },
+    {
+      "id": "violet_fungus",
+      "label": "Violet Fungus",
+      "type": "Creature",
+      "aliases": [
+        "violet fungus"
+      ]
+    },
+    {
+      "id": "winged_kobold",
+      "label": "Winged Kobold",
+      "type": "Creature",
+      "aliases": [
+        "winged kobold",
+        "kobold"
+      ]
+    },
+    {
+      "id": "zombie",
+      "label": "Zombie",
+      "type": "Creature",
+      "aliases": [
+        "zombie"
+      ]
+    }
+  ],
+  "0f4": []
+}

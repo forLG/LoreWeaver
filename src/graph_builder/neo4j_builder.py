@@ -4,8 +4,9 @@ Neo4j Graph Builder for LoreWeaver
 使用 neo4j-python-driver 直接将 JSON 图谱导入 Neo4j 数据库。
 """
 import json
-from typing import Dict, List, Any, Optional
-from neo4j import GraphDatabase, Result
+from typing import Any, ClassVar
+
+from neo4j import GraphDatabase
 
 from utils.logger import logger
 
@@ -22,7 +23,7 @@ class Neo4jBuilder:
     """
 
     # 实体类型到 Neo4j 标签的映射
-    TYPE_LABEL_MAP = {
+    TYPE_LABEL_MAP: ClassVar[dict[str, str]] = {
         'creature': 'Creature',
         'item': 'Item',
         'spell': 'Spell',
@@ -32,7 +33,7 @@ class Neo4jBuilder:
     }
 
     # 关系类型映射（统一为大写下划线格式）
-    RELATION_MAP = {
+    RELATION_MAP: ClassVar[dict[str, str]] = {
         'part_of': 'PART_OF',
         'contains': 'CONTAINS',
         'inhabits': 'INHABITS',
@@ -188,7 +189,7 @@ class Neo4jBuilder:
         self,
         location_graph_file: str,
         clear_existing: bool = False
-    ) -> Dict[str, int]:
+    ) -> dict[str, int]:
         """
         导入位置图谱
 
@@ -202,7 +203,7 @@ class Neo4jBuilder:
         if self.verbose:
             logger.info(f"导入位置图谱: {location_graph_file}")
 
-        with open(location_graph_file, 'r', encoding='utf-8') as f:
+        with open(location_graph_file, encoding='utf-8') as f:
             data = json.load(f)
 
         nodes = data.get('nodes', [])
@@ -225,7 +226,7 @@ class Neo4jBuilder:
             'edges': len(edges)
         }
 
-    def _create_location_nodes(self, nodes: List[Dict]) -> None:
+    def _create_location_nodes(self, nodes: list[dict]) -> None:
         """批量创建位置节点（使用 MERGE 保证幂等性）"""
 
         def create_batch(tx, batch):
@@ -244,7 +245,7 @@ class Neo4jBuilder:
                 if self.verbose:
                     logger.info(f"位置节点: {min(i + self.batch_size, len(nodes))}/{len(nodes)}")
 
-    def _create_location_edges(self, edges: List[Dict]) -> None:
+    def _create_location_edges(self, edges: list[dict]) -> None:
         """批量创建位置关系"""
 
         def create_batch(tx, batch):
@@ -258,18 +259,6 @@ class Neo4jBuilder:
             RETURN count(rel)
             """
             # 如果没有 APOC，使用以下替代方案：
-            query_alt = """
-            UNWIND $edges AS edge
-            MATCH (s:Location {id: edge.source})
-            MATCH (t:Location {id: edge.target})
-            CALL apoc.do.when(
-                edge.relation_type = 'PART_OF',
-                'MERGE (s)-[r:PART_OF]->(t) RETURN r',
-                'MERGE (s)-[r:CONNECTED_TO]->(t) RETURN r',
-                {s: s, t: t}
-            ) YIELD r
-            RETURN count(r)
-            """
             # 尝试使用 APOC，如果失败则手动构建
             try:
                 tx.run(query, edges=batch)
@@ -298,7 +287,7 @@ class Neo4jBuilder:
         self,
         entity_graph_file: str,
         clear_existing: bool = False
-    ) -> Dict[str, int]:
+    ) -> dict[str, int]:
         """
         导入实体图谱
 
@@ -312,7 +301,7 @@ class Neo4jBuilder:
         if self.verbose:
             logger.info(f"导入实体图谱: {entity_graph_file}")
 
-        with open(entity_graph_file, 'r', encoding='utf-8') as f:
+        with open(entity_graph_file, encoding='utf-8') as f:
             data = json.load(f)
 
         nodes = data.get('nodes', [])
@@ -339,7 +328,7 @@ class Neo4jBuilder:
             'edges': len(edges)
         }
 
-    def _group_nodes_by_type(self, nodes: List[Dict]) -> Dict[str, List[Dict]]:
+    def _group_nodes_by_type(self, nodes: list[dict]) -> dict[str, list[dict]]:
         """按类型分组节点"""
         grouped = {}
         for node in nodes:
@@ -351,7 +340,7 @@ class Neo4jBuilder:
             logger.info(f"节点类型分布: {[(k, len(v)) for k, v in grouped.items()]}")
         return grouped
 
-    def _create_entity_nodes(self, nodes: List[Dict], node_type: str) -> None:
+    def _create_entity_nodes(self, nodes: list[dict], node_type: str) -> None:
         """批量创建指定类型的实体节点"""
 
         label = self.TYPE_LABEL_MAP.get(node_type.lower(), 'Entity')
@@ -371,7 +360,7 @@ class Neo4jBuilder:
                 if self.verbose:
                     logger.info(f"{label} 节点: {min(i + self.batch_size, len(nodes))}/{len(nodes)}")
 
-    def _create_entity_edges(self, edges: List[Dict]) -> None:
+    def _create_entity_edges(self, edges: list[dict]) -> None:
         """批量创建实体关系"""
 
         def create_batch(tx, batch):
@@ -403,7 +392,7 @@ class Neo4jBuilder:
     # 查询与验证
     # ---------------------------------------------------------------------
 
-    def get_stats(self) -> Dict[str, Any]:
+    def get_stats(self) -> dict[str, Any]:
         """获取图谱统计信息"""
         with self._driver.session(database=self.database) as session:
             # 节点统计
@@ -434,7 +423,7 @@ class Neo4jBuilder:
         start_id: str,
         end_id: str,
         max_depth: int = 5
-    ) -> List[Dict]:
+    ) -> list[dict]:
         """查找两个节点之间的最短路径"""
         with self._driver.session(database=self.database) as session:
             result = session.run("""
@@ -470,7 +459,7 @@ class Neo4jBuilder:
         normalized = relation.upper().replace(' ', '_').replace('-', '_')
         return self.RELATION_MAP.get(relation.lower(), normalized)
 
-    def _clear_nodes_by_label(self, labels: List[str]) -> None:
+    def _clear_nodes_by_label(self, labels: list[str]) -> None:
         """删除指定标签的所有节点"""
         with self._driver.session(database=self.database) as session:
             for label in labels:
@@ -513,7 +502,7 @@ if __name__ == "__main__":
 
         # 4. 查看统计
         stats = builder.get_stats()
-        print(f"\n图谱统计:")
+        print("\n图谱统计:")
         print(f"  节点: {stats['total_nodes']}")
         print(f"  关系: {stats['total_relationships']}")
         print(f"  节点类型: {stats['nodes']}")

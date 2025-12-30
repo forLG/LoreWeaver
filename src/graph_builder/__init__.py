@@ -2,4 +2,4 @@
 from .neo4j_builder import Neo4jBuilder
 from .visualizer import GraphVisualizer
 
-__all__ = ['Neo4jBuilder', 'GraphVisualizer']
+__all__ = ['GraphVisualizer', 'Neo4jBuilder']

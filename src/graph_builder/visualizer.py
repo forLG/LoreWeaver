@@ -5,7 +5,8 @@ Graph Visualizer for LoreWeaver
 """
 import json
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import ClassVar
+
 from pyvis.network import Network
 
 from utils.logger import logger
@@ -23,7 +24,7 @@ class GraphVisualizer:
     """
 
     # 默认颜色配置（按节点类型）
-    DEFAULT_COLORS = {
+    DEFAULT_COLORS: ClassVar[dict[str, str]] = {
         'Location': '#3498db',      # 蓝色
         'Creature': '#e74c3c',      # 红色
         'Item': '#f39c12',          # 橙色
@@ -68,8 +69,8 @@ class GraphVisualizer:
         self,
         graph_file: str,
         output_html: str = "output/graph_visualization.html",
-        node_filter: Optional[List[str]] = None,
-        max_nodes: int = None,
+        node_filter: list[str] | None = None,
+        max_nodes: int | None = None,
         title: str = "LoreWeaver Knowledge Graph"
     ) -> str:
         """
@@ -87,7 +88,7 @@ class GraphVisualizer:
         """
         logger.info(f"读取图谱文件: {graph_file}")
 
-        with open(graph_file, 'r', encoding='utf-8') as f:
+        with open(graph_file, encoding='utf-8') as f:
             data = json.load(f)
 
         nodes = data.get('nodes', [])
@@ -133,7 +134,12 @@ class GraphVisualizer:
             )
 
         # 添加边
+        node_ids = {n['id'] for n in nodes}
         for edge in edges:
+            # Skip edges with non-existent nodes
+            if edge['source'] not in node_ids or edge['target'] not in node_ids:
+                continue
+
             rel_type = edge.get('relation', 'connected').upper()
             title = f"{rel_type}"
             if 'desc' in edge:
@@ -193,7 +199,7 @@ class GraphVisualizer:
 
             for record in result:
                 # 处理节点
-                for key in record.keys():
+                for key in record:
                     value = record[key]
                     if hasattr(value, 'element_type') and value.element_type == 'node':
                         node_id = value.element_id
@@ -272,9 +278,9 @@ class GraphVisualizer:
         logger.info("生成联合可视化...")
 
         # 读取两个图谱
-        with open(location_graph_file, 'r', encoding='utf-8') as f:
+        with open(location_graph_file, encoding='utf-8') as f:
             loc_data = json.load(f)
-        with open(entity_graph_file, 'r', encoding='utf-8') as f:
+        with open(entity_graph_file, encoding='utf-8') as f:
             ent_data = json.load(f)
 
         # 合并节点（去重，处理 ID 前缀问题）
@@ -353,7 +359,7 @@ class GraphVisualizer:
         # 采样
         if len(all_nodes) > max_nodes:
             # 简单策略：保留实体图谱中的节点
-            with open(entity_graph_file, 'r', encoding='utf-8') as f:
+            with open(entity_graph_file, encoding='utf-8') as f:
                 ent_data = json.load(f)
             keep_ids = {n['id'] for n in ent_data.get('nodes', [])}
             # Also keep any base IDs that are mapped from kept IDs

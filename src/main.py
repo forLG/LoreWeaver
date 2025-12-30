@@ -20,8 +20,8 @@ Usage:
     # Preview what would run
     python -m main --stage all --dry-run
 
-    # Multi-pass mode for smaller models (qwen3-8b, etc.)
-    python -m main --stage all --multi-pass
+    # Use specific model (processor auto-selected based on model capability)
+    python -m main --stage all --model qwen3-8b
 
     # Adjust concurrency for local vLLM deployments
     python -m main --stage all --max-concurrent 5
@@ -30,19 +30,22 @@ Environment Variables (.env):
     OPENAI_API_KEY     - Your LLM API key (required)
     OPENAI_BASE_URL    - API base URL (default: https://api.openai.com/v1)
     LLM_MODEL          - Model name (default: gpt-4o)
+                        Small models (qwen, llama, mistral): Entity-first pipeline
+                        Large models (gpt-4o, deepseek): Spatial-first pipeline
 """
 import argparse
 import json
 import os
 from collections import Counter
 from pathlib import Path
+
 from dotenv import load_dotenv
 
-from builder.shadow_builder import ShadowTreeBuilder
-from llm.spatial_processor import SpatialTopologyProcessor, SectionLocationMapper
-from llm.entity_processor import EntityProcessor
-from utils.logger import logger, setup_logger
 import config_neo4j as config
+from builder.shadow_builder import ShadowTreeBuilder
+from llm.entity_processor import EntityProcessor
+from llm.spatial_processor import SectionLocationMapper, SpatialTopologyProcessor
+from utils.logger import logger, setup_logger
 
 # Load environment variables from .env file
 load_dotenv()
@@ -54,6 +57,12 @@ def get_default_concurrency():
     Local vLLM deployments need lower concurrency than cloud APIs.
     """
     model = os.getenv('LLM_MODEL', 'gpt-4o').lower()
+    env_concurrency = os.getenv('LLM_MAX_CONCURRENT')
+    if env_concurrency:
+        try:
+            return int(env_concurrency)
+        except ValueError:
+            pass
     # Conservative defaults for local/vLLM deployments
     if any(x in model for x in ['qwen', 'llama', 'mistral', 'local', 'deepseek']):
         return 5  # Very conservative for local models
@@ -104,17 +113,12 @@ def parse_args():
         help='LLM model (default: from LLM_MODEL env var)'
     )
 
-    # Multi-pass and concurrency options
-    parser.add_argument(
-        '--multi-pass',
-        action='store_true',
-        help='Enable multi-pass extraction mode (optimized for smaller models like qwen3-8b)'
-    )
+    # Concurrency options
     parser.add_argument(
         '--max-concurrent',
         type=int,
         default=get_default_concurrency(),
-        help=f'Maximum concurrent LLM requests (default: auto-detected, use 50-100 for cloud APIs)'
+        help='Maximum concurrent LLM requests (default: auto-detected, use 50-100 for cloud APIs)'
     )
 
     # File paths
@@ -160,10 +164,13 @@ class Pipeline:
                 "API key required. Set OPENAI_API_KEY in .env file or use --api-key"
             )
 
-        # Log multi-pass mode
-        if self.args.multi_pass:
-            logger.info("=== Multi-Pass Extraction Mode Enabled ===")
-            logger.info("This mode is optimized for smaller models like qwen3-8b")
+        # Log model and processor selection
+        is_small_model = any(x in self.args.model.lower() for x in ['qwen', 'llama', 'mistral'])
+        logger.info(f"Model: {self.args.model}")
+        if is_small_model:
+            logger.info("Processor: SmallModelProcessor (entity-first pipeline)")
+        else:
+            logger.info("Processor: SpatialTopologyProcessor (spatial-first pipeline)")
 
         # Log concurrency settings
         logger.info(f"Max concurrent requests: {self.args.max_concurrent}")
@@ -218,7 +225,7 @@ class Pipeline:
             raise FileNotFoundError(f"Input file not found: {self.input_file}")
 
         logger.info(f"Loading data from {self.input_file}...")
-        with open(self.input_file, 'r', encoding='utf-8') as f:
+        with open(self.input_file, encoding='utf-8') as f:
             raw_data = json.load(f)
 
         # 5eTools data is usually under 'data' key, or directly a list
@@ -246,17 +253,31 @@ class Pipeline:
         if skip_summary:
             logger.info("Found intermediate file, skipping summarization...")
 
-        processor = SpatialTopologyProcessor(
-            api_key=self.args.api_key,
-            base_url=self.args.base_url,
-            model=self.args.model,
-            use_multi_pass=self.args.multi_pass,
-            max_concurrent=self.args.max_concurrent
-        )
+        # Choose processor based on model size
+        is_small_model = any(x in self.args.model.lower() for x in ['qwen', 'llama', 'mistral'])
 
-        location_graph = processor.process(self.shadow_tree, skip_summary=skip_summary)
+        if is_small_model:
+            # Use entity-first pipeline for small models
+            from llm.small_model_processor import SmallModelProcessor
+            processor = SmallModelProcessor(
+                api_key=self.args.api_key,
+                base_url=self.args.base_url,
+                model=self.args.model,
+                max_concurrent=self.args.max_concurrent,
+                output_dir=self.output_dir  # Save debug outputs
+            )
+            location_graph = processor.process(self.shadow_tree, skip_summary=False)
+        else:
+            # Use standard spatial processor for large models
+            processor = SpatialTopologyProcessor(
+                api_key=self.args.api_key,
+                base_url=self.args.base_url,
+                model=self.args.model,
+                max_concurrent=self.args.max_concurrent
+            )
+            location_graph = processor.process(self.shadow_tree, skip_summary=skip_summary)
 
-        if not skip_summary:
+        if not skip_summary and not is_small_model:
             logger.info(f"Saving intermediate summaries to {self.intermediate_file}...")
             with open(self.intermediate_file, 'w', encoding='utf-8') as f:
                 json.dump(self.shadow_tree, f, indent=2, ensure_ascii=False)
@@ -281,7 +302,7 @@ class Pipeline:
                 "Run --stage spatial first"
             )
 
-        with open(self.location_graph_file, 'r', encoding='utf-8') as f:
+        with open(self.location_graph_file, encoding='utf-8') as f:
             location_graph = json.load(f)
 
         logger.info(f"Location graph: {len(location_graph['nodes'])} nodes, {len(location_graph['edges'])} edges")
@@ -315,7 +336,7 @@ class Pipeline:
                 "Run --stage section-map first"
             )
 
-        with open(self.section_location_map_file, 'r', encoding='utf-8') as f:
+        with open(self.section_location_map_file, encoding='utf-8') as f:
             section_map = json.load(f)
 
         logger.info(f"Section map: {len(section_map)} sections")
@@ -331,12 +352,15 @@ class Pipeline:
 
         logger.info(f"Saving entity graph to {self.entity_graph_file}...")
         with open(self.entity_graph_file, 'w', encoding='utf-8') as f:
-            json.dump(entity_graph, f, indent=2, ensure_ascii=False)
+            json.dump(entity_graph.to_dict() if hasattr(entity_graph, 'to_dict') else entity_graph, f, indent=2, ensure_ascii=False)
 
-        logger.info(f"Done! Entity graph: {len(entity_graph['nodes'])} nodes, {len(entity_graph['edges'])} edges")
+        # Convert to dict for accessing nodes/edges
+        graph_dict = entity_graph.to_dict() if hasattr(entity_graph, 'to_dict') else entity_graph
+
+        logger.info(f"Done! Entity graph: {len(graph_dict['nodes'])} nodes, {len(graph_dict['edges'])} edges")
 
         # Print statistics
-        type_counts = Counter(n.get("type", "Unknown").title() for n in entity_graph["nodes"])
+        type_counts = Counter(n.get("type", "Unknown").title() for n in graph_dict["nodes"])
         logger.info("Entity type distribution:")
         for node_type, count in type_counts.most_common():
             logger.info(f"  {node_type}: {count}")
@@ -353,12 +377,12 @@ class Pipeline:
                 "Run --stage shadow first"
             )
 
-        with open(self.shadow_file, 'r', encoding='utf-8') as f:
+        with open(self.shadow_file, encoding='utf-8') as f:
             self.shadow_tree = json.load(f)
 
         # Load intermediate if available (has spatial summaries)
         if self.intermediate_file.exists():
-            with open(self.intermediate_file, 'r', encoding='utf-8') as f:
+            with open(self.intermediate_file, encoding='utf-8') as f:
                 self.shadow_tree = json.load(f)
             logger.info("Using shadow tree with spatial summaries")
 

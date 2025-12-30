@@ -1,12 +1,12 @@
 import logging
 import sys
-from pathlib import Path
 from datetime import datetime
+from pathlib import Path
 
 # Default logger (used before exp_name is set)
 _default_logger = logging.getLogger(__name__)
 
-def setup_logger(exp_name: str = None, log_dir: str = "logs"):
+def setup_logger(exp_name: str | None = None, log_dir: str = "logs"):
     """
     Setup logging with both console and file handlers.
 

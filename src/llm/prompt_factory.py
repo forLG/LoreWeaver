@@ -1,18 +1,18 @@
 import re
-from typing import Dict, List
+
 
 class PromptFactory:
     # 预编译正则，匹配 "A1: Name", "B2 Name", "Area C3" 等格式
     AREA_PATTERN = re.compile(r"^(?:Area\s+)?([A-Z][0-9]+)[:\s]\s*(.+)$", re.IGNORECASE)
 
     @staticmethod
-    def create_spatial_summary_prompt(node: Dict, child_summaries: List[str]) -> str:
+    def create_spatial_summary_prompt(node: dict, child_summaries: list[str]) -> str:
         """
         阶段一：递归生成纯文本的空间关系总结
         """
         title = node.get("title", "Untitled")
         content = node.get("content", "")
-        
+
         # 基础 Prompt 结构
         return f"""
 You are a D&D Cartographer. Generate a SPATIAL REPORT for the node: "{title}".
@@ -24,7 +24,7 @@ Sub-area Reports (from children nodes):
 {child_summaries}
 
 Task:
-1. **STRICTLY Filter Non-Locations**: 
+1. **STRICTLY Filter Non-Locations**:
    - **ONLY** physical locations (Rooms, Buildings, Islands, Caves, Landmarks, etc) can be nodes in the hierarchy.
    - **EXCLUDE** abstract concepts, narratives, or containers such as: "Quests", "Events", "Encounters", "Chapters", "Introductions", "Welcome to...".
    - If the current node "{title}" is NOT a physical location (e.g., "Cloister Quests"), **DO NOT** create a hierarchy node for it. Instead, **PROMOTE** (hoist) its valid spatial children to the top level of the list.
@@ -63,7 +63,7 @@ Input Text:
 Rules for Extraction:
 1. **Nodes (Locations)**:
    - Extract all physical locations.
-   - **CRITICAL - ID Standardization**: 
+   - **CRITICAL - ID Standardization**:
      - You MUST use **snake_case** for IDs to ensure consistency.
      - Example: "Dragon's Rest" -> "dragons_rest", "Area A1" -> "a1", "The Beach" -> "the_beach".
      - If a specific code exists (A1, B2), use it as the primary ID (lowercase).
@@ -85,7 +85,7 @@ Output Format (JSON ONLY):
     ]
 }}
 """
-    
+
     @staticmethod
     def create_entity_resolution_prompt(node_list_text: str) -> str:
         """
@@ -331,7 +331,7 @@ Task:
 
 2. **Extract Relations (Edges)**:
    - **DO NOT** extract relationships between two Location nodes (e.g., "connected_to", "part_of"). Spatial topology is already handled.
-   - **CRITICAL PRIORITY**: Focus on the **Ecology and State of the World** first. 
+   - **CRITICAL PRIORITY**: Focus on the **Ecology and State of the World** first.
      - How do NPCs relate to each other? (e.g., leader/minion, rivals)
      - Where are items physically located? (e.g., inside a chest, worn by a statue)
      - What are monsters doing in the location? (e.g., sleeping, guarding)
@@ -358,4 +358,230 @@ Output JSON Format:
         {{ "source": "creature:goblin_boss", "target": "location:throne_room", "relation": "inhabits", "desc": "sits lazily on the throne" }}
     ]
 }}
+"""
+
+    # ========================================================================
+    # Entity-First Pipeline Prompts (for small models like qwen3-8b)
+    # ========================================================================
+
+    @staticmethod
+    def create_ner_prompt(
+        title: str,
+        content: str,
+        parent_context: str,  # noqa: ARG004 - passed for interface consistency
+        known_entities: str
+    ) -> str:
+        """
+        Entity-First Phase 1: Named Entity Recognition.
+
+        Extract all named entities from text, using parent context for reference resolution.
+        """
+        return f"""
+You are a D&D Entity Extractor. Extract named entities from the following text.
+
+CURRENT SECTION: {title}
+
+{known_entities}
+
+TEXT TO PROCESS:
+{content}
+
+TASK: Extract ALL named entities mentioned in this text.
+
+Entity Types to Extract:
+- Locations: places, buildings, rooms, geographic features (e.g., "Dragon's Rest", "The Cave", "Cliffside Path")
+- Creatures: monsters, NPCs, animals (e.g., "Runara", "Goblin Boss", "Owlbear")
+- Items: objects, equipment, treasures (e.g., "Rusty Key", "Magic Sword")
+- Groups: organizations, parties, factions (e.g., "The Party", "Kobolds")
+
+CRITICAL RULES:
+1. **ID Format**: Use snake_case IDs (e.g., "dragon_s_rest", "runara", "rusty_key")
+2. **Reference Parent Entities**: If an entity mentioned here was already seen in parent sections, USE THE SAME ID from the known entities list above
+3. **Be Specific**: Extract specific names, not generic terms (e.g., "Myla's Cell" not "a cell")
+4. **Include All**: Don't miss any named entity, even if it seems minor
+5. **Extract Aliases**: For each entity, include common aliases and alternative names (e.g., "Runara" might have aliases: "bronze dragon", "elder", "the leader")
+
+Output Format (JSON ONLY):
+{{
+    "entities": [
+        {{"id": "dragon_s_rest", "label": "Dragon's Rest", "type": "Location", "aliases": ["temple", "monastery", "cloister"]}},
+        {{"id": "runara", "label": "Runara", "type": "Creature", "aliases": ["bronze dragon", "elder", "the leader"]}},
+        {{"id": "rusty_key", "label": "Rusty Key", "type": "Item", "aliases": []}}
+    ]
+}}
+"""
+
+    @staticmethod
+    def create_relation_extraction_prompt(
+        title: str,
+        content: str,
+        entities_text: str
+    ) -> str:
+        """
+        Entity-First Phase 3: Extract relations between known entities.
+
+        Given a list of known entities, find relationships between them in the text.
+        """
+        return f"""
+You are a D&D Relation Extractor. Extract relationships between known entities.
+
+CURRENT SECTION: {title}
+
+KNOWN ENTITIES:
+{entities_text}
+
+TEXT TO PROCESS:
+{content}
+
+TASK: Find relationships between the known entities mentioned in this text.
+
+RELATIONSHIP TYPES:
+- Spatial: "part_of" (inside), "connected_to" (adjacent), "leads_to" (path)
+- Social: "commands" (authority), "serves" (loyalty), "allied_with" (friendship)
+- State: "inhabits" (lives in), "guards" (protects), "stored_in" (contained)
+- Action: "attacks" (hostile), "gives_quest_to" (interaction)
+
+CRITICAL RULES:
+1. **Only use entities from the KNOWN ENTITIES list above**
+2. **Create edges only for relationships EXPLICITLY stated in the text**
+3. **Include descriptions**: Add a "desc" field with context for each relation
+4. **Be conservative**: Don't invent relationships that aren't clearly stated
+
+Output Format (JSON ONLY):
+{{
+    "relations": [
+        {{"source": "dragon_s_rest", "target": "stormwreck_isle", "relation": "part_of", "desc": "Located on the island"}},
+        {{"source": "runara", "target": "dragon_s_rest", "relation": "inhabits", "desc": "Lives in the temple"}},
+        {{"source": "goblin_boss", "target": "goblin_minion", "relation": "commands", "desc": "Leads the goblins"}}
+    ]
+}}
+"""
+
+    # ========================================================================
+    # Natural Language Output Prompts (for small models like qwen3-8b)
+    # More robust to truncation than JSON
+    # ========================================================================
+
+    @staticmethod
+    def create_ner_prompt_natural(
+        title: str,
+        content: str,
+        known_entities: str
+    ) -> str:
+        """
+        Natural language NER prompt (no JSON required).
+
+        Output format:
+            Entity: Name
+            Type: Location/Creature/Item
+            ID: snake_case_id
+            Aliases: alias1, alias2
+        """
+        return f"""
+You are a D&D Entity Extractor. Extract named entities from the following text.
+
+CURRENT SECTION: {title}
+
+{known_entities}
+
+TEXT TO PROCESS:
+{content}
+
+TASK: Extract ALL named entities mentioned in this text.
+
+Entity Types to Extract:
+- Locations: places, buildings, rooms, geographic features
+- Creatures: monsters, NPCs, animals
+- Items: objects, equipment, treasures
+- Groups: organizations, parties, factions
+
+CRITICAL RULES:
+1. **ID Format**: Use snake_case IDs (e.g., dragon_s_rest, runara, rusty_key)
+2. **Reference Parent Entities**: If an entity was already seen in parent sections, USE THE SAME ID
+3. **Be Specific**: Extract specific names, not generic terms
+4. **Extract Aliases**: Include common alternative names
+
+OUTPUT FORMAT (one entity per block, separate blocks with blank line):
+Entity: [name]
+Type: [Location/Creature/Item/Group]
+ID: [snake_case_id]
+Aliases: [alias1, alias2, alias3]
+
+[Repeat for each entity]
+"""
+
+    @staticmethod
+    def create_relation_extraction_prompt_natural(
+        title: str,
+        content: str,
+        entities_text: str
+    ) -> str:
+        """
+        Natural language relation extraction prompt (no JSON required).
+        """
+        return f"""
+You are a D&D Relation Extractor. Extract relationships between known entities.
+
+CURRENT SECTION: {title}
+
+KNOWN ENTITIES:
+{entities_text}
+
+TEXT TO PROCESS:
+{content}
+
+TASK: Find relationships between the known entities mentioned in this text.
+
+RELATIONSHIP TYPES:
+- Spatial: part_of (inside), connected_to (adjacent), leads_to (path)
+- Social: commands (authority), serves (loyalty), allied_with (friendship)
+- State: inhabits (lives in), guards (protects), stored_in (contained)
+- Action: attacks (hostile), gives_quest_to (interaction)
+
+CRITICAL RULES:
+1. **Only use entities from the KNOWN ENTITIES list above**
+2. **Create edges only for relationships EXPLICITLY stated in the text**
+3. **Include descriptions** with context for each relation
+4. **Be conservative**: Don't invent relationships
+
+OUTPUT FORMAT (one relation per block, separate blocks with blank line):
+Relation: [relation_type]
+Source: [entity_id]
+Target: [entity_id]
+Description: [context description]
+
+[Repeat for each relationship]
+"""
+
+    @staticmethod
+    def create_entity_resolution_prompt_natural(node_list_text: str) -> str:
+        """
+        Natural language entity resolution prompt (no JSON required).
+        """
+        return f"""
+You are a Data Deduplication Expert for a Knowledge Graph.
+
+Below is a list of raw nodes extracted from different chapters of a D&D book.
+Many nodes refer to the SAME location but have different IDs or slightly different names.
+
+RAW NODE LIST:
+{node_list_text}
+
+TASK: Identify duplicates and map them to a single CANONICAL ID.
+
+RULES:
+- If "dragon_s_rest" and "dragons_rest_ch1" are the same place, map: dragans_rest_ch1 -> dragon_s_rest
+- If "A1" and "area_a1" are the same, map: area_a1 -> A1
+- Prefer shorter, cleaner IDs (e.g., "A1" over "area_a1_cliff")
+- Ignore distinct locations (do not merge "A1" and "A2")
+
+OUTPUT FORMAT:
+[duplicate_id] -> [canonical_id]
+
+EXAMPLE:
+dragon_rest -> dragon_s_rest
+area_a1 -> A1
+the_beach -> rocky_shore
+
+[Output mappings below, one per line]
 """

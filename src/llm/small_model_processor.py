@@ -35,6 +35,7 @@ from llm.natural_parsers import (
     parse_unified_extraction,
 )
 from llm.prompt_factory import PromptFactory
+from models import create_validated_graph
 from utils.graph_utils import deduplicate_graph
 from utils.logger import logger
 
@@ -63,11 +64,12 @@ class SmallModelProcessor(BaseLLMProcessor):
         output_dir: str | Path | None = None,
         use_natural_language: bool = True,
         max_tokens: int = 0,
-        repetition_penalty: float | None = None,
-        single_phase: bool = False
+        repetition_penalty: float | None = None
     ):
         """
         Initialize the small model processor.
+
+        Uses unified entity+event extraction by default (heterogeneous graph).
 
         Args:
             api_key: OpenAI API key
@@ -78,18 +80,16 @@ class SmallModelProcessor(BaseLLMProcessor):
             use_natural_language: Use natural language output instead of JSON (default: True)
             max_tokens: Maximum tokens per response (0 = no limit, recommended 2048 for small models)
             repetition_penalty: Repetition penalty for vLLM (1.0 = no penalty, 1.1-1.5 recommended)
-            single_phase: If True, extract entities + relations in one pass (experimental)
         """
         super().__init__(api_key, base_url, model, max_concurrent, repetition_penalty)
         self.output_dir = Path(output_dir) if output_dir else None
         self.use_natural_language = use_natural_language
         self.max_tokens = max_tokens if max_tokens > 0 else None
-        self.single_phase = single_phase
 
         if use_natural_language:
             logger.info("Natural language mode enabled (more robust for small models)")
-        if single_phase:
-            logger.info("Single-phase mode enabled (entities + relations in one pass)")
+
+        logger.info("Unified entity+event extraction mode enabled (heterogeneous graph)")
 
     def _save_debug(self, name: str, data: Any) -> None:
         """
@@ -132,26 +132,17 @@ class SmallModelProcessor(BaseLLMProcessor):
         """
         Entity-first pipeline for small models.
 
-        Single-phase mode (experimental):
-        - Phase 1: Combined entity + relation extraction
-        - Phase 2: Entity resolution and relation ID update
-        - Phase 3: Build final graph
-
-        Two-phase mode (default):
-        - Phase 1: Independent NER extraction (pure bottom-up)
-        - Phase 2: Bottom-up aggregation and resolution
-        - Phase 3: Relation extraction with known entities
-        - Phase 4: Build spatial graph
+        Uses unified entity+event extraction (heterogeneous graph):
+        - Phase 1: Unified entity + event extraction
+        - Phase 2: Entity resolution
+        - Phase 3: Event processing and edge generation
+        - Phase 4: Build validated heterogeneous graph
         """
         logger.info("=" * 60)
-        mode = "SINGLE-PHASE" if self.single_phase else "TWO-PHASE"
-        logger.info(f"SMALL MODEL PIPELINE: {mode}")
+        logger.info("SMALL MODEL PIPELINE: Unified Entity+Event Extraction")
         logger.info("=" * 60)
 
-        if self.single_phase:
-            return await self._process_single_phase(shadow_tree)
-        else:
-            return await self._process_two_phase(shadow_tree)
+        return await self._process_single_phase(shadow_tree)
 
     async def _process_single_phase(
         self,
@@ -214,32 +205,41 @@ class SmallModelProcessor(BaseLLMProcessor):
         logger.info(f"  Generated {len(edges)} edges from events")
 
         # ====================================================================
-        # Phase 4: Build unified heterogeneous graph
+        # Phase 4: Build and validate unified heterogeneous graph
         # ====================================================================
-        logger.info("Phase 4: Building unified heterogeneous graph...")
+        logger.info("Phase 4: Building and validating unified heterogeneous graph...")
 
-        # Combine entity nodes and event nodes
-        all_nodes = []
+        try:
+            # Create validated graph using Pydantic
+            validated_graph = create_validated_graph(
+                entities=unique_entities,
+                events=valid_events,
+                edges=edges
+            )
 
-        # Add entity nodes with a "node_type" field
-        for entity in unique_entities:
-            entity["node_type"] = "entity"
-            all_nodes.append(entity)
+            logger.info(f"  Validation passed: {len(validated_graph.nodes)} nodes ({len(validated_graph.get_entity_nodes())} entities + {len(validated_graph.get_event_nodes())} events)")
+            logger.info(f"                   {len(validated_graph.edges)} edges")
 
-        # Add event nodes with a "node_type" field
-        for event in valid_events:
-            event["node_type"] = "event"
-            all_nodes.append(event)
+            # Return as dict for JSON serialization
+            return validated_graph.model_dump_dict()
 
-        final_graph = {
-            "nodes": all_nodes,
-            "edges": edges
-        }
+        except Exception as e:
+            logger.warning(f"  Pydantic validation failed: {e}")
+            logger.warning("  Returning unvalidated graph (fallback)")
 
-        logger.info(f"  Final graph: {len(all_nodes)} nodes ({len(unique_entities)} entities + {len(valid_events)} events)")
-        logger.info(f"              {len(edges)} edges")
+            # Fallback: return plain dict without validation
+            all_nodes = []
+            for entity in unique_entities:
+                entity["node_type"] = "entity"
+                all_nodes.append(entity)
+            for event in valid_events:
+                event["node_type"] = "event"
+                all_nodes.append(event)
 
-        return final_graph
+            return {
+                "nodes": all_nodes,
+                "edges": edges
+            }
 
     async def _process_two_phase(
         self,

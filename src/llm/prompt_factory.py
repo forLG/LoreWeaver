@@ -667,7 +667,7 @@ EVENT TYPES (dynamic narrative nodes):
 
 CRITICAL RULES:
 1. **Extract Entities First**:
-   - NAMED: "Dragon's Rest", "Runara" → extract with exact name
+   - NAMED: "The WaterDeep", "Tav" → extract with exact name
    - UNNAMED GROUPS: Use contextual IDs (e.g., "zombies in ship" → "zombies_in_ship")
    - UNNAMED INDIVIDUALS: If different behaviors, separate (e.g., "attacking_zombie")
    - Only use numbers (_1, _2) for truly indistinguishable entities
@@ -681,20 +681,20 @@ CRITICAL RULES:
 
 OUTPUT FORMAT:
 <entities>
-Entity: [name]
-Type: [Location/Creature/Item/Group]
-ID: [snake_case_id]
+Entity: name
+Type: Location/Creature/Item/Group
+ID: snake_case_id
 Aliases: [alias1, alias2]
 </entities>
 
 <events>
-Event: [event_name]
-Type: [encounter/combat/discovery/dialogue/exploration/observation]
-Participants: [entity_id1, entity_id2]
-Location: [location_id]
-Description: [what happened]
+Event: event_name
+Type: encounter/combat/discovery/dialogue/exploration/observation
+Participants: entity_id1, entity_id2
+Location: location_id
+Description: what happened
 
-Event: [next_event]
+Event: next_event
 ...
 </events>
 

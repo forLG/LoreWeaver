@@ -390,17 +390,19 @@ TASK: Extract ALL named entities mentioned in this text.
 
 Entity Types to Extract:
 - Locations: places, buildings, rooms, geographic features (e.g., "Dragon's Rest", "The Cave", "Cliffside Path")
-- Creatures: monsters, NPCs, animals (e.g., "Runara", "Goblin Boss", "Owlbear")
+- Creatures: monsters, NPCs, animals (e.g., "Runara", "Goblin Boss", "a zombie")
 - Items: objects, equipment, treasures (e.g., "Rusty Key", "Magic Sword")
 - Groups: organizations, parties, factions (e.g., "The Party", "Kobolds")
 
 CRITICAL RULES:
 1. **ID Format**: Use snake_case IDs (e.g., "dragon_s_rest", "runara", "rusty_key")
 
-2. **Extract ONLY Proper/Specific Names**:
-   - EXTRACT: "Dragon's Rest", "Runara", "Rusty Key", "Myla's Cell"
-   - SKIP: generic descriptions like "a temple", "the path", "a statue", "two sailors"
-   - If something only has a generic description (e.g., "a large, open-air temple"), DO NOT create a new entity for it
+2. **Extract Both Named and Unnamed Entities**:
+   - NAMED: "Dragon's Rest", "Runara" → extract with exact name
+   - UNNAMED but RELEVANT: "a zombie", "two sailors", "the harbor", "a statue" → extract with descriptive ID
+     - Use descriptive IDs: "zombie", "sailors", "harbor", "statue"
+     - If multiple unnamed entities of same type exist, append numbers: "zombie_1", "zombie_2"
+   - SKIP: Pure background/scenery with no relevance: "sunlight", "grass", "overcast sky"
 
 3. **Reference Parent Entities**: If an entity mentioned here was already seen in parent sections, USE THE SAME ID from the known entities list above
 
@@ -413,8 +415,11 @@ Output Format (JSON ONLY):
 {{
     "entities": [
         {{"id": "dragon_s_rest", "label": "Dragon's Rest", "type": "Location", "aliases": ["temple", "monastery", "cloister"]}},
-        {{"id": "runara", "label": "Runara", "type": "Creature", "aliases": ["bronze dragon", "elder", "the leader"]}},
-        {{"id": "rusty_key", "label": "Rusty Key", "type": "Item", "aliases": []}}
+        {{"id": "runara", "label": "Runara", "type": "Creature", "aliases": ["bronze dragon", "elder"]}},
+        {{"id": "zombie", "label": "Zombie", "type": "Creature", "aliases": []}},
+        {{"id": "sailors", "label": "Sailors", "type": "Creature", "aliases": ["two sailors"]}},
+        {{"id": "harbor", "label": "Harbor", "type": "Location", "aliases": ["calm harbor"]}},
+        {{"id": "statue", "label": "Statue", "type": "Item", "aliases": ["towering statue"]}}
     ]
 }}
 """
@@ -506,10 +511,12 @@ Entity Types to Extract:
 CRITICAL RULES:
 1. **ID Format**: Use snake_case IDs (e.g., dragon_s_rest, runara, rusty_key)
 
-2. **Extract ONLY Proper/Specific Names**:
-   - EXTRACT: "Dragon's Rest", "Runara", "Rusty Key", "Myla's Cell"
-   - SKIP: generic descriptions like "a temple", "the path", "a statue", "two sailors"
-   - If something only has a generic description (e.g., "a large, open-air temple"), DO NOT create a new entity for it
+2. **Extract Both Named and Unnamed Entities**:
+   - NAMED: "Dragon's Rest", "Runara" → extract with exact name
+   - UNNAMED but RELEVANT: "a zombie", "two sailors", "the harbor", "a statue" → extract with descriptive ID
+     - Use descriptive IDs: "zombie", "sailors", "harbor", "statue"
+     - If multiple unnamed entities of same type exist, append numbers: "zombie_1", "zombie_2"
+   - SKIP: Pure background/scenery with no relevance: "sunlight", "grass", "overcast sky"
 
 3. **Reference Parent Entities**: If an entity was already seen in parent sections, USE THE SAME ID
 

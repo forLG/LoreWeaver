@@ -368,20 +368,23 @@ Output JSON Format:
     def create_ner_prompt(
         title: str,
         content: str,
-        parent_context: str,  # noqa: ARG004 - passed for interface consistency
-        known_entities: str
+        parent_context: str | None = None,  # noqa: ARG004 - kept for interface consistency
+        known_entities: str | None = None
     ) -> str:
         """
         Entity-First Phase 1: Named Entity Recognition.
 
-        Extract all named entities from text, using parent context for reference resolution.
+        Extract all named entities from text (pure bottom-up - no parent context).
+        Duplicates will be resolved during aggregation phase.
         """
-        return f"""/no_think
+        known_section = known_entities if known_entities else "No known entities from previous sections."
+
+        return f"""
 You are a D&D Entity Extractor. Extract named entities from the following text.
 
 CURRENT SECTION: {title}
 
-{known_entities}
+{known_section}
 
 TEXT TO PROCESS:
 {content}
@@ -404,17 +407,12 @@ CRITICAL RULES:
      - If multiple unnamed entities of same type exist, append numbers: "zombie_1", "zombie_2"
    - SKIP: Pure background/scenery with no relevance: "sunlight", "grass", "overcast sky"
 
-3. **Reference Parent Entities**: If an entity mentioned here was already seen in parent sections, USE THE SAME ID from the known entities list above
-
-4. **Add Aliases, Don't Duplicate**: If a generic term refers to a known entity, add it as an ALIAS instead of creating a new entity
-   - Example: If parent has "cloister" and text mentions "the temple", add "temple" as an alias to cloister, don't create new "temple" entity
-
-5. **Be Decisive**: Choose the best match and move on. Do not repeatedly reconsider your choices.
+3. **Be Decisive**: Extract entities confidently. Duplicates will be resolved later.
 
 Output Format (JSON ONLY):
 {{
     "entities": [
-        {{"id": "dragon_s_rest", "label": "Dragon's Rest", "type": "Location", "aliases": ["temple", "monastery", "cloister"]}},
+        {{"id": "dragon_s_rest", "label": "Dragon's Rest", "type": "Location", "aliases": ["temple", "monastery"]}},
         {{"id": "runara", "label": "Runara", "type": "Creature", "aliases": ["bronze dragon", "elder"]}},
         {{"id": "zombie", "label": "Zombie", "type": "Creature", "aliases": []}},
         {{"id": "sailors", "label": "Sailors", "type": "Creature", "aliases": ["two sailors"]}},
@@ -479,23 +477,22 @@ Output Format (JSON ONLY):
     def create_ner_prompt_natural(
         title: str,
         content: str,
-        known_entities: str
+        known_entities: str | None = None
     ) -> str:
         """
         Natural language NER prompt (no JSON required).
 
-        Output format:
-            Entity: Name
-            Type: Location/Creature/Item
-            ID: snake_case_id
-            Aliases: alias1, alias2
+        Pure bottom-up: Extract independently, duplicates resolved later.
         """
+        known_section = known_entities if known_entities else "No known entities from previous sections."
+
         return f"""
-You are a D&D Entity Extractor. Extract named entities from the following text.
+ROLE: You are a D&D Entity Extractor. Extract named entities from the following text.
 
 CURRENT SECTION: {title}
-
-{known_entities}
+<known_entities>
+{known_section}
+</known_entities>
 
 TEXT TO PROCESS:
 {content}
@@ -510,29 +507,30 @@ Entity Types to Extract:
 
 CRITICAL RULES:
 1. **ID Format**: Use snake_case IDs (e.g., dragon_s_rest, runara, rusty_key)
-
 2. **Extract Both Named and Unnamed Entities**:
    - NAMED: "Dragon's Rest", "Runara" → extract with exact name
-   - UNNAMED but RELEVANT: "a zombie", "two sailors", "the harbor", "a statue" → extract with descriptive ID
-     - Use descriptive IDs: "zombie", "sailors", "harbor", "statue"
-     - If multiple unnamed entities of same type exist, append numbers: "zombie_1", "zombie_2"
+   - UNNAMED GROUPS: If entities appear as a group in a specific context, use contextual ID
+     - Example: "zombies in the ship" → "zombies_in_ship"
+     - Example: "sailors on the dock" → "sailors_on_dock"
+     - Example: "goblins guarding the entrance" → "goblins_at_entrance"
+   - UNNAMED INDIVIDUALS: If entities act differently (distinct behaviors), treat separately
+     - Example: If one zombie attacks and another guards, create "attacking_zombie" and "guarding_zombie"
+     - Only use numbers (_1, _2, _3) when entities are truly indistinguishable and less than 10
    - SKIP: Pure background/scenery with no relevance: "sunlight", "grass", "overcast sky"
+3. **OUTPUT FORMAT**: Wrap entities in <entities> tags
 
-3. **Reference Parent Entities**: If an entity was already seen in parent sections, USE THE SAME ID
+OUTPUT EXAMPLE:
+<entities>
+Entity: The Waterdeep
+Type: Location
+ID: the_waterdeep
+Aliases: []
 
-4. **Add Aliases, Don't Duplicate**: If a generic term refers to a known entity, add it as an ALIAS instead of creating a new entity
-
-5. **Be Decisive**: Choose the best match and move on. Do not repeatedly reconsider your choices.
-
-6. **STOP WHEN DONE**: After extracting ALL entities, STOP IMMEDIATELY. Do not continue with empty templates.
-
-OUTPUT FORMAT (one entity per block, separate blocks with blank line):
-Entity: [name]
-Type: [Location/Creature/Item/Group]
-ID: [snake_case_id]
-Aliases: [alias1, alias2, alias3]
-
-[Repeat for each entity, then STOP]
+Entity: Goblin Warrior
+Type: Creature
+ID: goblin_warrior
+Aliases: ["goblin soldier"]
+</entities>
 """
 
     @staticmethod

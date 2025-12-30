@@ -1,12 +1,12 @@
 """
 Small Model Processor - Entity-first pipeline for models with limited context (e.g., qwen3-8b).
 
-Uses bidirectional tree traversal:
-1. Top-down: Pass parent entity context to children for better extraction
+Uses pure bottom-up tree traversal:
+1. Bottom-up: Each node extracts entities independently
 2. Bottom-up: Aggregate and resolve entities at each level
 
 Pipeline:
-1. Top-down NER with parent context
+1. Independent NER extraction (no parent context)
 2. Bottom-up entity aggregation and resolution
 3. Relation extraction with known entities
 4. Build spatial graph from relations
@@ -111,7 +111,7 @@ class SmallModelProcessor(BaseLLMProcessor):
         """
         Entity-first pipeline for small models.
 
-        Phase 1: Top-down NER with parent context
+        Phase 1: Independent NER extraction (pure bottom-up)
         Phase 2: Bottom-up aggregation and resolution
         Phase 3: Relation extraction with known entities
         Phase 4: Build spatial graph
@@ -121,11 +121,11 @@ class SmallModelProcessor(BaseLLMProcessor):
         logger.info("=" * 60)
 
         # ====================================================================
-        # Phase 1: Top-down NER with parent context propagation
+        # Phase 1: Independent NER extraction (no parent context)
         # ====================================================================
-        logger.info("Phase 1: Top-down NER with parent context...")
+        logger.info("Phase 1: Independent NER extraction (pure bottom-up)...")
 
-        entity_layers = await self._top_down_ner(shadow_tree)
+        entity_layers = await self._independent_ner(shadow_tree)
 
         total_entities = sum(len(entities) for entities in entity_layers.values())
         logger.info(f"  Extracted {total_entities} raw entities across {len(entity_layers)} nodes")
@@ -151,9 +151,9 @@ class SmallModelProcessor(BaseLLMProcessor):
         self._save_debug("phase2_alias_map", alias_map)
 
         # ====================================================================
-        # Phase 3: Relation extraction with known entities
+        # Phase 3: Relation extraction (pure bottom-up, no parent context)
         # ====================================================================
-        logger.info("Phase 3: Relation extraction with known entities...")
+        logger.info("Phase 3: Relation extraction (pure bottom-up)...")
 
         relations = await self._extract_relations_bidirectional(
             shadow_tree,
@@ -184,71 +184,61 @@ class SmallModelProcessor(BaseLLMProcessor):
         return final_kg.to_dict()
 
     # ========================================================================
-    # Phase 1: Top-down NER with parent context
+    # Phase 1: Independent NER extraction (pure bottom-up)
     # ========================================================================
 
-    async def _top_down_ner(
+    async def _independent_ner(
         self,
-        shadow_tree: list[dict],
-        parent_entities: list[dict] | None = None
+        shadow_tree: list[dict]
     ) -> dict[str, list[dict]]:
         """
-        Top-down traversal: Extract entities with parent context.
+        Bottom-up traversal: Each node extracts entities independently.
 
         For each node:
-        1. Extract entities from this node's content
-        2. Pass parent entities as context (child can reference parent)
-        3. Recurse to children with this node's entities as their parent context
+        1. Extract entities from this node's content only (no parent context)
+        2. Store entities for later aggregation
 
         Returns:
             Dict mapping node_id -> list of extracted entities
         """
         entity_layers = {}
 
-        parent_entities = parent_entities or []
-
         for root in shadow_tree:
-            await self._ner_recursive(root, parent_entities, entity_layers)
+            await self._ner_recursive(root, entity_layers)
 
         return entity_layers
 
     async def _ner_recursive(
         self,
         node: dict,
-        parent_entities: list[dict],
         entity_layers: dict[str, list[dict]]
     ) -> None:
         """
-        Recursively extract entities with parent context.
+        Recursively extract entities independently (no parent context).
         """
         node_id = node.get("id", "unknown")
 
-        # Build parent context string
-        parent_context = self._format_entity_context(parent_entities)
-
-        # Extract entities for this node
-        entities = await self._extract_entities_ner(node, parent_context)
+        # Extract entities for this node (no parent context)
+        entities = await self._extract_entities_ner(node)
 
         entity_layers[node_id] = entities
 
-        logger.debug(f"  NER for {node_id}: {len(entities)} entities (parent context: {len(parent_entities)})")
+        logger.debug(f"  NER for {node_id}: {len(entities)} entities")
 
-        # Recurse to children, passing this node's entities as their parent context
+        # Recurse to children (each extracts independently)
         if node.get("children"):
-            # Merge parent entities with this node's entities for children
-            child_parent_context = parent_entities + entities
             for child in node["children"]:
-                await self._ner_recursive(child, child_parent_context, entity_layers)
+                await self._ner_recursive(child, entity_layers)
 
     async def _extract_entities_ner(
         self,
-        node: dict,
-        parent_context: str
+        node: dict
     ) -> list[dict]:
         """
         Extract entities from a single node using NER.
 
-        Parent context helps child nodes reference entities mentioned in parents.
+        Each node extracts independently - no parent context is passed.
+        Duplicates will be resolved during bottom-up aggregation.
         """
         title = node.get("title", "Untitled")
         content = node.get("content", "")
@@ -267,7 +257,7 @@ class SmallModelProcessor(BaseLLMProcessor):
             prompt = PromptFactory.create_ner_prompt_natural(
                 title=title,
                 content=content,
-                known_entities=parent_context
+                known_entities=None  # No parent context in pure bottom-up
             )
 
             # Use regular LLM call (not JSON)
@@ -280,7 +270,7 @@ class SmallModelProcessor(BaseLLMProcessor):
                 top_p=0.95,
                 max_tokens=self.max_tokens,
                 enable_thinking=False,
-                stop=["\n\nEntity: \n", "\n\nEntity:\n"]  # Stop on empty template
+                stop=["\nEntity: \n", "\nEntity:\n"]  # Stop on empty entity (compact format)
             )
 
             # Parse natural language output
@@ -289,8 +279,8 @@ class SmallModelProcessor(BaseLLMProcessor):
             prompt = PromptFactory.create_ner_prompt(
                 title=title,
                 content=content,
-                parent_context=parent_context,
-                known_entities=parent_context
+                parent_context=None,  # No parent context in pure bottom-up
+                known_entities=None
             )
 
             result = await self._call_llm_json_async(
@@ -303,20 +293,6 @@ class SmallModelProcessor(BaseLLMProcessor):
             )
 
         return result.get("entities", []) if result else []
-
-    def _format_entity_context(self, entities: list[dict]) -> str:
-        """Format entity list as context string for LLM."""
-        if not entities:
-            return "No previously known entities."
-
-        lines = ["Known entities from parent/previous sections:"]
-        for e in entities:
-            eid = e.get("id", "unknown")
-            label = e.get("label", "Unknown")
-            etype = e.get("type", "Entity")
-            lines.append(f"  - [{eid}] {label} ({etype})")
-
-        return "\n".join(lines)
 
     # ========================================================================
     # Phase 2: Bottom-up aggregation and entity resolution
@@ -411,7 +387,7 @@ class SmallModelProcessor(BaseLLMProcessor):
                 top_p=0.95,
                 max_tokens=self.max_tokens,
                 enable_thinking=False,
-                stop=["\n\n -> \n", "\n\n->\n"]  # Stop on empty mapping lines
+                stop=["\n -> \n", "\n->\n"]  # Stop on empty mapping (compact format)
             )
 
             # Parse natural language output
@@ -522,7 +498,7 @@ class SmallModelProcessor(BaseLLMProcessor):
         return alias_map
 
     # ========================================================================
-    # Phase 3: Bidirectional relation extraction
+    # Phase 3: Relation extraction (pure bottom-up, no parent context)
     # ========================================================================
 
     async def _extract_relations_bidirectional(
@@ -532,10 +508,10 @@ class SmallModelProcessor(BaseLLMProcessor):
         alias_map: dict[str, str]
     ) -> dict[str, Any]:
         """
-        Extract relations using bidirectional tree traversal.
+        Extract relations using bottom-up tree traversal.
 
-        Top-down: Parent context helps identify hierarchical relations (part_of)
-        Bottom-up: Child context helps identify composition relations
+        Each node extracts relations independently based on its content.
+        Relations are discovered from the text, not from parent context.
 
         Returns:
             Dict with 'edges' (list of relations)
@@ -549,8 +525,7 @@ class SmallModelProcessor(BaseLLMProcessor):
             edges = await self._extract_relations_recursive(
                 root,
                 entity_map,
-                alias_map,
-                parent_entities=[]
+                alias_map
             )
             all_edges.extend(edges)
 
@@ -563,11 +538,10 @@ class SmallModelProcessor(BaseLLMProcessor):
         self,
         node: dict,
         entity_map: dict[str, dict],
-        alias_map: dict[str, str],
-        parent_entities: list[str]
+        alias_map: dict[str, str]
     ) -> list[dict]:
         """
-        Recursively extract relations with parent/child context.
+        Recursively extract relations independently (no parent context).
         """
         content = node.get("content", "")
 
@@ -578,20 +552,16 @@ class SmallModelProcessor(BaseLLMProcessor):
         edges = await self._extract_relations_for_node(
             node,
             mentioned_entities,
-            entity_map,
-            parent_entities
+            entity_map
         )
 
-        # Recurse to children
+        # Recurse to children (each extracts independently)
         if node.get("children"):
-            # Pass this node's entities as parent context for children
-            child_parent_entities = parent_entities + list(mentioned_entities)
             for child in node["children"]:
                 child_edges = await self._extract_relations_recursive(
                     child,
                     entity_map,
-                    alias_map,
-                    child_parent_entities
+                    alias_map
                 )
                 edges.extend(child_edges)
 
@@ -624,11 +594,12 @@ class SmallModelProcessor(BaseLLMProcessor):
         self,
         node: dict,
         mentioned_entities: set[str],
-        entity_map: dict[str, dict],
-        parent_entities: list[str]
+        entity_map: dict[str, dict]
     ) -> list[dict]:
         """
         Extract relations for a single node.
+
+        Relations are extracted based only on entities mentioned in this node's content.
         """
         if len(mentioned_entities) < 2:
             return []
@@ -645,13 +616,10 @@ class SmallModelProcessor(BaseLLMProcessor):
         if len(content) > 2000:
             content = content[:2000] + "... [truncated]"
 
-        # Build context: mentioned entities + parent entities
-        entity_context = list(mentioned_entities) + parent_entities
-        entity_context = list(set(entity_context))  # Deduplicate
-
+        # Build context: only entities mentioned in this node's content
         entities_text = "\n".join([
             f"- [{eid}] {entity_map[eid].get('label', 'Unknown')} ({entity_map[eid].get('type', 'Entity')})"
-            for eid in entity_context
+            for eid in mentioned_entities
             if eid in entity_map
         ])
 
@@ -673,7 +641,7 @@ class SmallModelProcessor(BaseLLMProcessor):
                 top_p=0.95,
                 max_tokens=self.max_tokens,
                 enable_thinking=False,
-                stop=["\n\nRelation: \n", "\n\nRelation:\n"]  # Stop on empty relation template
+                stop=["\nRelation: \n", "\nRelation:\n"]  # Stop on empty relation (compact format)
             )
 
             # Parse natural language output

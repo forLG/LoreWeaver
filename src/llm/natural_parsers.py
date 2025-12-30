@@ -12,12 +12,11 @@ def parse_ner_entities(text: str) -> dict[str, Any]:
     """
     Parse natural language entity extraction output.
 
-    Expected format:
+    Expected format (compact, no blank lines):
         Entity: Dragon's Rest
         Type: Location
         ID: dragon_s_rest
         Aliases: temple, monastery
-
         Entity: Runara
         Type: Creature
         ID: runara
@@ -29,57 +28,59 @@ def parse_ner_entities(text: str) -> dict[str, Any]:
     entities = []
     current = {}
 
-    # Split by double newlines (entity blocks)
-    blocks = re.split(r'\n\s*\n', text.strip())
-
-    for block in blocks:
-        if not block.strip():
+    for line in text.strip().split('\n'):
+        line = line.strip()
+        if not line:
             continue
 
-        current = {}
-        lines = block.strip().split('\n')
+        # Check if this is a new entity block
+        if line.lower().startswith('entity:'):
+            # Save previous entity if valid
+            label = current.get('label', '').strip()
+            eid = current.get('id', '').strip()
 
-        for line in lines:
-            line = line.strip()
-            if not line:
-                continue
+            if label or eid:
+                if not eid:
+                    eid = label.lower().replace(' ', '_').replace("'", "")
+                    current['id'] = eid
+                if 'type' not in current:
+                    current['type'] = 'Entity'
+                if 'aliases' not in current:
+                    current['aliases'] = []
+                entities.append(current)
 
-            # Parse key: value pairs
-            if ':' in line:
-                key, value = line.split(':', 1)
-                key = key.strip().lower()
-                value = value.strip()
+            # Start new entity
+            current = {}
 
-                if key == 'entity':
-                    current['label'] = value
-                elif key == 'type':
-                    current['type'] = value
-                elif key == 'id':
-                    current['id'] = value
-                elif key == 'aliases':
-                    # Split by comma, strip whitespace
-                    aliases = [a.strip() for a in value.split(',') if a.strip()]
-                    current['aliases'] = aliases
+        # Parse key: value pairs
+        if ':' in line:
+            key, value = line.split(':', 1)
+            key = key.strip().lower()
+            value = value.strip()
 
-        # Only add if we have at least a non-empty ID or label
-        label = current.get('label', '').strip()
-        eid = current.get('id', '').strip()
+            if key == 'entity':
+                current['label'] = value
+            elif key == 'type':
+                current['type'] = value
+            elif key == 'id':
+                current['id'] = value
+            elif key == 'aliases':
+                # Split by comma, strip whitespace
+                aliases = [a.strip() for a in value.split(',') if a.strip()]
+                current['aliases'] = aliases
 
-        if label or eid:
-            # Generate ID if missing
-            if not eid:
-                eid = label.lower().replace(' ', '_').replace("'", "")
-                current['id'] = eid
-
-            # Ensure type has a default
-            if 'type' not in current:
-                current['type'] = 'Entity'
-
-            # Ensure aliases exists
-            if 'aliases' not in current:
-                current['aliases'] = []
-
-            entities.append(current)
+    # Don't forget the last entity
+    label = current.get('label', '').strip()
+    eid = current.get('id', '').strip()
+    if label or eid:
+        if not eid:
+            eid = label.lower().replace(' ', '_').replace("'", "")
+            current['id'] = eid
+        if 'type' not in current:
+            current['type'] = 'Entity'
+        if 'aliases' not in current:
+            current['aliases'] = []
+        entities.append(current)
 
     return {"entities": entities}
 

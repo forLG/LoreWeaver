@@ -17,11 +17,21 @@ def parse_ner_entities(text: str) -> dict[str, Any]:
         Entity: Dragon's Rest
         Type: Location
         ID: dragon_s_rest
+        LocationType: building
+        IsGeneric: false
         Aliases: temple, monastery
         Entity: Runara
         Type: Creature
         ID: runara
+        CreatureType: dragon
+        IsGeneric: false
         Aliases: bronze dragon, elder
+        Entity: Zombies in Ship
+        Type: Creature
+        ID: zombies_in_ship
+        CreatureType: undead
+        IsGeneric: true
+        Aliases: zombies
         </entities>
 
     Or if no entities found:
@@ -65,6 +75,9 @@ def parse_ner_entities(text: str) -> dict[str, Any]:
                     current['type'] = 'Entity'
                 if 'aliases' not in current:
                     current['aliases'] = []
+                # Set defaults for new semantic fields
+                if 'is_generic' not in current:
+                    current['is_generic'] = False
                 entities.append(current)
 
             # Start new entity
@@ -86,6 +99,13 @@ def parse_ner_entities(text: str) -> dict[str, Any]:
                 # Split by comma, strip whitespace
                 aliases = [a.strip() for a in value.split(',') if a.strip()]
                 current['aliases'] = aliases
+            elif key == 'locationtype':
+                current['location_type'] = value
+            elif key == 'creaturetype':
+                current['creature_type'] = value
+            elif key == 'isgeneric':
+                # Parse boolean
+                current['is_generic'] = value.lower() in ('true', 'yes', '1')
 
     # Don't forget the last entity
     label = current.get('label', '').strip()
@@ -98,6 +118,9 @@ def parse_ner_entities(text: str) -> dict[str, Any]:
             current['type'] = 'Entity'
         if 'aliases' not in current:
             current['aliases'] = []
+        # Set defaults for new semantic fields
+        if 'is_generic' not in current:
+            current['is_generic'] = False
         entities.append(current)
 
     return {"entities": entities, "summary": None}

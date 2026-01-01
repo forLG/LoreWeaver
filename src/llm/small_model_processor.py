@@ -185,6 +185,29 @@ class SmallModelProcessor(BaseLLMProcessor):
         logger.info(f"  After filtering and merging: {len(meaningful_entities)} meaningful entities")
 
         # ====================================================================
+        # Phase 2.5: Location hierarchy extraction
+        # ====================================================================
+        logger.info("Phase 2.5: Extracting location hierarchies...")
+
+        location_entities = [e for e in meaningful_entities if e.get("type") == "Location"]
+        hierarchy_edges = await self._extract_location_hierarchies(shadow_tree, location_entities)
+        logger.info(f"  Extracted {len(hierarchy_edges)} location hierarchy edges")
+
+        # Save location hierarchies for debugging
+        self._save_debug("phase2_5_location_hierarchies", hierarchy_edges)
+
+        # ====================================================================
+        # Phase 2.6: Semantic relation extraction
+        # ====================================================================
+        logger.info("Phase 2.6: Extracting semantic relations...")
+
+        semantic_edges = await self._extract_semantic_relations(shadow_tree, meaningful_entities, id_mapping)
+        logger.info(f"  Extracted {len(semantic_edges)} semantic relation edges")
+
+        # Save semantic relations for debugging
+        self._save_debug("phase2_6_semantic_relations", semantic_edges)
+
+        # ====================================================================
         # Phase 3: Event processing and edge generation
         # ====================================================================
         logger.info("Phase 3: Processing events and generating edges...")
@@ -206,6 +229,15 @@ class SmallModelProcessor(BaseLLMProcessor):
 
         logger.info(f"  Valid events after ID update: {len(valid_events)}")
         logger.info(f"  Generated {len(edges)} edges from events")
+
+        # Add hierarchy and semantic edges to the edge list
+        edges.extend(hierarchy_edges)
+        edges.extend(semantic_edges)
+
+        # Deduplicate all edges
+        edges = self._deduplicate_edges(edges)
+
+        logger.info(f"  Total edges after adding hierarchies and semantic relations: {len(edges)}")
 
         # ====================================================================
         # Phase 4: Build and validate unified heterogeneous graph
@@ -1000,10 +1032,7 @@ class SmallModelProcessor(BaseLLMProcessor):
         max_len = max(len(norm1), len(norm2))
 
         # Allow up to 20% difference (e.g., 2 chars in a 10-char string)
-        if distance <= 2 or (distance / max_len) <= 0.2:
-            return True
-
-        return False
+        return bool(distance <= 2 or (distance / max_len) <= 0.2)
 
     def _levenshtein_distance(self, s1: str, s2: str) -> int:
         """Calculate Levenshtein distance between two strings."""
@@ -1151,7 +1180,6 @@ class SmallModelProcessor(BaseLLMProcessor):
         entity_groups = {}
 
         for canonical_entity in meaningful_entities:
-            canonical_id = canonical_entity.get("id", "")
             canonical_label = canonical_entity.get("label", "")
 
             # Create normalized key for grouping
@@ -1326,6 +1354,225 @@ class SmallModelProcessor(BaseLLMProcessor):
             })
 
         return edges
+
+    # ========================================================================
+    # Location Hierarchy Extraction
+    # ========================================================================
+
+    async def _extract_location_hierarchies(
+        self,
+        shadow_tree: list[dict],
+        location_entities: list[dict]
+    ) -> list[dict]:
+        """
+        Extract location hierarchy (part_of) relationships.
+
+        For each node, extract which locations contain other locations.
+        """
+        if not location_entities:
+            return []
+
+        all_edges = []
+        entity_map = {e["id"]: e for e in location_entities}
+
+        for root in shadow_tree:
+            edges = await self._extract_hierarchies_recursive(root, entity_map)
+            all_edges.extend(edges)
+
+        # Deduplicate edges
+        return self._deduplicate_edges(all_edges)
+
+    async def _extract_hierarchies_recursive(
+        self,
+        node: dict,
+        entity_map: dict[str, dict]
+    ) -> list[dict]:
+        """Recursively extract location hierarchies."""
+        content = node.get("content", "")
+
+        # Skip empty content
+        if not content or not content.strip():
+            hierarchy_edges = []
+        else:
+            # Find locations mentioned in this node
+            mentioned_locations = self._find_mentioned_entities(content, entity_map)
+
+            # Only extract hierarchies if we have 2+ locations
+            if len(mentioned_locations) >= 2:
+                hierarchy_edges = await self._extract_hierarchy_for_node(
+                    node, mentioned_locations, entity_map
+                )
+            else:
+                hierarchy_edges = []
+
+        # Recurse to children
+        if node.get("children"):
+            for child in node["children"]:
+                child_edges = await self._extract_hierarchies_recursive(child, entity_map)
+                hierarchy_edges.extend(child_edges)
+
+        return hierarchy_edges
+
+    async def _extract_hierarchy_for_node(
+        self,
+        node: dict,
+        mentioned_locations: set[str],
+        entity_map: dict[str, dict]
+    ) -> list[dict]:
+        """Extract hierarchy relationships for a single node."""
+        title = node.get("title", "")
+        content = node.get("content", "")
+
+        # Truncate content
+        if len(content) > 2000:
+            content = content[:2000] + "... [truncated]"
+
+        # Build context: only locations mentioned in this node's content
+        locations_text = "\n".join([
+            f"- [{lid}] {entity_map[lid].get('label', 'Unknown')} ({entity_map[lid].get('location_type', 'Location')})"
+            for lid in mentioned_locations
+            if lid in entity_map and entity_map[lid].get("type") == "Location"
+        ])
+
+        if not locations_text.strip():
+            return []
+
+        # Use hierarchy extraction prompt
+        prompt = PromptFactory.create_location_hierarchy_prompt_natural(
+            title=title,
+            content=content,
+            locations_text=locations_text
+        )
+
+        raw_response = await self._call_llm_async(
+            prompt,
+            temperature=0.7,
+            top_p=0.90,
+            max_tokens=self.max_tokens,
+            enable_thinking=False,
+            stop=[]
+        )
+
+        # Parse natural language output
+        from llm.natural_parsers import parse_relations
+        result = parse_relations(raw_response)
+
+        return result.get("relations", []) if result else []
+
+    # ========================================================================
+    # Semantic Relation Extraction
+    # ========================================================================
+
+    async def _extract_semantic_relations(
+        self,
+        shadow_tree: list[dict],
+        entities: list[dict],
+        id_mapping: dict[str, str]
+    ) -> list[dict]:
+        """
+        Extract semantic relationships between entities.
+
+        Extracts domain-specific relations like inhabits, guards, patrols,
+        wields, hidden_at, unlocks, etc.
+        """
+        if not entities:
+            return []
+
+        all_edges = []
+        entity_map = {e["id"]: e for e in entities}
+
+        for root in shadow_tree:
+            edges = await self._extract_semantic_relations_recursive(root, entity_map, id_mapping)
+            all_edges.extend(edges)
+
+        # Deduplicate edges
+        unique_edges = self._deduplicate_edges(all_edges)
+
+        # Update entity IDs using id_mapping
+        updated_edges = self._update_relation_ids(unique_edges, id_mapping)
+
+        return updated_edges
+
+    async def _extract_semantic_relations_recursive(
+        self,
+        node: dict,
+        entity_map: dict[str, dict],
+        id_mapping: dict[str, str]
+    ) -> list[dict]:
+        """Recursively extract semantic relations."""
+        content = node.get("content", "")
+
+        # Skip empty content
+        if not content or not content.strip():
+            semantic_edges = []
+        else:
+            # Find entities mentioned in this node
+            mentioned_entities = self._find_mentioned_entities(content, entity_map)
+
+            # Only extract relations if we have 2+ entities
+            if len(mentioned_entities) >= 2:
+                semantic_edges = await self._extract_semantic_relations_for_node(
+                    node, mentioned_entities, entity_map
+                )
+            else:
+                semantic_edges = []
+
+        # Recurse to children
+        if node.get("children"):
+            for child in node["children"]:
+                child_edges = await self._extract_semantic_relations_recursive(
+                    child, entity_map, id_mapping
+                )
+                semantic_edges.extend(child_edges)
+
+        return semantic_edges
+
+    async def _extract_semantic_relations_for_node(
+        self,
+        node: dict,
+        mentioned_entities: set[str],
+        entity_map: dict[str, dict]
+    ) -> list[dict]:
+        """Extract semantic relations for a single node."""
+        title = node.get("title", "")
+        content = node.get("content", "")
+
+        # Skip if content is empty or just whitespace
+        if not content or not content.strip():
+            return []
+
+        # Truncate content
+        if len(content) > 2000:
+            content = content[:2000] + "... [truncated]"
+
+        # Build context: only entities mentioned in this node's content
+        entities_text = "\n".join([
+            f"- [{eid}] {entity_map[eid].get('label', 'Unknown')} ({entity_map[eid].get('type', 'Entity')})"
+            for eid in mentioned_entities
+            if eid in entity_map
+        ])
+
+        # Use semantic relation extraction prompt
+        prompt = PromptFactory.create_semantic_relation_prompt_natural(
+            title=title,
+            content=content,
+            entities_text=entities_text
+        )
+
+        raw_response = await self._call_llm_async(
+            prompt,
+            temperature=0.7,
+            top_p=0.90,
+            max_tokens=self.max_tokens,
+            enable_thinking=False,
+            stop=["\nRelation: \n", "\nRelation:\n"]
+        )
+
+        # Parse natural language output
+        from llm.natural_parsers import parse_relations
+        result = parse_relations(raw_response)
+
+        return result.get("relations", []) if result else []
 
 # ========================================================================
 # Graph Filtering Utilities (for heterogeneous graphs)

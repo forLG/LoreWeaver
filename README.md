@@ -42,13 +42,13 @@ python -m main --stage entity --model deepseek-chat
 #### Qwen3 8B
 
 ```bash
-python -m src.main --stage all --multi-pass --max-concurrent 50 --output-dir output/qwen3
+python -m src.main --stage all --max-concurrent 50 --output-dir output/qwen3
 ```
 max output token is 32768 for Qwen3-8B, context window is 
 
 ### Graph Building & Visualization
 
-#### Data Flow
+<!-- #### Data Flow
 
 ```
                     ┌─────────────────────────────────────────┐
@@ -103,4 +103,4 @@ Edit `config_neo4j.py`:
 NEO4J_URI = "bolt://localhost:7687"
 NEO4J_USER = "neo4j"
 NEO4J_PASSWORD = "your_password"  # Change this
-```
+``` -->

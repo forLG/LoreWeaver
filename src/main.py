@@ -56,17 +56,21 @@ def get_default_concurrency():
     Sensible default based on model or environment.
     Local vLLM deployments need lower concurrency than cloud APIs.
     """
-    model = os.getenv('LLM_MODEL', 'gpt-4o').lower()
+    model = os.getenv('LLM_MODEL', 'deepseek').lower()
     env_concurrency = os.getenv('LLM_MAX_CONCURRENT')
+    logger.debug(f"Auto-detecting concurrency for model: {model}")
+    logger.debug(f"Environment concurrency override: {env_concurrency}")
     if env_concurrency:
         try:
             return int(env_concurrency)
         except ValueError:
             pass
+    logger.info("Using conservative defaults based on model type")
     # Conservative defaults for local/vLLM deployments
-    if any(x in model for x in ['qwen', 'llama', 'mistral', 'local', 'deepseek']):
-        return 5  # Very conservative for local models
-    return 10  # Still conservative for self-hosted
+    if any(x in model for x in ['qwen', 'local']):
+        # Very conservative for local models
+        return 5
+    return 50
 
 
 def parse_args():
@@ -104,12 +108,12 @@ def parse_args():
     )
     parser.add_argument(
         '--base-url',
-        default=os.getenv('OPENAI_BASE_URL', 'https://api.openai.com/v1'),
+        default=os.getenv('OPENAI_BASE_URL', 'https://api.deepseek.com/v1'),
         help='LLM base URL (default: from OPENAI_BASE_URL env var)'
     )
     parser.add_argument(
         '--model',
-        default=os.getenv('LLM_MODEL', 'gpt-4o'),
+        default=os.getenv('LLM_MODEL', 'deepseek-chat'),
         help='LLM model (default: from LLM_MODEL env var)'
     )
 
@@ -177,7 +181,7 @@ class Pipeline:
             )
 
         # Log model and processor selection
-        is_small_model = any(x in self.args.model.lower() for x in ['qwen', 'llama', 'mistral'])
+        is_small_model = any(x in self.args.model.lower() for x in ['qwen', 'local'])
         logger.info(f"Model: {self.args.model}")
         if is_small_model:
             logger.info("Processor: SmallModelProcessor (entity-first pipeline)")
@@ -192,14 +196,23 @@ class Pipeline:
     def run(self):
         """Run the pipeline with specified stages."""
         stages = self.args.stage or ['all']
+        is_small_model = any(x in self.args.model.lower() for x in ['qwen', 'local'])
 
         if 'all' in stages:
             self._run_stage('shadow')
             self._run_stage('spatial')
+            if is_small_model:
+                # Small models use unified pipeline, skip these stages
+                # historically we call it "spatial stage"
+                logger.info("Skipping section-map and entity stages for small model pipeline")
+                return
             self._run_stage('section-map')
             self._run_stage('entity')
         else:
             for stage in stages:
+                if is_small_model and stage in ['section-map', 'entity']:
+                    logger.info(f"Skipping stage {stage} for small model pipeline")
+                    continue
                 self._run_stage(stage)
 
     def _run_stage(self, stage: str):
@@ -266,7 +279,7 @@ class Pipeline:
             logger.info("Found intermediate file, skipping summarization...")
 
         # Choose processor based on model size
-        is_small_model = any(x in self.args.model.lower() for x in ['qwen', 'llama', 'mistral'])
+        is_small_model = any(x in self.args.model.lower() for x in ['qwen', 'local'])
 
         if is_small_model:
             # Use unified entity+event pipeline for small models

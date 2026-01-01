@@ -24,7 +24,7 @@ except ImportError as e:
 
 def load_relations(filepath: str | Path) -> list[dict]:
     """Load relations from JSON file."""
-    with open(filepath, 'r', encoding='utf-8') as f:
+    with open(filepath, encoding='utf-8') as f:
         return json.load(f)
 
 
@@ -272,7 +272,7 @@ def print_statistics(relations: list[dict], G: nx.DiGraph) -> None:
     # Graph properties
     print("\n--- Graph Properties ---")
     if nx.is_weakly_connected(G):
-        print(f"  Weakly connected: Yes")
+        print("  Weakly connected: Yes")
         print(f"  Diameter: {nx.diameter(G.to_undirected())}")
     else:
         components = list(nx.weakly_connected_components(G))
@@ -357,7 +357,7 @@ Examples:
         print_statistics(relations, G)
 
     # Create visualization
-    print(f"\nCreating visualization...")
+    print("\nCreating visualization...")
     create_pyvis_graph(G, args.output, args.height, args.width)
 
     print(f"\nDone! Open {args.output} in your browser to view the graph.")

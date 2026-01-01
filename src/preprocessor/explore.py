@@ -20,7 +20,7 @@ class AdventureExplorer:
             parsed_data: Either the parsed dict or path to adventure-dosi-parsed.json
         """
         if isinstance(parsed_data, str):
-            with open(parsed_data, 'r', encoding='utf-8') as f:
+            with open(parsed_data, encoding='utf-8') as f:
                 self.data = json.load(f)
         else:
             self.data = parsed_data
@@ -49,7 +49,7 @@ class AdventureExplorer:
         entities = defaultdict(lambda: {"name": None, "mention_count": 0, "locations": []})
 
         for ref in refs:
-            _, identifier, source_id, raw, display_name = ref
+            _, identifier, source_id, _raw, display_name = ref
             entities[identifier]["name"] = display_name
             entities[identifier]["mention_count"] += 1
             entities[identifier]["identifier"] = identifier
@@ -57,7 +57,7 @@ class AdventureExplorer:
 
         # Convert to list and sort by mention count
         result = []
-        for identifier, info in entities.items():
+        for _identifier, info in entities.items():
             info["locations"] = list(set(info["locations"]))  # Dedupe
             result.append(info)
 
@@ -206,7 +206,7 @@ class AdventureExplorer:
         print(f"\nTotal structural nodes: {stats.get('total_nodes', 0)}")
         print(f"Total external references: {stats.get('total_external_refs', 0)}")
 
-        print(f"\nEntity breakdown:")
+        print("\nEntity breakdown:")
         for entity_type, count in stats.get('entity_breakdown', {}).items():
             print(f"  @{entity_type}: {count}")
 
@@ -217,7 +217,7 @@ class AdventureExplorer:
         for section in self.internal_index.values():
             type_counts[section['type']] += 1
 
-        print(f"\nSection types:")
+        print("\nSection types:")
         for section_type, count in sorted(type_counts.items()):
             print(f"  {section_type}: {count}")
 

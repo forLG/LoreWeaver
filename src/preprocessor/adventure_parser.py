@@ -19,7 +19,6 @@ import json
 import re
 from collections import defaultdict
 from dataclasses import dataclass, field
-from typing import Any
 
 
 @dataclass
@@ -95,7 +94,7 @@ class AdventureParser:
     # STAGE 1: Internal Index
     # ========================================================================
 
-    def _build_internal_index(self, entries: list, parent_id: str = None, depth: int = 0) -> None:
+    def _build_internal_index(self, entries: list, parent_id: str | None = None, depth: int = 0) -> None:
         """
         Stage 1: Recursively build index of all structural nodes.
 
@@ -316,10 +315,7 @@ class AdventureParser:
                 attrs = link["attrs"]
 
                 # Build identifier
-                if entity_type == "creature" and attrs:
-                    source = attrs[0]
-                    identifier = f"{display_name}|{source}"
-                elif entity_type in {"item", "spell"} and attrs:
+                if (entity_type == "creature" and attrs) or (entity_type in {"item", "spell"} and attrs):
                     source = attrs[0]
                     identifier = f"{display_name}|{source}"
                 else:
@@ -378,7 +374,7 @@ class AdventureParser:
         return dict(sorted(breakdown.items(), key=lambda x: x[1], reverse=True))
 
 
-def parse_adventure(file_path: str, output_path: str = None) -> dict:
+def parse_adventure(file_path: str, output_path: str | None = None) -> dict:
     """
     Convenience function: Parse adventure JSON file.
 
@@ -389,7 +385,7 @@ def parse_adventure(file_path: str, output_path: str = None) -> dict:
     Returns:
         Same as AdventureParser.parse()
     """
-    with open(file_path, 'r', encoding='utf-8') as f:
+    with open(file_path, encoding='utf-8') as f:
         data = json.load(f)
 
     parser = AdventureParser()

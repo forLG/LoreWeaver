@@ -11,7 +11,6 @@ Example:
     python tests/test_entity_detection.py output/deepseek/entity_graph.json tests/samples/Stormwreck_isle.txt
 """
 import argparse
-import json
 import re
 import sys
 from pathlib import Path
@@ -27,7 +26,7 @@ def load_entities_from_file(file_path: str) -> list[str]:
     Returns:
         List of entity names (non-empty lines)
     """
-    with open(file_path, 'r', encoding='utf-8') as f:
+    with open(file_path, encoding='utf-8') as f:
         lines = f.readlines()
 
     entities = []
@@ -51,7 +50,7 @@ def find_entities_in_json(file_path: str, search_terms: list[str]) -> dict[str, 
     Returns:
         Dict mapping each search term to list of matches found
     """
-    with open(file_path, 'r', encoding='utf-8') as f:
+    with open(file_path, encoding='utf-8') as f:
         content = f.read()
 
     results = {}
@@ -118,7 +117,7 @@ def main():
             print(f"[+] FOUND: '{term}' - {len(matches)} occurrence(s)")
             if args.verbose:
                 # Show some context around matches
-                with open(json_path, 'r', encoding='utf-8') as f:
+                with open(json_path, encoding='utf-8') as f:
                     content = f.read()
                 pattern = re.compile(re.escape(term), re.IGNORECASE)
                 for match in pattern.finditer(content):

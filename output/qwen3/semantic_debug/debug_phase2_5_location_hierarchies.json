@@ -1,542 +1,272 @@
 [
   {
     "relation": "part_of",
-    "source": "cloister",
-    "target": "stormwreck_isle",
-    "desc": "Ancient cloister where dragons once clashed"
+    "source": "Stormwreck_Isle",
+    "target": "Sword_Coast",
+    "desc": "Small island in the Sword Coast region"
   },
   {
     "relation": "part_of",
-    "source": "vent",
-    "target": "stormwreck_isle",
-    "desc": "Submerged vent linked to Sharruth's imprisonment"
+    "source": "Neverwinter",
+    "target": "Sword_Coast",
+    "desc": "Renowned bastion of civilization in the Sword Coast region"
   },
   {
     "relation": "part_of",
-    "source": "vent",
+    "source": "hot_spring",
     "target": "cloister",
-    "desc": "Vent in cloister"
+    "desc": "Magical hot spring in cloister"
   },
   {
     "relation": "part_of",
-    "source": "cloister",
-    "target": "dragon_s_rest",
-    "desc": "Cloister named Dragon's Rest"
+    "source": "area_C9",
+    "target": "shipwreck",
+    "desc": "Ship's hold in shipwreck"
   },
   {
     "relation": "part_of",
-    "source": "vent",
-    "target": "dragon_s_rest",
-    "desc": "Unknown vent in Dragon's Rest"
+    "source": "blue_dragon_lair",
+    "target": "clifftop_observatory",
+    "desc": "Blue dragon's lair in observatory"
   },
   {
     "relation": "part_of",
-    "source": "harbor",
-    "target": "island",
-    "desc": "Harbor on the island"
-  },
-  {
-    "relation": "part_of",
-    "source": "dragon_s_rest",
-    "target": "island",
-    "desc": "Large open-air temple on the island"
-  },
-  {
-    "relation": "part_of",
-    "source": "doorways",
-    "target": "dragon_s_rest",
-    "desc": "Doorways cut into the rock along the path to the temple"
-  },
-  {
-    "relation": "part_of",
-    "source": "statue",
-    "target": "dragon_s_rest",
-    "desc": "Towering statue at the center of the temple"
+    "source": "path",
+    "target": "temple_at_a5",
+    "desc": "Long path winding up cliff to temple"
   },
   {
     "relation": "part_of",
     "source": "dock",
     "target": "harbor",
-    "desc": "Rickety dock at the harbor"
+    "desc": "Dock situated at harbor mouth"
   },
   {
     "relation": "part_of",
-    "source": "monastic_cells_A1",
+    "source": "path",
+    "target": "dragon_rest",
+    "desc": "Path leading toward Dragon's Rest"
+  },
+  {
+    "relation": "part_of",
+    "source": "cloister_quest",
     "target": "cloister",
-    "desc": "Monastic cells within cloister"
+    "desc": "Cloister Quests involving the cloister building"
   },
   {
     "relation": "part_of",
-    "source": "dining_room_A3",
+    "source": "monastic_cells",
     "target": "cloister",
-    "desc": "Dining room within cloister"
+    "desc": "Monastic cells (area A1) within cloister"
   },
   {
     "relation": "part_of",
-    "source": "temple_A5",
+    "source": "temple",
     "target": "cloister",
-    "desc": "Temple within cloister"
+    "desc": "Temple (area A5) within cloister"
   },
   {
     "relation": "part_of",
-    "source": "tunnel",
-    "target": "cave",
-    "desc": "Undersea tunnel leading to hidden lair"
+    "source": "dining_room",
+    "target": "cloister",
+    "desc": "Dining room (area A3) within cloister"
   },
   {
     "relation": "part_of",
-    "source": "lair",
-    "target": "cave",
-    "desc": "Secret dwelling within the cave"
-  },
-  {
-    "relation": "part_of",
-    "source": "kitchen",
+    "source": "cloister",
     "target": "dragon_s_rest",
-    "desc": "Kitchen at Dragon's Rest"
+    "desc": "Cloister within Dragon's Rest"
   },
   {
     "relation": "part_of",
     "source": "library",
     "target": "cloister",
-    "desc": "Cloister library within cloister"
+    "desc": "Spacious library within cloister"
   },
   {
     "relation": "part_of",
     "source": "cloister",
-    "target": "temple",
-    "desc": "Cloister within temple"
+    "target": "temple_at_a5",
+    "desc": "Cloister within the temple"
+  },
+  {
+    "relation": "part_of",
+    "source": "temple_at_a5",
+    "target": "cloister",
+    "desc": "Varnoth maintains the temple within the cloister"
+  },
+  {
+    "relation": "part_of",
+    "source": "garden_plot",
+    "target": "path",
+    "desc": "Well-tended garden plots along the lower path"
+  },
+  {
+    "relation": "part_of",
+    "source": "dragon_statue",
+    "target": "plaza",
+    "desc": "Dragon statue in the central plaza"
+  },
+  {
+    "relation": "part_of",
+    "source": "doorway",
+    "target": "area_C9",
+    "desc": "Open doorways in the cliff-side leading to the hold"
+  },
+  {
+    "relation": "part_of",
+    "source": "cloister_library",
+    "target": "cloister",
+    "desc": "Cloister library within cloister building"
+  },
+  {
+    "relation": "part_of",
+    "source": "[star_in_circle_symbol]",
+    "target": "[temple_at_a5]",
+    "desc": "Star-in-a-circle symbol representing the statue"
+  },
+  {
+    "relation": "part_of",
+    "source": "[depressions_in_pedestal]",
+    "target": "[temple_at_a5]",
+    "desc": "Depressions in the pedestal holding incense offerings"
+  },
+  {
+    "relation": "part_of",
+    "source": "[runara_residence]",
+    "target": "[cloister]",
+    "desc": "Runara lives in the cloister"
+  },
+  {
+    "relation": "part_of",
+    "source": "[varnath_and_kobold_r_ix]",
+    "target": "[cloister]",
+    "desc": "Residents of the cloister assisting Runara"
   },
   {
     "relation": "part_of",
     "source": "statue",
-    "target": "temple",
-    "desc": "Statue in temple"
+    "target": "temple_at_a5",
+    "desc": "Central stone statue in temple"
   },
   {
     "relation": "part_of",
-    "source": "pedestal",
-    "target": "statue",
-    "desc": "Pedestal supporting statue"
+    "source": "path",
+    "target": "cloister",
+    "desc": "Path near cloister (implied by contextual references to zombies on the beach)"
   },
   {
     "relation": "part_of",
-    "source": "depressions",
-    "target": "pedestal",
-    "desc": "Offerings holders in pedestal"
+    "source": "temple_at_a5",
+    "target": "area_A5",
+    "desc": "Temple located in area A5"
   },
   {
     "relation": "part_of",
-    "source": "cloister",
-    "target": "???",
-    "desc": "Cloister connected to Shipwreck (implied by Runara’s directive to investigate wrecked ship)"
+    "source": "area_C9",
+    "target": "CompassRoseWreck",
+    "desc": "The hold is part of the shipwreck"
   },
   {
     "relation": "part_of",
-    "source": "vent",
-    "target": "tunnel",
-    "desc": "Hidden vent accessed via subterranean pathways"
+    "source": "harpy",
+    "target": "CompassRoseWreck",
+    "desc": "Harpy resides in the shipwreck"
   },
   {
     "relation": "part_of",
-    "source": "vent",
-    "target": "seagrow_caves",
-    "desc": "Vent in Seagrow Caves"
+    "source": "talisman",
+    "target": "area_C9",
+    "desc": "Cursed talisman is in the hold"
   },
   {
     "relation": "part_of",
-    "source": "seagrow_caves",
-    "target": "stormwreck_isle",
-    "desc": "Seagrow Caves on Stormwreck Isle"
-  },
-  {
-    "relation": "part_of",
-    "source": "vent",
-    "target": "submerged_hold",
-    "desc": "Vent in submerged hold"
-  },
-  {
-    "relation": "part_of",
-    "source": "tunnel",
-    "target": "unknown_area",
-    "desc": "Tunnel in unmarked area"
-  },
-  {
-    "relation": "part_of",
-    "source": "submerged_hold",
-    "target": "Compass_Rose",
-    "desc": "Cursed talisman in ship's hold"
+    "source": "CompassRoseWreck",
+    "target": "StormwreckIsle",
+    "desc": "Shipwreck lies on the shoal of Stormwreck Isle"
   },
   {
     "relation": "part_of",
     "source": "cloister",
-    "target": "Dragon_s_Rest",
-    "desc": "Zombies menace inhabitants of Dragon's Rest"
+    "target": "DragonRest",
+    "desc": "Cloister is part of Dragon's Rest settlement"
   },
   {
     "relation": "part_of",
-    "source": "submerged_hold",
-    "target": "compass_rose_ship",
-    "desc": "Submerged hold in Compass Rose ship"
-  },
-  {
-    "relation": "part_of",
-    "source": "ship_deck",
-    "target": "deck_room",
-    "desc": "Ship deck in deck room"
-  },
-  {
-    "relation": "part_of",
-    "source": "submerged_hold",
-    "target": "wreck",
-    "desc": "Submerged hold within wreck"
-  },
-  {
-    "relation": "part_of",
-    "source": "upper_deck",
-    "target": "wreck",
-    "desc": "Upper deck within wreck"
-  },
-  {
-    "relation": "part_of",
-    "source": "main_deck",
-    "target": "wreck",
-    "desc": "Main deck within wreck"
-  },
-  {
-    "relation": "part_of",
-    "source": "lower_deck",
-    "target": "wreck",
-    "desc": "Lower deck within wreck"
+    "source": "area_C9",
+    "target": "compass_rose_wreck_building",
+    "desc": "Hold area within shipwreck"
   },
   {
     "relation": "part_of",
     "source": "walls",
-    "target": "upper_deck",
-    "desc": "Soggy wood walls in upper deck"
-  },
-  {
-    "relation": "part_of",
-    "source": "walls",
-    "target": "main_deck",
-    "desc": "Soggy wood walls in main deck"
-  },
-  {
-    "relation": "part_of",
-    "source": "walls",
-    "target": "lower_deck",
-    "desc": "Soggy wood walls in lower deck"
+    "target": "compass_rose_wreck_building",
+    "desc": "Soggy wooden walls of the shipwreck"
   },
   {
     "relation": "part_of",
     "source": "ceilings",
-    "target": "upper_deck",
-    "desc": "High ceilings in upper deck"
-  },
-  {
-    "relation": "part_of",
-    "source": "ceilings",
-    "target": "main_deck",
-    "desc": "High ceilings in main deck"
-  },
-  {
-    "relation": "part_of",
-    "source": "ceilings",
-    "target": "lower_deck",
-    "desc": "High ceilings in lower deck"
+    "target": "compass_rose_wreck_building",
+    "desc": "High ceilings of the shipwreck"
   },
   {
     "relation": "part_of",
     "source": "doors",
-    "target": "upper_deck",
-    "desc": "Waterlogged doors in upper deck"
+    "target": "compass_rose_wreck_building",
+    "desc": "Waterlogged doors of the shipwreck"
   },
   {
     "relation": "part_of",
-    "source": "doors",
-    "target": "main_deck",
-    "desc": "Waterlogged doors in main deck"
-  },
-  {
-    "relation": "part_of",
-    "source": "doors",
-    "target": "lower_deck",
-    "desc": "Waterlogged doors in lower deck"
-  },
-  {
-    "relation": "part_of",
-    "source": "vision_and_light",
-    "target": "lower_deck",
-    "desc": "Vision and Light in lower deck"
-  },
-  {
-    "relation": "part_of",
-    "source": "vision_and_light",
-    "target": "hold",
-    "desc": "Vision and Light in hold (implied connection to submerged_hold)"
-  },
-  {
-    "relation": "part_of",
-    "source": "main_deck_C1",
-    "target": "compass_rose_wreck",
-    "desc": "Main deck of Compass Rose wreck"
-  },
-  {
-    "relation": "part_of",
-    "source": "hold_C9",
-    "target": "compass_rose_wreck",
-    "desc": "Hold of Compass Rose wreck"
-  },
-  {
-    "relation": "part_of",
-    "source": "ship_deck",
-    "target": "dragon_s_rest",
-    "desc": "Ship dock at Dragon's Rest"
-  },
-  {
-    "relation": "part_of",
-    "source": "hold",
-    "target": "compass_rose_wreck",
-    "desc": "Hold in Compass Rose wreck"
-  },
-  {
-    "relation": "part_of",
-    "source": "cabin",
-    "target": "ship",
-    "desc": "Cabin room within ship"
-  },
-  {
-    "relation": "part_of",
-    "source": "submerged_hold",
-    "target": "ship",
-    "desc": "Submerged hold room within ship"
-  },
-  {
-    "relation": "part_of",
-    "source": "ship_deck",
-    "target": "ship",
-    "desc": "Ship dock feature within ship"
-  },
-  {
-    "relation": "part_of",
-    "source": "cabin",
-    "target": "submerged_hold",
-    "desc": "Cabin located within submerged hold"
-  },
-  {
-    "relation": "part_of",
-    "source": "bookcase",
-    "target": "cabin",
-    "desc": "Bookcase in cabin"
-  },
-  {
-    "relation": "part_of",
-    "source": "desk",
-    "target": "cabin",
-    "desc": "Desk in cabin"
-  },
-  {
-    "relation": "part_of",
-    "source": "bed",
-    "target": "cabin",
-    "desc": "Bed in cabin"
-  },
-  {
-    "relation": "part_of",
-    "source": "jagged_hole",
-    "target": "cabin",
-    "desc": "Jagged hole in cabin"
-  },
-  {
-    "relation": "part_of",
-    "source": "hole",
-    "target": "lower_deck",
-    "desc": "Hole breaks through lower deck floor"
-  },
-  {
-    "relation": "part_of",
-    "source": "hole",
-    "target": "hold",
-    "desc": "Hole comes to rest in the hold"
-  },
-  {
-    "relation": "part_of",
-    "source": "aft_part",
-    "target": "submerged_hold",
-    "desc": "Aft portion of the hold"
-  },
-  {
-    "relation": "part_of",
-    "source": "submerged_hold",
-    "target": "lower_deck",
-    "desc": "Submerged hold within lower deck"
-  },
-  {
-    "relation": "part_of",
-    "source": "hole_ceiling",
-    "target": "area",
-    "desc": "Hole in the ceiling of the area"
-  },
-  {
-    "relation": "part_of",
-    "source": "hole_floor",
-    "target": "area",
-    "desc": "Hole in the floor of the area"
-  },
-  {
-    "relation": "part_of",
-    "source": "captain_quarters",
-    "target": "area_c4",
-    "desc": "Captain's quarters accessed via ceiling hole"
-  },
-  {
-    "relation": "part_of",
-    "source": "hold",
-    "target": "area_c9",
-    "desc": "Chest fell into the hold (area C9) via floor hole"
-  },
-  {
-    "relation": "part_of",
-    "source": "submerged_hold",
-    "target": "c9",
-    "desc": "Submerged hold within area"
-  },
-  {
-    "relation": "part_of",
-    "source": "ship_deck",
-    "target": "main_deck",
-    "desc": "Harpy lands on the main deck while the ship deck is referenced separately"
-  },
-  {
-    "relation": "part_of",
-    "source": "crow's_nest",
-    "target": "ship_deck",
-    "desc": "Harpy's lair located in the crow's nest"
-  },
-  {
-    "relation": "part_of",
-    "source": "hold",
-    "target": "ship",
-    "desc": "Captain's chest found in the hold"
-  },
-  {
-    "relation": "part_of",
-    "source": "lower_deck",
-    "target": "ship",
-    "desc": "Characters return to the lower deck"
-  },
-  {
-    "relation": "part_of",
-    "source": "main_deck",
-    "target": "ship",
-    "desc": "Harpy confronts characters on the main deck"
-  },
-  {
-    "relation": "part_of",
-    "source": "submerged_hold",
-    "target": "ruined_tower",
-    "desc": "Submerged chamber in the ruins"
-  },
-  {
-    "relation": "part_of",
-    "source": "ruined_tower",
-    "target": "d5",
-    "desc": "Ruined tower within area D5"
-  },
-  {
-    "relation": "part_of",
-    "source": "sparkrender_hoard",
-    "target": "d5",
-    "desc": "Dragon hoard within area D5"
-  },
-  {
-    "relation": "part_of",
-    "source": "d2_rotunda_ruins",
-    "target": "ruined_tower",
-    "desc": "Rotunda ruins within the ruined tower"
-  },
-  {
-    "relation": "part_of",
-    "source": "d5_observatory_tower",
-    "target": "ruined_tower",
-    "desc": "Observatory tower within the ruined tower"
-  },
-  {
-    "relation": "part_of",
-    "source": "d6_area",
-    "target": "d5_observatory_tower",
-    "desc": "Area D6 within the observatory tower"
-  },
-  {
-    "relation": "part_of",
-    "source": "caved_in_wall",
-    "target": "d6_area",
-    "desc": "Caved-in wall in area D6"
+    "source": "light",
+    "target": "compass_rose_wreck_building",
+    "desc": "Lighting conditions within the shipwreck"
   },
   {
     "relation": "part_of",
     "source": "sculpture",
-    "target": "d2_rotunda_ruins",
-    "desc": "Sculpture in the rotunda ruins"
+    "target": "rotunda",
+    "desc": "sculpture in the center of the rotunda"
   },
   {
     "relation": "part_of",
-    "source": "d3_area",
-    "target": "ruined_tower",
-    "desc": "Area D3 visible from caved-in wall (indirect association inferred from text)"
+    "source": "hold",
+    "target": "area_C9",
+    "desc": "Sparkrender plans to hold his ritual in the hold"
   },
   {
     "relation": "part_of",
-    "source": "observatory_tower",
-    "target": "d5",
-    "desc": "Hidden entrance leading to area D5"
+    "source": "western_pair_statues",
+    "target": "rotunda",
+    "desc": "Dragon statues on west side of rotunda"
   },
   {
     "relation": "part_of",
-    "source": "ruin_tower",
-    "target": "d5",
-    "desc": "Ruined tower containing the journal's trapped artifact"
+    "source": "southwestern_pair_statues",
+    "target": "rotunda",
+    "desc": "Dragon statues on southwest side of rotunda"
   },
   {
     "relation": "part_of",
-    "source": "hidden_compartment",
-    "target": "ruined_tower",
-    "desc": "Hidden compartment revealed in tower wall"
+    "source": "overlook",
+    "target": "d1_area",
+    "desc": "Overlook corresponds to area D1"
   },
   {
     "relation": "part_of",
-    "source": "potion_lightning_resistance",
-    "target": "hidden_compartment",
-    "desc": "Potion stored in hidden compartment"
+    "source": "crumbled_tower",
+    "target": "d4_area",
+    "desc": "Crumbled tower corresponds to area D4"
   },
   {
     "relation": "part_of",
-    "source": "pouch_10_gp",
-    "target": "hidden_compartment",
-    "desc": "Pouch containing gold pieces stored in hidden compartment"
+    "source": "rotunda",
+    "target": "Observatory_Tower",
+    "desc": "Rotunda located within the observatory tower"
   },
   {
     "relation": "part_of",
-    "source": "d5_observatory_main_floor",
-    "target": "ruined_tower",
-    "desc": "Main floor of observatory tower"
-  },
-  {
-    "relation": "part_of",
-    "source": "d2_rotunda",
-    "target": "ruined_tower",
-    "desc": "Rotunda beneath the observatory tower"
-  },
-  {
-    "relation": "part_of",
-    "source": "d6_secret_library",
-    "target": "ruined_tower",
-    "desc": "Secret library accessible via caved-in wall beneath tower"
-  },
-  {
-    "relation": "part_of",
-    "source": "d5",
-    "target": "ruined_tower",
-    "desc": "Accessible area near the secret library in the tower"
+    "source": "library",
+    "target": "Observatory_Tower",
+    "desc": "Secret library situated within the observatory tower"
   }
 ]

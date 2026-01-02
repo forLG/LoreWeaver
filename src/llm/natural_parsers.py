@@ -7,6 +7,8 @@ Handles truncation gracefully and is more debuggable.
 import re
 from typing import Any
 
+from utils.logger import logger
+
 
 def parse_ner_entities(text: str) -> dict[str, Any]:
     """
@@ -73,6 +75,12 @@ def parse_ner_entities(text: str) -> dict[str, Any]:
                 if not label and aliases:
                     label = str(aliases[0]).strip('"\'')
                     current['label'] = label
+                # If still no label, use formatted ID as label
+                if not label and eid:
+                    # Convert ID to readable label: stormwreck_isle -> Stormwreck Isle
+                    logger.warning(f"Entity '{eid}' has no label and no aliases, using ID as label: '{eid.replace('_', ' ').title()}'")
+                    label = eid.replace('_', ' ').title()
+                    current['label'] = label
                 if not eid:
                     eid = label.lower().replace(' ', '_').replace("'", "")
                     current['id'] = eid
@@ -126,6 +134,12 @@ def parse_ner_entities(text: str) -> dict[str, Any]:
         # If no label, try to use first alias as label
         if not label and aliases:
             label = str(aliases[0]).strip('"\'')
+            current['label'] = label
+        # If still no label, use formatted ID as label
+        if not label and eid:
+            # Convert ID to readable label: stormwreck_isle -> Stormwreck Isle
+            logger.warning(f"Entity '{eid}' has no label and no aliases, using ID as label: '{eid.replace('_', ' ').title()}'")
+            label = eid.replace('_', ' ').title()
             current['label'] = label
         if not eid:
             eid = label.lower().replace(' ', '_').replace("'", "")

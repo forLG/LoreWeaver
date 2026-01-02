@@ -1,13 +1,16 @@
 {
   "nodes": [
     {
-      "id": "runara",
-      "label": "Runara",
       "type": "Creature",
-      "extraction_method": "tag",
-      "aliases": [],
-      "creature_type": "Unknown",
+      "id": "runara",
+      "creature_type": "dragon",
       "is_generic": false,
+      "aliases": [
+        "elder_runara"
+      ],
+      "label": "elder_runara",
+      "source_node": "",
+      "extraction_method": "llm",
       "node_type": "entity"
     },
     {
@@ -39,13 +42,16 @@
       "node_type": "entity"
     },
     {
-      "id": "zombie",
-      "label": "Zombie",
       "type": "Creature",
-      "extraction_method": "tag",
-      "aliases": [],
+      "id": "zombie",
       "creature_type": "undead",
       "is_generic": true,
+      "aliases": [
+        "walking_corpse"
+      ],
+      "label": "walking_corpse",
+      "source_node": "",
+      "extraction_method": "llm",
       "node_type": "entity"
     },
     {
@@ -85,13 +91,17 @@
       "node_type": "entity"
     },
     {
-      "id": "blue_dragon_wyrmling",
-      "label": "Blue Dragon Wyrmling",
       "type": "Creature",
-      "extraction_method": "tag",
-      "aliases": [],
-      "creature_type": "dragon",
+      "id": "blue_dragon_wyrmling",
+      "location_type": "feature",
       "is_generic": false,
+      "aliases": [
+        "glittering_blue_shape"
+      ],
+      "creature_type": "dragon",
+      "label": "glittering_blue_shape",
+      "source_node": "",
+      "extraction_method": "llm",
       "node_type": "entity"
     },
     {
@@ -323,11 +333,17 @@
       "node_type": "entity"
     },
     {
-      "id": "dagger",
-      "label": "dagger",
       "type": "Item",
-      "extraction_method": "tag",
-      "aliases": [],
+      "id": "dagger",
+      "location_type": "feature",
+      "is_generic": false,
+      "aliases": [
+        "\"magical dagger\""
+      ],
+      "creature_type": "",
+      "label": "magical dagger",
+      "source_node": "Zombie Resurgence",
+      "extraction_method": "llm",
       "node_type": "entity"
     },
     {
@@ -485,19 +501,40 @@
       "node_type": "entity"
     },
     {
+      "label": "stormwreck_isle",
+      "type": "Location",
+      "id": "stormwreck_isle",
+      "location_type": "area",
+      "is_generic": false,
+      "aliases": [],
+      "source_node": "Overview",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "label": "dragon_rest",
+      "type": "Location",
+      "id": "dragon_rest",
+      "location_type": "building",
+      "is_generic": false,
+      "aliases": [],
+      "source_node": "Overview",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "label": "sailors",
       "type": "Group",
-      "id": "guards",
-      "location_type": "feature",
+      "id": "sailors",
       "is_generic": true,
       "aliases": [],
-      "creature_type": "humanoid",
-      "source_node": "The Forgotten Realms",
+      "source_node": "",
       "extraction_method": "llm",
       "node_type": "entity"
     },
     {
       "type": "Group",
-      "id": "chromatic_dragons",
+      "id": "metallic_dragons",
       "creature_type": "dragon",
       "is_generic": true,
       "aliases": [],
@@ -508,65 +545,19 @@
     },
     {
       "type": "Creature",
-      "id": "bronze_wyrmling",
-      "location_type": "room",
-      "is_generic": false,
+      "id": "unknown_guardians",
+      "location_type": "feature",
+      "is_generic": true,
       "aliases": [],
-      "creature_type": "dragon",
+      "creature_type": "beast",
       "source_node": "Adventure Outline",
       "extraction_method": "llm",
       "node_type": "entity"
     },
     {
-      "label": "stormwreck_isle",
-      "type": "Location",
-      "id": "stormwreck_isle",
-      "location_type": "area",
-      "is_generic": false,
-      "aliases": [],
-      "source_node": "Chapter 1: Dragon's Rest",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "label": "Generic_Monster",
+      "label": "monster",
       "type": "Creature",
-      "id": "generic_monster",
-      "creature_type": "beast",
-      "is_generic": true,
-      "aliases": [
-        "monster"
-      ],
-      "source_node": "",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "label": "Ship_Dock",
-      "type": "Location",
-      "id": "ship_deck",
-      "location_type": "feature",
-      "is_generic": false,
-      "aliases": [
-        "deck"
-      ],
-      "source_node": "",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "type": "Creature",
-      "id": "scaled_queen",
-      "creature_type": "dragon",
-      "is_generic": false,
-      "aliases": [],
-      "source_node": "",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "type": "Group",
-      "id": "sailors",
+      "id": "monster",
       "creature_type": "beast",
       "is_generic": true,
       "aliases": [],
@@ -575,23 +566,19 @@
       "node_type": "entity"
     },
     {
-      "label": "dragon_rest",
-      "type": "Location",
-      "id": "dragon_rest",
-      "location_type": "building",
-      "is_generic": false,
-      "aliases": [
-        "cloister"
-      ],
-      "source_node": "Chapter 1: Dragon's Rest",
+      "type": "Creature",
+      "id": "merrow",
+      "creature_type": "beast",
+      "is_generic": true,
+      "aliases": [],
+      "source_node": "",
       "extraction_method": "llm",
       "node_type": "entity"
     },
     {
-      "label": "cloister",
       "type": "Location",
       "id": "cloister",
-      "location_type": "feature",
+      "location_type": "building",
       "is_generic": false,
       "aliases": [],
       "source_node": "Welcome to Dragon's Rest",
@@ -599,68 +586,104 @@
       "node_type": "entity"
     },
     {
-      "label": "zombies",
+      "type": "Location",
+      "id": "dock",
+      "location_type": "structure",
+      "is_generic": false,
+      "aliases": [],
+      "source_node": "",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Location",
+      "id": "path",
+      "creature_type": "undead",
+      "is_generic": false,
+      "aliases": [],
+      "location_type": "feature",
+      "source_node": "Drowned Sailors",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "label": "Drowned_Sailors",
       "type": "Creature",
-      "id": "zombies",
+      "id": "drowned_sailors",
       "creature_type": "undead",
       "is_generic": true,
       "aliases": [
-        "zombie",
-        "zombie (group)"
+        "sailors",
+        "drowned"
       ],
-      "source_node": "The Fighter",
+      "source_node": "",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Location",
+      "id": "temple_at_a5",
+      "creature_type": "dragon",
+      "is_generic": false,
+      "aliases": [
+        "temple"
+      ],
+      "location_type": "building",
+      "label": "temple",
+      "source_node": "Elder Runara",
       "extraction_method": "llm",
       "node_type": "entity"
     },
     {
       "type": "Group",
       "id": "kobolds",
-      "location_type": "area",
-      "is_generic": true,
-      "aliases": [
-        "kobold_group"
-      ],
-      "creature_type": "humanoid",
-      "source_node": "Meeting the Inhabitants",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "type": "Group",
-      "id": "humans_group",
-      "creature_type": "kobold",
+      "location_type": "building",
       "is_generic": true,
       "aliases": [],
-      "source_node": "",
+      "creature_type": "beast",
+      "source_node": "Kobolds",
       "extraction_method": "llm",
       "node_type": "entity"
     },
     {
       "type": "Creature",
-      "id": "elderly_human_woman",
-      "creature_type": "humanoid",
+      "id": "fungus_covered_octopus_monster",
+      "creature_type": "beast",
       "is_generic": false,
       "aliases": [],
-      "source_node": "",
+      "location_type": "feature",
+      "source_node": "Tarak",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Creature",
+      "id": "astalagan",
+      "location_type": "feature",
+      "is_generic": false,
+      "aliases": [
+        "bronze_dragon",
+        "dead_cliff_dweller"
+      ],
+      "creature_type": "dragon",
+      "label": "bronze_dragon",
+      "source_node": "Statue",
       "extraction_method": "llm",
       "node_type": "entity"
     },
     {
       "type": "Item",
-      "id": "mason_s_tools",
-      "creature_type": "humanoid",
-      "is_generic": false,
-      "aliases": [
-        "mason's tools"
-      ],
+      "id": "lever",
       "location_type": "building",
-      "source_node": "Varnoth",
+      "is_generic": true,
+      "aliases": [],
+      "source_node": "A2: Winch House",
       "extraction_method": "llm",
       "node_type": "entity"
     },
     {
-      "type": "Location",
-      "id": "cliff_side_doorways",
+      "type": "Item",
+      "id": "wooden_pallet",
       "location_type": "feature",
       "is_generic": false,
       "aliases": [],
@@ -670,51 +693,34 @@
     },
     {
       "type": "Location",
-      "id": "winch_house",
-      "location_type": "building",
-      "is_generic": false,
-      "aliases": [],
-      "source_node": "A2: Winch House",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "label": "kitchen",
-      "type": "Location",
-      "id": "kitchen",
-      "location_type": "room",
-      "is_generic": false,
-      "aliases": [],
-      "source_node": "A3: Kitchen",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "label": "cloister_library",
-      "type": "Location",
       "id": "cloister_library",
       "location_type": "room",
       "is_generic": false,
-      "aliases": [],
+      "aliases": [
+        "cloister library"
+      ],
+      "label": "cloister library",
       "source_node": "A4: Library",
       "extraction_method": "llm",
       "node_type": "entity"
     },
     {
-      "label": "books_and_scrolls",
-      "type": "Item",
-      "id": "books_and_scrolls",
-      "location_type": "unknown",
+      "type": "Location",
+      "id": "library",
+      "location_type": "room",
       "is_generic": false,
-      "aliases": [],
-      "source_node": "A4: Library",
+      "aliases": [
+        "spacious library"
+      ],
+      "label": "spacious library",
+      "source_node": "",
       "extraction_method": "llm",
       "node_type": "entity"
     },
     {
       "type": "Creature",
-      "id": "rix",
-      "location_type": "room",
+      "id": "rix_kobold",
+      "location_type": "building",
       "is_generic": true,
       "aliases": [],
       "creature_type": "kobold",
@@ -723,22 +729,24 @@
       "node_type": "entity"
     },
     {
-      "type": "Creature",
-      "id": "tiamat",
+      "type": "Group",
+      "id": "evil_dragons_serving_tiamat",
       "creature_type": "dragon",
-      "is_generic": false,
+      "is_generic": true,
       "aliases": [
-        "dragon_queen"
+        "evil dragons",
+        "Tiamat's followers"
       ],
+      "label": "evil dragons",
       "source_node": "About Bahamut",
       "extraction_method": "llm",
       "node_type": "entity"
     },
     {
-      "label": "sparkrender",
+      "label": "Sparkrender",
       "type": "Creature",
       "id": "sparkrender",
-      "creature_type": "humanoid",
+      "creature_type": "unknown",
       "is_generic": false,
       "aliases": [],
       "source_node": "Freeing Aidron",
@@ -746,13 +754,13 @@
       "node_type": "entity"
     },
     {
-      "type": "Group",
-      "id": "drowned_sailors",
-      "creature_type": "humanoid",
-      "is_generic": true,
+      "type": "Creature",
+      "id": "fungal_octopus",
+      "creature_type": "beast",
+      "is_generic": false,
       "aliases": [],
-      "location_type": "feature",
-      "source_node": "Zombie Resurgence",
+      "location_type": "",
+      "source_node": "Sea Caves",
       "extraction_method": "llm",
       "node_type": "entity"
     },
@@ -760,21 +768,34 @@
       "label": "compass_rose",
       "type": "Location",
       "id": "compass_rose",
-      "location_type": "wreckage",
+      "location_type": "feature",
+      "aliases": [],
       "is_generic": false,
+      "source_node": "Crow's Nest",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Creature",
+      "id": "zombies",
+      "location_type": "feature",
+      "is_generic": true,
       "aliases": [
-        "compass_rose_shipwreck"
+        "zombie (group)"
       ],
-      "source_node": "The Cleric",
+      "creature_type": "undead",
+      "label": "zombie (group)",
+      "source_node": "The Fighter",
       "extraction_method": "llm",
       "node_type": "entity"
     },
     {
       "type": "Location",
-      "id": "temple_of_bahamut",
+      "id": "temple_bahamut",
       "location_type": "building",
       "is_generic": false,
       "aliases": [],
+      "creature_type": "human",
       "source_node": "The Paladin",
       "extraction_method": "llm",
       "node_type": "entity"
@@ -782,32 +803,24 @@
     {
       "type": "Group",
       "id": "gilded_gallows",
-      "creature_type": "humanoid",
+      "location_type": "island",
       "is_generic": false,
-      "aliases": [],
+      "aliases": [
+        "thieves' guild"
+      ],
+      "creature_type": "humanoid",
+      "label": "thieves' guild",
       "source_node": "The Rogue",
       "extraction_method": "llm",
       "node_type": "entity"
     },
     {
-      "label": "clifftop_observatory",
-      "type": "Location",
-      "id": "clifftop_observatory",
+      "type": "Item",
+      "id": "letter_from_colleague",
       "location_type": "building",
       "is_generic": false,
       "aliases": [],
-      "source_node": "Gain a Level",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "type": "Item",
-      "id": "moonstone_key",
-      "location_type": "object",
-      "is_generic": false,
-      "aliases": [],
-      "creature_type": "dragon",
-      "source_node": "Lost Wyrmling",
+      "source_node": "The Wizard",
       "extraction_method": "llm",
       "node_type": "entity"
     },
@@ -817,21 +830,33 @@
       "id": "hot_spring",
       "location_type": "feature",
       "is_generic": false,
-      "aliases": [],
-      "source_node": "Hot Springs Havoc",
+      "aliases": [
+        "spring"
+      ],
+      "source_node": "Spring Waters",
       "extraction_method": "llm",
       "node_type": "entity"
     },
     {
+      "label": "brass_dragon",
       "type": "Creature",
-      "id": "brass_dragon_dead",
-      "location_type": "feature",
-      "is_generic": false,
-      "aliases": [
-        "dead_brass_dragon"
-      ],
+      "id": "brass_dragon",
       "creature_type": "dragon",
+      "is_generic": false,
+      "aliases": [],
       "source_node": "Spring Waters",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Item",
+      "id": "wind_spore",
+      "aliases": [
+        "wind_spore_mushrooms"
+      ],
+      "label": "wind_spore_mushrooms",
+      "is_generic": false,
+      "source_node": "Treasure",
       "extraction_method": "llm",
       "node_type": "entity"
     },
@@ -846,95 +871,42 @@
       "node_type": "entity"
     },
     {
+      "label": "seagrow_caves",
+      "type": "Location",
+      "id": "seagrow_caves",
+      "location_type": "cave",
+      "is_generic": false,
+      "aliases": [],
+      "source_node": "What Lies Beneath",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
       "label": "sharruth",
       "type": "Creature",
       "id": "sharruth",
       "creature_type": "dragon",
       "is_generic": false,
-      "aliases": [],
+      "aliases": [
+        "\"Red Dragon\""
+      ],
       "source_node": "What Lies Beneath",
       "extraction_method": "llm",
       "node_type": "entity"
     },
     {
-      "label": "seagrow_caves",
       "type": "Location",
-      "id": "seagrow_caves",
-      "location_type": "feature",
-      "is_generic": false,
-      "aliases": [],
-      "source_node": "What Lies Beneath",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "label": "tomb_of_sharruth",
-      "type": "Location",
-      "id": "tomb_of_sharruth",
-      "location_type": "tomb",
-      "is_generic": false,
-      "aliases": [],
-      "source_node": "Caves Overview",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "label": "cavern_at_back_seagrow_caves",
-      "type": "Location",
-      "id": "cavern_at_back_seagrow_caves",
-      "location_type": "chamber",
-      "is_generic": false,
-      "aliases": [],
-      "source_node": "Caves Overview",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "label": "stirges",
-      "type": "Group",
-      "id": "stirges",
-      "is_generic": true,
-      "aliases": [],
-      "source_node": "Caves Overview",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "type": "Location",
-      "id": "high_cliffs",
-      "location_type": "terrain_feature",
-      "is_generic": false,
-      "aliases": [],
-      "source_node": "Running This Chapter",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "label": "tunnel",
-      "type": "Location",
-      "id": "tunnel",
+      "id": "natural_stairways",
       "location_type": "path",
       "is_generic": false,
       "aliases": [],
-      "source_node": "Entering the Caves",
+      "source_node": "",
       "extraction_method": "llm",
       "node_type": "entity"
     },
     {
-      "label": "stairways_descending_into_sea",
       "type": "Location",
-      "id": "stairways_descending_into_sea",
-      "location_type": "feature",
-      "is_generic": false,
-      "aliases": [],
-      "source_node": "Entering the Caves",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "label": "pathway_exposed_at_low_tide",
-      "type": "Location",
-      "id": "pathway_exposed_at_low_tide",
+      "id": "exposed_pathway",
       "location_type": "path",
       "is_generic": false,
       "aliases": [],
@@ -944,11 +916,14 @@
     },
     {
       "type": "Location",
-      "id": "vent",
-      "creature_type": "myconid_adult",
+      "id": "crystal_cave",
+      "creature_type": "humanoid",
       "is_generic": false,
-      "aliases": [],
+      "aliases": [
+        "area_b6"
+      ],
       "location_type": "feature",
+      "label": "area_b6",
       "source_node": "Interacting with Myconids",
       "extraction_method": "llm",
       "node_type": "entity"
@@ -956,8 +931,12 @@
     {
       "type": "Item",
       "id": "rapport_spores",
-      "is_generic": false,
-      "aliases": [],
+      "creature_type": "fungal",
+      "is_generic": true,
+      "aliases": [
+        "myconid_spores"
+      ],
+      "label": "myconid_spores",
       "source_node": "Rapport Spores",
       "extraction_method": "llm",
       "node_type": "entity"
@@ -968,28 +947,32 @@
       "location_type": "path",
       "is_generic": false,
       "aliases": [],
-      "creature_type": "myconid_adult",
+      "creature_type": "myconid",
       "source_node": "B1: Entrance Tunnel",
       "extraction_method": "llm",
       "node_type": "entity"
     },
     {
-      "label": "entrance_tunnel",
       "type": "Location",
       "id": "entrance_tunnel",
-      "location_type": "path",
+      "creature_type": "fey",
       "is_generic": false,
-      "aliases": [],
-      "source_node": "",
+      "aliases": [
+        "b1_entrance_tunnel"
+      ],
+      "location_type": "path",
+      "label": "b1_entrance_tunnel",
+      "source_node": "2nd-Level Characters",
       "extraction_method": "llm",
       "node_type": "entity"
     },
     {
-      "type": "Location",
-      "id": "fungus_farm",
-      "location_type": "area",
-      "is_generic": false,
+      "type": "Creature",
+      "id": "mushroom_workers",
+      "location_type": "feature",
+      "is_generic": true,
       "aliases": [],
+      "creature_type": "humanoid",
       "source_node": "",
       "extraction_method": "llm",
       "node_type": "entity"
@@ -997,31 +980,38 @@
     {
       "type": "Creature",
       "id": "sickly_mushroom",
-      "location_type": "feature",
-      "is_generic": true,
-      "aliases": [],
+      "location_type": "room",
+      "is_generic": false,
+      "aliases": [
+        "purple_tendriled_mushroom]>"
+      ],
       "creature_type": "beast",
+      "label": "purple_tendriled_mushroom]>",
       "source_node": "",
       "extraction_method": "llm",
       "node_type": "entity"
     },
     {
       "type": "Location",
-      "id": "larder",
-      "location_type": "room",
+      "id": "fungus_farm",
+      "creature_type": "beast",
       "is_generic": false,
       "aliases": [],
-      "source_node": "",
+      "location_type": "feature",
+      "source_node": "Running the Combat",
       "extraction_method": "llm",
       "node_type": "entity"
     },
     {
-      "type": "Creature",
-      "id": "virosa",
-      "creature_type": "myconid_adult",
+      "type": "Item",
+      "id": "heart_cap_mushrooms",
+      "location_type": "room",
       "is_generic": false,
-      "aliases": [],
-      "source_node": "B4: Circle Chamber",
+      "aliases": [
+        "reddish mushrooms"
+      ],
+      "label": "reddish mushrooms",
+      "source_node": "Treasure",
       "extraction_method": "llm",
       "node_type": "entity"
     },
@@ -1031,63 +1021,88 @@
       "location_type": "room",
       "is_generic": true,
       "aliases": [
-        "mushroom_people"
+        "mushroom_people",
+        "fungi_beings"
       ],
       "creature_type": "humanoid",
-      "source_node": "",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "type": "Location",
-      "id": "sinensa_sanctum",
-      "creature_type": "myconid_adult",
-      "is_generic": false,
-      "aliases": [],
-      "location_type": "room",
-      "source_node": "B5: Sinensa's Sanctum",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "type": "Item",
-      "id": "colorful_crystals",
-      "location_type": "room",
-      "is_generic": true,
-      "aliases": [],
-      "creature_type": "fungoid",
+      "label": "mushroom_people",
       "source_node": "",
       "extraction_method": "llm",
       "node_type": "entity"
     },
     {
       "type": "Creature",
-      "id": "sharruth_red_dragon",
-      "location_type": "feature",
+      "id": "virosa_myconid",
+      "location_type": "room",
       "is_generic": false,
       "aliases": [
-        "red_dragon_sharruth"
+        "\"Virosa\""
       ],
-      "creature_type": "dragon",
-      "source_node": "B6: Crystal Cave",
+      "creature_type": "myconid_adult",
+      "label": "Virosa",
+      "source_node": "B4: Circle Chamber",
       "extraction_method": "llm",
       "node_type": "entity"
     },
     {
       "type": "Location",
-      "id": "crystal_cave",
+      "id": "glowing_red_fungus",
+      "creature_type": "myconid_adult",
       "is_generic": false,
-      "aliases": [],
-      "creature_type": "reptile",
-      "location_type": "room",
-      "source_node": "Fire Crystal",
+      "aliases": [
+        "brain-like fungus"
+      ],
+      "location_type": "feature",
+      "label": "brain-like fungus",
+      "source_node": "B5: Sinensa's Sanctum",
       "extraction_method": "llm",
       "node_type": "entity"
     },
     {
-      "label": "obsidian_chunk",
+      "type": "Location",
+      "id": "b5_sinensa_sanctum",
+      "location_type": "room",
+      "creature_type": "",
+      "is_generic": false,
+      "aliases": [
+        "sinensa_sanctum",
+        "sanctum"
+      ],
+      "label": "sinensa_sanctum",
+      "source_node": "",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "label": "ruby_morel",
       "type": "Item",
-      "id": "obsidian_chunk",
+      "id": "ruby_morel",
+      "aliases": [
+        "glowing_red_fungus"
+      ],
+      "is_generic": false,
+      "source_node": "Treasure",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Location",
+      "id": "tombs_of_sharruth",
+      "creature_type": "dragon",
+      "is_generic": false,
+      "aliases": [
+        "underground crypt",
+        "draconic tomb"
+      ],
+      "location_type": "room",
+      "label": "underground crypt",
+      "source_node": "B6: Crystal Cave",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Item",
+      "id": "obsidian_chunks",
       "aliases": [],
       "is_generic": false,
       "source_node": "Treasure",
@@ -1095,7 +1110,242 @@
       "node_type": "entity"
     },
     {
-      "label": "lost_wyrmling",
+      "label": "clifftop_observatory",
+      "type": "Location",
+      "id": "clifftop_observatory",
+      "location_type": "building",
+      "is_generic": false,
+      "aliases": [],
+      "source_node": "Running This Chapter",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Item",
+      "id": "cursed_talisman",
+      "location_type": "artifact",
+      "is_generic": false,
+      "aliases": [],
+      "creature_type": "undead",
+      "source_node": "Shipwreck Overview",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Location",
+      "id": "hold",
+      "location_type": "area",
+      "is_generic": false,
+      "aliases": [
+        "area_C9"
+      ],
+      "label": "area_C9",
+      "source_node": "Hole to the Hold",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "label": "crow_snest",
+      "type": "Location",
+      "id": "crow_snest",
+      "location_type": "feature",
+      "aliases": [],
+      "is_generic": false,
+      "source_node": "Crow's Nest",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Item",
+      "id": "bloodstone_gem",
+      "aliases": [
+        "bloodstone",
+        "bloodstone gem"
+      ],
+      "label": "bloodstone",
+      "is_generic": false,
+      "source_node": "Treasure",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Item",
+      "id": "ballista",
+      "is_generic": false,
+      "aliases": [],
+      "source_node": "C2: Forecastle",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Item",
+      "id": "rusted_ballista",
+      "location_type": "feature",
+      "is_generic": false,
+      "aliases": [],
+      "source_node": "",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Item",
+      "id": "book",
+      "location_type": "room",
+      "is_generic": true,
+      "aliases": [],
+      "creature_type": "humanoid",
+      "source_node": "",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Item",
+      "id": "sea_chest",
+      "location_type": "room",
+      "is_generic": false,
+      "aliases": [],
+      "source_node": "Hole to the Hold",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Item",
+      "id": "compass_set_in_desktop",
+      "aliases": [
+        "compass"
+      ],
+      "label": "compass",
+      "is_generic": false,
+      "source_node": "Treasure",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "label": "Harmless_Crabs",
+      "type": "Creature",
+      "id": "harmful_crabs",
+      "creature_type": "beast",
+      "is_generic": true,
+      "aliases": [
+        "crabs"
+      ],
+      "source_node": "C5: Galley",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "label": "skeleton",
+      "type": "Creature",
+      "id": "skeleton",
+      "creature_type": "undead",
+      "is_generic": true,
+      "aliases": [],
+      "source_node": "",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Location",
+      "id": "crew_quarters",
+      "location_type": "room",
+      "creature_type": "",
+      "is_generic": false,
+      "aliases": [
+        "storage_compartment",
+        "hidden_compartment"
+      ],
+      "label": "storage_compartment",
+      "source_node": "Treasure",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "label": "crew_quarters_cabin",
+      "type": "Location",
+      "id": "crew_quarters_cabin",
+      "location_type": "room",
+      "is_generic": false,
+      "aliases": [],
+      "source_node": "",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Item",
+      "id": "trap_dart",
+      "location_type": "feature",
+      "is_generic": false,
+      "aliases": [
+        "dart"
+      ],
+      "label": "dart",
+      "source_node": "Floorboard Stash",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Location",
+      "id": "mess_hall",
+      "location_type": "room",
+      "is_generic": false,
+      "aliases": [],
+      "source_node": "",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Item",
+      "id": "spell_scroll_of_command",
+      "location_type": "room",
+      "is_generic": true,
+      "aliases": [
+        "spell_scroll"
+      ],
+      "label": "spell_scroll",
+      "source_node": "Treasure",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Item",
+      "id": "talisman",
+      "location_type": "village",
+      "is_generic": true,
+      "aliases": [
+        "hair_locks_talisman"
+      ],
+      "creature_type": "humanoid",
+      "label": "hair_locks_talisman",
+      "source_node": "19 Tarsakh",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Creature",
+      "id": "scavenger_harpy",
+      "creature_type": "beast",
+      "is_generic": false,
+      "aliases": [
+        "terrorous_monster",
+        "mangy_vulture_beast"
+      ],
+      "label": "terrorous_monster",
+      "source_node": "",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Location",
+      "id": "c2_area",
+      "creature_type": "beast",
+      "is_generic": false,
+      "aliases": [],
+      "location_type": "area",
+      "source_node": "2nd-Level Characters",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
       "type": "Location",
       "id": "lost_wyrmling",
       "location_type": "feature",
@@ -1107,281 +1357,61 @@
     },
     {
       "type": "Item",
-      "id": "cursed_talisman",
-      "location_type": "town",
+      "id": "moonstone_key",
+      "location_type": "building",
       "is_generic": false,
       "aliases": [],
       "creature_type": "",
-      "source_node": "Shipwreck Overview",
+      "source_node": "Chapter 4: Clifftop Observatory",
       "extraction_method": "llm",
       "node_type": "entity"
     },
     {
+      "label": "overland_path",
       "type": "Location",
-      "id": "hold",
-      "location_type": "room",
-      "creature_type": "",
+      "id": "overland_path",
+      "location_type": "path",
       "is_generic": false,
-      "aliases": [
-        "c9"
-      ],
+      "aliases": [],
       "source_node": "Running This Chapter",
       "extraction_method": "llm",
       "node_type": "entity"
     },
     {
+      "label": "eastern_bay",
       "type": "Location",
-      "id": "dragon_bones",
+      "id": "eastern_bay",
       "location_type": "feature",
       "is_generic": false,
       "aliases": [],
-      "source_node": "",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "type": "Item",
-      "id": "bloodstone_gem",
-      "aliases": [],
-      "is_generic": false,
-      "source_node": "Treasure",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "label": "ballista",
-      "type": "Item",
-      "id": "ballista",
-      "is_generic": false,
-      "aliases": [],
-      "source_node": "C2: Forecastle",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "type": "Item",
-      "id": "sea_chest",
-      "location_type": "",
-      "creature_type": "",
-      "is_generic": false,
-      "aliases": [],
-      "source_node": "Hole to the Hold",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "type": "Item",
-      "id": "compass_set",
-      "aliases": [],
-      "is_generic": false,
-      "source_node": "Treasure",
+      "source_node": "Running This Chapter",
       "extraction_method": "llm",
       "node_type": "entity"
     },
     {
       "type": "Creature",
-      "id": "small_crabs",
-      "location_type": "room",
-      "is_generic": true,
-      "aliases": [],
-      "creature_type": "beast",
-      "source_node": "C5: Galley",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "type": "Creature",
-      "id": "headless_skeleton",
-      "location_type": "room",
+      "id": "sparkrender_blue_dragon_wyrmling",
+      "location_type": "ruin",
       "is_generic": false,
       "aliases": [
-        "long_dead_headless_skeleton"
+        "sparkrender"
       ],
-      "creature_type": "undead",
-      "source_node": "",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "type": "Location",
-      "id": "crew_quarters",
-      "creature_type": "humanoid",
-      "is_generic": false,
-      "aliases": [],
-      "location_type": "room",
-      "source_node": "C6: Crew Quarters",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "type": "Item",
-      "id": "portrait",
-      "location_type": "feature",
-      "is_generic": false,
-      "aliases": [
-        "\"painted_portrait\""
-      ],
-      "source_node": "",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "label": "Cabin",
-      "type": "Location",
-      "id": "cabin",
-      "location_type": "room",
-      "is_generic": false,
-      "aliases": [],
-      "source_node": "Floorboard Stash",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "label": "Dart Trap",
-      "type": "Item",
-      "id": "dart_trap",
-      "location_type": "object",
-      "is_generic": false,
-      "aliases": [],
-      "source_node": "Floorboard Stash",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "label": "Compartment_Beneath_Floorboard",
-      "type": "Location",
-      "id": "compartment_beneath_floorboard",
-      "location_type": "feature",
-      "is_generic": false,
-      "aliases": [],
-      "source_node": "Treasure",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "label": "Sack_With_200_Gp",
-      "type": "Item",
-      "id": "sack_with_200_gp",
-      "aliases": [
-        "sack"
-      ],
-      "is_generic": false,
-      "source_node": "Treasure",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "type": "Location",
-      "id": "lower_deck",
-      "location_type": "room",
-      "is_generic": false,
-      "aliases": [],
-      "source_node": "",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "type": "Item",
-      "id": "spell_scroll_command",
-      "location_type": "room",
-      "is_generic": false,
-      "aliases": [
-        "command_spell_scroll"
-      ],
-      "source_node": "Treasure",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "type": "Location",
-      "id": "submerged_hold",
-      "location_type": "room",
-      "is_generic": false,
-      "aliases": [
-        "hold",
-        "submerged hold"
-      ],
-      "source_node": "C9: Hold",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "label": "shipwreck_hold",
-      "type": "Location",
-      "id": "shipwreck_hold",
-      "location_type": "feature",
-      "is_generic": false,
-      "aliases": [],
-      "source_node": "",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "type": "Item",
-      "id": "talisman",
-      "location_type": "",
-      "is_generic": false,
-      "aliases": [],
-      "creature_type": "",
-      "source_node": "Captain's Chest",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "type": "Item",
-      "id": "book_in_chest",
-      "location_type": "landmark",
-      "is_generic": false,
-      "aliases": [],
-      "creature_type": "undead",
-      "source_node": "19 Tarsakh",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "type": "Location",
-      "id": "crows_nest",
-      "creature_type": "beast",
-      "is_generic": false,
-      "aliases": [
-        "Crow's Nest"
-      ],
-      "location_type": "feature",
-      "source_node": "Talking to the Harpy",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "type": "Location",
-      "id": "d5",
-      "creature_type": "??? (unknown)",
-      "is_generic": false,
-      "aliases": [],
-      "location_type": "area",
-      "source_node": "Approaching by Water",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "type": "Location",
-      "id": "column_far_from_stormwreck_isle",
-      "location_type": "feature",
-      "is_generic": false,
-      "aliases": [],
       "creature_type": "dragon",
-      "source_node": "",
+      "label": "sparkrender",
+      "source_node": "Approaching by Land",
       "extraction_method": "llm",
       "node_type": "entity"
     },
     {
       "type": "Creature",
       "id": "other_dragon",
-      "location_type": "feature",
+      "location_type": "room",
       "is_generic": true,
       "aliases": [
-        "metallic_green_dragon"
+        "greenish_yellow_metallic_dragon"
       ],
-      "creature_type": "chromatic_dragon",
+      "creature_type": "dragon",
+      "label": "greenish_yellow_metallic_dragon",
       "source_node": "Sparkrender's Kobold Allies",
       "extraction_method": "llm",
       "node_type": "entity"
@@ -1389,10 +1419,8 @@
     {
       "type": "Location",
       "id": "observatory_ruins",
-      "aliases": [
-        "area_d2"
-      ],
       "location_type": "ruin",
+      "aliases": [],
       "is_generic": false,
       "source_node": "D1: Overlook",
       "extraction_method": "llm",
@@ -1400,32 +1428,7 @@
     },
     {
       "type": "Location",
-      "id": "ruined_tower",
-      "location_type": "building",
-      "is_generic": false,
-      "aliases": [
-        "tower",
-        "ruin"
-      ],
-      "source_node": "",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "label": "Isolated Study",
-      "type": "Location",
-      "id": "isolated_study",
-      "location_type": "room",
-      "is_generic": false,
-      "aliases": [],
-      "source_node": "",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "label": "Chamber Below",
-      "type": "Location",
-      "id": "chamber_below",
+      "id": "overlook",
       "location_type": "feature",
       "is_generic": false,
       "aliases": [],
@@ -1434,78 +1437,64 @@
       "node_type": "entity"
     },
     {
-      "label": "Moldering Books",
-      "type": "Item",
-      "id": "moldering_books",
+      "type": "Creature",
+      "id": "minn",
+      "creature_type": "humanoid",
       "is_generic": false,
       "aliases": [],
-      "source_node": "",
+      "source_node": "D2: Rotunda Ruins",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Creature",
+      "id": "turadaer",
+      "creature_type": "dragon",
+      "is_generic": false,
+      "aliases": [
+        "brass_dragon"
+      ],
+      "label": "brass_dragon",
+      "source_node": "Dragon Effigies",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Location",
+      "id": "kobold_camp",
+      "creature_type": "",
+      "is_generic": false,
+      "aliases": [
+        "D3"
+      ],
+      "location_type": "camp",
+      "label": "D3",
+      "source_node": "D3: Kobold Camp",
       "extraction_method": "llm",
       "node_type": "entity"
     },
     {
       "type": "Item",
       "id": "scholar_journal",
-      "location_type": "feature",
+      "location_type": "null",
       "is_generic": false,
-      "aliases": [
-        "journal"
-      ],
+      "aliases": [],
       "source_node": "Scholar's Journal",
       "extraction_method": "llm",
       "node_type": "entity"
     },
     {
-      "type": "Item",
-      "id": "pouch_with_10_gp",
-      "location_type": "",
-      "is_generic": false,
+      "type": "Group",
+      "id": "winged_kobolds",
+      "location_type": "area",
+      "is_generic": true,
       "aliases": [],
-      "creature_type": "",
-      "source_node": "Treasure",
+      "source_node": "Clever Solutions",
       "extraction_method": "llm",
       "node_type": "entity"
     },
     {
-      "type": "Location",
-      "id": "d6_secret_library",
-      "location_type": "room",
-      "is_generic": false,
-      "aliases": [
-        "secret library"
-      ],
-      "creature_type": "kobold",
-      "source_node": "D5: Observatory Tower",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "type": "Creature",
-      "id": "aidron_the_brone_wyrmling",
-      "location_type": "feature",
-      "is_generic": false,
-      "aliases": [
-        "aidron",
-        "bronze_wyrmling"
-      ],
-      "creature_type": "dragon",
-      "source_node": "D6: Secret Library",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "type": "Creature",
-      "id": "bronze_dragon",
-      "location_type": "room",
-      "is_generic": false,
-      "aliases": [],
-      "creature_type": "dragon",
-      "source_node": "",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "label": "aidron",
+      "label": "Aidron",
       "type": "Creature",
       "id": "aidron",
       "creature_type": "dragon",
@@ -1516,1640 +1505,1535 @@
       "node_type": "entity"
     },
     {
-      "type": "Group",
-      "id": "winged_kobolds",
-      "location_type": "room",
-      "is_generic": true,
+      "type": "Location",
+      "id": "star_map_floor",
+      "location_type": "feature",
+      "is_generic": false,
       "aliases": [],
+      "source_node": "Hidden Entrance",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Item",
+      "id": "waterproof_leather_case",
       "creature_type": "beast",
-      "source_node": "Sparkrender's Ritual",
+      "is_generic": false,
+      "aliases": [],
+      "source_node": "Treasure",
       "extraction_method": "llm",
       "node_type": "entity"
     },
     {
       "type": "Creature",
-      "id": "turadaer",
+      "id": "bronze_dragon",
+      "location_type": "room",
       "creature_type": "dragon",
       "is_generic": false,
       "aliases": [],
+      "source_node": "",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Location",
+      "id": "rotunda",
+      "creature_type": "spirit",
+      "is_generic": false,
+      "aliases": [],
+      "location_type": "feature",
       "source_node": "Dragon Spirits",
       "extraction_method": "llm",
       "node_type": "entity"
     },
     {
-      "label": "chains",
-      "type": "Item",
-      "id": "chains",
+      "type": "Location",
+      "id": "central_sculpture",
+      "creature_type": "dragon",
       "is_generic": false,
       "aliases": [],
-      "source_node": "Freeing Aidron",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "label": "iron_rings",
-      "type": "Item",
-      "id": "iron_rings",
-      "is_generic": false,
-      "aliases": [],
-      "source_node": "Freeing Aidron",
-      "extraction_method": "llm",
-      "node_type": "entity"
-    },
-    {
-      "type": "Item",
-      "id": "dragon_effigies",
-      "creature_type": "humanoid",
-      "is_generic": true,
-      "aliases": [],
-      "location_type": "unknown",
+      "location_type": "feature",
       "source_node": "Disrupting the Ritual",
       "extraction_method": "llm",
       "node_type": "entity"
     },
     {
       "type": "Item",
-      "id": "plus_one_weapon",
-      "is_generic": true,
-      "aliases": [],
-      "source_node": "Item Descriptions",
+      "id": "exquisite_pearl",
+      "creature_type": "dragon",
+      "is_generic": false,
+      "aliases": [
+        "pearl"
+      ],
+      "label": "pearl",
+      "source_node": "Ending the Adventure",
       "extraction_method": "llm",
       "node_type": "entity"
     },
     {
-      "label": "Monster_Encounter",
+      "label": "Exploration",
+      "type": "exploration",
+      "participants": [
+        "stormwreck_isle"
+      ],
+      "location": "sword_coast",
+      "description": "Adventures explore ancient strongholds and ruined kingdoms in the Sword Coast region",
+      "id": "exploration",
+      "source_node": "The Forgotten Realms",
+      "node_type": "event"
+    },
+    {
+      "label": "Guardian Encounters",
       "type": "encounter",
       "participants": [
-        "generic_monster"
+        "unknown_guardians"
       ],
-      "location": "ship_deck",
-      "description": "A monstrous creature climbs aboard the ship's deck.",
-      "id": "monster_encounter",
-      "source_node": "",
+      "location": "magic_hot_spring",
+      "description": "Mysterious guardians guard the magical hot spring",
+      "id": "guardian_encounters",
+      "source_node": "Adventure Outline",
       "node_type": "event"
     },
     {
-      "label": "Tribute Demand",
-      "type": "dialogue",
-      "participants": [
-        "scaled_queen"
-      ],
-      "location": "stormwreck_isle",
-      "description": "A speaker claims these waters belong to the Scaled Queen and asserts their right to collect tribute",
-      "id": "tribute_demand",
-      "source_node": "",
-      "node_type": "event"
-    },
-    {
-      "label": "Dialogue_with_Kobolds",
-      "type": "dialogue",
-      "participants": [
-        "agga_kobold"
-      ],
-      "location": "cloister",
-      "description": "Kobolds barrage the travelers with questions upon learning their identity",
-      "id": "dialogue_with_kobolds",
-      "source_node": "",
-      "node_type": "event"
-    },
-    {
-      "label": "Ship Crash Discovery",
+      "label": "Mushroom Connection",
       "type": "discovery",
-      "participants": [
-        "rix"
-      ],
-      "location": "stormwreck_isle",
-      "description": "Rix witnesses a ship crashing on the northern rocks",
-      "id": "ship_crash_discovery",
-      "source_node": "Kobolds",
+      "participants": [],
+      "location": "seagrow_caves",
+      "description": "Magical connection to the Elemental Plane of Fire affects myconids",
+      "id": "mushroom_connection",
+      "source_node": "Adventure Outline",
       "node_type": "event"
     },
     {
-      "label": "Tattoo Symbol Recognition",
+      "label": "Cursed Hold",
       "type": "discovery",
-      "participants": [
-        "tarak"
-      ],
-      "location": "stormwreck_isle",
-      "description": "Character identifies the gold hangman's noose tattoo as a symbol of the Gilded Gallows thieves' guild.",
-      "id": "tattoo_symbol_recognition",
-      "source_node": "Tarak",
+      "participants": [],
+      "location": "cursed_shipwreck",
+      "description": "Horrible curse discovered in the ship's hold",
+      "id": "cursed_hold",
+      "source_node": "Adventure Outline",
       "node_type": "event"
     },
     {
-      "label": "Blocked Mushroom Harvest",
+      "label": "Blue Dragon Lair",
       "type": "exploration",
       "participants": [
-        "tarak"
+        "bronze_wyrmling"
       ],
-      "location": "sea_caves",
-      "description": "Tarak's attempt to gather heart cap mushrooms from myconids is thwarted by a fungal octopus guardian.",
-      "id": "blocked_mushroom_harvest",
-      "source_node": "Tarak",
+      "location": "clifftop_observatory",
+      "description": "Exploration of the blue dragon's lair containing a captive bronze wyrmling",
+      "id": "blue_dragon_lair",
+      "source_node": "Adventure Outline",
       "node_type": "event"
     },
     {
-      "label": "discovery_of_plaza",
-      "type": "discovery",
-      "participants": [],
-      "location": "cliffside_path",
-      "description": "The path widens into a long plaza with six open doorways carved into the cliff wall",
-      "id": "discovery_of_plaza",
-      "source_node": "",
-      "node_type": "event"
-    },
-    {
-      "label": "discovery_of_statue",
-      "type": "discovery",
-      "participants": [],
-      "location": "plaza_above_bay",
-      "description": "A massive stone statue of a dragon overlooks the plaza",
-      "id": "discovery_of_statue",
-      "source_node": "",
-      "node_type": "event"
-    },
-    {
-      "label": "Description",
-      "type": "observation",
-      "participants": [],
-      "location": "dragon_rest",
-      "description": "Text describes monastic cells layout and furnishings",
-      "id": "description",
-      "source_node": "Cells",
-      "node_type": "event"
-    },
-    {
-      "label": "Zombie Encounter",
-      "type": "combat",
-      "participants": [
-        "zombie",
-        "adventurers"
-      ],
-      "location": "cloister",
-      "description": "Adventurers fight three zombies threatening Blepp and Tarak",
-      "id": "zombie_encounter",
-      "source_node": "Zombie Resurgence",
-      "node_type": "event"
-    },
-    {
-      "label": "Dialogue with Runara",
-      "type": "dialogue",
-      "participants": [
-        "runara",
-        "adventurers"
-      ],
-      "location": "cloister",
-      "description": "Runara reveals the wrecked ship as the zombie source",
-      "id": "dialogue_with_runara",
-      "source_node": "Zombie Resurgence",
-      "node_type": "event"
-    },
-    {
-      "label": "Investigation Quest",
-      "type": "quest",
-      "participants": [
-        "adventurers"
-      ],
-      "location": "shipwreck",
-      "description": "Characters tasked to investigate the wrecked ship",
-      "id": "investigation_quest",
-      "source_node": "Zombie Resurgence",
-      "node_type": "event"
-    },
-    {
-      "label": "Wreck Investigation Prompt",
-      "type": "discovery",
-      "participants": [
-        "character_party",
-        "varnoth",
-        "rix"
-      ],
-      "location": "rocks_north_of_dragon_rest",
-      "description": "Varnoth and the kobold Rix report a recent shipwreck, hinting at supernatural causes.",
-      "id": "wreck_investigation_prompt",
-      "source_node": "Shipwreck",
-      "node_type": "event"
-    },
-    {
-      "label": "Dialogue About Dream",
-      "type": "dialogue",
-      "participants": [
-        "runara"
-      ],
-      "location": "compass_rose",
-      "description": "Runara discusses the cleric's dream and suggests zombies relate to the hunger of death",
-      "id": "dialogue_about_dream",
-      "source_node": "The Cleric",
-      "node_type": "event"
-    },
-    {
-      "label": "Destiny Discussion Upon Arrival",
-      "type": "dialogue",
-      "participants": [
-        "character",
-        "runara"
-      ],
-      "location": "cloister",
-      "description": "Character discusses destiny with Runara upon arrival",
-      "id": "destiny_discussion_upon_arrival",
-      "source_node": "The Fighter",
-      "node_type": "event"
-    },
-    {
-      "label": "Destiny Reflection After Quests",
-      "type": "dialogue",
-      "participants": [
-        "character",
-        "runara"
-      ],
-      "location": "cloister",
-      "description": "Runara prompts character to consider heroic actions shaping destiny",
-      "id": "destiny_reflection_after_quests",
-      "source_node": "The Fighter",
-      "node_type": "event"
-    },
-    {
-      "label": "Final Encouragement",
-      "type": "dialogue",
-      "participants": [
-        "character",
-        "runara"
-      ],
-      "location": "cloister",
-      "description": "Runara assures character destiny will become clearer",
-      "id": "final_encouragement",
-      "source_node": "The Fighter",
-      "node_type": "event"
-    },
-    {
-      "label": "Initial Encounter",
-      "type": "dialogue",
-      "participants": [
-        "player_character",
-        "runara"
-      ],
-      "location": "dragon_rest",
-      "description": "Paladin arrives in Dragon's Rest and meets Runara.",
-      "id": "initial_encounter",
-      "source_node": "The Paladin",
-      "node_type": "event"
-    },
-    {
-      "label": "Guidance from Elders",
-      "type": "dialogue",
-      "participants": [
-        "player_character",
-        "tarak",
-        "varnoth"
-      ],
-      "location": "dragon_rest",
-      "description": "Runara directs the paladin to consult Tarak and Varnoth about overcoming corruption.",
-      "id": "guidance_from_elders",
-      "source_node": "The Paladin",
-      "node_type": "event"
-    },
-    {
-      "label": "Temple Reflection",
-      "type": "exploration",
-      "participants": [
-        "player_character"
-      ],
-      "location": "temple_of_bahamut",
-      "description": "Paladin spends time meditating in the temple of Bahamut.",
-      "id": "temple_reflection",
-      "source_node": "The Paladin",
-      "node_type": "event"
-    },
-    {
-      "label": "Final Counsel",
-      "type": "dialogue",
-      "participants": [
-        "player_character",
-        "runara"
-      ],
-      "location": "dragon_rest",
-      "description": "Runara questions the paladin about lessons learned against corruption.",
-      "id": "final_counsel",
-      "source_node": "The Paladin",
-      "node_type": "event"
-    },
-    {
-      "label": "Dialogue About Past Betrayal",
-      "type": "dialogue",
-      "participants": [
-        "tarak"
-      ],
-      "location": "dragon_rest",
-      "description": "Tarak recounts his betrayal of the guild and tragic love affair, advising the rogue to abandon crime.",
-      "id": "dialogue_about_past_betrayal",
-      "source_node": "The Rogue",
-      "node_type": "event"
-    },
-    {
-      "label": "Guardian Attack",
-      "type": "combat",
+      "label": "Monster Appears On Deck",
+      "type": "encounter",
       "participants": [
         "adventurers",
-        "fume_drake"
+        "monster"
       ],
-      "location": "hot_spring",
-      "description": "Three Fume Drakes emerge from the hot spring waters to attack intruders attempting to collect mushrooms or access the spring.",
-      "id": "guardian_attack",
-      "source_node": "Hot Springs Havoc",
+      "location": "stormwreck_isle",
+      "description": "A monster hauls itself up onto the deck as lightning flashes.",
+      "id": "monster_appears_on_deck",
+      "source_node": "",
       "node_type": "event"
     },
     {
-      "label": "Magical_Regeneration_Benefit",
+      "label": "Merrow Escape",
       "type": "discovery",
       "participants": [
-        "player_characters"
+        "merrow_extortionist"
       ],
-      "location": "hot_spring",
-      "description": "Bathing in the spring grants temporary hit point recovery through Hit Dice rolls",
-      "id": "magical_regeneration_benefit",
-      "source_node": "Spring Waters",
+      "location": "stormwreck_isle",
+      "description": "The merrow escapes into the depths",
+      "id": "merrow_escape",
+      "source_node": "",
       "node_type": "event"
     },
     {
-      "label": "Level Adjustment Notice",
-      "type": "announcement",
-      "participants": [],
-      "location": "seagrow_caves",
-      "description": "Text notes level-based difficulty adjustments for gameplay progression",
-      "id": "level_adjustment_notice",
-      "source_node": "Chapter 2: Seagrow Caves",
-      "node_type": "event"
-    },
-    {
-      "label": "Blight_Spread_Discovery",
-      "type": "discovery",
-      "participants": [
-        "myconid_adult",
-        "myconid_sprout",
-        "sinensa"
-      ],
-      "location": "seagrow_caves",
-      "description": "A blight originating from the tomb of Sharruth has poisoned the myconid colonies, killing their leader Sinensa.",
-      "id": "blight_spread_discovery",
-      "source_node": "Caves Overview",
-      "node_type": "event"
-    },
-    {
-      "label": "Vent_Blockade_Event",
-      "type": "discovery",
-      "participants": [],
-      "location": "cavern_at_back_seagrow_caves",
-      "description": "Blocked vents near Seagrow Caves caused toxic fumes from Sharruth's tomb to spill into the myconid caves.",
-      "id": "vent_blockade_event",
-      "source_node": "Caves Overview",
-      "node_type": "event"
-    },
-    {
-      "label": "Stirge_Encounter",
-      "type": "encounter",
-      "participants": [
-        "stirges"
-      ],
-      "location": "seagrow_caves",
-      "description": "Blood-sucking stirges nest in the caves, posing a danger to intruders despite avoiding the fungus-eating myconids.",
-      "id": "stirge_encounter",
-      "source_node": "Caves Overview",
-      "node_type": "event"
-    },
-    {
-      "label": "Travel Options",
-      "type": "exploration",
-      "participants": [],
-      "location": "seagrow_caves",
-      "description": "Characters select between boating or hiking routes to reach Seagrow Caves",
-      "id": "travel_options",
-      "source_node": "Running This Chapter",
-      "node_type": "event"
-    },
-    {
-      "label": "Tide_Cycle_Description",
+      "label": "Sailor Cheer",
       "type": "observation",
+      "participants": [
+        "sailors"
+      ],
+      "location": "stormwreak_isle",
+      "description": "Sailors celebrate after the merrow departs",
+      "id": "sailor_cheer",
+      "source_node": "",
+      "node_type": "event"
+    },
+    {
+      "label": "Learning About Dangers",
+      "type": "discovery",
       "participants": [
         "adventurers"
       ],
-      "location": "seagrow_caves",
-      "description": "Text details tidal patterns affecting access to the caves",
-      "id": "tide_cycle_description",
-      "source_node": "Entering the Caves",
+      "location": "dragon_rest",
+      "description": "Characters learn about the dangers facing Stormwreck Isle.",
+      "id": "learning_about_dangers",
+      "source_node": "Chapter 1: Dragon's Rest",
+      "node_type": "event"
+    },
+    {
+      "label": "Encounter_with_Drowned_Sailors",
+      "type": "encounter",
+      "participants": [
+        "adventurers",
+        "drowned_sailors"
+      ],
+      "location": "stormwreck_isle",
+      "description": "Undead sailors emerge from the water and approach the party",
+      "id": "encounter_with_drowned_sailors",
+      "source_node": "",
+      "node_type": "event"
+    },
+    {
+      "label": "Dialogue",
+      "type": "dialogue",
+      "participants": [
+        "adventurer_party",
+        "kobold"
+      ],
+      "location": "cloister",
+      "description": "A kobold initiates conversation by asking the travelers' name",
+      "id": "dialogue",
+      "source_node": "",
       "node_type": "event"
     },
     {
       "label": "Guardian Encounter",
       "type": "encounter",
       "participants": [
-        "adventurers",
-        "spore_servant_octopus"
+        "tarak",
+        "fungus_covered_octopus_monster"
       ],
-      "location": "entrance_tunnel",
-      "description": "A spore servant octopus ambushes intruders in the entrance tunnel.",
+      "location": "sea_caves",
+      "description": "Tarak is repelled by the fungal octopus guardian protecting the myconid caves.",
       "id": "guardian_encounter",
-      "source_node": "B1: Entrance Tunnel",
+      "source_node": "Tarak",
       "node_type": "event"
     },
     {
-      "label": "Stirge_Join_Battle",
-      "type": "combat",
-      "participants": [
-        "adventurers",
-        "stirge"
-      ],
-      "location": "entrance_tunnel",
-      "description": "Two stirge cling to the tunnel ceiling and join the战斗 if fighting breaks out in this area.",
-      "id": "stirge_join_battle",
-      "source_node": "2nd-Level Characters",
-      "node_type": "event"
-    },
-    {
-      "label": "Discovery",
+      "label": "Tattoo Symbol Discovery",
       "type": "discovery",
       "participants": [
-        "adventurers",
-        "sickly_mushroom"
+        "tarak"
       ],
-      "location": "fungus_farm",
-      "description": "A sentient mushroom emerges from the ground with pulsating tendrils",
-      "id": "discovery",
-      "source_node": "",
+      "location": "unknown",
+      "description": "Detecting the Gilded Gallows symbol on Tarak's tattoo requires a successful History check.",
+      "id": "tattoo_symbol_discovery",
+      "source_node": "Tarak",
       "node_type": "event"
     },
     {
-      "label": "Fungal Ambush",
-      "type": "combat",
-      "participants": [
-        "player_characters",
-        "violet_fungus"
-      ],
-      "location": "fungus_farm",
-      "description": "Three violet fungi ambush the party, with two remaining stationary until provoked",
-      "id": "fungal_ambush",
-      "source_node": "Running the Combat",
-      "node_type": "event"
-    },
-    {
-      "label": "Environmental Hazard",
+      "label": "Statue Identification",
       "type": "discovery",
       "participants": [
         "player_characters"
       ],
-      "location": "fungus_farm",
-      "description": "Characters discover the deceptive appearance of non-threatening purple fungi",
-      "id": "environmental_hazard",
-      "source_node": "Running the Combat",
+      "location": "dragon_rest",
+      "description": "Character identifies the statue as depicting a bronze dragon using Arcana skill check",
+      "id": "statue_identification",
+      "source_node": "Statue",
       "node_type": "event"
     },
     {
-      "label": "Encountering Stirges",
-      "type": "encounter",
-      "participants": [
-        "stirges"
-      ],
-      "location": "unknown",
-      "description": "Two stirges are added to the encounter for 2nd-level characters.",
-      "id": "encountering_stirges",
-      "source_node": "2nd-Level Characters",
-      "node_type": "event"
-    },
-    {
-      "label": "Fire_Snake_Egg_Discovery",
-      "type": "discovery",
-      "location": "b6_crystal_cave",
-      "description": "Adventurers discover 25 obsidian fragments worth 10 gp each from a shattered fire snake egg",
-      "id": "fire_snake_egg_discovery",
-      "participants": [],
-      "source_node": "Treasure",
-      "node_type": "event"
-    },
-    {
-      "label": "Sinensa Grants Permission",
+      "label": "Runara's Revelation",
       "type": "dialogue",
       "participants": [
-        "party",
-        "sinensa_myconid_adult"
-      ],
-      "location": "area_b5",
-      "description": "Sinensa awards the party with the ruby morel and permits retention of other loot",
-      "id": "sinensa_grants_permission",
-      "source_node": "Ending This Chapter",
-      "node_type": "event"
-    },
-    {
-      "label": "Elixir Creation",
-      "type": "discovery",
-      "participants": [
-        "party",
-        "tarak_human"
+        "runara",
+        "player_characters"
       ],
       "location": "dragon_rest",
-      "description": "Tarak reveals method to craft elixir of health using ruby morel",
-      "id": "elixir_creation",
-      "source_node": "Ending This Chapter",
-      "node_type": "event"
-    },
-    {
-      "label": "Zombie_Encounters_in_Wrecks",
-      "type": "discovery",
-      "participants": [
-        "zombie",
-        "compass_rose"
-      ],
-      "location": "compass_rose",
-      "description": "Characters exploring other wrecks discover additional zombies animated by the talisman in Compass Rose's hold.",
-      "id": "zombie_encounters_in_wrecks",
-      "source_node": "Other Shipwrecks",
-      "node_type": "event"
-    },
-    {
-      "label": "Giant_Octopus_Encounter",
-      "type": "combat",
-      "participants": [
-        "spore_servant_octopus",
-        "adventurers"
-      ],
-      "location": "compass_rose",
-      "description": "Giant octopuses ambush explorers in submerged wreckage.",
-      "id": "giant_octopus_encounter",
-      "source_node": "Other Shipwrecks",
-      "node_type": "event"
-    },
-    {
-      "label": "Ghoul_Danger_Aboard",
-      "type": "discovery",
-      "participants": [
-        "ghoul",
-        "adventurers"
-      ],
-      "location": "compass_rose",
-      "description": "Unusual dangers like ghouls lurk within other shipwrecks.",
-      "id": "ghoul_danger_aboard",
-      "source_node": "Other Shipwrecks",
-      "node_type": "event"
-    },
-    {
-      "label": "Description_of_Wreck_Structure",
-      "type": "observation",
-      "participants": [],
-      "location": "compass_rose",
-      "description": "Text describes structural features of the shipwreck including walls, ceilings, doors, and lighting conditions.",
-      "id": "description_of_wreck_structure",
-      "source_node": "Shipwreck Features",
-      "node_type": "event"
-    },
-    {
-      "label": "Exploration",
-      "type": "exploration",
-      "participants": [],
-      "location": "stormwreck_isle",
-      "description": "Adventurers observe a derelict ship wedged against rock formations and massive dragon bones",
-      "id": "exploration",
-      "source_node": "",
-      "node_type": "event"
-    },
-    {
-      "label": "Exploration",
-      "type": "exploration",
-      "participants": [],
-      "location": "ship_deck",
-      "description": "Adventurers explore the main deck of the shipwreck, noting environmental details and discovering potential access points below.",
-      "id": "exploration",
-      "source_node": "",
-      "node_type": "event"
-    },
-    {
-      "label": "Treasure_Discovery",
-      "type": "discovery",
-      "location": "ship_deck",
-      "description": "Characters discover valuable loot in the crow's nest including jewelry and gems",
-      "id": "treasure_discovery",
-      "participants": [],
-      "source_node": "Treasure",
-      "node_type": "event"
-    },
-    {
-      "label": "Broken Ballista",
-      "type": "observation",
-      "participants": [],
-      "location": "ship_deck",
-      "description": "The ballista is found to be nonfunctional",
-      "id": "broken_ballista",
-      "source_node": "C2: Forecastle",
+      "description": "Runara reveals the statue depicts Astalagan, her late father",
+      "id": "runara_s_revelation",
+      "source_node": "Statue",
       "node_type": "event"
     },
     {
       "label": "Observation",
       "type": "observation",
       "participants": [
-        "small_crabs"
+        "cloister"
       ],
-      "location": "galley",
-      "description": "Small, harmless crabs crawl over skeletal remains, creating an illusion of movement",
+      "location": "cloister",
+      "description": "Description of monastic cells layout and occupancy",
       "id": "observation",
+      "source_node": "Cells",
+      "node_type": "event"
+    },
+    {
+      "label": "Winch Operation",
+      "type": "exploration",
+      "participants": [],
+      "location": "winch_house",
+      "description": "Mechanism allows lowering/pulling pallet via winch",
+      "id": "winch_operation",
+      "source_node": "A2: Winch House",
+      "node_type": "event"
+    },
+    {
+      "label": "Observation",
+      "type": "observation",
+      "participants": [
+        "tarak"
+      ],
+      "location": "cloister",
+      "description": "Residents favor Tarak's cooking",
+      "id": "observation",
+      "source_node": "A3: Kitchen",
+      "node_type": "event"
+    },
+    {
+      "label": "Dialogue About Myconid Mission",
+      "type": "dialogue",
+      "participants": [
+        "tarak"
+      ],
+      "location": "sea_caves",
+      "description": "Tarak informs the party about seeking help from the myconids and retrieving heart cap mushrooms.",
+      "id": "dialogue_about_myconid_mission",
+      "source_node": "Sea Caves",
+      "node_type": "event"
+    },
+    {
+      "label": "Guardian Encounter",
+      "type": "combat",
+      "participants": [
+        "adventurers",
+        "fungal_octopus"
+      ],
+      "location": "sea_caves",
+      "description": "The party battles the fungal octopus guarding the sea caves.",
+      "id": "guardian_encounter",
+      "source_node": "Sea Caves",
+      "node_type": "event"
+    },
+    {
+      "label": "Myconid Investigation",
+      "type": "discovery",
+      "participants": [
+        "adventurers"
+      ],
+      "location": "sea_caves",
+      "description": "The party explores the sea caves to determine the cause of the myconids' distress.",
+      "id": "myconid_investigation",
+      "source_node": "Sea Caves",
+      "node_type": "event"
+    },
+    {
+      "label": "Dream_Interpretation_Dialogue",
+      "type": "dialogue",
+      "participants": [
+        "runara"
+      ],
+      "location": "dragon_rest",
+      "description": "Runara interprets the cleric's dream about the hunger of death and directs them to investigate the wreck of Compass Rose",
+      "id": "dream_interpretation_dialogue",
+      "source_node": "The Cleric",
+      "node_type": "event"
+    },
+    {
+      "label": "Paladin's Arrival and Guidance",
+      "type": "dialogue",
+      "participants": [
+        "runara"
+      ],
+      "location": "dragon_rest",
+      "description": "Runara advises the paladin to consult Tarak and Varnoth, and recommends spending time in the temple of Bahamut.",
+      "id": "paladin_s_arrival_and_guidance",
+      "source_node": "The Paladin",
+      "node_type": "event"
+    },
+    {
+      "label": "Final Reflection Prompt",
+      "type": "dialogue",
+      "participants": [
+        "runara"
+      ],
+      "location": "temple_bahamut",
+      "description": "Runara questions the paladin about lessons learned against corruption, suggesting personal quests to combat evil.",
+      "id": "final_reflection_prompt",
+      "source_node": "The Paladin",
+      "node_type": "event"
+    },
+    {
+      "label": "Revelation",
+      "type": "discovery",
+      "participants": [
+        "adventurers",
+        "runara"
+      ],
+      "location": "stormwreck_isle",
+      "description": "Runara reveals her true draconic form through magical transformation",
+      "id": "revelation",
+      "source_node": "",
+      "node_type": "event"
+    },
+    {
+      "label": "Dialogue",
+      "type": "conversation",
+      "participants": [
+        "adventurers",
+        "runara"
+      ],
+      "location": "stormwreak_isle",
+      "description": "Runara explains the resurgence of conflict on the island and requests assistance",
+      "id": "dialogue",
+      "source_node": "",
+      "node_type": "event"
+    },
+    {
+      "label": "Discovery of Hot Springs",
+      "type": "discovery",
+      "participants": [
+        "adventurers"
+      ],
+      "location": "hot_spring_cove",
+      "description": "Adventurers uncover a hidden cove with a glowing hot spring surrounded by colorful fungi.",
+      "id": "discovery_of_hot_springs",
+      "source_node": "",
+      "node_type": "event"
+    },
+    {
+      "label": "Discovery of Hot Spring Regeneration",
+      "type": "discovery",
+      "participants": [
+        "adventurers"
+      ],
+      "location": "hot_spring",
+      "description": "Characters can regain hit points by bathing in the hot spring after spending 10 minutes.",
+      "id": "discovery_of_hot_spring_regeneration",
+      "source_node": "Spring Waters",
+      "node_type": "event"
+    },
+    {
+      "label": "Kobold Encounter",
+      "type": "encounter",
+      "participants": [
+        "adventurers"
+      ],
+      "location": "stormwreck_isle",
+      "description": "Eight kobolds and three winged kobolds appear as per the 3rd-level encounter guidelines.",
+      "id": "kobold_encounter",
+      "source_node": "3rd-Level Characters",
+      "node_type": "event"
+    },
+    {
+      "label": "Travel Options Revealed",
+      "type": "exploration",
+      "participants": [
+        "player_characters"
+      ],
+      "location": "stormwreck_isle",
+      "description": "Characters learn of two ways to reach Seagrow Caves: rowboat journey or coastal trek",
+      "id": "travel_options_revealed",
+      "source_node": "Running This Chapter",
+      "node_type": "event"
+    },
+    {
+      "label": "Tide Access Restriction",
+      "type": "discovery",
+      "participants": [],
+      "location": "seagrow_caves",
+      "description": "Characters must navigate tides to access lower caverns",
+      "id": "tide_access_restriction",
+      "source_node": "Entering the Caves",
+      "node_type": "event"
+    },
+    {
+      "label": "Telepathic Link Activation",
+      "type": "observation",
+      "participants": [
+        "myconid_adult",
+        "player_characters"
+      ],
+      "location": "seagrow_caves",
+      "description": "Characters gain telepathic communication with myconids via rapport spores",
+      "id": "telepathic_link_activation",
+      "source_node": "Rapport Spores",
+      "node_type": "event"
+    },
+    {
+      "label": "Myconid Movement Triggered by Distress Spores",
+      "type": "movement",
+      "participants": [
+        "myconid_adult",
+        "myconid_sprout"
+      ],
+      "location": "area_B4",
+      "description": "Myconids in areas B2 and B3 relocate to area B4 after detecting distress spores released by damaged myconids.",
+      "id": "myconid_movement_triggered_by_distress_spores",
+      "source_node": "Distress Spores",
+      "node_type": "event"
+    },
+    {
+      "label": "Confrontation",
+      "type": "combat",
+      "participants": [
+        "agrinc_myconid",
+        "omphalo_myconid"
+      ],
+      "location": "circle_chamber",
+      "description": "Conscious myconids attack intruders lacking escort",
+      "id": "confrontation",
+      "source_node": "B4: Circle Chamber",
+      "node_type": "event"
+    },
+    {
+      "label": "Shared Trance",
+      "type": "discovery",
+      "participants": [
+        "craterel_myconid",
+        "pleuro_myconid",
+        "subrufus_myconid",
+        "virosa_myconid"
+      ],
+      "location": "circle_chamber",
+      "description": "Four myconids enter a dream-like meld state",
+      "id": "shared_trance",
+      "source_node": "B4: Circle Chamber",
+      "node_type": "event"
+    },
+    {
+      "label": "Illness Effect",
+      "type": "observation",
+      "participants": [
+        "agrinc_myconid",
+        "omphalo_myconid",
+        "craterel_myconid",
+        "pleuro_myconid",
+        "subrufus_myconid",
+        "virosa_myconid"
+      ],
+      "location": "circle_chamber",
+      "description": "Myconids show signs of blight-induced fatigue",
+      "id": "illness_effect",
+      "source_node": "B4: Circle Chamber",
+      "node_type": "event"
+    },
+    {
+      "label": "Defensive Encounter",
+      "type": "combat",
+      "participants": [
+        "auranta",
+        "enok"
+      ],
+      "location": "sinensa_sanctum",
+      "description": "Myconid Adults defend their unconscious leader against unauthorized intruders",
+      "id": "defensive_encounter",
+      "source_node": "B5: Sinensa's Sanctum",
+      "node_type": "event"
+    },
+    {
+      "label": "Elixir Creation",
+      "type": "discovery",
+      "participants": [
+        "characters",
+        "tarak"
+      ],
+      "location": "cloister",
+      "description": "Characters bring ruby morel to cloister, enabling Tarak to craft an elixir of health",
+      "id": "elixir_creation",
+      "source_node": "Treasure",
+      "node_type": "event"
+    },
+    {
+      "label": "Fume Drake Encounter",
+      "type": "encounter",
+      "participants": [
+        "fume_drake"
+      ],
+      "location": "crystal_cave",
+      "description": "Two fume drakes ambush intruding creatures in the sulfer-laden cave",
+      "id": "fume_drake_encounter",
+      "source_node": "B6: Crystal Cave",
+      "node_type": "event"
+    },
+    {
+      "label": "Blight Source Revelation",
+      "type": "discovery",
+      "participants": [],
+      "location": "crystal_cave",
+      "description": "Characters uncover the link between the tomb's magical energies and the toxic fungal spread",
+      "id": "blight_source_revelation",
+      "source_node": "B6: Crystal Cave",
+      "node_type": "event"
+    },
+    {
+      "label": "Level Advancement",
+      "type": "quest",
+      "participants": [
+        "characters"
+      ],
+      "location": null,
+      "description": "Characters gain a level upon completing the chapter, advancing based on prior explorations of key locations",
+      "id": "level_advancement",
+      "source_node": "Gain a Level",
+      "node_type": "event"
+    },
+    {
+      "label": "Harpy Lair Discovery",
+      "type": "discovery",
+      "participants": [
+        "harpy"
+      ],
+      "location": "crow_snest",
+      "description": "Characters discover the harpy's nest in the crow's nest, filled with debris and remnants of its lair.",
+      "id": "harpy_lair_discovery",
+      "source_node": "Crow's Nest",
+      "node_type": "event"
+    },
+    {
+      "label": "Treasure Discovery",
+      "type": "discovery",
+      "participants": [],
+      "location": "stormwreck_isle",
+      "description": "Characters discover valuable loot in the crow's nest",
+      "id": "treasure_discovery",
+      "source_node": "Treasure",
+      "node_type": "event"
+    },
+    {
+      "label": "Movement_Illusion",
+      "type": "observation",
+      "participants": [],
+      "location": "stormwreck_isle",
+      "description": "Crabs create illusions of movement over skeletal remains",
+      "id": "movement_illusion",
       "source_node": "C5: Galley",
       "node_type": "event"
     },
     {
-      "label": "Suspicious_Movement",
-      "type": "discovery",
+      "label": "Suspicious Movement",
+      "type": "observation",
       "participants": [
-        "headless_skeleton"
+        "player_group"
       ],
       "location": "galley",
-      "description": "The skeleton appears to move unexpectedly",
+      "description": "The skeletal remains appear to shift slightly, suggesting unnatural activity.",
       "id": "suspicious_movement",
       "source_node": "",
       "node_type": "event"
     },
     {
-      "label": "Floorboard Trap Activation",
-      "type": "trap",
-      "participants": [],
-      "location": "cabin",
-      "description": "Triggering the floorboard releases a dart trap with an attack bonus of +5, dealing 2 (1d4) piercing damage and requiring a 11 Constitution saving throw against poison damage.",
-      "id": "floorboard_trap_activation",
-      "source_node": "Floorboard Stash",
+      "label": "Structural Collapse",
+      "type": "discovery",
+      "participants": [
+        "adventurers"
+      ],
+      "location": "stormwreck_isle",
+      "description": "A fallen chest created holes connecting the captain's quarters to the lower deck hold",
+      "id": "structural_collapse",
+      "source_node": "Hole to the Hold",
       "node_type": "event"
     },
     {
-      "label": "Environmental Guidance",
-      "type": "exploration",
-      "participants": [],
-      "location": "submerged_hold",
-      "description": "Text references climbing/swimming mechanics and breathable surfaces in the submerged hold",
-      "id": "environmental_guidance",
-      "source_node": "C9: Hold",
-      "node_type": "event"
-    },
-    {
-      "label": "Exploration",
+      "label": "Travel Options",
       "type": "exploration",
       "participants": [],
       "location": "clifftop_observatory",
-      "description": "Characters plan to explore the Clifftop Observatory via various routes",
-      "id": "exploration",
+      "description": "Multiple routes described to reach the Clifftop Observatory",
+      "id": "travel_options",
       "source_node": "Running This Chapter",
       "node_type": "event"
     },
     {
-      "label": "Winged Shape Observed",
-      "type": "observation",
-      "participants": [
-        "adventurers",
-        "blue_dragon_wyrmling"
-      ],
-      "location": "stormwreck_isle",
-      "description": "Adventurers spot a winged, glittering blue shape swooping overhead after hearing a screeching roar",
-      "id": "winged_shape_observed",
-      "source_node": "",
-      "node_type": "event"
-    },
-    {
-      "label": "Exploration",
-      "type": "exploration",
-      "participants": [],
-      "location": "d1",
-      "description": "Characters explore cliffs leading to area D1",
-      "id": "exploration",
-      "source_node": "Approaching by Water",
-      "node_type": "event"
-    },
-    {
-      "label": "Exploration",
-      "type": "exploration",
-      "participants": [],
-      "location": "d2",
-      "description": "Characters explore platforms atop pillars (D2-D5)",
-      "id": "exploration",
-      "source_node": "Approaching by Water",
-      "node_type": "event"
-    },
-    {
-      "label": "ConsiderApproachOptions",
+      "label": "Approach_by_Water",
       "type": "exploration",
       "participants": [
         "adventurers"
       ],
-      "location": "stormwreck_isle",
-      "description": "Evaluating methods to ascend cliffs or climb to ruins",
-      "id": "considerapproachoptions",
-      "source_node": "",
+      "location": "clifftop_observatory",
+      "description": "Characters approach the observatory by sea, choosing between rowing directly or anchoring near pillars to access elevated areas.",
+      "id": "approach_by_water",
+      "source_node": "Approaching by Water",
       "node_type": "event"
     },
     {
-      "label": "SpotDragonWyrmling",
+      "label": "Screeching Roar Encounter",
       "type": "encounter",
       "participants": [
-        "adventurers",
         "blue_dragon_wyrmling"
       ],
       "location": "column_far_from_stormwreck_isle",
-      "description": "A glowing blue dragon wyrmling is spotted resting on a distant column",
-      "id": "spotdragonwyrmling",
+      "description": "A winged, glittering blue shape roars and perches atop a distant column.",
+      "id": "screeching_roar_encounter",
       "source_node": "",
       "node_type": "event"
     },
     {
-      "label": "Bridge Activation",
-      "type": "puzzle",
+      "label": "Stirge Attack",
+      "type": "combat",
       "participants": [
-        "moonstone_key"
+        "stirge",
+        "kobolds"
       ],
-      "location": "clifftop_observatory",
-      "description": "Using the moonstone key activates an energy bridge across the gap",
-      "id": "bridge_activation",
-      "source_node": "D4: Isolated Study",
+      "location": "rotunda_ruins",
+      "description": "A stirge attack disrupts the kobolds' preparations for Sparkrender's ritual.",
+      "id": "stirge_attack",
+      "source_node": "Dragon Effigies",
       "node_type": "event"
     },
     {
-      "label": "Exploration Challenge",
+      "label": "Effigy Explanation",
+      "type": "dialogue",
+      "participants": [
+        "mek",
+        "minn"
+      ],
+      "location": "rotunda_ruins",
+      "description": "Mek and Minn explain the purpose of the dragon effigies to the adventurers.",
+      "id": "effigy_explanation",
+      "source_node": "Dragon Effigies",
+      "node_type": "event"
+    },
+    {
+      "label": "Creative Access to D4",
       "type": "exploration",
       "participants": [
-        "player_characters"
+        "adventurers"
       ],
-      "location": "clifftop_observatory",
-      "description": "Characters seek creative solutions to access the isolated study",
-      "id": "exploration_challenge",
+      "location": "d4",
+      "description": "Characters devise unconventional methods to reach the isolated study",
+      "id": "creative_access_to_d4",
       "source_node": "Clever Solutions",
       "node_type": "event"
     },
     {
-      "label": "Dragon Encounter Choice",
-      "type": "discovery",
+      "label": "Dragon Awakened",
+      "type": "encounter",
       "participants": [
-        "player_characters",
+        "characters",
         "sparkrender"
       ],
-      "location": "clifftop_observatory_main_floor",
-      "description": "Players must choose between battling Sparkrender or navigating to the secret library",
-      "id": "dragon_encounter_choice",
-      "source_node": "D5: Observatory Tower",
+      "location": "d5_observatory_tower",
+      "description": "Sparkrender awakens and growslows threats in Draconic",
+      "id": "dragon_awakened",
+      "source_node": "Waking the Dragon",
       "node_type": "event"
     },
     {
-      "label": "Potential Rescue Mission",
-      "type": "quest",
+      "label": "Breathing Attack",
+      "type": "combat",
       "participants": [
-        "player_characters",
-        "bronzedragon_wyrmling"
+        "characters",
+        "sparkrender"
       ],
-      "location": "d6_secret_library",
-      "description": "Option to free the imprisoned Bronze Dragon Wyrmling",
-      "id": "potential_rescue_mission",
-      "source_node": "D5: Observatory Tower",
+      "location": "d5_observatory_tower",
+      "description": "Blue Dragon Wyrmling uses Breath Weapon ability",
+      "id": "breathing_attack",
+      "source_node": "Waking the Dragon",
       "node_type": "event"
     },
     {
-      "label": "Presence of Blue Dragon",
+      "label": "Flight Attempt",
+      "type": "combat",
+      "participants": [
+        "characters",
+        "sparkrender"
+      ],
+      "location": "d5_observatory_tower",
+      "description": "Sparkrender flees after dropping to 10 hp",
+      "id": "flight_attempt",
+      "source_node": "Waking the Dragon",
+      "node_type": "event"
+    },
+    {
+      "label": "Discovery",
       "type": "discovery",
       "participants": [
-        "blue_dragon_wyrmling"
+        "characters"
       ],
-      "location": "clifftop_observatory",
-      "description": "A blue dragon wyrmling is found sleeping in the northeast corner of the tower",
-      "id": "presence_of_blue_dragon",
+      "location": "d5_observatory_tower",
+      "description": "Growling heard from area D6",
+      "id": "discovery",
+      "source_node": "Waking the Dragon",
+      "node_type": "event"
+    },
+    {
+      "label": "Statue Alignment Puzzle",
+      "type": "discovery",
+      "participants": [
+        "player_characters"
+      ],
+      "location": "d5_observatory_tower",
+      "description": "Players align statues with the Dragon of Dawn constellation to activate the hidden staircase to the secret archive.",
+      "id": "statue_alignment_puzzle",
+      "source_node": "Hidden Entrance",
+      "node_type": "event"
+    },
+    {
+      "label": "Staircase Activation",
+      "type": "exploration",
+      "participants": [
+        "player_characters"
+      ],
+      "location": "d5_observatory_tower",
+      "description": "Once statues are properly aligned, a glowing spiral staircase appears connecting to the library below.",
+      "id": "staircase_activation",
+      "source_node": "Hidden Entrance",
+      "node_type": "event"
+    },
+    {
+      "label": "Seal Mechanism",
+      "type": "trap",
+      "participants": [
+        "player_characters"
+      ],
+      "location": "d5_observatory_tower",
+      "description": "Disrupting the statue alignment causes the staircase to rise, trapping anyone on it above.",
+      "id": "seal_mechanism",
+      "source_node": "Hidden Entrance",
+      "node_type": "event"
+    },
+    {
+      "label": "Discovery",
+      "type": "discovery",
+      "participants": [
+        "sparkrender"
+      ],
+      "location": "observatory_tower",
+      "description": "Characters find Sparkrender's hoard containing coins and valuable items",
+      "id": "discovery",
+      "source_node": "Treasure",
+      "node_type": "event"
+    },
+    {
+      "label": "Unexpected Encounter",
+      "type": "combat",
+      "participants": [
+        "bronze_dragon"
+      ],
+      "location": "secret_library",
+      "description": "A large bronze dragon crashes through debris and begins to stir",
+      "id": "unexpected_encounter",
       "source_node": "",
       "node_type": "event"
     },
     {
-      "label": "Avoid Awakening Dragon",
-      "type": "exploration",
+      "label": "Discovery of Magical Artifacts",
+      "type": "discovery",
       "participants": [
         "adventurers"
       ],
-      "location": "clifftop_observatory",
-      "description": "Characters attempt silent movement to bypass dragon detection",
-      "id": "avoid_awakening_dragon",
-      "source_node": "Sneaking Around",
-      "node_type": "event"
-    },
-    {
-      "label": "Statue Interaction Challenge",
-      "type": "puzzle",
-      "participants": [
-        "adventurers"
-      ],
-      "location": "clifftop_observatory",
-      "description": "Statues require stealth checks to prevent waking Sparkrender",
-      "id": "statue_interaction_challenge",
-      "source_node": "Sneaking Around",
+      "location": "secret_library",
+      "description": "Characters uncover a +1 battleaxe and a 2nd-level hold person spell scroll after succeeding on an Intelligence (Investigation) check",
+      "id": "discovery_of_magical_artifacts",
+      "source_node": "Treasure",
       "node_type": "event"
     },
     {
       "label": "Freeing Aidron",
-      "type": "discovery",
+      "type": "quest",
       "participants": [
+        "adventurers",
         "aidron"
       ],
-      "location": "clifftop_observatory",
-      "description": "Aidron is bound by chains requiring three clasps to be removed, reducing his movement after liberation.",
+      "location": "stormwreck_isle",
+      "description": "Adventurers remove chains binding Aidron using clasps.",
       "id": "freeing_aidron",
       "source_node": "Freeing Aidron",
-      "node_type": "event"
-    },
-    {
-      "label": "Creature Listing",
-      "type": "discovery",
-      "participants": [
-        "bronze_dragon_wyrmling",
-        "ghoul",
-        "harpy"
-      ],
-      "location": "unknown",
-      "description": "Adventure features these creatures in its lore",
-      "id": "creature_listing",
-      "source_node": "Creature Descriptions",
       "node_type": "event"
     }
   ],
   "edges": [
     {
-      "source": "monster_encounter",
-      "target": "generic_monster",
-      "relation": "has_participant",
-      "description": "Participant in encounter"
-    },
-    {
-      "source": "monster_encounter",
-      "target": "ship_deck",
-      "relation": "occurs_at",
-      "description": "A monstrous creature climbs aboard the ship's deck."
-    },
-    {
-      "source": "tribute_demand",
-      "target": "scaled_queen",
-      "relation": "has_participant",
-      "description": "Participant in dialogue"
-    },
-    {
-      "source": "tribute_demand",
+      "source": "exploration",
       "target": "stormwreck_isle",
-      "relation": "occurs_at",
-      "description": "A speaker claims these waters belong to the Scaled Queen and asserts their right to collect tribute"
-    },
-    {
-      "source": "dialogue_with_kobolds",
-      "target": "cloister",
-      "relation": "occurs_at",
-      "description": "Kobolds barrage the travelers with questions upon learning their identity"
-    },
-    {
-      "source": "ship_crash_discovery",
-      "target": "rix",
-      "relation": "has_participant",
-      "description": "Participant in discovery"
-    },
-    {
-      "source": "ship_crash_discovery",
-      "target": "stormwreck_isle",
-      "relation": "occurs_at",
-      "description": "Rix witnesses a ship crashing on the northern rocks"
-    },
-    {
-      "source": "tattoo_symbol_recognition",
-      "target": "tarak",
-      "relation": "has_participant",
-      "description": "Participant in discovery"
-    },
-    {
-      "source": "tattoo_symbol_recognition",
-      "target": "stormwreck_isle",
-      "relation": "occurs_at",
-      "description": "Character identifies the gold hangman's noose tattoo as a symbol of the Gilded Gallows thieves' guild."
-    },
-    {
-      "source": "blocked_mushroom_harvest",
-      "target": "tarak",
       "relation": "has_participant",
       "description": "Participant in exploration"
     },
     {
-      "source": "description",
-      "target": "dragon_rest",
-      "relation": "occurs_at",
-      "description": "Text describes monastic cells layout and furnishings"
-    },
-    {
-      "source": "zombie_encounter",
-      "target": "zombie",
-      "relation": "has_participant",
-      "description": "Participant in combat"
-    },
-    {
-      "source": "zombie_encounter",
-      "target": "cloister",
-      "relation": "occurs_at",
-      "description": "Adventurers fight three zombies threatening Blepp and Tarak"
-    },
-    {
-      "source": "dialogue_with_runara",
-      "target": "runara",
-      "relation": "has_participant",
-      "description": "Participant in dialogue"
-    },
-    {
-      "source": "dialogue_with_runara",
-      "target": "cloister",
-      "relation": "occurs_at",
-      "description": "Runara reveals the wrecked ship as the zombie source"
-    },
-    {
-      "source": "wreck_investigation_prompt",
-      "target": "varnoth",
-      "relation": "has_participant",
-      "description": "Participant in discovery"
-    },
-    {
-      "source": "wreck_investigation_prompt",
-      "target": "rix",
-      "relation": "has_participant",
-      "description": "Participant in discovery"
-    },
-    {
-      "source": "dialogue_about_dream",
-      "target": "runara",
-      "relation": "has_participant",
-      "description": "Participant in dialogue"
-    },
-    {
-      "source": "dialogue_about_dream",
-      "target": "compass_rose",
-      "relation": "occurs_at",
-      "description": "Runara discusses the cleric's dream and suggests zombies relate to the hunger of death"
-    },
-    {
-      "source": "destiny_discussion_upon_arrival",
-      "target": "runara",
-      "relation": "has_participant",
-      "description": "Participant in dialogue"
-    },
-    {
-      "source": "destiny_discussion_upon_arrival",
-      "target": "cloister",
-      "relation": "occurs_at",
-      "description": "Character discusses destiny with Runara upon arrival"
-    },
-    {
-      "source": "destiny_reflection_after_quests",
-      "target": "runara",
-      "relation": "has_participant",
-      "description": "Participant in dialogue"
-    },
-    {
-      "source": "destiny_reflection_after_quests",
-      "target": "cloister",
-      "relation": "occurs_at",
-      "description": "Runara prompts character to consider heroic actions shaping destiny"
-    },
-    {
-      "source": "final_encouragement",
-      "target": "runara",
-      "relation": "has_participant",
-      "description": "Participant in dialogue"
-    },
-    {
-      "source": "final_encouragement",
-      "target": "cloister",
-      "relation": "occurs_at",
-      "description": "Runara assures character destiny will become clearer"
-    },
-    {
-      "source": "initial_encounter",
-      "target": "runara",
-      "relation": "has_participant",
-      "description": "Participant in dialogue"
-    },
-    {
-      "source": "initial_encounter",
-      "target": "dragon_rest",
-      "relation": "occurs_at",
-      "description": "Paladin arrives in Dragon's Rest and meets Runara."
-    },
-    {
-      "source": "guidance_from_elders",
-      "target": "tarak",
-      "relation": "has_participant",
-      "description": "Participant in dialogue"
-    },
-    {
-      "source": "guidance_from_elders",
-      "target": "varnoth",
-      "relation": "has_participant",
-      "description": "Participant in dialogue"
-    },
-    {
-      "source": "guidance_from_elders",
-      "target": "dragon_rest",
-      "relation": "occurs_at",
-      "description": "Runara directs the paladin to consult Tarak and Varnoth about overcoming corruption."
-    },
-    {
-      "source": "temple_reflection",
-      "target": "temple_of_bahamut",
-      "relation": "occurs_at",
-      "description": "Paladin spends time meditating in the temple of Bahamut."
-    },
-    {
-      "source": "final_counsel",
-      "target": "runara",
-      "relation": "has_participant",
-      "description": "Participant in dialogue"
-    },
-    {
-      "source": "final_counsel",
-      "target": "dragon_rest",
-      "relation": "occurs_at",
-      "description": "Runara questions the paladin about lessons learned against corruption."
-    },
-    {
-      "source": "dialogue_about_past_betrayal",
-      "target": "tarak",
-      "relation": "has_participant",
-      "description": "Participant in dialogue"
-    },
-    {
-      "source": "dialogue_about_past_betrayal",
-      "target": "dragon_rest",
-      "relation": "occurs_at",
-      "description": "Tarak recounts his betrayal of the guild and tragic love affair, advising the rogue to abandon crime."
-    },
-    {
-      "source": "guardian_attack",
-      "target": "fume_drake",
-      "relation": "has_participant",
-      "description": "Participant in combat"
-    },
-    {
-      "source": "guardian_attack",
-      "target": "hot_spring",
-      "relation": "occurs_at",
-      "description": "Three Fume Drakes emerge from the hot spring waters to attack intruders attempting to collect mushrooms or access the spring."
-    },
-    {
-      "source": "magical_regeneration_benefit",
-      "target": "hot_spring",
-      "relation": "occurs_at",
-      "description": "Bathing in the spring grants temporary hit point recovery through Hit Dice rolls"
-    },
-    {
-      "source": "level_adjustment_notice",
-      "target": "seagrow_caves",
-      "relation": "occurs_at",
-      "description": "Text notes level-based difficulty adjustments for gameplay progression"
-    },
-    {
-      "source": "blight_spread_discovery",
-      "target": "myconid_adult",
-      "relation": "has_participant",
-      "description": "Participant in discovery"
-    },
-    {
-      "source": "blight_spread_discovery",
-      "target": "myconid_sprout",
-      "relation": "has_participant",
-      "description": "Participant in discovery"
-    },
-    {
-      "source": "blight_spread_discovery",
-      "target": "sinensa",
-      "relation": "has_participant",
-      "description": "Participant in discovery"
-    },
-    {
-      "source": "blight_spread_discovery",
-      "target": "seagrow_caves",
-      "relation": "occurs_at",
-      "description": "A blight originating from the tomb of Sharruth has poisoned the myconid colonies, killing their leader Sinensa."
-    },
-    {
-      "source": "vent_blockade_event",
-      "target": "cavern_at_back_seagrow_caves",
-      "relation": "occurs_at",
-      "description": "Blocked vents near Seagrow Caves caused toxic fumes from Sharruth's tomb to spill into the myconid caves."
-    },
-    {
-      "source": "stirge_encounter",
-      "target": "stirges",
+      "source": "guardian_encounters",
+      "target": "unknown_guardians",
       "relation": "has_participant",
       "description": "Participant in encounter"
     },
     {
-      "source": "stirge_encounter",
+      "source": "mushroom_connection",
       "target": "seagrow_caves",
       "relation": "occurs_at",
-      "description": "Blood-sucking stirges nest in the caves, posing a danger to intruders despite avoiding the fungus-eating myconids."
+      "description": "Magical connection to the Elemental Plane of Fire affects myconids"
     },
     {
-      "source": "travel_options",
-      "target": "seagrow_caves",
+      "source": "blue_dragon_lair",
+      "target": "clifftop_observatory",
       "relation": "occurs_at",
-      "description": "Characters select between boating or hiking routes to reach Seagrow Caves"
+      "description": "Exploration of the blue dragon's lair containing a captive bronze wyrmling"
     },
     {
-      "source": "tide_cycle_description",
-      "target": "seagrow_caves",
-      "relation": "occurs_at",
-      "description": "Text details tidal patterns affecting access to the caves"
-    },
-    {
-      "source": "guardian_encounter",
-      "target": "spore_servant_octopus",
+      "source": "monster_appears_on_deck",
+      "target": "monster",
       "relation": "has_participant",
       "description": "Participant in encounter"
     },
     {
-      "source": "guardian_encounter",
-      "target": "entrance_tunnel",
-      "relation": "occurs_at",
-      "description": "A spore servant octopus ambushes intruders in the entrance tunnel."
-    },
-    {
-      "source": "stirge_join_battle",
-      "target": "stirge",
-      "relation": "has_participant",
-      "description": "Participant in combat"
-    },
-    {
-      "source": "stirge_join_battle",
-      "target": "entrance_tunnel",
-      "relation": "occurs_at",
-      "description": "Two stirge cling to the tunnel ceiling and join the战斗 if fighting breaks out in this area."
-    },
-    {
-      "source": "discovery",
-      "target": "sickly_mushroom",
-      "relation": "has_participant",
-      "description": "Participant in discovery"
-    },
-    {
-      "source": "discovery",
-      "target": "fungus_farm",
-      "relation": "occurs_at",
-      "description": "A sentient mushroom emerges from the ground with pulsating tendrils"
-    },
-    {
-      "source": "fungal_ambush",
-      "target": "violet_fungus",
-      "relation": "has_participant",
-      "description": "Participant in combat"
-    },
-    {
-      "source": "fungal_ambush",
-      "target": "fungus_farm",
-      "relation": "occurs_at",
-      "description": "Three violet fungi ambush the party, with two remaining stationary until provoked"
-    },
-    {
-      "source": "environmental_hazard",
-      "target": "fungus_farm",
-      "relation": "occurs_at",
-      "description": "Characters discover the deceptive appearance of non-threatening purple fungi"
-    },
-    {
-      "source": "encountering_stirges",
-      "target": "stirges",
-      "relation": "has_participant",
-      "description": "Participant in encounter"
-    },
-    {
-      "source": "elixir_creation",
-      "target": "dragon_rest",
-      "relation": "occurs_at",
-      "description": "Tarak reveals method to craft elixir of health using ruby morel"
-    },
-    {
-      "source": "zombie_encounters_in_wrecks",
-      "target": "zombie",
-      "relation": "has_participant",
-      "description": "Participant in discovery"
-    },
-    {
-      "source": "zombie_encounters_in_wrecks",
-      "target": "compass_rose",
-      "relation": "has_participant",
-      "description": "Participant in discovery"
-    },
-    {
-      "source": "zombie_encounters_in_wrecks",
-      "target": "compass_rose",
-      "relation": "occurs_at",
-      "description": "Characters exploring other wrecks discover additional zombies animated by the talisman in Compass Rose's hold."
-    },
-    {
-      "source": "giant_octopus_encounter",
-      "target": "spore_servant_octopus",
-      "relation": "has_participant",
-      "description": "Participant in combat"
-    },
-    {
-      "source": "giant_octopus_encounter",
-      "target": "compass_rose",
-      "relation": "occurs_at",
-      "description": "Giant octopuses ambush explorers in submerged wreckage."
-    },
-    {
-      "source": "ghoul_danger_aboard",
-      "target": "ghoul",
-      "relation": "has_participant",
-      "description": "Participant in discovery"
-    },
-    {
-      "source": "ghoul_danger_aboard",
-      "target": "compass_rose",
-      "relation": "occurs_at",
-      "description": "Unusual dangers like ghouls lurk within other shipwrecks."
-    },
-    {
-      "source": "description_of_wreck_structure",
-      "target": "compass_rose",
-      "relation": "occurs_at",
-      "description": "Text describes structural features of the shipwreck including walls, ceilings, doors, and lighting conditions."
-    },
-    {
-      "source": "exploration",
+      "source": "monster_appears_on_deck",
       "target": "stormwreck_isle",
       "relation": "occurs_at",
-      "description": "Adventurers observe a derelict ship wedged against rock formations and massive dragon bones"
+      "description": "A monster hauls itself up onto the deck as lightning flashes."
     },
     {
-      "source": "exploration",
-      "target": "ship_deck",
-      "relation": "occurs_at",
-      "description": "Adventurers explore the main deck of the shipwreck, noting environmental details and discovering potential access points below."
+      "source": "merrow_escape",
+      "target": "merrow_extortionist",
+      "relation": "has_participant",
+      "description": "Participant in discovery"
     },
     {
-      "source": "treasure_discovery",
-      "target": "ship_deck",
+      "source": "merrow_escape",
+      "target": "stormwreck_isle",
       "relation": "occurs_at",
-      "description": "Characters discover valuable loot in the crow's nest including jewelry and gems"
+      "description": "The merrow escapes into the depths"
     },
     {
-      "source": "broken_ballista",
-      "target": "ship_deck",
+      "source": "sailor_cheer",
+      "target": "sailors",
+      "relation": "has_participant",
+      "description": "Participant in observation"
+    },
+    {
+      "source": "learning_about_dangers",
+      "target": "dragon_rest",
       "relation": "occurs_at",
-      "description": "The ballista is found to be nonfunctional"
+      "description": "Characters learn about the dangers facing Stormwreck Isle."
+    },
+    {
+      "source": "encounter_with_drowned_sailors",
+      "target": "drowned_sailors",
+      "relation": "has_participant",
+      "description": "Participant in encounter"
+    },
+    {
+      "source": "encounter_with_drowned_sailors",
+      "target": "stormwreck_isle",
+      "relation": "occurs_at",
+      "description": "Undead sailors emerge from the water and approach the party"
+    },
+    {
+      "source": "dialogue",
+      "target": "kobold",
+      "relation": "has_participant",
+      "description": "Participant in dialogue"
+    },
+    {
+      "source": "dialogue",
+      "target": "cloister",
+      "relation": "occurs_at",
+      "description": "A kobold initiates conversation by asking the travelers' name"
+    },
+    {
+      "source": "guardian_encounter",
+      "target": "tarak",
+      "relation": "has_participant",
+      "description": "Participant in encounter"
+    },
+    {
+      "source": "guardian_encounter",
+      "target": "fungus_covered_octopus_monster",
+      "relation": "has_participant",
+      "description": "Participant in encounter"
+    },
+    {
+      "source": "tattoo_symbol_discovery",
+      "target": "tarak",
+      "relation": "has_participant",
+      "description": "Participant in discovery"
+    },
+    {
+      "source": "statue_identification",
+      "target": "dragon_rest",
+      "relation": "occurs_at",
+      "description": "Character identifies the statue as depicting a bronze dragon using Arcana skill check"
+    },
+    {
+      "source": "runara_s_revelation",
+      "target": "runara",
+      "relation": "has_participant",
+      "description": "Participant in dialogue"
+    },
+    {
+      "source": "runara_s_revelation",
+      "target": "dragon_rest",
+      "relation": "occurs_at",
+      "description": "Runara reveals the statue depicts Astalagan, her late father"
     },
     {
       "source": "observation",
-      "target": "small_crabs",
+      "target": "cloister",
       "relation": "has_participant",
       "description": "Participant in observation"
     },
     {
-      "source": "suspicious_movement",
-      "target": "headless_skeleton",
+      "source": "observation",
+      "target": "cloister",
+      "relation": "occurs_at",
+      "description": "Description of monastic cells layout and occupancy"
+    },
+    {
+      "source": "observation",
+      "target": "tarak",
+      "relation": "has_participant",
+      "description": "Participant in observation"
+    },
+    {
+      "source": "dialogue_about_myconid_mission",
+      "target": "tarak",
+      "relation": "has_participant",
+      "description": "Participant in dialogue"
+    },
+    {
+      "source": "guardian_encounter",
+      "target": "fungal_octopus",
+      "relation": "has_participant",
+      "description": "Participant in combat"
+    },
+    {
+      "source": "dream_interpretation_dialogue",
+      "target": "runara",
+      "relation": "has_participant",
+      "description": "Participant in dialogue"
+    },
+    {
+      "source": "dream_interpretation_dialogue",
+      "target": "dragon_rest",
+      "relation": "occurs_at",
+      "description": "Runara interprets the cleric's dream about the hunger of death and directs them to investigate the wreck of Compass Rose"
+    },
+    {
+      "source": "paladin_s_arrival_and_guidance",
+      "target": "runara",
+      "relation": "has_participant",
+      "description": "Participant in dialogue"
+    },
+    {
+      "source": "paladin_s_arrival_and_guidance",
+      "target": "dragon_rest",
+      "relation": "occurs_at",
+      "description": "Runara advises the paladin to consult Tarak and Varnoth, and recommends spending time in the temple of Bahamut."
+    },
+    {
+      "source": "final_reflection_prompt",
+      "target": "runara",
+      "relation": "has_participant",
+      "description": "Participant in dialogue"
+    },
+    {
+      "source": "final_reflection_prompt",
+      "target": "temple_bahamut",
+      "relation": "occurs_at",
+      "description": "Runara questions the paladin about lessons learned against corruption, suggesting personal quests to combat evil."
+    },
+    {
+      "source": "revelation",
+      "target": "runara",
       "relation": "has_participant",
       "description": "Participant in discovery"
     },
     {
-      "source": "floorboard_trap_activation",
-      "target": "cabin",
+      "source": "revelation",
+      "target": "stormwreck_isle",
       "relation": "occurs_at",
-      "description": "Triggering the floorboard releases a dart trap with an attack bonus of +5, dealing 2 (1d4) piercing damage and requiring a 11 Constitution saving throw against poison damage."
+      "description": "Runara reveals her true draconic form through magical transformation"
     },
     {
-      "source": "environmental_guidance",
-      "target": "submerged_hold",
-      "relation": "occurs_at",
-      "description": "Text references climbing/swimming mechanics and breathable surfaces in the submerged hold"
+      "source": "dialogue",
+      "target": "runara",
+      "relation": "has_participant",
+      "description": "Participant in conversation"
     },
     {
-      "source": "exploration",
-      "target": "clifftop_observatory",
+      "source": "discovery_of_hot_spring_regeneration",
+      "target": "hot_spring",
       "relation": "occurs_at",
-      "description": "Characters plan to explore the Clifftop Observatory via various routes"
+      "description": "Characters can regain hit points by bathing in the hot spring after spending 10 minutes."
     },
     {
-      "source": "winged_shape_observed",
-      "target": "blue_dragon_wyrmling",
+      "source": "kobold_encounter",
+      "target": "stormwreck_isle",
+      "relation": "occurs_at",
+      "description": "Eight kobolds and three winged kobolds appear as per the 3rd-level encounter guidelines."
+    },
+    {
+      "source": "travel_options_revealed",
+      "target": "stormwreck_isle",
+      "relation": "occurs_at",
+      "description": "Characters learn of two ways to reach Seagrow Caves: rowboat journey or coastal trek"
+    },
+    {
+      "source": "tide_access_restriction",
+      "target": "seagrow_caves",
+      "relation": "occurs_at",
+      "description": "Characters must navigate tides to access lower caverns"
+    },
+    {
+      "source": "telepathic_link_activation",
+      "target": "myconid_adult",
       "relation": "has_participant",
       "description": "Participant in observation"
     },
     {
-      "source": "winged_shape_observed",
-      "target": "stormwreck_isle",
+      "source": "telepathic_link_activation",
+      "target": "seagrow_caves",
       "relation": "occurs_at",
-      "description": "Adventurers spot a winged, glittering blue shape swooping overhead after hearing a screeching roar"
+      "description": "Characters gain telepathic communication with myconids via rapport spores"
     },
     {
-      "source": "considerapproachoptions",
-      "target": "stormwreck_isle",
-      "relation": "occurs_at",
-      "description": "Evaluating methods to ascend cliffs or climb to ruins"
+      "source": "myconid_movement_triggered_by_distress_spores",
+      "target": "myconid_adult",
+      "relation": "has_participant",
+      "description": "Participant in movement"
     },
     {
-      "source": "spotdragonwyrmling",
-      "target": "blue_dragon_wyrmling",
+      "source": "myconid_movement_triggered_by_distress_spores",
+      "target": "myconid_sprout",
+      "relation": "has_participant",
+      "description": "Participant in movement"
+    },
+    {
+      "source": "shared_trance",
+      "target": "virosa_myconid",
+      "relation": "has_participant",
+      "description": "Participant in discovery"
+    },
+    {
+      "source": "illness_effect",
+      "target": "virosa_myconid",
+      "relation": "has_participant",
+      "description": "Participant in observation"
+    },
+    {
+      "source": "elixir_creation",
+      "target": "tarak",
+      "relation": "has_participant",
+      "description": "Participant in discovery"
+    },
+    {
+      "source": "elixir_creation",
+      "target": "cloister",
+      "relation": "occurs_at",
+      "description": "Characters bring ruby morel to cloister, enabling Tarak to craft an elixir of health"
+    },
+    {
+      "source": "fume_drake_encounter",
+      "target": "fume_drake",
       "relation": "has_participant",
       "description": "Participant in encounter"
     },
     {
-      "source": "spotdragonwyrmling",
-      "target": "column_far_from_stormwreck_isle",
+      "source": "fume_drake_encounter",
+      "target": "crystal_cave",
       "relation": "occurs_at",
-      "description": "A glowing blue dragon wyrmling is spotted resting on a distant column"
+      "description": "Two fume drakes ambush intruding creatures in the sulfer-laden cave"
     },
     {
-      "source": "bridge_activation",
-      "target": "moonstone_key",
-      "relation": "has_participant",
-      "description": "Participant in puzzle"
-    },
-    {
-      "source": "bridge_activation",
-      "target": "clifftop_observatory",
+      "source": "blight_source_revelation",
+      "target": "crystal_cave",
       "relation": "occurs_at",
-      "description": "Using the moonstone key activates an energy bridge across the gap"
+      "description": "Characters uncover the link between the tomb's magical energies and the toxic fungal spread"
     },
     {
-      "source": "exploration_challenge",
-      "target": "clifftop_observatory",
-      "relation": "occurs_at",
-      "description": "Characters seek creative solutions to access the isolated study"
-    },
-    {
-      "source": "dragon_encounter_choice",
-      "target": "sparkrender",
-      "relation": "has_participant",
-      "description": "Participant in discovery"
-    },
-    {
-      "source": "potential_rescue_mission",
-      "target": "d6_secret_library",
-      "relation": "occurs_at",
-      "description": "Option to free the imprisoned Bronze Dragon Wyrmling"
-    },
-    {
-      "source": "presence_of_blue_dragon",
-      "target": "blue_dragon_wyrmling",
-      "relation": "has_participant",
-      "description": "Participant in discovery"
-    },
-    {
-      "source": "presence_of_blue_dragon",
-      "target": "clifftop_observatory",
-      "relation": "occurs_at",
-      "description": "A blue dragon wyrmling is found sleeping in the northeast corner of the tower"
-    },
-    {
-      "source": "avoid_awakening_dragon",
-      "target": "clifftop_observatory",
-      "relation": "occurs_at",
-      "description": "Characters attempt silent movement to bypass dragon detection"
-    },
-    {
-      "source": "statue_interaction_challenge",
-      "target": "clifftop_observatory",
-      "relation": "occurs_at",
-      "description": "Statues require stealth checks to prevent waking Sparkrender"
-    },
-    {
-      "source": "freeing_aidron",
-      "target": "aidron",
-      "relation": "has_participant",
-      "description": "Participant in discovery"
-    },
-    {
-      "source": "freeing_aidron",
-      "target": "clifftop_observatory",
-      "relation": "occurs_at",
-      "description": "Aidron is bound by chains requiring three clasps to be removed, reducing his movement after liberation."
-    },
-    {
-      "source": "creature_listing",
-      "target": "bronze_dragon_wyrmling",
-      "relation": "has_participant",
-      "description": "Participant in discovery"
-    },
-    {
-      "source": "creature_listing",
-      "target": "ghoul",
-      "relation": "has_participant",
-      "description": "Participant in discovery"
-    },
-    {
-      "source": "creature_listing",
+      "source": "harpy_lair_discovery",
       "target": "harpy",
       "relation": "has_participant",
       "description": "Participant in discovery"
     },
     {
+      "source": "harpy_lair_discovery",
+      "target": "crow_snest",
+      "relation": "occurs_at",
+      "description": "Characters discover the harpy's nest in the crow's nest, filled with debris and remnants of its lair."
+    },
+    {
+      "source": "treasure_discovery",
+      "target": "stormwreck_isle",
+      "relation": "occurs_at",
+      "description": "Characters discover valuable loot in the crow's nest"
+    },
+    {
+      "source": "movement_illusion",
+      "target": "stormwreck_isle",
+      "relation": "occurs_at",
+      "description": "Crabs create illusions of movement over skeletal remains"
+    },
+    {
+      "source": "structural_collapse",
+      "target": "stormwreck_isle",
+      "relation": "occurs_at",
+      "description": "A fallen chest created holes connecting the captain's quarters to the lower deck hold"
+    },
+    {
+      "source": "travel_options",
+      "target": "clifftop_observatory",
+      "relation": "occurs_at",
+      "description": "Multiple routes described to reach the Clifftop Observatory"
+    },
+    {
+      "source": "approach_by_water",
+      "target": "clifftop_observatory",
+      "relation": "occurs_at",
+      "description": "Characters approach the observatory by sea, choosing between rowing directly or anchoring near pillars to access elevated areas."
+    },
+    {
+      "source": "screeching_roar_encounter",
+      "target": "blue_dragon_wyrmling",
+      "relation": "has_participant",
+      "description": "Participant in encounter"
+    },
+    {
+      "source": "stirge_attack",
+      "target": "stirge",
+      "relation": "has_participant",
+      "description": "Participant in combat"
+    },
+    {
+      "source": "stirge_attack",
+      "target": "kobolds",
+      "relation": "has_participant",
+      "description": "Participant in combat"
+    },
+    {
+      "source": "effigy_explanation",
+      "target": "minn",
+      "relation": "has_participant",
+      "description": "Participant in dialogue"
+    },
+    {
+      "source": "dragon_awakened",
+      "target": "sparkrender",
+      "relation": "has_participant",
+      "description": "Participant in encounter"
+    },
+    {
+      "source": "breathing_attack",
+      "target": "sparkrender",
+      "relation": "has_participant",
+      "description": "Participant in combat"
+    },
+    {
+      "source": "flight_attempt",
+      "target": "sparkrender",
+      "relation": "has_participant",
+      "description": "Participant in combat"
+    },
+    {
+      "source": "discovery",
+      "target": "sparkrender",
+      "relation": "has_participant",
+      "description": "Participant in discovery"
+    },
+    {
+      "source": "unexpected_encounter",
+      "target": "bronze_dragon",
+      "relation": "has_participant",
+      "description": "Participant in combat"
+    },
+    {
+      "source": "freeing_aidron",
+      "target": "aidron",
+      "relation": "has_participant",
+      "description": "Participant in quest"
+    },
+    {
+      "source": "freeing_aidron",
+      "target": "stormwreck_isle",
+      "relation": "occurs_at",
+      "description": "Adventurers remove chains binding Aidron using clasps."
+    },
+    {
+      "relation": "part_of",
+      "source": "hot_spring",
+      "target": "cloister",
+      "desc": "Magical hot spring in cloister"
+    },
+    {
+      "relation": "part_of",
+      "source": "blue_dragon_lair",
+      "target": "clifftop_observatory",
+      "desc": "Blue dragon's lair in observatory"
+    },
+    {
+      "relation": "part_of",
+      "source": "path",
+      "target": "temple_at_a5",
+      "desc": "Long path winding up cliff to temple"
+    },
+    {
+      "relation": "part_of",
+      "source": "path",
+      "target": "dragon_rest",
+      "desc": "Path leading toward Dragon's Rest"
+    },
+    {
+      "relation": "part_of",
+      "source": "library",
+      "target": "cloister",
+      "desc": "Spacious library within cloister"
+    },
+    {
       "relation": "part_of",
       "source": "cloister",
-      "target": "stormwreck_isle",
-      "desc": "Ancient cloister where dragons once clashed"
+      "target": "temple_at_a5",
+      "desc": "Cloister within the temple"
     },
     {
       "relation": "part_of",
-      "source": "vent",
-      "target": "stormwreck_isle",
-      "desc": "Submerged vent linked to Sharruth's imprisonment"
-    },
-    {
-      "relation": "part_of",
-      "source": "vent",
+      "source": "temple_at_a5",
       "target": "cloister",
-      "desc": "Vent in cloister"
+      "desc": "Varnoth maintains the temple within the cloister"
     },
     {
       "relation": "part_of",
-      "source": "vent",
-      "target": "tunnel",
-      "desc": "Hidden vent accessed via subterranean pathways"
+      "source": "cloister_library",
+      "target": "cloister",
+      "desc": "Cloister library within cloister building"
     },
     {
       "relation": "part_of",
-      "source": "vent",
-      "target": "seagrow_caves",
-      "desc": "Vent in Seagrow Caves"
+      "source": "path",
+      "target": "cloister",
+      "desc": "Path near cloister (implied by contextual references to zombies on the beach)"
     },
     {
-      "relation": "part_of",
-      "source": "seagrow_caves",
-      "target": "stormwreck_isle",
-      "desc": "Seagrow Caves on Stormwreck Isle"
+      "relation": "trapped_at",
+      "source": "sharruth",
+      "target": "cloister",
+      "desc": "Imprisoned beneath the ocean floor, causing the formation of Stormwreck Isle"
     },
     {
-      "relation": "part_of",
-      "source": "vent",
-      "target": "submerged_hold",
-      "desc": "Vent in submerged hold"
-    },
-    {
-      "relation": "part_of",
-      "source": "cabin",
-      "target": "submerged_hold",
-      "desc": "Cabin located within submerged hold"
-    },
-    {
-      "relation": "part_of",
-      "source": "submerged_hold",
-      "target": "lower_deck",
-      "desc": "Submerged hold within lower deck"
-    },
-    {
-      "relation": "part_of",
-      "source": "submerged_hold",
-      "target": "ruined_tower",
-      "desc": "Submerged chamber in the ruins"
-    },
-    {
-      "relation": "part_of",
-      "source": "ruined_tower",
-      "target": "d5",
-      "desc": "Ruined tower within area D5"
-    },
-    {
-      "relation": "part_of",
-      "source": "d6_secret_library",
-      "target": "ruined_tower",
-      "desc": "Secret library accessible via caved-in wall beneath tower"
-    },
-    {
-      "relation": "part_of",
-      "source": "d5",
-      "target": "ruined_tower",
-      "desc": "Accessible area near the secret library in the tower"
+      "relation": "social_rival_of",
+      "source": "runara",
+      "target": "sharruth",
+      "desc": "Runara opposed Sharruth’s actions, contributing to her imprisonment"
     },
     {
       "relation": "inhabits",
       "source": "runara",
       "target": "cloister",
-      "desc": "Lives in the cloister"
+      "desc": "Runara's cloister"
+    },
+    {
+      "relation": "hidden_at",
+      "source": "sharruth",
+      "target": "cloister",
+      "desc": "Sharruth's grave is at the cloister"
+    },
+    {
+      "relation": "led_by",
+      "source": "runara",
+      "target": "cloister",
+      "desc": "Runs the cloister of Dragon's Rest"
+    },
+    {
+      "relation": "inhabits",
+      "source": "zombies",
+      "target": "path",
+      "desc": "Found on the path"
+    },
+    {
+      "relation": "wanders",
+      "source": "zombies",
+      "target": "path",
+      "desc": "Slowly moving along the path"
     },
     {
       "relation": "guards",
-      "source": "sharruth",
-      "target": "vent",
-      "desc": "Guardians at the site of a brass dragon's death (implied through association with the vent, though not explicitly stated; however, due to lack of clearer connections, this remains tentative)"
-    },
-    {
-      "relation": "led_by",
-      "source": "runara",
-      "target": "cloister",
-      "desc": "Leads the cloister of Dragon's Rest"
-    },
-    {
-      "relation": "carries",
       "source": "zombies",
-      "target": "dash",
-      "desc": "Zombified sailors use the Dash item to move closer during combat"
+      "target": "path",
+      "desc": "Zombies don't follow them up the path"
+    },
+    {
+      "relation": "hidden_at",
+      "source": "zombies",
+      "target": "cloister",
+      "desc": "Cloister Quests reference future interaction with zombies"
     },
     {
       "relation": "inhabits",
-      "source": "zombies",
-      "target": "vent",
-      "desc": "Zombies are present at the vent location"
+      "source": "kobolds",
+      "target": "cloister",
+      "desc": "Visitors to the cloister are rare, and the kobolds' curiosity is insatiable"
     },
     {
-      "relation": "led_by",
+      "relation": "guarded_by",
       "source": "cloister",
+      "target": "kobolds",
+      "desc": "Kobolds fall silent as a figure approaches the cloister"
+    },
+    {
+      "relation": "led_by",
+      "source": "zombies",
       "target": "runara",
-      "desc": "Elder Runara is the leader of the cloister"
+      "desc": "Elder Runara is the leader of Dragon's Rest"
     },
     {
-      "relation": "inhabits",
-      "source": "kobolds",
-      "target": "cloister",
-      "desc": "Kobolds are present in the cloister"
+      "relation": "hidden_at",
+      "source": "runara",
+      "target": "temple_at_a5",
+      "desc": "Residents of the cloister think she lives in the temple at the top of the island"
     },
     {
-      "relation": "members_include",
-      "source": "kobolds",
-      "target": "myla",
-      "desc": "Myla is referenced in the kobolds section (implied association)"
+      "relation": "hidden_at",
+      "source": "runara",
+      "target": "library",
+      "desc": "Residents of the cloister think she lives in the library"
     },
     {
       "relation": "guarded_by",
       "source": "cloister",
       "target": "zombies",
-      "desc": "Zombies are implied to be guarding the cloister's perimeter (contextual inference from defeating zombies at the beach)"
+      "desc": "Zombies guard the entrance to the cloister"
     },
     {
-      "relation": "members_include",
-      "source": "kobolds",
-      "target": "kobold",
-      "desc": "The group of kobolds includes individual kobolds"
-    },
-    {
-      "relation": "hidden_at",
-      "source": "runara",
-      "target": "tunnel",
-      "desc": "Secret lair accessed via underwater tunnel"
-    },
-    {
-      "relation": "worships",
+      "relation": "social: worships",
       "source": "kobolds",
       "target": "runara",
-      "desc": "Utterly devoted to Runara"
+      "desc": "Kobolds worship Runara"
     },
     {
-      "relation": "guards",
+      "relation": "creature->item: owns",
+      "source": "kobold_tinkerer",
+      "target": "dagger",
+      "desc": "Kobold Tinkerer owns the dagger"
+    },
+    {
+      "relation": "creature->location: inhabited_at",
       "source": "kobolds",
+      "target": "temple_at_a5",
+      "desc": "Kobolds live near the temple"
+    },
+    {
+      "relation": "Social",
+      "source": "tarak",
+      "target": "gilded_gallows",
+      "desc": "Was a ruthless poisoner for the thieves’ guild"
+    },
+    {
+      "relation": "Creature→Location",
+      "source": "tarak",
       "target": "cloister",
-      "desc": "Implied protection of the cloister (via Agga’s role)"
+      "desc": "Tends the cloister’s garden plots"
+    },
+    {
+      "relation": "Creature→Item",
+      "source": "tarak",
+      "target": "monster",
+      "desc": "The monster guards the sea caves where Tarak acquires mushrooms (implied through context)"
+    },
+    {
+      "relation": "led_by",
+      "source": "varnoth",
+      "target": "soldier",
+      "desc": "Was a feared general at the head of a mercenary company called the Azure Wolves"
+    },
+    {
+      "relation": "inhabits",
+      "source": "varnoth",
+      "target": "temple_at_a5",
+      "desc": "Maintains the temple"
+    },
+    {
+      "relation": "inhabits",
+      "source": "varnoth",
+      "target": "cloister",
+      "desc": "Maintains other areas of the cloister"
     },
     {
       "relation": "inhabits",
       "source": "tarak",
       "target": "cloister",
-      "desc": "Tends the cloister's garden plots"
-    },
-    {
-      "relation": "guards",
-      "source": "generic_monster",
-      "target": "cloister",
-      "desc": "Fungus-covered octopus monster guards the sea caves (implied connection through Tarak's failed attempts to access them)"
-    },
-    {
-      "relation": "inhabits",
-      "source": "varnoth",
-      "target": "cloister",
-      "desc": "Spending her twilight years in reflective contemplation"
-    },
-    {
-      "relation": "owns",
-      "source": "varnoth",
-      "target": "mason_s_tools",
-      "desc": "Uses to maintain the temple and other areas of the cloister"
+      "desc": "Occupies Tarak's cell"
     },
     {
       "relation": "inhabits",
       "source": "myla",
       "target": "cloister",
-      "desc": "Myla's cell is within the cloister"
-    },
-    {
-      "relation": "serves",
-      "source": "tarak",
-      "target": "cloister",
-      "desc": "Cooks on special days, making them everyone’s favorite"
+      "desc": "Occupies Myla's cell"
     },
     {
       "relation": "inhabits",
-      "source": "rix",
+      "source": "runara",
+      "target": "cloister_library",
+      "desc": "Spends nearly half her time studying, copying, and annotating"
+    },
+    {
+      "relation": "inhabits",
+      "source": "tarak",
+      "target": "cloister_library",
+      "desc": "Comes here to read and discuss various works"
+    },
+    {
+      "relation": "inhabits",
+      "source": "runara",
+      "target": "temple_at_a5",
+      "desc": "Spends half her time here, tending the temple"
+    },
+    {
+      "relation": "inhabits",
+      "source": "kobold",
       "target": "cloister",
       "desc": "Residents of the cloister help her"
     },
     {
-      "relation": "serves",
+      "relation": "stored_in",
+      "source": "detect_magic",
+      "target": "temple_at_a5",
+      "desc": "Cast in the temple, revealing a faint aura around the statue"
+    },
+    {
+      "relation": "inhabits",
+      "source": "zombies",
+      "target": "cloister",
+      "desc": "Cause trouble after staying at cloister"
+    },
+    {
+      "relation": "guards",
+      "source": "zombies",
+      "target": "cloister",
+      "desc": "Guard the area around the cloister (implied by causing trouble after staying there)"
+    },
+    {
+      "relation": "targets",
+      "source": "zombies",
+      "target": "tarak",
+      "desc": "Overpower Tarak if not aided"
+    },
+    {
+      "relation": "wander",
+      "source": "drowned_sailors",
+      "target": "path",
+      "desc": "Shamble after the residents up the lower path"
+    },
+    {
+      "relation": "hidden_at",
+      "source": "drowned_sailors",
+      "target": "path",
+      "desc": "Bloated corpses dressed as sailors pursue the residents"
+    },
+    {
+      "relation": "Social::allied_with",
       "source": "varnoth",
-      "target": "runara",
-      "desc": "Help maintain the temple"
+      "target": "kobold",
+      "desc": "Both witnessed the wreck"
+    },
+    {
+      "relation": "members_include",
+      "source": "gilded_gallows",
+      "target": "tarak",
+      "desc": "Tarak is a member of the thieves' guild"
     },
     {
       "relation": "serves",
-      "source": "rix",
-      "target": "runara",
-      "desc": "Help maintain the temple"
+      "source": "tarak",
+      "target": "gilded_gallows",
+      "desc": "His last assignment for the guild was to assassinate a traitor"
     },
     {
-      "relation": "owns",
+      "relation": "rival_of",
       "source": "tarak",
-      "target": "sack_with_200_gp",
-      "desc": "Gives them a foul-smelling sack of food scraps"
+      "target": "gilded_gallows",
+      "desc": "Betrayed the guild"
     },
     {
       "relation": "inhabits",
@@ -3159,321 +3043,159 @@
     },
     {
       "relation": "allied_with",
-      "source": "runara",
-      "target": "aidron",
-      "desc": "Taught him peace and studied with him at Dragon's Rest"
+      "source": "aidron",
+      "target": "runara",
+      "desc": "Studied with her"
+    },
+    {
+      "relation": "rival_of",
+      "source": "aidron",
+      "target": "runara",
+      "desc": "Argued with her"
+    },
+    {
+      "relation": "inhabits",
+      "source": "kobolds",
+      "target": "temple_at_a5",
+      "desc": "Some of the kobolds tend to the characters' wounds"
     },
     {
       "relation": "rival_of",
       "source": "kobolds",
       "target": "runara",
-      "desc": "Rejects peaceful teaching of Runara"
+      "desc": "Rejects peaceful teaching"
     },
     {
       "relation": "rival_of",
       "source": "kobolds",
-      "target": "sparkrender",
-      "desc": "Rejects tyrannical rule of Sparkrender"
+      "target": "sparkrender_blue_dragon_wyrmling",
+      "desc": "Rejects tyrannical rule"
+    },
+    {
+      "relation": "members_include",
+      "source": "kobolds",
+      "target": "kobold",
+      "desc": "Four kobold participates"
     },
     {
       "relation": "members_include",
       "source": "kobolds",
       "target": "winged_kobold",
-      "desc": "Includes winged kobold"
+      "desc": "One winged kobold participates"
     },
     {
-      "relation": "serves",
+      "relation": "members_include",
+      "source": "kobold",
+      "target": "kobolds",
+      "desc": "Eight kobolds are used"
+    },
+    {
+      "relation": "members_include",
+      "source": "winged_kobold",
+      "target": "kobolds",
+      "desc": "Three winged kobolds are used"
+    },
+    {
+      "relation": "Social",
       "source": "kobolds",
       "target": "sharruth",
-      "desc": "Serve mighty Sharruth"
+      "desc": "Serves mighty Sharruth"
     },
     {
-      "relation": "inhabits",
+      "relation": "Creature→Location",
       "source": "fire_snake",
-      "target": "tunnel",
-      "desc": "Lurks below in winding tunnels"
-    },
-    {
-      "relation": "inhabits",
-      "source": "stirges",
-      "target": "vent",
-      "desc": "Nest in the caves"
-    },
-    {
-      "relation": "leads_to",
-      "source": "sharruth",
-      "target": "vent",
-      "desc": "Noxious fumes from Sharruth's tomb filter through the vent"
-    },
-    {
-      "relation": "exchanged_for",
-      "source": "sinensa",
-      "target": "cloister",
-      "desc": "Food scraps from the cloister nourish the fungi in the caves"
-    },
-    {
-      "relation": "sources_from",
-      "source": "vent",
-      "target": "sharruth",
-      "desc": "Fumes from Sharruth's tomb spill into the myconids' caves via the vent"
-    },
-    {
-      "relation": "prefers",
-      "source": "tarak",
-      "target": "rowboat",
-      "desc": "Tarak's preferred method involves taking the rowboat"
-    },
-    {
-      "relation": "guards",
-      "source": "spore_servant_octopus",
-      "target": "tunnel",
-      "desc": "Attacks any creatures (except myconids) who enter the tunnel"
-    },
-    {
-      "relation": "inhabits",
-      "source": "spore_servant_octopus",
-      "target": "tunnel",
-      "desc": "Lurks in the water of the tunnel"
-    },
-    {
-      "relation": "guarded_by",
-      "source": "tunnel",
-      "target": "spore_servant_octopus",
-      "desc": "Created by the myconid leader to keep outsiders away (implied inverse of \"guards\")"
+      "target": "stormwreck_isle",
+      "desc": "Lurking below the island"
     },
     {
       "relation": "inhabits",
       "source": "stirge",
-      "target": "tunnel",
-      "desc": "Clinging to the tunnel ceiling"
+      "target": "cloister",
+      "desc": "Stirges nest in the caves (interpreted as the cloister)"
     },
     {
-      "relation": "members_include",
-      "source": "stirges",
-      "target": "stirge",
-      "desc": "Two Stirge are part of the group"
+      "relation": "guards",
+      "source": "monster",
+      "target": "cloister",
+      "desc": "Monstrous guardian at the entrance (interpreted as protecting the cloister)"
     },
     {
-      "relation": "inhabits",
-      "source": "fire_snake",
-      "target": "vent",
-      "desc": "Released from the crystal at the vent"
-    },
-    {
-      "relation": "hidden_at",
-      "source": "crowbar",
-      "target": "vent",
-      "desc": "Used to break the crystal blocking the fissure (implied association with the vent's location)"
+      "relation": "allied_with",
+      "source": "tarak",
+      "target": "sinensa",
+      "desc": "Mentions Tarak's name grants advantage when persuading myconids, suggesting a historical association or alliance"
     },
     {
       "relation": "owns",
       "source": "tarak",
       "target": "elixir_of_health",
-      "desc": "Uses ruby morel to make and gives to characters"
-    },
-    {
-      "relation": "carried_by",
-      "source": "sinensa",
-      "target": "elixir_of_health",
-      "desc": "Gives ruby morel to characters (indirectly linked to elixir_of_health through Tarak’s actions)"
-    },
-    {
-      "relation": "inhabits",
-      "source": "harpy",
-      "target": "submerged_hold",
-      "desc": "Settled into the wreck of Compass Rose"
+      "desc": "Makes an elixir of health in gratitude"
     },
     {
       "relation": "stored_in",
       "source": "talisman",
-      "target": "submerged_hold",
-      "desc": "Imbued with magic in the ship's hold"
-    },
-    {
-      "relation": "trapped_at",
-      "source": "zombies",
-      "target": "submerged_hold",
-      "desc": "Trapped in the wreck for years"
-    },
-    {
-      "relation": "trapped_at",
-      "source": "zombies",
-      "target": "cloister",
-      "desc": "Menacing the people of Dragon's Rest (implied association)"
-    },
-    {
-      "relation": "inhabits",
-      "source": "zombies",
-      "target": "submerged_hold",
-      "desc": "Zombies are found in submerged portions of other wrecks"
-    },
-    {
-      "relation": "inhabits",
-      "source": "spore_servant_octopus",
-      "target": "submerged_hold",
-      "desc": "Giant octopuses are found in submerged portions of other wrecks"
-    },
-    {
-      "relation": "inhabits",
-      "source": "ghoul",
-      "target": "submerged_hold",
-      "desc": "Ghouls are found in submerged portions of other wrecks"
-    },
-    {
-      "relation": "members_include",
-      "source": "sailors",
-      "target": "zombies",
-      "desc": "Zombies are sailors killed in wrecks"
-    },
-    {
-      "relation": "stored_in",
-      "source": "rowboat",
-      "target": "ship_deck",
-      "desc": "The rowboat is stored at the ship dock"
-    },
-    {
-      "relation": "unlocked",
-      "source": "rowboat",
       "target": "hold",
-      "desc": "The rowboat can be used to access the hold"
-    },
-    {
-      "relation": "accessible_from",
-      "source": "hold",
-      "target": "rowboat",
-      "desc": "The hold can be reached via the rowboat"
-    },
-    {
-      "relation": "inhabits",
-      "source": "zombies",
-      "target": "ship_deck",
-      "desc": "The zombie is in area C4"
-    },
-    {
-      "relation": "hidden_at",
-      "source": "pearl",
-      "target": "ship_deck",
-      "desc": "Engraved with mother-of-pearl in the wheel"
+      "desc": "Imbued with magic by a long-dead sailor's desperate prayers"
     },
     {
       "relation": "wanders",
       "source": "zombies",
-      "target": "cabin",
-      "desc": "Aimlessly shuffling around the cabin"
+      "target": "cloister",
+      "desc": "Menacing the people of Dragon's Rest"
     },
     {
       "relation": "inhabits",
-      "source": "sailors",
-      "target": "cabin",
-      "desc": "Two drowned sailors are found inside the cabin"
-    },
-    {
-      "relation": "hidden_at",
-      "source": "submerged_hold",
-      "target": "cabin",
-      "desc": "Implied presence of submerged hold beneath the cabin (explicit textual inference required?)"
+      "source": "drowned_sailors",
+      "target": "hold",
+      "desc": "Found in the cabin within the hold"
     },
     {
       "relation": "stored_in",
-      "source": "portrait",
-      "target": "cabin",
-      "desc": "A faded, painted portrait hangs on one wall."
-    },
-    {
-      "relation": "hidden_at",
-      "source": "ghoul",
-      "target": "submerged_hold",
-      "desc": "Lurks in the aft part of the hold"
+      "source": "book",
+      "target": "hold",
+      "desc": "Waterlogged books are held in the bookcase, which is located in the hold"
     },
     {
       "relation": "stored_in",
       "source": "pouch",
-      "target": "submerged_hold",
-      "desc": "Found in the chest"
+      "target": "hold",
+      "desc": "Two small drawers in the desk hold a pouch"
     },
     {
       "relation": "stored_in",
-      "source": "boots_of_elvenkind",
-      "target": "submerged_hold",
-      "desc": "Found in the chest"
+      "source": "cartographers_tools",
+      "target": "hold",
+      "desc": "Two small drawers in the desk hold a set of cartographer's tools"
+    },
+    {
+      "relation": "stored_in",
+      "source": "dagger",
+      "target": "hold",
+      "desc": "Two small drawers in the desk hold a dagger"
+    },
+    {
+      "relation": "stored_in",
+      "source": "compass_set_in_desktop",
+      "target": "hold",
+      "desc": "The compass set in the desktop can easily be pried free; it is worth 25 gp"
+    },
+    {
+      "relation": "stored_in",
+      "source": "sack",
+      "target": "hold",
+      "desc": "Found in crates within the hold"
     },
     {
       "relation": "stored_in",
       "source": "turquoise",
-      "target": "pouch",
-      "desc": "Held inside the pouch"
+      "target": "hold",
+      "desc": "Inside the chest in the hold"
     },
     {
       "relation": "stored_in",
-      "source": "scholar_journal",
-      "target": "submerged_hold",
-      "desc": "Encased in a floating packet from the chest"
-    },
-    {
-      "relation": "hidden_at",
-      "source": "talisman",
-      "target": "submerged_hold",
-      "desc": "Implied by the journal’s reference to the talisman in the submerged_hold context"
-    },
-    {
-      "relation": "uses",
-      "source": "detect_magic",
-      "target": "talisman",
-      "desc": "Detect magic identifies the talisman’s necromancy school"
-    },
-    {
-      "relation": "carries",
-      "source": "sailors",
-      "target": "talisman",
-      "desc": "Sailors are implicated as carriers of the talisman, referencing Aleitha’s association with the item during the incident."
-    },
-    {
-      "relation": "inhabits",
-      "source": "harpy",
-      "target": "ship_deck",
-      "desc": "Makes its lair in the crow's nest (implied to be part of the ship's structure)"
-    },
-    {
-      "relation": "guards",
-      "source": "harpy",
-      "target": "ship_deck",
-      "desc": "Confronts characters on the main deck, suggesting protective/defensive role"
-    },
-    {
-      "relation": "guards",
-      "source": "zombies",
-      "target": "submerged_hold",
-      "desc": "Implicitly tied to the submerged hold as the solution to the zombie problem"
-    },
-    {
-      "relation": "inhabits",
-      "source": "sparkrender",
-      "target": "ruined_tower",
-      "desc": "Home to Sparkrender"
-    },
-    {
-      "relation": "led_by",
-      "source": "sparkrender",
-      "target": "kobolds",
-      "desc": "Recruits kobolds to join his cause"
-    },
-    {
-      "relation": "rival_of",
-      "source": "sparkrender",
-      "target": "runara",
-      "desc": "Descendant of Runara's ancient rival"
-    },
-    {
-      "relation": "serves",
-      "source": "aidron",
-      "target": "runara",
-      "desc": "Left Runara's tutelage"
-    },
-    {
-      "relation": "trapped_at",
-      "source": "aidron",
-      "target": "ruined_tower",
-      "desc": "Imprisoned in observatory ruins"
+      "source": "boots_of_elvenkind",
+      "target": "hold",
+      "desc": "Inside the chest in the hold"
     },
     {
       "relation": "commands",
@@ -3482,202 +3204,166 @@
       "desc": "Recruited kobolds to join his cause"
     },
     {
-      "relation": "inhabits",
-      "source": "sparkrender",
-      "target": "d5",
-      "desc": "Returns to his hoard among the ruins"
-    },
-    {
-      "relation": "hidden_at",
-      "source": "sparkrender",
-      "target": "ruined_tower",
-      "desc": "Comes to rest on a rocky spire off the coast near the ruins"
-    },
-    {
-      "relation": "allied_with",
-      "source": "kobolds",
-      "target": "sparkrender",
-      "desc": "Joined forces with Sparkrender"
-    },
-    {
       "relation": "serves",
       "source": "kobolds",
-      "target": "sparkrender",
+      "target": "sparkrender_blue_dragon_wyrmling",
       "desc": "Have served Sparkrender for about a year"
     },
     {
       "relation": "worships",
       "source": "kobolds",
-      "target": "sparkrender",
-      "desc": "Revere Sparkrender as a semidivine figure"
+      "target": "sparkrender_blue_dragon_wyrmling",
+      "desc": "Revered the blue dragon as a semidivine figure"
+    },
+    {
+      "relation": "allied_with",
+      "source": "kobolds",
+      "target": "sparkrender_blue_dragon_wyrmling",
+      "desc": "Joined forces with Sparkrender"
+    },
+    {
+      "relation": "hidden_at",
+      "source": "kobold",
+      "target": "rotunda",
+      "desc": "The caved-in wall is visible from area D3 (implied proximity to rotunda)"
+    },
+    {
+      "relation": "members_include",
+      "source": "kobolds",
+      "target": "minn",
+      "desc": "Minn is a member of the kobolds group"
+    },
+    {
+      "relation": "commands",
+      "source": "sparkrender_blue_dragon_wyrmling",
+      "target": "kobolds",
+      "desc": "The kobolds follow Sparkrender's instructions to craft the dragon effigies."
     },
     {
       "relation": "inhabits",
-      "source": "kobolds",
-      "target": "ruined_tower",
-      "desc": "Reside in the ruins"
+      "source": "kobold",
+      "target": "rotunda",
+      "desc": "Kobolds inhabit the rotunda (via bridge connection to the structure described)"
     },
     {
-      "relation": "unlocks",
-      "source": "scholar_journal",
-      "target": "d5",
-      "desc": "Contains a clue to unlock the hidden entrance in the observatory tower (area D5)"
+      "relation": "inhabits",
+      "source": "winged_kobold",
+      "target": "rotunda",
+      "desc": "Winged kobolds inhabit the rotunda (via bridge connection to the structure described)"
     },
     {
       "relation": "unlocks",
       "source": "dagger",
-      "target": "scholar_journal",
-      "desc": "Used to scratch the rune and disarm the trap, allowing safe opening of the journal"
-    },
-    {
-      "relation": "locks",
-      "source": "scholar_journal",
-      "target": "d5",
-      "desc": "Requires disarming a magical trap to open, linking to the observatory tower (area D5)"
-    },
-    {
-      "relation": "hidden_at",
-      "source": "scholar_journal",
-      "target": "ruined_tower",
-      "desc": "Found in the ruined tower (implied by contextual narrative)"
+      "target": "book",
+      "desc": "Used to disarm the trap and open the journal"
     },
     {
       "relation": "hidden_at",
       "source": "pouch",
-      "target": "ruined_tower",
-      "desc": "Found in a hidden compartment"
+      "target": "hold",
+      "desc": "Located in a hidden compartment within the tower's wall"
     },
     {
-      "relation": "stored_in",
-      "source": "pouch",
-      "target": "ruined_tower",
-      "desc": "Contains 10 gp"
+      "relation": "inhabits",
+      "source": "kobolds",
+      "target": "rotunda",
+      "desc": "The kobolds live in the rotunda"
     },
     {
-      "relation": "hidden_at",
+      "relation": "inhabits",
       "source": "bronze_dragon_wyrmling",
-      "target": "d6_secret_library",
-      "desc": "Bronze Dragon Wyrmling is imprisoned in the secret library"
+      "target": "library",
+      "desc": "The bronze dragon wyrmling is in the library"
     },
     {
       "relation": "rival_of",
-      "source": "sparkrender",
+      "source": "sparkrender_blue_dragon_wyrmling",
       "target": "aidron",
-      "desc": "Sparkrender becomes hostile if Aidron is mentioned"
+      "desc": "Attacks if Aidron is mentioned"
     },
     {
-      "relation": "carries",
-      "source": "sparkrender",
+      "relation": "rival_of",
+      "source": "sparkrender_blue_dragon_wyrmling",
+      "target": "runara",
+      "desc": "Attacks if Runara is mentioned"
+    },
+    {
+      "relation": "uses",
+      "source": "sparkrender_blue_dragon_wyrmling",
       "target": "disengage",
-      "desc": "Sparkrender takes the Disengage action, indicating possession of the item"
-    },
-    {
-      "relation": "worships",
-      "source": "sparkrender",
-      "target": "tiamat",
-      "desc": "Sparkrender references Tiamat as a divine authority in its dialogue"
-    },
-    {
-      "relation": "owns",
-      "source": "sparkrender",
-      "target": "blue_quartz",
-      "desc": "Sparkrender's hoard includes blue quartz"
+      "desc": "Takes the Disengage action during flight"
     },
     {
       "relation": "owns",
       "source": "sparkrender",
       "target": "jasper",
-      "desc": "Sparkrender's hoard includes jasper"
+      "desc": "Sparkrender owned jasper stones"
+    },
+    {
+      "relation": "owns",
+      "source": "sparkrender",
+      "target": "blue_quartz",
+      "desc": "Sparkrender owned blue quartz crystals"
     },
     {
       "relation": "trapped_at",
-      "source": "sparkrender",
-      "target": "d6_secret_library",
-      "desc": "Sparkrender trapped Aidron here"
-    },
-    {
-      "relation": "inhabits",
       "source": "aidron",
-      "target": "d6_secret_library",
-      "desc": "Resides in the secret library"
+      "target": "library",
+      "desc": "Sparkrender trapped Aidron in the library"
     },
     {
       "relation": "rival_of",
       "source": "aidron",
-      "target": "sparkrender",
-      "desc": "Conflicts with Sparkrender due to his threatening intentions"
+      "target": "sparkrender_blue_dragon_wyrmling",
+      "desc": "Aidron conflicts with Sparkrender"
     },
     {
       "relation": "hidden_at",
       "source": "1_battleaxe",
-      "target": "submerged_hold",
-      "desc": "Found in the room"
+      "target": "library",
+      "desc": "Found during search"
     },
     {
       "relation": "hidden_at",
       "source": "hold_person",
-      "target": "submerged_hold",
-      "desc": "Found in the room"
+      "target": "library",
+      "desc": "Found during search"
     },
     {
-      "relation": "reveals_location_of",
+      "relation": "detects",
       "source": "detect_magic",
       "target": "1_battleaxe",
-      "desc": "Reveals the location of the +1 battleaxe"
+      "desc": "Reveals location without check"
     },
     {
-      "relation": "reveals_location_of",
+      "relation": "detects",
       "source": "detect_magic",
       "target": "hold_person",
-      "desc": "Reveals the location of the hold person item"
+      "desc": "Reveals location without check"
     },
     {
-      "relation": "carries",
+      "relation": "inhabits",
       "source": "aidron",
-      "target": "chains",
-      "desc": "Imprisoned with chains"
+      "target": "library",
+      "desc": "Catalogs the room's contents"
     },
     {
-      "relation": "hidden_at",
-      "source": "kobolds",
-      "target": "d5",
-      "desc": "Lurking during ritual"
-    },
-    {
-      "relation": "hidden_at",
-      "source": "winged_kobold",
-      "target": "d5",
-      "desc": "Lurking during ritual"
+      "relation": "guarded_by",
+      "source": "aidron",
+      "target": "sparkrender_blue_dragon_wyrmling",
+      "desc": "Sparkrender is unaffected by Aidron's lightning Breath Weapon, implying protective status"
     },
     {
       "relation": "stored_in",
-      "source": "chains",
-      "target": "ruined_tower",
-      "desc": "Located at the base of the statue"
+      "source": "book",
+      "target": "library",
+      "desc": "Uncovered in the secret library"
     },
     {
-      "relation": "carried_by",
-      "source": "chains",
-      "target": "aidron",
-      "desc": "Aidron is bound by three heavy chains"
-    },
-    {
-      "relation": "unlocks",
-      "source": "chains",
-      "target": "iron_rings",
-      "desc": "Chains are attached to iron rings via clasps (implied through interaction)"
-    },
-    {
-      "relation": "owns",
+      "relation": "gives_to",
       "source": "runara",
-      "target": "pearl",
-      "desc": "Gives a pearl as a reward"
-    },
-    {
-      "relation": "rival_of",
-      "source": "sparkrender",
-      "target": "generic_monster",
-      "desc": "Sparkrender pursues characters for revenge (implied antagonism toward adventurers)"
+      "target": "exquisite_pearl",
+      "desc": "Provides a pearl worth 100 gp"
     }
   ]
 }

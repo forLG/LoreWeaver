@@ -1,6 +1,9 @@
 """
 Small Model Processor - Entity-first pipeline for models with limited context (e.g., qwen3-8b).
 
+This processor uses a "content tree" built from AdventureParser's internal_index,
+NOT the ShadowTreeBuilder used in the large model pipeline.
+
 Supports two modes:
 1. Two-phase mode (default): NER → Relations
 2. Single-phase unified mode (--single-phase): Entities + Events (heterogeneous graph)
@@ -39,6 +42,58 @@ from llm.prompt_factory import PromptFactory
 from models import create_validated_graph
 from utils.graph_utils import deduplicate_graph
 from utils.logger import logger
+
+# ========================================================================
+# Helper Functions
+# ========================================================================
+
+def _is_generic_creature(label: str) -> bool:
+    """
+    Determine if a creature label represents a generic group.
+
+    Generic creatures are groups like "zombies", "kobolds", "goblins"
+    rather than named individuals like "Runara", "Strahd".
+
+    Args:
+        label: Creature display name
+
+    Returns:
+        True if this is a generic creature group
+    """
+    if not label:
+        return False
+
+    label_lower = label.lower().strip()
+
+    # Generic plural patterns
+    generic_patterns = [
+        r'zombies?', r'zombie[s]?',
+        r'skeletons?', r'skeleton',
+        r'goblins?', r'goblin',
+        r'kobolds?', r'kobold',
+        r'orcs?', r'orc',
+        r'bandits?', r'bandit',
+        r'guards?', r'guard',
+        r'cultists?', r'cultist',
+        r'warriors?', r'warrior',
+        r'soldiers?', r'soldier',
+        r'merchants?', r'merchant',
+        r'villagers?', r'villager',
+        r'commoners?', r'commoner',
+        r'pirates?', r'pirate',
+        r'sailors?', r'sailor',
+        r'dragons?', r'dragon',
+    ]
+
+    for pattern in generic_patterns:
+        if re.match(pattern, label_lower):
+            return True
+
+    # Check if label is plural (ends with 's' but not a name)
+    # Simple heuristic: lowercase + ends with 's' + not a known name
+    # Could be generic, but avoid false positives on names like "James"
+    # If it's a common plural pattern, treat as generic
+    return label_lower.endswith('s') and len(label_lower) > 4
 
 
 class SmallModelProcessor(BaseLLMProcessor):
@@ -111,15 +166,61 @@ class SmallModelProcessor(BaseLLMProcessor):
 
         logger.info(f"  Saved debug output: {debug_file.name}")
 
+    @staticmethod
+    def convert_resolved_entity_to_seed(resolved_entity: dict) -> dict:
+        """
+        Convert preprocessor resolved entity to LLM extraction format.
+
+        Args:
+            resolved_entity: Entity from entity_resolver output with keys:
+                - id, label, type, source_file, mentions, properties
+
+        Returns:
+            Entity in LLM format with keys:
+                - id, label, type, extraction_method, plus subtype fields
+        """
+        entity = {
+            "id": resolved_entity.get("id", ""),
+            "label": resolved_entity.get("label", ""),
+            "type": resolved_entity.get("type", "Entity"),
+            "extraction_method": "tag",  # Mark as from preprocessor tag
+            "aliases": [],  # Tags don't have aliases
+        }
+
+        # Add type-specific fields from properties
+        props = resolved_entity.get("properties", {})
+
+        entity_type = entity["type"]
+
+        if entity_type == "Location":
+            entity["location_type"] = "building"  # Default for locations
+        elif entity_type == "Creature":
+            # Map creature_type from properties
+            entity["creature_type"] = props.get("creature_type", "Unknown")
+            # Generic creatures are those with generic names (zombies, kobolds, etc.)
+            entity["is_generic"] = _is_generic_creature(entity["label"])
+        elif entity_type == "Item":
+            # Items don't have special subtype fields in current schema
+            pass
+
+        return entity
+
     # ========================================================================
     # Main Entry Point
     # ========================================================================
 
-    def process(self, shadow_tree: list[dict], skip_summary: bool = False) -> dict:
-        """Synchronous entry point for small model pipeline."""
+    def process(self, content_tree: list[dict], skip_summary: bool = False, seed_entities: list[dict] | None = None) -> dict:
+        """
+        Synchronous entry point for small model pipeline.
+
+        Args:
+            content_tree: Tree of nodes with content to extract from (built from internal_index)
+            skip_summary: Whether to skip summarization (kept for compatibility)
+            seed_entities: Pre-extracted entities from preprocessor (tags)
+        """
         async def _run_and_cleanup():
             try:
-                return await self._process_async(shadow_tree, skip_summary)
+                return await self._process_async(content_tree, skip_summary, seed_entities)
             finally:
                 await self.close()
 
@@ -127,8 +228,9 @@ class SmallModelProcessor(BaseLLMProcessor):
 
     async def _process_async(
         self,
-        shadow_tree: list[dict],
-        skip_summary: bool  # noqa: ARG002 - kept for interface compatibility
+        content_tree: list[dict],
+        skip_summary: bool,  # noqa: ARG002 - kept for interface compatibility
+        seed_entities: list[dict] | None = None
     ) -> dict:
         """
         Entity-first pipeline for small models.
@@ -143,22 +245,30 @@ class SmallModelProcessor(BaseLLMProcessor):
         logger.info("SMALL MODEL PIPELINE: Unified Entity+Event Extraction")
         logger.info("=" * 60)
 
-        return await self._process_single_phase(shadow_tree)
+        return await self._process_single_phase(content_tree, seed_entities)
 
     async def _process_single_phase(
         self,
-        shadow_tree: list[dict]
+        content_tree: list[dict],
+        seed_entities: list[dict] | None = None
     ) -> dict:
         """
         Single-phase unified pipeline: Extract entities + events in one pass.
         Builds a heterogeneous graph with both entity and event nodes.
+
+        Args:
+            content_tree: Tree of nodes with content to extract from (built from internal_index)
+            seed_entities: Pre-extracted entities from preprocessor (tags)
         """
         # ====================================================================
         # Phase 1: Unified entity + event extraction
         # ====================================================================
         logger.info("Phase 1: Unified entity + event extraction...")
 
-        extraction_result = await self._unified_extraction(shadow_tree)
+        if seed_entities:
+            logger.info(f"  Using {len(seed_entities)} seed entities from preprocessor tags")
+
+        extraction_result = await self._unified_extraction(content_tree, seed_entities)
 
         all_entities = extraction_result["entities"]
         all_events = extraction_result["events"]
@@ -190,7 +300,7 @@ class SmallModelProcessor(BaseLLMProcessor):
         logger.info("Phase 2.5: Extracting location hierarchies...")
 
         location_entities = [e for e in meaningful_entities if e.get("type") == "Location"]
-        hierarchy_edges = await self._extract_location_hierarchies(shadow_tree, location_entities)
+        hierarchy_edges = await self._extract_location_hierarchies(content_tree, location_entities)
         logger.info(f"  Extracted {len(hierarchy_edges)} location hierarchy edges")
 
         # Save location hierarchies for debugging
@@ -201,7 +311,7 @@ class SmallModelProcessor(BaseLLMProcessor):
         # ====================================================================
         logger.info("Phase 2.6: Extracting semantic relations...")
 
-        semantic_edges = await self._extract_semantic_relations(shadow_tree, meaningful_entities, id_mapping)
+        semantic_edges = await self._extract_semantic_relations(content_tree, meaningful_entities, id_mapping)
         logger.info(f"  Extracted {len(semantic_edges)} semantic relation edges")
 
         # Save semantic relations for debugging
@@ -278,7 +388,7 @@ class SmallModelProcessor(BaseLLMProcessor):
 
     async def _process_two_phase(
         self,
-        shadow_tree: list[dict]
+        content_tree: list[dict]
     ) -> dict:
         """
         Two-phase pipeline: Extract entities first, then relations.
@@ -288,7 +398,7 @@ class SmallModelProcessor(BaseLLMProcessor):
         # ====================================================================
         logger.info("Phase 1: Independent NER extraction (pure bottom-up)...")
 
-        entity_layers = await self._independent_ner(shadow_tree)
+        entity_layers = await self._independent_ner(content_tree)
 
         total_entities = sum(len(entities) for entities in entity_layers.values())
         logger.info(f"  Extracted {total_entities} raw entities across {len(entity_layers)} nodes")
@@ -301,7 +411,7 @@ class SmallModelProcessor(BaseLLMProcessor):
         # ====================================================================
         logger.info("Phase 2: Bottom-up aggregation and resolution...")
 
-        resolved_entities = await self._bottom_up_resolve(shadow_tree, entity_layers)
+        resolved_entities = await self._bottom_up_resolve(content_tree, entity_layers)
 
         logger.info(f"  Resolved to {len(resolved_entities['nodes'])} unique entities")
 
@@ -319,7 +429,7 @@ class SmallModelProcessor(BaseLLMProcessor):
         logger.info("Phase 3: Relation extraction (pure bottom-up)...")
 
         relations = await self._extract_relations_bidirectional(
-            shadow_tree,
+            content_tree,
             resolved_entities,
             alias_map
         )
@@ -352,7 +462,7 @@ class SmallModelProcessor(BaseLLMProcessor):
 
     async def _independent_ner(
         self,
-        shadow_tree: list[dict]
+        content_tree: list[dict]
     ) -> dict[str, list[dict]]:
         """
         Bottom-up traversal: Each node extracts entities independently.
@@ -366,7 +476,7 @@ class SmallModelProcessor(BaseLLMProcessor):
         """
         entity_layers = {}
 
-        for root in shadow_tree:
+        for root in content_tree:
             await self._ner_recursive(root, entity_layers)
 
         return entity_layers
@@ -486,7 +596,7 @@ class SmallModelProcessor(BaseLLMProcessor):
 
     async def _bottom_up_resolve(
         self,
-        shadow_tree: list[dict],
+        content_tree: list[dict],
         entity_layers: dict[str, list[dict]]
     ) -> dict[str, Any]:
         """
@@ -502,7 +612,7 @@ class SmallModelProcessor(BaseLLMProcessor):
         """
         all_resolved = []
 
-        for root in shadow_tree:
+        for root in content_tree:
             resolved = await self._resolve_recursive(root, entity_layers)
             all_resolved.extend(resolved)
 
@@ -689,7 +799,7 @@ class SmallModelProcessor(BaseLLMProcessor):
 
     async def _extract_relations_bidirectional(
         self,
-        shadow_tree: list[dict],
+        content_tree: list[dict],
         resolved_entities: dict[str, Any],
         alias_map: dict[str, str]
     ) -> dict[str, Any]:
@@ -707,7 +817,7 @@ class SmallModelProcessor(BaseLLMProcessor):
         # Build entity lookup
         entity_map = {e["id"]: e for e in resolved_entities["nodes"]}
 
-        for root in shadow_tree:
+        for root in content_tree:
             edges = await self._extract_relations_recursive(
                 root,
                 entity_map,
@@ -869,18 +979,24 @@ class SmallModelProcessor(BaseLLMProcessor):
 
     async def _unified_extraction(
         self,
-        shadow_tree: list[dict]
+        content_tree: list[dict],
+        seed_entities: list[dict] | None = None
     ) -> dict[str, Any]:
         """
         Extract entities and events in a single pass per node (unified heterogeneous graph).
 
+        Args:
+            content_tree: Tree of nodes with content to extract from (built from internal_index)
+            seed_entities: Pre-extracted entities from preprocessor (tags)
+
         Returns:
             {"entities": [...], "events": [...]}
         """
-        all_entities = []
+        # Initialize with seed entities (from preprocessor tags)
+        all_entities = list(seed_entities) if seed_entities else []
         all_events = []
 
-        for root in shadow_tree:
+        for root in content_tree:
             await self._unified_extraction_recursive(
                 root, all_entities, all_events,
                 parent_context=""
@@ -958,6 +1074,7 @@ class SmallModelProcessor(BaseLLMProcessor):
                 # Add entities with source node info
                 for entity in result.get("entities", []):
                     entity["source_node"] = title
+                    entity["extraction_method"] = "llm"  # Mark as LLM-extracted
                     all_entities.append(entity)
 
                 # Add events with source node info
@@ -1441,7 +1558,7 @@ class SmallModelProcessor(BaseLLMProcessor):
 
     async def _extract_location_hierarchies(
         self,
-        shadow_tree: list[dict],
+        content_tree: list[dict],
         location_entities: list[dict]
     ) -> list[dict]:
         """
@@ -1455,7 +1572,7 @@ class SmallModelProcessor(BaseLLMProcessor):
         all_edges = []
         entity_map = {e["id"]: e for e in location_entities}
 
-        for root in shadow_tree:
+        for root in content_tree:
             edges = await self._extract_hierarchies_recursive(root, entity_map)
             all_edges.extend(edges)
 
@@ -1548,7 +1665,7 @@ class SmallModelProcessor(BaseLLMProcessor):
 
     async def _extract_semantic_relations(
         self,
-        shadow_tree: list[dict],
+        content_tree: list[dict],
         entities: list[dict],
         id_mapping: dict[str, str]
     ) -> list[dict]:
@@ -1564,7 +1681,7 @@ class SmallModelProcessor(BaseLLMProcessor):
         all_edges = []
         entity_map = {e["id"]: e for e in entities}
 
-        for root in shadow_tree:
+        for root in content_tree:
             edges = await self._extract_semantic_relations_recursive(root, entity_map, id_mapping)
             all_edges.extend(edges)
 

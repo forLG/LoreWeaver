@@ -36,6 +36,7 @@ from dotenv import load_dotenv
 import config_neo4j as config
 from llm.small_model_processor import SmallModelProcessor
 from preprocessor.adventure_parser import AdventureParser
+from preprocessor.entity_resolver import EntityResolver
 from utils.logger import logger, setup_logger
 
 # Load environment variables from .env file
@@ -142,6 +143,7 @@ class SemanticPipeline:
         # File paths
         self.input_file = Path(args.input)
         self.parsed_file = self.output_dir / "adventure_parsed.json"
+        self.resolved_entities_file = self.output_dir / "adventure_resolved.json"
         self.semantic_graph_file = self.output_dir / "semantic_graph.json"
 
         # Validate API key
@@ -206,9 +208,35 @@ class SemanticPipeline:
         with open(self.parsed_file, encoding='utf-8') as f:
             parsed_data = json.load(f)
 
+        # Resolve entities from preprocessor tags (if not already done)
+        if self.resolved_entities_file.exists() and not self.args.force:
+            logger.info(f"Found cached resolved entities: {self.resolved_entities_file}")
+            with open(self.resolved_entities_file, encoding='utf-8') as f:
+                resolved_data = json.load(f)
+            resolved_entities = list(resolved_data.get("resolved_entities", {}).values())
+        else:
+            logger.info("Resolving entities from preprocessor tags...")
+            resolver = EntityResolver(data_dir=str(self.input_file.parent))
+            resolved_data = resolver.resolve(parsed_data)
+
+            # Save resolved entities
+            logger.info(f"Saving resolved entities to {self.resolved_entities_file}...")
+            with open(self.resolved_entities_file, 'w', encoding='utf-8') as f:
+                json.dump(resolved_data, f, indent=2, ensure_ascii=False)
+
+            resolved_entities = list(resolved_data.get("resolved_entities", {}).values())
+            logger.info(f"Resolved {len(resolved_entities)} entities from tags")
+
+        # Convert resolved entities to seed format for LLM
+        seed_entities = [
+            SmallModelProcessor.convert_resolved_entity_to_seed(e)
+            for e in resolved_entities
+        ]
+        logger.info(f"Prepared {len(seed_entities)} seed entities for LLM context")
+
         # Convert internal_index to tree format for SmallModelProcessor
-        shadow_tree = self._internal_index_to_tree(parsed_data['internal_index'])
-        logger.info(f"Built tree with {len(shadow_tree)} root nodes")
+        content_tree = self._internal_index_to_tree(parsed_data['internal_index'])
+        logger.info(f"Built tree with {len(content_tree)} root nodes")
 
         # Initialize processor
         logger.info("Initializing SmallModelProcessor...")
@@ -223,9 +251,9 @@ class SemanticPipeline:
             repetition_penalty=self.args.repetition_penalty
         )
 
-        # Extract semantic graph
+        # Extract semantic graph with seed entities
         logger.info("Extracting semantic graph (entities + events + relations)...")
-        semantic_graph = processor.process(shadow_tree, skip_summary=False)
+        semantic_graph = processor.process(content_tree, skip_summary=False, seed_entities=seed_entities)
 
         # Save output
         logger.info(f"Saving semantic graph to {self.semantic_graph_file}...")
@@ -237,10 +265,13 @@ class SemanticPipeline:
 
     def _internal_index_to_tree(self, internal_index: dict) -> list:
         """
-        Convert internal_index to shadow_tree format for SmallModelProcessor.
+        Convert internal_index to content tree format for SmallModelProcessor.
 
         The internal_index is a flat dict of nodes with parent_id references.
         We need to convert it to a hierarchical tree structure.
+
+        Note: This is NOT the same as ShadowTreeBuilder's shadow_tree used in main.py.
+        This is a simpler tree structure built from AdventureParser's internal_index.
 
         Args:
             internal_index: {node_id: {id, type, name, parent_id, children, text_content, ...}}

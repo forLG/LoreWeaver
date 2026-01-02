@@ -1591,8 +1591,8 @@ class SmallModelProcessor(BaseLLMProcessor):
         if not content or not content.strip():
             hierarchy_edges = []
         else:
-            # Build alias map from entity map
-            alias_map = self._build_alias_map(entity_map)
+            # Build alias map from entity map (convert dict values to list)
+            alias_map = self._build_alias_map(list(entity_map.values()))
 
             # Find locations mentioned in this node
             mentioned_locations = self._find_mentioned_entities(content, alias_map)
@@ -1706,8 +1706,8 @@ class SmallModelProcessor(BaseLLMProcessor):
         if not content or not content.strip():
             semantic_edges = []
         else:
-            # Build alias map from entity map
-            alias_map = self._build_alias_map(entity_map)
+            # Build alias map from entity map (convert dict values to list)
+            alias_map = self._build_alias_map(list(entity_map.values()))
 
             # Find entities mentioned in this node
             mentioned_entities = self._find_mentioned_entities(content, alias_map)

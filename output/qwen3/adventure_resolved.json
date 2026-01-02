@@ -1,0 +1,2699 @@
+{
+  "resolved_entities": {
+    "Runara|DoSI": {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "source_file": "DoSI",
+      "mentions": [
+        "038",
+        "0ab",
+        "00d",
+        "074",
+        "034",
+        "030",
+        "03d",
+        "03c",
+        "0c2",
+        "036",
+        "02c",
+        "01d",
+        "0bc",
+        "03a",
+        "02f",
+        "005",
+        "0c9",
+        "0e7",
+        "046",
+        "02a",
+        "01e",
+        "09e",
+        "024",
+        "006",
+        "0a2",
+        "03b",
+        "011",
+        "01a",
+        "037",
+        "0a1",
+        "018"
+      ],
+      "properties": {
+        "size": "Unknown",
+        "creature_type": "Unknown",
+        "alignment": "Unknown",
+        "armor_class": 0,
+        "hit_points": null,
+        "speed": {},
+        "abilities": {
+          "strength": 10,
+          "dexterity": 10,
+          "constitution": 10,
+          "intelligence": 10,
+          "wisdom": 10,
+          "charisma": 10
+        },
+        "senses": [],
+        "languages": [],
+        "challenge_rating": "13"
+      }
+    },
+    "flaming sphere": {
+      "id": "flaming_sphere",
+      "label": "flaming sphere",
+      "type": "Item",
+      "source_file": "PHB",
+      "mentions": [
+        "00c"
+      ],
+      "properties": {
+        "level": 2,
+        "school": "C",
+        "casting_time": "1 action",
+        "range": "point 60 feet",
+        "duration": "1 minute",
+        "components": {
+          "v": true,
+          "s": true,
+          "m": "a bit of tallow, a pinch of brimstone, and a dusting of powdered iron"
+        },
+        "requires_concentration": true,
+        "damage_types": [
+          "fire"
+        ],
+        "saving_throw": [
+          "dexterity"
+        ]
+      }
+    },
+    "fire snake": {
+      "id": "fire_snake",
+      "label": "fire snake",
+      "type": "Creature",
+      "source_file": "MM",
+      "mentions": [
+        "06d",
+        "00c",
+        "06f"
+      ],
+      "properties": {
+        "size": "M",
+        "creature_type": "elemental",
+        "alignment": "N",
+        "armor_class": {
+          "ac": 14,
+          "from": [
+            "natural armor"
+          ]
+        },
+        "hit_points": 22,
+        "speed": {
+          "walk": 30
+        },
+        "abilities": {
+          "strength": 12,
+          "dexterity": 14,
+          "constitution": 11,
+          "intelligence": 7,
+          "wisdom": 10,
+          "charisma": 8
+        },
+        "senses": [
+          "darkvision 60 ft."
+        ],
+        "languages": [
+          "understands Ignan but can't speak"
+        ],
+        "challenge_rating": "1",
+        "traits": [
+          "Heated Body"
+        ],
+        "actions": [
+          "Multiattack",
+          "Bite",
+          "Tail"
+        ]
+      }
+    },
+    "Merrow Extortionist|DoSI": {
+      "id": "merrow_extortionist",
+      "label": "Merrow Extortionist",
+      "type": "Creature",
+      "source_file": "DoSI",
+      "mentions": [
+        "0cd",
+        "0eb",
+        "0ea",
+        "0ed"
+      ],
+      "properties": {
+        "size": "L",
+        "creature_type": "monstrosity",
+        "alignment": "C",
+        "armor_class": {
+          "ac": 13,
+          "from": [
+            "natural armor"
+          ]
+        },
+        "hit_points": 30,
+        "speed": {
+          "walk": 10,
+          "swim": 40
+        },
+        "abilities": {
+          "strength": 16,
+          "dexterity": 10,
+          "constitution": 15,
+          "intelligence": 8,
+          "wisdom": 10,
+          "charisma": 9
+        },
+        "senses": [
+          "darkvision 60 ft."
+        ],
+        "languages": [
+          "Abyssal",
+          "Aquan",
+          "Common"
+        ],
+        "challenge_rating": {
+          "cr": "1",
+          "xp": 100
+        },
+        "traits": [
+          "Amphibious"
+        ],
+        "actions": [
+          "Multiattack",
+          "Rend"
+        ]
+      }
+    },
+    "Zombie|": {
+      "id": "zombie",
+      "label": "Zombie",
+      "type": "Creature",
+      "source_file": "MM",
+      "mentions": [
+        "080",
+        "032",
+        "082",
+        "073",
+        "014",
+        "030"
+      ],
+      "properties": {
+        "size": "M",
+        "creature_type": "undead",
+        "alignment": "N",
+        "armor_class": 8,
+        "hit_points": 22,
+        "speed": {
+          "walk": 20
+        },
+        "abilities": {
+          "strength": 13,
+          "dexterity": 6,
+          "constitution": 16,
+          "intelligence": 3,
+          "wisdom": 6,
+          "charisma": 5
+        },
+        "senses": [
+          "darkvision 60 ft."
+        ],
+        "languages": [
+          "understands all languages it spoke in life but can't speak"
+        ],
+        "challenge_rating": "1/4",
+        "traits": [
+          "Undead Fortitude"
+        ],
+        "actions": [
+          "Slam"
+        ]
+      }
+    },
+    "zombie": {
+      "id": "zombie",
+      "label": "zombie",
+      "type": "Creature",
+      "source_file": "MM",
+      "mentions": [
+        "014",
+        "086",
+        "08f"
+      ],
+      "properties": {
+        "size": "M",
+        "creature_type": "undead",
+        "alignment": "N",
+        "armor_class": 8,
+        "hit_points": 22,
+        "speed": {
+          "walk": 20
+        },
+        "abilities": {
+          "strength": 13,
+          "dexterity": 6,
+          "constitution": 16,
+          "intelligence": 3,
+          "wisdom": 6,
+          "charisma": 5
+        },
+        "senses": [
+          "darkvision 60 ft."
+        ],
+        "languages": [
+          "understands all languages it spoke in life but can't speak"
+        ],
+        "challenge_rating": "1/4",
+        "traits": [
+          "Undead Fortitude"
+        ],
+        "actions": [
+          "Slam"
+        ]
+      }
+    },
+    "Dash": {
+      "id": "dash",
+      "label": "Dash",
+      "type": "Item",
+      "source_file": "Adventure",
+      "mentions": [
+        "014"
+      ],
+      "properties": {
+        "reference_type": "action"
+      }
+    },
+    "sacred flame": {
+      "id": "sacred_flame",
+      "label": "sacred flame",
+      "type": "Item",
+      "source_file": "PHB",
+      "mentions": [
+        "017"
+      ],
+      "properties": {
+        "level": 0,
+        "school": "V",
+        "casting_time": "1 action",
+        "range": "point 60 feet",
+        "duration": "instant",
+        "components": {
+          "v": true,
+          "s": true
+        },
+        "requires_concentration": false,
+        "damage_types": [
+          "radiant"
+        ],
+        "saving_throw": [
+          "dexterity"
+        ]
+      }
+    },
+    "Myla|DoSI": {
+      "id": "myla",
+      "label": "Myla",
+      "type": "Creature",
+      "source_file": "DoSI",
+      "mentions": [
+        "025",
+        "01a",
+        "02a",
+        "01e",
+        "0ad"
+      ],
+      "properties": {
+        "size": "Unknown",
+        "creature_type": "Unknown",
+        "alignment": "L",
+        "armor_class": 0,
+        "hit_points": null,
+        "speed": {},
+        "abilities": {
+          "strength": 10,
+          "dexterity": 10,
+          "constitution": 10,
+          "intelligence": 10,
+          "wisdom": 10,
+          "charisma": 10
+        },
+        "senses": [],
+        "languages": [],
+        "challenge_rating": "Unknown"
+      }
+    },
+    "kobold tinkerer|DoSI": {
+      "id": "kobold_tinkerer",
+      "label": "kobold tinkerer",
+      "type": "Creature",
+      "source_file": "DoSI",
+      "mentions": [
+        "01e"
+      ],
+      "properties": {
+        "size": "S",
+        "creature_type": "humanoid",
+        "alignment": "A",
+        "armor_class": 12,
+        "hit_points": 10,
+        "speed": {
+          "walk": 30,
+          "fly": 10
+        },
+        "abilities": {
+          "strength": 7,
+          "dexterity": 14,
+          "constitution": 10,
+          "intelligence": 15,
+          "wisdom": 7,
+          "charisma": 9
+        },
+        "senses": [
+          "darkvision 60 ft."
+        ],
+        "languages": [
+          "Common",
+          "Draconic"
+        ],
+        "challenge_rating": "1/4",
+        "traits": [
+          "Inquiring Mind (1/Day)",
+          "Pack Tactics",
+          "Sunlight Sensitivity"
+        ],
+        "actions": [
+          "Dagger",
+          "Alchemical Flame {@recharge}"
+        ]
+      }
+    },
+    "Blue Dragon Wyrmling|": {
+      "id": "blue_dragon_wyrmling",
+      "label": "Blue Dragon Wyrmling",
+      "type": "Creature",
+      "source_file": "MM",
+      "mentions": [
+        "0c2",
+        "0bb",
+        "0bc",
+        "01e"
+      ],
+      "properties": {
+        "size": "M",
+        "creature_type": "dragon",
+        "alignment": "L",
+        "armor_class": {
+          "ac": 17,
+          "from": [
+            "natural armor"
+          ]
+        },
+        "hit_points": 52,
+        "speed": {
+          "walk": 30,
+          "burrow": 15,
+          "fly": 60
+        },
+        "abilities": {
+          "strength": 17,
+          "dexterity": 10,
+          "constitution": 15,
+          "intelligence": 12,
+          "wisdom": 11,
+          "charisma": 15
+        },
+        "senses": [
+          "blindsight 10 ft.",
+          "darkvision 60 ft."
+        ],
+        "languages": [
+          "Draconic"
+        ],
+        "challenge_rating": "3",
+        "actions": [
+          "Bite",
+          "Lightning Breath {@recharge 5}"
+        ]
+      }
+    },
+    "Stirge|": {
+      "id": "stirge",
+      "label": "Stirge",
+      "type": "Creature",
+      "source_file": "MM",
+      "mentions": [
+        "05a",
+        "063",
+        "0ad",
+        "01e"
+      ],
+      "properties": {
+        "size": "T",
+        "creature_type": "beast",
+        "alignment": "U",
+        "armor_class": {
+          "ac": 14,
+          "from": [
+            "natural armor"
+          ]
+        },
+        "hit_points": 2,
+        "speed": {
+          "walk": 10,
+          "fly": 40
+        },
+        "abilities": {
+          "strength": 4,
+          "dexterity": 16,
+          "constitution": 11,
+          "intelligence": 2,
+          "wisdom": 8,
+          "charisma": 6
+        },
+        "senses": [
+          "darkvision 60 ft."
+        ],
+        "languages": [],
+        "challenge_rating": "1/8",
+        "actions": [
+          "Blood Drain"
+        ]
+      }
+    },
+    "Tarak|DoSI": {
+      "id": "tarak",
+      "label": "Tarak",
+      "type": "Creature",
+      "source_file": "DoSI",
+      "mentions": [
+        "01f",
+        "038",
+        "054",
+        "04e",
+        "0e7",
+        "025",
+        "033",
+        "028",
+        "02a",
+        "030",
+        "039",
+        "04c",
+        "061",
+        "06a",
+        "070"
+      ],
+      "properties": {
+        "size": "M",
+        "creature_type": {
+          "type": "humanoid",
+          "tags": [
+            "human"
+          ]
+        },
+        "alignment": "L",
+        "armor_class": 13,
+        "hit_points": 27,
+        "speed": {
+          "walk": 30
+        },
+        "abilities": {
+          "strength": 10,
+          "dexterity": 16,
+          "constitution": 10,
+          "intelligence": 12,
+          "wisdom": 14,
+          "charisma": 16
+        },
+        "senses": [],
+        "languages": [
+          "Common",
+          "Draconic",
+          "Thieves' cant"
+        ],
+        "challenge_rating": "1",
+        "actions": [
+          "Multiattack",
+          "Dagger"
+        ]
+      }
+    },
+    "Variant Criminal (Spy)": {
+      "id": "variant_criminal_spy",
+      "label": "Variant Criminal (Spy)",
+      "type": "Group",
+      "source_file": "Adventure",
+      "mentions": [
+        "01f"
+      ],
+      "properties": {
+        "reference_type": "background"
+      }
+    },
+    "Potion of Healing|": {
+      "id": "potion_of_healing",
+      "label": "Potion of Healing",
+      "type": "Item",
+      "source_file": "XDMG",
+      "mentions": [
+        "01f",
+        "033"
+      ],
+      "properties": {
+        "rarity": "common",
+        "type": "P|XPHB",
+        "requires_attunement": false,
+        "wondrous": false,
+        "weight": 0.5
+      }
+    },
+    "Varnoth|DoSI": {
+      "id": "varnoth",
+      "label": "Varnoth",
+      "type": "Creature",
+      "source_file": "DoSI",
+      "mentions": [
+        "038",
+        "020",
+        "0e7",
+        "025",
+        "034",
+        "02a",
+        "02c"
+      ],
+      "properties": {
+        "size": "M",
+        "creature_type": {
+          "type": "humanoid",
+          "tags": [
+            "human"
+          ]
+        },
+        "alignment": "N",
+        "armor_class": 11,
+        "hit_points": 39,
+        "speed": {
+          "walk": 30
+        },
+        "abilities": {
+          "strength": 16,
+          "dexterity": 13,
+          "constitution": 14,
+          "intelligence": 10,
+          "wisdom": 11,
+          "charisma": 10
+        },
+        "senses": [],
+        "languages": [
+          "Common"
+        ],
+        "challenge_rating": "2",
+        "actions": [
+          "Multiattack",
+          "Shortsword"
+        ]
+      }
+    },
+    "Soldier": {
+      "id": "soldier",
+      "label": "Soldier",
+      "type": "Group",
+      "source_file": "Adventure",
+      "mentions": [
+        "020"
+      ],
+      "properties": {
+        "reference_type": "background"
+      }
+    },
+    "detect magic": {
+      "id": "detect_magic",
+      "label": "detect magic",
+      "type": "Item",
+      "source_file": "PHB",
+      "mentions": [
+        "0b6",
+        "096",
+        "02c",
+        "0c1"
+      ],
+      "properties": {
+        "level": 1,
+        "school": "D",
+        "casting_time": "1 action",
+        "range": "point 0 self",
+        "duration": "10 minute",
+        "components": {
+          "v": true,
+          "s": true
+        },
+        "requires_concentration": true
+      }
+    },
+    "kobold": {
+      "id": "kobold",
+      "label": "kobold",
+      "type": "Creature",
+      "source_file": "MM",
+      "mentions": [
+        "030"
+      ],
+      "properties": {
+        "size": "S",
+        "creature_type": {
+          "type": "humanoid",
+          "tags": [
+            "kobold"
+          ]
+        },
+        "alignment": "L",
+        "armor_class": 12,
+        "hit_points": 5,
+        "speed": {
+          "walk": 30
+        },
+        "abilities": {
+          "strength": 7,
+          "dexterity": 15,
+          "constitution": 9,
+          "intelligence": 8,
+          "wisdom": 7,
+          "charisma": 8
+        },
+        "senses": [
+          "darkvision 60 ft."
+        ],
+        "languages": [
+          "Common",
+          "Draconic"
+        ],
+        "challenge_rating": "1/8",
+        "traits": [
+          "Sunlight Sensitivity",
+          "Pack Tactics"
+        ],
+        "actions": [
+          "Dagger",
+          "Sling"
+        ]
+      }
+    },
+    "Fume Drake|DoSI": {
+      "id": "fume_drake",
+      "label": "Fume Drake",
+      "type": "Creature",
+      "source_file": "DoSI",
+      "mentions": [
+        "0e7",
+        "06b",
+        "040"
+      ],
+      "properties": {
+        "size": "S",
+        "creature_type": "elemental",
+        "alignment": "N",
+        "armor_class": 12,
+        "hit_points": 22,
+        "speed": {
+          "walk": 30,
+          "fly": 30
+        },
+        "abilities": {
+          "strength": 6,
+          "dexterity": 14,
+          "constitution": 12,
+          "intelligence": 6,
+          "wisdom": 10,
+          "charisma": 11
+        },
+        "senses": [
+          "darkvision 60 ft."
+        ],
+        "languages": [
+          "Draconic",
+          "Ignan"
+        ],
+        "challenge_rating": "1/4",
+        "traits": [
+          "Death Burst",
+          "Unusual Nature"
+        ],
+        "actions": [
+          "Bite",
+          "Scalding Breath {@recharge}"
+        ]
+      }
+    },
+    "owlbear": {
+      "id": "owlbear",
+      "label": "owlbear",
+      "type": "Creature",
+      "source_file": "MM",
+      "mentions": [
+        "044"
+      ],
+      "properties": {
+        "size": "L",
+        "creature_type": "monstrosity",
+        "alignment": "U",
+        "armor_class": {
+          "ac": 13,
+          "from": [
+            "natural armor"
+          ]
+        },
+        "hit_points": 59,
+        "speed": {
+          "walk": 40
+        },
+        "abilities": {
+          "strength": 20,
+          "dexterity": 12,
+          "constitution": 17,
+          "intelligence": 3,
+          "wisdom": 12,
+          "charisma": 7
+        },
+        "senses": [
+          "darkvision 60 ft."
+        ],
+        "languages": [],
+        "challenge_rating": "3",
+        "traits": [
+          "Keen Sight and Smell"
+        ],
+        "actions": [
+          "Multiattack",
+          "Beak",
+          "Claws"
+        ]
+      }
+    },
+    "Kobold|": {
+      "id": "kobold",
+      "label": "Kobold",
+      "type": "Creature",
+      "source_file": "MM",
+      "mentions": [
+        "046",
+        "0b2"
+      ],
+      "properties": {
+        "size": "S",
+        "creature_type": {
+          "type": "humanoid",
+          "tags": [
+            "kobold"
+          ]
+        },
+        "alignment": "L",
+        "armor_class": 12,
+        "hit_points": 5,
+        "speed": {
+          "walk": 30
+        },
+        "abilities": {
+          "strength": 7,
+          "dexterity": 15,
+          "constitution": 9,
+          "intelligence": 8,
+          "wisdom": 7,
+          "charisma": 8
+        },
+        "senses": [
+          "darkvision 60 ft."
+        ],
+        "languages": [
+          "Common",
+          "Draconic"
+        ],
+        "challenge_rating": "1/8",
+        "traits": [
+          "Sunlight Sensitivity",
+          "Pack Tactics"
+        ],
+        "actions": [
+          "Dagger",
+          "Sling"
+        ]
+      }
+    },
+    "winged kobold": {
+      "id": "winged_kobold",
+      "label": "winged kobold",
+      "type": "Creature",
+      "source_file": "MM",
+      "mentions": [
+        "046"
+      ],
+      "properties": {
+        "size": "S",
+        "creature_type": {
+          "type": "humanoid",
+          "tags": [
+            "kobold"
+          ]
+        },
+        "alignment": "L",
+        "armor_class": 13,
+        "hit_points": 7,
+        "speed": {
+          "walk": 30,
+          "fly": 30
+        },
+        "abilities": {
+          "strength": 7,
+          "dexterity": 16,
+          "constitution": 9,
+          "intelligence": 8,
+          "wisdom": 7,
+          "charisma": 8
+        },
+        "senses": [
+          "darkvision 60 ft."
+        ],
+        "languages": [
+          "Common",
+          "Draconic"
+        ],
+        "challenge_rating": "1/4",
+        "traits": [
+          "Sunlight Sensitivity",
+          "Pack Tactics"
+        ],
+        "actions": [
+          "Dagger",
+          "Dropped Rock"
+        ]
+      }
+    },
+    "Sinensa|DoSI": {
+      "id": "sinensa",
+      "label": "Sinensa",
+      "type": "Creature",
+      "source_file": "DoSI",
+      "mentions": [
+        "068",
+        "054",
+        "0e7",
+        "04c",
+        "070"
+      ],
+      "properties": {
+        "size": "Unknown",
+        "creature_type": "Unknown",
+        "alignment": "Unknown",
+        "armor_class": 0,
+        "hit_points": null,
+        "speed": {},
+        "abilities": {
+          "strength": 10,
+          "dexterity": 10,
+          "constitution": 10,
+          "intelligence": 10,
+          "wisdom": 10,
+          "charisma": 10
+        },
+        "senses": [],
+        "languages": [],
+        "challenge_rating": "Unknown"
+      }
+    },
+    "lesser restoration": {
+      "id": "lesser_restoration",
+      "label": "lesser restoration",
+      "type": "Item",
+      "source_file": "PHB",
+      "mentions": [
+        "04d"
+      ],
+      "properties": {
+        "level": 2,
+        "school": "A",
+        "casting_time": "1 action",
+        "range": "point 0 touch",
+        "duration": "instant",
+        "components": {
+          "v": true,
+          "s": true
+        },
+        "requires_concentration": false
+      }
+    },
+    "rowboat": {
+      "id": "rowboat",
+      "label": "rowboat",
+      "type": "Item",
+      "source_file": "XPHB",
+      "mentions": [
+        "076",
+        "0a4",
+        "04e"
+      ],
+      "properties": {
+        "rarity": "none",
+        "type": "SHP|XPHB",
+        "requires_attunement": false,
+        "wondrous": false
+      }
+    },
+    "Myconid Adult|": {
+      "id": "myconid_adult",
+      "label": "Myconid Adult",
+      "type": "Creature",
+      "source_file": "MM",
+      "mentions": [
+        "068",
+        "054",
+        "05b",
+        "066",
+        "05f"
+      ],
+      "properties": {
+        "size": "M",
+        "creature_type": "plant",
+        "alignment": "L",
+        "armor_class": {
+          "ac": 12,
+          "from": [
+            "natural armor"
+          ]
+        },
+        "hit_points": 22,
+        "speed": {
+          "walk": 20
+        },
+        "abilities": {
+          "strength": 10,
+          "dexterity": 10,
+          "constitution": 12,
+          "intelligence": 10,
+          "wisdom": 13,
+          "charisma": 7
+        },
+        "senses": [
+          "darkvision 120 ft."
+        ],
+        "languages": [],
+        "challenge_rating": "1/2",
+        "traits": [
+          "Distress Spores",
+          "Sun Sickness"
+        ],
+        "actions": [
+          "Fist",
+          "Pacifying Spores (3/Day)",
+          "Rapport Spores"
+        ]
+      }
+    },
+    "Myconid Sprout|": {
+      "id": "myconid_sprout",
+      "label": "Myconid Sprout",
+      "type": "Creature",
+      "source_file": "MM",
+      "mentions": [
+        "063",
+        "054",
+        "05f",
+        "05b"
+      ],
+      "properties": {
+        "size": "S",
+        "creature_type": "plant",
+        "alignment": "L",
+        "armor_class": 10,
+        "hit_points": 7,
+        "speed": {
+          "walk": 10
+        },
+        "abilities": {
+          "strength": 8,
+          "dexterity": 10,
+          "constitution": 10,
+          "intelligence": 8,
+          "wisdom": 11,
+          "charisma": 5
+        },
+        "senses": [
+          "darkvision 120 ft."
+        ],
+        "languages": [],
+        "challenge_rating": "0",
+        "traits": [
+          "Distress Spores",
+          "Sun Sickness"
+        ],
+        "actions": [
+          "Fist",
+          "Rapport Spores (3/Day)"
+        ]
+      }
+    },
+    "spore servant octopus|DoSI": {
+      "id": "spore_servant_octopus",
+      "label": "spore servant octopus",
+      "type": "Creature",
+      "source_file": "DoSI",
+      "mentions": [
+        "074",
+        "058"
+      ],
+      "properties": {
+        "size": "L",
+        "creature_type": "plant",
+        "alignment": "U",
+        "armor_class": 11,
+        "hit_points": 52,
+        "speed": {
+          "walk": 5,
+          "swim": 50
+        },
+        "abilities": {
+          "strength": 17,
+          "dexterity": 13,
+          "constitution": 13,
+          "intelligence": 2,
+          "wisdom": 6,
+          "charisma": 1
+        },
+        "senses": [
+          "blindsight 30 ft. (blind beyond this radius)"
+        ],
+        "languages": [],
+        "challenge_rating": "1",
+        "traits": [
+          "Hold Breath",
+          "Water Breathing"
+        ],
+        "actions": [
+          "Tentacles"
+        ]
+      }
+    },
+    "Violet Fungus|": {
+      "id": "violet_fungus",
+      "label": "Violet Fungus",
+      "type": "Creature",
+      "source_file": "MM",
+      "mentions": [
+        "062",
+        "05b"
+      ],
+      "properties": {
+        "size": "M",
+        "creature_type": "plant",
+        "alignment": "U",
+        "armor_class": 5,
+        "hit_points": 18,
+        "speed": {
+          "walk": 5
+        },
+        "abilities": {
+          "strength": 3,
+          "dexterity": 1,
+          "constitution": 10,
+          "intelligence": 1,
+          "wisdom": 3,
+          "charisma": 1
+        },
+        "senses": [
+          "blindsight 30 ft. (blind beyond this radius)"
+        ],
+        "languages": [],
+        "challenge_rating": "1/4",
+        "traits": [
+          "False Appearance"
+        ],
+        "actions": [
+          "Multiattack",
+          "Rotting Touch"
+        ]
+      }
+    },
+    "violet fungus|DoSI": {
+      "id": "violet_fungus",
+      "label": "violet fungus",
+      "type": "Creature",
+      "source_file": "MM",
+      "mentions": [
+        "05e",
+        "05b"
+      ],
+      "properties": {
+        "size": "M",
+        "creature_type": "plant",
+        "alignment": "U",
+        "armor_class": 5,
+        "hit_points": 18,
+        "speed": {
+          "walk": 5
+        },
+        "abilities": {
+          "strength": 3,
+          "dexterity": 1,
+          "constitution": 10,
+          "intelligence": 1,
+          "wisdom": 3,
+          "charisma": 1
+        },
+        "senses": [
+          "blindsight 30 ft. (blind beyond this radius)"
+        ],
+        "languages": [],
+        "challenge_rating": "1/4",
+        "traits": [
+          "False Appearance"
+        ],
+        "actions": [
+          "Multiattack",
+          "Rotting Touch"
+        ]
+      }
+    },
+    "potion of healing": {
+      "id": "potion_of_healing",
+      "label": "potion of healing",
+      "type": "Item",
+      "source_file": "XDMG",
+      "mentions": [
+        "061",
+        "0c9"
+      ],
+      "properties": {
+        "rarity": "common",
+        "type": "P|XPHB",
+        "requires_attunement": false,
+        "wondrous": false,
+        "weight": 0.5
+      }
+    },
+    "elixir of health": {
+      "id": "elixir_of_health",
+      "label": "elixir of health",
+      "type": "Item",
+      "source_file": "XDMG",
+      "mentions": [
+        "070",
+        "06a"
+      ],
+      "properties": {
+        "rarity": "rare",
+        "type": "P|XPHB",
+        "requires_attunement": false,
+        "wondrous": false,
+        "weight": 0.5
+      }
+    },
+    "fume drake|DoSI": {
+      "id": "fume_drake",
+      "label": "fume drake",
+      "type": "Creature",
+      "source_file": "DoSI",
+      "mentions": [
+        "06f"
+      ],
+      "properties": {
+        "size": "S",
+        "creature_type": "elemental",
+        "alignment": "N",
+        "armor_class": 12,
+        "hit_points": 22,
+        "speed": {
+          "walk": 30,
+          "fly": 30
+        },
+        "abilities": {
+          "strength": 6,
+          "dexterity": 14,
+          "constitution": 12,
+          "intelligence": 6,
+          "wisdom": 10,
+          "charisma": 11
+        },
+        "senses": [
+          "darkvision 60 ft."
+        ],
+        "languages": [
+          "Draconic",
+          "Ignan"
+        ],
+        "challenge_rating": "1/4",
+        "traits": [
+          "Death Burst",
+          "Unusual Nature"
+        ],
+        "actions": [
+          "Bite",
+          "Scalding Breath {@recharge}"
+        ]
+      }
+    },
+    "harpy": {
+      "id": "harpy",
+      "label": "harpy",
+      "type": "Creature",
+      "source_file": "MM",
+      "mentions": [
+        "099",
+        "09a",
+        "073",
+        "09c",
+        "07c"
+      ],
+      "properties": {
+        "size": "M",
+        "creature_type": "monstrosity",
+        "alignment": "C",
+        "armor_class": 11,
+        "hit_points": 38,
+        "speed": {
+          "walk": 20,
+          "fly": 40
+        },
+        "abilities": {
+          "strength": 12,
+          "dexterity": 13,
+          "constitution": 12,
+          "intelligence": 7,
+          "wisdom": 10,
+          "charisma": 13
+        },
+        "senses": [],
+        "languages": [
+          "Common"
+        ],
+        "challenge_rating": "1",
+        "actions": [
+          "Multiattack",
+          "Claws",
+          "Club",
+          "Luring Song"
+        ]
+      }
+    },
+    "Ghoul|": {
+      "id": "ghoul",
+      "label": "Ghoul",
+      "type": "Creature",
+      "source_file": "MM",
+      "mentions": [
+        "098",
+        "074"
+      ],
+      "properties": {
+        "size": "M",
+        "creature_type": "undead",
+        "alignment": "C",
+        "armor_class": 12,
+        "hit_points": 22,
+        "speed": {
+          "walk": 30
+        },
+        "abilities": {
+          "strength": 13,
+          "dexterity": 15,
+          "constitution": 10,
+          "intelligence": 7,
+          "wisdom": 10,
+          "charisma": 6
+        },
+        "senses": [
+          "darkvision 60 ft."
+        ],
+        "languages": [
+          "Common"
+        ],
+        "challenge_rating": "1",
+        "actions": [
+          "Bite",
+          "Claws"
+        ]
+      }
+    },
+    "tiger eye": {
+      "id": "tiger_eye",
+      "label": "tiger eye",
+      "type": "Item",
+      "source_file": "XDMG",
+      "mentions": [
+        "07d"
+      ],
+      "properties": {
+        "rarity": "none",
+        "type": "$G|XDMG",
+        "requires_attunement": false,
+        "wondrous": false
+      }
+    },
+    "bloodstone": {
+      "id": "bloodstone",
+      "label": "bloodstone",
+      "type": "Item",
+      "source_file": "XDMG",
+      "mentions": [
+        "07d"
+      ],
+      "properties": {
+        "rarity": "none",
+        "type": "$G|XDMG",
+        "requires_attunement": false,
+        "wondrous": false
+      }
+    },
+    "pouch|PHB": {
+      "id": "pouch",
+      "label": "pouch",
+      "type": "Item",
+      "source_file": "XPHB",
+      "mentions": [
+        "0b8",
+        "085",
+        "096"
+      ],
+      "properties": {
+        "rarity": "none",
+        "type": "G|XPHB",
+        "requires_attunement": false,
+        "wondrous": false,
+        "weight": 1
+      }
+    },
+    "cartographer's tools|PHB": {
+      "id": "cartographers_tools",
+      "label": "cartographer's tools",
+      "type": "Item",
+      "source_file": "XPHB",
+      "mentions": [
+        "085"
+      ],
+      "properties": {
+        "rarity": "none",
+        "type": "AT|XPHB",
+        "requires_attunement": false,
+        "wondrous": false,
+        "weight": 6
+      }
+    },
+    "dagger|PHB": {
+      "id": "dagger",
+      "label": "dagger",
+      "type": "Item",
+      "source_file": "PHB",
+      "mentions": [
+        "085"
+      ],
+      "properties": {
+        "rarity": "Unknown",
+        "type": "Unknown",
+        "requires_attunement": false,
+        "wondrous": false
+      }
+    },
+    "fine clothes|PHB": {
+      "id": "fine_clothes",
+      "label": "fine clothes",
+      "type": "Item",
+      "source_file": "XPHB",
+      "mentions": [
+        "089"
+      ],
+      "properties": {
+        "rarity": "none",
+        "type": "G|XPHB",
+        "requires_attunement": false,
+        "wondrous": false,
+        "weight": 6
+      }
+    },
+    "sack|PHB": {
+      "id": "sack",
+      "label": "sack",
+      "type": "Item",
+      "source_file": "XPHB",
+      "mentions": [
+        "08c"
+      ],
+      "properties": {
+        "rarity": "none",
+        "type": "G|XPHB",
+        "requires_attunement": false,
+        "wondrous": false,
+        "weight": 0.5
+      }
+    },
+    "ghoul": {
+      "id": "ghoul",
+      "label": "ghoul",
+      "type": "Creature",
+      "source_file": "MM",
+      "mentions": [
+        "08f"
+      ],
+      "properties": {
+        "size": "M",
+        "creature_type": "undead",
+        "alignment": "C",
+        "armor_class": 12,
+        "hit_points": 22,
+        "speed": {
+          "walk": 30
+        },
+        "abilities": {
+          "strength": 13,
+          "dexterity": 15,
+          "constitution": 10,
+          "intelligence": 7,
+          "wisdom": 10,
+          "charisma": 6
+        },
+        "senses": [
+          "darkvision 60 ft."
+        ],
+        "languages": [
+          "Common"
+        ],
+        "challenge_rating": "1",
+        "actions": [
+          "Bite",
+          "Claws"
+        ]
+      }
+    },
+    "crowbar|PHB": {
+      "id": "crowbar",
+      "label": "crowbar",
+      "type": "Item",
+      "source_file": "XPHB",
+      "mentions": [
+        "093"
+      ],
+      "properties": {
+        "rarity": "none",
+        "type": "G|XPHB",
+        "requires_attunement": false,
+        "wondrous": false,
+        "weight": 5
+      }
+    },
+    "Turquoise|": {
+      "id": "turquoise",
+      "label": "Turquoise",
+      "type": "Item",
+      "source_file": "XDMG",
+      "mentions": [
+        "096"
+      ],
+      "properties": {
+        "rarity": "none",
+        "type": "$G|XDMG",
+        "requires_attunement": false,
+        "wondrous": false
+      }
+    },
+    "boots of elvenkind": {
+      "id": "boots_of_elvenkind",
+      "label": "boots of elvenkind",
+      "type": "Item",
+      "source_file": "XDMG",
+      "mentions": [
+        "096"
+      ],
+      "properties": {
+        "rarity": "uncommon",
+        "type": "Unknown",
+        "requires_attunement": false,
+        "wondrous": true
+      }
+    },
+    "blue dragon wyrmling": {
+      "id": "blue_dragon_wyrmling",
+      "label": "blue dragon wyrmling",
+      "type": "Creature",
+      "source_file": "MM",
+      "mentions": [
+        "0b9",
+        "0c2",
+        "0a2"
+      ],
+      "properties": {
+        "size": "M",
+        "creature_type": "dragon",
+        "alignment": "L",
+        "armor_class": {
+          "ac": 17,
+          "from": [
+            "natural armor"
+          ]
+        },
+        "hit_points": 52,
+        "speed": {
+          "walk": 30,
+          "burrow": 15,
+          "fly": 60
+        },
+        "abilities": {
+          "strength": 17,
+          "dexterity": 10,
+          "constitution": 15,
+          "intelligence": 12,
+          "wisdom": 11,
+          "charisma": 15
+        },
+        "senses": [
+          "blindsight 10 ft.",
+          "darkvision 60 ft."
+        ],
+        "languages": [
+          "Draconic"
+        ],
+        "challenge_rating": "3",
+        "actions": [
+          "Bite",
+          "Lightning Breath {@recharge 5}"
+        ]
+      }
+    },
+    "bronze dragon wyrmling": {
+      "id": "bronze_dragon_wyrmling",
+      "label": "bronze dragon wyrmling",
+      "type": "Creature",
+      "source_file": "MM",
+      "mentions": [
+        "0c2",
+        "0a2",
+        "0bf"
+      ],
+      "properties": {
+        "size": "M",
+        "creature_type": "dragon",
+        "alignment": "L",
+        "armor_class": {
+          "ac": 17,
+          "from": [
+            "natural armor"
+          ]
+        },
+        "hit_points": 32,
+        "speed": {
+          "walk": 30,
+          "fly": 60,
+          "swim": 30
+        },
+        "abilities": {
+          "strength": 17,
+          "dexterity": 10,
+          "constitution": 15,
+          "intelligence": 12,
+          "wisdom": 11,
+          "charisma": 15
+        },
+        "senses": [
+          "blindsight 10 ft.",
+          "darkvision 60 ft."
+        ],
+        "languages": [
+          "Draconic"
+        ],
+        "challenge_rating": "2",
+        "traits": [
+          "Amphibious"
+        ],
+        "actions": [
+          "Bite",
+          "Breath Weapons {@recharge 5}"
+        ]
+      }
+    },
+    "Winged Kobold|": {
+      "id": "winged_kobold",
+      "label": "Winged Kobold",
+      "type": "Creature",
+      "source_file": "MM",
+      "mentions": [
+        "0ad",
+        "0b2"
+      ],
+      "properties": {
+        "size": "S",
+        "creature_type": {
+          "type": "humanoid",
+          "tags": [
+            "kobold"
+          ]
+        },
+        "alignment": "L",
+        "armor_class": 13,
+        "hit_points": 7,
+        "speed": {
+          "walk": 30,
+          "fly": 30
+        },
+        "abilities": {
+          "strength": 7,
+          "dexterity": 16,
+          "constitution": 9,
+          "intelligence": 8,
+          "wisdom": 7,
+          "charisma": 8
+        },
+        "senses": [
+          "darkvision 60 ft."
+        ],
+        "languages": [
+          "Common",
+          "Draconic"
+        ],
+        "challenge_rating": "1/4",
+        "traits": [
+          "Sunlight Sensitivity",
+          "Pack Tactics"
+        ],
+        "actions": [
+          "Dagger",
+          "Dropped Rock"
+        ]
+      }
+    },
+    "Sling Bullet|PHB": {
+      "id": "sling_bullet",
+      "label": "Sling Bullet",
+      "type": "Item",
+      "source_file": "PHB",
+      "mentions": [
+        "0b2"
+      ],
+      "properties": {
+        "rarity": "Unknown",
+        "type": "Unknown",
+        "requires_attunement": false,
+        "wondrous": false
+      }
+    },
+    "misty step": {
+      "id": "misty_step",
+      "label": "misty step",
+      "type": "Item",
+      "source_file": "PHB",
+      "mentions": [
+        "0b7"
+      ],
+      "properties": {
+        "level": 2,
+        "school": "C",
+        "casting_time": "1 bonus",
+        "range": "point 0 self",
+        "duration": "instant",
+        "components": {
+          "v": true
+        },
+        "requires_concentration": false
+      }
+    },
+    "Potion of Lightning Resistance|": {
+      "id": "potion_of_lightning_resistance",
+      "label": "Potion of Lightning Resistance",
+      "type": "Item",
+      "source_file": "XDMG",
+      "mentions": [
+        "0b8"
+      ],
+      "properties": {
+        "rarity": "uncommon",
+        "type": "P|XPHB",
+        "requires_attunement": false,
+        "wondrous": false,
+        "weight": 0.5
+      }
+    },
+    "Bronze Dragon Wyrmling|": {
+      "id": "bronze_dragon_wyrmling",
+      "label": "Bronze Dragon Wyrmling",
+      "type": "Creature",
+      "source_file": "MM",
+      "mentions": [
+        "0b9"
+      ],
+      "properties": {
+        "size": "M",
+        "creature_type": "dragon",
+        "alignment": "L",
+        "armor_class": {
+          "ac": 17,
+          "from": [
+            "natural armor"
+          ]
+        },
+        "hit_points": 32,
+        "speed": {
+          "walk": 30,
+          "fly": 60,
+          "swim": 30
+        },
+        "abilities": {
+          "strength": 17,
+          "dexterity": 10,
+          "constitution": 15,
+          "intelligence": 12,
+          "wisdom": 11,
+          "charisma": 15
+        },
+        "senses": [
+          "blindsight 10 ft.",
+          "darkvision 60 ft."
+        ],
+        "languages": [
+          "Draconic"
+        ],
+        "challenge_rating": "2",
+        "traits": [
+          "Amphibious"
+        ],
+        "actions": [
+          "Bite",
+          "Breath Weapons {@recharge 5}"
+        ]
+      }
+    },
+    "Disengage": {
+      "id": "disengage",
+      "label": "Disengage",
+      "type": "Item",
+      "source_file": "Adventure",
+      "mentions": [
+        "0bc"
+      ],
+      "properties": {
+        "reference_type": "action"
+      }
+    },
+    "blue quartz": {
+      "id": "blue_quartz",
+      "label": "blue quartz",
+      "type": "Item",
+      "source_file": "XDMG",
+      "mentions": [
+        "0be"
+      ],
+      "properties": {
+        "rarity": "none",
+        "type": "$G|XDMG",
+        "requires_attunement": false,
+        "wondrous": false
+      }
+    },
+    "jasper": {
+      "id": "jasper",
+      "label": "jasper",
+      "type": "Item",
+      "source_file": "XDMG",
+      "mentions": [
+        "0be"
+      ],
+      "properties": {
+        "rarity": "none",
+        "type": "$G|XDMG",
+        "requires_attunement": false,
+        "wondrous": false
+      }
+    },
+    "+1 battleaxe": {
+      "id": "1_battleaxe",
+      "label": "+1 battleaxe",
+      "type": "Item",
+      "source_file": "Unknown",
+      "mentions": [
+        "0c1"
+      ],
+      "properties": {
+        "rarity": "Unknown",
+        "type": "Unknown",
+        "requires_attunement": false,
+        "wondrous": false
+      }
+    },
+    "Spell Scroll (2nd Level)|": {
+      "id": "spell_scroll_2nd_level",
+      "label": "Spell Scroll (2nd Level)",
+      "type": "Item",
+      "source_file": "DMG",
+      "mentions": [
+        "0c1"
+      ],
+      "properties": {
+        "rarity": "uncommon",
+        "type": "SC|DMG",
+        "requires_attunement": false,
+        "wondrous": false
+      }
+    },
+    "hold person": {
+      "id": "hold_person",
+      "label": "hold person",
+      "type": "Item",
+      "source_file": "PHB",
+      "mentions": [
+        "0c1"
+      ],
+      "properties": {
+        "level": 2,
+        "school": "E",
+        "casting_time": "1 action",
+        "range": "point 60 feet",
+        "duration": "1 minute",
+        "components": {
+          "v": true,
+          "s": true,
+          "m": "a small, straight piece of iron"
+        },
+        "requires_concentration": true,
+        "saving_throw": [
+          "wisdom"
+        ]
+      }
+    },
+    "+1 Weapon|": {
+      "id": "1_weapon",
+      "label": "+1 Weapon",
+      "type": "Item",
+      "source_file": "Unknown",
+      "mentions": [
+        "0c1"
+      ],
+      "properties": {
+        "rarity": "Unknown",
+        "type": "Unknown",
+        "requires_attunement": false,
+        "wondrous": false
+      }
+    },
+    "Spell Scroll|": {
+      "id": "spell_scroll",
+      "label": "Spell Scroll",
+      "type": "Item",
+      "source_file": "Unknown",
+      "mentions": [
+        "0c1"
+      ],
+      "properties": {
+        "rarity": "Unknown",
+        "type": "Unknown",
+        "requires_attunement": false,
+        "wondrous": false
+      }
+    },
+    "pearl": {
+      "id": "pearl",
+      "label": "pearl",
+      "type": "Item",
+      "source_file": "XDMG",
+      "mentions": [
+        "0c9"
+      ],
+      "properties": {
+        "rarity": "none",
+        "type": "$G|XDMG",
+        "requires_attunement": false,
+        "wondrous": false
+      }
+    },
+    "Boots of Elvenkind": {
+      "id": "boots_of_elvenkind",
+      "label": "Boots of Elvenkind",
+      "type": "Item",
+      "source_file": "XDMG",
+      "mentions": [
+        "0cc"
+      ],
+      "properties": {
+        "rarity": "uncommon",
+        "type": "Unknown",
+        "requires_attunement": false,
+        "wondrous": true
+      }
+    },
+    "Elixir of Health": {
+      "id": "elixir_of_health",
+      "label": "Elixir of Health",
+      "type": "Item",
+      "source_file": "XDMG",
+      "mentions": [
+        "0cc"
+      ],
+      "properties": {
+        "rarity": "rare",
+        "type": "P|XPHB",
+        "requires_attunement": false,
+        "wondrous": false,
+        "weight": 0.5
+      }
+    },
+    "Potion of Healing": {
+      "id": "potion_of_healing",
+      "label": "Potion of Healing",
+      "type": "Item",
+      "source_file": "XDMG",
+      "mentions": [
+        "0cc"
+      ],
+      "properties": {
+        "rarity": "common",
+        "type": "P|XPHB",
+        "requires_attunement": false,
+        "wondrous": false,
+        "weight": 0.5
+      }
+    },
+    "Potion of Resistance": {
+      "id": "potion_of_resistance",
+      "label": "Potion of Resistance",
+      "type": "Item",
+      "source_file": "Unknown",
+      "mentions": [
+        "0cc"
+      ],
+      "properties": {
+        "rarity": "Unknown",
+        "type": "Unknown",
+        "requires_attunement": false,
+        "wondrous": false
+      }
+    },
+    "Spell Scroll": {
+      "id": "spell_scroll",
+      "label": "Spell Scroll",
+      "type": "Item",
+      "source_file": "Unknown",
+      "mentions": [
+        "0cc"
+      ],
+      "properties": {
+        "rarity": "Unknown",
+        "type": "Unknown",
+        "requires_attunement": false,
+        "wondrous": false
+      }
+    },
+    "+1 Weapon": {
+      "id": "1_weapon",
+      "label": "+1 Weapon",
+      "type": "Item",
+      "source_file": "Unknown",
+      "mentions": [
+        "0cc"
+      ],
+      "properties": {
+        "rarity": "Unknown",
+        "type": "Unknown",
+        "requires_attunement": false,
+        "wondrous": false
+      }
+    },
+    "Blue Dragon Wyrmling": {
+      "id": "blue_dragon_wyrmling",
+      "label": "Blue Dragon Wyrmling",
+      "type": "Creature",
+      "source_file": "MM",
+      "mentions": [
+        "0e7"
+      ],
+      "properties": {
+        "size": "M",
+        "creature_type": "dragon",
+        "alignment": "L",
+        "armor_class": {
+          "ac": 17,
+          "from": [
+            "natural armor"
+          ]
+        },
+        "hit_points": 52,
+        "speed": {
+          "walk": 30,
+          "burrow": 15,
+          "fly": 60
+        },
+        "abilities": {
+          "strength": 17,
+          "dexterity": 10,
+          "constitution": 15,
+          "intelligence": 12,
+          "wisdom": 11,
+          "charisma": 15
+        },
+        "senses": [
+          "blindsight 10 ft.",
+          "darkvision 60 ft."
+        ],
+        "languages": [
+          "Draconic"
+        ],
+        "challenge_rating": "3",
+        "actions": [
+          "Bite",
+          "Lightning Breath {@recharge 5}"
+        ]
+      }
+    },
+    "Bronze Dragon Wyrmling": {
+      "id": "bronze_dragon_wyrmling",
+      "label": "Bronze Dragon Wyrmling",
+      "type": "Creature",
+      "source_file": "MM",
+      "mentions": [
+        "0e7"
+      ],
+      "properties": {
+        "size": "M",
+        "creature_type": "dragon",
+        "alignment": "L",
+        "armor_class": {
+          "ac": 17,
+          "from": [
+            "natural armor"
+          ]
+        },
+        "hit_points": 32,
+        "speed": {
+          "walk": 30,
+          "fly": 60,
+          "swim": 30
+        },
+        "abilities": {
+          "strength": 17,
+          "dexterity": 10,
+          "constitution": 15,
+          "intelligence": 12,
+          "wisdom": 11,
+          "charisma": 15
+        },
+        "senses": [
+          "blindsight 10 ft.",
+          "darkvision 60 ft."
+        ],
+        "languages": [
+          "Draconic"
+        ],
+        "challenge_rating": "2",
+        "traits": [
+          "Amphibious"
+        ],
+        "actions": [
+          "Bite",
+          "Breath Weapons {@recharge 5}"
+        ]
+      }
+    },
+    "Fire Snake": {
+      "id": "fire_snake",
+      "label": "Fire Snake",
+      "type": "Creature",
+      "source_file": "MM",
+      "mentions": [
+        "0e7"
+      ],
+      "properties": {
+        "size": "M",
+        "creature_type": "elemental",
+        "alignment": "N",
+        "armor_class": {
+          "ac": 14,
+          "from": [
+            "natural armor"
+          ]
+        },
+        "hit_points": 22,
+        "speed": {
+          "walk": 30
+        },
+        "abilities": {
+          "strength": 12,
+          "dexterity": 14,
+          "constitution": 11,
+          "intelligence": 7,
+          "wisdom": 10,
+          "charisma": 8
+        },
+        "senses": [
+          "darkvision 60 ft."
+        ],
+        "languages": [
+          "understands Ignan but can't speak"
+        ],
+        "challenge_rating": "1",
+        "traits": [
+          "Heated Body"
+        ],
+        "actions": [
+          "Multiattack",
+          "Bite",
+          "Tail"
+        ]
+      }
+    },
+    "Ghoul": {
+      "id": "ghoul",
+      "label": "Ghoul",
+      "type": "Creature",
+      "source_file": "MM",
+      "mentions": [
+        "0e7"
+      ],
+      "properties": {
+        "size": "M",
+        "creature_type": "undead",
+        "alignment": "C",
+        "armor_class": 12,
+        "hit_points": 22,
+        "speed": {
+          "walk": 30
+        },
+        "abilities": {
+          "strength": 13,
+          "dexterity": 15,
+          "constitution": 10,
+          "intelligence": 7,
+          "wisdom": 10,
+          "charisma": 6
+        },
+        "senses": [
+          "darkvision 60 ft."
+        ],
+        "languages": [
+          "Common"
+        ],
+        "challenge_rating": "1",
+        "actions": [
+          "Bite",
+          "Claws"
+        ]
+      }
+    },
+    "Harpy": {
+      "id": "harpy",
+      "label": "Harpy",
+      "type": "Creature",
+      "source_file": "MM",
+      "mentions": [
+        "0e7"
+      ],
+      "properties": {
+        "size": "M",
+        "creature_type": "monstrosity",
+        "alignment": "C",
+        "armor_class": 11,
+        "hit_points": 38,
+        "speed": {
+          "walk": 20,
+          "fly": 40
+        },
+        "abilities": {
+          "strength": 12,
+          "dexterity": 13,
+          "constitution": 12,
+          "intelligence": 7,
+          "wisdom": 10,
+          "charisma": 13
+        },
+        "senses": [],
+        "languages": [
+          "Common"
+        ],
+        "challenge_rating": "1",
+        "actions": [
+          "Multiattack",
+          "Claws",
+          "Club",
+          "Luring Song"
+        ]
+      }
+    },
+    "Kobold Tinkerer|DoSI": {
+      "id": "kobold_tinkerer",
+      "label": "Kobold Tinkerer",
+      "type": "Creature",
+      "source_file": "DoSI",
+      "mentions": [
+        "0e7"
+      ],
+      "properties": {
+        "size": "S",
+        "creature_type": "humanoid",
+        "alignment": "A",
+        "armor_class": 12,
+        "hit_points": 10,
+        "speed": {
+          "walk": 30,
+          "fly": 10
+        },
+        "abilities": {
+          "strength": 7,
+          "dexterity": 14,
+          "constitution": 10,
+          "intelligence": 15,
+          "wisdom": 7,
+          "charisma": 9
+        },
+        "senses": [
+          "darkvision 60 ft."
+        ],
+        "languages": [
+          "Common",
+          "Draconic"
+        ],
+        "challenge_rating": "1/4",
+        "traits": [
+          "Inquiring Mind (1/Day)",
+          "Pack Tactics",
+          "Sunlight Sensitivity"
+        ],
+        "actions": [
+          "Dagger",
+          "Alchemical Flame {@recharge}"
+        ]
+      }
+    },
+    "Kobold": {
+      "id": "kobold",
+      "label": "Kobold",
+      "type": "Creature",
+      "source_file": "MM",
+      "mentions": [
+        "0e7"
+      ],
+      "properties": {
+        "size": "S",
+        "creature_type": {
+          "type": "humanoid",
+          "tags": [
+            "kobold"
+          ]
+        },
+        "alignment": "L",
+        "armor_class": 12,
+        "hit_points": 5,
+        "speed": {
+          "walk": 30
+        },
+        "abilities": {
+          "strength": 7,
+          "dexterity": 15,
+          "constitution": 9,
+          "intelligence": 8,
+          "wisdom": 7,
+          "charisma": 8
+        },
+        "senses": [
+          "darkvision 60 ft."
+        ],
+        "languages": [
+          "Common",
+          "Draconic"
+        ],
+        "challenge_rating": "1/8",
+        "traits": [
+          "Sunlight Sensitivity",
+          "Pack Tactics"
+        ],
+        "actions": [
+          "Dagger",
+          "Sling"
+        ]
+      }
+    },
+    "Myconid Adult": {
+      "id": "myconid_adult",
+      "label": "Myconid Adult",
+      "type": "Creature",
+      "source_file": "MM",
+      "mentions": [
+        "0e7"
+      ],
+      "properties": {
+        "size": "M",
+        "creature_type": "plant",
+        "alignment": "L",
+        "armor_class": {
+          "ac": 12,
+          "from": [
+            "natural armor"
+          ]
+        },
+        "hit_points": 22,
+        "speed": {
+          "walk": 20
+        },
+        "abilities": {
+          "strength": 10,
+          "dexterity": 10,
+          "constitution": 12,
+          "intelligence": 10,
+          "wisdom": 13,
+          "charisma": 7
+        },
+        "senses": [
+          "darkvision 120 ft."
+        ],
+        "languages": [],
+        "challenge_rating": "1/2",
+        "traits": [
+          "Distress Spores",
+          "Sun Sickness"
+        ],
+        "actions": [
+          "Fist",
+          "Pacifying Spores (3/Day)",
+          "Rapport Spores"
+        ]
+      }
+    },
+    "Myconid Sprout": {
+      "id": "myconid_sprout",
+      "label": "Myconid Sprout",
+      "type": "Creature",
+      "source_file": "MM",
+      "mentions": [
+        "0e7"
+      ],
+      "properties": {
+        "size": "S",
+        "creature_type": "plant",
+        "alignment": "L",
+        "armor_class": 10,
+        "hit_points": 7,
+        "speed": {
+          "walk": 10
+        },
+        "abilities": {
+          "strength": 8,
+          "dexterity": 10,
+          "constitution": 10,
+          "intelligence": 8,
+          "wisdom": 11,
+          "charisma": 5
+        },
+        "senses": [
+          "darkvision 120 ft."
+        ],
+        "languages": [],
+        "challenge_rating": "0",
+        "traits": [
+          "Distress Spores",
+          "Sun Sickness"
+        ],
+        "actions": [
+          "Fist",
+          "Rapport Spores (3/Day)"
+        ]
+      }
+    },
+    "Owlbear": {
+      "id": "owlbear",
+      "label": "Owlbear",
+      "type": "Creature",
+      "source_file": "MM",
+      "mentions": [
+        "0e7"
+      ],
+      "properties": {
+        "size": "L",
+        "creature_type": "monstrosity",
+        "alignment": "U",
+        "armor_class": {
+          "ac": 13,
+          "from": [
+            "natural armor"
+          ]
+        },
+        "hit_points": 59,
+        "speed": {
+          "walk": 40
+        },
+        "abilities": {
+          "strength": 20,
+          "dexterity": 12,
+          "constitution": 17,
+          "intelligence": 3,
+          "wisdom": 12,
+          "charisma": 7
+        },
+        "senses": [
+          "darkvision 60 ft."
+        ],
+        "languages": [],
+        "challenge_rating": "3",
+        "traits": [
+          "Keen Sight and Smell"
+        ],
+        "actions": [
+          "Multiattack",
+          "Beak",
+          "Claws"
+        ]
+      }
+    },
+    "Spore Servant Octopus|DoSI": {
+      "id": "spore_servant_octopus",
+      "label": "Spore Servant Octopus",
+      "type": "Creature",
+      "source_file": "DoSI",
+      "mentions": [
+        "0e7"
+      ],
+      "properties": {
+        "size": "L",
+        "creature_type": "plant",
+        "alignment": "U",
+        "armor_class": 11,
+        "hit_points": 52,
+        "speed": {
+          "walk": 5,
+          "swim": 50
+        },
+        "abilities": {
+          "strength": 17,
+          "dexterity": 13,
+          "constitution": 13,
+          "intelligence": 2,
+          "wisdom": 6,
+          "charisma": 1
+        },
+        "senses": [
+          "blindsight 30 ft. (blind beyond this radius)"
+        ],
+        "languages": [],
+        "challenge_rating": "1",
+        "traits": [
+          "Hold Breath",
+          "Water Breathing"
+        ],
+        "actions": [
+          "Tentacles"
+        ]
+      }
+    },
+    "Stirge": {
+      "id": "stirge",
+      "label": "Stirge",
+      "type": "Creature",
+      "source_file": "MM",
+      "mentions": [
+        "0e7"
+      ],
+      "properties": {
+        "size": "T",
+        "creature_type": "beast",
+        "alignment": "U",
+        "armor_class": {
+          "ac": 14,
+          "from": [
+            "natural armor"
+          ]
+        },
+        "hit_points": 2,
+        "speed": {
+          "walk": 10,
+          "fly": 40
+        },
+        "abilities": {
+          "strength": 4,
+          "dexterity": 16,
+          "constitution": 11,
+          "intelligence": 2,
+          "wisdom": 8,
+          "charisma": 6
+        },
+        "senses": [
+          "darkvision 60 ft."
+        ],
+        "languages": [],
+        "challenge_rating": "1/8",
+        "actions": [
+          "Blood Drain"
+        ]
+      }
+    },
+    "Violet Fungus": {
+      "id": "violet_fungus",
+      "label": "Violet Fungus",
+      "type": "Creature",
+      "source_file": "MM",
+      "mentions": [
+        "0e7"
+      ],
+      "properties": {
+        "size": "M",
+        "creature_type": "plant",
+        "alignment": "U",
+        "armor_class": 5,
+        "hit_points": 18,
+        "speed": {
+          "walk": 5
+        },
+        "abilities": {
+          "strength": 3,
+          "dexterity": 1,
+          "constitution": 10,
+          "intelligence": 1,
+          "wisdom": 3,
+          "charisma": 1
+        },
+        "senses": [
+          "blindsight 30 ft. (blind beyond this radius)"
+        ],
+        "languages": [],
+        "challenge_rating": "1/4",
+        "traits": [
+          "False Appearance"
+        ],
+        "actions": [
+          "Multiattack",
+          "Rotting Touch"
+        ]
+      }
+    },
+    "Winged Kobold": {
+      "id": "winged_kobold",
+      "label": "Winged Kobold",
+      "type": "Creature",
+      "source_file": "MM",
+      "mentions": [
+        "0e7"
+      ],
+      "properties": {
+        "size": "S",
+        "creature_type": {
+          "type": "humanoid",
+          "tags": [
+            "kobold"
+          ]
+        },
+        "alignment": "L",
+        "armor_class": 13,
+        "hit_points": 7,
+        "speed": {
+          "walk": 30,
+          "fly": 30
+        },
+        "abilities": {
+          "strength": 7,
+          "dexterity": 16,
+          "constitution": 9,
+          "intelligence": 8,
+          "wisdom": 7,
+          "charisma": 8
+        },
+        "senses": [
+          "darkvision 60 ft."
+        ],
+        "languages": [
+          "Common",
+          "Draconic"
+        ],
+        "challenge_rating": "1/4",
+        "traits": [
+          "Sunlight Sensitivity",
+          "Pack Tactics"
+        ],
+        "actions": [
+          "Dagger",
+          "Dropped Rock"
+        ]
+      }
+    },
+    "Zombie": {
+      "id": "zombie",
+      "label": "Zombie",
+      "type": "Creature",
+      "source_file": "MM",
+      "mentions": [
+        "0e7"
+      ],
+      "properties": {
+        "size": "M",
+        "creature_type": "undead",
+        "alignment": "N",
+        "armor_class": 8,
+        "hit_points": 22,
+        "speed": {
+          "walk": 20
+        },
+        "abilities": {
+          "strength": 13,
+          "dexterity": 6,
+          "constitution": 16,
+          "intelligence": 3,
+          "wisdom": 6,
+          "charisma": 5
+        },
+        "senses": [
+          "darkvision 60 ft."
+        ],
+        "languages": [
+          "understands all languages it spoke in life but can't speak"
+        ],
+        "challenge_rating": "1/4",
+        "traits": [
+          "Undead Fortitude"
+        ],
+        "actions": [
+          "Slam"
+        ]
+      }
+    }
+  },
+  "unmatched_entities": {
+    "dagger|PHB": "Resolution warning: unhashable type: 'dict'",
+    "Sling Bullet|PHB": "Resolution warning: unhashable type: 'dict'",
+    "+1 battleaxe": "Resolution warning: Item not found: +1 battleaxe (source: None)",
+    "+1 Weapon|": "Resolution warning: Item not found: +1 Weapon (source: )",
+    "Spell Scroll|": "Resolution warning: unhashable type: 'dict'",
+    "Potion of Resistance": "Resolution warning: Item not found: Potion of Resistance (source: None)",
+    "Spell Scroll": "Resolution warning: unhashable type: 'dict'",
+    "+1 Weapon": "Resolution warning: Item not found: +1 Weapon (source: None)"
+  },
+  "stats": {
+    "total_resolved": 84,
+    "total_unmatched": 8,
+    "by_type": {
+      "Creature": 45,
+      "Item": 37,
+      "Group": 2
+    },
+    "unmatched_list": [
+      "dagger|PHB",
+      "Sling Bullet|PHB",
+      "+1 battleaxe",
+      "+1 Weapon|",
+      "Spell Scroll|",
+      "Potion of Resistance",
+      "Spell Scroll",
+      "+1 Weapon"
+    ]
+  }
+}

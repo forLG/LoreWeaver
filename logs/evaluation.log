@@ -1,128 +1,136 @@
-[2026-01-02 16:41:48] [INFO] Logging initialized. Log file: logs\evaluation.log
-[2026-01-02 16:41:48] [INFO] Loading human labels from tests/samples/Stormwreck_Isle.txt...
-[2026-01-02 16:41:48] [INFO] Note: Human labels are incomplete and may have formatting issues
-[2026-01-02 16:41:48] [INFO]   Loaded 78 human labels
-[2026-01-02 16:41:48] [INFO]     Creatures: 38
-[2026-01-02 16:41:48] [INFO]     Locations: 25
-[2026-01-02 16:41:48] [INFO]     Items: 3
-[2026-01-02 16:41:48] [INFO] 
+[2026-01-02 19:00:07] [INFO] Logging initialized. Log file: logs\evaluation.log
+[2026-01-02 19:00:07] [INFO] Loading human labels from tests/samples/Stormwreck_Isle.txt...
+[2026-01-02 19:00:07] [INFO] Note: Human labels are incomplete and may have formatting issues
+[2026-01-02 19:00:07] [INFO]   Loaded 78 human labels
+[2026-01-02 19:00:07] [INFO]     Creatures: 39
+[2026-01-02 19:00:07] [INFO]     Locations: 26
+[2026-01-02 19:00:07] [INFO]     Items: 3
+[2026-01-02 19:00:07] [INFO] 
 Loading extracted entities from output/qwen3/semantic_graph.json...
-[2026-01-02 16:41:48] [INFO]   Loaded 77 extracted entities
-[2026-01-02 16:41:48] [INFO]     Creatures: 27
-[2026-01-02 16:41:48] [INFO]     Locations: 17
-[2026-01-02 16:41:48] [INFO]     Items: 31
-[2026-01-02 16:41:48] [INFO]     Events: 0
-[2026-01-02 16:41:48] [INFO] ======================================================================
-[2026-01-02 16:41:48] [INFO] ENTITY EXTRACTION EVALUATION (Fuzzy Matching)
-[2026-01-02 16:41:48] [INFO] Fuzzy Match Threshold: 80%
-[2026-01-02 16:41:48] [INFO] ======================================================================
-[2026-01-02 16:41:48] [INFO] 
+[2026-01-02 19:00:07] [INFO]   Loaded 98 extracted entities
+[2026-01-02 19:00:07] [INFO]     Creatures: 29
+[2026-01-02 19:00:07] [INFO]     Locations: 22
+[2026-01-02 19:00:07] [INFO]     Items: 43
+[2026-01-02 19:00:07] [INFO]     Events: 36
+[2026-01-02 19:00:07] [INFO] ======================================================================
+[2026-01-02 19:00:07] [INFO] ENTITY EXTRACTION EVALUATION (Fuzzy Matching)
+[2026-01-02 19:00:07] [INFO] Fuzzy Match Threshold: 80%
+[2026-01-02 19:00:07] [INFO] ======================================================================
+[2026-01-02 19:00:07] [INFO] 
 Overall:
-[2026-01-02 16:41:48] [INFO]   Human labels: 78
-[2026-01-02 16:41:48] [INFO]   Extracted: 77
-[2026-01-02 16:41:48] [INFO]   Matches: 26
-[2026-01-02 16:41:48] [INFO]   Missing: 52
-[2026-01-02 16:41:48] [INFO]   Extra: 51
-[2026-01-02 16:41:48] [INFO] 
+[2026-01-02 19:00:07] [INFO]   Human labels: 78
+[2026-01-02 19:00:07] [INFO]   Extracted: 98
+[2026-01-02 19:00:07] [INFO]   Matches: 27
+[2026-01-02 19:00:07] [INFO]   Missing: 51
+[2026-01-02 19:00:07] [INFO]   Extra: 71
+[2026-01-02 19:00:07] [INFO] 
 Metrics:
-[2026-01-02 16:41:48] [INFO]   Precision: 33.8%
-[2026-01-02 16:41:48] [INFO]   Recall:    33.3%
-[2026-01-02 16:41:48] [INFO]   F1 Score:  33.5%
-[2026-01-02 16:41:48] [INFO] 
+[2026-01-02 19:00:07] [INFO]   Precision: 27.6%
+[2026-01-02 19:00:07] [INFO]   Recall:    34.6%
+[2026-01-02 19:00:07] [INFO]   F1 Score:  30.7%
+[2026-01-02 19:00:07] [INFO] 
 ============================================================
-[2026-01-02 16:41:48] [INFO] CREATURES
-[2026-01-02 16:41:48] [INFO] ============================================================
-[2026-01-02 16:41:48] [INFO] 
-  Human: 38 | Extracted: 27 | Matches: 19
-[2026-01-02 16:41:48] [INFO]   Precision: 70.4% | Recall: 50.0% | F1: 58.5%
-[2026-01-02 16:41:48] [INFO] 
+[2026-01-02 19:00:07] [INFO] CREATURES
+[2026-01-02 19:00:07] [INFO] ============================================================
+[2026-01-02 19:00:07] [INFO] 
+  Human: 39 | Extracted: 29 | Matches: 18
+[2026-01-02 19:00:07] [INFO]   Precision: 62.1% | Recall: 46.2% | F1: 52.9%
+[2026-01-02 19:00:07] [INFO] 
   Matched entities (showing fuzzy matches):
-[2026-01-02 16:41:48] [INFO]     'Blepp' -> 'blepp_the_kobold' (90%)
-[2026-01-02 16:41:48] [INFO]     'Kobold Renegades' -> 'kobold' (90%)
-[2026-01-02 16:41:48] [INFO]     'Stirges' -> 'Stirge' (92%)
-[2026-01-02 16:41:48] [INFO]     'bluedragon wyrmling' -> 'Blue Dragon Wyrmling' (97%)
-[2026-01-02 16:41:48] [INFO]     'violet fungi' -> 'Violet Fungus' (88%)
-[2026-01-02 16:41:48] [INFO] 
-  Missing (19):
-[2026-01-02 16:41:48] [INFO]     - Agga
-[2026-01-02 16:41:48] [INFO]     - Bispo
-[2026-01-02 16:41:48] [INFO]     - Blighted Fungi
-[2026-01-02 16:41:48] [INFO]     - Distress Spores
-[2026-01-02 16:41:48] [INFO]     - Dragon’s Rest
-[2026-01-02 16:41:48] [INFO]     - Frub
-[2026-01-02 16:41:48] [INFO]     - Kilnip
-[2026-01-02 16:41:48] [INFO]     - KoboldCamp
-[2026-01-02 16:41:48] [INFO]     - Kobolds
-[2026-01-02 16:41:48] [INFO]     - Laylee
-[2026-01-02 16:41:48] [INFO]     ... and 9 more
-[2026-01-02 16:41:48] [INFO] 
-  Extra/Hallucinations (8):
-[2026-01-02 16:41:48] [INFO]     - Fume Drake
-[2026-01-02 16:41:48] [INFO]     - Merrow Extortionist
-[2026-01-02 16:41:48] [INFO]     - Myconid Adult
-[2026-01-02 16:41:48] [INFO]     - Myconid Sprout
-[2026-01-02 16:41:48] [INFO]     - Zombie
-[2026-01-02 16:41:48] [INFO]     - bronze dragon wyrmling
-[2026-01-02 16:41:48] [INFO]     - tarak_the_human_gardener
-[2026-01-02 16:41:48] [INFO]     - winged kobold
-[2026-01-02 16:41:48] [INFO] 
+[2026-01-02 19:00:07] [INFO]     'Kobold Camp' -> 'kobold' (90%)
+[2026-01-02 19:00:07] [INFO]     'Stirges' -> 'Stirge' (92%)
+[2026-01-02 19:00:07] [INFO]     'Zombies' -> 'Zombie' (92%)
+[2026-01-02 19:00:07] [INFO]     'fume dragon' -> 'bronze dragon wyrmling' (86%)
+[2026-01-02 19:00:07] [INFO]     'violet fungi' -> 'Violet Fungus' (88%)
+[2026-01-02 19:00:07] [INFO] 
+  Missing (21):
+[2026-01-02 19:00:07] [INFO]     - Agga
+[2026-01-02 19:00:07] [INFO]     - Bispo
+[2026-01-02 19:00:07] [INFO]     - Blepp
+[2026-01-02 19:00:07] [INFO]     - Blighted Fungi
+[2026-01-02 19:00:07] [INFO]     - Distress Spores
+[2026-01-02 19:00:07] [INFO]     - Dragon's Rest
+[2026-01-02 19:00:07] [INFO]     - Frub
+[2026-01-02 19:00:07] [INFO]     - Kilnip
+[2026-01-02 19:00:07] [INFO]     - Kobold Renegades
+[2026-01-02 19:00:07] [INFO]     - Kobolds
+[2026-01-02 19:00:07] [INFO]     ... and 11 more
+[2026-01-02 19:00:07] [INFO] 
+  Extra/Hallucinations (11):
+[2026-01-02 19:00:07] [INFO]     - Fume Drake
+[2026-01-02 19:00:07] [INFO]     - Human Observers
+[2026-01-02 19:00:07] [INFO]     - Kobold Population
+[2026-01-02 19:00:07] [INFO]     - Merrow Extortionist
+[2026-01-02 19:00:07] [INFO]     - Myconid Adult
+[2026-01-02 19:00:07] [INFO]     - Myconid Sprout
+[2026-01-02 19:00:07] [INFO]     - Sparkrender
+[2026-01-02 19:00:07] [INFO]     - batlike_creatures
+[2026-01-02 19:00:07] [INFO]     - fungal_octopus
+[2026-01-02 19:00:07] [INFO]     - winged kobold
+[2026-01-02 19:00:07] [INFO]     ... and 1 more
+[2026-01-02 19:00:07] [INFO] 
 ============================================================
-[2026-01-02 16:41:48] [INFO] LOCATIONS
-[2026-01-02 16:41:48] [INFO] ============================================================
-[2026-01-02 16:41:48] [INFO] 
-  Human: 25 | Extracted: 17 | Matches: 2
-[2026-01-02 16:41:48] [INFO]   Precision: 11.8% | Recall: 8.0% | F1: 9.5%
-[2026-01-02 16:41:48] [INFO] 
+[2026-01-02 19:00:07] [INFO] LOCATIONS
+[2026-01-02 19:00:07] [INFO] ============================================================
+[2026-01-02 19:00:07] [INFO] 
+  Human: 26 | Extracted: 22 | Matches: 2
+[2026-01-02 19:00:07] [INFO]   Precision: 9.1% | Recall: 7.7% | F1: 8.3%
+[2026-01-02 19:00:07] [INFO] 
   Matched entities (showing fuzzy matches):
-[2026-01-02 16:41:48] [INFO]     'Temple of Bahamut' -> 'Temple' (90%)
-[2026-01-02 16:41:48] [INFO] 
-  Missing (23):
-[2026-01-02 16:41:48] [INFO]     - Captain‘s Quarters
-[2026-01-02 16:41:48] [INFO]     - Circle Chamber
-[2026-01-02 16:41:48] [INFO]     - Crew Quarters
-[2026-01-02 16:41:48] [INFO]     - Crow’s Nest
-[2026-01-02 16:41:48] [INFO]     - Crystal Cave
-[2026-01-02 16:41:48] [INFO]     - Energy Bridge Anchors
-[2026-01-02 16:41:48] [INFO]     - Entrance Tunnel
-[2026-01-02 16:41:48] [INFO]     - Forecastle
-[2026-01-02 16:41:48] [INFO]     - Fungus Farm
-[2026-01-02 16:41:48] [INFO]     - Hidden Entrance
-[2026-01-02 16:41:48] [INFO]     ... and 13 more
-[2026-01-02 16:41:48] [INFO] 
-  Extra/Hallucinations (15):
-[2026-01-02 16:41:48] [INFO]     - Ancient Observatory
-[2026-01-02 16:41:48] [INFO]     - Clifftop Observatory
-[2026-01-02 16:41:48] [INFO]     - Dock
-[2026-01-02 16:41:48] [INFO]     - Dragon's Rest
-[2026-01-02 16:41:48] [INFO]     - Harbor
-[2026-01-02 16:41:48] [INFO]     - Path
-[2026-01-02 16:41:48] [INFO]     - Stormwreck Isle
-[2026-01-02 16:41:48] [INFO]     - Temple_A5
-[2026-01-02 16:41:48] [INFO]     - compass_rose
-[2026-01-02 16:41:48] [INFO]     - eastern_bay
-[2026-01-02 16:41:48] [INFO]     ... and 5 more
-[2026-01-02 16:41:48] [INFO] 
+[2026-01-02 19:00:07] [INFO]     'Temple of Bahamut' -> 'temple' (90%)
+[2026-01-02 19:00:07] [INFO] 
+  Missing (24):
+[2026-01-02 19:00:07] [INFO]     - Captain's Quarters
+[2026-01-02 19:00:07] [INFO]     - Circle Chamber
+[2026-01-02 19:00:07] [INFO]     - Crew Quarters
+[2026-01-02 19:00:07] [INFO]     - Crow's Nest
+[2026-01-02 19:00:07] [INFO]     - Crystal Cave
+[2026-01-02 19:00:07] [INFO]     - Energy Bridge Anchors
+[2026-01-02 19:00:07] [INFO]     - Entrance Tunnel
+[2026-01-02 19:00:07] [INFO]     - Forecastle
+[2026-01-02 19:00:07] [INFO]     - Fungus Farm
+[2026-01-02 19:00:07] [INFO]     - Hidden Entrance
+[2026-01-02 19:00:07] [INFO]     ... and 14 more
+[2026-01-02 19:00:07] [INFO] 
+  Extra/Hallucinations (20):
+[2026-01-02 19:00:07] [INFO]     - Compass_Rose
+[2026-01-02 19:00:07] [INFO]     - Cursed Shipwreck
+[2026-01-02 19:00:07] [INFO]     - Rotunda
+[2026-01-02 19:00:07] [INFO]     - Spire
+[2026-01-02 19:00:07] [INFO]     - chamber_below
+[2026-01-02 19:00:07] [INFO]     - cloister
+[2026-01-02 19:00:07] [INFO]     - cramped_tower
+[2026-01-02 19:00:07] [INFO]     - dock
+[2026-01-02 19:00:07] [INFO]     - dragon_rest
+[2026-01-02 19:00:07] [INFO]     - eastern_bay
+[2026-01-02 19:00:07] [INFO]     ... and 10 more
+[2026-01-02 19:00:07] [INFO] 
 ============================================================
-[2026-01-02 16:41:48] [INFO] ITEMS
-[2026-01-02 16:41:48] [INFO] ============================================================
-[2026-01-02 16:41:48] [INFO] 
-  Human: 3 | Extracted: 31 | Matches: 0
-[2026-01-02 16:41:48] [INFO]   Precision: 0.0% | Recall: 0.0% | F1: 0.0%
-[2026-01-02 16:41:48] [INFO] 
+[2026-01-02 19:00:07] [INFO] ITEMS
+[2026-01-02 19:00:07] [INFO] ============================================================
+[2026-01-02 19:00:07] [INFO] 
+  Human: 3 | Extracted: 43 | Matches: 0
+[2026-01-02 19:00:07] [INFO]   Precision: 0.0% | Recall: 0.0% | F1: 0.0%
+[2026-01-02 19:00:07] [INFO] 
   Missing (3):
-[2026-01-02 16:41:48] [INFO]     - Fire Crystal
-[2026-01-02 16:41:48] [INFO]     - Treasure
-[2026-01-02 16:41:48] [INFO]     - fragon effigies
-[2026-01-02 16:41:48] [INFO] 
-  Extra/Hallucinations (31):
-[2026-01-02 16:41:48] [INFO]     - +1 Weapon
-[2026-01-02 16:41:48] [INFO]     - +1 battleaxe
-[2026-01-02 16:41:48] [INFO]     - Dash
-[2026-01-02 16:41:48] [INFO]     - Disengage
-[2026-01-02 16:41:48] [INFO]     - Potion of Healing
-[2026-01-02 16:41:48] [INFO]     - Potion of Lightning Resistance
-[2026-01-02 16:41:48] [INFO]     - Potion of Resistance
-[2026-01-02 16:41:48] [INFO]     - Sling Bullet
-[2026-01-02 16:41:48] [INFO]     - Spell Scroll
-[2026-01-02 16:41:48] [INFO]     - Spell Scroll (2nd Level)
-[2026-01-02 16:41:48] [INFO]     ... and 21 more
+[2026-01-02 19:00:07] [INFO]     - Fire Crystal
+[2026-01-02 19:00:07] [INFO]     - Treasure
+[2026-01-02 19:00:07] [INFO]     - golden sculpture
+[2026-01-02 19:00:07] [INFO] 
+  Extra/Hallucinations (43):
+[2026-01-02 19:00:07] [INFO]     - +1 Weapon
+[2026-01-02 19:00:07] [INFO]     - +1 battleaxe
+[2026-01-02 19:00:07] [INFO]     - Dash
+[2026-01-02 19:00:07] [INFO]     - Disengage
+[2026-01-02 19:00:07] [INFO]     - Masons_Tools
+[2026-01-02 19:00:07] [INFO]     - Moonstone_Key
+[2026-01-02 19:00:07] [INFO]     - Plus One Weapon
+[2026-01-02 19:00:07] [INFO]     - Potion of Healing
+[2026-01-02 19:00:07] [INFO]     - Potion of Lightning Resistance
+[2026-01-02 19:00:07] [INFO]     - Potion of Resistance
+[2026-01-02 19:00:07] [INFO]     ... and 33 more
+[2026-01-02 19:00:07] [INFO] 
+============================================================
+[2026-01-02 19:00:07] [INFO] EVENTS
+[2026-01-02 19:00:07] [INFO] ============================================================
+[2026-01-02 19:00:07] [INFO] Extracted 36 events (no human labels for comparison)

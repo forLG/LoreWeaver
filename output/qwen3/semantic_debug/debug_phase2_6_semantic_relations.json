@@ -3,690 +3,924 @@
     "relation": "inhabits",
     "source": "runara",
     "target": "cloister",
-    "desc": "Lives in Runara's cloister"
+    "desc": "Introduced as Runara's cloister"
+  },
+  {
+    "relation": "hidden_at",
+    "source": "cursed_shipwreck",
+    "target": "hold_c9",
+    "desc": "The ship's hold is part of the cursed shipwreck"
   },
   {
     "relation": "trapped_at",
     "source": "bronze_wyrmling",
-    "target": "shipwreck",
-    "desc": "Held prisoner in the shipwreck's hold"
+    "target": "blue_dragon_lair",
+    "desc": "Held prisoner in the blue dragon's lair"
   },
   {
     "relation": "led_by",
     "source": "runara",
     "target": "cloister",
-    "desc": "Runs the cloister of Dragon's Rest"
+    "desc": "Described as leading the cloister of Dragon's Rest"
+  },
+  {
+    "relation": "inhabits",
+    "source": "runara",
+    "target": "dragon_s_rest",
+    "desc": "Lives in the cloister"
   },
   {
     "relation": "guarded_by",
-    "source": "cloister",
+    "source": "dragon_s_rest",
     "target": "runara",
-    "desc": "Protected by Runara's presence"
+    "desc": "Protected by Runara’s wisdom and guidance"
   },
   {
     "relation": "stored_in",
     "source": "rowboat",
     "target": "dock",
-    "desc": "Tied at the dock"
+    "desc": "Neatly tied to the dock"
   },
   {
-    "relation": "located_near",
-    "source": "rocks_north_of_dragons_rest",
-    "target": "harbor",
-    "desc": "Avoided while navigating toward the harbor"
+    "relation": "leads_to",
+    "source": "path",
+    "target": "temple",
+    "desc": "Winds up the cliff to the temple"
   },
   {
     "relation": "inhabits",
-    "source": "zombies",
-    "target": "shipwreck",
+    "source": "zombie",
+    "target": "cursed_shipwreck",
     "desc": "Animated corpses of sailors who died in the shipwreck"
   },
   {
-    "relation": "guards",
-    "source": "zombies",
+    "relation": "hidden_at",
+    "source": "zombie_group",
     "target": "path",
-    "desc": "Blocking passage along the path to force combat or evasion decision"
-  },
-  {
-    "relation": "hidden_at",
-    "source": "zombies",
-    "target": "temple_a5",
-    "desc": "Zombies attempted to drag the characters into the sea from the temple"
+    "desc": "Lurking near the path to ambush travelers"
   },
   {
     "relation": "inhabits",
-    "source": "runara",
-    "target": "temple_a5",
-    "desc": "Runara intervened at the temple to rescue the adventurers"
-  },
-  {
-    "relation": "hidden_at",
-    "source": "zombies",
-    "target": "path",
-    "desc": "Zombies don't follow them up the path"
-  },
-  {
-    "relation": "trapped_at",
-    "source": "zombies",
+    "source": "kobolds",
     "target": "cloister",
-    "desc": "Another opportunity to deal with zombies later (see \"Cloister Quests\")"
+    "desc": "Visitors to the cloister are rare, and the kobolds are curious"
+  },
+  {
+    "relation": "led_by",
+    "source": "cloister",
+    "target": "runara",
+    "desc": "Leader of the cloister is Runara"
+  },
+  {
+    "relation": "members_include",
+    "source": "kobolds",
+    "target": "myla",
+    "desc": "Myla is a member of the kobolds group"
   },
   {
     "relation": "inhabits",
-    "source": "blepp_the_kobold",
+    "source": "zombie",
+    "target": "beach",
+    "desc": "Defeated at the beach"
+  },
+  {
+    "relation": "inhabits",
+    "source": "zombie_group",
+    "target": "beach",
+    "desc": "Defeated at the beach"
+  },
+  {
+    "relation": "inhabits",
+    "source": "human_observers",
     "target": "cloister",
-    "desc": "Resides in the cloister"
-  },
-  {
-    "relation": "inhabits",
-    "source": "myla",
-    "target": "cloister",
-    "desc": "Available at the cloister for trades"
-  },
-  {
-    "relation": "inhabits",
-    "source": "[blepp_the_kobold]",
-    "target": "[cloister]",
-    "desc": "Kobolds reside in the cloister"
-  },
-  {
-    "relation": "inhabits",
-    "source": "[tarak_the_human_gardener]",
-    "target": "[cloister]",
-    "desc": "Humans reside in the cloister"
-  },
-  {
-    "relation": "hidden_at",
-    "source": "runara",
-    "target": "temple_a5",
-    "desc": "Other residents mistakenly believe she lives in the temple at area A5"
+    "desc": "Humans observe from a distance within the cloister's vicinity"
   },
   {
     "relation": "guarded_by",
     "source": "cloister",
-    "target": "zombies",
-    "desc": "Residents fight zombies at the beach to prove concern for the cloister's safety"
+    "target": "kobolds",
+    "desc": "Kobolds interact with visitors in the cloister"
   },
   {
-    "relation": "allies_with",
-    "source": "runara",
-    "target": "zombies",
-    "desc": "She seeks to help beings affected by violence, including zombie victims"
+    "relation": "observes_from_distance",
+    "source": "human_observers",
+    "target": "cloister",
+    "desc": "Humans watch from a distance"
   },
   {
-    "relation": "inhabited_by",
-    "source": "cloister",
-    "target": "runara",
-    "desc": "She actively resides within the cloister, appearing to dwell in various locations"
+    "relation": "guards",
+    "source": "zombie",
+    "target": "beach",
+    "desc": "Zombies guard the beach"
   },
   {
     "relation": "hidden_at",
     "source": "runara",
-    "target": "path",
-    "desc": "Her secret lair is accessed via an undersea tunnel near the cloister, implying proximity to the path"
+    "target": "cloister",
+    "desc": "Secretly resides near the cloister"
+  },
+  {
+    "relation": "allies_with",
+    "source": "runara",
+    "target": "human_observers",
+    "desc": "Assists humans in breaking cycles of violence"
+  },
+  {
+    "relation": "hidden_at",
+    "source": "runara",
+    "target": "cave",
+    "desc": "Maintains a secret lair in a cave"
   },
   {
     "relation": "inhabits",
-    "source": "kobold_tinkerer",
+    "source": "kobolds",
     "target": "dragon_s_rest",
-    "desc": "Lives at Dragon's Rest"
+    "desc": "Kobolds live at Dragon's Rest"
   },
   {
-    "relation": "inhabits",
-    "source": "blepp_the_kobold",
-    "target": "dragon_s_rest",
-    "desc": "Lives at Dragon's Rest"
-  },
-  {
-    "relation": "inhabits",
-    "source": "frub",
-    "target": "dragon_s_rest",
-    "desc": "Lives at Dragon's Rest"
-  },
-  {
-    "relation": "inhabits",
-    "source": "kilnip",
-    "target": "dragon_s_rest",
-    "desc": "Lives at Dragon's Rest"
-  },
-  {
-    "relation": "inhabits",
-    "source": "laylee",
-    "target": "dragon_s_rest",
-    "desc": "Lives at Dragon's Rest"
-  },
-  {
-    "relation": "inhabited_by",
-    "source": "dragon_s_rest",
+    "relation": "worships",
+    "source": "kobolds",
     "target": "runara",
-    "desc": "Devoted to Runara"
+    "desc": "Kobolds share Runara's ideals"
   },
   {
-    "relation": "servitude",
+    "relation": "members_include",
+    "source": "kobolds",
+    "target": "agga",
+    "desc": "Agga is a member of the kobolds group"
+  },
+  {
+    "relation": "members_include",
+    "source": "kobolds",
+    "target": "blepp",
+    "desc": "Blepp is a member of the kobolds group"
+  },
+  {
+    "relation": "members_include",
+    "source": "kobolds",
+    "target": "frub",
+    "desc": "Frub is a member of the kobolds group"
+  },
+  {
+    "relation": "members_include",
+    "source": "kobolds",
+    "target": "kilnip",
+    "desc": "Kilnip is a member of the kobolds group"
+  },
+  {
+    "relation": "members_include",
+    "source": "kobolds",
+    "target": "laylee",
+    "desc": "Laylee is a member of the kobolds group"
+  },
+  {
+    "relation": "members_include",
+    "source": "kobolds",
+    "target": "mumpo",
+    "desc": "Mumpo is a member of the kobolds group"
+  },
+  {
+    "relation": "serves",
     "source": "laylee",
     "target": "myla",
-    "desc": "Serves Myla"
+    "desc": "Laylee serves as Myla's helper"
   },
   {
     "relation": "carries",
-    "source": "blepp_the_kobold",
+    "source": "blepp",
     "target": "dagger",
-    "desc": "Owns an ordinary dagger claimed to be magical"
+    "desc": "Blepp possesses a dagger"
   },
   {
-    "relation": "commands",
-    "source": "agga",
-    "target": "blepp_the_kobold",
-    "desc": "Keeps other kobolds organized"
+    "relation": "inhabits",
+    "source": "[tarak]",
+    "target": "[cloister]",
+    "desc": "Tends the cloister's garden plots"
   },
   {
-    "relation": "commands",
-    "source": "agga",
-    "target": "frub",
-    "desc": "Keeps other kobolds organized"
+    "relation": "guarded_by",
+    "source": "[cloister]",
+    "target": "[tarak]",
+    "desc": "Tarak protects the cloister's garden plots"
   },
   {
-    "relation": "commands",
-    "source": "agga",
-    "target": "kilnip",
-    "desc": "Keeps other kobolds organized"
+    "relation": "hidden_at",
+    "source": "[gold_hangman_noose_tattoo]",
+    "target": "[cloister]",
+    "desc": "Tattoos featuring a gold hangman's noose are visible on Tarak's neck while at the cloister"
   },
   {
-    "relation": "commands",
-    "source": "agga",
-    "target": "laylee",
-    "desc": "Keeps other kobolds organized"
+    "relation": "carried_by",
+    "source": "[potion_of_healing]",
+    "target": "[tarak]",
+    "desc": "Makes Potion of Healing using heart cap mushrooms acquired from the sea caves"
+  },
+  {
+    "relation": "inhabited",
+    "source": "varnoth",
+    "target": "temple",
+    "desc": "Maintains the temple"
+  },
+  {
+    "relation": "inhabited",
+    "source": "varnoth",
+    "target": "cloister",
+    "desc": "Maintains other areas of the cloister"
+  },
+  {
+    "relation": "led_by",
+    "source": "varnoth",
+    "target": "azure_wolves",
+    "desc": "Was a feared general at the head of the Azure Wolves"
+  },
+  {
+    "relation": "social",
+    "source": "varnoth",
+    "target": "soldier",
+    "desc": "Characters with the Soldier background succeed on the History check automatically"
   },
   {
     "relation": "inhabits",
     "source": "tarak",
     "target": "cloister",
-    "desc": "Tends the cloister's garden plots"
-  },
-  {
-    "relation": "hidden_at",
-    "source": "gold_hangmans_noose_tattoo",
-    "target": "cloister",
-    "desc": "Visible tattoos on Tarak's neck are part of the cloister's environment"
-  },
-  {
-    "relation": "inhabits",
-    "source": "varnoth",
-    "target": "temple_a5",
-    "desc": "Works in the temple"
+    "desc": "Occupies a cell within the cloister"
   },
   {
     "relation": "inhabits",
     "source": "varnoth",
     "target": "cloister",
-    "desc": "Works in the cloister"
+    "desc": "Occupies a cell adjacent to the vacant cell"
   },
   {
-    "relation": "hidden_at",
-    "source": "tarak_the_human_gardener",
+    "relation": "inhabits",
+    "source": "myla",
     "target": "cloister",
-    "desc": "Implied association with cloister quests (contextual hint)"
+    "desc": "Resides in a cluttered cell"
   },
   {
     "relation": "serves",
     "source": "tarak",
     "target": "cloister",
-    "desc": "Days when Tarak cooks are favorites"
+    "desc": "Cooks for the cloister residents"
   },
   {
-    "relation": "hidden_at",
-    "source": "myla",
+    "relation": "visits",
+    "source": "tarak",
     "target": "cloister",
-    "desc": "Described as studious amidst kobolds visiting for quiet"
+    "desc": "Comes here to read and discuss"
+  },
+  {
+    "relation": "visits",
+    "source": "varnonth",
+    "target": "cloister",
+    "desc": "Comes here to read and discuss"
+  },
+  {
+    "relation": "visits",
+    "source": "kobolds",
+    "target": "cloister",
+    "desc": "Visit primarily for quiet"
+  },
+  {
+    "relation": "inhabits",
+    "source": "runara",
+    "target": "temple",
+    "desc": "Spends half her time here"
   },
   {
     "relation": "inhabits",
     "source": "rix",
     "target": "cloister",
-    "desc": "Residents of the cloister help her"
+    "desc": "Resident helps Runara"
   },
   {
-    "relation": "allied_with",
-    "source": "varnoth",
-    "target": "runara",
-    "desc": "Help her in the cloister"
+    "relation": "members_include",
+    "source": "zombie_group",
+    "target": "zombie",
+    "desc": "Three zombies form the zombie_group"
   },
   {
-    "relation": "allied_with",
-    "source": "rix",
-    "target": "runara",
-    "desc": "Help her in the cloister"
+    "relation": "inhabits",
+    "source": "zombie",
+    "target": "cloister",
+    "desc": "Zombies cause trouble at the cloister"
   },
   {
-    "relation": "carries",
+    "relation": "suspects_source",
+    "source": "runara",
+    "target": "cursed_shipwreck",
+    "desc": "Runara suspects the cursed_shipwreck is the source of zombies"
+  },
+  {
+    "relation": "owns",
     "source": "tarak",
-    "target": "sack",
+    "target": "sack_of_food_scraps",
     "desc": "Gives them a foul-smelling sack of food scraps"
   },
   {
-    "relation": "guarded_by",
-    "source": "sea_caves",
-    "target": "fungal_octopus",
-    "desc": "Created as a guardian by the myconids"
+    "relation": "guards",
+    "source": "fungal_octopus",
+    "target": "sea_caves",
+    "desc": "Created as a guardian"
   },
   {
-    "relation": "witnessed",
+    "relation": "allied_with",
     "source": "varnoth",
-    "target": "rocks_north_of_dragons_rest",
-    "desc": "Varnoth witnessed the wreck"
-  },
-  {
-    "relation": "witnessed",
-    "source": "blepp_the_kobold",
-    "target": "rocks_north_of_dragons_rest",
-    "desc": "Blepp the Kobold witnessed the wreck"
+    "target": "rix",
+    "desc": "Both witnessed the wreck together"
   },
   {
     "relation": "suggests",
     "source": "runara",
-    "target": "compass_rose",
-    "desc": "Runara suggests investigating the wreck of Compass Rose"
+    "target": "compass_rose_wreck",
+    "desc": "Suggests investigating the wreck of Compass Rose"
   },
   {
-    "relation": "guided_to",
+    "relation": "Social",
     "source": "runara",
-    "target": "shipwreck",
-    "desc": "Points the character toward the wreck of Compass Rose"
+    "target": "tarak",
+    "desc": "Encouraged to talk about escaping corruption"
   },
   {
-    "relation": "rival_of",
-    "source": "aidron",
-    "target": "runara",
-    "desc": "Argued with Runara and rejected her teachings"
+    "relation": "Social",
+    "source": "runara",
+    "target": "varnoth",
+    "desc": "Encouraged to talk about escaping corruption"
   },
   {
-    "relation": "hidden_at",
+    "relation": "Social",
+    "source": "runara",
+    "target": "temple",
+    "desc": "Advises spending time at the temple of Bahamut"
+  },
+  {
+    "relation": "inhabits",
     "source": "aidron",
     "target": "cloister",
-    "desc": "Stormed away from the cloister"
-  },
-  {
-    "relation": "unlocks",
-    "source": "moonstone_key",
-    "target": "observatory",
-    "desc": "Needed to access the observatory"
-  },
-  {
-    "relation": "guards",
-    "source": "runara",
-    "target": "temple_a5",
-    "desc": "Rescues characters and brings them to the temple"
+    "desc": "Studied with Runara at the cloister"
   },
   {
     "relation": "hidden_at",
-    "source": "blepp_the_kobold",
-    "target": "temple_a5",
-    "desc": "Some kobolds tend to injured characters in the temple"
+    "source": "zombie_group",
+    "target": "cursed_shipwreck",
+    "desc": "Dealt with zombies at the cursed shipwreck"
+  },
+  {
+    "relation": "allies_with",
+    "source": "runara",
+    "target": "aidron",
+    "desc": "Aidron studied with Runara"
+  },
+  {
+    "relation": "hidden_at",
+    "source": "runara",
+    "target": "temple",
+    "desc": "Rescues characters by placing them in the temple"
+  },
+  {
+    "relation": "tends_to",
+    "source": "kobolds",
+    "target": "characters",
+    "desc": "Tend to wounded characters in the temple"
+  },
+  {
+    "relation": "interacts_with",
+    "source": "kobolds",
+    "target": "temple",
+    "desc": "Present in the temple to assist the characters"
   },
   {
     "relation": "inhabits",
     "source": "owlbear",
-    "target": "rocks_north_of_dragons_rest",
-    "desc": "The owlbear resides in the area surrounding the northern rocks"
+    "target": "hold_c9",
+    "desc": "Stranded after shipwreck on northern rocks"
   },
   {
-    "relation": "carried_by",
-    "source": "whistle",
-    "target": "owlbear",
-    "desc": "The whistle is worn around the owlbear's neck"
-  },
-  {
-    "relation": "hidden_at",
-    "source": "winged_kobold",
-    "target": "rocks_north_of_dragons_rest",
-    "desc": "Hiding in the rocks"
-  },
-  {
-    "relation": "rival_of",
-    "source": "winged_kobold",
-    "target": "runara",
-    "desc": "Rejects Runara's teachings"
+    "relation": "guards",
+    "source": "owlbear",
+    "target": "hold_c9",
+    "desc": "Defends territory against intruders"
   },
   {
     "relation": "members_include",
-    "source": "[group_of_kobolds]",
+    "source": "kobolds",
     "target": "winged_kobold",
-    "desc": "Winged kobold is part of the ambush group"
+    "desc": "Four kobolds and one winged kobold participate in this ambush"
+  },
+  {
+    "relation": "rival_of",
+    "source": "kobolds",
+    "target": "runara",
+    "desc": "Rejects the peaceful teaching of Runara"
+  },
+  {
+    "relation": "rival_of",
+    "source": "kobolds",
+    "target": "sparkrender",
+    "desc": "Rejects the tyrannical rule of Sparkrender"
   },
   {
     "relation": "guarded_by",
-    "source": "stirge",
-    "target": "caves",
-    "desc": "Stirges nest in the caves"
-  },
-  {
-    "relation": "leads_to",
     "source": "cloister",
-    "target": "caves",
-    "desc": "Food scraps from the cloister nourish the fungi in the caves"
+    "target": "stirge",
+    "desc": "Stirges nest in the caves, which are influenced by the cloister's waste"
   },
   {
     "relation": "traded_with",
-    "source": "tarak",
-    "target": "myconids",
-    "desc": "Tarak traded with myconids for rare fungi"
-  },
-  {
-    "relation": "preferred_method",
-    "source": "tarak",
-    "target": "rowboat",
-    "desc": "Tarak's preferred method"
-  },
-  {
-    "relation": "allied_with",
-    "source": "tarak",
-    "target": "sinensa",
-    "desc": "Mentioning Tarak's name grants advantage on persuasion checks with myconids, implying an alliance"
+    "source": "cloister",
+    "target": "tarak",
+    "desc": "Cloister provided waste to Tarak in exchange for fungi"
   },
   {
     "relation": "led_by",
     "source": "sinensa",
-    "target": "[group]",
-    "desc": "Sprouts report that Sinensa is their leader, indicating she leads the myconid group"
+    "target": "[unknown_group]",
+    "desc": "Sinensa is the leader of the myconids"
   },
   {
-    "relation": "led_by",
-    "source": "sinensa",
-    "target": "myconids",
-    "desc": "Sinensa is the myconid leader"
+    "relation": "creates",
+    "source": "fire_crystal",
+    "target": "fire_snake",
+    "desc": "Breaking the fire crystal releases a fire snake"
+  },
+  {
+    "relation": "hidden_at",
+    "source": "elixir_of_health",
+    "target": "dragon_s_rest",
+    "desc": "Created at Dragon's Rest"
+  },
+  {
+    "relation": "hidden_at",
+    "source": "ruby_morel",
+    "target": "b5",
+    "desc": "Found in area B5"
   },
   {
     "relation": "owns",
     "source": "tarak",
     "target": "elixir_of_health",
-    "desc": "Tarak crafts the elixir of health and gives it to the characters"
+    "desc": "Makes elixir of health"
   },
   {
-    "relation": "social_allied_with",
+    "relation": "gives",
     "source": "sinensa",
-    "target": "characters",
-    "desc": "Sinensa grants permission to retain treasures, indicating alignment"
+    "target": "ruby_morel",
+    "desc": "Gives ruby morel to characters"
+  },
+  {
+    "relation": "carries",
+    "source": "tarak",
+    "target": "ruby_morel",
+    "desc": "Uses to make elixir of health"
   },
   {
     "relation": "inhabits",
-    "source": "harpy",
-    "target": "compass_rose",
+    "source": "[harpy]",
+    "target": "[cursed_shipwreck]",
     "desc": "Settled into the wreck of Compass Rose"
   },
   {
     "relation": "trapped_at",
-    "source": "zombies",
-    "target": "compass_rose",
-    "desc": "Trapped in the wreck for years"
+    "source": "[zombie]",
+    "target": "[cursed_shipwreck]",
+    "desc": "Some zombies have been trapped in the wreck for years"
   },
   {
-    "relation": "patrols",
-    "source": "harpy",
-    "target": "rocks_north_of_dragons_rest",
-    "desc": "Luring ships to crash on the shoal"
+    "relation": "inhabits",
+    "source": "zombie_group",
+    "target": "cursed_shipwreck",
+    "desc": "Found in the other wrecks"
   },
   {
     "relation": "inhabits",
     "source": "spore_servant_octopus",
-    "target": "shipwreck",
-    "desc": "Found in the wrecks"
+    "target": "cursed_shipwreck",
+    "desc": "Found in the other wrecks"
   },
   {
     "relation": "inhabits",
     "source": "ghoul",
-    "target": "shipwreck",
-    "desc": "Found in the wrecks"
+    "target": "cursed_shipwreck",
+    "desc": "Found in the other wrecks"
   },
   {
     "relation": "stored_in",
     "source": "rowboat",
-    "target": "compass_rose",
-    "desc": "Characters bring the rowboat to the wreck of Compass Rose"
-  },
-  {
-    "relation": "hidden_at",
-    "source": "rowboat",
-    "target": "compass_rose",
-    "desc": "Rowboat is tied to the derelict's rigging at Compass Rose"
-  },
-  {
-    "relation": "hidden_at",
-    "source": "harpy",
-    "target": "compass_rose",
-    "desc": "The harpy's nest is located within the Compass Rose"
+    "target": "hold_c9",
+    "desc": "The rowboat is stored in the hold"
   },
   {
     "relation": "inhabits",
     "source": "harpy",
-    "target": "shipwreck",
-    "desc": "Found at the shipwreck looking for ships to lure onto the rocks"
+    "target": "cursed_shipwreck",
+    "desc": "The harpy is present at the shipwreck looking for another ship to lure onto the rocks"
+  },
+  {
+    "relation": "returns_to",
+    "source": "harpy",
+    "target": "cursed_shipwreck",
+    "desc": "Returns after the characters have spent time aboard the shipwreck"
+  },
+  {
+    "relation": "hidden_at",
+    "source": "tiger_eye",
+    "target": "crows_nest",
+    "desc": "Two small tiger eye gems worth 10 gp each"
+  },
+  {
+    "relation": "hidden_at",
+    "source": "bloodstone",
+    "target": "crows_nest",
+    "desc": "One bloodstone gem worth 50 gp"
   },
   {
     "relation": "inhabits",
-    "source": "zombies",
+    "source": "zombie",
     "target": "C4",
-    "desc": "The zombie is in area C4"
+    "desc": "The Zombie is in area C4"
   },
   {
     "relation": "hidden_at",
     "source": "pearl",
-    "target": "compass_rose_ship_wheel",
-    "desc": "Engraved with mother-of-pearl (implied association)"
-  },
-  {
-    "relation": "stored_in",
-    "source": "[pouch]",
-    "target": "desk",
-    "desc": "Found in the desk"
-  },
-  {
-    "relation": "stored_in",
-    "source": "[cartographers_tools]",
-    "target": "desk",
-    "desc": "Found in the desk"
-  },
-  {
-    "relation": "stored_in",
-    "source": "[dagger]",
-    "target": "desk",
-    "desc": "Found in the desk"
-  },
-  {
-    "relation": "inhabits",
-    "source": "ghoul",
-    "target": "aft_part_of_the_hold",
-    "desc": "Lurks in the aft part of the hold"
-  },
-  {
-    "relation": "hidden_at",
-    "source": "ghoul",
-    "target": "aft_part_of_the_hold",
-    "desc": "Lurks in the aft part of the hold"
+    "target": "wheel",
+    "desc": "Engraved with mother-of-pearl (implied storage within the wheel)"
   },
   {
     "relation": "stored_in",
     "source": "pouch",
-    "target": "[chest]",
-    "desc": "The pouch is stored inside the chest"
+    "target": "hold_c9",
+    "desc": "Held in the desk"
   },
   {
     "relation": "stored_in",
-    "source": "boots_of_elvenkind",
-    "target": "[chest]",
-    "desc": "The boots of elvenkind are stored inside the chest"
+    "source": "cartographers_tools",
+    "target": "hold_c9",
+    "desc": "Held in the desk"
   },
   {
     "relation": "stored_in",
-    "source": "Turquoise",
-    "target": "pouch",
-    "desc": "The Turquoise are stored inside the pouch"
-  },
-  {
-    "relation": "Social",
-    "source": "harpy",
-    "target": "compass_rose",
-    "desc": "Can be reasoned with regarding leaving the wreck"
-  },
-  {
-    "relation": "guards",
-    "source": "harpy",
-    "target": "rocks_north_of_dragons_rest",
-    "desc": "Ships are lured to the rocks due to the harpy"
+    "source": "dagger",
+    "target": "hold_c9",
+    "desc": "Held in the desk"
   },
   {
     "relation": "hidden_at",
-    "source": "zombies",
-    "target": "shipwreck",
-    "desc": "Zombies are hidden in the shipwreck (implied by the necessity of finding the talisman in the hold to solve the zombie problem)"
+    "source": "[ghoul]",
+    "target": "[hold_c9]",
+    "desc": "Lurks in the aft part of the hold"
   },
   {
-    "relation": "guarded_by",
-    "source": "compass_rose",
-    "target": "rocks_north_of_dragons_rest",
-    "desc": "Fog forms around the rocks after undoing the talisman's curse, indirectly associating Compass Rose with the rocks"
+    "relation": "stored_in",
+    "source": "[pouch]",
+    "target": "[hold_c9]",
+    "desc": "Inside the chest located in the hold"
   },
   {
-    "relation": "serves",
+    "relation": "stored_in",
+    "source": "[turquoise]",
+    "target": "[hold_c9]",
+    "desc": "Inside the chest located in the hold"
+  },
+  {
+    "relation": "stored_in",
+    "source": "[boots_of_elvenkind]",
+    "target": "[hold_c9]",
+    "desc": "Inside the chest located in the hold"
+  },
+  {
+    "relation": "inhabits",
+    "source": "[harpy]",
+    "target": "[hold_c9]",
+    "desc": "Makes its lair in the crow's nest (area C1)"
+  },
+  {
+    "relation": "owns",
+    "source": "harpy",
+    "target": "treasure",
+    "desc": "The harpy claims ownership of the treasure"
+  },
+  {
+    "relation": "hidden_at",
+    "source": "treasure",
+    "target": "crow's nest",
+    "desc": "The treasure was hidden in the crow's nest"
+  },
+  {
+    "relation": "rivals_with",
+    "source": "harpy",
+    "target": "harpy",
+    "desc": "Two harpies are present and distrustful of each other (implied via contextual conflict)"
+  },
+  {
+    "relation": "inhabits",
+    "source": "zombie",
+    "target": "hold_c9",
+    "desc": "Zombies inhabit the hold"
+  },
+  {
+    "relation": "inhabits",
+    "source": "sparkrender",
+    "target": "clifftop_observatory",
+    "desc": "The observatory ruins became the home of Sparkrender"
+  },
+  {
+    "relation": "trapped_at",
     "source": "aidron",
-    "target": "runara",
-    "desc": "Left Runara's tutelage"
+    "target": "clifftop_observatory",
+    "desc": "Sparkrender imprisoned Aidron in the observatory ruins"
+  },
+  {
+    "relation": "led_by",
+    "source": "sparkrender",
+    "target": "kobolds",
+    "desc": "Sparkrender recruited kobolds to join his cause"
   },
   {
     "relation": "commands",
     "source": "sparkrender",
-    "target": "blepp_the_kobold",
-    "desc": "Recruited kobolds to join his cause"
+    "target": "kobolds",
+    "desc": "Sparkrender commanded kobolds to assist in his plan"
   },
   {
-    "relation": "allies_with",
-    "source": "[blepp_the_kobold]",
-    "target": "[rotunda]",
-    "desc": "The kobolds who joined Sparkrender are associated with the rotunda ruins"
-  },
-  {
-    "relation": "allies_with",
-    "source": "[blepp_the_kobold]",
-    "target": "[d5]",
-    "desc": "The kobolds are associated with the observatory tower (area D5)"
-  },
-  {
-    "relation": "Social",
-    "source": "kobold_tinkerer",
+    "relation": "rival_of",
+    "source": "runara",
     "target": "sparkrender",
-    "desc": "Sworn loyalty"
+    "desc": "Sparkrender seeks to claim the magic once pursued by Runara, suggesting rivalry"
   },
   {
-    "relation": "Group",
-    "source": "kobold_tinkerer",
-    "target": "blepp_the_kobold",
-    "desc": "Members include"
+    "relation": "guarded_by",
+    "source": "clifftop_observatory",
+    "target": "sparkrender",
+    "desc": "Sparkrender resides within the observatory ruins, guarding its secrets"
+  },
+  {
+    "relation": "conflicted_with",
+    "source": "aidron",
+    "target": "sparkrender",
+    "desc": "Aidron clashed with Sparkrender during their meeting at the observatory"
+  },
+  {
+    "relation": "inherited_from",
+    "source": "sparkrender",
+    "target": "bronze_dragon_wyrmling",
+    "desc": "Sparkrender is a descendant of Runara’s ancient rival, a blue dragon wyrmling"
+  },
+  {
+    "relation": "allied_with",
+    "source": "kobolds",
+    "target": "sparkrender",
+    "desc": "Joined forces with Sparkrender"
+  },
+  {
+    "relation": "serves",
+    "source": "kobolds",
+    "target": "sparkrender",
+    "desc": "Serve Sparkrender"
   },
   {
     "relation": "inhabits",
-    "source": "[winged_kobold]",
+    "source": "rix",
+    "target": "d6",
+    "desc": "Located at the observatory tower (area D6)"
+  },
+  {
+    "relation": "allied_with",
+    "source": "kobolds",
+    "target": "myla",
+    "desc": "Brothers of Myla, the kobold tinkerer"
+  },
+  {
+    "relation": "guardianship",
+    "source": "kobolds",
+    "target": "kobs_entrance_area",
+    "desc": "Engaged in combat with stirges in the area"
+  },
+  {
+    "relation": "inhabits",
+    "source": "winged_kobold",
+    "target": "plaza",
+    "desc": "Winged kobolds are present in the plaza during the confrontation"
+  },
+  {
+    "relation": "stored_in",
+    "source": "[sculpture]",
     "target": "[rotunda]",
-    "desc": "Two Winged Kobold inhabit the rotunda"
+    "desc": "The sculpture is located in the center of the rotunda"
+  },
+  {
+    "relation": "planned_by",
+    "source": "[sparkrender]",
+    "target": "[sculpture]",
+    "desc": "Sparkrender plans to hold his ritual near the sculpture's location"
+  },
+  {
+    "relation": "hidden_at",
+    "source": "sculpture",
+    "target": "rotunda_ruins",
+    "desc": "The metal sculpture is located within the ruins"
+  },
+  {
+    "relation": "carried",
+    "source": "kobolds",
+    "target": "sculpture",
+    "desc": "The kobolds arranged the dragon effigies around the metal sculpture"
+  },
+  {
+    "relation": "unlocks",
+    "source": "moonstone_key",
+    "target": "overlook",
+    "desc": "Inserts into statues to create a bridge to the overlook"
+  },
+  {
+    "relation": "unlocks",
+    "source": "moonstone_key",
+    "target": "crumbled_and_isolated_tower",
+    "desc": "Inserts into statues to create a bridge to the crumbled and isolated tower"
+  },
+  {
+    "relation": "located_on",
+    "source": "western_pair_of_statues",
+    "target": "rotunda",
+    "desc": "Stands on the west side of the rotunda"
+  },
+  {
+    "relation": "located_on",
+    "source": "southwestern_pair_of_statues",
+    "target": "rotunda",
+    "desc": "Stands on the southwest side of the rotunda"
+  },
+  {
+    "relation": "inhabits",
+    "source": "kobolds",
+    "target": "rotunda",
+    "desc": "Inhabit the rotunda"
+  },
+  {
+    "relation": "inhabits",
+    "source": "winged_kobold",
+    "target": "rotunda",
+    "desc": "Inhabit the rotunda"
   },
   {
     "relation": "unlocks",
     "source": "dagger",
-    "target": "d5",
-    "desc": "Used to scratch the rune on the journal's lock, enabling access to the hidden entrance in area D5"
+    "target": "journal",
+    "desc": "Required to disarm the magical trap on the journal"
   },
   {
     "relation": "locks",
     "source": "journal",
-    "target": "d5",
-    "desc": "The journal's lock prevents access to the hidden entrance in area D5 until disarmed"
+    "target": "detect_magic",
+    "desc": "Detect_magic spell reveals the aura surrounding the journal's keyhole"
+  },
+  {
+    "relation": "stored_in",
+    "source": "journal",
+    "target": "[d6]",
+    "desc": "Contained within the mysterious location denoted by [d6]"
   },
   {
     "relation": "hidden_at",
-    "source": "journal",
-    "target": "d5",
-    "desc": "Contains a passage guiding scholars to the hidden entrance in area D5"
+    "source": "[detect_magic]",
+    "target": "[d6]",
+    "desc": "Detect_magic spell identifies the keyhole's aura in the unknown location [d6]"
   },
   {
-    "relation": "inhabits",
-    "source": "bronze_dragon_wyrmling",
-    "target": "rotunda",
-    "desc": "Implied to be located in the rotunda (area D2) based on narrative context"
+    "relation": "hidden_at",
+    "source": "pouch",
+    "target": "hold_c9",
+    "desc": "Found in the hidden compartment behind the loose brick in the northwest wall"
   },
   {
-    "relation": "guarded_by",
+    "relation": "stored_in",
+    "source": "pouch",
+    "target": "hidden_compartment",
+    "desc": "Contains 10 gp"
+  },
+  {
+    "relation": "hidden_at",
     "source": "bronze_dragon_wyrmling",
-    "target": "rotunda",
-    "desc": "Implied to be protected or contained within the rotunda"
+    "target": "d6",
+    "desc": "The bronze dragon wyrmling is hidden in area D6, requiring the characters to navigate there to rescue it"
+  },
+  {
+    "relation": "rival_of",
+    "source": "sparkrender",
+    "target": "aidron",
+    "desc": "Attacks upon mention"
+  },
+  {
+    "relation": "rival_of",
+    "source": "sparkrender",
+    "target": "runara",
+    "desc": "Attacks upon mention"
+  },
+  {
+    "relation": "unlocks",
+    "source": "star_map_floor",
+    "target": "d6",
+    "desc": "Aligning statues with the Dragon of Dawn on the star map unlocks access to the library (area D6) via a descending staircase"
+  },
+  {
+    "relation": "locked_at",
+    "source": "d6",
+    "target": "star_map_floor",
+    "desc": "Access to the library (area D6) is contingent upon proper alignment of the star map's constellations"
+  },
+  {
+    "relation": "owns",
+    "source": "sparkrender",
+    "target": "blue_quartz",
+    "desc": "Sparkrender owned blue quartz crystals worth 10 gp each"
+  },
+  {
+    "relation": "owns",
+    "source": "sparkrender",
+    "target": "jasper",
+    "desc": "Sparkrender owned blue jasper stones worth 50 gp each"
   },
   {
     "relation": "trapped_at",
     "source": "aidron",
-    "target": "d5",
+    "target": "secret_archive",
     "desc": "Trapped by Sparkrender"
   },
   {
-    "relation": "trapped_at",
-    "source": "bronze_dragon_wyrmling",
-    "target": "d5",
-    "desc": "Forced into the library by Sparkrender"
-  },
-  {
     "relation": "inhabits",
     "source": "aidron",
-    "target": "d5",
-    "desc": "Spends time digging through the collapsed wall"
-  },
-  {
-    "relation": "guarded_by",
-    "source": "d5",
-    "target": "sparkrender",
-    "desc": "Sparkrender created the trap to imprison Aidron"
+    "target": "hold_c9",
+    "desc": "Catalogs the contents of the room"
   },
   {
     "relation": "hidden_at",
-    "source": "[1_battleaxe]",
-    "target": "[hold_person]",
-    "desc": "Both items are revealed by detect magic without checks"
+    "source": "1_battleaxe",
+    "target": "hold_c9",
+    "desc": "Found after a successful Intelligence (Investigation) check"
   },
   {
     "relation": "hidden_at",
-    "source": "[hold_person]",
-    "target": "[hold_person]",
-    "desc": "Both items are revealed by detect magic without checks"
+    "source": "hold_person",
+    "target": "hold_c9",
+    "desc": "Found after a successful Intelligence (Investigation) check"
   },
   {
-    "relation": "carries",
-    "source": "[aidron]",
-    "target": "[1_battleaxe]",
-    "desc": "Aidron cataloged the contents of the room and can direct to these items"
-  },
-  {
-    "relation": "carries",
-    "source": "[aidron]",
-    "target": "[detect_magic]",
-    "desc": "Aidron cataloged the contents of the room and can direct to these items"
+    "relation": "trapped_at",
+    "source": "aidron",
+    "target": "d6",
+    "desc": "Imprisoned in area D6"
   },
   {
     "relation": "hidden_at",
-    "source": "blepp_the_kobold",
-    "target": "d5",
-    "desc": "Surviving kobolds lurk here"
+    "source": "kobolds",
+    "target": "d6",
+    "desc": "Lurking here"
   },
   {
     "relation": "hidden_at",
     "source": "winged_kobold",
-    "target": "d5",
-    "desc": "Winged kobolds lurk here"
+    "target": "d6",
+    "desc": "Lurking here"
   },
   {
-    "relation": "allies_with",
+    "relation": "inhabits",
+    "source": "sparkrender",
+    "target": "d6",
+    "desc": "Conducting Sparkrender's ritual"
+  },
+  {
+    "relation": "stored_in",
+    "source": "sculpture",
+    "target": "rotunda",
+    "desc": "Located in the ruined rotunda"
+  },
+  {
+    "relation": "inhabits",
+    "source": "sparkrender",
+    "target": "rotunda",
+    "desc": "Magical lights surrounding the rotunda are manifestations of dragon spirits Sparkrender seeks to bind"
+  },
+  {
+    "relation": "wields",
+    "source": "sparkrender",
+    "target": "breath_weapon",
+    "desc": "Sparkrender's Breath Weapon recharges due to dragon spirit influences"
+  },
+  {
+    "relation": "hidden_at",
+    "source": "turadaer",
+    "target": "rotunda",
+    "desc": "Turadaer's influence manifests in the rotunda through sparkling lights"
+  },
+  {
+    "relation": "ally_of",
     "source": "aidron",
     "target": "sparkrender",
-    "desc": "Aidron helps Sparkrender's ritual"
+    "desc": "Aidron benefits from dragon spirit effects alongside party members"
   },
   {
-    "relation": "gives",
+    "relation": "owns",
     "source": "runara",
     "target": "pearl",
-    "desc": "Gives an exquisite pearl worth 100 gp"
+    "desc": "Gives as a reward"
   }
 ]

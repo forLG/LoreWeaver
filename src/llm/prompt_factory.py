@@ -523,11 +523,15 @@ CRITICAL RULES:
 
 3. **LIST-STYLE NPC DESCRIPTIONS**: When text describes multiple characters in list format (paragraphs starting with "Name does something..."), extract EACH name as a separate creature entity.
 
-4. **IF NO ENTITIES FOUND**: If the text contains no relevant entities, output <summary> instead
+4. **INDIVIDUAL MEMBERS OF KNOWN GROUPS**: If known entities contain a generic group (e.g., "kobolds", "guards"), you MUST STILL extract individual named members of that group
+   - Example: If "kobolds" is known, and text mentions "Agga", "Blepp", "Frub" as individual kobolds, extract EACH as a separate entity
+   - The group entity represents the collective, but named individuals are distinct entities
+
+5. **IF NO ENTITIES FOUND**: If the text contains no relevant entities, output <summary> instead
    - Explain why (text too short, only scenery, no named content, etc.)
    - This helps with debugging and tracing
 
-5. **OUTPUT FORMAT**:
+6. **OUTPUT FORMAT**:
    - If entities found: Wrap in <entities> tags
    - If no entities: Use <summary> tags with explanation
 
@@ -754,9 +758,12 @@ RULES:
 2. LIST-STYLE NPC DESCRIPTIONS: When text describes multiple characters in list format ("Name does something...", "Another Name has a trait..."), extract EACH name as a separate creature entity
    - Pattern: Paragraphs starting with a proper name followed by description
    - Extract every named character, even if only briefly described
-3. Generic groups: "guards", "zombies", "cultists" → mark is_generic: true
-4. Location types: area/building/room/feature/path
-5. ONLY use <summary> for truly empty text (pure atmospheric description with no entities)
+3. INDIVIDUAL MEMBERS OF KNOWN GROUPS: If KNOWN ENTITIES contains a generic group (e.g., "kobolds", "guards"), you MUST STILL extract individual named members of that group
+   - Example: If "kobolds" is known, and text mentions "Agga", "Blepp", "Frub" as individual kobolds, extract EACH as a separate entity
+   - The group entity represents the collective, but named individuals are distinct entities
+4. Generic groups: "guards", "zombies", "cultists" → mark is_generic: true
+5. Location types: area/building/room/feature/path
+6. ONLY use <summary> for truly empty text (pure atmospheric description with no entities)
 
 ENTITY TYPES:
 - Location (area/building/room/feature/path)
@@ -808,6 +815,8 @@ ID: thorin_ironforge
 CreatureType: dwarf
 IsGeneric: false
 Aliases: [blacksmith]
+
+(Example: Even if "Bandit Guards" is known as a generic group, extract individual named bandits like "Grimjaw", "Silas" as separate entities)
 </entities>
 
 <events>

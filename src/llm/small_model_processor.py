@@ -388,9 +388,25 @@ class SmallModelProcessor(BaseLLMProcessor):
                 event["node_type"] = "event"
                 all_nodes.append(event)
 
+            # Filter edges to only include references to existing nodes
+            valid_node_ids = {n.get("id") for n in all_nodes if n.get("id")}
+            filtered_edges = []
+            removed_count = 0
+
+            for edge in edges:
+                source = edge.get("source")
+                target = edge.get("target")
+                if source in valid_node_ids and target in valid_node_ids:
+                    filtered_edges.append(edge)
+                else:
+                    removed_count += 1
+
+            if removed_count > 0:
+                logger.warning(f"  Filtered out {removed_count} edges with broken references (from {len(edges)} total)")
+
             return {
                 "nodes": all_nodes,
-                "edges": edges
+                "edges": filtered_edges
             }
 
     async def _process_two_phase(
@@ -1412,6 +1428,7 @@ class SmallModelProcessor(BaseLLMProcessor):
 
             # Find the canonical entity this maps to
             mapped = False
+            raw_aliases = set(a.lower() for a in raw_entity.get("aliases", []))
 
             # Check exact ID match first
             if any(raw_id == e.get("id") for e in meaningful_entities):
@@ -1424,6 +1441,28 @@ class SmallModelProcessor(BaseLLMProcessor):
                     if raw_label == canonical_entity.get("label"):
                         mapping[raw_id] = canonical_entity.get("id")
                         mapped = True
+                        break
+
+            # Check alias match (raw entity's aliases match canonical label)
+            if not mapped and raw_aliases:
+                for canonical_entity in meaningful_entities:
+                    canonical_label = canonical_entity.get("label", "").lower()
+                    if canonical_label in raw_aliases:
+                        mapping[raw_id] = canonical_entity.get("id")
+                        mapped = True
+                        logger.debug(f"  Merged '{raw_id}' -> '{canonical_entity.get('id')}' "
+                                   f"(alias match: '{canonical_label}' in {raw_aliases})")
+                        break
+
+            # Check canonical entity's aliases match raw label
+            if not mapped and raw_label:
+                for canonical_entity in meaningful_entities:
+                    canonical_aliases = set(a.lower() for a in canonical_entity.get("aliases", []))
+                    if raw_label.lower() in canonical_aliases:
+                        mapping[raw_id] = canonical_entity.get("id")
+                        mapped = True
+                        logger.debug(f"  Merged '{raw_id}' -> '{canonical_entity.get('id')}' "
+                                   f"(reverse alias match: '{raw_label}' in {canonical_aliases})")
                         break
 
             # Check fuzzy label similarity

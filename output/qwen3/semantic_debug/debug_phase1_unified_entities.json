@@ -678,6 +678,120 @@
     "is_generic": true
   },
   {
+    "type": "Group",
+    "id": "guards",
+    "location_type": "feature",
+    "is_generic": true,
+    "aliases": [],
+    "creature_type": "humanoid",
+    "source_node": "The Forgotten Realms",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Group",
+    "id": "chromatic_dragons",
+    "creature_type": "dragon",
+    "is_generic": true,
+    "aliases": [],
+    "location_type": "building",
+    "source_node": "Adventure Background",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "bronze_wyrmling",
+    "location_type": "room",
+    "is_generic": false,
+    "aliases": [],
+    "creature_type": "dragon",
+    "source_node": "Adventure Outline",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Location",
+    "id": "stormwreck_isle",
+    "location_type": "area",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "Generic_Monster",
+    "type": "Creature",
+    "id": "generic_monster",
+    "creature_type": "beast",
+    "is_generic": true,
+    "aliases": [
+      "monster"
+    ],
+    "source_node": "",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "Ship_Dock",
+    "type": "Location",
+    "id": "ship_deck",
+    "location_type": "feature",
+    "is_generic": false,
+    "aliases": [
+      "deck"
+    ],
+    "source_node": "",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "scaled_queen",
+    "creature_type": "dragon",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "scaled_queen",
+    "creature_type": "merrow",
+    "is_generic": false,
+    "aliases": [
+      "Scaled Queen"
+    ],
+    "source_node": "Negotiate with the Merrow",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "merrow_extortionist",
+    "creature_type": "aquatic_humanoid",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "Attack the Merrow",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Group",
+    "id": "sailors",
+    "creature_type": "beast",
+    "is_generic": true,
+    "aliases": [],
+    "source_node": "",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "dragon_rest",
+    "type": "Location",
+    "id": "dragon_rest",
+    "location_type": "building",
+    "is_generic": false,
+    "aliases": [
+      "cloister"
+    ],
+    "source_node": "Chapter 1: Dragon's Rest",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "stormwreck_isle",
     "type": "Location",
     "id": "stormwreck_isle",
     "location_type": "area",
@@ -687,57 +801,270 @@
     "extraction_method": "llm"
   },
   {
+    "label": "cloister",
+    "type": "Location",
+    "id": "cloister",
+    "location_type": "feature",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "Welcome to Dragon's Rest",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Item",
+    "id": "rowboat",
+    "location_type": "path",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "",
+    "extraction_method": "llm"
+  },
+  {
     "type": "Group",
-    "id": "dragon_residents",
-    "location_type": "building",
+    "id": "zombies",
+    "location_type": "path",
+    "is_generic": true,
+    "aliases": [
+      "\"shambling sailors\""
+    ],
+    "creature_type": "undead",
+    "source_node": "Drowned Sailors",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "zombies",
+    "creature_type": "undead",
+    "is_generic": true,
+    "aliases": [
+      "drowned_sailors"
+    ],
+    "source_node": "",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "runara",
+    "location_type": "room",
+    "is_generic": false,
+    "aliases": [],
+    "creature_type": "fey",
+    "source_node": "Runara's Aid",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Group",
+    "id": "kobolds",
+    "location_type": "area",
+    "is_generic": true,
+    "aliases": [
+      "kobold_group"
+    ],
+    "creature_type": "humanoid",
+    "source_node": "Meeting the Inhabitants",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Group",
+    "id": "humans_group",
+    "creature_type": "kobold",
     "is_generic": true,
     "aliases": [],
-    "creature_type": "monster",
+    "source_node": "",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "elderly_human_woman",
+    "creature_type": "humanoid",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "zombies",
+    "creature_type": "undead",
+    "is_generic": true,
+    "aliases": [
+      "zombie",
+      "zombie_group"
+    ],
+    "location_type": "building",
+    "source_node": "Elder Runara",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "runara",
+    "location_type": "building",
+    "is_generic": false,
+    "aliases": [],
+    "creature_type": "dragon",
+    "source_node": "Kobolds",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "spore_servant_octopus",
+    "creature_type": "beast",
+    "is_generic": true,
+    "aliases": [],
+    "location_type": "feature",
+    "source_node": "Tarak",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Item",
+    "id": "mason_s_tools",
+    "creature_type": "humanoid",
+    "is_generic": false,
+    "aliases": [
+      "mason's tools"
+    ],
+    "location_type": "building",
+    "source_node": "Varnoth",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Location",
+    "id": "cliff_side_doorways",
+    "location_type": "feature",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "runara",
+    "location_type": "feature",
+    "is_generic": false,
+    "aliases": [],
+    "creature_type": "human",
+    "source_node": "Statue",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Group",
+    "id": "kobolds",
+    "location_type": "",
+    "is_generic": true,
+    "aliases": [],
+    "creature_type": "",
+    "source_node": "Cells",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Location",
+    "id": "winch_house",
+    "location_type": "building",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "A2: Winch House",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Location",
+    "id": "winch_house",
+    "location_type": "building",
+    "creature_type": "",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "cloister",
+    "type": "Location",
+    "id": "cloister",
+    "location_type": "building",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "A3: Kitchen",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "kitchen",
+    "type": "Location",
+    "id": "kitchen",
+    "location_type": "room",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "A3: Kitchen",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "cloister_library",
+    "type": "Location",
+    "id": "cloister_library",
+    "location_type": "room",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "A4: Library",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "books_and_scrolls",
+    "type": "Item",
+    "id": "books_and_scrolls",
+    "location_type": "unknown",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "A4: Library",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "rix",
+    "location_type": "room",
+    "is_generic": true,
+    "aliases": [],
+    "creature_type": "kobold",
+    "source_node": "A5: Temple of Bahamut",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "tiamat",
+    "creature_type": "dragon",
+    "is_generic": false,
+    "aliases": [
+      "dragon_queen"
+    ],
+    "source_node": "About Bahamut",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "sparkrender",
+    "location_type": "building",
+    "is_generic": false,
+    "aliases": [],
+    "creature_type": "undead",
     "source_node": "Cloister Quests",
     "extraction_method": "llm"
   },
   {
-    "label": "shipwreck",
-    "type": "Location",
-    "id": "shipwreck",
-    "location_type": "feature",
-    "is_generic": false,
-    "aliases": [
-      "wrecked_ship"
-    ],
-    "source_node": "Zombie Resurgence",
-    "extraction_method": "llm"
-  },
-  {
-    "label": "blepp_the_kobold",
-    "type": "Creature",
-    "id": "blepp_the_kobold",
-    "creature_type": "beast",
-    "is_generic": false,
-    "aliases": [
-      "blepp"
-    ],
-    "source_node": "Zombie Resurgence",
-    "extraction_method": "llm"
-  },
-  {
-    "label": "tarak_the_human_gardener",
-    "type": "Creature",
-    "id": "tarak_the_human_gardener",
-    "creature_type": "humanoid",
-    "is_generic": false,
-    "aliases": [
-      "tarak"
-    ],
-    "source_node": "Zombie Resurgence",
-    "extraction_method": "llm"
-  },
-  {
     "type": "Group",
-    "id": "dragon_residents",
-    "location_type": "path",
+    "id": "drowned_sailors",
+    "creature_type": "humanoid",
     "is_generic": true,
     "aliases": [],
+    "location_type": "feature",
+    "source_node": "Zombie Resurgence",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "zombie",
+    "location_type": "path",
+    "is_generic": true,
+    "aliases": [
+      "corpses",
+      "sailor_corpse"
+    ],
     "creature_type": "undead",
     "source_node": "",
     "extraction_method": "llm"
@@ -753,71 +1080,341 @@
   },
   {
     "type": "Item",
-    "id": "foul_smelling_sack_of_food_scraps",
+    "id": "potion_of_healing",
     "location_type": "feature",
     "is_generic": false,
     "aliases": [],
+    "creature_type": "",
     "source_node": "Sea Caves",
     "extraction_method": "llm"
   },
   {
     "type": "Creature",
     "id": "rix",
-    "location_type": "wreckage",
-    "is_generic": true,
-    "aliases": [
-      "kobold"
-    ],
-    "creature_type": "humanoid",
+    "location_type": "wreck",
+    "is_generic": false,
+    "aliases": [],
+    "creature_type": "kobold",
     "source_node": "Shipwreck",
     "extraction_method": "llm"
   },
   {
+    "label": "compass_rose",
+    "type": "Location",
+    "id": "compass_rose",
+    "location_type": "wreckage",
+    "is_generic": false,
+    "aliases": [
+      "compass_rose_shipwreck"
+    ],
+    "source_node": "The Cleric",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "runara",
     "type": "Creature",
-    "id": "elder_runara",
+    "id": "runara",
+    "creature_type": "human",
+    "is_generic": false,
+    "aliases": [
+      "Runara"
+    ],
+    "source_node": "The Fighter",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "zombies",
+    "type": "Creature",
+    "id": "zombies",
+    "creature_type": "undead",
+    "is_generic": true,
+    "aliases": [
+      "zombie",
+      "zombie (group)"
+    ],
+    "source_node": "The Fighter",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Location",
+    "id": "temple_of_bahamut",
+    "location_type": "building",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "The Paladin",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Group",
+    "id": "gilded_gallows",
+    "creature_type": "humanoid",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "The Rogue",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Location",
+    "id": "clifftop_observatory",
+    "location_type": "building",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "The Wizard",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Item",
+    "id": "moonstone_key",
+    "location_type": "object",
+    "is_generic": false,
+    "aliases": [],
+    "creature_type": "dragon",
+    "source_node": "Lost Wyrmling",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "runara",
     "creature_type": "dragon",
     "is_generic": false,
     "aliases": [
-      "runara"
+      "elder_runara"
     ],
     "source_node": "",
     "extraction_method": "llm"
   },
   {
     "type": "Location",
-    "id": "temple_area_a5",
+    "id": "temple_of_bahamut",
     "creature_type": "dragon",
     "is_generic": false,
     "aliases": [
       "temple",
-      "area A5"
+      "area_a5"
     ],
     "location_type": "building",
     "source_node": "Runara Saves the Day!",
     "extraction_method": "llm"
   },
   {
+    "label": "hot_spring",
+    "type": "Location",
+    "id": "hot_spring",
+    "location_type": "feature",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "Hot Springs Havoc",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "fume_drake",
+    "type": "Creature",
+    "id": "fume_drake",
+    "creature_type": "beast",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "Hot Springs Havoc",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Location",
+    "id": "hot_spring",
+    "location_type": "feature",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "brass_dragon_dead",
+    "location_type": "feature",
+    "is_generic": false,
+    "aliases": [
+      "dead_brass_dragon"
+    ],
+    "creature_type": "dragon",
+    "source_node": "Spring Waters",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Location",
+    "id": "hot_spring",
+    "location_type": "feature",
+    "aliases": [
+      "spring_feature"
+    ],
+    "is_generic": false,
+    "source_node": "Treasure",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Item",
+    "id": "wooden_whistle",
+    "creature_type": "beast",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "There, There, Owlbear",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "owlbear",
+    "creature_type": "beast",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "winged_kobold",
+    "is_generic": true,
+    "aliases": [],
+    "creature_type": "beast",
+    "source_node": "Kobold Renegades",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "kobolds",
+    "creature_type": "beast",
+    "is_generic": true,
+    "aliases": [],
+    "source_node": "",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "winged_kobold",
+    "creature_type": "beast",
+    "is_generic": true,
+    "aliases": [],
+    "source_node": "2nd-Level Characters",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "sharruth",
+    "type": "Creature",
+    "id": "sharruth",
+    "creature_type": "dragon",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "What Lies Beneath",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "seagrow_caves",
     "type": "Location",
     "id": "seagrow_caves",
     "location_type": "feature",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "What Lies Beneath",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Location",
+    "id": "compass_rose",
+    "location_type": "wreckage",
+    "creature_type": "",
     "is_generic": false,
     "aliases": [],
     "source_node": "Chapter 2: Seagrow Caves",
     "extraction_method": "llm"
   },
   {
-    "type": "Creature",
-    "id": "stirge",
+    "label": "stormwreck_isle",
+    "type": "Location",
+    "id": "stormwreck_isle",
+    "location_type": "island",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "Caves Overview",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "seagrow_caves",
+    "type": "Location",
+    "id": "seagrow_caves",
+    "location_type": "cave_system",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "Caves Overview",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "tomb_of_sharruth",
+    "type": "Location",
+    "id": "tomb_of_sharruth",
     "location_type": "tomb",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "Caves Overview",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "cavern_at_back_seagrow_caves",
+    "type": "Location",
+    "id": "cavern_at_back_seagrow_caves",
+    "location_type": "chamber",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "Caves Overview",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "myconid_adult",
+    "type": "Creature",
+    "id": "myconid_adult",
+    "creature_type": "fungal_beast",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "Caves Overview",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "myconid_sprout",
+    "type": "Creature",
+    "id": "myconid_sprout",
+    "creature_type": "fungal_beast",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "Caves Overview",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "sinensa",
+    "type": "Creature",
+    "id": "sinensa",
+    "creature_type": "fungal_beast",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "Caves Overview",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "tarak",
+    "type": "Creature",
+    "id": "tarak",
+    "creature_type": "human",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "Caves Overview",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "stirges",
+    "type": "Group",
+    "id": "stirges",
     "is_generic": true,
     "aliases": [],
-    "creature_type": "beast",
     "source_node": "Caves Overview",
     "extraction_method": "llm"
   },
   {
     "type": "Location",
-    "id": "cliffs",
+    "id": "high_cliffs",
     "location_type": "terrain_feature",
     "is_generic": false,
     "aliases": [],
@@ -825,8 +1422,39 @@
     "extraction_method": "llm"
   },
   {
+    "label": "area_b1",
     "type": "Location",
-    "id": "cliffs",
+    "id": "area_b1",
+    "location_type": "area",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "Entering the Caves",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "area_b2",
+    "type": "Location",
+    "id": "area_b2",
+    "location_type": "area",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "Entering the Caves",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "tunnel",
+    "type": "Location",
+    "id": "tunnel",
+    "location_type": "path",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "Entering the Caves",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "stairways_descending_into_sea",
+    "type": "Location",
+    "id": "stairways_descending_into_sea",
     "location_type": "feature",
     "is_generic": false,
     "aliases": [],
@@ -834,31 +1462,40 @@
     "extraction_method": "llm"
   },
   {
-    "type": "Creature",
-    "id": "tarak",
-    "location_type": "feature",
+    "label": "pathway_exposed_at_low_tide",
+    "type": "Location",
+    "id": "pathway_exposed_at_low_tide",
+    "location_type": "path",
     "is_generic": false,
     "aliases": [],
-    "creature_type": "human",
+    "source_node": "Entering the Caves",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Location",
+    "id": "vent",
+    "creature_type": "myconid_adult",
+    "is_generic": false,
+    "aliases": [],
+    "location_type": "feature",
     "source_node": "Interacting with Myconids",
     "extraction_method": "llm"
   },
   {
-    "type": "Location",
-    "id": "b4",
-    "location_type": "area",
+    "type": "Item",
+    "id": "rapport_spores",
     "is_generic": false,
     "aliases": [],
-    "source_node": "Distress Spores",
+    "source_node": "Rapport Spores",
     "extraction_method": "llm"
   },
   {
     "type": "Location",
-    "id": "seagrow_caves",
-    "location_type": "area",
+    "id": "area_b4",
+    "location_type": "room",
     "is_generic": false,
     "aliases": [],
-    "source_node": "Seagrow Caves Locations",
+    "source_node": "Distress Spores",
     "extraction_method": "llm"
   },
   {
@@ -866,14 +1503,13 @@
     "id": "myconid_leader",
     "location_type": "path",
     "is_generic": false,
-    "aliases": [
-      "myconid] />"
-    ],
-    "creature_type": "fungus",
+    "aliases": [],
+    "creature_type": "myconid_adult",
     "source_node": "B1: Entrance Tunnel",
     "extraction_method": "llm"
   },
   {
+    "label": "entrance_tunnel",
     "type": "Location",
     "id": "entrance_tunnel",
     "location_type": "path",
@@ -883,294 +1519,1113 @@
     "extraction_method": "llm"
   },
   {
-    "label": "stirge",
-    "type": "Creature",
-    "id": "stirge",
-    "creature_type": "beast",
-    "is_generic": true,
+    "label": "entrance_tunnel",
+    "type": "Location",
+    "id": "entrance_tunnel",
+    "location_type": "path",
+    "is_generic": false,
     "aliases": [],
     "source_node": "2nd-Level Characters",
     "extraction_method": "llm"
   },
   {
+    "label": "stirge",
     "type": "Creature",
+    "id": "stirge",
+    "creature_type": "fey",
+    "is_generic": true,
+    "aliases": [
+      "stirge"
+    ],
+    "source_node": "2nd-Level Characters",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Group",
     "id": "violet_fungus",
-    "location_type": "area",
+    "location_type": "feature",
     "is_generic": true,
     "aliases": [],
-    "creature_type": "fungus",
+    "creature_type": "myconid_adult",
     "source_node": "B2: Fungus Farm",
     "extraction_method": "llm"
   },
   {
-    "label": "fungus_farm_cavern",
     "type": "Location",
-    "id": "fungus_farm_cavern",
-    "location_type": "room",
+    "id": "fungus_farm",
+    "location_type": "area",
     "is_generic": false,
-    "aliases": [
-      "cavern",
-      "fungal_cavern"
-    ],
-    "source_node": "",
-    "extraction_method": "llm"
-  },
-  {
-    "label": "upper_cave_area_north",
-    "type": "Location",
-    "id": "upper_cave_area_north",
-    "location_type": "feature",
-    "is_generic": false,
-    "aliases": [
-      "north_upper_cave"
-    ],
-    "source_node": "",
-    "extraction_method": "llm"
-  },
-  {
-    "label": "mushroom_like_people",
-    "type": "Creature",
-    "id": "mushroom_like_people",
-    "creature_type": "humanoid",
-    "is_generic": true,
     "aliases": [],
     "source_node": "",
     "extraction_method": "llm"
   },
   {
-    "label": "sickly_mushroom",
     "type": "Creature",
     "id": "sickly_mushroom",
+    "location_type": "feature",
+    "is_generic": true,
+    "aliases": [],
     "creature_type": "beast",
-    "is_generic": false,
-    "aliases": [
-      "living_mushroom"
-    ],
     "source_node": "",
     "extraction_method": "llm"
   },
   {
     "type": "Creature",
-    "id": "violet_fungi",
+    "id": "violet_fungus",
+    "location_type": "feature",
     "creature_type": "beast",
     "is_generic": true,
-    "aliases": [],
+    "aliases": [
+      "purple fungus",
+      "violet fungi"
+    ],
     "source_node": "Running the Combat",
     "extraction_method": "llm"
   },
   {
     "type": "Creature",
-    "id": "violet_fungi",
-    "creature_type": "beast",
-    "is_generic": false,
-    "aliases": [],
+    "id": "violet_fungus",
+    "creature_type": "fungoid",
+    "is_generic": true,
+    "aliases": [
+      "violet fungi"
+    ],
     "source_node": "Myconids",
     "extraction_method": "llm"
   },
   {
-    "label": "Heart Cap Mushroom",
-    "type": "Item",
-    "id": "heart_cap_mushroom",
+    "type": "Group",
+    "id": "violet_fungus",
+    "is_generic": true,
+    "aliases": [],
+    "source_node": "Blighted Fungi",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "tarak",
     "location_type": "room",
     "is_generic": false,
     "aliases": [],
+    "creature_type": "humanoid",
     "source_node": "Treasure",
     "extraction_method": "llm"
   },
   {
     "type": "Creature",
     "id": "violet_fungus",
-    "creature_type": "fungal",
-    "is_generic": false,
+    "creature_type": "plant",
+    "is_generic": true,
     "aliases": [],
     "source_node": "2nd-Level Characters",
     "extraction_method": "llm"
   },
   {
-    "type": "Item",
-    "id": "fertilizer",
-    "location_type": "room",
+    "type": "Location",
+    "id": "area_b4",
+    "creature_type": "fey",
     "is_generic": false,
     "aliases": [],
-    "creature_type": "null",
+    "location_type": "room",
     "source_node": "B3: Larder",
     "extraction_method": "llm"
   },
   {
-    "type": "Creature",
-    "id": "gelatinous_cube",
+    "type": "Location",
+    "id": "larder",
     "location_type": "room",
-    "is_generic": true,
+    "is_generic": false,
     "aliases": [],
-    "creature_type": "beast",
     "source_node": "",
     "extraction_method": "llm"
   },
   {
+    "label": "stirge",
     "type": "Creature",
     "id": "stirge",
-    "creature_type": "fey",
-    "is_generic": false,
+    "creature_type": "undead",
+    "is_generic": true,
     "aliases": [],
     "source_node": "2nd-Level Characters",
     "extraction_method": "llm"
   },
   {
-    "type": "Location",
-    "id": "circle_chamber",
+    "type": "Creature",
+    "id": "virosa",
     "creature_type": "myconid_adult",
     "is_generic": false,
-    "aliases": [
-      "b4"
-    ],
-    "location_type": "room",
+    "aliases": [],
     "source_node": "B4: Circle Chamber",
     "extraction_method": "llm"
   },
   {
-    "type": "Location",
-    "id": "fungus_growth",
-    "creature_type": "myconid_adult",
-    "is_generic": false,
-    "aliases": [
-      "brain_like_fungus"
-    ],
-    "location_type": "feature",
-    "source_node": "B5: Sinensa's Sanctum",
-    "extraction_method": "llm"
-  },
-  {
     "type": "Creature",
-    "id": "myconid_sprout",
+    "id": "mushroom_folk",
     "location_type": "room",
-    "is_generic": false,
-    "aliases": [],
-    "creature_type": "beast",
+    "is_generic": true,
+    "aliases": [
+      "mushroom_people"
+    ],
+    "creature_type": "humanoid",
     "source_node": "",
     "extraction_method": "llm"
   },
   {
-    "type": "Item",
-    "id": "ruby_morel",
-    "location_type": "",
+    "type": "Location",
+    "id": "sinensa_sanctum",
+    "creature_type": "myconid_adult",
     "is_generic": false,
-    "aliases": [
-      "\"glowing_red_fungus\""
-    ],
-    "creature_type": "",
+    "aliases": [],
+    "location_type": "room",
+    "source_node": "B5: Sinensa's Sanctum",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Item",
+    "id": "colorful_crystals",
+    "location_type": "room",
+    "is_generic": true,
+    "aliases": [],
+    "creature_type": "fungoid",
+    "source_node": "",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "tarak",
+    "aliases": [],
+    "location_type": "room",
+    "is_generic": false,
+    "creature_type": "human",
     "source_node": "Treasure",
     "extraction_method": "llm"
   },
   {
-    "label": "crystal_cave",
-    "type": "Location",
-    "id": "crystal_cave",
-    "location_type": "cavern",
-    "is_generic": false,
-    "aliases": [],
-    "source_node": "B6: Crystal Cave",
-    "extraction_method": "llm"
-  },
-  {
-    "label": "fissure_in_west_wall",
-    "type": "Feature",
-    "id": "fissure_in_west_wall",
-    "location_type": "path",
-    "is_generic": false,
-    "aliases": [],
-    "source_node": "B6: Crystal Cave",
-    "extraction_method": "llm"
-  },
-  {
-    "label": "orange_crystal_blockage",
-    "type": "Feature",
-    "id": "orange_crystal_blockage",
-    "location_type": "object",
-    "is_generic": false,
-    "aliases": [],
-    "source_node": "B6: Crystal Cave",
-    "extraction_method": "llm"
-  },
-  {
-    "label": "sharruth_tomb",
-    "type": "Location",
-    "id": "sharruth_tomb",
-    "location_type": "chamber",
-    "is_generic": false,
-    "aliases": [],
-    "source_node": "B6: Crystal Cave",
-    "extraction_method": "llm"
-  },
-  {
-    "label": "sharruth_red_dragon",
     "type": "Creature",
     "id": "sharruth_red_dragon",
-    "creature_type": "dragon",
-    "is_generic": false,
-    "aliases": [],
-    "source_node": "B6: Crystal Cave",
-    "extraction_method": "llm"
-  },
-  {
-    "label": "orange_crystal",
-    "type": "Item",
-    "id": "orange_crystal",
     "location_type": "feature",
-    "creature_type": "n/a",
-    "is_generic": false,
-    "aliases": [],
-    "source_node": "Fire Crystal",
-    "extraction_method": "llm"
-  },
-  {
-    "label": "smoldering_obsidian_sphere",
-    "type": "Item",
-    "id": "smoldering_obsidian_sphere",
-    "location_type": "feature",
-    "creature_type": "n/a",
-    "is_generic": false,
-    "aliases": [],
-    "source_node": "Fire Crystal",
-    "extraction_method": "llm"
-  },
-  {
-    "type": "Item",
-    "id": "obsidian_shards",
-    "creature_type": "beast",
     "is_generic": false,
     "aliases": [
-      "obsidian_chunks"
+      "red_dragon_sharruth"
     ],
-    "source_node": "Treasure",
+    "creature_type": "dragon",
+    "source_node": "B6: Crystal Cave",
     "extraction_method": "llm"
   },
   {
     "type": "Location",
     "id": "crystal_cave",
+    "is_generic": false,
+    "aliases": [],
+    "creature_type": "reptile",
+    "location_type": "room",
+    "source_node": "Fire Crystal",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "obsidian_chunk",
+    "type": "Item",
+    "id": "obsidian_chunk",
+    "aliases": [],
+    "is_generic": false,
+    "source_node": "Treasure",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "fire_snake",
     "creature_type": "reptile",
     "is_generic": false,
     "aliases": [],
-    "location_type": "chamber",
     "source_node": "2nd-Level Characters",
     "extraction_method": "llm"
   },
   {
     "type": "Location",
-    "id": "area_b5",
+    "id": "dragon_rest",
+    "creature_type": "human",
     "is_generic": false,
     "aliases": [],
-    "location_type": "room/cave",
-    "creature_type": "human",
+    "location_type": "building",
     "source_node": "Ending This Chapter",
     "extraction_method": "llm"
   },
   {
+    "label": "clifftop_observatory",
+    "type": "Location",
+    "id": "clifftop_observatory",
+    "location_type": "building",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "Gain a Level",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "lost_wyrmling",
     "type": "Location",
     "id": "lost_wyrmling",
     "location_type": "feature",
     "is_generic": false,
     "aliases": [],
     "source_node": "Gain a Level",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Item",
+    "id": "cursed_talisman",
+    "location_type": "town",
+    "is_generic": false,
+    "aliases": [],
+    "creature_type": "",
+    "source_node": "Shipwreck Overview",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "Compass_Rose",
+    "type": "Location",
+    "id": "compass_rose",
+    "location_type": "building",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "Other Shipwrecks",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "Ghoul",
+    "type": "Creature",
+    "id": "ghoul",
+    "creature_type": "undead",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "Other Shipwrecks",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Location",
+    "id": "compass_rose",
+    "location_type": "feature",
+    "creature_type": "",
+    "is_generic": false,
+    "aliases": [
+      "Compass Rose"
+    ],
+    "source_node": "Shipwreck Features",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Location",
+    "id": "hold",
+    "location_type": "room",
+    "creature_type": "",
+    "is_generic": false,
+    "aliases": [
+      "c9"
+    ],
+    "source_node": "Running This Chapter",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Location",
+    "id": "dragon_bones",
+    "location_type": "feature",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Location",
+    "id": "hold",
+    "location_type": "room",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "harpy",
+    "location_type": "building",
+    "is_generic": false,
+    "aliases": [],
+    "creature_type": "beast",
+    "source_node": "Crow's Nest",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "harpy",
+    "creature_type": "beast",
+    "is_generic": false,
+    "aliases": [
+      "harpy"
+    ],
+    "source_node": "Harpy's Return",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Item",
+    "id": "bloodstone_gem",
+    "aliases": [],
+    "is_generic": false,
+    "source_node": "Treasure",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "ballista",
+    "type": "Item",
+    "id": "ballista",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "C2: Forecastle",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Item",
+    "id": "ballista",
+    "location_type": "feature",
+    "is_generic": false,
+    "aliases": [],
+    "creature_type": "",
+    "source_node": "",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Location",
+    "id": "area_c4",
+    "location_type": "room",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "C3: Quarterdeck",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "zombie",
+    "location_type": "room",
+    "is_generic": true,
+    "aliases": [
+      "zombies"
+    ],
+    "creature_type": "undead",
+    "source_node": "C4: Captain's Quarters",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Item",
+    "id": "compass_rose",
+    "location_type": "feature",
+    "is_generic": false,
+    "aliases": [
+      "ornate_compass"
+    ],
+    "creature_type": "undead",
+    "source_node": "",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Item",
+    "id": "sea_chest",
+    "location_type": "",
+    "creature_type": "",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "Hole to the Hold",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Item",
+    "id": "compass_set",
+    "aliases": [],
+    "is_generic": false,
+    "source_node": "Treasure",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "small_crabs",
+    "location_type": "room",
+    "is_generic": true,
+    "aliases": [],
+    "creature_type": "beast",
+    "source_node": "C5: Galley",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "headless_skeleton",
+    "location_type": "room",
+    "is_generic": false,
+    "aliases": [
+      "long_dead_headless_skeleton"
+    ],
+    "creature_type": "undead",
+    "source_node": "",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Location",
+    "id": "crew_quarters",
+    "creature_type": "humanoid",
+    "is_generic": false,
+    "aliases": [],
+    "location_type": "room",
+    "source_node": "C6: Crew Quarters",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Item",
+    "id": "portrait",
+    "location_type": "feature",
+    "is_generic": false,
+    "aliases": [
+      "\"painted_portrait\""
+    ],
+    "source_node": "",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "Cabin",
+    "type": "Location",
+    "id": "cabin",
+    "location_type": "room",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "Floorboard Stash",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "Dart Trap",
+    "type": "Item",
+    "id": "dart_trap",
+    "location_type": "object",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "Floorboard Stash",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "Compartment_Beneath_Floorboard",
+    "type": "Location",
+    "id": "compartment_beneath_floorboard",
+    "location_type": "feature",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "Treasure",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "Sack_With_200_Gp",
+    "type": "Item",
+    "id": "sack_with_200_gp",
+    "aliases": [
+      "sack"
+    ],
+    "is_generic": false,
+    "source_node": "Treasure",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "ghoul",
+    "creature_type": "undead",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "C8: Lower Deck",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Location",
+    "id": "lower_deck",
+    "location_type": "room",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Location",
+    "id": "hold",
+    "location_type": "area",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "Hole to the Hold",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "zombies",
+    "creature_type": "undead",
+    "is_generic": true,
+    "aliases": [
+      "zombie"
+    ],
+    "source_node": "2nd-Level Characters",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Item",
+    "id": "spell_scroll_command",
+    "location_type": "room",
+    "is_generic": false,
+    "aliases": [
+      "command_spell_scroll"
+    ],
+    "source_node": "Treasure",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Location",
+    "id": "submerged_hold",
+    "location_type": "room",
+    "is_generic": false,
+    "aliases": [
+      "hold",
+      "submerged hold"
+    ],
+    "source_node": "C9: Hold",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "shipwreck_hold",
+    "type": "Location",
+    "id": "shipwreck_hold",
+    "location_type": "feature",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Item",
+    "id": "talisman",
+    "location_type": "",
+    "is_generic": false,
+    "aliases": [],
+    "creature_type": "",
+    "source_node": "Captain's Chest",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Item",
+    "id": "book_in_chest",
+    "location_type": "landmark",
+    "is_generic": false,
+    "aliases": [],
+    "creature_type": "undead",
+    "source_node": "19 Tarsakh",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "harpy",
+    "location_type": "deck",
+    "is_generic": false,
+    "aliases": [],
+    "creature_type": "beast",
+    "source_node": "A New Threat",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "harpy",
+    "location_type": "area",
+    "is_generic": false,
+    "aliases": [],
+    "creature_type": "beast",
+    "source_node": "Harpy's Return",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "harpy",
+    "location_type": "feature",
+    "is_generic": false,
+    "aliases": [],
+    "creature_type": "beast",
+    "source_node": "",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Location",
+    "id": "crows_nest",
+    "creature_type": "beast",
+    "is_generic": false,
+    "aliases": [
+      "Crow's Nest"
+    ],
+    "location_type": "feature",
+    "source_node": "Talking to the Harpy",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Location",
+    "id": "area_c2",
+    "creature_type": "beast",
+    "is_generic": true,
+    "aliases": [],
+    "location_type": "area",
+    "source_node": "2nd-Level Characters",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "runara",
+    "location_type": "",
+    "is_generic": false,
+    "aliases": [],
+    "creature_type": "human",
+    "source_node": "Ending This Chapter",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Location",
+    "id": "clifftop_observatory",
+    "location_type": "building",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "Chapter 4: Clifftop Observatory",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Group",
+    "id": "chromatic_dragons",
+    "location_type": "building",
+    "is_generic": true,
+    "aliases": [],
+    "creature_type": "dragon",
+    "source_node": "Observatory Overview",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Location",
+    "id": "clifftop_observatory",
+    "location_type": "building",
+    "is_generic": false,
+    "aliases": [
+      "basalt_spire_ruins"
+    ],
+    "source_node": "Observatory Features",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Location",
+    "id": "clifftop_observatory",
+    "location_type": "building",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "Running This Chapter",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Location",
+    "id": "area_d5",
+    "creature_type": "dragon",
+    "is_generic": false,
+    "aliases": [],
+    "location_type": "feature",
+    "source_node": "Approaching by Land",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "blue_dragon_wyrmling",
+    "location_type": "island",
+    "is_generic": false,
+    "aliases": [],
+    "creature_type": "dragon",
+    "source_node": "",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Location",
+    "id": "d5",
+    "creature_type": "??? (unknown)",
+    "is_generic": false,
+    "aliases": [],
+    "location_type": "area",
+    "source_node": "Approaching by Water",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Location",
+    "id": "column_far_from_stormwreck_isle",
+    "location_type": "feature",
+    "is_generic": false,
+    "aliases": [],
+    "creature_type": "dragon",
+    "source_node": "",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "other_dragon",
+    "location_type": "feature",
+    "is_generic": true,
+    "aliases": [
+      "metallic_green_dragon"
+    ],
+    "creature_type": "chromatic_dragon",
+    "source_node": "Sparkrender's Kobold Allies",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Location",
+    "id": "observatory_ruins",
+    "aliases": [
+      "area_d2"
+    ],
+    "location_type": "ruin",
+    "is_generic": false,
+    "source_node": "D1: Overlook",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "sparkrender",
+    "location_type": "area",
+    "is_generic": false,
+    "aliases": [
+      "] />"
+    ],
+    "creature_type": "dragon",
+    "source_node": "D2: Rotunda Ruins",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Group",
+    "id": "stirges",
+    "location_type": "feature",
+    "is_generic": true,
+    "aliases": [],
+    "creature_type": "undead",
+    "source_node": "",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "sparkrender",
+    "location_type": "room",
+    "is_generic": false,
+    "aliases": [],
+    "creature_type": "humanoid",
+    "source_node": "Golden Sculpture",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "sparkrender",
+    "creature_type": "dragon",
+    "is_generic": false,
+    "aliases": [
+      "]</entity>"
+    ],
+    "source_node": "Dragon Effigies",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Location",
+    "id": "area_d4",
+    "location_type": "area",
+    "creature_type": "",
+    "is_generic": false,
+    "aliases": [
+      "crumbled_tower]>"
+    ],
+    "source_node": "Energy Bridge Anchors",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Item",
+    "id": "sling_bullet",
+    "location_type": "building",
+    "is_generic": false,
+    "aliases": [],
+    "creature_type": "weapon",
+    "source_node": "D3: Kobold Camp",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Location",
+    "id": "ruined_tower",
+    "location_type": "building",
+    "is_generic": false,
+    "aliases": [
+      "tower",
+      "ruin"
+    ],
+    "source_node": "",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Item",
+    "id": "moonstone_key",
+    "location_type": "area",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "D4: Isolated Study",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "Isolated Study",
+    "type": "Location",
+    "id": "isolated_study",
+    "location_type": "room",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "Chamber Below",
+    "type": "Location",
+    "id": "chamber_below",
+    "location_type": "feature",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "Moldering Books",
+    "type": "Item",
+    "id": "moldering_books",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Item",
+    "id": "scholar_journal",
+    "location_type": "feature",
+    "is_generic": false,
+    "aliases": [
+      "journal"
+    ],
+    "source_node": "Scholar's Journal",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Location",
+    "id": "isolated_study",
+    "location_type": "room",
+    "creature_type": "N/A",
+    "is_generic": false,
+    "aliases": [
+      "D4"
+    ],
+    "source_node": "Clever Solutions",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Item",
+    "id": "pouch_with_10_gp",
+    "location_type": "",
+    "is_generic": false,
+    "aliases": [],
+    "creature_type": "",
+    "source_node": "Treasure",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Location",
+    "id": "d6_secret_library",
+    "location_type": "room",
+    "is_generic": false,
+    "aliases": [
+      "secret library"
+    ],
+    "creature_type": "kobold",
+    "source_node": "D5: Observatory Tower",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "blue_dragon_wyrmling",
+    "location_type": "building",
+    "is_generic": false,
+    "aliases": [],
+    "creature_type": "dragon",
+    "source_node": "",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "sparkrender",
+    "creature_type": "beast",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "Sneaking Around",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "blue_dragon_wyrmling",
+    "creature_type": "dragon",
+    "is_generic": false,
+    "aliases": [],
+    "location_type": "feature",
+    "source_node": "Waking the Dragon",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Location",
+    "id": "clifftop_observatory",
+    "creature_type": "undead",
+    "is_generic": false,
+    "aliases": [],
+    "location_type": "building",
+    "source_node": "Treasure",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "aidron_the_brone_wyrmling",
+    "location_type": "feature",
+    "is_generic": false,
+    "aliases": [
+      "aidron",
+      "bronze_wyrmling"
+    ],
+    "creature_type": "dragon",
+    "source_node": "D6: Secret Library",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "bronze_dragon",
+    "location_type": "room",
+    "is_generic": false,
+    "aliases": [],
+    "creature_type": "dragon",
+    "source_node": "",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "aidron",
+    "location_type": "room",
+    "is_generic": false,
+    "aliases": [],
+    "creature_type": "humanoid",
+    "source_node": "Treasure",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Group",
+    "id": "winged_kobolds",
+    "location_type": "room",
+    "is_generic": true,
+    "aliases": [],
+    "creature_type": "beast",
+    "source_node": "Sparkrender's Ritual",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "bronze_dragon",
+    "location_type": "room",
+    "is_generic": false,
+    "aliases": [],
+    "creature_type": "dragon",
+    "source_node": "",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "turadaer",
+    "creature_type": "dragon",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "Dragon Spirits",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "aidron",
+    "type": "Creature",
+    "id": "aidron",
+    "creature_type": "dragon",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "Freeing Aidron",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "sparkrender",
+    "type": "Creature",
+    "id": "sparkrender",
+    "creature_type": "humanoid",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "Freeing Aidron",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "chains",
+    "type": "Item",
+    "id": "chains",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "Freeing Aidron",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "iron_rings",
+    "type": "Item",
+    "id": "iron_rings",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "Freeing Aidron",
+    "extraction_method": "llm"
+  },
+  {
+    "label": "clifftop_observatory",
+    "type": "Location",
+    "id": "clifftop_observatory",
+    "location_type": "building",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "Freeing Aidron",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Item",
+    "id": "dragon_effigies",
+    "creature_type": "humanoid",
+    "is_generic": true,
+    "aliases": [],
+    "location_type": "unknown",
+    "source_node": "Disrupting the Ritual",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Item",
+    "id": "potion_of_healing",
+    "location_type": "consumable",
+    "is_generic": true,
+    "aliases": [
+      "potion_of_healing"
+    ],
+    "creature_type": "humanoid",
+    "source_node": "Ending the Adventure",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Item",
+    "id": "plus_one_weapon",
+    "is_generic": true,
+    "aliases": [],
+    "source_node": "Item Descriptions",
+    "extraction_method": "llm"
+  },
+  {
+    "type": "Creature",
+    "id": "harpy",
+    "creature_type": "beast",
+    "is_generic": false,
+    "aliases": [],
+    "source_node": "Creature Descriptions",
     "extraction_method": "llm"
   }
 ]

@@ -6,37 +6,37 @@
       "type": "Creature",
       "source_file": "DoSI",
       "mentions": [
-        "03b",
-        "0a1",
-        "0a2",
-        "01e",
-        "0c2",
         "00d",
-        "02c",
-        "0e7",
-        "02a",
-        "030",
-        "01d",
-        "024",
         "006",
-        "03c",
-        "0bc",
+        "0c2",
+        "03b",
         "005",
-        "046",
-        "034",
-        "03d",
-        "09e",
-        "01a",
-        "036",
-        "038",
         "02f",
-        "018",
-        "0ab",
-        "011",
-        "0c9",
-        "074",
         "03a",
-        "037"
+        "0bc",
+        "046",
+        "03c",
+        "038",
+        "011",
+        "0ab",
+        "024",
+        "01d",
+        "01a",
+        "02c",
+        "09e",
+        "01e",
+        "03d",
+        "030",
+        "034",
+        "036",
+        "0e7",
+        "0c9",
+        "0a2",
+        "074",
+        "018",
+        "037",
+        "02a",
+        "0a1"
       ],
       "properties": {
         "size": "Unknown",
@@ -92,9 +92,9 @@
       "type": "Creature",
       "source_file": "MM",
       "mentions": [
-        "06d",
+        "06f",
         "00c",
-        "06f"
+        "06d"
       ],
       "properties": {
         "size": "M",
@@ -143,8 +143,8 @@
       "mentions": [
         "0ed",
         "0cd",
-        "0eb",
-        "0ea"
+        "0ea",
+        "0eb"
       ],
       "properties": {
         "size": "L",
@@ -196,12 +196,12 @@
       "type": "Creature",
       "source_file": "MM",
       "mentions": [
-        "082",
-        "014",
+        "073",
         "030",
-        "032",
+        "014",
+        "082",
         "080",
-        "073"
+        "032"
       ],
       "properties": {
         "size": "M",
@@ -241,9 +241,9 @@
       "type": "Creature",
       "source_file": "MM",
       "mentions": [
-        "086",
         "014",
-        "08f"
+        "08f",
+        "086"
       ],
       "properties": {
         "size": "M",
@@ -322,11 +322,11 @@
       "type": "Creature",
       "source_file": "DoSI",
       "mentions": [
-        "02a",
-        "025",
-        "01a",
         "01e",
-        "0ad"
+        "02a",
+        "0ad",
+        "025",
+        "01a"
       ],
       "properties": {
         "size": "Unknown",
@@ -399,9 +399,9 @@
       "type": "Creature",
       "source_file": "MM",
       "mentions": [
-        "0bc",
-        "0bb",
         "01e",
+        "0bb",
+        "0bc",
         "0c2"
       ],
       "properties": {
@@ -448,10 +448,10 @@
       "type": "Creature",
       "source_file": "MM",
       "mentions": [
-        "05a",
-        "063",
+        "0ad",
         "01e",
-        "0ad"
+        "063",
+        "05a"
       ],
       "properties": {
         "size": "T",
@@ -492,21 +492,21 @@
       "type": "Creature",
       "source_file": "DoSI",
       "mentions": [
+        "038",
         "01f",
-        "070",
-        "0e7",
-        "02a",
-        "039",
-        "025",
-        "061",
+        "04e",
         "054",
         "030",
-        "038",
-        "04e",
+        "02a",
+        "0e7",
+        "025",
+        "061",
+        "06a",
+        "070",
         "028",
-        "033",
+        "039",
         "04c",
-        "06a"
+        "033"
       ],
       "properties": {
         "size": "M",
@@ -578,13 +578,13 @@
       "type": "Creature",
       "source_file": "DoSI",
       "mentions": [
-        "0e7",
-        "02a",
-        "025",
-        "034",
+        "020",
         "038",
-        "02c",
-        "020"
+        "034",
+        "02a",
+        "0e7",
+        "025",
+        "02c"
       ],
       "properties": {
         "size": "M",
@@ -637,10 +637,10 @@
       "type": "Item",
       "source_file": "PHB",
       "mentions": [
-        "0b6",
-        "02c",
         "096",
-        "0c1"
+        "0c1",
+        "0b6",
+        "02c"
       ],
       "properties": {
         "level": 1,
@@ -898,10 +898,10 @@
       "type": "Creature",
       "source_file": "DoSI",
       "mentions": [
-        "070",
-        "0e7",
-        "068",
         "054",
+        "0e7",
+        "070",
+        "068",
         "04c"
       ],
       "properties": {
@@ -951,8 +951,8 @@
       "type": "Item",
       "source_file": "XPHB",
       "mentions": [
-        "04e",
         "076",
+        "04e",
         "0a4"
       ],
       "properties": {
@@ -968,11 +968,11 @@
       "type": "Creature",
       "source_file": "MM",
       "mentions": [
-        "068",
-        "05b",
-        "054",
         "05f",
-        "066"
+        "054",
+        "066",
+        "068",
+        "05b"
       ],
       "properties": {
         "size": "M",
@@ -1018,10 +1018,10 @@
       "type": "Creature",
       "source_file": "MM",
       "mentions": [
-        "054",
+        "05f",
         "063",
-        "05b",
-        "05f"
+        "054",
+        "05b"
       ],
       "properties": {
         "size": "S",
@@ -1260,11 +1260,11 @@
       "type": "Creature",
       "source_file": "MM",
       "mentions": [
-        "07c",
-        "09a",
-        "099",
+        "09c",
         "073",
-        "09c"
+        "07c",
+        "099",
+        "09a"
       ],
       "properties": {
         "size": "M",
@@ -1303,8 +1303,8 @@
       "type": "Creature",
       "source_file": "MM",
       "mentions": [
-        "098",
-        "074"
+        "074",
+        "098"
       ],
       "properties": {
         "size": "M",
@@ -1372,9 +1372,9 @@
       "type": "Item",
       "source_file": "XPHB",
       "mentions": [
+        "096",
         "0b8",
-        "085",
-        "096"
+        "085"
       ],
       "properties": {
         "rarity": "none",
@@ -1537,9 +1537,9 @@
       "type": "Creature",
       "source_file": "MM",
       "mentions": [
-        "0a2",
         "0b9",
-        "0c2"
+        "0c2",
+        "0a2"
       ],
       "properties": {
         "size": "M",
@@ -1586,8 +1586,8 @@
       "source_file": "MM",
       "mentions": [
         "0bf",
-        "0a2",
-        "0c2"
+        "0c2",
+        "0a2"
       ],
       "properties": {
         "size": "M",

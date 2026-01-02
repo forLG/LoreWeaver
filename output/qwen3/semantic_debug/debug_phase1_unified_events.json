@@ -1,226 +1,732 @@
 [
   {
-    "label": "Introduction to Dangers",
-    "type": "discovery",
-    "participants": [
-      "adventurers"
-    ],
-    "location": "dragons_rest",
-    "description": "Characters learn about the dangers facing Stormwreak Isle",
-    "id": "introduction_to_dangers",
-    "source_node": "Chapter 1: Dragon's Rest"
-  },
-  {
-    "label": "Pursuit",
+    "label": "Monster_Encounter",
     "type": "encounter",
     "participants": [
-      "dragon_residents",
-      "zombie"
+      "generic_monster"
     ],
-    "location": "lower_path",
-    "description": "Two residents flee while being chased by three sailor-zombie attackers",
-    "id": "pursuit",
+    "location": "ship_deck",
+    "description": "A monstrous creature climbs aboard the ship's deck.",
+    "id": "monster_encounter",
     "source_node": ""
   },
   {
-    "label": "Crash Investigation",
+    "label": "Tribute Demand",
+    "type": "dialogue",
+    "participants": [
+      "scaled_queen"
+    ],
+    "location": "stormwreck_isle",
+    "description": "A speaker claims these waters belong to the Scaled Queen and asserts their right to collect tribute",
+    "id": "tribute_demand",
+    "source_node": ""
+  },
+  {
+    "label": "Dialogue_with_Kobolds",
+    "type": "dialogue",
+    "participants": [
+      "agga_kobold"
+    ],
+    "location": "cloister",
+    "description": "Kobolds barrage the travelers with questions upon learning their identity",
+    "id": "dialogue_with_kobolds",
+    "source_node": ""
+  },
+  {
+    "label": "Ship Crash Discovery",
+    "type": "discovery",
+    "participants": [
+      "rix"
+    ],
+    "location": "stormwreck_isle",
+    "description": "Rix witnesses a ship crashing on the northern rocks",
+    "id": "ship_crash_discovery",
+    "source_node": "Kobolds"
+  },
+  {
+    "label": "Tattoo Symbol Recognition",
+    "type": "discovery",
+    "participants": [
+      "tarak"
+    ],
+    "location": "stormwreck_isle",
+    "description": "Character identifies the gold hangman's noose tattoo as a symbol of the Gilded Gallows thieves' guild.",
+    "id": "tattoo_symbol_recognition",
+    "source_node": "Tarak"
+  },
+  {
+    "label": "Blocked Mushroom Harvest",
+    "type": "exploration",
+    "participants": [
+      "tarak"
+    ],
+    "location": "sea_caves",
+    "description": "Tarak's attempt to gather heart cap mushrooms from myconids is thwarted by a fungal octopus guardian.",
+    "id": "blocked_mushroom_harvest",
+    "source_node": "Tarak"
+  },
+  {
+    "label": "discovery_of_plaza",
+    "type": "discovery",
+    "participants": [],
+    "location": "cliffside_path",
+    "description": "The path widens into a long plaza with six open doorways carved into the cliff wall",
+    "id": "discovery_of_plaza",
+    "source_node": ""
+  },
+  {
+    "label": "discovery_of_statue",
+    "type": "discovery",
+    "participants": [],
+    "location": "plaza_above_bay",
+    "description": "A massive stone statue of a dragon overlooks the plaza",
+    "id": "discovery_of_statue",
+    "source_node": ""
+  },
+  {
+    "label": "Description",
+    "type": "observation",
+    "participants": [],
+    "location": "dragon_rest",
+    "description": "Text describes monastic cells layout and furnishings",
+    "id": "description",
+    "source_node": "Cells"
+  },
+  {
+    "label": "None",
+    "type": "",
+    "participants": [],
+    "location": null,
+    "description": "Text contains no actionable events.",
+    "id": "none",
+    "source_node": "About Bahamut"
+  },
+  {
+    "label": "Zombie Encounter",
+    "type": "combat",
+    "participants": [
+      "zombie",
+      "adventurers"
+    ],
+    "location": "cloister",
+    "description": "Adventurers fight three zombies threatening Blepp and Tarak",
+    "id": "zombie_encounter",
+    "source_node": "Zombie Resurgence"
+  },
+  {
+    "label": "Dialogue with Runara",
+    "type": "dialogue",
+    "participants": [
+      "runara",
+      "adventurers"
+    ],
+    "location": "cloister",
+    "description": "Runara reveals the wrecked ship as the zombie source",
+    "id": "dialogue_with_runara",
+    "source_node": "Zombie Resurgence"
+  },
+  {
+    "label": "Investigation Quest",
     "type": "quest",
     "participants": [
+      "adventurers"
+    ],
+    "location": "shipwreck",
+    "description": "Characters tasked to investigate the wrecked ship",
+    "id": "investigation_quest",
+    "source_node": "Zombie Resurgence"
+  },
+  {
+    "label": "Wreck Investigation Prompt",
+    "type": "discovery",
+    "participants": [
+      "character_party",
       "varnoth",
       "rix"
     ],
-    "location": "rocks_north_of_dragons_rest",
-    "description": "Characters learn about mysterious shipwrecks and are encouraged to investigate causes",
-    "id": "crash_investigation",
+    "location": "rocks_north_of_dragon_rest",
+    "description": "Varnoth and the kobold Rix report a recent shipwreck, hinting at supernatural causes.",
+    "id": "wreck_investigation_prompt",
     "source_node": "Shipwreck"
   },
   {
-    "label": "Compass Rose Revelation",
-    "type": "discovery",
+    "label": "Dialogue About Dream",
+    "type": "dialogue",
     "participants": [
+      "runara"
+    ],
+    "location": "compass_rose",
+    "description": "Runara discusses the cleric's dream and suggests zombies relate to the hunger of death",
+    "id": "dialogue_about_dream",
+    "source_node": "The Cleric"
+  },
+  {
+    "label": "Destiny Discussion Upon Arrival",
+    "type": "dialogue",
+    "participants": [
+      "character",
+      "runara"
+    ],
+    "location": "cloister",
+    "description": "Character discusses destiny with Runara upon arrival",
+    "id": "destiny_discussion_upon_arrival",
+    "source_node": "The Fighter"
+  },
+  {
+    "label": "Destiny Reflection After Quests",
+    "type": "dialogue",
+    "participants": [
+      "character",
+      "runara"
+    ],
+    "location": "cloister",
+    "description": "Runara prompts character to consider heroic actions shaping destiny",
+    "id": "destiny_reflection_after_quests",
+    "source_node": "The Fighter"
+  },
+  {
+    "label": "Final Encouragement",
+    "type": "dialogue",
+    "participants": [
+      "character",
+      "runara"
+    ],
+    "location": "cloister",
+    "description": "Runara assures character destiny will become clearer",
+    "id": "final_encouragement",
+    "source_node": "The Fighter"
+  },
+  {
+    "label": "Initial Encounter",
+    "type": "dialogue",
+    "participants": [
+      "player_character",
       "runara"
     ],
     "location": "dragon_rest",
-    "description": "Runara directs attention to the ancient wreck of Compass Rose as potential answers",
-    "id": "compass_rose_revelation",
-    "source_node": "Shipwreck"
+    "description": "Paladin arrives in Dragon's Rest and meets Runara.",
+    "id": "initial_encounter",
+    "source_node": "The Paladin"
   },
   {
-    "label": "Rescue Scenario",
-    "type": "discovery",
+    "label": "Guidance from Elders",
+    "type": "dialogue",
     "participants": [
+      "player_character",
+      "tarak",
+      "varnoth"
+    ],
+    "location": "dragon_rest",
+    "description": "Runara directs the paladin to consult Tarak and Varnoth about overcoming corruption.",
+    "id": "guidance_from_elders",
+    "source_node": "The Paladin"
+  },
+  {
+    "label": "Temple Reflection",
+    "type": "exploration",
+    "participants": [
+      "player_character"
+    ],
+    "location": "temple_of_bahamut",
+    "description": "Paladin spends time meditating in the temple of Bahamut.",
+    "id": "temple_reflection",
+    "source_node": "The Paladin"
+  },
+  {
+    "label": "Final Counsel",
+    "type": "dialogue",
+    "participants": [
+      "player_character",
       "runara"
     ],
-    "location": "temple_area_a5",
-    "description": "Characters awaken in the temple after being rescued by Runara",
-    "id": "rescue_scenario",
-    "source_node": "Runara Saves the Day!"
+    "location": "dragon_rest",
+    "description": "Runara questions the paladin about lessons learned against corruption.",
+    "id": "final_counsel",
+    "source_node": "The Paladin"
   },
   {
-    "label": "Tide Shift Mechanics",
+    "label": "Dialogue About Past Betrayal",
+    "type": "dialogue",
+    "participants": [
+      "tarak"
+    ],
+    "location": "dragon_rest",
+    "description": "Tarak recounts his betrayal of the guild and tragic love affair, advising the rogue to abandon crime.",
+    "id": "dialogue_about_past_betrayal",
+    "source_node": "The Rogue"
+  },
+  {
+    "label": "Guardian Attack",
+    "type": "combat",
+    "participants": [
+      "adventurers",
+      "fume_drake"
+    ],
+    "location": "hot_spring",
+    "description": "Three Fume Drakes emerge from the hot spring waters to attack intruders attempting to collect mushrooms or access the spring.",
+    "id": "guardian_attack",
+    "source_node": "Hot Springs Havoc"
+  },
+  {
+    "label": "Magical_Regeneration_Benefit",
     "type": "discovery",
+    "participants": [
+      "player_characters"
+    ],
+    "location": "hot_spring",
+    "description": "Bathing in the spring grants temporary hit point recovery through Hit Dice rolls",
+    "id": "magical_regeneration_benefit",
+    "source_node": "Spring Waters"
+  },
+  {
+    "label": "Level Adjustment Notice",
+    "type": "announcement",
     "participants": [],
     "location": "seagrow_caves",
-    "description": "Description of tidal patterns affecting access to submerged sections of the caves",
-    "id": "tide_shift_mechanics",
+    "description": "Text notes level-based difficulty adjustments for gameplay progression",
+    "id": "level_adjustment_notice",
+    "source_node": "Chapter 2: Seagrow Caves"
+  },
+  {
+    "label": "Blight_Spread_Discovery",
+    "type": "discovery",
+    "participants": [
+      "myconid_adult",
+      "myconid_sprout",
+      "sinensa"
+    ],
+    "location": "seagrow_caves",
+    "description": "A blight originating from the tomb of Sharruth has poisoned the myconid colonies, killing their leader Sinensa.",
+    "id": "blight_spread_discovery",
+    "source_node": "Caves Overview"
+  },
+  {
+    "label": "Vent_Blockade_Event",
+    "type": "discovery",
+    "participants": [],
+    "location": "cavern_at_back_seagrow_caves",
+    "description": "Blocked vents near Seagrow Caves caused toxic fumes from Sharruth's tomb to spill into the myconid caves.",
+    "id": "vent_blockade_event",
+    "source_node": "Caves Overview"
+  },
+  {
+    "label": "Stirge_Encounter",
+    "type": "encounter",
+    "participants": [
+      "stirges"
+    ],
+    "location": "seagrow_caves",
+    "description": "Blood-sucking stirges nest in the caves, posing a danger to intruders despite avoiding the fungus-eating myconids.",
+    "id": "stirge_encounter",
+    "source_node": "Caves Overview"
+  },
+  {
+    "label": "Travel Options",
+    "type": "exploration",
+    "participants": [],
+    "location": "seagrow_caves",
+    "description": "Characters select between boating or hiking routes to reach Seagrow Caves",
+    "id": "travel_options",
+    "source_node": "Running This Chapter"
+  },
+  {
+    "label": "Tide_Cycle_Description",
+    "type": "observation",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "seagrow_caves",
+    "description": "Text details tidal patterns affecting access to the caves",
+    "id": "tide_cycle_description",
     "source_node": "Entering the Caves"
   },
   {
-    "label": "Stirge Join Battle",
+    "label": "Guardian Encounter",
     "type": "encounter",
+    "participants": [
+      "adventurers",
+      "spore_servant_octopus"
+    ],
+    "location": "entrance_tunnel",
+    "description": "A spore servant octopus ambushes intruders in the entrance tunnel.",
+    "id": "guardian_encounter",
+    "source_node": "B1: Entrance Tunnel"
+  },
+  {
+    "label": "Stirge_Join_Battle",
+    "type": "combat",
     "participants": [
       "adventurers",
       "stirge"
     ],
     "location": "entrance_tunnel",
-    "description": "Two stirge cling to the tunnel ceiling and join combat if fighting erupts in this area",
+    "description": "Two stirge cling to the tunnel ceiling and join the战斗 if fighting breaks out in this area.",
     "id": "stirge_join_battle",
     "source_node": "2nd-Level Characters"
   },
   {
-    "label": "Mushroom Stirs",
+    "label": "Discovery",
     "type": "discovery",
     "participants": [
-      "adventurers"
+      "adventurers",
+      "sickly_mushroom"
     ],
-    "location": "fungus_farm_cavern",
-    "description": "A sickly-looking mushroom stirs to life and extends tendrils toward the party.",
-    "id": "mushroom_stirs",
+    "location": "fungus_farm",
+    "description": "A sentient mushroom emerges from the ground with pulsating tendrils",
+    "id": "discovery",
     "source_node": ""
   },
   {
-    "label": "Discovery of Heart Cap Mushrooms",
+    "label": "Fungal Ambush",
+    "type": "combat",
+    "participants": [
+      "player_characters",
+      "violet_fungus"
+    ],
+    "location": "fungus_farm",
+    "description": "Three violet fungi ambush the party, with two remaining stationary until provoked",
+    "id": "fungal_ambush",
+    "source_node": "Running the Combat"
+  },
+  {
+    "label": "Environmental Hazard",
     "type": "discovery",
     "participants": [
-      "adventurers"
+      "player_characters"
     ],
-    "location": "fungus_farm_cavern",
-    "description": "Characters discover heart cap mushrooms requiring a skill check to harvest.",
-    "id": "discovery_of_heart_cap_mushrooms",
+    "location": "fungus_farm",
+    "description": "Characters discover the deceptive appearance of non-threatening purple fungi",
+    "id": "environmental_hazard",
+    "source_node": "Running the Combat"
+  },
+  {
+    "label": "Encountering Stirges",
+    "type": "encounter",
+    "participants": [
+      "stirges"
+    ],
+    "location": "unknown",
+    "description": "Two stirges are added to the encounter for 2nd-level characters.",
+    "id": "encountering_stirges",
+    "source_node": "2nd-Level Characters"
+  },
+  {
+    "label": "Fire_Snake_Egg_Discovery",
+    "type": "discovery",
+    "location": "b6_crystal_cave",
+    "description": "Adventurers discover 25 obsidian fragments worth 10 gp each from a shattered fire snake egg",
+    "id": "fire_snake_egg_discovery",
+    "participants": [],
     "source_node": "Treasure"
   },
   {
-    "label": "Vigilant Defense",
-    "type": "encounter",
+    "label": "Sinensa Grants Permission",
+    "type": "dialogue",
     "participants": [
-      "agrinc",
-      "omphalo"
+      "party",
+      "sinensa_myconid_adult"
     ],
-    "location": "circle_chamber",
-    "description": "Conscious myconids aggressively defend against unescorted intruders",
-    "id": "vigilant_defense",
-    "source_node": "B4: Circle Chamber"
+    "location": "area_b5",
+    "description": "Sinensa awards the party with the ruby morel and permits retention of other loot",
+    "id": "sinensa_grants_permission",
+    "source_node": "Ending This Chapter"
   },
   {
-    "label": "Meld State",
+    "label": "Elixir Creation",
+    "type": "discovery",
+    "participants": [
+      "party",
+      "tarak_human"
+    ],
+    "location": "dragon_rest",
+    "description": "Tarak reveals method to craft elixir of health using ruby morel",
+    "id": "elixir_creation",
+    "source_node": "Ending This Chapter"
+  },
+  {
+    "label": "Zombie_Encounters_in_Wrecks",
+    "type": "discovery",
+    "participants": [
+      "zombie",
+      "compass_rose"
+    ],
+    "location": "compass_rose",
+    "description": "Characters exploring other wrecks discover additional zombies animated by the talisman in Compass Rose's hold.",
+    "id": "zombie_encounters_in_wrecks",
+    "source_node": "Other Shipwrecks"
+  },
+  {
+    "label": "Giant_Octopus_Encounter",
+    "type": "combat",
+    "participants": [
+      "spore_servant_octopus",
+      "adventurers"
+    ],
+    "location": "compass_rose",
+    "description": "Giant octopuses ambush explorers in submerged wreckage.",
+    "id": "giant_octopus_encounter",
+    "source_node": "Other Shipwrecks"
+  },
+  {
+    "label": "Ghoul_Danger_Aboard",
+    "type": "discovery",
+    "participants": [
+      "ghoul",
+      "adventurers"
+    ],
+    "location": "compass_rose",
+    "description": "Unusual dangers like ghouls lurk within other shipwrecks.",
+    "id": "ghoul_danger_aboard",
+    "source_node": "Other Shipwrecks"
+  },
+  {
+    "label": "Description_of_Wreck_Structure",
+    "type": "observation",
+    "participants": [],
+    "location": "compass_rose",
+    "description": "Text describes structural features of the shipwreck including walls, ceilings, doors, and lighting conditions.",
+    "id": "description_of_wreck_structure",
+    "source_node": "Shipwreck Features"
+  },
+  {
+    "label": "Exploration",
+    "type": "exploration",
+    "participants": [],
+    "location": "stormwreck_isle",
+    "description": "Adventurers observe a derelict ship wedged against rock formations and massive dragon bones",
+    "id": "exploration",
+    "source_node": ""
+  },
+  {
+    "label": "Exploration",
+    "type": "exploration",
+    "participants": [],
+    "location": "ship_deck",
+    "description": "Adventurers explore the main deck of the shipwreck, noting environmental details and discovering potential access points below.",
+    "id": "exploration",
+    "source_node": ""
+  },
+  {
+    "label": "Treasure_Discovery",
+    "type": "discovery",
+    "location": "ship_deck",
+    "description": "Characters discover valuable loot in the crow's nest including jewelry and gems",
+    "id": "treasure_discovery",
+    "participants": [],
+    "source_node": "Treasure"
+  },
+  {
+    "label": "Broken Ballista",
+    "type": "observation",
+    "participants": [],
+    "location": "ship_deck",
+    "description": "The ballista is found to be nonfunctional",
+    "id": "broken_ballista",
+    "source_node": "C2: Forecastle"
+  },
+  {
+    "label": "Observation",
     "type": "observation",
     "participants": [
-      "craterel",
-      "pleuro",
-      "subrufus",
-      "virosa"
+      "small_crabs"
     ],
-    "location": "circle_chamber",
-    "description": "Four myconids enter a shared transcendental trance state",
-    "id": "meld_state",
-    "source_node": "B4: Circle Chamber"
+    "location": "galley",
+    "description": "Small, harmless crabs crawl over skeletal remains, creating an illusion of movement",
+    "id": "observation",
+    "source_node": "C5: Galley"
   },
   {
-    "label": "Defense of Sinensa",
-    "type": "combat",
-    "participants": [
-      "auranta",
-      "enok",
-      "sinensa"
-    ],
-    "location": "fungus_farm_cavern",
-    "description": "Myconid Adults attack intruders lacking fellow myconids while protecting their unconscious leader",
-    "id": "defense_of_sinensa",
-    "source_node": "B5: Sinensa's Sanctum"
-  },
-  {
-    "label": "Fume_Drake_Encounter",
-    "type": "encounter",
-    "participants": [
-      "fume_drake"
-    ],
-    "location": "crystal_cave",
-    "description": "Two Fume Drake attack intruders in the cave",
-    "id": "fume_drake_encounter",
-    "source_node": "B6: Crystal Cave"
-  },
-  {
-    "label": "Blight_Source_Discovered",
+    "label": "Suspicious_Movement",
     "type": "discovery",
+    "participants": [
+      "headless_skeleton"
+    ],
+    "location": "galley",
+    "description": "The skeleton appears to move unexpectedly",
+    "id": "suspicious_movement",
+    "source_node": ""
+  },
+  {
+    "label": "Floorboard Trap Activation",
+    "type": "trap",
     "participants": [],
-    "location": "crystal_cave",
-    "description": "Characters identify the tomb of Sharruth as the source of the blight",
-    "id": "blight_source_discovered",
-    "source_node": "B6: Crystal Cave"
+    "location": "cabin",
+    "description": "Triggering the floorboard releases a dart trap with an attack bonus of +5, dealing 2 (1d4) piercing damage and requiring a 11 Constitution saving throw against poison damage.",
+    "id": "floorboard_trap_activation",
+    "source_node": "Floorboard Stash"
   },
   {
-    "label": "Fissure_Blocked_By_Crystal",
-    "type": "discovery",
+    "label": "Environmental Guidance",
+    "type": "exploration",
     "participants": [],
-    "location": "crystal_cave",
-    "description": "The fissure is blocked by an orange crystal emitting light",
-    "id": "fissure_blocked_by_crystal",
-    "source_node": "B6: Crystal Cave"
+    "location": "submerged_hold",
+    "description": "Text references climbing/swimming mechanics and breathable surfaces in the submerged hold",
+    "id": "environmental_guidance",
+    "source_node": "C9: Hold"
   },
   {
-    "label": "Breaking_Fire_Crystal",
-    "type": "discovery",
-    "participants": [
-      "crystal_cave"
-    ],
-    "location": "crystal_cave",
-    "description": "Destroying the orange crystal stops the blight and releases a fire snake.",
-    "id": "breaking_fire_crystal",
-    "source_node": "Fire Crystal"
-  },
-  {
-    "label": "Fire_Snake_Encounter",
-    "type": "combat",
-    "participants": [
-      "fire_snake"
-    ],
-    "location": "crystal_cave",
-    "description": "A fire snake emerges from the shattered crystal and attacks the characters.",
-    "id": "fire_snake_encounter",
-    "source_node": "Fire Crystal"
-  },
-  {
-    "label": "Sunlight_Refractive_Effect",
-    "type": "discovery",
+    "label": "Exploration",
+    "type": "exploration",
     "participants": [],
-    "location": "crystal_cave",
-    "description": "Crystals refract sunlight, flooding the cave with brilliant illumination.",
-    "id": "sunlight_refractive_effect",
-    "source_node": "Fire Crystal"
+    "location": "clifftop_observatory",
+    "description": "Characters plan to explore the Clifftop Observatory via various routes",
+    "id": "exploration",
+    "source_node": "Running This Chapter"
   },
   {
-    "label": "Third Fume Drake Appearance",
+    "label": "Winged Shape Observed",
+    "type": "observation",
+    "participants": [
+      "adventurers",
+      "blue_dragon_wyrmling"
+    ],
+    "location": "stormwreck_isle",
+    "description": "Adventurers spot a winged, glittering blue shape swooping overhead after hearing a screeching roar",
+    "id": "winged_shape_observed",
+    "source_node": ""
+  },
+  {
+    "label": "Exploration",
+    "type": "exploration",
+    "participants": [],
+    "location": "d1",
+    "description": "Characters explore cliffs leading to area D1",
+    "id": "exploration",
+    "source_node": "Approaching by Water"
+  },
+  {
+    "label": "Exploration",
+    "type": "exploration",
+    "participants": [],
+    "location": "d2",
+    "description": "Characters explore platforms atop pillars (D2-D5)",
+    "id": "exploration",
+    "source_node": "Approaching by Water"
+  },
+  {
+    "label": "ConsiderApproachOptions",
+    "type": "exploration",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "stormwreck_isle",
+    "description": "Evaluating methods to ascend cliffs or climb to ruins",
+    "id": "considerapproachoptions",
+    "source_node": ""
+  },
+  {
+    "label": "SpotDragonWyrmling",
     "type": "encounter",
     "participants": [
       "adventurers",
-      "fume_drake"
+      "blue_dragon_wyrmling"
     ],
-    "location": "crystal_cave",
-    "description": "A third fume drake emerges in the room when the characters first arrive.",
-    "id": "third_fume_drake_appearance",
-    "source_node": "2nd-Level Characters"
+    "location": "column_far_from_stormwreck_isle",
+    "description": "A glowing blue dragon wyrmling is spotted resting on a distant column",
+    "id": "spotdragonwyrmling",
+    "source_node": ""
   },
   {
-    "label": "Fire Snake Hatch and Additional Fume Drakes",
-    "type": "encounter",
+    "label": "Bridge Activation",
+    "type": "puzzle",
     "participants": [
-      "adventurers",
-      "fire_snake",
-      "fume_drake"
+      "moonstone_key"
     ],
-    "location": "crystal_cave",
-    "description": "As the fire snake hatches from its egg, two more fume drakes emerge from the purple crystals.",
-    "id": "fire_snake_hatch_and_additional_fume_drakes",
-    "source_node": "2nd-Level Characters"
+    "location": "clifftop_observatory",
+    "description": "Using the moonstone key activates an energy bridge across the gap",
+    "id": "bridge_activation",
+    "source_node": "D4: Isolated Study"
+  },
+  {
+    "label": "Exploration Challenge",
+    "type": "exploration",
+    "participants": [
+      "player_characters"
+    ],
+    "location": "clifftop_observatory",
+    "description": "Characters seek creative solutions to access the isolated study",
+    "id": "exploration_challenge",
+    "source_node": "Clever Solutions"
+  },
+  {
+    "label": "Dragon Encounter Choice",
+    "type": "discovery",
+    "participants": [
+      "player_characters",
+      "sparkrender"
+    ],
+    "location": "clifftop_observatory_main_floor",
+    "description": "Players must choose between battling Sparkrender or navigating to the secret library",
+    "id": "dragon_encounter_choice",
+    "source_node": "D5: Observatory Tower"
+  },
+  {
+    "label": "Potential Rescue Mission",
+    "type": "quest",
+    "participants": [
+      "player_characters",
+      "bronzedragon_wyrmling"
+    ],
+    "location": "d6_secret_library",
+    "description": "Option to free the imprisoned Bronze Dragon Wyrmling",
+    "id": "potential_rescue_mission",
+    "source_node": "D5: Observatory Tower"
+  },
+  {
+    "label": "Presence of Blue Dragon",
+    "type": "discovery",
+    "participants": [
+      "blue_dragon_wyrmling"
+    ],
+    "location": "clifftop_observatory",
+    "description": "A blue dragon wyrmling is found sleeping in the northeast corner of the tower",
+    "id": "presence_of_blue_dragon",
+    "source_node": ""
+  },
+  {
+    "label": "Avoid Awakening Dragon",
+    "type": "exploration",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "clifftop_observatory",
+    "description": "Characters attempt silent movement to bypass dragon detection",
+    "id": "avoid_awakening_dragon",
+    "source_node": "Sneaking Around"
+  },
+  {
+    "label": "Statue Interaction Challenge",
+    "type": "puzzle",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "clifftop_observatory",
+    "description": "Statues require stealth checks to prevent waking Sparkrender",
+    "id": "statue_interaction_challenge",
+    "source_node": "Sneaking Around"
+  },
+  {
+    "label": "Freeing Aidron",
+    "type": "discovery",
+    "participants": [
+      "aidron"
+    ],
+    "location": "clifftop_observatory",
+    "description": "Aidron is bound by chains requiring three clasps to be removed, reducing his movement after liberation.",
+    "id": "freeing_aidron",
+    "source_node": "Freeing Aidron"
+  },
+  {
+    "label": "Creature Listing",
+    "type": "discovery",
+    "participants": [
+      "bronze_dragon_wyrmling",
+      "ghoul",
+      "harpy"
+    ],
+    "location": "unknown",
+    "description": "Adventure features these creatures in its lore",
+    "id": "creature_listing",
+    "source_node": "Creature Descriptions"
   }
 ]

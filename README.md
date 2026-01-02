@@ -295,7 +295,33 @@ python -m main --stage entity --model deepseek-chat
 
 #### Usage
 
-##### 1. Generate Visualizations (No Neo4j required)
+##### 1. Visualize Semantic Graph (Small Model Pipeline)
+
+For the heterogeneous graph from `main_semantic.py`:
+
+```bash
+# Full graph visualization
+python scripts/visualize_semantic_graph.py --graph output/qwen3/semantic_graph.json
+
+# Custom output path
+python scripts/visualize_semantic_graph.py --graph output/qwen3/semantic_graph.json --output my_graph.html
+
+# Only show statistics
+python scripts/visualize_semantic_graph.py --graph output/qwen3/semantic_graph.json --stats-only
+
+# Filtered visualizations (show only specific types)
+python scripts/visualize_filtered_graph.py --graph output/qwen3/semantic_graph.json --filter creature,event
+python scripts/visualize_filtered_graph.py --graph output/qwen3/semantic_graph.json --filter location
+python scripts/visualize_filtered_graph.py --graph output/qwen3/semantic_graph.json --filter item
+```
+
+Filter options: `creature`, `location`, `item`, `group`, `event` (comma-separated for multiple).
+
+Output: Interactive HTML file with zoom, pan, and hover tooltips.
+
+##### 2. Visualize Large Model Pipeline Graphs
+
+For the separate location/entity graphs from `main.py`:
 
 ```bash
 python scripts/build_graph.py --mode visualize
@@ -303,7 +329,7 @@ python scripts/build_graph.py --mode visualize
 
 Output: `output/visualizations/{location,entity,combined}_graph.html`
 
-##### 2. Import to Neo4j (Optional, for GraphRAG/Querying)
+##### 3. Import to Neo4j (Optional, for GraphRAG/Querying)
 
 ```bash
 # Install and start Neo4j first
@@ -312,7 +338,7 @@ python scripts/build_graph.py --mode neo4j
 python scripts/build_graph.py --mode both
 ```
 
-##### 3. Visualize from Neo4j with Custom Queries
+##### 4. Visualize from Neo4j with Custom Queries
 
 ```bash
 # After importing to Neo4j, use Cypher queries to filter data

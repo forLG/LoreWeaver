@@ -66,8 +66,13 @@ def parse_ner_entities(text: str) -> dict[str, Any]:
             # Save previous entity if valid
             label = current.get('label', '').strip()
             eid = current.get('id', '').strip()
+            aliases = current.get('aliases', [])
 
             if label or eid:
+                # If no label, try to use first alias as label
+                if not label and aliases:
+                    label = str(aliases[0]).strip('"\'')
+                    current['label'] = label
                 if not eid:
                     eid = label.lower().replace(' ', '_').replace("'", "")
                     current['id'] = eid
@@ -116,7 +121,12 @@ def parse_ner_entities(text: str) -> dict[str, Any]:
     # Don't forget the last entity
     label = current.get('label', '').strip()
     eid = current.get('id', '').strip()
+    aliases = current.get('aliases', [])
     if label or eid:
+        # If no label, try to use first alias as label
+        if not label and aliases:
+            label = str(aliases[0]).strip('"\'')
+            current['label'] = label
         if not eid:
             eid = label.lower().replace(' ', '_').replace("'", "")
             current['id'] = eid

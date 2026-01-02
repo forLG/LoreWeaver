@@ -11,18 +11,20 @@ Usage:
     cd /path/to/LoreWeaver
     python -m scripts.evaluation.debug_extraction --node-id 01e --parsed output/qwen3/adventure_parsed.json
 """
+# ruff: noqa: E402 - Module level imports not at top (required for sys.path modification)
+import sys
+from pathlib import Path
+
+# Add project root to path for imports (must be before project imports)
+project_root = Path(__file__).parent.parent.parent
+sys.path.insert(0, str(project_root))
+
 import argparse
 import asyncio
 import json
 import os
-import sys
-from pathlib import Path
 
 from dotenv import load_dotenv
-
-# Add project root to path for imports
-project_root = Path(__file__).parent.parent.parent
-sys.path.insert(0, str(project_root))
 
 from llm.small_model_processor import SmallModelProcessor
 from utils.logger import logger, setup_logger
@@ -118,7 +120,7 @@ async def debug_extraction(
             top_p=0.90,
             max_tokens=max_tokens,
             enable_thinking=False,
-            stop=["</events>\n", "</events>"]
+            stop=None  # Don't stop early - let LLM complete the response
         )
 
         logger.info(f"\n{'='*80}")

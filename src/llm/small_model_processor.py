@@ -1059,7 +1059,7 @@ class SmallModelProcessor(BaseLLMProcessor):
                         top_p=0.90,
                         max_tokens=self.max_tokens,
                         enable_thinking=False,
-                        stop=["</events>\n", "</events>"]  # Stop after closing tag
+                        stop=None  # Don't stop early - let LLM complete the response
                     )
 
                     result = parse_unified_extraction(raw_response)

@@ -151,6 +151,8 @@ def parse_events(text: str) -> dict[str, Any]:
         Description: While searching, the party discovers a rusty key
         </events>
 
+    Or just the events content without tags (for fallback parsing).
+
     Returns:
         {"events": [...]}
     """
@@ -159,9 +161,19 @@ def parse_events(text: str) -> dict[str, Any]:
     # Extract events section if present
     events_match = re.search(r'<events>(.*?)</events>', text, re.DOTALL)
     if not events_match:
-        return {"events": events}
+        # Fallback: try to extract events section without closing tag
+        events_match = re.search(r'<events>(.*)$', text, re.DOTALL)
 
-    events_text = events_match.group(1)
+    # If still no match, assume the text is already the events content
+    if not events_match:
+        # Check if text looks like it starts with an event
+        if re.search(r'^\s*Event:', text, re.MULTILINE):
+            events_text = text
+        else:
+            return {"events": events}
+    else:
+        events_text = events_match.group(1)
+
     current = {}
 
     for line in events_text.strip().split('\n'):
@@ -489,9 +501,16 @@ def parse_unified_extraction(text: str) -> dict[str, Any]:
         entities_result = parse_ner_entities(entities_text)
         result["entities"] = entities_result.get("entities", [])
 
-    # Extract events section
-    events_result = parse_events(text)
-    result["events"] = events_result.get("events", [])
+    # Extract events section - be robust to missing closing tag
+    events_match = re.search(r'<events>(.*?)</events>', text, re.DOTALL)
+    if not events_match:
+        # Fallback: try to extract events section without closing tag
+        events_match = re.search(r'<events>(.*)$', text, re.DOTALL)
+
+    if events_match:
+        events_text = events_match.group(1)
+        events_result = parse_events(events_text)
+        result["events"] = events_result.get("events", [])
 
     return result
 

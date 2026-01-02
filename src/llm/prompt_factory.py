@@ -76,11 +76,11 @@ Rules for Extraction:
 Output Format (JSON ONLY):
 {{
     "nodes": [
-        {{ "id": "dragons_rest", "label": "Dragon's Rest", "type": "Region" }},
-        {{ "id": "a1", "label": "Cliffside Path (A1)", "type": "Path" }}
+        {{ "id": "old_temple", "label": "Old Temple", "type": "Building" }},
+        {{ "id": "a1", "label": "Forest Path (A1)", "type": "Path" }}
     ],
     "edges": [
-        {{ "source": "a1", "target": "dragons_rest", "relation": "part_of" }},
+        {{ "source": "a1", "target": "old_temple", "relation": "part_of" }},
         {{ "source": "a1", "target": "a2", "relation": "leads_to", "desc": "North path" }}
     ]
 }}
@@ -101,7 +101,7 @@ Raw Node List:
 
 Task:
 Identify duplicates and map them to a single CANONICAL ID.
-- If "dragon_s_rest" and "dragons_rest_ch1" are the same place, map "dragons_rest_ch1" -> "dragon_s_rest".
+- If "old_temple" and "old_temple_ch1" are the same place, map "old_temple_ch1" -> "old_temple".
 - If "A1" and "area_a1" are the same, map "area_a1" -> "A1".
 - Prefer shorter, cleaner IDs (e.g., "A1" over "area_a1_cliff").
 - Ignore distinct locations (do not merge "A1" and "A2").
@@ -110,7 +110,7 @@ Output Format (JSON ONLY):
 Return a dictionary where KEY is the duplicate ID and VALUE is the canonical ID.
 Only include IDs that need to change.
 {{
-    "dragons_rest_ch1": "dragons_rest",
+    "old_temple_ch1": "old_temple",
     "area_a1": "A1",
     "the_beach": "rocky_shore"
 }}
@@ -159,7 +159,7 @@ Input Text:
 TASK: Extract ONLY TOP-LEVEL locations (highest hierarchy levels).
 - Level 1: World (e.g., "The Forgotten Realms")
 - Level 2: Region/Coast (e.g., "The Sword Coast")
-- Level 3: Major Locations (e.g., "Stormwreck Isle", "Neverwinter", "Mount Hotenow")
+- Level 3: Major Locations (e.g., "Neverwinter", "Mount Hotenow", "Lost Mine")
 
 WHAT TO EXCLUDE:
 - Do NOT extract sub-locations like rooms, caves, decks, or specific areas
@@ -167,7 +167,7 @@ WHAT TO EXCLUDE:
 - Do NOT extract any location that is "part of" another location you're extracting
 
 OUTPUT REQUIREMENTS:
-- Use snake_case IDs (e.g., "the_forgotten_realms", "stormwreck_isle")
+- Use snake_case IDs (e.g., "the_forgotten_realms", "neverwinter")
 - Include type field (World, Region, Island, City, Mountain)
 - Create "part_of" edges showing the hierarchy
 
@@ -176,11 +176,11 @@ Output Format (JSON ONLY):
     "nodes": [
         {{ "id": "the_forgotten_realms", "label": "The Forgotten Realms", "type": "World" }},
         {{ "id": "the_sword_coast", "label": "The Sword Coast", "type": "Region" }},
-        {{ "id": "stormwreck_isle", "label": "Stormwreck Isle", "type": "Island" }}
+        {{ "id": "neverwinter", "label": "Neverwinter", "type": "City" }}
     ],
     "edges": [
         {{ "source": "the_sword_coast", "target": "the_forgotten_realms", "relation": "part_of" }},
-        {{ "source": "stormwreck_isle", "target": "the_sword_coast", "relation": "part_of" }}
+        {{ "source": "neverwinter", "target": "the_sword_coast", "relation": "part_of" }}
     ]
 }}
 """
@@ -392,32 +392,34 @@ TEXT TO PROCESS:
 TASK: Extract ALL named entities mentioned in this text.
 
 Entity Types to Extract:
-- Locations: places, buildings, rooms, geographic features (e.g., "Dragon's Rest", "The Cave", "Cliffside Path")
-- Creatures: monsters, NPCs, animals (e.g., "Runara", "Goblin Boss", "a zombie")
-- Items: objects, equipment, treasures (e.g., "Rusty Key", "Magic Sword")
-- Groups: organizations, parties, factions (e.g., "The Party", "Kobolds")
+- Locations: places, buildings, rooms, geographic features (e.g., "Old Temple", "The Cave", "Forest Path")
+- Creatures: monsters, NPCs, animals (e.g., "Merchant", "Goblin King", "a wolf")
+- Items: objects, equipment, treasures (e.g., "Ancient Key", "Magic Sword")
+- Groups: organizations, parties, factions (e.g., "The Party", "Guards", "Cultists")
 
 CRITICAL RULES:
-1. **ID Format**: Use snake_case IDs (e.g., "dragon_s_rest", "runara", "rusty_key")
+1. **ID Format**: Use snake_case IDs (e.g., "old_temple", "merchant", "ancient_key")
 
 2. **Extract Both Named and Unnamed Entities**:
-   - NAMED: "Dragon's Rest", "Runara" → extract with exact name
-   - UNNAMED but RELEVANT: "a zombie", "two sailors", "the harbor", "a statue" → extract with descriptive ID
-     - Use descriptive IDs: "zombie", "sailors", "harbor", "statue"
+   - NAMED: "Old Temple", "Thorin" → extract with exact name
+   - UNNAMED but RELEVANT: "a zombie", "two guards", "the armory", "a statue" → extract with descriptive ID
+     - Use descriptive IDs: "zombie", "guards", "armory", "statue"
      - If multiple unnamed entities of same type exist, append numbers: "zombie_1", "zombie_2"
    - SKIP: Pure background/scenery with no relevance: "sunlight", "grass", "overcast sky"
 
-3. **Be Decisive**: Extract entities confidently. Duplicates will be resolved later.
+3. **LIST-STYLE NPC DESCRIPTIONS**: When text describes multiple characters in list format (paragraphs starting with "Name does something..."), extract EACH name as a separate creature entity.
+
+4. **Be Decisive**: Extract entities confidently. Duplicates will be resolved later.
 
 Output Format (JSON ONLY):
 {{
     "entities": [
-        {{"id": "dragon_s_rest", "label": "Dragon's Rest", "type": "Location", "aliases": ["temple", "monastery"]}},
-        {{"id": "runara", "label": "Runara", "type": "Creature", "aliases": ["bronze dragon", "elder"]}},
+        {{"id": "old_temple", "label": "Old Temple", "type": "Location", "aliases": ["ruin"]}},
+        {{"id": "thorin", "label": "Thorin", "type": "Creature", "aliases": ["dwarf merchant"]}},
         {{"id": "zombie", "label": "Zombie", "type": "Creature", "aliases": []}},
-        {{"id": "sailors", "label": "Sailors", "type": "Creature", "aliases": ["two sailors"]}},
-        {{"id": "harbor", "label": "Harbor", "type": "Location", "aliases": ["calm harbor"]}},
-        {{"id": "statue", "label": "Statue", "type": "Item", "aliases": ["towering statue"]}}
+        {{"id": "guards", "label": "Guards", "type": "Creature", "aliases": ["two guards"]}},
+        {{"id": "armory", "label": "Armory", "type": "Location", "aliases": ["weapon room"]}},
+        {{"id": "statue", "label": "Statue", "type": "Item", "aliases": ["stone statue"]}}
     ]
 }}
 """
@@ -506,24 +508,26 @@ Entity Types to Extract:
 - Groups: organizations, parties, factions
 
 CRITICAL RULES:
-1. **ID Format**: Use snake_case IDs (e.g., dragon_s_rest, runara, rusty_key)
+1. **ID Format**: Use snake_case IDs (e.g., old_temple, thorin, ancient_key)
 
 2. **Extract Both Named and Unnamed Entities**:
-   - NAMED: "Dragon's Rest", "Runara" → extract with exact name
+   - NAMED: "Old Temple", "Thorin" → extract with exact name
    - UNNAMED GROUPS: If entities appear as a group in a specific context, use contextual ID
-     - Example: "zombies in the ship" → "zombies_in_ship"
+     - Example: "guards in the armory" → "guards_in_armory"
      - Example: "sailors on the dock" → "sailors_on_dock"
-     - Example: "goblins guarding the entrance" → "goblins_at_entrance"
+     - Example: "bandits at the entrance" → "bandits_at_entrance"
    - UNNAMED INDIVIDUALS: If entities act differently (distinct behaviors), treat separately
-     - Example: If one zombie attacks and another guards, create "attacking_zombie" and "guarding_zombie"
+     - Example: If one guard attacks and another patrols, create "attacking_guard" and "patrolling_guard"
      - Only use numbers (_1, _2, _3) when entities are truly indistinguishable and less than 10
    - SKIP: Pure background/scenery with no relevance: "sunlight", "grass", "overcast sky"
 
-3. **IF NO ENTITIES FOUND**: If the text contains no relevant entities, output <summary> instead
+3. **LIST-STYLE NPC DESCRIPTIONS**: When text describes multiple characters in list format (paragraphs starting with "Name does something..."), extract EACH name as a separate creature entity.
+
+4. **IF NO ENTITIES FOUND**: If the text contains no relevant entities, output <summary> instead
    - Explain why (text too short, only scenery, no named content, etc.)
    - This helps with debugging and tracing
 
-4. **OUTPUT FORMAT**:
+5. **OUTPUT FORMAT**:
    - If entities found: Wrap in <entities> tags
    - If no entities: Use <summary> tags with explanation
 
@@ -747,13 +751,16 @@ SECTION: {title}
 
 RULES:
 1. BE AGGRESSIVE - extract ANY creature, location, or item mentioned
-2. Generic groups: "zombies" → ID: zombies, is_generic: true, creature_type: undead
-3. Location types: area/building/room/feature/path
-4. ONLY use <summary> for truly empty text (pure atmospheric description)
+2. LIST-STYLE NPC DESCRIPTIONS: When text describes multiple characters in list format ("Name does something...", "Another Name has a trait..."), extract EACH name as a separate creature entity
+   - Pattern: Paragraphs starting with a proper name followed by description
+   - Extract every named character, even if only briefly described
+3. Generic groups: "guards", "zombies", "cultists" → mark is_generic: true
+4. Location types: area/building/room/feature/path
+5. ONLY use <summary> for truly empty text (pure atmospheric description with no entities)
 
 ENTITY TYPES:
 - Location (area/building/room/feature/path)
-- Creature (humanoid/beast/undead/dragon/etc)
+- Creature (humanoid/beast/undead/dragon/fey/etc)
 - Item (objects, equipment, treasures)
 - Group (organizations, parties)
 
@@ -781,27 +788,34 @@ Description: brief description
 
 EXAMPLES:
 <entities>
-Entity: Dragon's Rest
+Entity: Old Temple
 Type: Location
-ID: dragon_s_rest
+ID: old_temple
 LocationType: building
 IsGeneric: false
-Aliases: [temple]
+Aliases: [ruin]
 
-Entity: Zombies
+Entity: Bandit Guards
 Type: Creature
-ID: zombies
-CreatureType: undead
+ID: bandit_guards
+CreatureType: humanoid
 IsGeneric: true
-Aliases: [undead]
+Aliases: [bandits]
+
+Entity: Thorin Ironforge
+Type: Creature
+ID: thorin_ironforge
+CreatureType: dwarf
+IsGeneric: false
+Aliases: [blacksmith]
 </entities>
 
 <events>
-Event: Zombie Attack
+Event: Ambush
 Type: combat
-Participants: [adventurers, zombies]
-Location: dragon_s_rest
-Description: Zombies attack the party
+Participants: [adventurers, bandit_guards]
+Location: forest_path
+Description: Bandits attack the party on the road
 </events>
 
 IF NO ENTITIES/EVENTS:

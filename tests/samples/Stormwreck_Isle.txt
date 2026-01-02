@@ -1,5 +1,5 @@
 Sharruth
-Dragon’s Rest
+Dragon's Rest
 Sailors
 Zombies
 Runara
@@ -17,8 +17,8 @@ Rix
 Zark
 Tarak
 Varnoth
-MonasticCels
-WinchHouse
+Monastic Cells
+Winch House
 Kitchen
 Library
 Temple of Bahamut
@@ -50,13 +50,13 @@ Fire Crystal
 fire snake
 Cursed Shipwreck
 Main Deck
-Crow’s Nest
+Crow's Nest
 Harpy
 Forecastle
 Quarterdeck
-Captain‘s Quarters
+Captain's Quarters
 Hole to the Hold
-Galery
+Galley
 Crew Quarters
 Floorboard Stash
 Mess Hall
@@ -64,16 +64,16 @@ Lower Deck
 ghoul
 Hold
 Orcus
-Clifftop Obeservatory
+Clifftop Observatory
 overlook
-rotund a ruins
-golden scuplture
-fragon effigies
+rotunda ruins
+golden sculpture
+dragon effigies
 Energy Bridge Anchors
-KoboldCamp
-IsolatedStudy
+Kobold Camp
+Isolated Study
 Observatory Tower
-bluedragon wyrmling
+blue dragon wyrmling
 Secret Library
 Hidden Entrance
 Aidron

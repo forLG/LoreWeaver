@@ -42,11 +42,14 @@ python -m main --stage entity --model deepseek-chat
 #### Qwen3 8B
 
 ```bash
-python -m src.main --stage all --max-concurrent 50 --output-dir output/qwen3
+python -m main_semantic --model ./qwen3-8b-local/Qwen/Qwen3-8B --max-concurrent 50
 ```
-max output token is 32768 for Qwen3-8B, context window is 
+
+> max output token is 32768 for Qwen3-8B, but 8192 is already enough for our tasks.
 
 ### Graph Building & Visualization
+
+remaining TODO: this is depend on previous pipeline, which is under heavy development.
 
 <!-- #### Data Flow
 

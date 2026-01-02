@@ -8,17 +8,23 @@ Features fuzzy matching for:
 - Partial/substring matches
 
 Usage:
-    python -m evaluate_extraction --graph output/qwen3/semantic_graph.json \
-                                  --labels tests/samples/Stormwreck_Isle.txt
+    cd /path/to/LoreWeaver
+    python -m scripts.evaluation.evaluate_extraction --graph output/qwen3/semantic_graph.json \
+                                                    --labels tests/samples/Stormwreck_Isle.txt
 """
 import argparse
 import json
 import re
+import sys
 from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
 from rapidfuzz import fuzz, process
+
+# Add project root to path for imports
+project_root = Path(__file__).parent.parent.parent
+sys.path.insert(0, str(project_root))
 
 from utils.logger import logger, setup_logger
 

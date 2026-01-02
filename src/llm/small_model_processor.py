@@ -195,8 +195,15 @@ class SmallModelProcessor(BaseLLMProcessor):
         if entity_type == "Location":
             entity["location_type"] = "building"  # Default for locations
         elif entity_type == "Creature":
-            # Map creature_type from properties
-            entity["creature_type"] = props.get("creature_type", "Unknown")
+            # Map creature_type from properties - handle different data types
+            cr_type = props.get("creature_type", "Unknown")
+            if isinstance(cr_type, dict):
+                # If it's a dict, try to get a meaningful string value
+                cr_type = cr_type.get("type", str(cr_type))
+            elif isinstance(cr_type, list):
+                # If it's a list, join elements
+                cr_type = ", ".join(str(x) for x in cr_type) if cr_type else "Unknown"
+            entity["creature_type"] = str(cr_type) if cr_type else "Unknown"
             # Generic creatures are those with generic names (zombies, kobolds, etc.)
             entity["is_generic"] = _is_generic_creature(entity["label"])
         elif entity_type == "Item":

@@ -1,0 +1,296 @@
+[
+  {
+    "relation": "part_of",
+    "source": "stormwreck_isle",
+    "target": "sword_coast",
+    "desc": "Small island in the Sword Coast region"
+  },
+  {
+    "relation": "part_of",
+    "source": "neverwinter",
+    "target": "sword_coast",
+    "desc": "City located in the Sword Coast region"
+  },
+  {
+    "relation": "part_of",
+    "source": "hot_spring",
+    "target": "cloister",
+    "desc": "Magical hot spring at site of brass dragon's death"
+  },
+  {
+    "relation": "part_of",
+    "source": "ship_hold",
+    "target": "shipwreck",
+    "desc": "Horrifically cursed ship's hold"
+  },
+  {
+    "relation": "part_of",
+    "source": "blue_dragon_lair",
+    "target": "clifftop_observatory",
+    "desc": "Blue dragon's lair housing imprisoned bronze wyrmling"
+  },
+  {
+    "relation": "part_of",
+    "source": "dock",
+    "target": "harbor",
+    "desc": "Dock in harbor"
+  },
+  {
+    "relation": "part_of",
+    "source": "path",
+    "target": "temple_a5",
+    "desc": "Path leading to temple"
+  },
+  {
+    "relation": "part_of",
+    "source": "path",
+    "target": "shipwreck",
+    "desc": "Path leading away from shipwreck"
+  },
+  {
+    "relation": "part_of",
+    "source": "path",
+    "target": "dragon_rest",
+    "desc": "Escape route leading to Dragon's Rest"
+  },
+  {
+    "relation": "part_of",
+    "source": "cloister",
+    "target": "unknown_area",
+    "desc": "Unspecified connection to cloister quests"
+  },
+  {
+    "relation": "part_of",
+    "source": "monastic_cells",
+    "target": "cloister",
+    "desc": "Monastic cells within cloister"
+  },
+  {
+    "relation": "part_of",
+    "source": "temple_a5",
+    "target": "cloister",
+    "desc": "Temple area within cloister"
+  },
+  {
+    "relation": "part_of",
+    "source": "dining_room",
+    "target": "cloister",
+    "desc": "Dining room within cloister"
+  },
+  {
+    "relation": "part_of",
+    "source": "cloister",
+    "target": "dragon_s_rest",
+    "desc": "Reference to the cloister managed by Agga"
+  },
+  {
+    "relation": "part_of",
+    "source": "compass_rose",
+    "target": "dragon_s_rest",
+    "desc": "Compass Rose feature in the vicinity of Dragon's Rest"
+  },
+  {
+    "relation": "part_of",
+    "source": "temple_a5",
+    "target": "stormwreck_isle",
+    "desc": "Temple A5 located on Stormwreck Isle"
+  },
+  {
+    "relation": "part_of",
+    "source": "statue",
+    "target": "temple_a5",
+    "desc": "Statue in the temple"
+  },
+  {
+    "relation": "part_of",
+    "source": "pedestal",
+    "target": "temple_a5",
+    "desc": "Pedestal in the temple"
+  },
+  {
+    "relation": "part_of",
+    "source": "depressions_in_pedestal",
+    "target": "pedestal",
+    "desc": "Depressions in the pedestal"
+  },
+  {
+    "relation": "part_of",
+    "source": "pillars",
+    "target": "temple_a5",
+    "desc": "Heavy pillars supporting the temple roof"
+  },
+  {
+    "relation": "part_of",
+    "source": "roof",
+    "target": "temple_a5",
+    "desc": "Wooden roof supported by pillars"
+  },
+  {
+    "relation": "part_of",
+    "source": "struts",
+    "target": "temple_a5",
+    "desc": "Arched stone struts anchoring the temple"
+  },
+  {
+    "relation": "part_of",
+    "source": "north_wall",
+    "target": "temple_a5",
+    "desc": "Carved north wall integrated into the cliff"
+  },
+  {
+    "relation": "part_of",
+    "source": "compass_rose",
+    "target": "shipwreck",
+    "desc": "Wrecked vessel in the ruins"
+  },
+  {
+    "relation": "part_of",
+    "source": "shipwreck",
+    "target": "rocks_north_of_dragons_rest",
+    "desc": "Shipwreck located off the rocks"
+  },
+  {
+    "relation": "part_of",
+    "source": "compass_rose",
+    "target": "rocks_north_of_dragons_rest",
+    "desc": "Wreck of Compass Rose located in rocks north of Dragon's Rest"
+  },
+  {
+    "relation": "part_of",
+    "source": "rocks_north_of_dragons_rest",
+    "target": "dragons_rest",
+    "desc": "Rocks situated north of Dragon's Rest"
+  },
+  {
+    "relation": "part_of",
+    "source": "path",
+    "target": "dragon_s_rest",
+    "desc": "Path leading to Dragon's Rest"
+  },
+  {
+    "relation": "part_of",
+    "source": "cloister",
+    "target": "temple_a5",
+    "desc": "Cloister within temple"
+  },
+  {
+    "relation": "part_of",
+    "source": "compass_rose",
+    "target": "temple_a5",
+    "desc": "Compass rose within temple"
+  },
+  {
+    "relation": "part_of",
+    "source": "shipwreck",
+    "target": "island",
+    "desc": "Shipwreck on island"
+  },
+  {
+    "relation": "part_of",
+    "source": "cavern",
+    "target": "seagrow_caves",
+    "desc": "Cavern at the back of Seagrow Caves"
+  },
+  {
+    "relation": "part_of",
+    "source": "stirge_nest",
+    "target": "seagrow_caves",
+    "desc": "Stirge nests in the caves"
+  },
+  {
+    "relation": "part_of",
+    "source": "cloister",
+    "target": "seagrow_caves",
+    "desc": "Waste from cloister nourishes fungi in caves"
+  },
+  {
+    "relation": "part_of",
+    "source": "cloister",
+    "target": "dragons_rest",
+    "desc": "Cloister within Dragon's Rest (implied adjacency due to zombie threats)"
+  },
+  {
+    "relation": "part_of",
+    "source": "walls",
+    "target": "compass_rose",
+    "desc": "Soggy wooden walls in wreck"
+  },
+  {
+    "relation": "part_of",
+    "source": "ceilings",
+    "target": "compass_rose",
+    "desc": "Ceilings in ship are 8 feet high"
+  },
+  {
+    "relation": "part_of",
+    "source": "doors",
+    "target": "compass_rose",
+    "desc": "Waterlogged doors in wreck"
+  },
+  {
+    "relation": "part_of",
+    "source": "light",
+    "target": "compass_rose",
+    "desc": "Vision and Light effects in wreck"
+  },
+  {
+    "relation": "part_of",
+    "source": "hoard",
+    "target": "d5",
+    "desc": "Dragon's hoard in ruins"
+  },
+  {
+    "relation": "part_of",
+    "source": "d1",
+    "target": "d5",
+    "desc": "Path leads to area D1 from surrounding regions"
+  },
+  {
+    "relation": "part_of",
+    "source": "sculpture",
+    "target": "area_D2",
+    "desc": "Sculpture in rotunda ruins"
+  },
+  {
+    "relation": "part_of",
+    "source": "observatory_tower",
+    "target": "area_D5",
+    "desc": "Observatory tower in area D5"
+  },
+  {
+    "relation": "part_of",
+    "source": "caved_in_wall",
+    "target": "area_D6",
+    "desc": "Caved-in wall in area D6"
+  },
+  {
+    "relation": "part_of",
+    "source": "compass_rose",
+    "target": "rotunda",
+    "desc": "Astronomical sculpture in rotunda"
+  },
+  {
+    "relation": "part_of",
+    "source": "dragon_statues_west_rotunda",
+    "target": "rotunda",
+    "desc": "Dragon statues on west side of rotunda"
+  },
+  {
+    "relation": "part_of",
+    "source": "dragon_statues_southwest_rotunda",
+    "target": "rotunda",
+    "desc": "Dragon statues on southwest side of rotunda"
+  },
+  {
+    "relation": "part_of",
+    "source": "rotunda",
+    "target": "d1",
+    "desc": "Rotunda in unknown area"
+  },
+  {
+    "relation": "part_of",
+    "source": "magical_lights",
+    "target": "rotunda",
+    "desc": "Magical lights in rotunda"
+  }
+]

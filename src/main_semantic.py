@@ -353,7 +353,9 @@ class SemanticPipeline:
         logger.info(f"  Generic groups: {generic_count}")
 
         # Creature types
-        creature_types = Counter(n.get("creature_type", "Unknown") for n in creature_nodes)
+        creature_types = Counter(
+            str(n.get("creature_type", "Unknown")) for n in creature_nodes
+        )
         if creature_types:
             logger.info("\nCreature type distribution:")
             for cr_type, count in creature_types.most_common():

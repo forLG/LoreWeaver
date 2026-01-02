@@ -1,0 +1,1907 @@
+{
+  "nodes": [
+    {
+      "id": "runara",
+      "label": "Runara",
+      "type": "Creature",
+      "extraction_method": "tag",
+      "aliases": [],
+      "creature_type": "Unknown",
+      "is_generic": false,
+      "node_type": "entity"
+    },
+    {
+      "id": "flaming_sphere",
+      "label": "flaming sphere",
+      "type": "Item",
+      "extraction_method": "tag",
+      "aliases": [],
+      "node_type": "entity"
+    },
+    {
+      "id": "fire_snake",
+      "label": "fire snake",
+      "type": "Creature",
+      "extraction_method": "tag",
+      "aliases": [],
+      "creature_type": "elemental",
+      "is_generic": false,
+      "node_type": "entity"
+    },
+    {
+      "id": "merrow_extortionist",
+      "label": "Merrow Extortionist",
+      "type": "Creature",
+      "extraction_method": "tag",
+      "aliases": [],
+      "creature_type": "monstrosity",
+      "is_generic": false,
+      "node_type": "entity"
+    },
+    {
+      "id": "zombie",
+      "label": "Zombie",
+      "type": "Creature",
+      "extraction_method": "tag",
+      "aliases": [],
+      "creature_type": "undead",
+      "is_generic": true,
+      "node_type": "entity"
+    },
+    {
+      "id": "dash",
+      "label": "Dash",
+      "type": "Item",
+      "extraction_method": "tag",
+      "aliases": [],
+      "node_type": "entity"
+    },
+    {
+      "id": "sacred_flame",
+      "label": "sacred flame",
+      "type": "Item",
+      "extraction_method": "tag",
+      "aliases": [],
+      "node_type": "entity"
+    },
+    {
+      "id": "myla",
+      "label": "Myla",
+      "type": "Creature",
+      "extraction_method": "tag",
+      "aliases": [],
+      "creature_type": "Unknown",
+      "is_generic": false,
+      "node_type": "entity"
+    },
+    {
+      "id": "kobold_tinkerer",
+      "label": "kobold tinkerer",
+      "type": "Creature",
+      "extraction_method": "tag",
+      "aliases": [],
+      "creature_type": "humanoid",
+      "is_generic": true,
+      "node_type": "entity"
+    },
+    {
+      "id": "blue_dragon_wyrmling",
+      "label": "Blue Dragon Wyrmling",
+      "type": "Creature",
+      "extraction_method": "tag",
+      "aliases": [],
+      "creature_type": "dragon",
+      "is_generic": false,
+      "node_type": "entity"
+    },
+    {
+      "id": "stirge",
+      "label": "Stirge",
+      "type": "Creature",
+      "extraction_method": "tag",
+      "aliases": [],
+      "creature_type": "beast",
+      "is_generic": false,
+      "node_type": "entity"
+    },
+    {
+      "id": "tarak",
+      "label": "Tarak",
+      "type": "Creature",
+      "extraction_method": "tag",
+      "aliases": [],
+      "creature_type": {
+        "type": "humanoid",
+        "tags": [
+          "human"
+        ]
+      },
+      "is_generic": false,
+      "node_type": "entity"
+    },
+    {
+      "id": "variant_criminal_spy",
+      "label": "Variant Criminal (Spy)",
+      "type": "Group",
+      "extraction_method": "tag",
+      "aliases": [],
+      "node_type": "entity"
+    },
+    {
+      "id": "potion_of_healing",
+      "label": "Potion of Healing",
+      "type": "Item",
+      "extraction_method": "tag",
+      "aliases": [],
+      "node_type": "entity"
+    },
+    {
+      "id": "varnoth",
+      "label": "Varnoth",
+      "type": "Creature",
+      "extraction_method": "tag",
+      "aliases": [],
+      "creature_type": {
+        "type": "humanoid",
+        "tags": [
+          "human"
+        ]
+      },
+      "is_generic": false,
+      "node_type": "entity"
+    },
+    {
+      "id": "soldier",
+      "label": "Soldier",
+      "type": "Group",
+      "extraction_method": "tag",
+      "aliases": [],
+      "node_type": "entity"
+    },
+    {
+      "id": "detect_magic",
+      "label": "detect magic",
+      "type": "Item",
+      "extraction_method": "tag",
+      "aliases": [],
+      "node_type": "entity"
+    },
+    {
+      "id": "kobold",
+      "label": "kobold",
+      "type": "Creature",
+      "extraction_method": "tag",
+      "aliases": [],
+      "creature_type": {
+        "type": "humanoid",
+        "tags": [
+          "kobold"
+        ]
+      },
+      "is_generic": true,
+      "node_type": "entity"
+    },
+    {
+      "id": "fume_drake",
+      "label": "Fume Drake",
+      "type": "Creature",
+      "extraction_method": "tag",
+      "aliases": [],
+      "creature_type": "elemental",
+      "is_generic": false,
+      "node_type": "entity"
+    },
+    {
+      "id": "owlbear",
+      "label": "owlbear",
+      "type": "Creature",
+      "extraction_method": "tag",
+      "aliases": [],
+      "creature_type": "monstrosity",
+      "is_generic": false,
+      "node_type": "entity"
+    },
+    {
+      "id": "winged_kobold",
+      "label": "winged kobold",
+      "type": "Creature",
+      "extraction_method": "tag",
+      "aliases": [],
+      "creature_type": {
+        "type": "humanoid",
+        "tags": [
+          "kobold"
+        ]
+      },
+      "is_generic": false,
+      "node_type": "entity"
+    },
+    {
+      "id": "sinensa",
+      "label": "Sinensa",
+      "type": "Creature",
+      "extraction_method": "tag",
+      "aliases": [],
+      "creature_type": "Unknown",
+      "is_generic": false,
+      "node_type": "entity"
+    },
+    {
+      "id": "lesser_restoration",
+      "label": "lesser restoration",
+      "type": "Item",
+      "extraction_method": "tag",
+      "aliases": [],
+      "node_type": "entity"
+    },
+    {
+      "id": "rowboat",
+      "label": "rowboat",
+      "type": "Item",
+      "extraction_method": "tag",
+      "aliases": [],
+      "node_type": "entity"
+    },
+    {
+      "id": "myconid_adult",
+      "label": "Myconid Adult",
+      "type": "Creature",
+      "extraction_method": "tag",
+      "aliases": [],
+      "creature_type": "plant",
+      "is_generic": false,
+      "node_type": "entity"
+    },
+    {
+      "id": "myconid_sprout",
+      "label": "Myconid Sprout",
+      "type": "Creature",
+      "extraction_method": "tag",
+      "aliases": [],
+      "creature_type": "plant",
+      "is_generic": false,
+      "node_type": "entity"
+    },
+    {
+      "id": "spore_servant_octopus",
+      "label": "spore servant octopus",
+      "type": "Creature",
+      "extraction_method": "tag",
+      "aliases": [],
+      "creature_type": "plant",
+      "is_generic": true,
+      "node_type": "entity"
+    },
+    {
+      "id": "violet_fungus",
+      "label": "Violet Fungus",
+      "type": "Creature",
+      "extraction_method": "tag",
+      "aliases": [],
+      "creature_type": "plant",
+      "is_generic": true,
+      "node_type": "entity"
+    },
+    {
+      "id": "elixir_of_health",
+      "label": "elixir of health",
+      "type": "Item",
+      "extraction_method": "tag",
+      "aliases": [],
+      "node_type": "entity"
+    },
+    {
+      "id": "harpy",
+      "label": "harpy",
+      "type": "Creature",
+      "extraction_method": "tag",
+      "aliases": [],
+      "creature_type": "monstrosity",
+      "is_generic": false,
+      "node_type": "entity"
+    },
+    {
+      "id": "ghoul",
+      "label": "Ghoul",
+      "type": "Creature",
+      "extraction_method": "tag",
+      "aliases": [],
+      "creature_type": "undead",
+      "is_generic": false,
+      "node_type": "entity"
+    },
+    {
+      "id": "tiger_eye",
+      "label": "tiger eye",
+      "type": "Item",
+      "extraction_method": "tag",
+      "aliases": [],
+      "node_type": "entity"
+    },
+    {
+      "id": "bloodstone",
+      "label": "bloodstone",
+      "type": "Item",
+      "extraction_method": "tag",
+      "aliases": [],
+      "node_type": "entity"
+    },
+    {
+      "id": "pouch",
+      "label": "pouch",
+      "type": "Item",
+      "extraction_method": "tag",
+      "aliases": [],
+      "node_type": "entity"
+    },
+    {
+      "id": "cartographers_tools",
+      "label": "cartographer's tools",
+      "type": "Item",
+      "extraction_method": "tag",
+      "aliases": [],
+      "node_type": "entity"
+    },
+    {
+      "id": "dagger",
+      "label": "dagger",
+      "type": "Item",
+      "extraction_method": "tag",
+      "aliases": [],
+      "node_type": "entity"
+    },
+    {
+      "id": "fine_clothes",
+      "label": "fine clothes",
+      "type": "Item",
+      "extraction_method": "tag",
+      "aliases": [],
+      "node_type": "entity"
+    },
+    {
+      "id": "sack",
+      "label": "sack",
+      "type": "Item",
+      "extraction_method": "tag",
+      "aliases": [],
+      "node_type": "entity"
+    },
+    {
+      "id": "crowbar",
+      "label": "crowbar",
+      "type": "Item",
+      "extraction_method": "tag",
+      "aliases": [],
+      "node_type": "entity"
+    },
+    {
+      "id": "turquoise",
+      "label": "Turquoise",
+      "type": "Item",
+      "extraction_method": "tag",
+      "aliases": [],
+      "node_type": "entity"
+    },
+    {
+      "id": "boots_of_elvenkind",
+      "label": "boots of elvenkind",
+      "type": "Item",
+      "extraction_method": "tag",
+      "aliases": [],
+      "node_type": "entity"
+    },
+    {
+      "id": "bronze_dragon_wyrmling",
+      "label": "bronze dragon wyrmling",
+      "type": "Creature",
+      "extraction_method": "tag",
+      "aliases": [],
+      "creature_type": "dragon",
+      "is_generic": false,
+      "node_type": "entity"
+    },
+    {
+      "id": "sling_bullet",
+      "label": "Sling Bullet",
+      "type": "Item",
+      "extraction_method": "tag",
+      "aliases": [],
+      "node_type": "entity"
+    },
+    {
+      "id": "misty_step",
+      "label": "misty step",
+      "type": "Item",
+      "extraction_method": "tag",
+      "aliases": [],
+      "node_type": "entity"
+    },
+    {
+      "id": "potion_of_lightning_resistance",
+      "label": "Potion of Lightning Resistance",
+      "type": "Item",
+      "extraction_method": "tag",
+      "aliases": [],
+      "node_type": "entity"
+    },
+    {
+      "id": "disengage",
+      "label": "Disengage",
+      "type": "Item",
+      "extraction_method": "tag",
+      "aliases": [],
+      "node_type": "entity"
+    },
+    {
+      "id": "blue_quartz",
+      "label": "blue quartz",
+      "type": "Item",
+      "extraction_method": "tag",
+      "aliases": [],
+      "node_type": "entity"
+    },
+    {
+      "id": "jasper",
+      "label": "jasper",
+      "type": "Item",
+      "extraction_method": "tag",
+      "aliases": [],
+      "node_type": "entity"
+    },
+    {
+      "id": "1_battleaxe",
+      "label": "+1 battleaxe",
+      "type": "Item",
+      "extraction_method": "tag",
+      "aliases": [],
+      "node_type": "entity"
+    },
+    {
+      "id": "spell_scroll_2nd_level",
+      "label": "Spell Scroll (2nd Level)",
+      "type": "Item",
+      "extraction_method": "tag",
+      "aliases": [],
+      "node_type": "entity"
+    },
+    {
+      "id": "hold_person",
+      "label": "hold person",
+      "type": "Item",
+      "extraction_method": "tag",
+      "aliases": [],
+      "node_type": "entity"
+    },
+    {
+      "id": "1_weapon",
+      "label": "+1 Weapon",
+      "type": "Item",
+      "extraction_method": "tag",
+      "aliases": [],
+      "node_type": "entity"
+    },
+    {
+      "id": "spell_scroll",
+      "label": "Spell Scroll",
+      "type": "Item",
+      "extraction_method": "tag",
+      "aliases": [],
+      "node_type": "entity"
+    },
+    {
+      "id": "pearl",
+      "label": "pearl",
+      "type": "Item",
+      "extraction_method": "tag",
+      "aliases": [],
+      "node_type": "entity"
+    },
+    {
+      "id": "potion_of_resistance",
+      "label": "Potion of Resistance",
+      "type": "Item",
+      "extraction_method": "tag",
+      "aliases": [],
+      "node_type": "entity"
+    },
+    {
+      "label": "Dragon's Rest",
+      "type": "Location",
+      "id": "dragon_s_rest",
+      "location_type": "building",
+      "is_generic": false,
+      "aliases": [
+        "cloister"
+      ],
+      "source_node": "Chapter 1: Dragon's Rest",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "label": "Stormwreck Isle",
+      "type": "Location",
+      "id": "stormwreck_isle",
+      "location_type": "area",
+      "is_generic": false,
+      "aliases": [],
+      "source_node": "Chapter 1: Dragon's Rest",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Location",
+      "id": "cloister",
+      "location_type": "area",
+      "is_generic": false,
+      "aliases": [],
+      "source_node": "Welcome to Dragon's Rest",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "label": "Harbor",
+      "type": "Location",
+      "id": "harbor",
+      "location_type": "area",
+      "is_generic": false,
+      "aliases": [],
+      "source_node": "",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "label": "Temple",
+      "type": "Location",
+      "id": "temple",
+      "location_type": "building",
+      "is_generic": false,
+      "aliases": [],
+      "source_node": "",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "label": "Dock",
+      "type": "Location",
+      "id": "dock",
+      "location_type": "feature",
+      "is_generic": false,
+      "aliases": [],
+      "source_node": "",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "label": "Path",
+      "type": "Location",
+      "id": "path",
+      "location_type": "path",
+      "is_generic": false,
+      "aliases": [],
+      "source_node": "",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "label": "zombies",
+      "type": "Creature",
+      "id": "zombies",
+      "creature_type": "undead",
+      "is_generic": true,
+      "aliases": [
+        "zombie"
+      ],
+      "source_node": "Zombie Resurgence",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Creature",
+      "id": "elder_human_woman",
+      "location_type": "feature",
+      "is_generic": false,
+      "aliases": [],
+      "creature_type": "humanoid",
+      "source_node": "",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Location",
+      "id": "underwater_tunnel",
+      "creature_type": "dragon",
+      "is_generic": false,
+      "aliases": [
+        "tunnel]>"
+      ],
+      "location_type": "path",
+      "source_node": "Elder Runara",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Creature",
+      "id": "zark",
+      "location_type": "building",
+      "is_generic": false,
+      "aliases": [],
+      "creature_type": "humanoid",
+      "source_node": "Kobolds",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Group",
+      "id": "gilded_gallows",
+      "creature_type": "organization",
+      "is_generic": false,
+      "aliases": [],
+      "location_type": "feature",
+      "source_node": "Tarak",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Group",
+      "id": "azure_wolves",
+      "creature_type": "humanoid",
+      "is_generic": false,
+      "aliases": [],
+      "location_type": "building",
+      "source_node": "Varnoth",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "label": "shipwreck",
+      "type": "Location",
+      "id": "shipwreck",
+      "location_type": "area",
+      "is_generic": false,
+      "aliases": [],
+      "source_node": "Zombie Resurgence",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "label": "blepp_the_kobold",
+      "type": "Creature",
+      "id": "blepp_the_kobold",
+      "creature_type": "humanoid",
+      "is_generic": false,
+      "aliases": [
+        "kobold"
+      ],
+      "source_node": "Zombie Resurgence",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "label": "tarak_the_human_gardener",
+      "type": "Creature",
+      "id": "tarak_the_human_gardener",
+      "creature_type": "humanoid",
+      "is_generic": false,
+      "aliases": [
+        "gardener",
+        "human"
+      ],
+      "source_node": "Zombie Resurgence",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "label": "lower_path",
+      "type": "Location",
+      "id": "lower_path",
+      "location_type": "path",
+      "is_generic": false,
+      "aliases": [],
+      "source_node": "",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "label": "rocks_north_of_dragons_rest",
+      "type": "Location",
+      "id": "rocks_north_of_dragons_rest",
+      "location_type": "area",
+      "creature_type": "",
+      "is_generic": false,
+      "aliases": [
+        "rocks"
+      ],
+      "source_node": "Shipwreck",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "label": "compass_rose",
+      "type": "Location",
+      "id": "compass_rose",
+      "location_type": "feature",
+      "creature_type": "",
+      "is_generic": false,
+      "aliases": [
+        "wreck"
+      ],
+      "source_node": "Shipwreck",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "label": "rix",
+      "type": "Creature",
+      "id": "rix",
+      "creature_type": "kobold",
+      "is_generic": false,
+      "aliases": [
+        "rix"
+      ],
+      "source_node": "Shipwreck",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "label": "Temple_A5",
+      "type": "Location",
+      "id": "temple_a5",
+      "location_type": "area",
+      "is_generic": false,
+      "aliases": [
+        "temple"
+      ],
+      "source_node": "Runara Saves the Day!",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "label": "Ancient Observatory",
+      "type": "Location",
+      "id": "ancient_observatory",
+      "location_type": "feature",
+      "is_generic": false,
+      "aliases": [],
+      "source_node": "Lost Wyrmling",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "label": "Aidron",
+      "type": "Creature",
+      "id": "aidron",
+      "creature_type": "dragon",
+      "is_generic": false,
+      "aliases": [],
+      "source_node": "Lost Wyrmling",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "label": "Clifftop Observatory",
+      "type": "Location",
+      "id": "clifftop_observatory",
+      "location_type": "building",
+      "is_generic": false,
+      "aliases": [],
+      "source_node": "Chapter 4: Clifftop Observatory",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "label": "Seagrow Caves",
+      "type": "Location",
+      "id": "seagrow_caves",
+      "location_type": "area",
+      "is_generic": false,
+      "aliases": [],
+      "source_node": "Chapter 4: Clifftop Observatory",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "label": "head_of_the_bay",
+      "type": "Location",
+      "id": "head_of_the_bay",
+      "location_type": "feature",
+      "creature_type": "",
+      "is_generic": false,
+      "aliases": [],
+      "source_node": "Running This Chapter",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "label": "eastern_bay",
+      "type": "Location",
+      "id": "eastern_bay",
+      "location_type": "area",
+      "creature_type": "",
+      "is_generic": false,
+      "aliases": [],
+      "source_node": "Running This Chapter",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "label": "rough_path",
+      "type": "Location",
+      "id": "rough_path",
+      "location_type": "path",
+      "creature_type": "",
+      "is_generic": false,
+      "aliases": [],
+      "source_node": "Running This Chapter",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Location",
+      "id": "d1",
+      "creature_type": "dragon",
+      "is_generic": false,
+      "aliases": [
+        "] />"
+      ],
+      "location_type": "area",
+      "source_node": "Approaching by Land",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Location",
+      "id": "d5",
+      "location_type": "area",
+      "is_generic": false,
+      "aliases": [],
+      "source_node": "Approaching by Water",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Location",
+      "id": "crumbling_ruins",
+      "creature_type": "beast",
+      "is_generic": false,
+      "aliases": [],
+      "location_type": "ruin",
+      "source_node": "",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Location",
+      "id": "rotunda",
+      "creature_type": "dragon",
+      "is_generic": false,
+      "aliases": [],
+      "location_type": "room",
+      "source_node": "",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Creature",
+      "id": "turadaer",
+      "location_type": "feature",
+      "is_generic": false,
+      "aliases": [
+        "] />"
+      ],
+      "creature_type": "dragon",
+      "source_node": "Dragon Spirits",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Item",
+      "id": "chains_binding_aidron",
+      "creature_type": "n/a",
+      "is_generic": false,
+      "aliases": [
+        "] />"
+      ],
+      "location_type": "feature",
+      "source_node": "Freeing Aidron",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    },
+    {
+      "type": "Location",
+      "id": "secret_library",
+      "location_type": "room",
+      "is_generic": false,
+      "aliases": [],
+      "creature_type": "dragon",
+      "source_node": "Ending the Adventure",
+      "extraction_method": "llm",
+      "node_type": "entity"
+    }
+  ],
+  "edges": [
+    {
+      "relation": "part_of",
+      "source": "stormwreck_isle",
+      "target": "sword_coast",
+      "desc": "Small island in the Sword Coast region"
+    },
+    {
+      "relation": "part_of",
+      "source": "neverwinter",
+      "target": "sword_coast",
+      "desc": "City located in the Sword Coast region"
+    },
+    {
+      "relation": "part_of",
+      "source": "hot_spring",
+      "target": "cloister",
+      "desc": "Magical hot spring at site of brass dragon's death"
+    },
+    {
+      "relation": "part_of",
+      "source": "ship_hold",
+      "target": "shipwreck",
+      "desc": "Horrifically cursed ship's hold"
+    },
+    {
+      "relation": "part_of",
+      "source": "blue_dragon_lair",
+      "target": "clifftop_observatory",
+      "desc": "Blue dragon's lair housing imprisoned bronze wyrmling"
+    },
+    {
+      "relation": "part_of",
+      "source": "dock",
+      "target": "harbor",
+      "desc": "Dock in harbor"
+    },
+    {
+      "relation": "part_of",
+      "source": "path",
+      "target": "temple_a5",
+      "desc": "Path leading to temple"
+    },
+    {
+      "relation": "part_of",
+      "source": "path",
+      "target": "shipwreck",
+      "desc": "Path leading away from shipwreck"
+    },
+    {
+      "relation": "part_of",
+      "source": "path",
+      "target": "dragon_rest",
+      "desc": "Escape route leading to Dragon's Rest"
+    },
+    {
+      "relation": "part_of",
+      "source": "cloister",
+      "target": "unknown_area",
+      "desc": "Unspecified connection to cloister quests"
+    },
+    {
+      "relation": "part_of",
+      "source": "monastic_cells",
+      "target": "cloister",
+      "desc": "Monastic cells within cloister"
+    },
+    {
+      "relation": "part_of",
+      "source": "temple_a5",
+      "target": "cloister",
+      "desc": "Temple area within cloister"
+    },
+    {
+      "relation": "part_of",
+      "source": "dining_room",
+      "target": "cloister",
+      "desc": "Dining room within cloister"
+    },
+    {
+      "relation": "part_of",
+      "source": "cloister",
+      "target": "dragon_s_rest",
+      "desc": "Reference to the cloister managed by Agga"
+    },
+    {
+      "relation": "part_of",
+      "source": "compass_rose",
+      "target": "dragon_s_rest",
+      "desc": "Compass Rose feature in the vicinity of Dragon's Rest"
+    },
+    {
+      "relation": "part_of",
+      "source": "temple_a5",
+      "target": "stormwreck_isle",
+      "desc": "Temple A5 located on Stormwreck Isle"
+    },
+    {
+      "relation": "part_of",
+      "source": "statue",
+      "target": "temple_a5",
+      "desc": "Statue in the temple"
+    },
+    {
+      "relation": "part_of",
+      "source": "pedestal",
+      "target": "temple_a5",
+      "desc": "Pedestal in the temple"
+    },
+    {
+      "relation": "part_of",
+      "source": "depressions_in_pedestal",
+      "target": "pedestal",
+      "desc": "Depressions in the pedestal"
+    },
+    {
+      "relation": "part_of",
+      "source": "pillars",
+      "target": "temple_a5",
+      "desc": "Heavy pillars supporting the temple roof"
+    },
+    {
+      "relation": "part_of",
+      "source": "roof",
+      "target": "temple_a5",
+      "desc": "Wooden roof supported by pillars"
+    },
+    {
+      "relation": "part_of",
+      "source": "struts",
+      "target": "temple_a5",
+      "desc": "Arched stone struts anchoring the temple"
+    },
+    {
+      "relation": "part_of",
+      "source": "north_wall",
+      "target": "temple_a5",
+      "desc": "Carved north wall integrated into the cliff"
+    },
+    {
+      "relation": "part_of",
+      "source": "compass_rose",
+      "target": "shipwreck",
+      "desc": "Wrecked vessel in the ruins"
+    },
+    {
+      "relation": "part_of",
+      "source": "shipwreck",
+      "target": "rocks_north_of_dragons_rest",
+      "desc": "Shipwreck located off the rocks"
+    },
+    {
+      "relation": "part_of",
+      "source": "compass_rose",
+      "target": "rocks_north_of_dragons_rest",
+      "desc": "Wreck of Compass Rose located in rocks north of Dragon's Rest"
+    },
+    {
+      "relation": "part_of",
+      "source": "rocks_north_of_dragons_rest",
+      "target": "dragons_rest",
+      "desc": "Rocks situated north of Dragon's Rest"
+    },
+    {
+      "relation": "part_of",
+      "source": "path",
+      "target": "dragon_s_rest",
+      "desc": "Path leading to Dragon's Rest"
+    },
+    {
+      "relation": "part_of",
+      "source": "cloister",
+      "target": "temple_a5",
+      "desc": "Cloister within temple"
+    },
+    {
+      "relation": "part_of",
+      "source": "compass_rose",
+      "target": "temple_a5",
+      "desc": "Compass rose within temple"
+    },
+    {
+      "relation": "part_of",
+      "source": "shipwreck",
+      "target": "island",
+      "desc": "Shipwreck on island"
+    },
+    {
+      "relation": "part_of",
+      "source": "cavern",
+      "target": "seagrow_caves",
+      "desc": "Cavern at the back of Seagrow Caves"
+    },
+    {
+      "relation": "part_of",
+      "source": "stirge_nest",
+      "target": "seagrow_caves",
+      "desc": "Stirge nests in the caves"
+    },
+    {
+      "relation": "part_of",
+      "source": "cloister",
+      "target": "seagrow_caves",
+      "desc": "Waste from cloister nourishes fungi in caves"
+    },
+    {
+      "relation": "part_of",
+      "source": "cloister",
+      "target": "dragons_rest",
+      "desc": "Cloister within Dragon's Rest (implied adjacency due to zombie threats)"
+    },
+    {
+      "relation": "part_of",
+      "source": "walls",
+      "target": "compass_rose",
+      "desc": "Soggy wooden walls in wreck"
+    },
+    {
+      "relation": "part_of",
+      "source": "ceilings",
+      "target": "compass_rose",
+      "desc": "Ceilings in ship are 8 feet high"
+    },
+    {
+      "relation": "part_of",
+      "source": "doors",
+      "target": "compass_rose",
+      "desc": "Waterlogged doors in wreck"
+    },
+    {
+      "relation": "part_of",
+      "source": "light",
+      "target": "compass_rose",
+      "desc": "Vision and Light effects in wreck"
+    },
+    {
+      "relation": "part_of",
+      "source": "hoard",
+      "target": "d5",
+      "desc": "Dragon's hoard in ruins"
+    },
+    {
+      "relation": "part_of",
+      "source": "d1",
+      "target": "d5",
+      "desc": "Path leads to area D1 from surrounding regions"
+    },
+    {
+      "relation": "part_of",
+      "source": "sculpture",
+      "target": "area_D2",
+      "desc": "Sculpture in rotunda ruins"
+    },
+    {
+      "relation": "part_of",
+      "source": "observatory_tower",
+      "target": "area_D5",
+      "desc": "Observatory tower in area D5"
+    },
+    {
+      "relation": "part_of",
+      "source": "caved_in_wall",
+      "target": "area_D6",
+      "desc": "Caved-in wall in area D6"
+    },
+    {
+      "relation": "part_of",
+      "source": "compass_rose",
+      "target": "rotunda",
+      "desc": "Astronomical sculpture in rotunda"
+    },
+    {
+      "relation": "part_of",
+      "source": "dragon_statues_west_rotunda",
+      "target": "rotunda",
+      "desc": "Dragon statues on west side of rotunda"
+    },
+    {
+      "relation": "part_of",
+      "source": "dragon_statues_southwest_rotunda",
+      "target": "rotunda",
+      "desc": "Dragon statues on southwest side of rotunda"
+    },
+    {
+      "relation": "part_of",
+      "source": "rotunda",
+      "target": "d1",
+      "desc": "Rotunda in unknown area"
+    },
+    {
+      "relation": "part_of",
+      "source": "magical_lights",
+      "target": "rotunda",
+      "desc": "Magical lights in rotunda"
+    },
+    {
+      "relation": "inhabits",
+      "source": "runara",
+      "target": "cloister",
+      "desc": "Lives in Runara's cloister"
+    },
+    {
+      "relation": "trapped_at",
+      "source": "bronze_wyrmling",
+      "target": "shipwreck",
+      "desc": "Held prisoner in the shipwreck's hold"
+    },
+    {
+      "relation": "led_by",
+      "source": "runara",
+      "target": "cloister",
+      "desc": "Runs the cloister of Dragon's Rest"
+    },
+    {
+      "relation": "guarded_by",
+      "source": "cloister",
+      "target": "runara",
+      "desc": "Protected by Runara's presence"
+    },
+    {
+      "relation": "stored_in",
+      "source": "rowboat",
+      "target": "dock",
+      "desc": "Tied at the dock"
+    },
+    {
+      "relation": "located_near",
+      "source": "rocks_north_of_dragons_rest",
+      "target": "harbor",
+      "desc": "Avoided while navigating toward the harbor"
+    },
+    {
+      "relation": "inhabits",
+      "source": "zombies",
+      "target": "shipwreck",
+      "desc": "Animated corpses of sailors who died in the shipwreck"
+    },
+    {
+      "relation": "guards",
+      "source": "zombies",
+      "target": "path",
+      "desc": "Blocking passage along the path to force combat or evasion decision"
+    },
+    {
+      "relation": "hidden_at",
+      "source": "zombies",
+      "target": "temple_a5",
+      "desc": "Zombies attempted to drag the characters into the sea from the temple"
+    },
+    {
+      "relation": "inhabits",
+      "source": "runara",
+      "target": "temple_a5",
+      "desc": "Runara intervened at the temple to rescue the adventurers"
+    },
+    {
+      "relation": "hidden_at",
+      "source": "zombies",
+      "target": "path",
+      "desc": "Zombies don't follow them up the path"
+    },
+    {
+      "relation": "trapped_at",
+      "source": "zombies",
+      "target": "cloister",
+      "desc": "Another opportunity to deal with zombies later (see \"Cloister Quests\")"
+    },
+    {
+      "relation": "inhabits",
+      "source": "blepp_the_kobold",
+      "target": "cloister",
+      "desc": "Resides in the cloister"
+    },
+    {
+      "relation": "inhabits",
+      "source": "myla",
+      "target": "cloister",
+      "desc": "Available at the cloister for trades"
+    },
+    {
+      "relation": "inhabits",
+      "source": "[blepp_the_kobold]",
+      "target": "[cloister]",
+      "desc": "Kobolds reside in the cloister"
+    },
+    {
+      "relation": "inhabits",
+      "source": "[tarak_the_human_gardener]",
+      "target": "[cloister]",
+      "desc": "Humans reside in the cloister"
+    },
+    {
+      "relation": "hidden_at",
+      "source": "runara",
+      "target": "temple_a5",
+      "desc": "Other residents mistakenly believe she lives in the temple at area A5"
+    },
+    {
+      "relation": "guarded_by",
+      "source": "cloister",
+      "target": "zombies",
+      "desc": "Residents fight zombies at the beach to prove concern for the cloister's safety"
+    },
+    {
+      "relation": "allies_with",
+      "source": "runara",
+      "target": "zombies",
+      "desc": "She seeks to help beings affected by violence, including zombie victims"
+    },
+    {
+      "relation": "inhabited_by",
+      "source": "cloister",
+      "target": "runara",
+      "desc": "She actively resides within the cloister, appearing to dwell in various locations"
+    },
+    {
+      "relation": "hidden_at",
+      "source": "runara",
+      "target": "path",
+      "desc": "Her secret lair is accessed via an undersea tunnel near the cloister, implying proximity to the path"
+    },
+    {
+      "relation": "inhabits",
+      "source": "kobold_tinkerer",
+      "target": "dragon_s_rest",
+      "desc": "Lives at Dragon's Rest"
+    },
+    {
+      "relation": "inhabits",
+      "source": "blepp_the_kobold",
+      "target": "dragon_s_rest",
+      "desc": "Lives at Dragon's Rest"
+    },
+    {
+      "relation": "inhabits",
+      "source": "frub",
+      "target": "dragon_s_rest",
+      "desc": "Lives at Dragon's Rest"
+    },
+    {
+      "relation": "inhabits",
+      "source": "kilnip",
+      "target": "dragon_s_rest",
+      "desc": "Lives at Dragon's Rest"
+    },
+    {
+      "relation": "inhabits",
+      "source": "laylee",
+      "target": "dragon_s_rest",
+      "desc": "Lives at Dragon's Rest"
+    },
+    {
+      "relation": "inhabited_by",
+      "source": "dragon_s_rest",
+      "target": "runara",
+      "desc": "Devoted to Runara"
+    },
+    {
+      "relation": "servitude",
+      "source": "laylee",
+      "target": "myla",
+      "desc": "Serves Myla"
+    },
+    {
+      "relation": "carries",
+      "source": "blepp_the_kobold",
+      "target": "dagger",
+      "desc": "Owns an ordinary dagger claimed to be magical"
+    },
+    {
+      "relation": "commands",
+      "source": "agga",
+      "target": "blepp_the_kobold",
+      "desc": "Keeps other kobolds organized"
+    },
+    {
+      "relation": "commands",
+      "source": "agga",
+      "target": "frub",
+      "desc": "Keeps other kobolds organized"
+    },
+    {
+      "relation": "commands",
+      "source": "agga",
+      "target": "kilnip",
+      "desc": "Keeps other kobolds organized"
+    },
+    {
+      "relation": "commands",
+      "source": "agga",
+      "target": "laylee",
+      "desc": "Keeps other kobolds organized"
+    },
+    {
+      "relation": "inhabits",
+      "source": "tarak",
+      "target": "cloister",
+      "desc": "Tends the cloister's garden plots"
+    },
+    {
+      "relation": "hidden_at",
+      "source": "gold_hangmans_noose_tattoo",
+      "target": "cloister",
+      "desc": "Visible tattoos on Tarak's neck are part of the cloister's environment"
+    },
+    {
+      "relation": "inhabits",
+      "source": "varnoth",
+      "target": "temple_a5",
+      "desc": "Works in the temple"
+    },
+    {
+      "relation": "inhabits",
+      "source": "varnoth",
+      "target": "cloister",
+      "desc": "Works in the cloister"
+    },
+    {
+      "relation": "hidden_at",
+      "source": "tarak_the_human_gardener",
+      "target": "cloister",
+      "desc": "Implied association with cloister quests (contextual hint)"
+    },
+    {
+      "relation": "serves",
+      "source": "tarak",
+      "target": "cloister",
+      "desc": "Days when Tarak cooks are favorites"
+    },
+    {
+      "relation": "hidden_at",
+      "source": "myla",
+      "target": "cloister",
+      "desc": "Described as studious amidst kobolds visiting for quiet"
+    },
+    {
+      "relation": "inhabits",
+      "source": "rix",
+      "target": "cloister",
+      "desc": "Residents of the cloister help her"
+    },
+    {
+      "relation": "allied_with",
+      "source": "varnoth",
+      "target": "runara",
+      "desc": "Help her in the cloister"
+    },
+    {
+      "relation": "allied_with",
+      "source": "rix",
+      "target": "runara",
+      "desc": "Help her in the cloister"
+    },
+    {
+      "relation": "carries",
+      "source": "tarak",
+      "target": "sack",
+      "desc": "Gives them a foul-smelling sack of food scraps"
+    },
+    {
+      "relation": "guarded_by",
+      "source": "sea_caves",
+      "target": "fungal_octopus",
+      "desc": "Created as a guardian by the myconids"
+    },
+    {
+      "relation": "witnessed",
+      "source": "varnoth",
+      "target": "rocks_north_of_dragons_rest",
+      "desc": "Varnoth witnessed the wreck"
+    },
+    {
+      "relation": "witnessed",
+      "source": "blepp_the_kobold",
+      "target": "rocks_north_of_dragons_rest",
+      "desc": "Blepp the Kobold witnessed the wreck"
+    },
+    {
+      "relation": "suggests",
+      "source": "runara",
+      "target": "compass_rose",
+      "desc": "Runara suggests investigating the wreck of Compass Rose"
+    },
+    {
+      "relation": "guided_to",
+      "source": "runara",
+      "target": "shipwreck",
+      "desc": "Points the character toward the wreck of Compass Rose"
+    },
+    {
+      "relation": "rival_of",
+      "source": "aidron",
+      "target": "runara",
+      "desc": "Argued with Runara and rejected her teachings"
+    },
+    {
+      "relation": "hidden_at",
+      "source": "aidron",
+      "target": "cloister",
+      "desc": "Stormed away from the cloister"
+    },
+    {
+      "relation": "unlocks",
+      "source": "moonstone_key",
+      "target": "observatory",
+      "desc": "Needed to access the observatory"
+    },
+    {
+      "relation": "guards",
+      "source": "runara",
+      "target": "temple_a5",
+      "desc": "Rescues characters and brings them to the temple"
+    },
+    {
+      "relation": "hidden_at",
+      "source": "blepp_the_kobold",
+      "target": "temple_a5",
+      "desc": "Some kobolds tend to injured characters in the temple"
+    },
+    {
+      "relation": "inhabits",
+      "source": "owlbear",
+      "target": "rocks_north_of_dragons_rest",
+      "desc": "The owlbear resides in the area surrounding the northern rocks"
+    },
+    {
+      "relation": "carried_by",
+      "source": "whistle",
+      "target": "owlbear",
+      "desc": "The whistle is worn around the owlbear's neck"
+    },
+    {
+      "relation": "hidden_at",
+      "source": "winged_kobold",
+      "target": "rocks_north_of_dragons_rest",
+      "desc": "Hiding in the rocks"
+    },
+    {
+      "relation": "rival_of",
+      "source": "winged_kobold",
+      "target": "runara",
+      "desc": "Rejects Runara's teachings"
+    },
+    {
+      "relation": "members_include",
+      "source": "[group_of_kobolds]",
+      "target": "winged_kobold",
+      "desc": "Winged kobold is part of the ambush group"
+    },
+    {
+      "relation": "guarded_by",
+      "source": "stirge",
+      "target": "caves",
+      "desc": "Stirges nest in the caves"
+    },
+    {
+      "relation": "leads_to",
+      "source": "cloister",
+      "target": "caves",
+      "desc": "Food scraps from the cloister nourish the fungi in the caves"
+    },
+    {
+      "relation": "traded_with",
+      "source": "tarak",
+      "target": "myconids",
+      "desc": "Tarak traded with myconids for rare fungi"
+    },
+    {
+      "relation": "preferred_method",
+      "source": "tarak",
+      "target": "rowboat",
+      "desc": "Tarak's preferred method"
+    },
+    {
+      "relation": "allied_with",
+      "source": "tarak",
+      "target": "sinensa",
+      "desc": "Mentioning Tarak's name grants advantage on persuasion checks with myconids, implying an alliance"
+    },
+    {
+      "relation": "led_by",
+      "source": "sinensa",
+      "target": "[group]",
+      "desc": "Sprouts report that Sinensa is their leader, indicating she leads the myconid group"
+    },
+    {
+      "relation": "led_by",
+      "source": "sinensa",
+      "target": "myconids",
+      "desc": "Sinensa is the myconid leader"
+    },
+    {
+      "relation": "owns",
+      "source": "tarak",
+      "target": "elixir_of_health",
+      "desc": "Tarak crafts the elixir of health and gives it to the characters"
+    },
+    {
+      "relation": "social_allied_with",
+      "source": "sinensa",
+      "target": "characters",
+      "desc": "Sinensa grants permission to retain treasures, indicating alignment"
+    },
+    {
+      "relation": "inhabits",
+      "source": "harpy",
+      "target": "compass_rose",
+      "desc": "Settled into the wreck of Compass Rose"
+    },
+    {
+      "relation": "trapped_at",
+      "source": "zombies",
+      "target": "compass_rose",
+      "desc": "Trapped in the wreck for years"
+    },
+    {
+      "relation": "patrols",
+      "source": "harpy",
+      "target": "rocks_north_of_dragons_rest",
+      "desc": "Luring ships to crash on the shoal"
+    },
+    {
+      "relation": "inhabits",
+      "source": "spore_servant_octopus",
+      "target": "shipwreck",
+      "desc": "Found in the wrecks"
+    },
+    {
+      "relation": "inhabits",
+      "source": "ghoul",
+      "target": "shipwreck",
+      "desc": "Found in the wrecks"
+    },
+    {
+      "relation": "stored_in",
+      "source": "rowboat",
+      "target": "compass_rose",
+      "desc": "Characters bring the rowboat to the wreck of Compass Rose"
+    },
+    {
+      "relation": "hidden_at",
+      "source": "rowboat",
+      "target": "compass_rose",
+      "desc": "Rowboat is tied to the derelict's rigging at Compass Rose"
+    },
+    {
+      "relation": "hidden_at",
+      "source": "harpy",
+      "target": "compass_rose",
+      "desc": "The harpy's nest is located within the Compass Rose"
+    },
+    {
+      "relation": "inhabits",
+      "source": "harpy",
+      "target": "shipwreck",
+      "desc": "Found at the shipwreck looking for ships to lure onto the rocks"
+    },
+    {
+      "relation": "inhabits",
+      "source": "zombies",
+      "target": "C4",
+      "desc": "The zombie is in area C4"
+    },
+    {
+      "relation": "hidden_at",
+      "source": "pearl",
+      "target": "compass_rose_ship_wheel",
+      "desc": "Engraved with mother-of-pearl (implied association)"
+    },
+    {
+      "relation": "stored_in",
+      "source": "[pouch]",
+      "target": "desk",
+      "desc": "Found in the desk"
+    },
+    {
+      "relation": "stored_in",
+      "source": "[cartographers_tools]",
+      "target": "desk",
+      "desc": "Found in the desk"
+    },
+    {
+      "relation": "stored_in",
+      "source": "[dagger]",
+      "target": "desk",
+      "desc": "Found in the desk"
+    },
+    {
+      "relation": "inhabits",
+      "source": "ghoul",
+      "target": "aft_part_of_the_hold",
+      "desc": "Lurks in the aft part of the hold"
+    },
+    {
+      "relation": "hidden_at",
+      "source": "ghoul",
+      "target": "aft_part_of_the_hold",
+      "desc": "Lurks in the aft part of the hold"
+    },
+    {
+      "relation": "stored_in",
+      "source": "pouch",
+      "target": "[chest]",
+      "desc": "The pouch is stored inside the chest"
+    },
+    {
+      "relation": "stored_in",
+      "source": "boots_of_elvenkind",
+      "target": "[chest]",
+      "desc": "The boots of elvenkind are stored inside the chest"
+    },
+    {
+      "relation": "stored_in",
+      "source": "Turquoise",
+      "target": "pouch",
+      "desc": "The Turquoise are stored inside the pouch"
+    },
+    {
+      "relation": "Social",
+      "source": "harpy",
+      "target": "compass_rose",
+      "desc": "Can be reasoned with regarding leaving the wreck"
+    },
+    {
+      "relation": "guards",
+      "source": "harpy",
+      "target": "rocks_north_of_dragons_rest",
+      "desc": "Ships are lured to the rocks due to the harpy"
+    },
+    {
+      "relation": "hidden_at",
+      "source": "zombies",
+      "target": "shipwreck",
+      "desc": "Zombies are hidden in the shipwreck (implied by the necessity of finding the talisman in the hold to solve the zombie problem)"
+    },
+    {
+      "relation": "guarded_by",
+      "source": "compass_rose",
+      "target": "rocks_north_of_dragons_rest",
+      "desc": "Fog forms around the rocks after undoing the talisman's curse, indirectly associating Compass Rose with the rocks"
+    },
+    {
+      "relation": "serves",
+      "source": "aidron",
+      "target": "runara",
+      "desc": "Left Runara's tutelage"
+    },
+    {
+      "relation": "commands",
+      "source": "sparkrender",
+      "target": "blepp_the_kobold",
+      "desc": "Recruited kobolds to join his cause"
+    },
+    {
+      "relation": "allies_with",
+      "source": "[blepp_the_kobold]",
+      "target": "[rotunda]",
+      "desc": "The kobolds who joined Sparkrender are associated with the rotunda ruins"
+    },
+    {
+      "relation": "allies_with",
+      "source": "[blepp_the_kobold]",
+      "target": "[d5]",
+      "desc": "The kobolds are associated with the observatory tower (area D5)"
+    },
+    {
+      "relation": "Social",
+      "source": "kobold_tinkerer",
+      "target": "sparkrender",
+      "desc": "Sworn loyalty"
+    },
+    {
+      "relation": "Group",
+      "source": "kobold_tinkerer",
+      "target": "blepp_the_kobold",
+      "desc": "Members include"
+    },
+    {
+      "relation": "inhabits",
+      "source": "[winged_kobold]",
+      "target": "[rotunda]",
+      "desc": "Two Winged Kobold inhabit the rotunda"
+    },
+    {
+      "relation": "unlocks",
+      "source": "dagger",
+      "target": "d5",
+      "desc": "Used to scratch the rune on the journal's lock, enabling access to the hidden entrance in area D5"
+    },
+    {
+      "relation": "locks",
+      "source": "journal",
+      "target": "d5",
+      "desc": "The journal's lock prevents access to the hidden entrance in area D5 until disarmed"
+    },
+    {
+      "relation": "hidden_at",
+      "source": "journal",
+      "target": "d5",
+      "desc": "Contains a passage guiding scholars to the hidden entrance in area D5"
+    },
+    {
+      "relation": "inhabits",
+      "source": "bronze_dragon_wyrmling",
+      "target": "rotunda",
+      "desc": "Implied to be located in the rotunda (area D2) based on narrative context"
+    },
+    {
+      "relation": "guarded_by",
+      "source": "bronze_dragon_wyrmling",
+      "target": "rotunda",
+      "desc": "Implied to be protected or contained within the rotunda"
+    },
+    {
+      "relation": "trapped_at",
+      "source": "aidron",
+      "target": "d5",
+      "desc": "Trapped by Sparkrender"
+    },
+    {
+      "relation": "trapped_at",
+      "source": "bronze_dragon_wyrmling",
+      "target": "d5",
+      "desc": "Forced into the library by Sparkrender"
+    },
+    {
+      "relation": "inhabits",
+      "source": "aidron",
+      "target": "d5",
+      "desc": "Spends time digging through the collapsed wall"
+    },
+    {
+      "relation": "guarded_by",
+      "source": "d5",
+      "target": "sparkrender",
+      "desc": "Sparkrender created the trap to imprison Aidron"
+    },
+    {
+      "relation": "hidden_at",
+      "source": "[1_battleaxe]",
+      "target": "[hold_person]",
+      "desc": "Both items are revealed by detect magic without checks"
+    },
+    {
+      "relation": "hidden_at",
+      "source": "[hold_person]",
+      "target": "[hold_person]",
+      "desc": "Both items are revealed by detect magic without checks"
+    },
+    {
+      "relation": "carries",
+      "source": "[aidron]",
+      "target": "[1_battleaxe]",
+      "desc": "Aidron cataloged the contents of the room and can direct to these items"
+    },
+    {
+      "relation": "carries",
+      "source": "[aidron]",
+      "target": "[detect_magic]",
+      "desc": "Aidron cataloged the contents of the room and can direct to these items"
+    },
+    {
+      "relation": "hidden_at",
+      "source": "blepp_the_kobold",
+      "target": "d5",
+      "desc": "Surviving kobolds lurk here"
+    },
+    {
+      "relation": "hidden_at",
+      "source": "winged_kobold",
+      "target": "d5",
+      "desc": "Winged kobolds lurk here"
+    },
+    {
+      "relation": "allies_with",
+      "source": "aidron",
+      "target": "sparkrender",
+      "desc": "Aidron helps Sparkrender's ritual"
+    },
+    {
+      "relation": "gives",
+      "source": "runara",
+      "target": "pearl",
+      "desc": "Gives an exquisite pearl worth 100 gp"
+    }
+  ]
+}

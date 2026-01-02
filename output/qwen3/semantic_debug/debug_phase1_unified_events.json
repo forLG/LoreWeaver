@@ -1,399 +1,226 @@
 [
   {
-    "label": "Arrive_at_Dragon_Rest",
-    "type": "exploration",
-    "participants": [
-      "adventurers"
-    ],
-    "location": "dragon_rest",
-    "description": "Ship approaches the harbor on the island's north side",
-    "id": "arrive_at_dragon_rest",
-    "source_node": ""
-  },
-  {
-    "label": "Reach_Shipyard",
-    "type": "exploration",
-    "participants": [
-      "adventurers"
-    ],
-    "location": "harbor",
-    "description": "Sailors row the party ashore at the rickety dock",
-    "id": "reach_shipyard",
-    "source_node": ""
-  },
-  {
-    "label": "Explore_Climbing_Path",
-    "type": "exploration",
-    "participants": [
-      "adventurers"
-    ],
-    "location": "path",
-    "description": "Path winds up the cliffside to the temple with carved doorways",
-    "id": "explore_climbing_path",
-    "source_node": ""
-  },
-  {
-    "label": "Discover_Open_Air_Temple",
+    "label": "Introduction to Dangers",
     "type": "discovery",
     "participants": [
       "adventurers"
     ],
-    "location": "temple",
-    "description": "Towering statue of a wizened man surrounded by seven songbirds revealed",
-    "id": "discover_open_air_temple",
-    "source_node": ""
-  },
-  {
-    "label": "Curious Inquiry",
-    "type": "dialogue",
-    "participants": [
-      "kobold_population"
-    ],
-    "location": "cloister",
-    "description": "Kobolds barrage the party with questions upon their arrival.",
-    "id": "curious_inquiry",
-    "source_node": ""
-  },
-  {
-    "label": "Combat Against Zombies",
-    "type": "combat",
-    "participants": [
-      "zombie_group"
-    ],
-    "location": "beach",
-    "description": "Characters fight zombies at the beach, prompting Elder Runara's shift from indifference to friendship.",
-    "id": "combat_against_zombies",
-    "source_node": "Elder Runara"
-  },
-  {
-    "label": "Revelation of True Identity",
-    "type": "discovery",
-    "participants": [
-      "elder_runara"
-    ],
-    "location": "cloister",
-    "description": "Residents of the cloister know Elder Runara's true identity as a bronze dragon but withhold this knowledge from visitors.",
-    "id": "revelation_of_true_identity",
-    "source_node": "Elder Runara"
-  },
-  {
-    "label": "Social Interaction Change",
-    "type": "dialogue",
-    "participants": [
-      "elder_runara",
-      "adventurers"
-    ],
-    "location": "cloister",
-    "description": "Elder Runara's attitude shifts from indifference to hostility if characters harm residents, requiring reconciliation.",
-    "id": "social_interaction_change",
-    "source_node": "Elder Runara"
-  },
-  {
-    "label": "Tattoo Symbol Recognition",
-    "type": "discovery",
-    "participants": [
-      "player_character",
-      "tarak"
-    ],
-    "location": "cloister",
-    "description": "Character identifies the Gilded Gallows insignia on Tarak's tattoos after succeeding on an Intelligence (History) check.",
-    "id": "tattoo_symbol_recognition",
-    "source_node": "Tarak"
-  },
-  {
-    "label": "Guardian Encounters",
-    "type": "encounter",
-    "participants": [
-      "adventure_party",
-      "spore_servant_octopus"
-    ],
-    "location": "sea_caves",
-    "description": "Myconid-guardians prevent access to mushroom groves, creating a quest challenge for the party.",
-    "id": "guardian_encounters",
-    "source_node": "Tarak"
-  },
-  {
-    "label": "Hostile Interaction",
-    "type": "dialogue",
-    "participants": [
-      "tarak",
-      "player_character"
-    ],
-    "location": "cloister",
-    "description": "Tarak's demeanor shifts to hostility when questioned about his criminal past.",
-    "id": "hostile_interaction",
-    "source_node": "Tarak"
-  },
-  {
-    "label": "Ship_Crash_Discovery",
-    "type": "discovery",
-    "participants": [
-      "varnonth"
-    ],
-    "location": "temple",
-    "description": "Varnoth witnesses a ship altering its course and crashing into northern rocks",
-    "id": "ship_crash_discovery",
-    "source_node": "Varnoth"
+    "location": "dragons_rest",
+    "description": "Characters learn about the dangers facing Stormwreak Isle",
+    "id": "introduction_to_dangers",
+    "source_node": "Chapter 1: Dragon's Rest"
   },
   {
     "label": "Pursuit",
-    "type": "combat",
+    "type": "encounter",
     "participants": [
+      "dragon_residents",
       "zombie"
     ],
     "location": "lower_path",
-    "description": "Zombies pursue fleeing residents of Dragon's Rest along the lower path",
+    "description": "Two residents flee while being chased by three sailor-zombie attackers",
     "id": "pursuit",
     "source_node": ""
   },
   {
-    "label": "Dialogue_with_Tarak",
-    "type": "dialogue",
-    "participants": [
-      "tarak"
-    ],
-    "location": "???",
-    "description": "Tarak informs the party about the myconids’ plight and assigns them a quest.",
-    "id": "dialogue_with_tarak",
-    "source_node": "Sea Caves"
-  },
-  {
-    "label": "Quest_to_Recover_Mushrooms",
+    "label": "Crash Investigation",
     "type": "quest",
     "participants": [
-      "characters"
+      "varnoth",
+      "rix"
     ],
-    "location": "sea_caves",
-    "description": "The party is tasked with investigating the myconids and returning heart cap mushrooms.",
-    "id": "quest_to_recover_mushrooms",
-    "source_node": "Sea Caves"
+    "location": "rocks_north_of_dragons_rest",
+    "description": "Characters learn about mysterious shipwrecks and are encouraged to investigate causes",
+    "id": "crash_investigation",
+    "source_node": "Shipwreck"
   },
   {
-    "label": "Guardian_Encounter_Prep",
+    "label": "Compass Rose Revelation",
     "type": "discovery",
     "participants": [
-      "characters"
+      "runara"
     ],
-    "location": "sea_caves",
-    "description": "Tarak warns of the fungal octopus guardian blocking access to the caves.",
-    "id": "guardian_encounter_prep",
-    "source_node": "Sea Caves"
+    "location": "dragon_rest",
+    "description": "Runara directs attention to the ancient wreck of Compass Rose as potential answers",
+    "id": "compass_rose_revelation",
+    "source_node": "Shipwreck"
   },
   {
-    "label": "Potion_Delivery",
-    "type": "delivery",
+    "label": "Rescue Scenario",
+    "type": "discovery",
     "participants": [
-      "characters"
+      "runara"
     ],
-    "location": "???",
-    "description": "Tarak gifts the party two Potions of Healing.",
-    "id": "potion_delivery",
-    "source_node": "Sea Caves"
+    "location": "temple_area_a5",
+    "description": "Characters awaken in the temple after being rescued by Runara",
+    "id": "rescue_scenario",
+    "source_node": "Runara Saves the Day!"
   },
   {
-    "label": "Scaling Difficulty Adjustment",
-    "type": "quest",
+    "label": "Tide Shift Mechanics",
+    "type": "discovery",
     "participants": [],
-    "location": "cursed_shipwreck",
-    "description": "Adjust combat challenges based on whether players completed earlier chapters",
-    "id": "scaling_difficulty_adjustment",
-    "source_node": "Chapter 3: Cursed Shipwreck"
+    "location": "seagrow_caves",
+    "description": "Description of tidal patterns affecting access to submerged sections of the caves",
+    "id": "tide_shift_mechanics",
+    "source_node": "Entering the Caves"
   },
   {
-    "label": "Exploration_of_Shipwrecks",
-    "type": "exploration",
-    "participants": [
-      "adventurers"
-    ],
-    "location": "compass_rose",
-    "description": "Characters investigate other shipwrecks, uncovering zombies, giant octopuses, and other hazards.",
-    "id": "exploration_of_shipwrecks",
-    "source_node": "Other Shipwrecks"
-  },
-  {
-    "label": "Zombie_Encounter",
-    "type": "combat",
+    "label": "Stirge Join Battle",
+    "type": "encounter",
     "participants": [
       "adventurers",
-      "zombie_group"
+      "stirge"
     ],
-    "location": "unknown",
-    "description": "Sailors animated by a talisman in Compass Rose's hold ambush intruders in submerged vessels.",
-    "id": "zombie_encounter",
-    "source_node": "Other Shipwrecks"
+    "location": "entrance_tunnel",
+    "description": "Two stirge cling to the tunnel ceiling and join combat if fighting erupts in this area",
+    "id": "stirge_join_battle",
+    "source_node": "2nd-Level Characters"
   },
   {
-    "label": "Giant_Octopus_Danger",
+    "label": "Mushroom Stirs",
     "type": "discovery",
     "participants": [
       "adventurers"
     ],
-    "location": "unknown",
-    "description": "Sunken shipwrecks host colossal octopuses resembling spore servant octopuses.",
-    "id": "giant_octopus_danger",
-    "source_node": "Other Shipwrecks"
+    "location": "fungus_farm_cavern",
+    "description": "A sickly-looking mushroom stirs to life and extends tendrils toward the party.",
+    "id": "mushroom_stirs",
+    "source_node": ""
   },
   {
-    "label": "Ghoul_Discovery",
+    "label": "Discovery of Heart Cap Mushrooms",
     "type": "discovery",
     "participants": [
       "adventurers"
     ],
-    "location": "unknown",
-    "description": "Hidden threats within wrecks include ghouls, undead remnants of lost crews.",
-    "id": "ghoul_discovery",
-    "source_node": "Other Shipwrecks"
+    "location": "fungus_farm_cavern",
+    "description": "Characters discover heart cap mushrooms requiring a skill check to harvest.",
+    "id": "discovery_of_heart_cap_mushrooms",
+    "source_node": "Treasure"
   },
   {
-    "label": "Boarding Instructions",
-    "type": "discovery",
+    "label": "Vigilant Defense",
+    "type": "encounter",
     "participants": [
-      "characters"
+      "agrinc",
+      "omphalo"
     ],
-    "location": "cursed_shipwreck",
-    "description": "Characters learn about accessing the wreck via rowboat or underwater entrance",
-    "id": "boarding_instructions",
-    "source_node": "Running This Chapter"
+    "location": "circle_chamber",
+    "description": "Conscious myconids aggressively defend against unescorted intruders",
+    "id": "vigilant_defense",
+    "source_node": "B4: Circle Chamber"
   },
   {
-    "label": "Destruction of Clifftop Observatory",
-    "type": "combat",
-    "participants": [
-      "runara",
-      "blue_dragon_wyrmling"
-    ],
-    "location": "clifftop_observatory",
-    "description": "Runara battles her blue dragon rival, destroying the observatory.",
-    "id": "destruction_of_clifftop_observatory",
-    "source_node": "Observatory Overview"
-  },
-  {
-    "label": "Aidron's Confrontation with Sparkrender",
-    "type": "combat",
-    "participants": [
-      "aidron",
-      "sparkrender"
-    ],
-    "location": "clifftop_observatory",
-    "description": "Aidron meets Sparkrender and engages in combat, ultimately being captured.",
-    "id": "aidron_s_confrontation_with_sparkrender",
-    "source_node": "Observatory Overview"
-  },
-  {
-    "label": "Imprisonment of Aidron",
-    "type": "capture",
-    "participants": [
-      "sparkrender",
-      "aidron"
-    ],
-    "location": "clifftop_observatory",
-    "description": "Sparkrender imprisons Aidron in the observatory ruins.",
-    "id": "imprisonment_of_aidron",
-    "source_node": "Observatory Overview"
-  },
-  {
-    "label": "Ritual Preparation",
-    "type": "quest",
-    "participants": [
-      "sparkrender"
-    ],
-    "location": "clifftop_observatory",
-    "description": "Sparkrender begins planning a ritual to summon the spirits of dead dragons, requiring Aidron's sacrifice.",
-    "id": "ritual_preparation",
-    "source_node": "Observatory Overview"
-  },
-  {
-    "label": "Travel Options Description",
-    "type": "exploration",
-    "participants": [],
-    "location": "clifftop_observatory",
-    "description": "Describes three methods to reach the Clifftop Observatory via boat, coastal walk, or overland path",
-    "id": "travel_options_description",
-    "source_node": "Running This Chapter"
-  },
-  {
-    "label": "Description",
+    "label": "Meld State",
     "type": "observation",
-    "participants": [],
-    "location": "broken_overgrown_path",
-    "description": "Text describes a path leading to the cliff edge and an overlook marked by golden-marble dragon statues",
-    "id": "description",
-    "source_node": ""
+    "participants": [
+      "craterel",
+      "pleuro",
+      "subrufus",
+      "virosa"
+    ],
+    "location": "circle_chamber",
+    "description": "Four myconids enter a shared transcendental trance state",
+    "id": "meld_state",
+    "source_node": "B4: Circle Chamber"
   },
   {
-    "label": "Combat_with_Batlike_Creatures_and_Kobolds",
+    "label": "Defense of Sinensa",
     "type": "combat",
     "participants": [
-      "winged_kobolds",
-      "batlike_creatures"
+      "auranta",
+      "enok",
+      "sinensa"
     ],
-    "location": "plaza",
-    "description": "Two winged kobolds fight desperately against six batlike creatures that swarm around them.",
-    "id": "combat_with_batlike_creatures_and_kobolds",
-    "source_node": ""
+    "location": "fungus_farm_cavern",
+    "description": "Myconid Adults attack intruders lacking fellow myconids while protecting their unconscious leader",
+    "id": "defense_of_sinensa",
+    "source_node": "B5: Sinensa's Sanctum"
   },
   {
-    "label": "Activate_Energy_Bridge",
-    "type": "puzzle",
+    "label": "Fume_Drake_Encounter",
+    "type": "encounter",
+    "participants": [
+      "fume_drake"
+    ],
+    "location": "crystal_cave",
+    "description": "Two Fume Drake attack intruders in the cave",
+    "id": "fume_drake_encounter",
+    "source_node": "B6: Crystal Cave"
+  },
+  {
+    "label": "Blight_Source_Discovered",
+    "type": "discovery",
     "participants": [],
-    "location": "area_d2",
-    "description": "Using the moonstone key activates the energy bridge across the 22-foot gap between the rotunda and spire.",
-    "id": "activate_energy_bridge",
-    "source_node": "D4: Isolated Study"
+    "location": "crystal_cave",
+    "description": "Characters identify the tomb of Sharruth as the source of the blight",
+    "id": "blight_source_discovered",
+    "source_node": "B6: Crystal Cave"
   },
   {
-    "label": "Statue Alignment Puzzle",
+    "label": "Fissure_Blocked_By_Crystal",
+    "type": "discovery",
+    "participants": [],
+    "location": "crystal_cave",
+    "description": "The fissure is blocked by an orange crystal emitting light",
+    "id": "fissure_blocked_by_crystal",
+    "source_node": "B6: Crystal Cave"
+  },
+  {
+    "label": "Breaking_Fire_Crystal",
     "type": "discovery",
     "participants": [
-      "player_characters"
+      "crystal_cave"
     ],
-    "location": "observatory_tower",
-    "description": "Rotating statues to match the Dragon of Dawn constellation unlocks a hidden staircase to the secret archive.",
-    "id": "statue_alignment_puzzle",
-    "source_node": "Hidden Entrance"
+    "location": "crystal_cave",
+    "description": "Destroying the orange crystal stops the blight and releases a fire snake.",
+    "id": "breaking_fire_crystal",
+    "source_node": "Fire Crystal"
   },
   {
-    "label": "Staircase Closure Mechanism",
-    "type": "trap",
+    "label": "Fire_Snake_Encounter",
+    "type": "combat",
     "participants": [
-      "player_characters"
+      "fire_snake"
     ],
-    "location": "observatory_tower",
-    "description": "Misaligning any statue triggers the staircase to rise, sealing the library compartment.",
-    "id": "staircase_closure_mechanism",
-    "source_node": "Hidden Entrance"
+    "location": "crystal_cave",
+    "description": "A fire snake emerges from the shattered crystal and attacks the characters.",
+    "id": "fire_snake_encounter",
+    "source_node": "Fire Crystal"
   },
   {
-    "label": "Treasure_Discovery",
+    "label": "Sunlight_Refractive_Effect",
     "type": "discovery",
-    "participants": [
-      "adventurers"
-    ],
-    "location": "observatory_tower",
-    "description": "Characters collect Sparkrender's treasure including coins, gems, and personal effects",
-    "id": "treasure_discovery",
-    "source_node": "Treasure"
+    "participants": [],
+    "location": "crystal_cave",
+    "description": "Crystals refract sunlight, flooding the cave with brilliant illumination.",
+    "id": "sunlight_refractive_effect",
+    "source_node": "Fire Crystal"
   },
   {
-    "label": "Discovery Of Magical Items",
-    "type": "discovery",
+    "label": "Third Fume Drake Appearance",
+    "type": "encounter",
     "participants": [
-      "adventurers"
+      "adventurers",
+      "fume_drake"
     ],
-    "location": "secret_library",
-    "description": "Character discovers +1 battleaxe or spell scroll of hold person after successful intelligence check",
-    "id": "discovery_of_magical_items",
-    "source_node": "Treasure"
+    "location": "crystal_cave",
+    "description": "A third fume drake emerges in the room when the characters first arrive.",
+    "id": "third_fume_drake_appearance",
+    "source_node": "2nd-Level Characters"
   },
   {
-    "label": "Detect Magic Revelation",
-    "type": "discovery",
+    "label": "Fire Snake Hatch and Additional Fume Drakes",
+    "type": "encounter",
     "participants": [
-      "adventurers"
+      "adventurers",
+      "fire_snake",
+      "fume_drake"
     ],
-    "location": "secret_library",
-    "description": "Detect magic spell reveals location of hidden items without requiring ability check",
-    "id": "detect_magic_revelation",
-    "source_node": "Treasure"
+    "location": "crystal_cave",
+    "description": "As the fire snake hatches from its egg, two more fume drakes emerge from the purple crystals.",
+    "id": "fire_snake_hatch_and_additional_fume_drakes",
+    "source_node": "2nd-Level Characters"
   }
 ]

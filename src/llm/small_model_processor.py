@@ -1026,74 +1026,77 @@ class SmallModelProcessor(BaseLLMProcessor):
         node_id = node.get("id", "unknown")
         content = node.get("content", "")
 
+        # Extract entities and events from this node
+        result = {"entities": [], "events": []}
+
         # Skip if content is empty
         if not content or not content.strip():
             logger.debug(f"Skipping combined extraction for node '{title}' (id: {node_id}): empty content")
+        elif len(content.strip()) < 50:
+            # Content too short for extraction
+            logger.debug(f"Skipping combined extraction for node '{title}' (id: {node_id}): content too short ({len(content)} chars)")
         else:
+            # Content is long enough - proceed with extraction
             original_len = len(content)
 
-            # Check if content is too short
-            if len(content.strip()) < 50:
-                logger.debug(f"Skipping combined extraction for node '{title}' (id: {node_id}): content too short ({original_len} chars)")
+            # Truncate content if too long
+            if original_len > 3000:
+                content = content[:3000] + "... [truncated]"
+                logger.warning(f"Truncated content for node '{title}' (id: {node_id}) from {original_len} to {len(content)} chars")
+
+            # Build known entities text from previously extracted entities
+            known_entities_text = self._build_known_entities_text(all_entities)
+
+            # Extract entities and events in one call (unified extraction)
+            if self.use_natural_language:
+                prompt = PromptFactory.create_unified_extraction_prompt_natural(
+                    title=title,
+                    content=content,
+                    parent_context=parent_context,
+                    known_entities=known_entities_text
+                )
+
+                raw_response = await self._call_llm_async(
+                    prompt,
+                    temperature=0.75,
+                    top_p=0.90,
+                    max_tokens=self.max_tokens,
+                    enable_thinking=False,
+                    stop=None  # Don't stop early - let LLM complete the response
+                )
+
+                result = parse_unified_extraction(raw_response)
+
+                # Check if LLM returned a summary (no entities/events found)
+                if result.get("summary"):
+                    summary = result["summary"]
+                    logger.warning(
+                        f"No entities/events found in node '{title}' (id: {node_id}). "
+                        f"Reason: {summary} "
+                        f"[Content length: {original_len} chars]"
+                    )
+                    # Keep result as empty - children will still be processed
             else:
-                # Truncate content if too long
-                if original_len > 3000:
-                    content = content[:3000] + "... [truncated]"
-                    logger.warning(f"Truncated content for node '{title}' (id: {node_id}) from {original_len} to {len(content)} chars")
+                # JSON mode not implemented for unified extraction yet
+                logger.warning("Unified extraction only supports natural language mode")
+                result = {"entities": [], "events": []}
 
-                # Build known entities text from previously extracted entities
-                known_entities_text = self._build_known_entities_text(all_entities)
+            # Add entities with source node info
+            for entity in result.get("entities", []):
+                entity["source_node"] = title
+                entity["extraction_method"] = "llm"  # Mark as LLM-extracted
+                all_entities.append(entity)
 
-                # Extract entities and events in one call (unified extraction)
-                if self.use_natural_language:
-                    prompt = PromptFactory.create_unified_extraction_prompt_natural(
-                        title=title,
-                        content=content,
-                        parent_context=parent_context,
-                        known_entities=known_entities_text
-                    )
+            # Add events with source node info
+            for event in result.get("events", []):
+                event["source_node"] = title
+                all_events.append(event)
 
-                    raw_response = await self._call_llm_async(
-                        prompt,
-                        temperature=0.75,
-                        top_p=0.90,
-                        max_tokens=self.max_tokens,
-                        enable_thinking=False,
-                        stop=None  # Don't stop early - let LLM complete the response
-                    )
+            logger.debug(f"  Unified extraction for {title}: "
+                        f"{len(result.get('entities', []))} entities, "
+                        f"{len(result.get('events', []))} events")
 
-                    result = parse_unified_extraction(raw_response)
-
-                    # Check if LLM returned a summary (no entities/events found)
-                    if result.get("summary"):
-                        summary = result["summary"]
-                        logger.warning(
-                            f"No entities/events found in node '{title}' (id: {node_id}). "
-                            f"Reason: {summary} "
-                            f"[Content length: {original_len} chars]"
-                        )
-                        return  # Skip adding entities/events
-                else:
-                    # JSON mode not implemented for unified extraction yet
-                    logger.warning("Unified extraction only supports natural language mode")
-                    result = {"entities": [], "events": []}
-
-                # Add entities with source node info
-                for entity in result.get("entities", []):
-                    entity["source_node"] = title
-                    entity["extraction_method"] = "llm"  # Mark as LLM-extracted
-                    all_entities.append(entity)
-
-                # Add events with source node info
-                for event in result.get("events", []):
-                    event["source_node"] = title
-                    all_events.append(event)
-
-                logger.debug(f"  Unified extraction for {title}: "
-                            f"{len(result.get('entities', []))} entities, "
-                            f"{len(result.get('events', []))} events")
-
-        # Recurse to children
+        # Recurse to children (ALWAYS happens, even if this node had no entities)
         if node.get("children"):
             for child in node["children"]:
                 # Build parent context for child

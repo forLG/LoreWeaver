@@ -6,37 +6,37 @@
       "type": "Creature",
       "source_file": "DoSI",
       "mentions": [
-        "074",
-        "006",
-        "01d",
-        "01a",
-        "03d",
-        "0ab",
-        "00d",
-        "0bc",
+        "03b",
         "0a1",
         "0a2",
-        "0c2",
-        "034",
-        "024",
         "01e",
-        "03c",
-        "02f",
-        "005",
-        "02a",
-        "0e7",
-        "038",
-        "09e",
-        "03b",
-        "036",
-        "0c9",
-        "018",
+        "0c2",
+        "00d",
         "02c",
-        "011",
-        "046",
+        "0e7",
+        "02a",
         "030",
-        "037",
-        "03a"
+        "01d",
+        "024",
+        "006",
+        "03c",
+        "0bc",
+        "005",
+        "046",
+        "034",
+        "03d",
+        "09e",
+        "01a",
+        "036",
+        "038",
+        "02f",
+        "018",
+        "0ab",
+        "011",
+        "0c9",
+        "074",
+        "03a",
+        "037"
       ],
       "properties": {
         "size": "Unknown",
@@ -92,8 +92,8 @@
       "type": "Creature",
       "source_file": "MM",
       "mentions": [
-        "00c",
         "06d",
+        "00c",
         "06f"
       ],
       "properties": {
@@ -141,10 +141,10 @@
       "type": "Creature",
       "source_file": "DoSI",
       "mentions": [
-        "0cd",
-        "0ea",
         "0ed",
-        "0eb"
+        "0cd",
+        "0eb",
+        "0ea"
       ],
       "properties": {
         "size": "L",
@@ -196,12 +196,12 @@
       "type": "Creature",
       "source_file": "MM",
       "mentions": [
+        "082",
         "014",
-        "080",
-        "032",
-        "073",
         "030",
-        "082"
+        "032",
+        "080",
+        "073"
       ],
       "properties": {
         "size": "M",
@@ -241,8 +241,8 @@
       "type": "Creature",
       "source_file": "MM",
       "mentions": [
-        "014",
         "086",
+        "014",
         "08f"
       ],
       "properties": {
@@ -399,8 +399,8 @@
       "type": "Creature",
       "source_file": "MM",
       "mentions": [
-        "0bb",
         "0bc",
+        "0bb",
         "01e",
         "0c2"
       ],
@@ -448,8 +448,8 @@
       "type": "Creature",
       "source_file": "MM",
       "mentions": [
-        "063",
         "05a",
+        "063",
         "01e",
         "0ad"
       ],
@@ -493,20 +493,20 @@
       "source_file": "DoSI",
       "mentions": [
         "01f",
-        "033",
-        "02a",
-        "025",
-        "054",
         "070",
         "0e7",
-        "028",
+        "02a",
         "039",
-        "04c",
-        "06a",
-        "038",
-        "030",
+        "025",
         "061",
-        "04e"
+        "054",
+        "030",
+        "038",
+        "04e",
+        "028",
+        "033",
+        "04c",
+        "06a"
       ],
       "properties": {
         "size": "M",
@@ -578,13 +578,13 @@
       "type": "Creature",
       "source_file": "DoSI",
       "mentions": [
-        "02c",
+        "0e7",
         "02a",
         "025",
         "034",
-        "0e7",
-        "020",
-        "038"
+        "038",
+        "02c",
+        "020"
       ],
       "properties": {
         "size": "M",
@@ -637,10 +637,10 @@
       "type": "Item",
       "source_file": "PHB",
       "mentions": [
-        "096",
-        "0c1",
         "0b6",
-        "02c"
+        "02c",
+        "096",
+        "0c1"
       ],
       "properties": {
         "level": 1,
@@ -709,8 +709,8 @@
       "type": "Creature",
       "source_file": "DoSI",
       "mentions": [
-        "0e7",
         "040",
+        "0e7",
         "06b"
       ],
       "properties": {
@@ -800,8 +800,8 @@
       "type": "Creature",
       "source_file": "MM",
       "mentions": [
-        "046",
-        "0b2"
+        "0b2",
+        "046"
       ],
       "properties": {
         "size": "S",
@@ -898,11 +898,11 @@
       "type": "Creature",
       "source_file": "DoSI",
       "mentions": [
-        "054",
-        "0e7",
         "070",
-        "04c",
-        "068"
+        "0e7",
+        "068",
+        "054",
+        "04c"
       ],
       "properties": {
         "size": "Unknown",
@@ -951,9 +951,9 @@
       "type": "Item",
       "source_file": "XPHB",
       "mentions": [
-        "0a4",
         "04e",
-        "076"
+        "076",
+        "0a4"
       ],
       "properties": {
         "rarity": "none",
@@ -968,10 +968,10 @@
       "type": "Creature",
       "source_file": "MM",
       "mentions": [
-        "05f",
-        "054",
-        "05b",
         "068",
+        "05b",
+        "054",
+        "05f",
         "066"
       ],
       "properties": {
@@ -1061,8 +1061,8 @@
       "type": "Creature",
       "source_file": "DoSI",
       "mentions": [
-        "074",
-        "058"
+        "058",
+        "074"
       ],
       "properties": {
         "size": "L",
@@ -1142,8 +1142,8 @@
       "type": "Creature",
       "source_file": "MM",
       "mentions": [
-        "05b",
-        "05e"
+        "05e",
+        "05b"
       ],
       "properties": {
         "size": "M",
@@ -1199,8 +1199,8 @@
       "type": "Item",
       "source_file": "XDMG",
       "mentions": [
-        "06a",
-        "070"
+        "070",
+        "06a"
       ],
       "properties": {
         "rarity": "rare",
@@ -1261,10 +1261,10 @@
       "source_file": "MM",
       "mentions": [
         "07c",
-        "09c",
-        "073",
+        "09a",
         "099",
-        "09a"
+        "073",
+        "09c"
       ],
       "properties": {
         "size": "M",
@@ -1303,8 +1303,8 @@
       "type": "Creature",
       "source_file": "MM",
       "mentions": [
-        "074",
-        "098"
+        "098",
+        "074"
       ],
       "properties": {
         "size": "M",
@@ -1372,9 +1372,9 @@
       "type": "Item",
       "source_file": "XPHB",
       "mentions": [
-        "096",
         "0b8",
-        "085"
+        "085",
+        "096"
       ],
       "properties": {
         "rarity": "none",
@@ -1537,9 +1537,9 @@
       "type": "Creature",
       "source_file": "MM",
       "mentions": [
+        "0a2",
         "0b9",
-        "0c2",
-        "0a2"
+        "0c2"
       ],
       "properties": {
         "size": "M",
@@ -1585,9 +1585,9 @@
       "type": "Creature",
       "source_file": "MM",
       "mentions": [
-        "0c2",
         "0bf",
-        "0a2"
+        "0a2",
+        "0c2"
       ],
       "properties": {
         "size": "M",
@@ -1636,8 +1636,8 @@
       "type": "Creature",
       "source_file": "MM",
       "mentions": [
-        "0b2",
-        "0ad"
+        "0ad",
+        "0b2"
       ],
       "properties": {
         "size": "S",

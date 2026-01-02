@@ -1,773 +1,272 @@
-[2026-01-02 06:54:41] [INFO] Logging initialized. Log file: logs/qwen3.log
-[2026-01-02 06:54:41] [INFO] Model: ./qwen3-8b-local/Qwen/Qwen3-8B
-[2026-01-02 06:54:41] [INFO] Max concurrent requests: 50
-[2026-01-02 06:54:41] [WARNING] High concurrency may overload local vLLM servers!
-[2026-01-02 06:54:41] [INFO] Loading adventure from data/adventure-dosi.json...
-[2026-01-02 06:54:41] [INFO] Parsing adventure data...
-[2026-01-02 06:54:41] [INFO] Saving parsed data to /inspire/hdd/project/robot-reasoning/xiangyushun-p-xiangyushun/zichen/qwen3_8b/LoreWeaver/output/qwen3/adventure_parsed.json...
-[2026-01-02 06:54:41] [INFO] Parsed 240 nodes
-[2026-01-02 06:54:41] [INFO] Found 249 external references
-[2026-01-02 06:54:41] [INFO] Loading parsed data from /inspire/hdd/project/robot-reasoning/xiangyushun-p-xiangyushun/zichen/qwen3_8b/LoreWeaver/output/qwen3/adventure_parsed.json...
-[2026-01-02 06:54:41] [INFO] Resolving entities from preprocessor tags...
-[2026-01-02 06:54:42] [WARNING] Could not resolve item 'dagger' (dagger|PHB): unhashable type: 'dict'
-[2026-01-02 06:54:42] [WARNING] Could not resolve item 'Sling Bullet' (Sling Bullet|PHB): unhashable type: 'dict'
-[2026-01-02 06:54:42] [WARNING] Could not resolve item '+1 battleaxe' (+1 battleaxe): Item not found: +1 battleaxe (source: None)
-[2026-01-02 06:54:42] [WARNING] Could not resolve item '+1 Weapon' (+1 Weapon|): Item not found: +1 Weapon (source: )
-[2026-01-02 06:54:42] [WARNING] Could not resolve item 'Spell Scroll' (Spell Scroll|): unhashable type: 'dict'
-[2026-01-02 06:54:42] [WARNING] Could not resolve item 'Potion of Resistance' (Potion of Resistance): Item not found: Potion of Resistance (source: None)
-[2026-01-02 06:54:42] [WARNING] Could not resolve item 'Spell Scroll' (Spell Scroll): unhashable type: 'dict'
-[2026-01-02 06:54:42] [WARNING] Could not resolve item '+1 Weapon' (+1 Weapon): Item not found: +1 Weapon (source: None)
-[2026-01-02 06:54:42] [INFO] Saving resolved entities to /inspire/hdd/project/robot-reasoning/xiangyushun-p-xiangyushun/zichen/qwen3_8b/LoreWeaver/output/qwen3/adventure_resolved.json...
-[2026-01-02 06:54:42] [INFO] Resolved 84 entities from tags
-[2026-01-02 06:54:42] [INFO] Prepared 84 seed entities for LLM context
-[2026-01-02 06:54:42] [INFO] Built tree with 8 root nodes
-[2026-01-02 06:54:42] [INFO] Initializing SmallModelProcessor...
-[2026-01-02 06:54:42] [INFO] Natural language mode enabled (more robust for small models)
-[2026-01-02 06:54:42] [INFO] Unified entity+event extraction mode enabled (heterogeneous graph)
-[2026-01-02 06:54:42] [INFO] Extracting semantic graph (entities + events + relations)...
-[2026-01-02 06:54:42] [INFO] ============================================================
-[2026-01-02 06:54:42] [INFO] SMALL MODEL PIPELINE: Unified Entity+Event Extraction
-[2026-01-02 06:54:42] [INFO] ============================================================
-[2026-01-02 06:54:42] [INFO] Phase 1: Unified entity + event extraction...
-[2026-01-02 06:54:42] [INFO]   Using 84 seed entities from preprocessor tags
-[2026-01-02 06:54:46] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 06:54:46] [WARNING] No entities/events found in node 'Running the Adventure' (id: 000). Reason: Text contains only atmospheric description with no entities. [Content length: 203 chars]
-[2026-01-02 06:54:53] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 06:55:02] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 06:55:14] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 06:55:20] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 06:55:28] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 06:55:40] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 06:55:40] [WARNING] No entities/events found in node 'Tip: Undead Fortitude' (id: 017). Reason: Text contains only atmospheric description with no entities. [Content length: 776 chars]
-[2026-01-02 06:55:59] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 06:56:07] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 06:56:21] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 06:56:33] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 06:56:52] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 06:57:05] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 06:57:16] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 06:57:28] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 06:57:38] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 06:57:42] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 06:57:42] [WARNING] No entities/events found in node 'Dragon's Rest Locations' (id: 021). Reason: Text contains only atmospheric description with no entities. [Content length: 171 chars]
-[2026-01-02 06:57:54] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 06:58:10] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 06:58:23] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 06:58:36] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 06:58:55] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 06:59:17] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 06:59:20] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 06:59:20] [WARNING] No entities/events found in node 'Individual Quests' (id: 035). Reason: Text contains only atmospheric description with no entities. [Content length: 103 chars]
-[2026-01-02 06:59:27] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 06:59:36] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 06:59:54] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 06:59:58] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 06:59:58] [WARNING] No entities/events found in node 'Exploring the Island' (id: 03e). Reason: Text contains only atmospheric description with no entities. [Content length: 380 chars]
-[2026-01-02 07:00:02] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:00:02] [WARNING] No entities/events found in node 'Chapter 2: Seagrow Caves' (id: 04b). Reason: Text contains only atmospheric description with no entities. [Content length: 300 chars]
-[2026-01-02 07:00:05] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:00:05] [WARNING] No entities/events found in node 'Chapter 3: Cursed Shipwreck' (id: 072). Reason: Text contains only atmospheric description with no entities. [Content length: 262 chars]
-[2026-01-02 07:00:18] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:00:32] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:00:42] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:00:52] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:01:05] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:01:15] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:01:23] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:01:35] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:01:44] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:01:47] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:01:47] [WARNING] No entities/events found in node 'Observatory Locations' (id: 0aa). Reason: Text contains only atmospheric description with no entities. [Content length: 190 chars]
-[2026-01-02 07:02:05] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:02:16] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:02:28] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:02:50] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:02:57] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:03:11] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:03:17] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:03:17] [WARNING] No entities/events found in node 'Appendix A: Magic Items' (id: 0ca). Reason: Text contains only atmospheric description with no entities. [Content length: 243 chars]
-[2026-01-02 07:03:22] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:03:22] [WARNING] No entities/events found in node 'Appendix B: Creatures' (id: 0d3). Reason: Text contains only atmospheric description with no entities. [Content length: 118 chars]
-[2026-01-02 07:03:22] [INFO]   Extracted 147 raw entities
-[2026-01-02 07:03:22] [INFO]   Extracted 0 raw events
-[2026-01-02 07:03:22] [INFO]   Saved debug output: debug_phase1_unified_entities.json
-[2026-01-02 07:03:22] [INFO]   Saved debug output: debug_phase1_unified_events.json
-[2026-01-02 07:03:22] [INFO] Phase 2: Resolving entities...
-[2026-01-02 07:03:22] [INFO]   Resolved to 90 unique entities
-[2026-01-02 07:03:22] [INFO]   After filtering and merging: 90 meaningful entities
-[2026-01-02 07:03:22] [INFO] Phase 2.5: Extracting location hierarchies...
-[2026-01-02 07:03:33] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:03:43] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:03:57] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:04:10] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:04:30] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:04:40] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:04:52] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:05:16] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:05:34] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:05:45] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:05:55] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:06:14] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:06:28] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:06:47] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:07:02] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:07:14] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:07:19] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:07:28] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:07:36] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:07:45] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:08:18] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:08:33] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:08:58] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:09:11] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:09:37] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:09:45] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:09:55] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:10:18] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:10:31] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:10:46] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:11:01] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:11:11] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:11:23] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:11:33] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:11:33] [INFO]   Extracted 49 location hierarchy edges
-[2026-01-02 07:11:33] [INFO]   Saved debug output: debug_phase2_5_location_hierarchies.json
-[2026-01-02 07:11:33] [INFO] Phase 2.6: Extracting semantic relations...
-[2026-01-02 07:11:44] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:11:54] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:12:08] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:12:13] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:12:21] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:12:36] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:12:46] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:13:08] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:13:16] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:13:33] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:13:41] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:13:55] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:14:01] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:14:17] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:14:33] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:14:55] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:15:15] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:15:37] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:15:58] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:16:08] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:16:21] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:16:43] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:16:52] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:17:02] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:17:20] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:17:29] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:17:51] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:18:11] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:18:24] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:18:46] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:19:06] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:19:12] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:19:26] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:19:32] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:19:41] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:19:58] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:20:03] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:20:08] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:20:21] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:20:26] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:20:53] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:21:12] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:21:33] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:21:40] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:21:50] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:22:00] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:22:18] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:22:50] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:23:08] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:23:38] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:23:51] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:24:04] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:24:13] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:24:22] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:24:32] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:24:45] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:24:53] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:25:08] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:25:36] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:25:51] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:26:08] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:26:21] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:26:44] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:26:51] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:27:11] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:27:21] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:27:46] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:28:01] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:28:11] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:28:17] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:28:38] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:29:04] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:29:21] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:29:34] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:29:54] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:30:06] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:30:33] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:30:56] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:31:08] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:31:34] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:31:54] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:32:09] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:32:36] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:33:00] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:33:17] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:33:27] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:33:45] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:33:50] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:33:58] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 07:33:58] [INFO]   Extracted 115 semantic relation edges
-[2026-01-02 07:33:58] [INFO]   Saved debug output: debug_phase2_6_semantic_relations.json
-[2026-01-02 07:33:58] [INFO] Phase 3: Processing events and generating edges...
-[2026-01-02 07:33:58] [INFO]   Valid events after ID update: 0
-[2026-01-02 07:33:58] [INFO]   Generated 0 edges from events
-[2026-01-02 07:33:58] [INFO]   Total edges after adding hierarchies and semantic relations: 164
-[2026-01-02 07:33:58] [INFO] Phase 4: Building and validating unified heterogeneous graph...
-[2026-01-02 07:33:58] [WARNING]   Pydantic validation failed: 1 validation error for EntityNode
-creature_type
-  Input should be a valid string [type=string_type, input_value={'type': 'humanoid', 'tags': ['human']}, input_type=dict]
-    For further information visit https://errors.pydantic.dev/2.12/v/string_type
-[2026-01-02 07:33:58] [WARNING]   Returning unvalidated graph (fallback)
-[2026-01-02 07:33:58] [INFO] Saving semantic graph to /inspire/hdd/project/robot-reasoning/xiangyushun-p-xiangyushun/zichen/qwen3_8b/LoreWeaver/output/qwen3/semantic_graph.json...
-[2026-01-02 07:33:58] [INFO] ============================================================
-[2026-01-02 07:33:58] [INFO] SEMANTIC GRAPH STATISTICS
-[2026-01-02 07:33:58] [INFO] ============================================================
-[2026-01-02 07:33:58] [INFO] Total nodes: 90
-[2026-01-02 07:33:58] [INFO]   Entity nodes: 90
-[2026-01-02 07:33:58] [INFO]   Event nodes: 0
-[2026-01-02 07:33:58] [INFO] Total edges: 164
-[2026-01-02 07:33:58] [INFO] 
-Entity type distribution:
-[2026-01-02 07:33:58] [INFO]   Item: 32
-[2026-01-02 07:33:58] [INFO]   Creature: 30
-[2026-01-02 07:33:58] [INFO]   Location: 24
-[2026-01-02 07:33:58] [INFO]   Group: 4
-[2026-01-02 07:33:58] [INFO] 
-Location subtypes:
-[2026-01-02 07:33:58] [INFO]   area: 10
-[2026-01-02 07:33:58] [INFO]   feature: 4
-[2026-01-02 07:33:58] [INFO]   path: 4
-[2026-01-02 07:33:58] [INFO]   building: 3
-[2026-01-02 07:33:58] [INFO]   room: 2
-[2026-01-02 07:33:58] [INFO]   ruin: 1
-[2026-01-02 07:33:58] [INFO] 
-Creature statistics:
-[2026-01-02 07:33:58] [INFO]   Named creatures: 24
-[2026-01-02 07:33:58] [INFO]   Generic groups: 6
-[2026-01-02 08:30:37] [INFO] Logging initialized. Log file: logs/qwen3.log
-[2026-01-02 08:30:37] [INFO] Model: ./qwen3-8b-local/Qwen/Qwen3-8B
-[2026-01-02 08:30:37] [INFO] Max concurrent requests: 50
-[2026-01-02 08:30:37] [WARNING] High concurrency may overload local vLLM servers!
-[2026-01-02 08:30:37] [INFO] Found cached parsed data: /inspire/hdd/project/robot-reasoning/xiangyushun-p-xiangyushun/zichen/qwen3_8b/LoreWeaver/output/qwen3/adventure_parsed.json
-[2026-01-02 08:30:37] [INFO] Found cached semantic graph: /inspire/hdd/project/robot-reasoning/xiangyushun-p-xiangyushun/zichen/qwen3_8b/LoreWeaver/output/qwen3/semantic_graph.json
-[2026-01-02 08:30:37] [INFO] ============================================================
-[2026-01-02 08:30:37] [INFO] SEMANTIC GRAPH STATISTICS
-[2026-01-02 08:30:37] [INFO] ============================================================
-[2026-01-02 08:30:37] [INFO] Total nodes: 90
-[2026-01-02 08:30:37] [INFO]   Entity nodes: 90
-[2026-01-02 08:30:37] [INFO]   Event nodes: 0
-[2026-01-02 08:30:37] [INFO] Total edges: 164
-[2026-01-02 08:30:37] [INFO] 
-Entity type distribution:
-[2026-01-02 08:30:37] [INFO]   Item: 32
-[2026-01-02 08:30:37] [INFO]   Creature: 30
-[2026-01-02 08:30:37] [INFO]   Location: 24
-[2026-01-02 08:30:37] [INFO]   Group: 4
-[2026-01-02 08:30:37] [INFO] 
-Location subtypes:
-[2026-01-02 08:30:37] [INFO]   area: 10
-[2026-01-02 08:30:37] [INFO]   feature: 4
-[2026-01-02 08:30:37] [INFO]   path: 4
-[2026-01-02 08:30:37] [INFO]   building: 3
-[2026-01-02 08:30:37] [INFO]   room: 2
-[2026-01-02 08:30:37] [INFO]   ruin: 1
-[2026-01-02 08:30:37] [INFO] 
-Creature statistics:
-[2026-01-02 08:30:37] [INFO]   Named creatures: 24
-[2026-01-02 08:30:37] [INFO]   Generic groups: 6
-[2026-01-02 08:32:26] [INFO] Logging initialized. Log file: logs/qwen3.log
-[2026-01-02 08:32:26] [INFO] Model: ./qwen3-8b-local/Qwen/Qwen3-8B
-[2026-01-02 08:32:26] [INFO] Max concurrent requests: 50
-[2026-01-02 08:32:26] [WARNING] High concurrency may overload local vLLM servers!
-[2026-01-02 08:32:26] [INFO] Found cached parsed data: /inspire/hdd/project/robot-reasoning/xiangyushun-p-xiangyushun/zichen/qwen3_8b/LoreWeaver/output/qwen3/adventure_parsed.json
-[2026-01-02 08:32:26] [INFO] Found cached semantic graph: /inspire/hdd/project/robot-reasoning/xiangyushun-p-xiangyushun/zichen/qwen3_8b/LoreWeaver/output/qwen3/semantic_graph.json
-[2026-01-02 08:32:26] [INFO] ============================================================
-[2026-01-02 08:32:26] [INFO] SEMANTIC GRAPH STATISTICS
-[2026-01-02 08:32:26] [INFO] ============================================================
-[2026-01-02 08:32:26] [INFO] Total nodes: 90
-[2026-01-02 08:32:26] [INFO]   Entity nodes: 90
-[2026-01-02 08:32:26] [INFO]   Event nodes: 0
-[2026-01-02 08:32:26] [INFO] Total edges: 164
-[2026-01-02 08:32:26] [INFO] 
-Entity type distribution:
-[2026-01-02 08:32:26] [INFO]   Item: 32
-[2026-01-02 08:32:26] [INFO]   Creature: 30
-[2026-01-02 08:32:26] [INFO]   Location: 24
-[2026-01-02 08:32:26] [INFO]   Group: 4
-[2026-01-02 08:32:26] [INFO] 
-Location subtypes:
-[2026-01-02 08:32:26] [INFO]   area: 10
-[2026-01-02 08:32:26] [INFO]   feature: 4
-[2026-01-02 08:32:26] [INFO]   path: 4
-[2026-01-02 08:32:26] [INFO]   building: 3
-[2026-01-02 08:32:26] [INFO]   room: 2
-[2026-01-02 08:32:26] [INFO]   ruin: 1
-[2026-01-02 08:32:26] [INFO] 
-Creature statistics:
-[2026-01-02 08:32:26] [INFO]   Named creatures: 24
-[2026-01-02 08:32:26] [INFO]   Generic groups: 6
-[2026-01-02 08:32:26] [INFO] 
-Creature type distribution:
-[2026-01-02 08:32:26] [INFO]   humanoid: 5
-[2026-01-02 08:32:26] [INFO]   dragon: 4
-[2026-01-02 08:32:26] [INFO]   plant: 4
-[2026-01-02 08:32:26] [INFO]   Unknown: 3
-[2026-01-02 08:32:26] [INFO]   monstrosity: 3
-[2026-01-02 08:32:26] [INFO]   undead: 3
-[2026-01-02 08:32:26] [INFO]   elemental: 2
-[2026-01-02 08:32:26] [INFO]   {'type': 'humanoid', 'tags': ['human']}: 2
-[2026-01-02 08:32:26] [INFO]   {'type': 'humanoid', 'tags': ['kobold']}: 2
-[2026-01-02 08:32:26] [INFO]   beast: 1
-[2026-01-02 08:32:26] [INFO]   kobold: 1
-[2026-01-02 08:32:26] [INFO] 
-Edge relation types:
-[2026-01-02 08:32:26] [INFO]   part_of: 49
-[2026-01-02 08:32:26] [INFO]   inhabits: 26
-[2026-01-02 08:32:26] [INFO]   hidden_at: 20
-[2026-01-02 08:32:26] [INFO]   stored_in: 8
-[2026-01-02 08:32:26] [INFO]   guarded_by: 7
-[2026-01-02 08:32:26] [INFO]   trapped_at: 5
-[2026-01-02 08:32:26] [INFO]   commands: 5
-[2026-01-02 08:32:26] [INFO]   allies_with: 4
-[2026-01-02 08:32:26] [INFO]   carries: 4
-[2026-01-02 08:32:26] [INFO]   led_by: 3
-[2026-01-02 08:32:26] [INFO]   guards: 3
-[2026-01-02 08:32:26] [INFO]   allied_with: 3
-[2026-01-02 08:32:26] [INFO]   inhabited_by: 2
-[2026-01-02 08:32:26] [INFO]   serves: 2
-[2026-01-02 08:32:26] [INFO]   witnessed: 2
-[2026-01-02 08:32:26] [INFO]   rival_of: 2
-[2026-01-02 08:32:26] [INFO]   unlocks: 2
-[2026-01-02 08:32:26] [INFO]   Social: 2
-[2026-01-02 08:32:26] [INFO]   located_near: 1
-[2026-01-02 08:32:26] [INFO]   servitude: 1
-[2026-01-02 08:32:26] [INFO]   suggests: 1
-[2026-01-02 08:32:26] [INFO]   guided_to: 1
-[2026-01-02 08:32:26] [INFO]   carried_by: 1
-[2026-01-02 08:32:26] [INFO]   members_include: 1
-[2026-01-02 08:32:26] [INFO]   leads_to: 1
-[2026-01-02 08:32:26] [INFO]   traded_with: 1
-[2026-01-02 08:32:26] [INFO]   preferred_method: 1
-[2026-01-02 08:32:26] [INFO]   owns: 1
-[2026-01-02 08:32:26] [INFO]   social_allied_with: 1
-[2026-01-02 08:32:26] [INFO]   patrols: 1
-[2026-01-02 08:32:26] [INFO]   Group: 1
-[2026-01-02 08:32:26] [INFO]   locks: 1
-[2026-01-02 08:32:26] [INFO]   gives: 1
-[2026-01-02 08:32:26] [INFO] ============================================================
-[2026-01-02 09:30:02] [INFO] Logging initialized. Log file: logs/qwen3.log
-[2026-01-02 09:30:02] [INFO] Model: ./qwen3-8b-local/Qwen/Qwen3-8B
-[2026-01-02 09:30:02] [INFO] Max concurrent requests: 50
-[2026-01-02 09:30:02] [WARNING] High concurrency may overload local vLLM servers!
-[2026-01-02 09:30:02] [INFO] Loading adventure from data/adventure-dosi.json...
-[2026-01-02 09:30:02] [INFO] Parsing adventure data...
-[2026-01-02 09:30:02] [INFO] Saving parsed data to /inspire/hdd/project/robot-reasoning/xiangyushun-p-xiangyushun/zichen/qwen3_8b/LoreWeaver/output/qwen3/adventure_parsed.json...
-[2026-01-02 09:30:02] [INFO] Parsed 240 nodes
-[2026-01-02 09:30:02] [INFO] Found 249 external references
-[2026-01-02 09:30:02] [INFO] Loading parsed data from /inspire/hdd/project/robot-reasoning/xiangyushun-p-xiangyushun/zichen/qwen3_8b/LoreWeaver/output/qwen3/adventure_parsed.json...
-[2026-01-02 09:30:02] [INFO] Resolving entities from preprocessor tags...
-[2026-01-02 09:30:02] [WARNING] Could not resolve item 'dagger' (dagger|PHB): unhashable type: 'dict'
-[2026-01-02 09:30:02] [WARNING] Could not resolve item 'Sling Bullet' (Sling Bullet|PHB): unhashable type: 'dict'
-[2026-01-02 09:30:02] [WARNING] Could not resolve item '+1 battleaxe' (+1 battleaxe): Item not found: +1 battleaxe (source: None)
-[2026-01-02 09:30:02] [WARNING] Could not resolve item '+1 Weapon' (+1 Weapon|): Item not found: +1 Weapon (source: )
-[2026-01-02 09:30:02] [WARNING] Could not resolve item 'Spell Scroll' (Spell Scroll|): unhashable type: 'dict'
-[2026-01-02 09:30:02] [WARNING] Could not resolve item 'Potion of Resistance' (Potion of Resistance): Item not found: Potion of Resistance (source: None)
-[2026-01-02 09:30:02] [WARNING] Could not resolve item 'Spell Scroll' (Spell Scroll): unhashable type: 'dict'
-[2026-01-02 09:30:02] [WARNING] Could not resolve item '+1 Weapon' (+1 Weapon): Item not found: +1 Weapon (source: None)
-[2026-01-02 09:30:02] [INFO] Saving resolved entities to /inspire/hdd/project/robot-reasoning/xiangyushun-p-xiangyushun/zichen/qwen3_8b/LoreWeaver/output/qwen3/adventure_resolved.json...
-[2026-01-02 09:30:02] [INFO] Resolved 84 entities from tags
-[2026-01-02 09:30:02] [INFO] Prepared 84 seed entities for LLM context
-[2026-01-02 09:30:02] [INFO] Built tree with 8 root nodes
-[2026-01-02 09:30:02] [INFO] Initializing SmallModelProcessor...
-[2026-01-02 09:30:02] [INFO] Natural language mode enabled (more robust for small models)
-[2026-01-02 09:30:02] [INFO] Unified entity+event extraction mode enabled (heterogeneous graph)
-[2026-01-02 09:30:02] [INFO] Extracting semantic graph (entities + events + relations)...
-[2026-01-02 09:30:02] [INFO] ============================================================
-[2026-01-02 09:30:02] [INFO] SMALL MODEL PIPELINE: Unified Entity+Event Extraction
-[2026-01-02 09:30:02] [INFO] ============================================================
-[2026-01-02 09:30:02] [INFO] Phase 1: Unified entity + event extraction...
-[2026-01-02 09:30:02] [INFO]   Using 84 seed entities from preprocessor tags
-[2026-01-02 09:30:08] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:30:08] [WARNING] No entities/events found in node 'Running the Adventure' (id: 000). Reason: Text contains only atmospheric description with no entities. [Content length: 203 chars]
-[2026-01-02 09:30:16] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:30:24] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:30:41] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:31:03] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:31:11] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:31:15] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:31:15] [WARNING] No entities/events found in node 'Tip: Undead Fortitude' (id: 017). Reason: Text contains only atmospheric description with no entities. [Content length: 776 chars]
-[2026-01-02 09:31:29] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:31:36] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:31:46] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:31:55] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:32:07] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:32:19] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:32:43] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:32:59] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:33:11] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:33:14] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:33:14] [WARNING] No entities/events found in node 'Dragon's Rest Locations' (id: 021). Reason: Text contains only atmospheric description with no entities. [Content length: 171 chars]
-[2026-01-02 09:33:24] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:33:35] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:33:55] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:34:06] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:34:34] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:34:44] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:34:47] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:34:47] [WARNING] No entities/events found in node 'Individual Quests' (id: 035). Reason: Text contains only atmospheric description with no entities. [Content length: 103 chars]
-[2026-01-02 09:34:56] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:35:03] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:35:15] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:35:20] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:35:20] [WARNING] No entities/events found in node 'Exploring the Island' (id: 03e). Reason: Text contains only atmospheric description with no entities. [Content length: 380 chars]
-[2026-01-02 09:35:26] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:35:26] [WARNING] No entities/events found in node 'Chapter 2: Seagrow Caves' (id: 04b). Reason: Text contains only atmospheric description with no entities. [Content length: 300 chars]
-[2026-01-02 09:35:33] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:35:46] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:36:02] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:36:05] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:36:05] [WARNING] No entities/events found in node 'Shipwreck Features' (id: 075). Reason: Text contains only atmospheric description with no entities. [Content length: 853 chars]
-[2026-01-02 09:36:19] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:36:30] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:36:33] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:36:33] [WARNING] No entities/events found in node 'Shipwreck Locations' (id: 078). Reason: Text contains only atmospheric description with no entities. [Content length: 184 chars]
-[2026-01-02 09:36:42] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:36:51] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:37:00] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:37:17] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:37:28] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:37:36] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:37:53] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:38:01] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:38:19] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:38:27] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:38:37] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:38:45] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:38:54] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:38:57] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:38:57] [WARNING] No entities/events found in node 'Approaching by Water' (id: 0a7). Reason: Text contains only atmospheric description with no entities. [Content length: 457 chars]
-[2026-01-02 09:39:12] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:39:18] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:39:31] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:39:42] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:39:58] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:40:20] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:40:30] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:40:49] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:40:59] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:41:13] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:41:21] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:41:33] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:41:42] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:41:51] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:42:00] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:42:00] [WARNING] No entities/events found in node 'Clever Solutions' (id: 0b7). Reason: Text provides procedural guidance for navigating the adventure with creative problem-solving options, containing no additional entities or events beyond referenced elements. [Content length: 843 chars]
-[2026-01-02 09:42:13] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:42:29] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:42:39] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:42:49] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:43:00] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:43:11] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:43:25] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:43:43] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:43:52] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:44:06] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:44:16] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:44:29] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:44:42] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:44:56] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:45:10] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:45:24] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:45:33] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:45:35] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:45:35] [WARNING] No entities/events found in node 'Using a Magic Item' (id: 0cb). Reason: Text contains only atmospheric description with no entities. [Content length: 446 chars]
-[2026-01-02 09:45:50] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:45:55] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:45:55] [WARNING] No entities/events found in node 'Appendix B: Creatures' (id: 0d3). Reason: Text contains only atmospheric description with no entities. [Content length: 118 chars]
-[2026-01-02 09:45:55] [INFO]   Extracted 197 raw entities
-[2026-01-02 09:45:55] [INFO]   Extracted 36 raw events
-[2026-01-02 09:45:55] [INFO]   Saved debug output: debug_phase1_unified_entities.json
-[2026-01-02 09:45:55] [INFO]   Saved debug output: debug_phase1_unified_events.json
-[2026-01-02 09:45:55] [INFO] Phase 2: Resolving entities...
-[2026-01-02 09:45:55] [INFO]   Resolved to 125 unique entities
-[2026-01-02 09:45:55] [INFO]   Filtered out 2 meaningless/placeholder entities
-[2026-01-02 09:45:55] [INFO]   After filtering and merging: 123 meaningful entities
-[2026-01-02 09:45:55] [INFO] Phase 2.5: Extracting location hierarchies...
-[2026-01-02 09:46:03] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:46:18] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:46:34] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:46:55] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:47:01] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:47:08] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:47:27] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:47:41] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:47:52] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:48:06] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:48:20] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:48:37] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:48:49] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:49:04] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:49:26] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:49:37] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:49:50] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:50:01] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:50:05] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:50:15] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:50:30] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:50:40] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:50:58] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:51:06] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:51:21] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:51:36] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:51:52] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:51:59] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:52:12] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:52:49] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:53:07] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:53:13] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:53:22] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:53:31] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:53:43] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:53:59] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:54:04] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:54:29] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:54:39] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:54:57] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:55:28] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:55:44] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:55:53] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:55:53] [INFO]   Extracted 57 location hierarchy edges
-[2026-01-02 09:55:53] [INFO]   Saved debug output: debug_phase2_5_location_hierarchies.json
-[2026-01-02 09:55:53] [INFO] Phase 2.6: Extracting semantic relations...
-[2026-01-02 09:55:59] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:56:13] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:56:24] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:56:43] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:56:48] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:56:54] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:57:13] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:57:25] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:57:43] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:57:51] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:58:04] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:58:14] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:58:33] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:58:43] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:58:56] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:59:24] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:59:33] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 09:59:43] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:00:04] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:00:16] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:00:28] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:00:35] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:00:47] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:01:01] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:01:14] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:01:31] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:02:02] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:02:07] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:02:26] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:02:49] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:02:59] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:03:08] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:03:29] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:03:40] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:04:11] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:04:27] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:04:30] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:04:39] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:04:50] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:04:56] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:05:01] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:05:05] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:05:22] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:05:58] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:06:07] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:06:17] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:06:49] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:06:57] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:07:10] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:07:23] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:07:51] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:08:00] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:08:21] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:08:43] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:08:51] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:09:10] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:09:17] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:09:32] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:09:48] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:10:11] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:10:19] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:10:35] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:10:41] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:10:55] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:11:18] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:11:29] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:11:43] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:11:52] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:12:12] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:12:23] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:12:42] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:12:49] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:13:00] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:13:09] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:13:17] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:13:45] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:13:58] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:14:07] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:14:23] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:14:36] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:14:51] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:15:14] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:15:32] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:15:53] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:15:59] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:16:24] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:16:34] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:16:43] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:16:59] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:17:14] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:17:32] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:17:46] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:18:11] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:18:23] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:18:48] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:19:01] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:19:28] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:19:39] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:19:52] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:20:03] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:20:06] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:20:11] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
-[2026-01-02 10:20:11] [INFO]   Extracted 154 semantic relation edges
-[2026-01-02 10:20:11] [INFO]   Saved debug output: debug_phase2_6_semantic_relations.json
-[2026-01-02 10:20:11] [INFO] Phase 3: Processing events and generating edges...
-[2026-01-02 10:20:11] [INFO]   Valid events after ID update: 36
-[2026-01-02 10:20:11] [INFO]   Generated 77 edges from events
-[2026-01-02 10:20:11] [INFO]   Total edges after adding hierarchies and semantic relations: 288
-[2026-01-02 10:20:11] [INFO] Phase 4: Building and validating unified heterogeneous graph...
-[2026-01-02 10:20:11] [WARNING]   Pydantic validation failed: 1 validation error for EntityNode
+[2026-01-02 11:14:49] [INFO] Logging initialized. Log file: logs/qwen3.log
+[2026-01-02 11:14:49] [INFO] Model: ./qwen3-8b-local/Qwen/Qwen3-8B
+[2026-01-02 11:14:49] [INFO] Max concurrent requests: 50
+[2026-01-02 11:14:49] [WARNING] High concurrency may overload local vLLM servers!
+[2026-01-02 11:14:49] [INFO] Loading adventure from data/adventure-dosi.json...
+[2026-01-02 11:14:49] [INFO] Parsing adventure data...
+[2026-01-02 11:14:49] [INFO] Saving parsed data to /inspire/hdd/project/robot-reasoning/xiangyushun-p-xiangyushun/zichen/qwen3_8b/LoreWeaver/output/qwen3/adventure_parsed.json...
+[2026-01-02 11:14:49] [INFO] Parsed 240 nodes
+[2026-01-02 11:14:49] [INFO] Found 249 external references
+[2026-01-02 11:14:49] [INFO] Loading parsed data from /inspire/hdd/project/robot-reasoning/xiangyushun-p-xiangyushun/zichen/qwen3_8b/LoreWeaver/output/qwen3/adventure_parsed.json...
+[2026-01-02 11:14:49] [INFO] Resolving entities from preprocessor tags...
+[2026-01-02 11:14:50] [WARNING] Could not resolve item 'dagger' (dagger|PHB): unhashable type: 'dict'
+[2026-01-02 11:14:50] [WARNING] Could not resolve item 'Sling Bullet' (Sling Bullet|PHB): unhashable type: 'dict'
+[2026-01-02 11:14:50] [WARNING] Could not resolve item '+1 battleaxe' (+1 battleaxe): Item not found: +1 battleaxe (source: None)
+[2026-01-02 11:14:50] [WARNING] Could not resolve item '+1 Weapon' (+1 Weapon|): Item not found: +1 Weapon (source: )
+[2026-01-02 11:14:50] [WARNING] Could not resolve item 'Spell Scroll' (Spell Scroll|): unhashable type: 'dict'
+[2026-01-02 11:14:50] [WARNING] Could not resolve item 'Potion of Resistance' (Potion of Resistance): Item not found: Potion of Resistance (source: None)
+[2026-01-02 11:14:50] [WARNING] Could not resolve item 'Spell Scroll' (Spell Scroll): unhashable type: 'dict'
+[2026-01-02 11:14:50] [WARNING] Could not resolve item '+1 Weapon' (+1 Weapon): Item not found: +1 Weapon (source: None)
+[2026-01-02 11:14:50] [INFO] Saving resolved entities to /inspire/hdd/project/robot-reasoning/xiangyushun-p-xiangyushun/zichen/qwen3_8b/LoreWeaver/output/qwen3/adventure_resolved.json...
+[2026-01-02 11:14:50] [INFO] Resolved 84 entities from tags
+[2026-01-02 11:14:50] [INFO] Prepared 84 seed entities for LLM context
+[2026-01-02 11:14:50] [INFO] Built tree with 8 root nodes
+[2026-01-02 11:14:50] [INFO] Initializing SmallModelProcessor...
+[2026-01-02 11:14:50] [INFO] Natural language mode enabled (more robust for small models)
+[2026-01-02 11:14:50] [INFO] Unified entity+event extraction mode enabled (heterogeneous graph)
+[2026-01-02 11:14:50] [INFO] Extracting semantic graph (entities + events + relations)...
+[2026-01-02 11:14:50] [INFO] ============================================================
+[2026-01-02 11:14:50] [INFO] SMALL MODEL PIPELINE: Unified Entity+Event Extraction
+[2026-01-02 11:14:50] [INFO] ============================================================
+[2026-01-02 11:14:50] [INFO] Phase 1: Unified entity + event extraction...
+[2026-01-02 11:14:50] [INFO]   Using 84 seed entities from preprocessor tags
+[2026-01-02 11:14:54] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:14:54] [WARNING] No entities/events found in node 'Running the Adventure' (id: 000). Reason: Text contains only atmospheric description with no entities. [Content length: 203 chars]
+[2026-01-02 11:15:02] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:15:12] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:15:12] [WARNING] No entities/events found in node 'Welcome to Dragon's Rest' (id: 012). Reason: Text contains procedural guidance and environmental context with minimal direct entity references. [Content length: 714 chars]
+[2026-01-02 11:15:33] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:15:48] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:16:02] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:16:12] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:16:26] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:16:37] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:16:44] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:16:44] [WARNING] No entities/events found in node 'Individual Quests' (id: 035). Reason: Text contains only atmospheric description with no entities. [Content length: 103 chars]
+[2026-01-02 11:16:57] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:17:08] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:17:19] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:17:25] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:17:25] [WARNING] No entities/events found in node 'Exploring the Island' (id: 03e). Reason: Text contains only atmospheric description with no entities. [Content length: 380 chars]
+[2026-01-02 11:17:33] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:17:49] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:17:52] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:17:52] [WARNING] No entities/events found in node 'Seagrow Caves Features' (id: 04d). Reason: Text contains only atmospheric description with no entities. [Content length: 1073 chars]
+[2026-01-02 11:18:02] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:18:05] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:18:05] [WARNING] No entities/events found in node 'Approaching at Sea Level' (id: 04f). Reason: Text contains only atmospheric description with no entities. [Content length: 80 chars]
+[2026-01-02 11:18:09] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:18:09] [WARNING] No entities/events found in node 'Approaching from Above' (id: 051). Reason: Text contains only atmospheric description with no entities. [Content length: 51 chars]
+[2026-01-02 11:18:19] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:18:37] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:18:42] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:18:43] [WARNING] No entities/events found in node 'Rapport Spores' (id: 055). Reason: Text contains only atmospheric description with no entities. [Content length: 1161 chars]
+[2026-01-02 11:18:53] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:19:00] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:19:25] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:19:32] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:19:46] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:19:58] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:20:07] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:20:16] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:20:29] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:20:45] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:20:48] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:20:48] [WARNING] No entities/events found in node 'Blighted Fungi' (id: 060). Reason: Text contains only atmospheric description with no entities. [Content length: 175 chars]
+[2026-01-02 11:21:02] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:21:11] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:21:29] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:21:50] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:21:58] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:22:14] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:22:27] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:22:27] [WARNING] No entities/events found in node '' (id: 067). Reason: Text contains only atmospheric description with no entities. [Content length: 199 chars]
+[2026-01-02 11:22:39] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:23:03] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:23:12] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:23:33] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:23:38] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:23:38] [WARNING] No entities/events found in node '' (id: 06c). Reason: Text contains only atmospheric description with no entities. [Content length: 523 chars]
+[2026-01-02 11:23:54] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:24:03] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:24:15] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:24:27] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:24:43] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:24:48] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:24:48] [WARNING] No entities/events found in node 'Chapter 3: Cursed Shipwreck' (id: 072). Reason: Text contains only atmospheric description with no entities. [Content length: 262 chars]
+[2026-01-02 11:24:52] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:24:52] [WARNING] No entities/events found in node 'Chapter 4: Clifftop Observatory' (id: 0a1). Reason: Text contains only atmospheric description with no entities. [Content length: 554 chars]
+[2026-01-02 11:24:57] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:24:57] [WARNING] No entities/events found in node 'Appendix A: Magic Items' (id: 0ca). Reason: Text contains only atmospheric description with no entities. [Content length: 243 chars]
+[2026-01-02 11:25:00] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:25:00] [WARNING] No entities/events found in node 'Appendix B: Creatures' (id: 0d3). Reason: Text contains only atmospheric description with no entities. [Content length: 118 chars]
+[2026-01-02 11:25:00] [INFO]   Extracted 132 raw entities
+[2026-01-02 11:25:00] [INFO]   Extracted 20 raw events
+[2026-01-02 11:25:00] [INFO]   Saved debug output: debug_phase1_unified_entities.json
+[2026-01-02 11:25:00] [INFO]   Saved debug output: debug_phase1_unified_events.json
+[2026-01-02 11:25:00] [INFO] Phase 2: Resolving entities...
+[2026-01-02 11:25:00] [INFO]   Resolved to 90 unique entities
+[2026-01-02 11:25:00] [INFO]   Filtered out 1 meaningless/placeholder entities
+[2026-01-02 11:25:00] [INFO]   After filtering and merging: 89 meaningful entities
+[2026-01-02 11:25:00] [INFO] Phase 2.5: Extracting location hierarchies...
+[2026-01-02 11:25:22] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:25:44] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:25:44] [INFO]   Extracted 6 location hierarchy edges
+[2026-01-02 11:25:44] [INFO]   Saved debug output: debug_phase2_5_location_hierarchies.json
+[2026-01-02 11:25:44] [INFO] Phase 2.6: Extracting semantic relations...
+[2026-01-02 11:26:05] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:26:18] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:26:32] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:26:42] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:26:50] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:27:13] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:27:44] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:28:24] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:28:44] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:29:02] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:29:13] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:29:28] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:29:54] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:30:11] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:30:22] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:30:38] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:30:50] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:31:16] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:31:36] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:31:52] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:32:03] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:32:21] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:32:30] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:32:48] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:32:52] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:33:00] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:33:11] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:33:29] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:33:39] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:33:48] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:34:15] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:34:30] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:34:34] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:34:52] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:35:15] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:35:26] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:35:36] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:35:44] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:35:52] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:36:06] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:36:25] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:36:43] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:37:00] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:37:14] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:37:38] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:38:02] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:38:28] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:39:04] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:39:18] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:39:28] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:39:43] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:40:10] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:40:20] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:40:34] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:40:54] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:41:03] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:41:26] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:41:51] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:42:03] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:42:07] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:42:18] [INFO] HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-02 11:42:18] [INFO]   Extracted 93 semantic relation edges
+[2026-01-02 11:42:18] [INFO]   Saved debug output: debug_phase2_6_semantic_relations.json
+[2026-01-02 11:42:18] [INFO] Phase 3: Processing events and generating edges...
+[2026-01-02 11:42:18] [INFO]   Valid events after ID update: 20
+[2026-01-02 11:42:18] [INFO]   Generated 48 edges from events
+[2026-01-02 11:42:18] [INFO]   Total edges after adding hierarchies and semantic relations: 147
+[2026-01-02 11:42:18] [INFO] Phase 4: Building and validating unified heterogeneous graph...
+[2026-01-02 11:42:18] [WARNING]   Pydantic validation failed: 1 validation error for EntityNode
 label
-  Field required [type=missing, input_value={'type': 'Creature', 'id'...traction_method': 'llm'}, input_type=dict]
+  Field required [type=missing, input_value={'type': 'Location', 'id'...traction_method': 'llm'}, input_type=dict]
     For further information visit https://errors.pydantic.dev/2.12/v/missing
-[2026-01-02 10:20:11] [WARNING]   Returning unvalidated graph (fallback)
-[2026-01-02 10:20:11] [INFO] Saving semantic graph to /inspire/hdd/project/robot-reasoning/xiangyushun-p-xiangyushun/zichen/qwen3_8b/LoreWeaver/output/qwen3/semantic_graph.json...
-[2026-01-02 10:20:11] [INFO] ============================================================
-[2026-01-02 10:20:11] [INFO] SEMANTIC GRAPH STATISTICS
-[2026-01-02 10:20:11] [INFO] ============================================================
-[2026-01-02 10:20:11] [INFO] Total nodes: 159
-[2026-01-02 10:20:11] [INFO]   Entity nodes: 123
-[2026-01-02 10:20:11] [INFO]   Event nodes: 36
-[2026-01-02 10:20:11] [INFO] Total edges: 288
-[2026-01-02 10:20:11] [INFO] 
+[2026-01-02 11:42:18] [WARNING]   Returning unvalidated graph (fallback)
+[2026-01-02 11:42:18] [INFO] Saving semantic graph to /inspire/hdd/project/robot-reasoning/xiangyushun-p-xiangyushun/zichen/qwen3_8b/LoreWeaver/output/qwen3/semantic_graph.json...
+[2026-01-02 11:42:18] [INFO] ============================================================
+[2026-01-02 11:42:18] [INFO] SEMANTIC GRAPH STATISTICS
+[2026-01-02 11:42:18] [INFO] ============================================================
+[2026-01-02 11:42:18] [INFO] Total nodes: 109
+[2026-01-02 11:42:18] [INFO]   Entity nodes: 89
+[2026-01-02 11:42:18] [INFO]   Event nodes: 20
+[2026-01-02 11:42:18] [INFO] Total edges: 147
+[2026-01-02 11:42:18] [INFO] 
 Entity type distribution:
-[2026-01-02 10:20:11] [INFO]   Item: 49
-[2026-01-02 10:20:11] [INFO]   Creature: 37
-[2026-01-02 10:20:11] [INFO]   Location: 32
-[2026-01-02 10:20:11] [INFO]   Group: 5
-[2026-01-02 10:20:11] [INFO] 
+[2026-01-02 11:42:18] [INFO]   Item: 38
+[2026-01-02 11:42:18] [INFO]   Creature: 32
+[2026-01-02 11:42:18] [INFO]   Location: 14
+[2026-01-02 11:42:18] [INFO]   Group: 3
+[2026-01-02 11:42:18] [INFO]   Feature: 2
+[2026-01-02 11:42:18] [INFO] 
 Location subtypes:
-[2026-01-02 10:20:11] [INFO]   feature: 13
-[2026-01-02 10:20:11] [INFO]   area: 8
-[2026-01-02 10:20:11] [INFO]   building: 4
-[2026-01-02 10:20:11] [INFO]   path: 2
-[2026-01-02 10:20:11] [INFO]   room: 2
-[2026-01-02 10:20:11] [INFO]   structure: 1
-[2026-01-02 10:20:11] [INFO]   ship: 1
-[2026-01-02 10:20:11] [INFO]   ruin: 1
-[2026-01-02 10:20:11] [INFO] 
+[2026-01-02 11:42:18] [INFO]   feature: 5
+[2026-01-02 11:42:18] [INFO]   area: 2
+[2026-01-02 11:42:18] [INFO]   room: 2
+[2026-01-02 11:42:18] [INFO]   building: 1
+[2026-01-02 11:42:18] [INFO]   terrain_feature: 1
+[2026-01-02 11:42:18] [INFO]   path: 1
+[2026-01-02 11:42:18] [INFO]   cavern: 1
+[2026-01-02 11:42:18] [INFO]   chamber: 1
+[2026-01-02 11:42:18] [INFO] 
 Creature statistics:
-[2026-01-02 10:20:11] [INFO]   Named creatures: 27
-[2026-01-02 10:20:11] [INFO]   Generic groups: 10
-[2026-01-02 10:20:11] [INFO] 
+[2026-01-02 11:42:18] [INFO]   Named creatures: 23
+[2026-01-02 11:42:18] [INFO]   Generic groups: 9
+[2026-01-02 11:42:18] [INFO] 
 Creature type distribution:
-[2026-01-02 10:20:11] [INFO]   humanoid: 10
-[2026-01-02 10:20:11] [INFO]   dragon: 5
-[2026-01-02 10:20:11] [INFO]   undead: 4
-[2026-01-02 10:20:11] [INFO]   beast: 4
-[2026-01-02 10:20:11] [INFO]   plant: 4
-[2026-01-02 10:20:11] [INFO]   Unknown: 3
-[2026-01-02 10:20:11] [INFO]   monstrosity: 3
-[2026-01-02 10:20:11] [INFO]   elemental: 2
-[2026-01-02 10:20:11] [INFO]   kobold: 1
-[2026-01-02 10:20:11] [INFO]   spirit: 1
-[2026-01-02 10:20:11] [INFO] 
+[2026-01-02 11:42:18] [INFO]   humanoid: 8
+[2026-01-02 11:42:18] [INFO]   beast: 5
+[2026-01-02 11:42:18] [INFO]   dragon: 4
+[2026-01-02 11:42:18] [INFO]   plant: 4
+[2026-01-02 11:42:18] [INFO]   Unknown: 3
+[2026-01-02 11:42:18] [INFO]   monstrosity: 3
+[2026-01-02 11:42:18] [INFO]   elemental: 2
+[2026-01-02 11:42:18] [INFO]   undead: 2
+[2026-01-02 11:42:18] [INFO]   fungus: 1
+[2026-01-02 11:42:18] [INFO] 
 Event type distribution:
-[2026-01-02 10:20:11] [INFO]   discovery: 12
-[2026-01-02 10:20:11] [INFO]   combat: 6
-[2026-01-02 10:20:11] [INFO]   exploration: 5
-[2026-01-02 10:20:11] [INFO]   dialogue: 4
-[2026-01-02 10:20:11] [INFO]   quest: 3
-[2026-01-02 10:20:11] [INFO]   encounter: 1
-[2026-01-02 10:20:11] [INFO]   delivery: 1
-[2026-01-02 10:20:11] [INFO]   capture: 1
-[2026-01-02 10:20:11] [INFO]   observation: 1
-[2026-01-02 10:20:11] [INFO]   puzzle: 1
-[2026-01-02 10:20:11] [INFO]   trap: 1
-[2026-01-02 10:20:11] [INFO] 
+[2026-01-02 11:42:18] [INFO]   discovery: 10
+[2026-01-02 11:42:18] [INFO]   encounter: 6
+[2026-01-02 11:42:18] [INFO]   combat: 2
+[2026-01-02 11:42:18] [INFO]   quest: 1
+[2026-01-02 11:42:18] [INFO]   observation: 1
+[2026-01-02 11:42:18] [INFO] 
 Edge relation types:
-[2026-01-02 10:20:11] [INFO]   part_of: 57
-[2026-01-02 10:20:11] [INFO]   has_participant: 41
-[2026-01-02 10:20:11] [INFO]   occurs_at: 36
-[2026-01-02 10:20:11] [INFO]   inhabits: 33
-[2026-01-02 10:20:11] [INFO]   hidden_at: 23
-[2026-01-02 10:20:11] [INFO]   stored_in: 12
-[2026-01-02 10:20:11] [INFO]   members_include: 9
-[2026-01-02 10:20:11] [INFO]   owns: 6
-[2026-01-02 10:20:11] [INFO]   trapped_at: 5
-[2026-01-02 10:20:11] [INFO]   led_by: 5
-[2026-01-02 10:20:11] [INFO]   guarded_by: 5
-[2026-01-02 10:20:11] [INFO]   rival_of: 5
-[2026-01-02 10:20:11] [INFO]   unlocks: 4
-[2026-01-02 10:20:11] [INFO]   guards: 3
-[2026-01-02 10:20:11] [INFO]   serves: 3
-[2026-01-02 10:20:11] [INFO]   visits: 3
-[2026-01-02 10:20:11] [INFO]   allied_with: 3
-[2026-01-02 10:20:11] [INFO]   Social: 3
-[2026-01-02 10:20:11] [INFO]   allies_with: 2
-[2026-01-02 10:20:11] [INFO]   carries: 2
-[2026-01-02 10:20:11] [INFO]   inhabited: 2
-[2026-01-02 10:20:11] [INFO]   located_on: 2
-[2026-01-02 10:20:11] [INFO]   leads_to: 1
-[2026-01-02 10:20:11] [INFO]   observes_from_distance: 1
-[2026-01-02 10:20:11] [INFO]   worships: 1
-[2026-01-02 10:20:11] [INFO]   carried_by: 1
-[2026-01-02 10:20:11] [INFO]   social: 1
-[2026-01-02 10:20:11] [INFO]   suspects_source: 1
-[2026-01-02 10:20:11] [INFO]   suggests: 1
-[2026-01-02 10:20:11] [INFO]   tends_to: 1
-[2026-01-02 10:20:11] [INFO]   interacts_with: 1
-[2026-01-02 10:20:11] [INFO]   traded_with: 1
-[2026-01-02 10:20:11] [INFO]   creates: 1
-[2026-01-02 10:20:11] [INFO]   gives: 1
-[2026-01-02 10:20:11] [INFO]   returns_to: 1
-[2026-01-02 10:20:11] [INFO]   rivals_with: 1
-[2026-01-02 10:20:11] [INFO]   commands: 1
-[2026-01-02 10:20:11] [INFO]   conflicted_with: 1
-[2026-01-02 10:20:11] [INFO]   inherited_from: 1
-[2026-01-02 10:20:11] [INFO]   guardianship: 1
-[2026-01-02 10:20:11] [INFO]   planned_by: 1
-[2026-01-02 10:20:11] [INFO]   carried: 1
-[2026-01-02 10:20:11] [INFO]   locks: 1
-[2026-01-02 10:20:11] [INFO]   locked_at: 1
-[2026-01-02 10:20:11] [INFO]   wields: 1
-[2026-01-02 10:20:11] [INFO]   ally_of: 1
-[2026-01-02 10:20:11] [INFO] ============================================================
+[2026-01-02 11:42:18] [INFO]   inhabits: 31
+[2026-01-02 11:42:18] [INFO]   has_participant: 28
+[2026-01-02 11:42:18] [INFO]   occurs_at: 20
+[2026-01-02 11:42:18] [INFO]   hidden_at: 9
+[2026-01-02 11:42:18] [INFO]   stored_in: 8
+[2026-01-02 11:42:18] [INFO]   part_of: 6
+[2026-01-02 11:42:18] [INFO]   social: 6
+[2026-01-02 11:42:18] [INFO]   allies_with: 4
+[2026-01-02 11:42:18] [INFO]   led_by: 3
+[2026-01-02 11:42:18] [INFO]   serves: 3
+[2026-01-02 11:42:18] [INFO]   trapped_at: 3
+[2026-01-02 11:42:18] [INFO]   owns: 2
+[2026-01-02 11:42:18] [INFO]   guarded_by: 2
+[2026-01-02 11:42:18] [INFO]   stores_in: 2
+[2026-01-02 11:42:18] [INFO]   unlocked_by: 2
+[2026-01-02 11:42:18] [INFO]   guarded_at: 1
+[2026-01-02 11:42:18] [INFO]   inhabitant_of: 1
+[2026-01-02 11:42:18] [INFO]   guards: 1
+[2026-01-02 11:42:18] [INFO]   owned_by: 1
+[2026-01-02 11:42:18] [INFO]   wields: 1
+[2026-01-02 11:42:18] [INFO]   carries: 1
+[2026-01-02 11:42:18] [INFO]   Social: commands: 1
+[2026-01-02 11:42:18] [INFO]   members_include: 1
+[2026-01-02 11:42:18] [INFO]   traded_with: 1
+[2026-01-02 11:42:18] [INFO]   flees_to: 1
+[2026-01-02 11:42:18] [INFO]   patrols: 1
+[2026-01-02 11:42:18] [INFO]   returned_to: 1
+[2026-01-02 11:42:18] [INFO]   rival_of: 1
+[2026-01-02 11:42:18] [INFO]   commands: 1
+[2026-01-02 11:42:18] [INFO]   locks: 1
+[2026-01-02 11:42:18] [INFO]   unlocks: 1
+[2026-01-02 11:42:18] [INFO]   linked_to: 1
+[2026-01-02 11:42:18] [INFO]   triggers: 1
+[2026-01-02 11:42:18] [INFO] ============================================================

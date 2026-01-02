@@ -181,12 +181,10 @@ class SemanticPipeline:
         with open(self.input_file, encoding='utf-8') as f:
             raw_data = json.load(f)
 
-        # Adventure data is usually under 'data' key
-        adventure_data = raw_data.get("data", []) if isinstance(raw_data, dict) else raw_data
-
-        logger.info(f"Parsing {len(adventure_data)} entries...")
+        # AdventureParser expects the full raw_data dict (with 'data' key inside)
+        logger.info("Parsing adventure data...")
         parser = AdventureParser()
-        parsed_data = parser.parse(adventure_data)
+        parsed_data = parser.parse(raw_data)
 
         logger.info(f"Saving parsed data to {self.parsed_file}...")
         with open(self.parsed_file, 'w', encoding='utf-8') as f:

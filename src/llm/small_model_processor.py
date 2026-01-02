@@ -881,7 +881,10 @@ class SmallModelProcessor(BaseLLMProcessor):
         all_events = []
 
         for root in shadow_tree:
-            await self._unified_extraction_recursive(root, all_entities, all_events)
+            await self._unified_extraction_recursive(
+                root, all_entities, all_events,
+                parent_context=""
+            )
 
         return {"entities": all_entities, "events": all_events}
 
@@ -889,10 +892,12 @@ class SmallModelProcessor(BaseLLMProcessor):
         self,
         node: dict,
         all_entities: list[dict],
-        all_events: list[dict]
+        all_events: list[dict],
+        parent_context: str = ""
     ) -> None:
         """
         Recursively extract entities and events from each node.
+        Passes accumulated entities as context for disambiguation.
         """
         title = node.get("title", "Untitled")
         node_id = node.get("id", "unknown")
@@ -909,15 +914,20 @@ class SmallModelProcessor(BaseLLMProcessor):
                 logger.debug(f"Skipping combined extraction for node '{title}' (id: {node_id}): content too short ({original_len} chars)")
             else:
                 # Truncate content if too long
-                if original_len > 2000:
-                    content = content[:2000] + "... [truncated]"
+                if original_len > 3000:
+                    content = content[:3000] + "... [truncated]"
                     logger.warning(f"Truncated content for node '{title}' (id: {node_id}) from {original_len} to {len(content)} chars")
+
+                # Build known entities text from previously extracted entities
+                known_entities_text = self._build_known_entities_text(all_entities)
 
                 # Extract entities and events in one call (unified extraction)
                 if self.use_natural_language:
                     prompt = PromptFactory.create_unified_extraction_prompt_natural(
                         title=title,
-                        content=content
+                        content=content,
+                        parent_context=parent_context,
+                        known_entities=known_entities_text
                     )
 
                     raw_response = await self._call_llm_async(
@@ -926,7 +936,7 @@ class SmallModelProcessor(BaseLLMProcessor):
                         top_p=0.90,
                         max_tokens=self.max_tokens,
                         enable_thinking=False,
-                        stop=[]  # No specific stop sequences for XML-tagged output
+                        stop=["</events>\n", "</events>"]  # Stop after closing tag
                     )
 
                     result = parse_unified_extraction(raw_response)
@@ -962,7 +972,77 @@ class SmallModelProcessor(BaseLLMProcessor):
         # Recurse to children
         if node.get("children"):
             for child in node["children"]:
-                await self._unified_extraction_recursive(child, all_entities, all_events)
+                # Build parent context for child
+                child_parent_context = f"{parent_context} > {title}" if parent_context else title
+                await self._unified_extraction_recursive(
+                    child, all_entities, all_events,
+                    parent_context=child_parent_context
+                )
+
+    def _build_known_entities_text(self, entities: list[dict]) -> str:
+        """
+        Build a compact text summary of known entities for context.
+        Shows previously extracted entities to help with disambiguation.
+        """
+        if not entities:
+            return ""
+
+        # Group by type for cleaner output
+        by_type: dict[str, list[dict]] = {
+            "Location": [],
+            "Creature": [],
+            "Item": [],
+            "Group": []
+        }
+
+        for e in entities:
+            etype = e.get("type", "Unknown")
+            if etype in by_type:
+                by_type[etype].append(e)
+
+        lines = []
+        for etype, elist in by_type.items():
+            if elist:
+                lines.append(f"{etype}:")
+                for e in elist[:20]:  # Limit to 20 per type to avoid token overflow
+                    label = e.get("label", "Unknown")
+                    eid = e.get("id", "")
+                    is_generic = e.get("is_generic", False)
+                    generic_mark = " (group)" if is_generic else ""
+                    lines.append(f"  - [{eid}] {label}{generic_mark}")
+
+        return "\n".join(lines)
+
+    def _build_alias_map(self, entities: list[dict]) -> dict[str, str]:
+        """
+        Build an alias map from entity list.
+
+        Creates a mapping from all aliases (including labels and IDs)
+        to the entity ID, for text matching purposes.
+
+        Returns:
+            {alias_or_label_or_id: entity_id}
+        """
+        alias_map = {}
+        for e in entities:
+            eid = e.get("id", "")
+            if not eid:
+                continue
+
+            # Add ID as its own alias
+            alias_map[eid] = eid
+
+            # Add label
+            label = e.get("label", "")
+            if label:
+                alias_map[label] = eid
+
+            # Add aliases
+            for alias in e.get("aliases", []):
+                if alias:
+                    alias_map[alias] = eid
+
+        return alias_map
 
     def _normalize_entity_label(self, label: str) -> str:
         """
@@ -1394,8 +1474,11 @@ class SmallModelProcessor(BaseLLMProcessor):
         if not content or not content.strip():
             hierarchy_edges = []
         else:
+            # Build alias map from entity map
+            alias_map = self._build_alias_map(entity_map)
+
             # Find locations mentioned in this node
-            mentioned_locations = self._find_mentioned_entities(content, entity_map)
+            mentioned_locations = self._find_mentioned_entities(content, alias_map)
 
             # Only extract hierarchies if we have 2+ locations
             if len(mentioned_locations) >= 2:
@@ -1506,8 +1589,11 @@ class SmallModelProcessor(BaseLLMProcessor):
         if not content or not content.strip():
             semantic_edges = []
         else:
+            # Build alias map from entity map
+            alias_map = self._build_alias_map(entity_map)
+
             # Find entities mentioned in this node
-            mentioned_entities = self._find_mentioned_entities(content, entity_map)
+            mentioned_entities = self._find_mentioned_entities(content, alias_map)
 
             # Only extract relations if we have 2+ entities
             if len(mentioned_entities) >= 2:

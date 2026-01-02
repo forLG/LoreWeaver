@@ -96,6 +96,12 @@ def parse_ner_entities(text: str) -> dict[str, Any]:
             elif key == 'id':
                 current['id'] = value
             elif key == 'aliases':
+                # Strip brackets if present: [zombies, undead] -> zombies, undead
+                value = value.strip()
+                if value.startswith('['):
+                    value = value[1:]
+                if value.endswith(']'):
+                    value = value[:-1]
                 # Split by comma, strip whitespace
                 aliases = [a.strip() for a in value.split(',') if a.strip()]
                 current['aliases'] = aliases

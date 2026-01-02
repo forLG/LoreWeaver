@@ -632,137 +632,49 @@ the_beach -> rocky_shore
         content: str,
         entities_text: str
     ) -> str:
-        """
-        Semantic relation extraction with domain-specific relation types.
-
-        Extracts deeper semantic relationships between entities:
-        - Spatial state (creature/location relationships)
-        - Item relations (where items are, what they unlock)
-        - Social structure (hierarchy, alliances, rivalries)
-        """
-        return f"""
-ROLE: You are a D&D Semantic Relation Extractor. Extract deep semantic relationships between entities.
-
-CURRENT SECTION: {title}
+        """Semantic relation extraction optimized for small models."""
+        return f"""ROLE: Extract D&D semantic relationships between entities.
+SECTION: {title}
 
 KNOWN ENTITIES:
 {entities_text}
 
-TEXT TO PROCESS:
+TEXT:
 {content}
 
-TASK: Extract semantic relationships between the known entities mentioned in this text.
+RELATION TYPES:
+Creature→Location: inhabits, guards, patrols, hidden_at, trapped_at, wanders
+Item→Location: hidden_at, locks, unlocks, stored_in
+Creature→Item: wields, wears, carries, owns
+Social: commands, serves, allied_with, rival_of, worships
+Group: led_by, members_include
 
-==========================================================================
-RELATION CATEGORIES
-==========================================================================
+RULES:
+1. Only use entities from KNOWN ENTITIES list
+2. Extract EXPLICITLY stated relationships only
+3. Generic creatures like "zombies" are single entities
 
-**CREATURE → LOCATION (Spatial State)**:
-- inhabits: Lives/sleeps/dwells there (home base)
-- guards: Protects that area (may patrol around it)
-- patrols: Routes through regularly (not static)
-- hidden_at: Concealed in/around (ambush position)
-- trapped_at: Waiting to ambush at that location
-- wanders: Moves through randomly (no fixed home)
+OUTPUT:
+Relation: type
+Source: entity_id
+Target: entity_id
+Description: context
 
-**ITEM RELATIONS**:
-- Item → Location:
-  - hidden_at: Concealed somewhere (in a chest, under debris)
-  - locks: Prevents access to a location/container
-  - unlocks: Opens a location/container
-  - stored_in: Contained within (chest, cupboard, etc.)
-
-- Creature → Item:
-  - wields: Actively using as weapon
-  - wears: Equipped (armor, clothing)
-  - carries: Holding or transporting
-  - owns: Possesses but not necessarily carrying
-
-**SOCIAL STRUCTURE**:
-- commands: Authority/leadership (giver → receiver)
-- serves: Loyalty/subservience (servant → master)
-- allied_with: Friendly alliance (mutual)
-- rival_of: Competition/hostility (mutual)
-- worships: Religious devotion (worshipper → deity/idol)
-
-**GROUP RELATIONS**:
-- led_by: Group's leader (group → leader creature)
-- members_include: Group composition (group → member creatures)
-
-==========================================================================
-CRITICAL RULES
-==========================================================================
-
-1. **Only use entities from the KNOWN ENTITIES list above**
-
-2. **Extract EXPLICITLY stated relationships**:
-   - "The goblin guards the entrance" → guards (goblin → entrance)
-   - "Key unlocks the chest" → unlocks (key → chest)
-   - "The zombies wander the halls" → wanders (zombies → halls)
-
-3. **Be specific with relation types**:
-   - Use "inhabits" for home/living space
-   - Use "guards" for active protection
-   - Use "patrols" for regular routes
-   - Use "hidden_at" for ambush/stealth
-
-4. **Include descriptions**: Add context for each relation
-
-5. **Generic creatures**: For groups like "zombies", treat them as a single entity
-   - "zombies guard the entrance" → guards (zombies → entrance)
-
-==========================================================================
-OUTPUT FORMAT
-==========================================================================
-Relation: [relation_type]
-Source: [entity_id]
-Target: [entity_id]
-Description: [context from text]
-
-[Repeat for each relationship, separate with blank line]
-
-==========================================================================
-EXAMPLES
-==========================================================================
+EXAMPLES:
 Relation: inhabits
 Source: runara
 Target: dragon_s_rest
-Description: Lives in the ruined temple, calls it home
+Description: Lives in the ruined temple
 
 Relation: guards
-Source: zombies_in_ship
-Target: c1_main_deck
-Description: Zombies shamble around the deck, attacking intruders
+Source: zombies
+Target: entrance
+Description: Zombies guard the entrance
 
 Relation: hidden_at
 Source: rusty_key
 Target: sanctuary
-Description: Hidden under debris near the altar
-
-Relation: unlocks
-Source: rusty_key
-Target: iron_chest
-Description: Opens the locked iron chest in the corner
-
-Relation: patrols
-Source: kobolds_at_entrance
-Target: cliffside_path
-Description: Kobolds regularly walk this path, watching for intruders
-
-Relation: commands
-Source: goblin_boss
-Target: goblin_minions
-Description: Shouts orders, the minions obey immediately
-
-Relation: wields
-Source: goblin_boss
-Target: rusty_scimitar
-Description: Carries a rusty scimitar, uses it in combat
-
-Relation: led_by
-Source: goblin_patrol
-Target: goblin_boss
-Description: The patrol is led by the goblin boss
+Description: Hidden under debris
 """
 
     # ========================================================================
@@ -775,77 +687,38 @@ Description: The patrol is led by the goblin boss
         content: str,
         locations_text: str
     ) -> str:
-        """
-        Extract location hierarchy relationships (part_of edges).
-
-        Focuses on identifying which locations contain other locations.
-        """
-        return f"""
-ROLE: You are a D&D Location Hierarchy Extractor. Extract containment relationships between locations.
-
-CURRENT SECTION: {title}
+        """Extract location hierarchy (part_of) optimized for small models."""
+        return f"""ROLE: Extract D&D location containment relationships.
+SECTION: {title}
 
 KNOWN LOCATIONS:
 {locations_text}
 
-TEXT TO PROCESS:
+TEXT:
 {content}
 
-TASK: Extract which locations contain other locations (hierarchy).
+HIERARCHY RULES:
+- "X in Y" → X part_of Y
+- "room in building" → room part_of building
+- "feature in room" → feature part_of room
+- Hierarchy: Area > Building > Room > Feature
 
-==========================================================================
-LOCATION CONTAINMENT RULES
-==========================================================================
-
-**Determine "part_of" relationships**:
-- If text says "X in Y", "X inside Y", "X within Y" → X part_of Y
-- If text says "room in building" → room part_of building
-- If text says "feature in room" → feature part_of room
-- If text says "building on island" → building part_of island
-
-**Hierarchy levels** (from largest to smallest):
-1. Area: Region, island, city, outdoor space
-2. Building: Structure, temple, ship, cave system
-3. Room: Interior space within a building
-4. Feature: Object/point of interest within a room
-
-**Examples**:
-- "Sanctuary in Dragon's Rest" → sanctuary part_of dragon_s_rest
-- "Altar in the sanctuary" → altar part_of sanctuary
-- "Dragon's Rest on Stormwreck Isle" → dragon_s_rest part_of stormwreck_isle
-
-==========================================================================
-OUTPUT FORMAT
-==========================================================================
+OUTPUT:
 Relation: part_of
-Source: [child_location_id]
-Target: [parent_location_id]
-Description: [hierarchy description]
+Source: child_id
+Target: parent_id
+Description: context
 
-[Repeat for each containment relationship]
-
-==========================================================================
-EXAMPLES
-==========================================================================
+EXAMPLES:
 Relation: part_of
 Source: sanctuary
 Target: dragon_s_rest
-Description: Inner sanctum room within the temple
+Description: Inner sanctum within temple
 
 Relation: part_of
 Source: altar
 Target: sanctuary
-Description: Stone altar located in the sanctum
-
-Relation: part_of
-Source: dragon_s_rest
-Target: stormwreck_isle
-Description: Temple building located on the island
-
-Relation: part_of
-Source: c1_main_deck
-Target: ship_compass_rose
-Description: Main deck is part of the ship structure
+Description: Stone altar in sanctum
 """
 
     # ========================================================================
@@ -855,188 +728,83 @@ Description: Main deck is part of the ship structure
     @staticmethod
     def create_unified_extraction_prompt_natural(
         title: str,
-        content: str
+        content: str,
+        parent_context: str = "",
+        known_entities: str = ""
     ) -> str:
         """
         Unified Entity + Event extraction for heterogeneous graph.
-
-        Extracts:
-        - Entity nodes (static knowledge): locations, creatures, items
-        - Event nodes (dynamic narrative): encounters, discoveries, actions
-
-        Both become nodes in the same graph, linked by edges.
+        Optimized for small models (Qwen3 8B, etc).
         """
-        # Pure bottom-up: no parent context passed
-        return f"""
-ROLE: You are a D&D Knowledge Graph Extractor. Extract entities AND events from the following text.
+        _nl = "\n"
+        parent_line = f"PARENT: {parent_context}{_nl}" if parent_context else ""
+        known_line = f"KNOWN ENTITIES FROM PREVIOUS SECTIONS:{_nl}{known_entities}{_nl}{_nl}" if known_entities else ""
 
-CURRENT SECTION: {title}
-
-TEXT TO PROCESS:
+        return f"""ROLE: Extract D&D entities and events from adventure text.
+SECTION: {title}
+{parent_line}{known_line}TEXT:
 {content}
 
-TASK: Extract ALL named entities AND narrative events in this text.
+RULES:
+1. BE AGGRESSIVE - extract ANY creature, location, or item mentioned
+2. Generic groups: "zombies" → ID: zombies, is_generic: true, creature_type: undead
+3. Location types: area/building/room/feature/path
+4. ONLY use <summary> for truly empty text (pure atmospheric description)
 
-==========================================================================
-ENTITY TYPES (static knowledge nodes)
-==========================================================================
+ENTITY TYPES:
+- Location (area/building/room/feature/path)
+- Creature (humanoid/beast/undead/dragon/etc)
+- Item (objects, equipment, treasures)
+- Group (organizations, parties)
 
-**LOCATIONS** (with subtypes):
-- Area: Region, island, outdoor space (e.g., "Stormwreck Isle", "The Beach")
-- Building: Structure, temple, ship, cave (e.g., "Dragon's Rest", "Ship Deck")
-- Room: Interior space within a building (e.g., "Sanctuary", "Captain's Quarters")
-- Feature: Object/point of interest (e.g., "Altar", "Statue", "Chest")
-- Path: Passage, stairs, corridor (e.g., "Cliffside Path", "Spiral Stairs")
+EVENT TYPES:
+encounter, combat, discovery, dialogue, exploration, observation, quest, trap, puzzle
 
-**CREATURES** (with creature_type):
-- Named: "Runara", "Goblin Boss" → use exact name, is_generic=false
-- Generic groups: "zombies", "kobolds", "skeletons" → use plural name, is_generic=true
-- Generic with context: "zombies in the ship" → "zombies_in_ship", is_generic=true
-- Creature types: humanoid, beast, undead, construct, monstrosity, dragon, etc.
-
-**ITEMS**: Objects, equipment, treasures (e.g., "Rusty Key", "Magic Sword")
-
-**GROUPS**: Organizations, parties, factions (e.g., "The Party", "Cult of the Dragon")
-
-==========================================================================
-EVENT TYPES (dynamic narrative nodes)
-==========================================================================
-- encounter: Meeting or confrontation with entities
-- combat: Fight or battle
-- discovery: Finding something (item, location, information)
-- dialogue: Conversation or exchange of information
-- exploration: Moving through or observing a location
-- observation: Noticing details (not an action)
-- quest: Receiving a task or objective
-- trap: Triggering a harmful mechanism
-- puzzle: Solving a riddle or mechanism
-- social_challenge: Non-combat conflict (persuasion, intimidation)
-
-==========================================================================
-CRITICAL RULES
-==========================================================================
-
-1. **LOCATION HIERARCHY** - Determine location_type:
-   - "in", "inside", "within" → room or feature (part of building)
-   - "on", "at" → building or area (standalone location)
-   - If it contains other locations → building or area
-   - If it's furniture/object/point of interest → feature
-
-2. **GENERIC CREATURES** - Handle zombies, kobolds, etc.:
-   - Plural generic name: "zombies", "kobolds" → ID is the plural word
-   - Add context to ID when in different locations: "zombies_in_ship", "kobolds_at_entrance"
-   - Set is_generic=true for all generic creatures
-   - Set creature_type: undead for zombies, humanoid for kobolds
-   - DO NOT use numbered IDs (zombie_1, zombie_2) unless truly indistinguishable individuals
-   - If different behaviors mentioned separately: "attacking_zombie" vs "guarding_zombie"
-
-3. **UNNAMED INDIVIDUALS** - When entities act differently:
-   - If text describes distinct behaviors: treat as separate entities
-   - Example: "one zombie attacks while another guards" → "attacking_zombie", "guarding_zombie"
-   - Use descriptive IDs based on their behavior/context
-
-4. **ALIASES** - Include variations:
-   - "a bronze dragon" → aliases: ["bronze dragon", "elder"]
-   - "the temple" → aliases: ["temple"] (for Dragon's Rest)
-
-5. **IF NO ENTITIES OR EVENTS FOUND**: Output <summary> with explanation
-
-==========================================================================
-OUTPUT FORMAT
-==========================================================================
+OUTPUT (wrap in HTML tags):
 <entities>
-Entity: name
+Entity: Name
 Type: Location/Creature/Item/Group
-ID: snake_case_id
-LocationType: area/building/room/feature/path  # ONLY for Location entities
-CreatureType: humanoid/beast/undead/etc        # ONLY for Creature entities
-IsGeneric: true/false                          # true for generic groups (zombies, kobolds)
+ID: snake_case
+LocationType: area/building/room/feature/path
+CreatureType: type
+IsGeneric: true/false
 Aliases: [alias1, alias2]
 </entities>
 
 <events>
-Event: event_name
+Event: Name
 Type: encounter/combat/discovery/etc
-Participants: entity_id1, entity_id2
+Participants: [id1, id2]
 Location: location_id
-Description: what happened
+Description: brief description
 </events>
 
-==========================================================================
-EXAMPLES
-==========================================================================
+EXAMPLES:
 <entities>
 Entity: Dragon's Rest
 Type: Location
 ID: dragon_s_rest
 LocationType: building
 IsGeneric: false
-Aliases: [temple, monastery]
+Aliases: [temple]
 
-Entity: Sanctuary
-Type: Location
-ID: sanctuary
-LocationType: room
-IsGeneric: false
-Aliases: [inner sanctum]
-
-Entity: Altar
-Type: Location
-ID: altar
-LocationType: feature
-IsGeneric: false
-Aliases: []
-
-Entity: Runara
+Entity: Zombies
 Type: Creature
-ID: runara
-CreatureType: dragon
-IsGeneric: false
-Aliases: [bronze dragon, elder]
-
-Entity: Zombies in Ship
-Type: Creature
-ID: zombies_in_ship
+ID: zombies
 CreatureType: undead
 IsGeneric: true
-Aliases: [zombies, undead]
-
-Entity: Kobolds at Entrance
-Type: Creature
-ID: kobolds_at_entrance
-CreatureType: humanoid
-IsGeneric: true
-Aliases: [kobolds]
-
-Entity: Rusty Key
-Type: Item
-ID: rusty_key
-IsGeneric: false
-Aliases: []
+Aliases: [undead]
 </entities>
 
 <events>
-Event: Meeting Runara
-Type: encounter
-Participants: [adventurers, runara]
-Location: sanctuary
-Description: The party meets a bronze dragon named Runara in the ruined temple
-
 Event: Zombie Attack
 Type: combat
-Participants: [adventurers, zombies_in_ship]
-Location: c1_main_deck
-Description: Zombies attack when the party enters the ship deck
-
-Event: Finding the Key
-Type: discovery
-Participants: [adventurers]
-Location: sanctuary
-Description: While searching, the party discovers a rusty key hidden under debris near the altar
+Participants: [adventurers, zombies]
+Location: dragon_s_rest
+Description: Zombies attack the party
 </events>
 
-OUTPUT EXAMPLE (no entities/events):
+IF NO ENTITIES/EVENTS:
 <summary>
-Text contains only generic atmospheric description with no specific entities or events.
-</summary>
-"""
+Text contains only atmospheric description with no entities.
+</summary>"""

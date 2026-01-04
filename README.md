@@ -107,7 +107,7 @@ NEO4J_PASSWORD = "your_password"  # Change this
 
 ### fronted
 
-to run the Streamlit frontend:
+To run the Streamlit frontend:
 
 ```
 python -m streamlit run frontend/app.py

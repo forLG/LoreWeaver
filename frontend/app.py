@@ -112,16 +112,16 @@ with st.sidebar:
             
             # 显式传递命令行参数
             cmd.extend(["--max-concurrent", str(concurrency)])
-            # 注意：main.py 可能不直接接受 --model 参数，而是依赖环境变量或 config
-            # 但为了保险，我们只依赖环境变量传递模型选择，除非确定 main.py 有 --model 参数
-            # 根据之前的分析，main.py 似乎没有 --model 参数，而是通过 get_default_concurrency 读取 env
-            # 等等，之前的 read_file 显示 main.py 的 docstring 里有 python -m main ... --model qwen3-8b
-            # 让我们假设它支持，如果不支持，argparse 会报错。
-            # 为了安全，我们先不传 --model 参数，而是完全依赖环境变量 LLM_MODEL
-            # 再次检查 main.py... parse_args 里没有 --model。
-            # 修正：main.py 的 parse_args 里确实没有 --model。
-            # 它是在 get_default_concurrency 里读取 os.getenv('LLM_MODEL')。
-            # 所以我们只设置环境变量。
+            # 模型选择通过环境变量 LLM_MODEL 传递；main.py 从环境中读取模型配置，而不是使用 --model 参数。
+            
+            
+            
+            
+            
+            
+            
+            
+            
             
             st.code(" ".join(cmd), language="bash")
             

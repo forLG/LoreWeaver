@@ -7,7 +7,6 @@ import os
 import sys
 import time
 import html
-import re
 import subprocess
 from pathlib import Path
 

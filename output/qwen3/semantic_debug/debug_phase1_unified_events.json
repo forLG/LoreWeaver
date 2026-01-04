@@ -1,0 +1,715 @@
+[
+  {
+    "label": "Exploration",
+    "type": "exploration",
+    "participants": [],
+    "location": null,
+    "description": "Text contains only atmospheric description with no entities.",
+    "id": "exploration",
+    "source_node": "Running the Adventure"
+  },
+  {
+    "label": "Exploration",
+    "type": "exploration",
+    "participants": [
+      "stormwreck_isle"
+    ],
+    "location": "sword_coast",
+    "description": "Adventures explore ancient strongholds and ruined kingdoms in the Sword Coast region",
+    "id": "exploration",
+    "source_node": "The Forgotten Realms"
+  },
+  {
+    "label": "Guardian Encounters",
+    "type": "encounter",
+    "participants": [
+      "unknown_guardians"
+    ],
+    "location": "magic_hot_spring",
+    "description": "Mysterious guardians guard the magical hot spring",
+    "id": "guardian_encounters",
+    "source_node": "Adventure Outline"
+  },
+  {
+    "label": "Mushroom Connection",
+    "type": "discovery",
+    "participants": [],
+    "location": "seagrow_caves",
+    "description": "Magical connection to the Elemental Plane of Fire affects myconids",
+    "id": "mushroom_connection",
+    "source_node": "Adventure Outline"
+  },
+  {
+    "label": "Cursed Hold",
+    "type": "discovery",
+    "participants": [],
+    "location": "cursed_shipwreck",
+    "description": "Horrible curse discovered in the ship's hold",
+    "id": "cursed_hold",
+    "source_node": "Adventure Outline"
+  },
+  {
+    "label": "Blue Dragon Lair",
+    "type": "exploration",
+    "participants": [
+      "bronze_wyrmling"
+    ],
+    "location": "clifftop_observatory",
+    "description": "Exploration of the blue dragon's lair containing a captive bronze wyrmling",
+    "id": "blue_dragon_lair",
+    "source_node": "Adventure Outline"
+  },
+  {
+    "label": "Monster Appears On Deck",
+    "type": "encounter",
+    "participants": [
+      "adventurers",
+      "monster"
+    ],
+    "location": "stormwreck_isle",
+    "description": "A monster hauls itself up onto the deck as lightning flashes.",
+    "id": "monster_appears_on_deck",
+    "source_node": ""
+  },
+  {
+    "label": "Merrow Escape",
+    "type": "discovery",
+    "participants": [
+      "merrow_extortionist"
+    ],
+    "location": "stormwreck_isle",
+    "description": "The merrow escapes into the depths",
+    "id": "merrow_escape",
+    "source_node": ""
+  },
+  {
+    "label": "Sailor Cheer",
+    "type": "observation",
+    "participants": [
+      "sailors"
+    ],
+    "location": "stormwreak_isle",
+    "description": "Sailors celebrate after the merrow departs",
+    "id": "sailor_cheer",
+    "source_node": ""
+  },
+  {
+    "label": "Learning About Dangers",
+    "type": "discovery",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "dragon_rest",
+    "description": "Characters learn about the dangers facing Stormwreck Isle.",
+    "id": "learning_about_dangers",
+    "source_node": "Chapter 1: Dragon's Rest"
+  },
+  {
+    "label": "Encounter_with_Drowned_Sailors",
+    "type": "encounter",
+    "participants": [
+      "adventurers",
+      "drowned_sailors"
+    ],
+    "location": "stormwreck_isle",
+    "description": "Undead sailors emerge from the water and approach the party",
+    "id": "encounter_with_drowned_sailors",
+    "source_node": ""
+  },
+  {
+    "label": "Dialogue",
+    "type": "dialogue",
+    "participants": [
+      "adventurer_party",
+      "kobold"
+    ],
+    "location": "cloister",
+    "description": "A kobold initiates conversation by asking the travelers' name",
+    "id": "dialogue",
+    "source_node": ""
+  },
+  {
+    "label": "Guardian Encounter",
+    "type": "encounter",
+    "participants": [
+      "tarak",
+      "fungus_covered_octopus_monster"
+    ],
+    "location": "sea_caves",
+    "description": "Tarak is repelled by the fungal octopus guardian protecting the myconid caves.",
+    "id": "guardian_encounter",
+    "source_node": "Tarak"
+  },
+  {
+    "label": "Tattoo Symbol Discovery",
+    "type": "discovery",
+    "participants": [
+      "tarak"
+    ],
+    "location": "unknown",
+    "description": "Detecting the Gilded Gallows symbol on Tarak's tattoo requires a successful History check.",
+    "id": "tattoo_symbol_discovery",
+    "source_node": "Tarak"
+  },
+  {
+    "label": "Statue Identification",
+    "type": "discovery",
+    "participants": [
+      "player_characters"
+    ],
+    "location": "dragon_rest",
+    "description": "Character identifies the statue as depicting a bronze dragon using Arcana skill check",
+    "id": "statue_identification",
+    "source_node": "Statue"
+  },
+  {
+    "label": "Runara's Revelation",
+    "type": "dialogue",
+    "participants": [
+      "runara",
+      "player_characters"
+    ],
+    "location": "dragon_rest",
+    "description": "Runara reveals the statue depicts Astalagan, her late father",
+    "id": "runara_s_revelation",
+    "source_node": "Statue"
+  },
+  {
+    "label": "Observation",
+    "type": "observation",
+    "participants": [
+      "cloister"
+    ],
+    "location": "cloister",
+    "description": "Description of monastic cells layout and occupancy",
+    "id": "observation",
+    "source_node": "Cells"
+  },
+  {
+    "label": "Winch Operation",
+    "type": "exploration",
+    "participants": [],
+    "location": "winch_house",
+    "description": "Mechanism allows lowering/pulling pallet via winch",
+    "id": "winch_operation",
+    "source_node": "A2: Winch House"
+  },
+  {
+    "label": "Observation",
+    "type": "observation",
+    "participants": [
+      "tarak"
+    ],
+    "location": "cloister",
+    "description": "Residents favor Tarak's cooking",
+    "id": "observation",
+    "source_node": "A3: Kitchen"
+  },
+  {
+    "label": "Dialogue About Myconid Mission",
+    "type": "dialogue",
+    "participants": [
+      "tarak"
+    ],
+    "location": "sea_caves",
+    "description": "Tarak informs the party about seeking help from the myconids and retrieving heart cap mushrooms.",
+    "id": "dialogue_about_myconid_mission",
+    "source_node": "Sea Caves"
+  },
+  {
+    "label": "Guardian Encounter",
+    "type": "combat",
+    "participants": [
+      "adventurers",
+      "fungal_octopus"
+    ],
+    "location": "sea_caves",
+    "description": "The party battles the fungal octopus guarding the sea caves.",
+    "id": "guardian_encounter",
+    "source_node": "Sea Caves"
+  },
+  {
+    "label": "Myconid Investigation",
+    "type": "discovery",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "sea_caves",
+    "description": "The party explores the sea caves to determine the cause of the myconids' distress.",
+    "id": "myconid_investigation",
+    "source_node": "Sea Caves"
+  },
+  {
+    "label": "Dream_Interpretation_Dialogue",
+    "type": "dialogue",
+    "participants": [
+      "runara"
+    ],
+    "location": "dragon_rest",
+    "description": "Runara interprets the cleric's dream about the hunger of death and directs them to investigate the wreck of Compass Rose",
+    "id": "dream_interpretation_dialogue",
+    "source_node": "The Cleric"
+  },
+  {
+    "label": "Paladin's Arrival and Guidance",
+    "type": "dialogue",
+    "participants": [
+      "runara"
+    ],
+    "location": "dragon_rest",
+    "description": "Runara advises the paladin to consult Tarak and Varnoth, and recommends spending time in the temple of Bahamut.",
+    "id": "paladin_s_arrival_and_guidance",
+    "source_node": "The Paladin"
+  },
+  {
+    "label": "Final Reflection Prompt",
+    "type": "dialogue",
+    "participants": [
+      "runara"
+    ],
+    "location": "temple_bahamut",
+    "description": "Runara questions the paladin about lessons learned against corruption, suggesting personal quests to combat evil.",
+    "id": "final_reflection_prompt",
+    "source_node": "The Paladin"
+  },
+  {
+    "label": "Revelation",
+    "type": "discovery",
+    "participants": [
+      "adventurers",
+      "runara"
+    ],
+    "location": "stormwreck_isle",
+    "description": "Runara reveals her true draconic form through magical transformation",
+    "id": "revelation",
+    "source_node": ""
+  },
+  {
+    "label": "Dialogue",
+    "type": "conversation",
+    "participants": [
+      "adventurers",
+      "runara"
+    ],
+    "location": "stormwreak_isle",
+    "description": "Runara explains the resurgence of conflict on the island and requests assistance",
+    "id": "dialogue",
+    "source_node": ""
+  },
+  {
+    "label": "Discovery of Hot Springs",
+    "type": "discovery",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "hot_spring_cove",
+    "description": "Adventurers uncover a hidden cove with a glowing hot spring surrounded by colorful fungi.",
+    "id": "discovery_of_hot_springs",
+    "source_node": ""
+  },
+  {
+    "label": "Discovery of Hot Spring Regeneration",
+    "type": "discovery",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "hot_spring",
+    "description": "Characters can regain hit points by bathing in the hot spring after spending 10 minutes.",
+    "id": "discovery_of_hot_spring_regeneration",
+    "source_node": "Spring Waters"
+  },
+  {
+    "label": "Kobold Encounter",
+    "type": "encounter",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "stormwreck_isle",
+    "description": "Eight kobolds and three winged kobolds appear as per the 3rd-level encounter guidelines.",
+    "id": "kobold_encounter",
+    "source_node": "3rd-Level Characters"
+  },
+  {
+    "label": "Travel Options Revealed",
+    "type": "exploration",
+    "participants": [
+      "player_characters"
+    ],
+    "location": "stormwreck_isle",
+    "description": "Characters learn of two ways to reach Seagrow Caves: rowboat journey or coastal trek",
+    "id": "travel_options_revealed",
+    "source_node": "Running This Chapter"
+  },
+  {
+    "label": "Tide Access Restriction",
+    "type": "discovery",
+    "participants": [],
+    "location": "seagrow_caves",
+    "description": "Characters must navigate tides to access lower caverns",
+    "id": "tide_access_restriction",
+    "source_node": "Entering the Caves"
+  },
+  {
+    "label": "Telepathic Link Activation",
+    "type": "observation",
+    "participants": [
+      "myconid_adult",
+      "player_characters"
+    ],
+    "location": "seagrow_caves",
+    "description": "Characters gain telepathic communication with myconids via rapport spores",
+    "id": "telepathic_link_activation",
+    "source_node": "Rapport Spores"
+  },
+  {
+    "label": "Myconid Movement Triggered by Distress Spores",
+    "type": "movement",
+    "participants": [
+      "myconid_adult",
+      "myconid_sprout"
+    ],
+    "location": "area_B4",
+    "description": "Myconids in areas B2 and B3 relocate to area B4 after detecting distress spores released by damaged myconids.",
+    "id": "myconid_movement_triggered_by_distress_spores",
+    "source_node": "Distress Spores"
+  },
+  {
+    "label": "Confrontation",
+    "type": "combat",
+    "participants": [
+      "agrinc_myconid",
+      "omphalo_myconid"
+    ],
+    "location": "circle_chamber",
+    "description": "Conscious myconids attack intruders lacking escort",
+    "id": "confrontation",
+    "source_node": "B4: Circle Chamber"
+  },
+  {
+    "label": "Shared Trance",
+    "type": "discovery",
+    "participants": [
+      "craterel_myconid",
+      "pleuro_myconid",
+      "subrufus_myconid",
+      "virosa_myconid"
+    ],
+    "location": "circle_chamber",
+    "description": "Four myconids enter a dream-like meld state",
+    "id": "shared_trance",
+    "source_node": "B4: Circle Chamber"
+  },
+  {
+    "label": "Illness Effect",
+    "type": "observation",
+    "participants": [
+      "agrinc_myconid",
+      "omphalo_myconid",
+      "craterel_myconid",
+      "pleuro_myconid",
+      "subrufus_myconid",
+      "virosa_myconid"
+    ],
+    "location": "circle_chamber",
+    "description": "Myconids show signs of blight-induced fatigue",
+    "id": "illness_effect",
+    "source_node": "B4: Circle Chamber"
+  },
+  {
+    "label": "Defensive Encounter",
+    "type": "combat",
+    "participants": [
+      "auranta",
+      "enok"
+    ],
+    "location": "sinensa_sanctum",
+    "description": "Myconid Adults defend their unconscious leader against unauthorized intruders",
+    "id": "defensive_encounter",
+    "source_node": "B5: Sinensa's Sanctum"
+  },
+  {
+    "label": "Elixir Creation",
+    "type": "discovery",
+    "participants": [
+      "characters",
+      "tarak"
+    ],
+    "location": "cloister",
+    "description": "Characters bring ruby morel to cloister, enabling Tarak to craft an elixir of health",
+    "id": "elixir_creation",
+    "source_node": "Treasure"
+  },
+  {
+    "label": "Fume Drake Encounter",
+    "type": "encounter",
+    "participants": [
+      "fume_drake"
+    ],
+    "location": "crystal_cave",
+    "description": "Two fume drakes ambush intruding creatures in the sulfer-laden cave",
+    "id": "fume_drake_encounter",
+    "source_node": "B6: Crystal Cave"
+  },
+  {
+    "label": "Blight Source Revelation",
+    "type": "discovery",
+    "participants": [],
+    "location": "crystal_cave",
+    "description": "Characters uncover the link between the tomb's magical energies and the toxic fungal spread",
+    "id": "blight_source_revelation",
+    "source_node": "B6: Crystal Cave"
+  },
+  {
+    "label": "Level Advancement",
+    "type": "quest",
+    "participants": [
+      "characters"
+    ],
+    "location": null,
+    "description": "Characters gain a level upon completing the chapter, advancing based on prior explorations of key locations",
+    "id": "level_advancement",
+    "source_node": "Gain a Level"
+  },
+  {
+    "label": "Harpy Lair Discovery",
+    "type": "discovery",
+    "participants": [
+      "harpy"
+    ],
+    "location": "crow_snest",
+    "description": "Characters discover the harpy's nest in the crow's nest, filled with debris and remnants of its lair.",
+    "id": "harpy_lair_discovery",
+    "source_node": "Crow's Nest"
+  },
+  {
+    "label": "Treasure Discovery",
+    "type": "discovery",
+    "participants": [],
+    "location": "stormwreck_isle",
+    "description": "Characters discover valuable loot in the crow's nest",
+    "id": "treasure_discovery",
+    "source_node": "Treasure"
+  },
+  {
+    "label": "Movement_Illusion",
+    "type": "observation",
+    "participants": [],
+    "location": "stormwreck_isle",
+    "description": "Crabs create illusions of movement over skeletal remains",
+    "id": "movement_illusion",
+    "source_node": "C5: Galley"
+  },
+  {
+    "label": "Suspicious Movement",
+    "type": "observation",
+    "participants": [
+      "player_group"
+    ],
+    "location": "galley",
+    "description": "The skeletal remains appear to shift slightly, suggesting unnatural activity.",
+    "id": "suspicious_movement",
+    "source_node": ""
+  },
+  {
+    "label": "Structural Collapse",
+    "type": "discovery",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "stormwreck_isle",
+    "description": "A fallen chest created holes connecting the captain's quarters to the lower deck hold",
+    "id": "structural_collapse",
+    "source_node": "Hole to the Hold"
+  },
+  {
+    "label": "Travel Options",
+    "type": "exploration",
+    "participants": [],
+    "location": "clifftop_observatory",
+    "description": "Multiple routes described to reach the Clifftop Observatory",
+    "id": "travel_options",
+    "source_node": "Running This Chapter"
+  },
+  {
+    "label": "Approach_by_Water",
+    "type": "exploration",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "clifftop_observatory",
+    "description": "Characters approach the observatory by sea, choosing between rowing directly or anchoring near pillars to access elevated areas.",
+    "id": "approach_by_water",
+    "source_node": "Approaching by Water"
+  },
+  {
+    "label": "Screeching Roar Encounter",
+    "type": "encounter",
+    "participants": [
+      "blue_dragon_wyrmling"
+    ],
+    "location": "column_far_from_stormwreck_isle",
+    "description": "A winged, glittering blue shape roars and perches atop a distant column.",
+    "id": "screeching_roar_encounter",
+    "source_node": ""
+  },
+  {
+    "label": "Stirge Attack",
+    "type": "combat",
+    "participants": [
+      "stirge",
+      "kobolds"
+    ],
+    "location": "rotunda_ruins",
+    "description": "A stirge attack disrupts the kobolds' preparations for Sparkrender's ritual.",
+    "id": "stirge_attack",
+    "source_node": "Dragon Effigies"
+  },
+  {
+    "label": "Effigy Explanation",
+    "type": "dialogue",
+    "participants": [
+      "mek",
+      "minn"
+    ],
+    "location": "rotunda_ruins",
+    "description": "Mek and Minn explain the purpose of the dragon effigies to the adventurers.",
+    "id": "effigy_explanation",
+    "source_node": "Dragon Effigies"
+  },
+  {
+    "label": "Creative Access to D4",
+    "type": "exploration",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "d4",
+    "description": "Characters devise unconventional methods to reach the isolated study",
+    "id": "creative_access_to_d4",
+    "source_node": "Clever Solutions"
+  },
+  {
+    "label": "Dragon Awakened",
+    "type": "encounter",
+    "participants": [
+      "characters",
+      "sparkrender"
+    ],
+    "location": "d5_observatory_tower",
+    "description": "Sparkrender awakens and growslows threats in Draconic",
+    "id": "dragon_awakened",
+    "source_node": "Waking the Dragon"
+  },
+  {
+    "label": "Breathing Attack",
+    "type": "combat",
+    "participants": [
+      "characters",
+      "sparkrender"
+    ],
+    "location": "d5_observatory_tower",
+    "description": "Blue Dragon Wyrmling uses Breath Weapon ability",
+    "id": "breathing_attack",
+    "source_node": "Waking the Dragon"
+  },
+  {
+    "label": "Flight Attempt",
+    "type": "combat",
+    "participants": [
+      "characters",
+      "sparkrender"
+    ],
+    "location": "d5_observatory_tower",
+    "description": "Sparkrender flees after dropping to 10 hp",
+    "id": "flight_attempt",
+    "source_node": "Waking the Dragon"
+  },
+  {
+    "label": "Discovery",
+    "type": "discovery",
+    "participants": [
+      "characters"
+    ],
+    "location": "d5_observatory_tower",
+    "description": "Growling heard from area D6",
+    "id": "discovery",
+    "source_node": "Waking the Dragon"
+  },
+  {
+    "label": "Statue Alignment Puzzle",
+    "type": "discovery",
+    "participants": [
+      "player_characters"
+    ],
+    "location": "d5_observatory_tower",
+    "description": "Players align statues with the Dragon of Dawn constellation to activate the hidden staircase to the secret archive.",
+    "id": "statue_alignment_puzzle",
+    "source_node": "Hidden Entrance"
+  },
+  {
+    "label": "Staircase Activation",
+    "type": "exploration",
+    "participants": [
+      "player_characters"
+    ],
+    "location": "d5_observatory_tower",
+    "description": "Once statues are properly aligned, a glowing spiral staircase appears connecting to the library below.",
+    "id": "staircase_activation",
+    "source_node": "Hidden Entrance"
+  },
+  {
+    "label": "Seal Mechanism",
+    "type": "trap",
+    "participants": [
+      "player_characters"
+    ],
+    "location": "d5_observatory_tower",
+    "description": "Disrupting the statue alignment causes the staircase to rise, trapping anyone on it above.",
+    "id": "seal_mechanism",
+    "source_node": "Hidden Entrance"
+  },
+  {
+    "label": "Discovery",
+    "type": "discovery",
+    "participants": [
+      "sparkrender"
+    ],
+    "location": "observatory_tower",
+    "description": "Characters find Sparkrender's hoard containing coins and valuable items",
+    "id": "discovery",
+    "source_node": "Treasure"
+  },
+  {
+    "label": "Unexpected Encounter",
+    "type": "combat",
+    "participants": [
+      "bronze_dragon"
+    ],
+    "location": "secret_library",
+    "description": "A large bronze dragon crashes through debris and begins to stir",
+    "id": "unexpected_encounter",
+    "source_node": ""
+  },
+  {
+    "label": "Discovery of Magical Artifacts",
+    "type": "discovery",
+    "participants": [
+      "adventurers"
+    ],
+    "location": "secret_library",
+    "description": "Characters uncover a +1 battleaxe and a 2nd-level hold person spell scroll after succeeding on an Intelligence (Investigation) check",
+    "id": "discovery_of_magical_artifacts",
+    "source_node": "Treasure"
+  },
+  {
+    "label": "Freeing Aidron",
+    "type": "quest",
+    "participants": [
+      "adventurers",
+      "aidron"
+    ],
+    "location": "stormwreck_isle",
+    "description": "Adventurers remove chains binding Aidron using clasps.",
+    "id": "freeing_aidron",
+    "source_node": "Freeing Aidron"
+  }
+]

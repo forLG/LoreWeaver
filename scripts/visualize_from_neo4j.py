@@ -4,12 +4,10 @@ Visualize Graph from Neo4j with Custom Queries
 Usage:
     python scripts/visualize_from_neo4j.py
 """
-import sys
-from pathlib import Path
 
-from graph_builder import Neo4jBuilder, GraphVisualizer
-from utils.logger import logger
 import config_neo4j as config
+from graph_builder import GraphVisualizer, Neo4jBuilder
+from utils.logger import logger
 
 
 def visualize_creatures_and_locations():

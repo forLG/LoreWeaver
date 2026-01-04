@@ -7,6 +7,8 @@ Handles truncation gracefully and is more debuggable.
 import re
 from typing import Any
 
+from utils.logger import logger
+
 
 def parse_ner_entities(text: str) -> dict[str, Any]:
     """
@@ -17,11 +19,21 @@ def parse_ner_entities(text: str) -> dict[str, Any]:
         Entity: Dragon's Rest
         Type: Location
         ID: dragon_s_rest
+        LocationType: building
+        IsGeneric: false
         Aliases: temple, monastery
         Entity: Runara
         Type: Creature
         ID: runara
+        CreatureType: dragon
+        IsGeneric: false
         Aliases: bronze dragon, elder
+        Entity: Zombies in Ship
+        Type: Creature
+        ID: zombies_in_ship
+        CreatureType: undead
+        IsGeneric: true
+        Aliases: zombies
         </entities>
 
     Or if no entities found:
@@ -56,8 +68,19 @@ def parse_ner_entities(text: str) -> dict[str, Any]:
             # Save previous entity if valid
             label = current.get('label', '').strip()
             eid = current.get('id', '').strip()
+            aliases = current.get('aliases', [])
 
             if label or eid:
+                # If no label, try to use first alias as label
+                if not label and aliases:
+                    label = str(aliases[0]).strip('"\'')
+                    current['label'] = label
+                # If still no label, use formatted ID as label
+                if not label and eid:
+                    # Convert ID to readable label: stormwreck_isle -> Stormwreck Isle
+                    logger.warning(f"Entity '{eid}' has no label and no aliases, using ID as label: '{eid.replace('_', ' ').title()}'")
+                    label = eid.replace('_', ' ').title()
+                    current['label'] = label
                 if not eid:
                     eid = label.lower().replace(' ', '_').replace("'", "")
                     current['id'] = eid
@@ -65,6 +88,9 @@ def parse_ner_entities(text: str) -> dict[str, Any]:
                     current['type'] = 'Entity'
                 if 'aliases' not in current:
                     current['aliases'] = []
+                # Set defaults for new semantic fields
+                if 'is_generic' not in current:
+                    current['is_generic'] = False
                 entities.append(current)
 
             # Start new entity
@@ -83,14 +109,38 @@ def parse_ner_entities(text: str) -> dict[str, Any]:
             elif key == 'id':
                 current['id'] = value
             elif key == 'aliases':
+                # Strip brackets if present: [zombies, undead] -> zombies, undead
+                value = value.strip()
+                if value.startswith('['):
+                    value = value[1:]
+                if value.endswith(']'):
+                    value = value[:-1]
                 # Split by comma, strip whitespace
                 aliases = [a.strip() for a in value.split(',') if a.strip()]
                 current['aliases'] = aliases
+            elif key == 'locationtype':
+                current['location_type'] = value
+            elif key == 'creaturetype':
+                current['creature_type'] = value
+            elif key == 'isgeneric':
+                # Parse boolean
+                current['is_generic'] = value.lower() in ('true', 'yes', '1')
 
     # Don't forget the last entity
     label = current.get('label', '').strip()
     eid = current.get('id', '').strip()
+    aliases = current.get('aliases', [])
     if label or eid:
+        # If no label, try to use first alias as label
+        if not label and aliases:
+            label = str(aliases[0]).strip('"\'')
+            current['label'] = label
+        # If still no label, use formatted ID as label
+        if not label and eid:
+            # Convert ID to readable label: stormwreck_isle -> Stormwreck Isle
+            logger.warning(f"Entity '{eid}' has no label and no aliases, using ID as label: '{eid.replace('_', ' ').title()}'")
+            label = eid.replace('_', ' ').title()
+            current['label'] = label
         if not eid:
             eid = label.lower().replace(' ', '_').replace("'", "")
             current['id'] = eid
@@ -98,6 +148,9 @@ def parse_ner_entities(text: str) -> dict[str, Any]:
             current['type'] = 'Entity'
         if 'aliases' not in current:
             current['aliases'] = []
+        # Set defaults for new semantic fields
+        if 'is_generic' not in current:
+            current['is_generic'] = False
         entities.append(current)
 
     return {"entities": entities, "summary": None}
@@ -122,6 +175,8 @@ def parse_events(text: str) -> dict[str, Any]:
         Description: While searching, the party discovers a rusty key
         </events>
 
+    Or just the events content without tags (for fallback parsing).
+
     Returns:
         {"events": [...]}
     """
@@ -130,9 +185,19 @@ def parse_events(text: str) -> dict[str, Any]:
     # Extract events section if present
     events_match = re.search(r'<events>(.*?)</events>', text, re.DOTALL)
     if not events_match:
-        return {"events": events}
+        # Fallback: try to extract events section without closing tag
+        events_match = re.search(r'<events>(.*)$', text, re.DOTALL)
 
-    events_text = events_match.group(1)
+    # If still no match, assume the text is already the events content
+    if not events_match:
+        # Check if text looks like it starts with an event
+        if re.search(r'^\s*Event:', text, re.MULTILINE):
+            events_text = text
+        else:
+            return {"events": events}
+    else:
+        events_text = events_match.group(1)
+
     current = {}
 
     for line in events_text.strip().split('\n'):
@@ -460,9 +525,16 @@ def parse_unified_extraction(text: str) -> dict[str, Any]:
         entities_result = parse_ner_entities(entities_text)
         result["entities"] = entities_result.get("entities", [])
 
-    # Extract events section
-    events_result = parse_events(text)
-    result["events"] = events_result.get("events", [])
+    # Extract events section - be robust to missing closing tag
+    events_match = re.search(r'<events>(.*?)</events>', text, re.DOTALL)
+    if not events_match:
+        # Fallback: try to extract events section without closing tag
+        events_match = re.search(r'<events>(.*)$', text, re.DOTALL)
+
+    if events_match:
+        events_text = events_match.group(1)
+        events_result = parse_events(events_text)
+        result["events"] = events_result.get("events", [])
 
     return result
 

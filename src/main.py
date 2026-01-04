@@ -1,5 +1,5 @@
 """
-LoreWeaver Main Pipeline
+LoreWeaver Main Pipeline (Large Model / Spatial-First)
 
 Usage:
     # Run all stages
@@ -12,7 +12,7 @@ Usage:
     python -m main --stage entity
 
     # Run multiple stages
-    python -m main --stage spatial --stage entity
+    python -m main --stage spatial --stage section-map
 
     # Rerun all stages, ignore cache
     python -m main --stage all --force
@@ -20,18 +20,27 @@ Usage:
     # Preview what would run
     python -m main --stage all --dry-run
 
-    # Use specific model (processor auto-selected based on model capability)
-    python -m main --stage all --model qwen3-8b
+    # Use specific model
+    python -m main --stage all --model gpt-4o
 
     # Adjust concurrency for local vLLM deployments
-    python -m main --stage all --max-concurrent 5
+    python -m main --stage all --max-concurrent 50
 
 Environment Variables (.env):
     OPENAI_API_KEY     - Your LLM API key (required)
     OPENAI_BASE_URL    - API base URL (default: https://api.openai.com/v1)
     LLM_MODEL          - Model name (default: gpt-4o)
-                        Small models (qwen, llama, mistral): Entity-first pipeline
-                        Large models (gpt-4o, deepseek): Spatial-first pipeline
+
+Note:
+    For small models (qwen, llama, mistral), use main_semantic.py instead:
+    python -m main_semantic --input data/adventure-dosi.json
+
+Pipeline Stages:
+    shadow       - Build shadow tree from adventure JSON
+    spatial      - Extract spatial topology graph
+    section-map  - Map sections to locations
+    entity       - Extract entities and relations
+    all          - Run all stages
 """
 import argparse
 import json
@@ -57,29 +66,21 @@ load_dotenv()
 
 def get_default_concurrency():
     """
-    Sensible default based on model or environment.
-    Local vLLM deployments need lower concurrency than cloud APIs.
+    Sensible default based on environment.
     """
-    model = os.getenv('LLM_MODEL', 'deepseek').lower()
     env_concurrency = os.getenv('LLM_MAX_CONCURRENT')
-    logger.debug(f"Auto-detecting concurrency for model: {model}")
-    logger.debug(f"Environment concurrency override: {env_concurrency}")
     if env_concurrency:
         try:
             return int(env_concurrency)
         except ValueError:
             pass
-    logger.info("Using conservative defaults based on model type")
-    # Conservative defaults for local/vLLM deployments
-    if any(x in model for x in ['qwen', 'local']):
-        # Very conservative for local models
-        return 5
+    # Default for cloud APIs
     return 50
 
 
 def parse_args():
     parser = argparse.ArgumentParser(
-        description="LoreWeaver Knowledge Graph Pipeline",
+        description="LoreWeaver Knowledge Graph Pipeline (Large Model)",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=__doc__
     )
@@ -104,7 +105,7 @@ def parse_args():
         help='Show what would run without executing'
     )
 
-    # LLM Config (from env or CLI override)
+    # LLM Config
     parser.add_argument(
         '--api-key',
         default=os.getenv('OPENAI_API_KEY'),
@@ -112,12 +113,12 @@ def parse_args():
     )
     parser.add_argument(
         '--base-url',
-        default=os.getenv('OPENAI_BASE_URL', 'https://api.deepseek.com/v1'),
+        default=os.getenv('OPENAI_BASE_URL', 'https://api.openai.com/v1'),
         help='LLM base URL (default: from OPENAI_BASE_URL env var)'
     )
     parser.add_argument(
         '--model',
-        default=os.getenv('LLM_MODEL', 'deepseek-chat'),
+        default=os.getenv('LLM_MODEL', 'gpt-4o'),
         help='LLM model (default: from LLM_MODEL env var)'
     )
 
@@ -126,19 +127,13 @@ def parse_args():
         '--max-concurrent',
         type=int,
         default=get_default_concurrency(),
-        help='Maximum concurrent LLM requests (default: auto-detected, use 50-100 for cloud APIs)'
-    )
-    parser.add_argument(
-        '--max-tokens',
-        type=int,
-        default=int(os.getenv('LLM_MAX_TOKENS', '0')),
-        help='Maximum tokens per LLM response (default: from LLM_MAX_TOKENS env var, 0 = no limit)'
+        help='Maximum concurrent LLM requests (default: auto-detected)'
     )
     parser.add_argument(
         '--repetition-penalty',
         type=float,
         default=float(os.getenv('LLM_REPETITION_PENALTY', '0')) if os.getenv('LLM_REPETITION_PENALTY') else None,
-        help='Repetition penalty for vLLM (default: from LLM_REPETITION_PENALTY env var, 1.0 = no penalty)'
+        help='Repetition penalty for vLLM (default: from env var, 1.0 = no penalty)'
     )
 
     # File paths
@@ -157,14 +152,14 @@ def parse_args():
 
 
 class Pipeline:
-    """LoreWeaver pipeline for processing D&D adventures into knowledge graphs."""
+    """LoreWeaver spatial-first pipeline for large models."""
 
     def __init__(self, args):
         self.args = args
         self.output_dir = Path(args.output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
 
-        # Setup file logging with experiment name from output directory
+        # Setup file logging
         exp_name = self.output_dir.name
         setup_logger(exp_name=exp_name)
 
@@ -184,39 +179,21 @@ class Pipeline:
                 "API key required. Set OPENAI_API_KEY in .env file or use --api-key"
             )
 
-        # Log model and processor selection
-        is_small_model = any(x in self.args.model.lower() for x in ['qwen', 'local'])
+        # Log configuration
         logger.info(f"Model: {self.args.model}")
-        if is_small_model:
-            logger.info("Processor: SmallModelProcessor (entity-first pipeline)")
-        else:
-            logger.info("Processor: SpatialTopologyProcessor (spatial-first pipeline)")
-
-        # Log concurrency settings
         logger.info(f"Max concurrent requests: {self.args.max_concurrent}")
-        if self.args.max_concurrent > 20:
-            logger.warning("High concurrency may overload local vLLM servers!")
 
     def run(self):
         """Run the pipeline with specified stages."""
         stages = self.args.stage or ['all']
-        is_small_model = any(x in self.args.model.lower() for x in ['qwen', 'local'])
 
         if 'all' in stages:
             self._run_stage('shadow')
             self._run_stage('spatial')
-            if is_small_model:
-                # Small models use unified pipeline, skip these stages
-                # historically we call it "spatial stage"
-                logger.info("Skipping section-map and entity stages for small model pipeline")
-                return
             self._run_stage('section-map')
             self._run_stage('entity')
         else:
             for stage in stages:
-                if is_small_model and stage in ['section-map', 'entity']:
-                    logger.info(f"Skipping stage {stage} for small model pipeline")
-                    continue
                 self._run_stage(stage)
 
     def _run_stage(self, stage: str):
@@ -257,7 +234,7 @@ class Pipeline:
         with open(self.input_file, encoding='utf-8') as f:
             raw_data = json.load(f)
 
-        # 5eTools data is usually under 'data' key, or directly a list
+        # 5eTools data is usually under 'data' key
         adventure_data = raw_data.get("data", []) if isinstance(raw_data, dict) else raw_data
 
         logger.info(f"Building Shadow Tree from {len(adventure_data)} items...")
@@ -282,34 +259,17 @@ class Pipeline:
         if skip_summary:
             logger.info("Found intermediate file, skipping summarization...")
 
-        # Choose processor based on model size
-        is_small_model = any(x in self.args.model.lower() for x in ['qwen', 'local'])
+        # Use spatial processor for large models
+        processor = SpatialTopologyProcessor(
+            api_key=self.args.api_key,
+            base_url=self.args.base_url,
+            model=self.args.model,
+            max_concurrent=self.args.max_concurrent,
+            repetition_penalty=self.args.repetition_penalty
+        )
+        location_graph = processor.process(self.shadow_tree, skip_summary=skip_summary)
 
-        if is_small_model:
-            # Use unified entity+event pipeline for small models
-            from llm.small_model_processor import SmallModelProcessor
-            processor = SmallModelProcessor(
-                api_key=self.args.api_key,
-                base_url=self.args.base_url,
-                model=self.args.model,
-                max_concurrent=self.args.max_concurrent,
-                output_dir=self.output_dir,  # Save debug outputs
-                max_tokens=self.args.max_tokens,
-                repetition_penalty=self.args.repetition_penalty
-            )
-            location_graph = processor.process(self.shadow_tree, skip_summary=False)
-        else:
-            # Use standard spatial processor for large models
-            processor = SpatialTopologyProcessor(
-                api_key=self.args.api_key,
-                base_url=self.args.base_url,
-                model=self.args.model,
-                max_concurrent=self.args.max_concurrent,
-                repetition_penalty=self.args.repetition_penalty
-            )
-            location_graph = processor.process(self.shadow_tree, skip_summary=skip_summary)
-
-        if not skip_summary and not is_small_model:
+        if not skip_summary:
             logger.info(f"Saving intermediate summaries to {self.intermediate_file}...")
             with open(self.intermediate_file, 'w', encoding='utf-8') as f:
                 json.dump(self.shadow_tree, f, indent=2, ensure_ascii=False)
@@ -386,11 +346,9 @@ class Pipeline:
 
         logger.info(f"Saving entity graph to {self.entity_graph_file}...")
         with open(self.entity_graph_file, 'w', encoding='utf-8') as f:
-            json.dump(entity_graph.to_dict() if hasattr(entity_graph, 'to_dict') else entity_graph, f, indent=2, ensure_ascii=False)
+            json.dump(entity_graph.to_dict(), f, indent=2, ensure_ascii=False)
 
-        # Convert to dict for accessing nodes/edges
-        graph_dict = entity_graph.to_dict() if hasattr(entity_graph, 'to_dict') else entity_graph
-
+        graph_dict = entity_graph.to_dict()
         logger.info(f"Done! Entity graph: {len(graph_dict['nodes'])} nodes, {len(graph_dict['edges'])} edges")
 
         # Print statistics
@@ -404,7 +362,7 @@ class Pipeline:
     # ========================================================================
 
     def _load_shadow_tree(self):
-        """Load shadow tree from file (cache or intermediate)."""
+        """Load shadow tree from file."""
         if not self.shadow_file.exists():
             raise FileNotFoundError(
                 f"Shadow tree not found: {self.shadow_file}. "

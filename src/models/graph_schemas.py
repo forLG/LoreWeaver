@@ -21,6 +21,20 @@ class EntityNode(BaseModel):
     node_type: Literal["entity"] = Field(default="entity", description="Node type discriminator")
     aliases: list[str] = Field(default_factory=list, description="Alternative names/references")
     source_node: str | None = Field(None, description="Source section where entity was found")
+
+    # Semantic properties for enhanced entity typing
+    location_type: str | None = Field(
+        None,
+        description="For Location entities: area, building, room, feature, or path"
+    )
+    creature_type: str | None = Field(
+        None,
+        description="For Creature entities: humanoid, beast, undead, construct, etc."
+    )
+    is_generic: bool = Field(
+        default=False,
+        description="True if entity is a generic group (e.g., 'zombies', 'kobolds') rather than named"
+    )
     properties: dict[str, Any] = Field(default_factory=dict, description="Additional entity properties")
 
     @field_validator("id")
@@ -49,12 +63,18 @@ class EventNode(BaseModel):
 
     id: str = Field(..., description="Unique event identifier (snake_case)")
     label: str = Field(..., description="Event name/title")
-    type: str = Field(..., description="Event type: encounter, combat, discovery, dialogue, exploration, observation")
+    type: str = Field(..., description="Event type: encounter, combat, discovery, dialogue, exploration, observation, quest, trap, puzzle")
     node_type: Literal["event"] = Field(default="event", description="Node type discriminator")
     participants: list[str] = Field(default_factory=list, description="Entity IDs participating in this event")
     location: str | None = Field(None, description="Location entity ID where event occurs")
     description: str = Field(default="", description="Description of what happened")
     source_node: str | None = Field(None, description="Source section where event was found")
+
+    # Temporal and causal semantics
+    triggered_by: str | None = Field(None, description="Event ID, condition, or trigger that starts this event")
+    outcomes: list[str] = Field(default_factory=list, description="Event IDs that result from this event")
+    conditions: dict[str, Any] = Field(default_factory=dict, description="Prerequisites (e.g., {\"has_key\": true})")
+    sequence: int | None = Field(None, description="Order within location (1, 2, 3...)")
     properties: dict[str, Any] = Field(default_factory=dict, description="Additional event properties")
 
     @field_validator("id")
@@ -71,7 +91,10 @@ class EventNode(BaseModel):
     @classmethod
     def validate_type(cls, v: str) -> str:
         """Validate event type."""
-        valid_types = {"encounter", "combat", "discovery", "dialogue", "exploration", "observation"}
+        valid_types = {
+            "encounter", "combat", "discovery", "dialogue", "exploration", "observation",
+            "quest", "trap", "puzzle", "social_challenge"
+        }
         if v not in valid_types:
             raise ValueError(f"Invalid event type: {v}. Must be one of {valid_types}")
         return v
@@ -100,10 +123,18 @@ class Edge(BaseModel):
         """Validate relation type."""
         if not v:
             raise ValueError("Relation type cannot be empty")
-        # Common relation types (extend as needed)
+        # Domain-specific relation types (extend as needed)
         common_relations = {
-            "has_participant", "occurs_at", "inhabits", "guards", "stored_in",
-            "connected_to", "part_of", "leads_to", "commands", "serves", "allied_with"
+            # Event relations
+            "has_participant", "occurs_at", "triggers", "caused_by", "prevents",
+            # Spatial relations
+            "part_of", "connected_to", "leads_to",
+            # Creature-state relations
+            "inhabits", "guards", "patrols", "hidden_at", "trapped_at",
+            # Social/Political relations
+            "commands", "serves", "allied_with", "rival_of", "worships",
+            # Item relations
+            "stored_in", "locks", "unlocks", "wields", "wears", "carries",
         }
         if v not in common_relations:
             # Allow custom relations but log warning could be added

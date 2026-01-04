@@ -76,11 +76,11 @@ Rules for Extraction:
 Output Format (JSON ONLY):
 {{
     "nodes": [
-        {{ "id": "dragons_rest", "label": "Dragon's Rest", "type": "Region" }},
-        {{ "id": "a1", "label": "Cliffside Path (A1)", "type": "Path" }}
+        {{ "id": "old_temple", "label": "Old Temple", "type": "Building" }},
+        {{ "id": "a1", "label": "Forest Path (A1)", "type": "Path" }}
     ],
     "edges": [
-        {{ "source": "a1", "target": "dragons_rest", "relation": "part_of" }},
+        {{ "source": "a1", "target": "old_temple", "relation": "part_of" }},
         {{ "source": "a1", "target": "a2", "relation": "leads_to", "desc": "North path" }}
     ]
 }}
@@ -101,7 +101,7 @@ Raw Node List:
 
 Task:
 Identify duplicates and map them to a single CANONICAL ID.
-- If "dragon_s_rest" and "dragons_rest_ch1" are the same place, map "dragons_rest_ch1" -> "dragon_s_rest".
+- If "old_temple" and "old_temple_ch1" are the same place, map "old_temple_ch1" -> "old_temple".
 - If "A1" and "area_a1" are the same, map "area_a1" -> "A1".
 - Prefer shorter, cleaner IDs (e.g., "A1" over "area_a1_cliff").
 - Ignore distinct locations (do not merge "A1" and "A2").
@@ -110,7 +110,7 @@ Output Format (JSON ONLY):
 Return a dictionary where KEY is the duplicate ID and VALUE is the canonical ID.
 Only include IDs that need to change.
 {{
-    "dragons_rest_ch1": "dragons_rest",
+    "old_temple_ch1": "old_temple",
     "area_a1": "A1",
     "the_beach": "rocky_shore"
 }}
@@ -159,7 +159,7 @@ Input Text:
 TASK: Extract ONLY TOP-LEVEL locations (highest hierarchy levels).
 - Level 1: World (e.g., "The Forgotten Realms")
 - Level 2: Region/Coast (e.g., "The Sword Coast")
-- Level 3: Major Locations (e.g., "Stormwreck Isle", "Neverwinter", "Mount Hotenow")
+- Level 3: Major Locations (e.g., "Neverwinter", "Mount Hotenow", "Lost Mine")
 
 WHAT TO EXCLUDE:
 - Do NOT extract sub-locations like rooms, caves, decks, or specific areas
@@ -167,7 +167,7 @@ WHAT TO EXCLUDE:
 - Do NOT extract any location that is "part of" another location you're extracting
 
 OUTPUT REQUIREMENTS:
-- Use snake_case IDs (e.g., "the_forgotten_realms", "stormwreck_isle")
+- Use snake_case IDs (e.g., "the_forgotten_realms", "neverwinter")
 - Include type field (World, Region, Island, City, Mountain)
 - Create "part_of" edges showing the hierarchy
 
@@ -176,11 +176,11 @@ Output Format (JSON ONLY):
     "nodes": [
         {{ "id": "the_forgotten_realms", "label": "The Forgotten Realms", "type": "World" }},
         {{ "id": "the_sword_coast", "label": "The Sword Coast", "type": "Region" }},
-        {{ "id": "stormwreck_isle", "label": "Stormwreck Isle", "type": "Island" }}
+        {{ "id": "neverwinter", "label": "Neverwinter", "type": "City" }}
     ],
     "edges": [
         {{ "source": "the_sword_coast", "target": "the_forgotten_realms", "relation": "part_of" }},
-        {{ "source": "stormwreck_isle", "target": "the_sword_coast", "relation": "part_of" }}
+        {{ "source": "neverwinter", "target": "the_sword_coast", "relation": "part_of" }}
     ]
 }}
 """
@@ -392,32 +392,34 @@ TEXT TO PROCESS:
 TASK: Extract ALL named entities mentioned in this text.
 
 Entity Types to Extract:
-- Locations: places, buildings, rooms, geographic features (e.g., "Dragon's Rest", "The Cave", "Cliffside Path")
-- Creatures: monsters, NPCs, animals (e.g., "Runara", "Goblin Boss", "a zombie")
-- Items: objects, equipment, treasures (e.g., "Rusty Key", "Magic Sword")
-- Groups: organizations, parties, factions (e.g., "The Party", "Kobolds")
+- Locations: places, buildings, rooms, geographic features (e.g., "Old Temple", "The Cave", "Forest Path")
+- Creatures: monsters, NPCs, animals (e.g., "Merchant", "Goblin King", "a wolf")
+- Items: objects, equipment, treasures (e.g., "Ancient Key", "Magic Sword")
+- Groups: organizations, parties, factions (e.g., "The Party", "Guards", "Cultists")
 
 CRITICAL RULES:
-1. **ID Format**: Use snake_case IDs (e.g., "dragon_s_rest", "runara", "rusty_key")
+1. **ID Format**: Use snake_case IDs (e.g., "old_temple", "merchant", "ancient_key")
 
 2. **Extract Both Named and Unnamed Entities**:
-   - NAMED: "Dragon's Rest", "Runara" → extract with exact name
-   - UNNAMED but RELEVANT: "a zombie", "two sailors", "the harbor", "a statue" → extract with descriptive ID
-     - Use descriptive IDs: "zombie", "sailors", "harbor", "statue"
+   - NAMED: "Old Temple", "Thorin" → extract with exact name
+   - UNNAMED but RELEVANT: "a zombie", "two guards", "the armory", "a statue" → extract with descriptive ID
+     - Use descriptive IDs: "zombie", "guards", "armory", "statue"
      - If multiple unnamed entities of same type exist, append numbers: "zombie_1", "zombie_2"
    - SKIP: Pure background/scenery with no relevance: "sunlight", "grass", "overcast sky"
 
-3. **Be Decisive**: Extract entities confidently. Duplicates will be resolved later.
+3. **LIST-STYLE NPC DESCRIPTIONS**: When text describes multiple characters in list format (paragraphs starting with "Name does something..."), extract EACH name as a separate creature entity.
+
+4. **Be Decisive**: Extract entities confidently. Duplicates will be resolved later.
 
 Output Format (JSON ONLY):
 {{
     "entities": [
-        {{"id": "dragon_s_rest", "label": "Dragon's Rest", "type": "Location", "aliases": ["temple", "monastery"]}},
-        {{"id": "runara", "label": "Runara", "type": "Creature", "aliases": ["bronze dragon", "elder"]}},
+        {{"id": "old_temple", "label": "Old Temple", "type": "Location", "aliases": ["ruin"]}},
+        {{"id": "thorin", "label": "Thorin", "type": "Creature", "aliases": ["dwarf merchant"]}},
         {{"id": "zombie", "label": "Zombie", "type": "Creature", "aliases": []}},
-        {{"id": "sailors", "label": "Sailors", "type": "Creature", "aliases": ["two sailors"]}},
-        {{"id": "harbor", "label": "Harbor", "type": "Location", "aliases": ["calm harbor"]}},
-        {{"id": "statue", "label": "Statue", "type": "Item", "aliases": ["towering statue"]}}
+        {{"id": "guards", "label": "Guards", "type": "Creature", "aliases": ["two guards"]}},
+        {{"id": "armory", "label": "Armory", "type": "Location", "aliases": ["weapon room"]}},
+        {{"id": "statue", "label": "Statue", "type": "Item", "aliases": ["stone statue"]}}
     ]
 }}
 """
@@ -506,24 +508,30 @@ Entity Types to Extract:
 - Groups: organizations, parties, factions
 
 CRITICAL RULES:
-1. **ID Format**: Use snake_case IDs (e.g., dragon_s_rest, runara, rusty_key)
+1. **ID Format**: Use snake_case IDs (e.g., old_temple, thorin, ancient_key)
 
 2. **Extract Both Named and Unnamed Entities**:
-   - NAMED: "Dragon's Rest", "Runara" → extract with exact name
+   - NAMED: "Old Temple", "Thorin" → extract with exact name
    - UNNAMED GROUPS: If entities appear as a group in a specific context, use contextual ID
-     - Example: "zombies in the ship" → "zombies_in_ship"
+     - Example: "guards in the armory" → "guards_in_armory"
      - Example: "sailors on the dock" → "sailors_on_dock"
-     - Example: "goblins guarding the entrance" → "goblins_at_entrance"
+     - Example: "bandits at the entrance" → "bandits_at_entrance"
    - UNNAMED INDIVIDUALS: If entities act differently (distinct behaviors), treat separately
-     - Example: If one zombie attacks and another guards, create "attacking_zombie" and "guarding_zombie"
+     - Example: If one guard attacks and another patrols, create "attacking_guard" and "patrolling_guard"
      - Only use numbers (_1, _2, _3) when entities are truly indistinguishable and less than 10
    - SKIP: Pure background/scenery with no relevance: "sunlight", "grass", "overcast sky"
 
-3. **IF NO ENTITIES FOUND**: If the text contains no relevant entities, output <summary> instead
+3. **LIST-STYLE NPC DESCRIPTIONS**: When text describes multiple characters in list format (paragraphs starting with "Name does something..."), extract EACH name as a separate creature entity.
+
+4. **INDIVIDUAL MEMBERS OF KNOWN GROUPS**: If known entities contain a generic group (e.g., "kobolds", "guards"), you MUST STILL extract individual named members of that group
+   - Example: If "kobolds" is known, and text mentions "Agga", "Blepp", "Frub" as individual kobolds, extract EACH as a separate entity
+   - The group entity represents the collective, but named individuals are distinct entities
+
+5. **IF NO ENTITIES FOUND**: If the text contains no relevant entities, output <summary> instead
    - Explain why (text too short, only scenery, no named content, etc.)
    - This helps with debugging and tracing
 
-4. **OUTPUT FORMAT**:
+6. **OUTPUT FORMAT**:
    - If entities found: Wrap in <entities> tags
    - If no entities: Use <summary> tags with explanation
 
@@ -623,115 +631,203 @@ the_beach -> rocky_shore
 """
 
     # ========================================================================
+    # Semantic Relation Extraction (Domain-Specific Relations)
+    # ========================================================================
+
+    @staticmethod
+    def create_semantic_relation_prompt_natural(
+        title: str,
+        content: str,
+        entities_text: str
+    ) -> str:
+        """Semantic relation extraction optimized for small models."""
+        return f"""ROLE: Extract D&D semantic relationships between entities.
+SECTION: {title}
+
+KNOWN ENTITIES:
+{entities_text}
+
+TEXT:
+{content}
+
+RELATION TYPES:
+Creature→Location: inhabits, guards, patrols, hidden_at, trapped_at, wanders
+Item→Location: hidden_at, locks, unlocks, stored_in
+Creature→Item: wields, wears, carries, owns
+Social: commands, serves, allied_with, rival_of, worships
+Group: led_by, members_include
+
+RULES:
+1. Only use entities from KNOWN ENTITIES list
+2. Extract EXPLICITLY stated relationships only
+3. Generic creatures like "zombies" are single entities
+
+OUTPUT:
+Relation: type
+Source: entity_id
+Target: entity_id
+Description: context
+
+EXAMPLES:
+Relation: inhabits
+Source: runara
+Target: dragon_s_rest
+Description: Lives in the ruined temple
+
+Relation: guards
+Source: zombies
+Target: entrance
+Description: Zombies guard the entrance
+
+Relation: hidden_at
+Source: rusty_key
+Target: sanctuary
+Description: Hidden under debris
+"""
+
+    # ========================================================================
+    # Location Hierarchy Extraction
+    # ========================================================================
+
+    @staticmethod
+    def create_location_hierarchy_prompt_natural(
+        title: str,
+        content: str,
+        locations_text: str
+    ) -> str:
+        """Extract location hierarchy (part_of) optimized for small models."""
+        return f"""ROLE: Extract D&D location containment relationships.
+SECTION: {title}
+
+KNOWN LOCATIONS:
+{locations_text}
+
+TEXT:
+{content}
+
+HIERARCHY RULES:
+- "X in Y" → X part_of Y
+- "room in building" → room part_of building
+- "feature in room" → feature part_of room
+- Hierarchy: Area > Building > Room > Feature
+
+OUTPUT:
+Relation: part_of
+Source: child_id
+Target: parent_id
+Description: context
+
+EXAMPLES:
+Relation: part_of
+Source: sanctuary
+Target: dragon_s_rest
+Description: Inner sanctum within temple
+
+Relation: part_of
+Source: altar
+Target: sanctuary
+Description: Stone altar in sanctum
+"""
+
+    # ========================================================================
     # Unified Entity + Event Extraction (Heterogeneous Graph)
     # ========================================================================
 
     @staticmethod
     def create_unified_extraction_prompt_natural(
         title: str,
-        content: str
+        content: str,
+        parent_context: str = "",
+        known_entities: str = ""
     ) -> str:
         """
         Unified Entity + Event extraction for heterogeneous graph.
-
-        Extracts:
-        - Entity nodes (static knowledge): locations, creatures, items
-        - Event nodes (dynamic narrative): encounters, discoveries, actions
-
-        Both become nodes in the same graph, linked by edges.
+        Optimized for small models (Qwen3 8B, etc).
         """
-        # Pure bottom-up: no parent context passed
-        return f"""
-ROLE: You are a D&D Knowledge Graph Extractor. Extract entities AND events from the following text.
+        _nl = "\n"
+        parent_line = f"PARENT: {parent_context}{_nl}" if parent_context else ""
+        known_line = f"KNOWN ENTITIES FROM PREVIOUS SECTIONS:{_nl}{known_entities}{_nl}{_nl}" if known_entities else ""
 
-CURRENT SECTION: {title}
-
-TEXT TO PROCESS:
+        return f"""ROLE: Extract D&D entities and events from adventure text.
+SECTION: {title}
+{parent_line}{known_line}TEXT:
 {content}
 
-TASK: Extract ALL named entities AND narrative events in this text.
+RULES:
+1. BE AGGRESSIVE - extract ANY creature, location, or item mentioned
+2. LIST-STYLE NPC DESCRIPTIONS: When text describes multiple characters in list format ("Name does something...", "Another Name has a trait..."), extract EACH name as a separate creature entity
+   - Pattern: Paragraphs starting with a proper name followed by description
+   - Extract every named character, even if only briefly described
+3. INDIVIDUAL MEMBERS OF KNOWN GROUPS: If KNOWN ENTITIES contains a generic group (e.g., "kobolds", "guards"), you MUST STILL extract individual named members of that group
+   - Example: If "kobolds" is known, and text mentions "Agga", "Blepp", "Frub" as individual kobolds, extract EACH as a separate entity
+   - The group entity represents the collective, but named individuals are distinct entities
+4. Generic groups: "guards", "zombies", "cultists" → mark is_generic: true
+5. Location types: area/building/room/feature/path
+6. ONLY use <summary> for truly empty text (pure atmospheric description with no entities)
 
-ENTITY TYPES (static knowledge nodes):
-- Locations: places, buildings, rooms, geographic features
-- Creatures: monsters, NPCs, animals
-- Items: objects, equipment, treasures
-- Groups: organizations, parties, factions
+ENTITY TYPES:
+- Location (area/building/room/feature/path)
+- Creature (humanoid/beast/undead/dragon/fey/etc)
+- Item (objects, equipment, treasures)
+- Group (organizations, parties)
 
-EVENT TYPES (dynamic narrative nodes):
-- encounter: Meeting or confrontation with entities
-- combat: Fight or battle
-- discovery: Finding something (item, location, information)
-- dialogue: Conversation or exchange of information
-- exploration: Moving through or observing a location
-- observation: Noticing details (not an action)
+EVENT TYPES:
+encounter, combat, discovery, dialogue, exploration, observation, quest, trap, puzzle
 
-CRITICAL RULES:
-1. **Extract Entities First**:
-   - NAMED: "The WaterDeep", "Tav" → extract with exact name
-   - UNNAMED GROUPS: Use contextual IDs (e.g., "zombies in ship" → "zombies_in_ship")
-   - UNNAMED INDIVIDUALS: If different behaviors, separate (e.g., "attacking_zombie")
-   - Only use numbers (_1, _2) for truly indistinguishable entities
-
-2. **Extract Events**:
-   - Events describe WHAT HAPPENS in the text
-   - Link events to participating entities and locations
-   - Include brief description of what occurred
-
-3. **IF NO ENTITIES OR EVENTS FOUND**: Output <summary> with explanation
-
-OUTPUT FORMAT:
+OUTPUT (wrap in HTML tags):
 <entities>
-Entity: name
+Entity: Name
 Type: Location/Creature/Item/Group
-ID: snake_case_id
+ID: snake_case
+LocationType: area/building/room/feature/path
+CreatureType: type
+IsGeneric: true/false
 Aliases: [alias1, alias2]
 </entities>
 
 <events>
-Event: event_name
-Type: encounter/combat/discovery/dialogue/exploration/observation
-Participants: entity_id1, entity_id2
+Event: Name
+Type: encounter/combat/discovery/etc
+Participants: [id1, id2]
 Location: location_id
-Description: what happened
-
-Event: next_event
-...
+Description: brief description
 </events>
 
-EXAMPLE:
+EXAMPLES:
 <entities>
-Entity: Dragon's Rest
+Entity: Old Temple
 Type: Location
-ID: dragon_s_rest
-Aliases: [temple]
+ID: old_temple
+LocationType: building
+IsGeneric: false
+Aliases: [ruin]
 
-Entity: Runara
+Entity: Bandit Guards
 Type: Creature
-ID: runara
-Aliases: [bronze dragon]
+ID: bandit_guards
+CreatureType: humanoid
+IsGeneric: true
+Aliases: [bandits]
 
-Entity: Rusty Key
-Type: Item
-ID: rusty_key
-Aliases: []
+Entity: Thorin Ironforge
+Type: Creature
+ID: thorin_ironforge
+CreatureType: dwarf
+IsGeneric: false
+Aliases: [blacksmith]
+
+(Example: Even if "Bandit Guards" is known as a generic group, extract individual named bandits like "Grimjaw", "Silas" as separate entities)
 </entities>
 
 <events>
-Event: Meeting Runara
-Type: encounter
-Participants: [adventurers, runara]
-Location: dragon_s_rest
-Description: The party meets a bronze dragon named Runara in the ruined temple
-
-Event: Finding the Key
-Type: discovery
-Participants: [adventurers]
-Location: dragon_s_rest
-Description: While searching, the party discovers a rusty key hidden under debris
+Event: Ambush
+Type: combat
+Participants: [adventurers, bandit_guards]
+Location: forest_path
+Description: Bandits attack the party on the road
 </events>
 
-OUTPUT EXAMPLE (no entities/events):
+IF NO ENTITIES/EVENTS:
 <summary>
-Text contains only generic atmospheric description with no specific entities or events.
-</summary>
-"""
+Text contains only atmospheric description with no entities.
+</summary>"""

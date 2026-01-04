@@ -1,0 +1,272 @@
+[
+  {
+    "relation": "part_of",
+    "source": "Stormwreck_Isle",
+    "target": "Sword_Coast",
+    "desc": "Small island in the Sword Coast region"
+  },
+  {
+    "relation": "part_of",
+    "source": "Neverwinter",
+    "target": "Sword_Coast",
+    "desc": "Renowned bastion of civilization in the Sword Coast region"
+  },
+  {
+    "relation": "part_of",
+    "source": "hot_spring",
+    "target": "cloister",
+    "desc": "Magical hot spring in cloister"
+  },
+  {
+    "relation": "part_of",
+    "source": "area_C9",
+    "target": "shipwreck",
+    "desc": "Ship's hold in shipwreck"
+  },
+  {
+    "relation": "part_of",
+    "source": "blue_dragon_lair",
+    "target": "clifftop_observatory",
+    "desc": "Blue dragon's lair in observatory"
+  },
+  {
+    "relation": "part_of",
+    "source": "path",
+    "target": "temple_at_a5",
+    "desc": "Long path winding up cliff to temple"
+  },
+  {
+    "relation": "part_of",
+    "source": "dock",
+    "target": "harbor",
+    "desc": "Dock situated at harbor mouth"
+  },
+  {
+    "relation": "part_of",
+    "source": "path",
+    "target": "dragon_rest",
+    "desc": "Path leading toward Dragon's Rest"
+  },
+  {
+    "relation": "part_of",
+    "source": "cloister_quest",
+    "target": "cloister",
+    "desc": "Cloister Quests involving the cloister building"
+  },
+  {
+    "relation": "part_of",
+    "source": "monastic_cells",
+    "target": "cloister",
+    "desc": "Monastic cells (area A1) within cloister"
+  },
+  {
+    "relation": "part_of",
+    "source": "temple",
+    "target": "cloister",
+    "desc": "Temple (area A5) within cloister"
+  },
+  {
+    "relation": "part_of",
+    "source": "dining_room",
+    "target": "cloister",
+    "desc": "Dining room (area A3) within cloister"
+  },
+  {
+    "relation": "part_of",
+    "source": "cloister",
+    "target": "dragon_s_rest",
+    "desc": "Cloister within Dragon's Rest"
+  },
+  {
+    "relation": "part_of",
+    "source": "library",
+    "target": "cloister",
+    "desc": "Spacious library within cloister"
+  },
+  {
+    "relation": "part_of",
+    "source": "cloister",
+    "target": "temple_at_a5",
+    "desc": "Cloister within the temple"
+  },
+  {
+    "relation": "part_of",
+    "source": "temple_at_a5",
+    "target": "cloister",
+    "desc": "Varnoth maintains the temple within the cloister"
+  },
+  {
+    "relation": "part_of",
+    "source": "garden_plot",
+    "target": "path",
+    "desc": "Well-tended garden plots along the lower path"
+  },
+  {
+    "relation": "part_of",
+    "source": "dragon_statue",
+    "target": "plaza",
+    "desc": "Dragon statue in the central plaza"
+  },
+  {
+    "relation": "part_of",
+    "source": "doorway",
+    "target": "area_C9",
+    "desc": "Open doorways in the cliff-side leading to the hold"
+  },
+  {
+    "relation": "part_of",
+    "source": "cloister_library",
+    "target": "cloister",
+    "desc": "Cloister library within cloister building"
+  },
+  {
+    "relation": "part_of",
+    "source": "[star_in_circle_symbol]",
+    "target": "[temple_at_a5]",
+    "desc": "Star-in-a-circle symbol representing the statue"
+  },
+  {
+    "relation": "part_of",
+    "source": "[depressions_in_pedestal]",
+    "target": "[temple_at_a5]",
+    "desc": "Depressions in the pedestal holding incense offerings"
+  },
+  {
+    "relation": "part_of",
+    "source": "[runara_residence]",
+    "target": "[cloister]",
+    "desc": "Runara lives in the cloister"
+  },
+  {
+    "relation": "part_of",
+    "source": "[varnath_and_kobold_r_ix]",
+    "target": "[cloister]",
+    "desc": "Residents of the cloister assisting Runara"
+  },
+  {
+    "relation": "part_of",
+    "source": "statue",
+    "target": "temple_at_a5",
+    "desc": "Central stone statue in temple"
+  },
+  {
+    "relation": "part_of",
+    "source": "path",
+    "target": "cloister",
+    "desc": "Path near cloister (implied by contextual references to zombies on the beach)"
+  },
+  {
+    "relation": "part_of",
+    "source": "temple_at_a5",
+    "target": "area_A5",
+    "desc": "Temple located in area A5"
+  },
+  {
+    "relation": "part_of",
+    "source": "area_C9",
+    "target": "CompassRoseWreck",
+    "desc": "The hold is part of the shipwreck"
+  },
+  {
+    "relation": "part_of",
+    "source": "harpy",
+    "target": "CompassRoseWreck",
+    "desc": "Harpy resides in the shipwreck"
+  },
+  {
+    "relation": "part_of",
+    "source": "talisman",
+    "target": "area_C9",
+    "desc": "Cursed talisman is in the hold"
+  },
+  {
+    "relation": "part_of",
+    "source": "CompassRoseWreck",
+    "target": "StormwreckIsle",
+    "desc": "Shipwreck lies on the shoal of Stormwreck Isle"
+  },
+  {
+    "relation": "part_of",
+    "source": "cloister",
+    "target": "DragonRest",
+    "desc": "Cloister is part of Dragon's Rest settlement"
+  },
+  {
+    "relation": "part_of",
+    "source": "area_C9",
+    "target": "compass_rose_wreck_building",
+    "desc": "Hold area within shipwreck"
+  },
+  {
+    "relation": "part_of",
+    "source": "walls",
+    "target": "compass_rose_wreck_building",
+    "desc": "Soggy wooden walls of the shipwreck"
+  },
+  {
+    "relation": "part_of",
+    "source": "ceilings",
+    "target": "compass_rose_wreck_building",
+    "desc": "High ceilings of the shipwreck"
+  },
+  {
+    "relation": "part_of",
+    "source": "doors",
+    "target": "compass_rose_wreck_building",
+    "desc": "Waterlogged doors of the shipwreck"
+  },
+  {
+    "relation": "part_of",
+    "source": "light",
+    "target": "compass_rose_wreck_building",
+    "desc": "Lighting conditions within the shipwreck"
+  },
+  {
+    "relation": "part_of",
+    "source": "sculpture",
+    "target": "rotunda",
+    "desc": "sculpture in the center of the rotunda"
+  },
+  {
+    "relation": "part_of",
+    "source": "hold",
+    "target": "area_C9",
+    "desc": "Sparkrender plans to hold his ritual in the hold"
+  },
+  {
+    "relation": "part_of",
+    "source": "western_pair_statues",
+    "target": "rotunda",
+    "desc": "Dragon statues on west side of rotunda"
+  },
+  {
+    "relation": "part_of",
+    "source": "southwestern_pair_statues",
+    "target": "rotunda",
+    "desc": "Dragon statues on southwest side of rotunda"
+  },
+  {
+    "relation": "part_of",
+    "source": "overlook",
+    "target": "d1_area",
+    "desc": "Overlook corresponds to area D1"
+  },
+  {
+    "relation": "part_of",
+    "source": "crumbled_tower",
+    "target": "d4_area",
+    "desc": "Crumbled tower corresponds to area D4"
+  },
+  {
+    "relation": "part_of",
+    "source": "rotunda",
+    "target": "Observatory_Tower",
+    "desc": "Rotunda located within the observatory tower"
+  },
+  {
+    "relation": "part_of",
+    "source": "library",
+    "target": "Observatory_Tower",
+    "desc": "Secret library situated within the observatory tower"
+  }
+]

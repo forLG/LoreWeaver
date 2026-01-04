@@ -11,3 +11,5 @@ lib/
 
 # Environment variables
 .env
+
+output/truncation_debug/

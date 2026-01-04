@@ -18,11 +18,10 @@ LoreWeaver Graph Building Script
 """
 import argparse
 import sys
-from pathlib import Path
 
-from graph_builder import Neo4jBuilder, GraphVisualizer
-from utils.logger import logger
 import config_neo4j as config
+from graph_builder import GraphVisualizer, Neo4jBuilder
+from utils.logger import logger
 
 
 def build_neo4j_graph():

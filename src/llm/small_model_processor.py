@@ -1,6 +1,9 @@
 """
 Small Model Processor - Entity-first pipeline for models with limited context (e.g., qwen3-8b).
 
+This processor uses a "content tree" built from AdventureParser's internal_index,
+NOT the ShadowTreeBuilder used in the large model pipeline.
+
 Supports two modes:
 1. Two-phase mode (default): NER → Relations
 2. Single-phase unified mode (--single-phase): Entities + Events (heterogeneous graph)
@@ -39,6 +42,58 @@ from llm.prompt_factory import PromptFactory
 from models import create_validated_graph
 from utils.graph_utils import deduplicate_graph
 from utils.logger import logger
+
+# ========================================================================
+# Helper Functions
+# ========================================================================
+
+def _is_generic_creature(label: str) -> bool:
+    """
+    Determine if a creature label represents a generic group.
+
+    Generic creatures are groups like "zombies", "kobolds", "goblins"
+    rather than named individuals like "Runara", "Strahd".
+
+    Args:
+        label: Creature display name
+
+    Returns:
+        True if this is a generic creature group
+    """
+    if not label:
+        return False
+
+    label_lower = label.lower().strip()
+
+    # Generic plural patterns
+    generic_patterns = [
+        r'zombies?', r'zombie[s]?',
+        r'skeletons?', r'skeleton',
+        r'goblins?', r'goblin',
+        r'kobolds?', r'kobold',
+        r'orcs?', r'orc',
+        r'bandits?', r'bandit',
+        r'guards?', r'guard',
+        r'cultists?', r'cultist',
+        r'warriors?', r'warrior',
+        r'soldiers?', r'soldier',
+        r'merchants?', r'merchant',
+        r'villagers?', r'villager',
+        r'commoners?', r'commoner',
+        r'pirates?', r'pirate',
+        r'sailors?', r'sailor',
+        r'dragons?', r'dragon',
+    ]
+
+    for pattern in generic_patterns:
+        if re.match(pattern, label_lower):
+            return True
+
+    # Check if label is plural (ends with 's' but not a name)
+    # Simple heuristic: lowercase + ends with 's' + not a known name
+    # Could be generic, but avoid false positives on names like "James"
+    # If it's a common plural pattern, treat as generic
+    return label_lower.endswith('s') and len(label_lower) > 4
 
 
 class SmallModelProcessor(BaseLLMProcessor):
@@ -111,15 +166,68 @@ class SmallModelProcessor(BaseLLMProcessor):
 
         logger.info(f"  Saved debug output: {debug_file.name}")
 
+    @staticmethod
+    def convert_resolved_entity_to_seed(resolved_entity: dict) -> dict:
+        """
+        Convert preprocessor resolved entity to LLM extraction format.
+
+        Args:
+            resolved_entity: Entity from entity_resolver output with keys:
+                - id, label, type, source_file, mentions, properties
+
+        Returns:
+            Entity in LLM format with keys:
+                - id, label, type, extraction_method, plus subtype fields
+        """
+        entity = {
+            "id": resolved_entity.get("id", ""),
+            "label": resolved_entity.get("label", ""),
+            "type": resolved_entity.get("type", "Entity"),
+            "extraction_method": "tag",  # Mark as from preprocessor tag
+            "aliases": [],  # Tags don't have aliases
+        }
+
+        # Add type-specific fields from properties
+        props = resolved_entity.get("properties", {})
+
+        entity_type = entity["type"]
+
+        if entity_type == "Location":
+            entity["location_type"] = "building"  # Default for locations
+        elif entity_type == "Creature":
+            # Map creature_type from properties - handle different data types
+            cr_type = props.get("creature_type", "Unknown")
+            if isinstance(cr_type, dict):
+                # If it's a dict, try to get a meaningful string value
+                cr_type = cr_type.get("type", str(cr_type))
+            elif isinstance(cr_type, list):
+                # If it's a list, join elements
+                cr_type = ", ".join(str(x) for x in cr_type) if cr_type else "Unknown"
+            entity["creature_type"] = str(cr_type) if cr_type else "Unknown"
+            # Generic creatures are those with generic names (zombies, kobolds, etc.)
+            entity["is_generic"] = _is_generic_creature(entity["label"])
+        elif entity_type == "Item":
+            # Items don't have special subtype fields in current schema
+            pass
+
+        return entity
+
     # ========================================================================
     # Main Entry Point
     # ========================================================================
 
-    def process(self, shadow_tree: list[dict], skip_summary: bool = False) -> dict:
-        """Synchronous entry point for small model pipeline."""
+    def process(self, content_tree: list[dict], skip_summary: bool = False, seed_entities: list[dict] | None = None) -> dict:
+        """
+        Synchronous entry point for small model pipeline.
+
+        Args:
+            content_tree: Tree of nodes with content to extract from (built from internal_index)
+            skip_summary: Whether to skip summarization (kept for compatibility)
+            seed_entities: Pre-extracted entities from preprocessor (tags)
+        """
         async def _run_and_cleanup():
             try:
-                return await self._process_async(shadow_tree, skip_summary)
+                return await self._process_async(content_tree, skip_summary, seed_entities)
             finally:
                 await self.close()
 
@@ -127,8 +235,9 @@ class SmallModelProcessor(BaseLLMProcessor):
 
     async def _process_async(
         self,
-        shadow_tree: list[dict],
-        skip_summary: bool  # noqa: ARG002 - kept for interface compatibility
+        content_tree: list[dict],
+        skip_summary: bool,  # noqa: ARG002 - kept for interface compatibility
+        seed_entities: list[dict] | None = None
     ) -> dict:
         """
         Entity-first pipeline for small models.
@@ -143,22 +252,30 @@ class SmallModelProcessor(BaseLLMProcessor):
         logger.info("SMALL MODEL PIPELINE: Unified Entity+Event Extraction")
         logger.info("=" * 60)
 
-        return await self._process_single_phase(shadow_tree)
+        return await self._process_single_phase(content_tree, seed_entities)
 
     async def _process_single_phase(
         self,
-        shadow_tree: list[dict]
+        content_tree: list[dict],
+        seed_entities: list[dict] | None = None
     ) -> dict:
         """
         Single-phase unified pipeline: Extract entities + events in one pass.
         Builds a heterogeneous graph with both entity and event nodes.
+
+        Args:
+            content_tree: Tree of nodes with content to extract from (built from internal_index)
+            seed_entities: Pre-extracted entities from preprocessor (tags)
         """
         # ====================================================================
         # Phase 1: Unified entity + event extraction
         # ====================================================================
         logger.info("Phase 1: Unified entity + event extraction...")
 
-        extraction_result = await self._unified_extraction(shadow_tree)
+        if seed_entities:
+            logger.info(f"  Using {len(seed_entities)} seed entities from preprocessor tags")
+
+        extraction_result = await self._unified_extraction(content_tree, seed_entities)
 
         all_entities = extraction_result["entities"]
         all_events = extraction_result["events"]
@@ -185,6 +302,29 @@ class SmallModelProcessor(BaseLLMProcessor):
         logger.info(f"  After filtering and merging: {len(meaningful_entities)} meaningful entities")
 
         # ====================================================================
+        # Phase 2.5: Location hierarchy extraction
+        # ====================================================================
+        logger.info("Phase 2.5: Extracting location hierarchies...")
+
+        location_entities = [e for e in meaningful_entities if e.get("type") == "Location"]
+        hierarchy_edges = await self._extract_location_hierarchies(content_tree, location_entities)
+        logger.info(f"  Extracted {len(hierarchy_edges)} location hierarchy edges")
+
+        # Save location hierarchies for debugging
+        self._save_debug("phase2_5_location_hierarchies", hierarchy_edges)
+
+        # ====================================================================
+        # Phase 2.6: Semantic relation extraction
+        # ====================================================================
+        logger.info("Phase 2.6: Extracting semantic relations...")
+
+        semantic_edges = await self._extract_semantic_relations(content_tree, meaningful_entities, id_mapping)
+        logger.info(f"  Extracted {len(semantic_edges)} semantic relation edges")
+
+        # Save semantic relations for debugging
+        self._save_debug("phase2_6_semantic_relations", semantic_edges)
+
+        # ====================================================================
         # Phase 3: Event processing and edge generation
         # ====================================================================
         logger.info("Phase 3: Processing events and generating edges...")
@@ -206,6 +346,15 @@ class SmallModelProcessor(BaseLLMProcessor):
 
         logger.info(f"  Valid events after ID update: {len(valid_events)}")
         logger.info(f"  Generated {len(edges)} edges from events")
+
+        # Add hierarchy and semantic edges to the edge list
+        edges.extend(hierarchy_edges)
+        edges.extend(semantic_edges)
+
+        # Deduplicate all edges
+        edges = self._deduplicate_edges(edges)
+
+        logger.info(f"  Total edges after adding hierarchies and semantic relations: {len(edges)}")
 
         # ====================================================================
         # Phase 4: Build and validate unified heterogeneous graph
@@ -239,14 +388,30 @@ class SmallModelProcessor(BaseLLMProcessor):
                 event["node_type"] = "event"
                 all_nodes.append(event)
 
+            # Filter edges to only include references to existing nodes
+            valid_node_ids = {n.get("id") for n in all_nodes if n.get("id")}
+            filtered_edges = []
+            removed_count = 0
+
+            for edge in edges:
+                source = edge.get("source")
+                target = edge.get("target")
+                if source in valid_node_ids and target in valid_node_ids:
+                    filtered_edges.append(edge)
+                else:
+                    removed_count += 1
+
+            if removed_count > 0:
+                logger.warning(f"  Filtered out {removed_count} edges with broken references (from {len(edges)} total)")
+
             return {
                 "nodes": all_nodes,
-                "edges": edges
+                "edges": filtered_edges
             }
 
     async def _process_two_phase(
         self,
-        shadow_tree: list[dict]
+        content_tree: list[dict]
     ) -> dict:
         """
         Two-phase pipeline: Extract entities first, then relations.
@@ -256,7 +421,7 @@ class SmallModelProcessor(BaseLLMProcessor):
         # ====================================================================
         logger.info("Phase 1: Independent NER extraction (pure bottom-up)...")
 
-        entity_layers = await self._independent_ner(shadow_tree)
+        entity_layers = await self._independent_ner(content_tree)
 
         total_entities = sum(len(entities) for entities in entity_layers.values())
         logger.info(f"  Extracted {total_entities} raw entities across {len(entity_layers)} nodes")
@@ -269,7 +434,7 @@ class SmallModelProcessor(BaseLLMProcessor):
         # ====================================================================
         logger.info("Phase 2: Bottom-up aggregation and resolution...")
 
-        resolved_entities = await self._bottom_up_resolve(shadow_tree, entity_layers)
+        resolved_entities = await self._bottom_up_resolve(content_tree, entity_layers)
 
         logger.info(f"  Resolved to {len(resolved_entities['nodes'])} unique entities")
 
@@ -287,7 +452,7 @@ class SmallModelProcessor(BaseLLMProcessor):
         logger.info("Phase 3: Relation extraction (pure bottom-up)...")
 
         relations = await self._extract_relations_bidirectional(
-            shadow_tree,
+            content_tree,
             resolved_entities,
             alias_map
         )
@@ -320,7 +485,7 @@ class SmallModelProcessor(BaseLLMProcessor):
 
     async def _independent_ner(
         self,
-        shadow_tree: list[dict]
+        content_tree: list[dict]
     ) -> dict[str, list[dict]]:
         """
         Bottom-up traversal: Each node extracts entities independently.
@@ -334,7 +499,7 @@ class SmallModelProcessor(BaseLLMProcessor):
         """
         entity_layers = {}
 
-        for root in shadow_tree:
+        for root in content_tree:
             await self._ner_recursive(root, entity_layers)
 
         return entity_layers
@@ -454,7 +619,7 @@ class SmallModelProcessor(BaseLLMProcessor):
 
     async def _bottom_up_resolve(
         self,
-        shadow_tree: list[dict],
+        content_tree: list[dict],
         entity_layers: dict[str, list[dict]]
     ) -> dict[str, Any]:
         """
@@ -470,7 +635,7 @@ class SmallModelProcessor(BaseLLMProcessor):
         """
         all_resolved = []
 
-        for root in shadow_tree:
+        for root in content_tree:
             resolved = await self._resolve_recursive(root, entity_layers)
             all_resolved.extend(resolved)
 
@@ -657,7 +822,7 @@ class SmallModelProcessor(BaseLLMProcessor):
 
     async def _extract_relations_bidirectional(
         self,
-        shadow_tree: list[dict],
+        content_tree: list[dict],
         resolved_entities: dict[str, Any],
         alias_map: dict[str, str]
     ) -> dict[str, Any]:
@@ -675,7 +840,7 @@ class SmallModelProcessor(BaseLLMProcessor):
         # Build entity lookup
         entity_map = {e["id"]: e for e in resolved_entities["nodes"]}
 
-        for root in shadow_tree:
+        for root in content_tree:
             edges = await self._extract_relations_recursive(
                 root,
                 entity_map,
@@ -837,19 +1002,28 @@ class SmallModelProcessor(BaseLLMProcessor):
 
     async def _unified_extraction(
         self,
-        shadow_tree: list[dict]
+        content_tree: list[dict],
+        seed_entities: list[dict] | None = None
     ) -> dict[str, Any]:
         """
         Extract entities and events in a single pass per node (unified heterogeneous graph).
 
+        Args:
+            content_tree: Tree of nodes with content to extract from (built from internal_index)
+            seed_entities: Pre-extracted entities from preprocessor (tags)
+
         Returns:
             {"entities": [...], "events": [...]}
         """
-        all_entities = []
+        # Initialize with seed entities (from preprocessor tags)
+        all_entities = list(seed_entities) if seed_entities else []
         all_events = []
 
-        for root in shadow_tree:
-            await self._unified_extraction_recursive(root, all_entities, all_events)
+        for root in content_tree:
+            await self._unified_extraction_recursive(
+                root, all_entities, all_events,
+                parent_context=""
+            )
 
         return {"entities": all_entities, "events": all_events}
 
@@ -857,80 +1031,161 @@ class SmallModelProcessor(BaseLLMProcessor):
         self,
         node: dict,
         all_entities: list[dict],
-        all_events: list[dict]
+        all_events: list[dict],
+        parent_context: str = ""
     ) -> None:
         """
         Recursively extract entities and events from each node.
+        Passes accumulated entities as context for disambiguation.
         """
         title = node.get("title", "Untitled")
         node_id = node.get("id", "unknown")
         content = node.get("content", "")
 
+        # Extract entities and events from this node
+        result = {"entities": [], "events": []}
+
         # Skip if content is empty
         if not content or not content.strip():
             logger.debug(f"Skipping combined extraction for node '{title}' (id: {node_id}): empty content")
+        elif len(content.strip()) < 50:
+            # Content too short for extraction
+            logger.debug(f"Skipping combined extraction for node '{title}' (id: {node_id}): content too short ({len(content)} chars)")
         else:
+            # Content is long enough - proceed with extraction
             original_len = len(content)
 
-            # Check if content is too short
-            if len(content.strip()) < 50:
-                logger.debug(f"Skipping combined extraction for node '{title}' (id: {node_id}): content too short ({original_len} chars)")
+            # Truncate content if too long
+            if original_len > 3000:
+                content = content[:3000] + "... [truncated]"
+                logger.warning(f"Truncated content for node '{title}' (id: {node_id}) from {original_len} to {len(content)} chars")
+
+            # Build known entities text from previously extracted entities
+            known_entities_text = self._build_known_entities_text(all_entities)
+
+            # Extract entities and events in one call (unified extraction)
+            if self.use_natural_language:
+                prompt = PromptFactory.create_unified_extraction_prompt_natural(
+                    title=title,
+                    content=content,
+                    parent_context=parent_context,
+                    known_entities=known_entities_text
+                )
+
+                raw_response = await self._call_llm_async(
+                    prompt,
+                    temperature=0.75,
+                    top_p=0.90,
+                    max_tokens=self.max_tokens,
+                    enable_thinking=False,
+                    stop=None  # Don't stop early - let LLM complete the response
+                )
+
+                result = parse_unified_extraction(raw_response)
+
+                # Check if LLM returned a summary (no entities/events found)
+                if result.get("summary"):
+                    summary = result["summary"]
+                    logger.warning(
+                        f"No entities/events found in node '{title}' (id: {node_id}). "
+                        f"Reason: {summary} "
+                        f"[Content length: {original_len} chars]"
+                    )
+                    # Keep result as empty - children will still be processed
             else:
-                # Truncate content if too long
-                if original_len > 2000:
-                    content = content[:2000] + "... [truncated]"
-                    logger.warning(f"Truncated content for node '{title}' (id: {node_id}) from {original_len} to {len(content)} chars")
+                # JSON mode not implemented for unified extraction yet
+                logger.warning("Unified extraction only supports natural language mode")
+                result = {"entities": [], "events": []}
 
-                # Extract entities and events in one call (unified extraction)
-                if self.use_natural_language:
-                    prompt = PromptFactory.create_unified_extraction_prompt_natural(
-                        title=title,
-                        content=content
-                    )
+            # Add entities with source node info
+            for entity in result.get("entities", []):
+                entity["source_node"] = title
+                entity["extraction_method"] = "llm"  # Mark as LLM-extracted
+                all_entities.append(entity)
 
-                    raw_response = await self._call_llm_async(
-                        prompt,
-                        temperature=0.75,
-                        top_p=0.90,
-                        max_tokens=self.max_tokens,
-                        enable_thinking=False,
-                        stop=[]  # No specific stop sequences for XML-tagged output
-                    )
+            # Add events with source node info
+            for event in result.get("events", []):
+                event["source_node"] = title
+                all_events.append(event)
 
-                    result = parse_unified_extraction(raw_response)
+            logger.debug(f"  Unified extraction for {title}: "
+                        f"{len(result.get('entities', []))} entities, "
+                        f"{len(result.get('events', []))} events")
 
-                    # Check if LLM returned a summary (no entities/events found)
-                    if result.get("summary"):
-                        summary = result["summary"]
-                        logger.warning(
-                            f"No entities/events found in node '{title}' (id: {node_id}). "
-                            f"Reason: {summary} "
-                            f"[Content length: {original_len} chars]"
-                        )
-                        return  # Skip adding entities/events
-                else:
-                    # JSON mode not implemented for unified extraction yet
-                    logger.warning("Unified extraction only supports natural language mode")
-                    result = {"entities": [], "events": []}
-
-                # Add entities with source node info
-                for entity in result.get("entities", []):
-                    entity["source_node"] = title
-                    all_entities.append(entity)
-
-                # Add events with source node info
-                for event in result.get("events", []):
-                    event["source_node"] = title
-                    all_events.append(event)
-
-                logger.debug(f"  Unified extraction for {title}: "
-                            f"{len(result.get('entities', []))} entities, "
-                            f"{len(result.get('events', []))} events")
-
-        # Recurse to children
+        # Recurse to children (ALWAYS happens, even if this node had no entities)
         if node.get("children"):
             for child in node["children"]:
-                await self._unified_extraction_recursive(child, all_entities, all_events)
+                # Build parent context for child
+                child_parent_context = f"{parent_context} > {title}" if parent_context else title
+                await self._unified_extraction_recursive(
+                    child, all_entities, all_events,
+                    parent_context=child_parent_context
+                )
+
+    def _build_known_entities_text(self, entities: list[dict]) -> str:
+        """
+        Build a compact text summary of known entities for context.
+        Shows previously extracted entities to help with disambiguation.
+        """
+        if not entities:
+            return ""
+
+        # Group by type for cleaner output
+        by_type: dict[str, list[dict]] = {
+            "Location": [],
+            "Creature": [],
+            "Item": [],
+            "Group": []
+        }
+
+        for e in entities:
+            etype = e.get("type", "Unknown")
+            if etype in by_type:
+                by_type[etype].append(e)
+
+        lines = []
+        for etype, elist in by_type.items():
+            if elist:
+                lines.append(f"{etype}:")
+                for e in elist[:20]:  # Limit to 20 per type to avoid token overflow
+                    label = e.get("label", "Unknown")
+                    eid = e.get("id", "")
+                    is_generic = e.get("is_generic", False)
+                    generic_mark = " (group)" if is_generic else ""
+                    lines.append(f"  - [{eid}] {label}{generic_mark}")
+
+        return "\n".join(lines)
+
+    def _build_alias_map(self, entities: list[dict]) -> dict[str, str]:
+        """
+        Build an alias map from entity list.
+
+        Creates a mapping from all aliases (including labels and IDs)
+        to the entity ID, for text matching purposes.
+
+        Returns:
+            {alias_or_label_or_id: entity_id}
+        """
+        alias_map = {}
+        for e in entities:
+            eid = e.get("id", "")
+            if not eid:
+                continue
+
+            # Add ID as its own alias
+            alias_map[eid] = eid
+
+            # Add label
+            label = e.get("label", "")
+            if label:
+                alias_map[label] = eid
+
+            # Add aliases
+            for alias in e.get("aliases", []):
+                if alias:
+                    alias_map[alias] = eid
+
+        return alias_map
 
     def _normalize_entity_label(self, label: str) -> str:
         """
@@ -1000,10 +1255,7 @@ class SmallModelProcessor(BaseLLMProcessor):
         max_len = max(len(norm1), len(norm2))
 
         # Allow up to 20% difference (e.g., 2 chars in a 10-char string)
-        if distance <= 2 or (distance / max_len) <= 0.2:
-            return True
-
-        return False
+        return bool(distance <= 2 or (distance / max_len) <= 0.2)
 
     def _levenshtein_distance(self, s1: str, s2: str) -> int:
         """Calculate Levenshtein distance between two strings."""
@@ -1151,7 +1403,6 @@ class SmallModelProcessor(BaseLLMProcessor):
         entity_groups = {}
 
         for canonical_entity in meaningful_entities:
-            canonical_id = canonical_entity.get("id", "")
             canonical_label = canonical_entity.get("label", "")
 
             # Create normalized key for grouping
@@ -1177,6 +1428,7 @@ class SmallModelProcessor(BaseLLMProcessor):
 
             # Find the canonical entity this maps to
             mapped = False
+            raw_aliases = set(a.lower() for a in raw_entity.get("aliases", []))
 
             # Check exact ID match first
             if any(raw_id == e.get("id") for e in meaningful_entities):
@@ -1189,6 +1441,28 @@ class SmallModelProcessor(BaseLLMProcessor):
                     if raw_label == canonical_entity.get("label"):
                         mapping[raw_id] = canonical_entity.get("id")
                         mapped = True
+                        break
+
+            # Check alias match (raw entity's aliases match canonical label)
+            if not mapped and raw_aliases:
+                for canonical_entity in meaningful_entities:
+                    canonical_label = canonical_entity.get("label", "").lower()
+                    if canonical_label in raw_aliases:
+                        mapping[raw_id] = canonical_entity.get("id")
+                        mapped = True
+                        logger.debug(f"  Merged '{raw_id}' -> '{canonical_entity.get('id')}' "
+                                   f"(alias match: '{canonical_label}' in {raw_aliases})")
+                        break
+
+            # Check canonical entity's aliases match raw label
+            if not mapped and raw_label:
+                for canonical_entity in meaningful_entities:
+                    canonical_aliases = set(a.lower() for a in canonical_entity.get("aliases", []))
+                    if raw_label.lower() in canonical_aliases:
+                        mapping[raw_id] = canonical_entity.get("id")
+                        mapped = True
+                        logger.debug(f"  Merged '{raw_id}' -> '{canonical_entity.get('id')}' "
+                                   f"(reverse alias match: '{raw_label}' in {canonical_aliases})")
                         break
 
             # Check fuzzy label similarity
@@ -1326,6 +1600,231 @@ class SmallModelProcessor(BaseLLMProcessor):
             })
 
         return edges
+
+    # ========================================================================
+    # Location Hierarchy Extraction
+    # ========================================================================
+
+    async def _extract_location_hierarchies(
+        self,
+        content_tree: list[dict],
+        location_entities: list[dict]
+    ) -> list[dict]:
+        """
+        Extract location hierarchy (part_of) relationships.
+
+        For each node, extract which locations contain other locations.
+        """
+        if not location_entities:
+            return []
+
+        all_edges = []
+        entity_map = {e["id"]: e for e in location_entities}
+
+        for root in content_tree:
+            edges = await self._extract_hierarchies_recursive(root, entity_map)
+            all_edges.extend(edges)
+
+        # Deduplicate edges
+        return self._deduplicate_edges(all_edges)
+
+    async def _extract_hierarchies_recursive(
+        self,
+        node: dict,
+        entity_map: dict[str, dict]
+    ) -> list[dict]:
+        """Recursively extract location hierarchies."""
+        content = node.get("content", "")
+
+        # Skip empty content
+        if not content or not content.strip():
+            hierarchy_edges = []
+        else:
+            # Build alias map from entity map (convert dict values to list)
+            alias_map = self._build_alias_map(list(entity_map.values()))
+
+            # Find locations mentioned in this node
+            mentioned_locations = self._find_mentioned_entities(content, alias_map)
+
+            # Only extract hierarchies if we have 2+ locations
+            if len(mentioned_locations) >= 2:
+                hierarchy_edges = await self._extract_hierarchy_for_node(
+                    node, mentioned_locations, entity_map
+                )
+            else:
+                hierarchy_edges = []
+
+        # Recurse to children
+        if node.get("children"):
+            for child in node["children"]:
+                child_edges = await self._extract_hierarchies_recursive(child, entity_map)
+                hierarchy_edges.extend(child_edges)
+
+        return hierarchy_edges
+
+    async def _extract_hierarchy_for_node(
+        self,
+        node: dict,
+        mentioned_locations: set[str],
+        entity_map: dict[str, dict]
+    ) -> list[dict]:
+        """Extract hierarchy relationships for a single node."""
+        title = node.get("title", "")
+        content = node.get("content", "")
+
+        # Truncate content
+        if len(content) > 2000:
+            content = content[:2000] + "... [truncated]"
+
+        # Build context: only locations mentioned in this node's content
+        locations_text = "\n".join([
+            f"- [{lid}] {entity_map[lid].get('label', 'Unknown')} ({entity_map[lid].get('location_type', 'Location')})"
+            for lid in mentioned_locations
+            if lid in entity_map and entity_map[lid].get("type") == "Location"
+        ])
+
+        if not locations_text.strip():
+            return []
+
+        # Use hierarchy extraction prompt
+        prompt = PromptFactory.create_location_hierarchy_prompt_natural(
+            title=title,
+            content=content,
+            locations_text=locations_text
+        )
+
+        raw_response = await self._call_llm_async(
+            prompt,
+            temperature=0.7,
+            top_p=0.90,
+            max_tokens=self.max_tokens,
+            enable_thinking=False,
+            stop=[]
+        )
+
+        # Parse natural language output
+        from llm.natural_parsers import parse_relations
+        result = parse_relations(raw_response)
+
+        return result.get("relations", []) if result else []
+
+    # ========================================================================
+    # Semantic Relation Extraction
+    # ========================================================================
+
+    async def _extract_semantic_relations(
+        self,
+        content_tree: list[dict],
+        entities: list[dict],
+        id_mapping: dict[str, str]
+    ) -> list[dict]:
+        """
+        Extract semantic relationships between entities.
+
+        Extracts domain-specific relations like inhabits, guards, patrols,
+        wields, hidden_at, unlocks, etc.
+        """
+        if not entities:
+            return []
+
+        all_edges = []
+        entity_map = {e["id"]: e for e in entities}
+
+        for root in content_tree:
+            edges = await self._extract_semantic_relations_recursive(root, entity_map, id_mapping)
+            all_edges.extend(edges)
+
+        # Deduplicate edges
+        unique_edges = self._deduplicate_edges(all_edges)
+
+        # Update entity IDs using id_mapping
+        updated_edges = self._update_relation_ids(unique_edges, id_mapping)
+
+        return updated_edges
+
+    async def _extract_semantic_relations_recursive(
+        self,
+        node: dict,
+        entity_map: dict[str, dict],
+        id_mapping: dict[str, str]
+    ) -> list[dict]:
+        """Recursively extract semantic relations."""
+        content = node.get("content", "")
+
+        # Skip empty content
+        if not content or not content.strip():
+            semantic_edges = []
+        else:
+            # Build alias map from entity map (convert dict values to list)
+            alias_map = self._build_alias_map(list(entity_map.values()))
+
+            # Find entities mentioned in this node
+            mentioned_entities = self._find_mentioned_entities(content, alias_map)
+
+            # Only extract relations if we have 2+ entities
+            if len(mentioned_entities) >= 2:
+                semantic_edges = await self._extract_semantic_relations_for_node(
+                    node, mentioned_entities, entity_map
+                )
+            else:
+                semantic_edges = []
+
+        # Recurse to children
+        if node.get("children"):
+            for child in node["children"]:
+                child_edges = await self._extract_semantic_relations_recursive(
+                    child, entity_map, id_mapping
+                )
+                semantic_edges.extend(child_edges)
+
+        return semantic_edges
+
+    async def _extract_semantic_relations_for_node(
+        self,
+        node: dict,
+        mentioned_entities: set[str],
+        entity_map: dict[str, dict]
+    ) -> list[dict]:
+        """Extract semantic relations for a single node."""
+        title = node.get("title", "")
+        content = node.get("content", "")
+
+        # Skip if content is empty or just whitespace
+        if not content or not content.strip():
+            return []
+
+        # Truncate content
+        if len(content) > 2000:
+            content = content[:2000] + "... [truncated]"
+
+        # Build context: only entities mentioned in this node's content
+        entities_text = "\n".join([
+            f"- [{eid}] {entity_map[eid].get('label', 'Unknown')} ({entity_map[eid].get('type', 'Entity')})"
+            for eid in mentioned_entities
+            if eid in entity_map
+        ])
+
+        # Use semantic relation extraction prompt
+        prompt = PromptFactory.create_semantic_relation_prompt_natural(
+            title=title,
+            content=content,
+            entities_text=entities_text
+        )
+
+        raw_response = await self._call_llm_async(
+            prompt,
+            temperature=0.7,
+            top_p=0.90,
+            max_tokens=self.max_tokens,
+            enable_thinking=False,
+            stop=["\nRelation: \n", "\nRelation:\n"]
+        )
+
+        # Parse natural language output
+        from llm.natural_parsers import parse_relations
+        result = parse_relations(raw_response)
+
+        return result.get("relations", []) if result else []
 
 # ========================================================================
 # Graph Filtering Utilities (for heterogeneous graphs)

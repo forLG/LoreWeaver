@@ -138,8 +138,7 @@ class SpatialTopologyProcessor(BaseLLMProcessor):
         logger.info("Resolving entity duplicates with LLM...")
         mapping = await self._resolve_entities_with_llm(node_list_text)
 
-        result_graph = apply_entity_mapping({"nodes": all_nodes, "edges": all_edges}, mapping)
-        return result_graph.to_dict()
+        return apply_entity_mapping({"nodes": all_nodes, "edges": all_edges}, mapping)
 
     async def _resolve_entities_with_llm(self, node_list_text: str) -> dict[str, str]:
         """Request LLM to find duplicate entities and return ID mapping."""

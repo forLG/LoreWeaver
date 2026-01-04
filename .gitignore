@@ -12,4 +12,5 @@ lib/
 # Environment variables
 .env
 
-output/truncation_debug/
+# Intermediate fiels
+tmp/

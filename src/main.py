@@ -50,6 +50,10 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
+# Add src to sys.path to allow importing modules from src
+import sys
+sys.path.append(str(Path(__file__).parent))
+
 import config_neo4j as config
 from builder.shadow_builder import ShadowTreeBuilder
 from llm.entity_processor import EntityProcessor

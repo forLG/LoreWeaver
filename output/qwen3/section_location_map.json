@@ -1,0 +1,640 @@
+{
+  "000": [
+    "the_forgotten_realms",
+    "stormwreck_isle"
+  ],
+  "001": [
+    "stormwreck_isle",
+    "dragons_rest"
+  ],
+  "003": [
+    "the_forgotten_realms",
+    "the_sword_coast",
+    "neverwinter",
+    "mount_hotenow",
+    "stormwreck_isle"
+  ],
+  "005": [
+    "the_forgotten_realms",
+    "the_sword_coast",
+    "stormwreck_isle",
+    "dragons_rest",
+    "sharruths_undersea_tomb"
+  ],
+  "006": [
+    "stormwreck_isle",
+    "dragons_rest",
+    "seagrow_caves",
+    "wreck_of_the_compass_rose",
+    "clifftop_observatory"
+  ],
+  "007": [
+    "stormwreck_isle"
+  ],
+  "0cd": [
+    "stormwreck_isle",
+    "sword_coast_sea"
+  ],
+  "0cf": [
+    "neverwinter",
+    "stormwreck_isle"
+  ],
+  "0d0": [
+    "the_main_mast",
+    "the_crows_nest"
+  ],
+  "0d1": [
+    "sword_coast_sea"
+  ],
+  "0ee": [
+    "sword_coast_sea"
+  ],
+  "011": [
+    "dragons_rest"
+  ],
+  "012": [
+    "dragons_rest"
+  ],
+  "013": [
+    "dragons_rest",
+    "the_beach"
+  ],
+  "015": [
+    "the_beach"
+  ],
+  "018": [
+    "dragons_rest",
+    "a5"
+  ],
+  "019": [
+    "dragons_rest"
+  ],
+  "01a": [
+    "dragons_rest",
+    "a1",
+    "a3",
+    "a5"
+  ],
+  "01b": [
+    "the_cloister_gardens"
+  ],
+  "01c": [
+    "dragons_rest"
+  ],
+  "01d": [
+    "dragons_rest",
+    "runaras_secret_lair",
+    "a5"
+  ],
+  "01e": [
+    "dragons_rest",
+    "stormwreck_isle"
+  ],
+  "01f": [
+    "the_cloister_gardens",
+    "seagrow_caves"
+  ],
+  "020": [
+    "dragons_rest"
+  ],
+  "021": [
+    "dragons_rest",
+    "a1",
+    "a2",
+    "a3",
+    "a4",
+    "a5"
+  ],
+  "023": [
+    "the_climb",
+    "cliffside_plaza"
+  ],
+  "024": [
+    "cliffside_plaza"
+  ],
+  "025": [
+    "vacant_cell",
+    "taraks_cell",
+    "varnoths_cell",
+    "mylas_cell",
+    "kobold_dormitory"
+  ],
+  "026": [
+    "a2"
+  ],
+  "027": [
+    "a2"
+  ],
+  "028": [
+    "a3",
+    "dining_room",
+    "tidy_kitchen"
+  ],
+  "029": [
+    "dining_room",
+    "tidy_kitchen"
+  ],
+  "02a": [
+    "a4"
+  ],
+  "02b": [
+    "a4"
+  ],
+  "02c": [
+    "a5"
+  ],
+  "02d": [
+    "the_cloister_gardens"
+  ],
+  "02f": [
+    "dragons_rest",
+    "seagrow_caves",
+    "wreck_of_the_compass_rose",
+    "clifftop_observatory",
+    "stormwreck_isle"
+  ],
+  "030": [
+    "stormwreck_isle",
+    "the_cloister_gardens"
+  ],
+  "031": [
+    "dragons_rest"
+  ],
+  "033": [
+    "seagrow_caves"
+  ],
+  "034": [
+    "dragons_rest",
+    "wreck_of_the_compass_rose"
+  ],
+  "035": [
+    "dragons_rest"
+  ],
+  "036": [
+    "runaras_secret_lair",
+    "wreck_of_the_compass_rose"
+  ],
+  "037": [
+    "dragons_rest",
+    "the_beach",
+    "the_cloister_gardens"
+  ],
+  "038": [
+    "neverwinter",
+    "dragons_rest"
+  ],
+  "039": [
+    "dragons_rest",
+    "taraks_cell"
+  ],
+  "03a": [
+    "clifftop_observatory"
+  ],
+  "03b": [
+    "dragons_rest",
+    "a5",
+    "clifftop_observatory"
+  ],
+  "03d": [
+    "dragons_rest",
+    "a5"
+  ],
+  "03e": [
+    "dragons_rest",
+    "stormwreck_isle"
+  ],
+  "040": [
+    "the_hot_spring_pool"
+  ],
+  "041": [
+    "the_luminescent_cove"
+  ],
+  "042": [
+    "the_hot_spring_pool"
+  ],
+  "043": [
+    "the_hot_spring_pool"
+  ],
+  "044": [
+    "island_interior",
+    "cross_island_trail",
+    "northern_rocky_coast"
+  ],
+  "046": [
+    "dragons_rest"
+  ],
+  "04a": [
+    "stormwreck_isle",
+    "seagrow_caves",
+    "sharruths_undersea_tomb"
+  ],
+  "04b": [
+    "seagrow_caves",
+    "wreck_of_the_compass_rose"
+  ],
+  "04c": [
+    "stormwreck_isle",
+    "seagrow_caves",
+    "dragons_rest",
+    "sharruths_undersea_tomb",
+    "myconid_colony"
+  ],
+  "04d": [
+    "seagrow_caves",
+    "sharruths_undersea_tomb",
+    "b6"
+  ],
+  "04e": [
+    "seagrow_caves",
+    "dragons_rest"
+  ],
+  "04f": [
+    "seagrow_caves"
+  ],
+  "050": [
+    "the_luminescent_cove"
+  ],
+  "052": [
+    "cliffside_plaza",
+    "cliffside_doorways"
+  ],
+  "053": [
+    "seagrow_caves",
+    "b1",
+    "b2"
+  ],
+  "054": [
+    "seagrow_caves"
+  ],
+  "055": [
+    "myconid_colony"
+  ],
+  "056": [
+    "b2",
+    "b3",
+    "b4"
+  ],
+  "057": [
+    "seagrow_caves",
+    "b1",
+    "b2",
+    "b3",
+    "b4"
+  ],
+  "058": [
+    "seagrow_caves",
+    "b1"
+  ],
+  "059": [
+    "cave_entrance"
+  ],
+  "05a": [
+    "b1"
+  ],
+  "05b": [
+    "b2",
+    "b3"
+  ],
+  "05c": [
+    "myconid_colony"
+  ],
+  "05d": [
+    "cave_entrance"
+  ],
+  "05e": [
+    "b2"
+  ],
+  "05f": [
+    "myconid_colony"
+  ],
+  "060": [
+    "b2"
+  ],
+  "061": [
+    "b2"
+  ],
+  "062": [
+    "b2"
+  ],
+  "063": [
+    "b3",
+    "b2",
+    "b4"
+  ],
+  "064": [
+    "myconid_colony"
+  ],
+  "065": [
+    "b3"
+  ],
+  "066": [
+    "b4"
+  ],
+  "067": [
+    "myconid_colony"
+  ],
+  "068": [
+    "b5"
+  ],
+  "069": [
+    "myconid_colony"
+  ],
+  "06a": [
+    "the_cloister_gardens"
+  ],
+  "06b": [
+    "seagrow_caves",
+    "sharruths_undersea_tomb"
+  ],
+  "06c": [
+    "cave_entrance"
+  ],
+  "06d": [
+    "western_fissure"
+  ],
+  "070": [
+    "seagrow_caves",
+    "dragons_rest"
+  ],
+  "071": [
+    "seagrow_caves",
+    "wreck_of_the_compass_rose",
+    "dragons_rest",
+    "clifftop_observatory"
+  ],
+  "072": [
+    "wreck_of_the_compass_rose"
+  ],
+  "073": [
+    "stormwreck_isle",
+    "wreck_of_the_compass_rose",
+    "dragons_rest",
+    "northern_rocky_coast"
+  ],
+  "074": [
+    "wreck_of_the_compass_rose"
+  ],
+  "075": [
+    "wreck_of_the_compass_rose"
+  ],
+  "076": [
+    "dragons_rest",
+    "wreck_of_the_compass_rose",
+    "c1",
+    "c9"
+  ],
+  "077": [
+    "wreck_of_the_compass_rose"
+  ],
+  "078": [
+    "wreck_of_the_compass_rose",
+    "c1",
+    "c2",
+    "c3",
+    "c4"
+  ],
+  "07a": [
+    "the_main_mast",
+    "the_crows_nest"
+  ],
+  "07b": [
+    "the_crows_nest"
+  ],
+  "07c": [
+    "wreck_of_the_compass_rose"
+  ],
+  "07d": [
+    "the_crows_nest"
+  ],
+  "07e": [
+    "c2"
+  ],
+  "07f": [
+    "the_main_mast",
+    "c1"
+  ],
+  "080": [
+    "c3"
+  ],
+  "081": [
+    "c3"
+  ],
+  "082": [
+    "c4"
+  ],
+  "083": [
+    "c4"
+  ],
+  "084": [
+    "c4",
+    "c8",
+    "c9"
+  ],
+  "085": [
+    "c4"
+  ],
+  "086": [
+    "c4"
+  ],
+  "087": [
+    "c5"
+  ],
+  "088": [
+    "c5"
+  ],
+  "089": [
+    "c6"
+  ],
+  "08a": [
+    "c6"
+  ],
+  "08b": [
+    "c6"
+  ],
+  "08c": [
+    "c6"
+  ],
+  "08d": [
+    "c7"
+  ],
+  "08e": [
+    "c7"
+  ],
+  "08f": [
+    "c8"
+  ],
+  "090": [
+    "c8"
+  ],
+  "091": [
+    "hole_to_the_hold",
+    "c4",
+    "c9"
+  ],
+  "092": [
+    "c8"
+  ],
+  "093": [
+    "c8"
+  ],
+  "094": [
+    "c9",
+    "c8"
+  ],
+  "095": [
+    "c9"
+  ],
+  "096": [
+    "c9"
+  ],
+  "097": [
+    "wreck_of_the_compass_rose",
+    "dragons_rest",
+    "neverwinter"
+  ],
+  "099": [
+    "c9",
+    "c1"
+  ],
+  "09a": [
+    "c1",
+    "c9",
+    "c8"
+  ],
+  "09b": [
+    "the_crows_nest"
+  ],
+  "09c": [
+    "wreck_of_the_compass_rose",
+    "the_crows_nest"
+  ],
+  "09d": [
+    "c2"
+  ],
+  "09e": [
+    "dragons_rest",
+    "wreck_of_the_compass_rose"
+  ],
+  "09f": [
+    "stormwreck_isle"
+  ],
+  "0a0": [
+    "dragons_rest",
+    "seagrow_caves",
+    "clifftop_observatory"
+  ],
+  "0a1": [
+    "clifftop_observatory"
+  ],
+  "0a2": [
+    "clifftop_observatory",
+    "dragons_rest"
+  ],
+  "0a3": [
+    "clifftop_observatory",
+    "stormwreck_isle"
+  ],
+  "0a4": [
+    "clifftop_observatory",
+    "dragons_rest"
+  ],
+  "0a5": [
+    "clifftop_observatory",
+    "d1"
+  ],
+  "0a6": [
+    "stormwreck_isle"
+  ],
+  "0a7": [
+    "clifftop_observatory",
+    "d1",
+    "d2",
+    "d3",
+    "d4",
+    "d5"
+  ],
+  "0a8": [
+    "stormwreck_isle"
+  ],
+  "0a9": [
+    "d2",
+    "d5",
+    "d6",
+    "d3"
+  ],
+  "0aa": [
+    "clifftop_observatory"
+  ],
+  "0ab": [
+    "clifftop_observatory",
+    "d1"
+  ],
+  "0ac": [
+    "the_climb",
+    "clifftop_observatory"
+  ],
+  "0ad": [
+    "d2"
+  ],
+  "0ae": [
+    "cliffside_plaza"
+  ],
+  "0af": [
+    "the_forgotten_realms",
+    "stormwreck_isle"
+  ],
+  "0b1": [
+    "d1",
+    "d4"
+  ],
+  "0b2": [
+    "d3"
+  ],
+  "0b4": [
+    "d4"
+  ],
+  "0b6": [
+    "clifftop_observatory"
+  ],
+  "0b7": [
+    "d4",
+    "d1",
+    "d2"
+  ],
+  "0b9": [
+    "clifftop_observatory",
+    "d5"
+  ],
+  "0ba": [
+    "clifftop_observatory"
+  ],
+  "0bb": [
+    "clifftop_observatory"
+  ],
+  "0bc": [
+    "clifftop_observatory"
+  ],
+  "0bd": [
+    "clifftop_observatory"
+  ],
+  "0be": [
+    "clifftop_observatory"
+  ],
+  "0bf": [
+    "d6",
+    "d5"
+  ],
+  "0c1": [
+    "d6"
+  ],
+  "0c2": [
+    "clifftop_observatory",
+    "d6",
+    "d2",
+    "d5"
+  ],
+  "0c9": [
+    "dragons_rest",
+    "stormwreck_isle"
+  ]
+}

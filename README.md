@@ -353,4 +353,16 @@ Edit `config_neo4j.py`:
 NEO4J_URI = "bolt://localhost:7687"
 NEO4J_USER = "neo4j"
 NEO4J_PASSWORD = "your_password"  # Change this
+<<<<<<< HEAD
+``` -->
+
+### frontend
+
+To run the Streamlit frontend:
+
 ```
+python -m streamlit run frontend/app.py
+```
+=======
+```
+>>>>>>> origin/main

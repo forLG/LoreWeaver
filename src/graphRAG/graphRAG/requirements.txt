@@ -1,0 +1,10 @@
+networkx
+matplotlib
+pandas
+python-dotenv
+langchain
+langchain-openai
+langchain-community
+sentence-transformers
+scikit-learn
+numpy

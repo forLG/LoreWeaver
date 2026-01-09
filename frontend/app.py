@@ -16,6 +16,21 @@ sys.path.append(str(project_root))
 # 设置页面配置
 st.set_page_config(page_title="LoreWeaver Holodeck", layout="wide", page_icon="🕸️")
 
+# --- Logger Configuration ---
+log_dir = project_root / "logs"
+log_dir.mkdir(exist_ok=True)
+log_file = log_dir / "streamlit_app.log"
+
+# Initialize logger explicitly for Streamlit
+if "logger_initialized" not in st.session_state:
+    try:
+        from src.utils.logger import setup_logger
+        # Force a specific log file so we can read it back
+        setup_logger(exp_name="streamlit_app", log_dir=str(log_dir))
+        st.session_state.logger_initialized = True
+    except Exception as e:
+        print(f"Failed to setup logger: {e}")
+
 import base64
 
 # --- Session State 初始化 ---
@@ -54,6 +69,27 @@ def set_png_as_page_bg(png_file):
     </style>
     '''
     st.markdown(page_bg_img, unsafe_allow_html=True)
+
+def render_log_viewer(key_prefix="global"):
+    """Renders a log viewer component."""
+    st.divider()
+    st.subheader("🖥️ System Logs")
+    
+    # Read Content
+    log_content = "No logs found."
+    if log_file.exists():
+        try:
+            with open(log_file, "r", encoding="utf-8", errors="replace") as f:
+                # Get last 50 lines
+                lines = f.readlines()
+                log_content = "".join(lines[-50:])
+        except Exception as e:
+            log_content = f"Error reading log file: {e}"
+    
+    st.code(log_content, language="bash")
+    
+    # Auto-refresh mechanism could be added here if needed, 
+    # but for now we rely on app interactions to trigger re-renders.
 
 # --- 界面逻辑 ---
 def landing_page():
@@ -150,12 +186,238 @@ def landing_page():
 
 def rag_page():
     st.title("📚 Graph RAG Interface")
-    st.info("🚧 This module is currently under construction. Please check back later.")
     
-    if st.button("⬅️ Back to Home"):
-        st.session_state.page = 'landing'
-        st.session_state.landing_stage = 'entry'
-        st.rerun()
+    # 初始化 session state
+    if 'rag_engine' not in st.session_state:
+        st.session_state.rag_engine = None
+    if 'chat_history' not in st.session_state:
+        st.session_state.chat_history = []
+    if 'show_prompt' not in st.session_state:
+        st.session_state.show_prompt = {}
+    
+    # 侧边栏配置
+    with st.sidebar:
+        st.header("⚙️ Configuration")
+        
+        # 图数据文件选择
+        graph_file = st.selectbox(
+            "Graph Data File",
+            ["output/deepseek/entity_graph.json", 
+             "output/deepseek/final.json",
+             "archive/output/deepseek/entity_graph.json"],
+            help="Select the knowledge graph file to query"
+        )
+        
+        # 搜索参数
+        st.subheader("Search Parameters")
+        max_hops = st.slider("Max Hops", min_value=1, max_value=3, value=1, 
+                            help="Graph traversal radius")
+        top_k_nodes = st.slider("Top K Nodes", min_value=1, max_value=10, value=3,
+                               help="Number of relevant nodes to retrieve")
+        top_k_edges = st.slider("Top K Edges", min_value=1, max_value=10, value=2,
+                               help="Number of relevant edges to retrieve")
+        
+        st.divider()
+        
+        # 加载图数据
+        if st.button("🔄 Load/Reload Graph", use_container_width=True):
+            try:
+                from src.graphRAG.graph_loader import GraphLoader
+                from src.graphRAG.rag_engine import SimpleGraphRAG
+                
+                full_path = project_root / graph_file
+                if not full_path.exists():
+                    st.error(f"File not found: {graph_file}")
+                else:
+                    with st.spinner("Loading graph..."):
+                        loader = GraphLoader(str(full_path))
+                        graph = loader.load_graph()
+                        stats = loader.get_stats()
+                        
+                        # 初始化 RAG 引擎
+                        st.session_state.rag_engine = SimpleGraphRAG(graph)
+                        st.session_state.graph_stats = stats
+                        st.success(f"✅ Graph loaded! Nodes: {stats['num_nodes']}, Edges: {stats['num_edges']}")
+            except Exception as e:
+                st.error(f"Error loading graph: {str(e)}")
+        
+        # 显示图统计信息
+        if 'graph_stats' in st.session_state:
+            st.metric("Nodes", st.session_state.graph_stats['num_nodes'])
+            st.metric("Edges", st.session_state.graph_stats['num_edges'])
+        
+        st.divider()
+        
+        if st.button("🧹 Clear Chat History", use_container_width=True):
+            st.session_state.chat_history = []
+            st.session_state.show_prompt = {}
+            st.rerun()
+        
+        if st.button("🏠 Back to Home", use_container_width=True):
+            st.session_state.page = 'landing'
+            st.session_state.landing_stage = 'entry'
+            st.rerun()
+            
+        render_log_viewer(key_prefix="rag_sidebar")
+    
+    # 主界面
+    if st.session_state.rag_engine is None:
+        st.warning("⚠️ Please load a graph from the sidebar first.")
+        st.info("Select a graph file and click 'Load/Reload Graph' to get started.")
+        
+        # 显示示例问题
+        st.markdown("### 💡 Example Questions You Can Ask:")
+        st.markdown("""
+        - Where are zombies found?
+        - What creatures live in the Shadowfell?
+        - Tell me about the City of Brass
+        - What monsters can I find in dungeons?
+        - Describe the relationship between dragons and kobolds
+        """)
+    else:
+        # 聊天界面
+        st.markdown("### 💬 Chat with Knowledge Graph")
+        
+        # 快速示例按钮
+        st.markdown("**Quick Examples:**")
+        col1, col2, col3, col4 = st.columns(4)
+        with col1:
+            if st.button("🧟 Zombies", use_container_width=True):
+                st.session_state.quick_query = "Where are zombies found?"
+        with col2:
+            if st.button("🏰 Locations", use_container_width=True):
+                st.session_state.quick_query = "What are the main locations?"
+        with col3:
+            if st.button("🐉 Dragons", use_container_width=True):
+                st.session_state.quick_query = "Tell me about dragons"
+        with col4:
+            if st.button("⚔️ Combat", use_container_width=True):
+                st.session_state.quick_query = "What creatures are dangerous in combat?"
+        
+        st.divider()
+        
+        # 显示聊天历史
+        chat_container = st.container()
+        with chat_container:
+            for i, entry in enumerate(st.session_state.chat_history):
+                # 用户消息
+                with st.chat_message("user"):
+                    st.markdown(entry['query'])
+                
+                # AI 回复
+                with st.chat_message("assistant"):
+                    st.markdown(entry['answer'])
+                    
+                    # 显示 prompt 按钮
+                    col1, col2, col3 = st.columns([1.2, 0.8, 4])
+                    with col1:
+                        if st.button("🔍 View Prompt", key=f"show_prompt_{i}"):
+                            st.session_state.show_prompt[i] = not st.session_state.show_prompt.get(i, False)
+                    with col2:
+                        if st.button("📋 Copy", key=f"copy_{i}"):
+                            st.toast("Answer copied!", icon="✅")
+                    
+                    # 显示实际的 prompt
+                    if st.session_state.show_prompt.get(i, False):
+                        with st.expander("📝 Full Prompt Sent to LLM", expanded=True):
+                            st.code(entry['prompt'], language="markdown")
+                            
+                            # 统计信息
+                            col_a, col_b = st.columns(2)
+                            with col_a:
+                                st.metric("Context Length", f"{len(entry['context'])} chars")
+                            with col_b:
+                                st.metric("Prompt Length", f"{len(entry['prompt'])} chars")
+                            
+                            with st.expander("🔎 Retrieved Context (Raw)", expanded=False):
+                                st.text(entry['context'])
+        
+        # 处理快速查询
+        if 'quick_query' in st.session_state and st.session_state.quick_query:
+            query_to_process = st.session_state.quick_query
+            st.session_state.quick_query = None  # 清除状态
+            
+            with st.spinner("🔍 Searching knowledge graph..."):
+                try:
+                    # 获取上下文
+                    context = st.session_state.rag_engine.retrieve_context(
+                        query_to_process, 
+                        max_hops=max_hops, 
+                        top_k=top_k_nodes, 
+                        top_k_edges=top_k_edges
+                    )
+                    
+                    # 生成答案
+                    answer = st.session_state.rag_engine.answer_query(query_to_process, use_llm=True)
+                    
+                    # 构建完整的 prompt（用于显示）
+                    full_prompt = f"""You are a helpful assistant that answers questions based on the provided knowledge graph context.
+
+Context:
+{context}
+
+User Query: {query_to_process}
+
+Please provide a clear and accurate answer based on the context above. If the context doesn't contain enough information to answer the question, please say so."""
+                    
+                    # 保存到历史记录
+                    st.session_state.chat_history.append({
+                        'query': query_to_process,
+                        'answer': answer,
+                        'context': context,
+                        'prompt': full_prompt
+                    })
+                    
+                    st.rerun()
+                    
+                except Exception as e:
+                    st.error(f"Error processing query: {str(e)}")
+                    import traceback
+                    with st.expander("Error Details"):
+                        st.code(traceback.format_exc())
+        
+        # 输入框
+        query_input = st.chat_input("💭 Ask a question about the knowledge graph...")
+        
+        if query_input:
+            with st.spinner("🔍 Searching knowledge graph..."):
+                try:
+                    # 获取上下文
+                    context = st.session_state.rag_engine.retrieve_context(
+                        query_input, 
+                        max_hops=max_hops, 
+                        top_k=top_k_nodes, 
+                        top_k_edges=top_k_edges
+                    )
+                    
+                    # 生成答案
+                    answer = st.session_state.rag_engine.answer_query(query_input, use_llm=True)
+                    
+                    # 构建完整的 prompt（用于显示）
+                    full_prompt = f"""You are a helpful assistant that answers questions based on the provided knowledge graph context.
+
+Context:
+{context}
+
+User Query: {query_input}
+
+Please provide a clear and accurate answer based on the context above. If the context doesn't contain enough information to answer the question, please say so."""
+                    
+                    # 保存到历史记录
+                    st.session_state.chat_history.append({
+                        'query': query_input,
+                        'answer': answer,
+                        'context': context,
+                        'prompt': full_prompt
+                    })
+                    
+                    st.rerun()
+                    
+                except Exception as e:
+                    st.error(f"Error processing query: {str(e)}")
+                    import traceback
+                    with st.expander("Error Details"):
+                        st.code(traceback.format_exc())
 
 # 路由控制
 if st.session_state.page == 'landing':
@@ -364,8 +626,24 @@ with col1:
     # 1. 加载数据
     target_path = get_graph_path(graph_source, model_choice)
     graph_data = load_graph_data(target_path)
+    
+    # 2. Focus State Logic
+    if 'focus_target' not in st.session_state:
+        st.session_state.focus_target = None
+        
+    focus_target = st.session_state.focus_target
+    
+    # Header area for graph view (Reset button)
+    if focus_target:
+        hdr_col1, hdr_col2 = st.columns([3, 1])
+        with hdr_col1:
+            st.info(f"Focusing on: **{focus_target}**")
+        with hdr_col2:
+            if st.button("❌ Clear Focus"):
+                st.session_state.focus_target = None
+                st.rerun()
 
-    # 2. 提取类型并显示过滤器
+    # 3. 提取类型并显示过滤器
     all_types = []
     if graph_data and "nodes" in graph_data:
         # 使用 title() 统一格式，避免 "Location" 和 "location" 分开
@@ -381,7 +659,7 @@ with col1:
                 default=all_types
             )
     
-    def visualize_graph(data, use_physics, filter_types=None):
+    def visualize_graph(data, use_physics, filter_types=None, focus_id=None):
         net = Network(height="600px", width="100%", bgcolor="#f0f2f6", font_color="#333333")
         
         if data:
@@ -393,6 +671,16 @@ with col1:
                     # 标准图结构
                     existing_nodes = set()
                     highlighted_ids = set() # 记录高亮的节点ID
+                    
+                    # Pre-calculate neighbor set if focus is active
+                    focus_group = set()
+                    if focus_id:
+                        focus_group.add(focus_id)
+                        for edge in data['edges']:
+                            if edge['source'] == focus_id:
+                                focus_group.add(edge['target'])
+                            elif edge['target'] == focus_id:
+                                focus_group.add(edge['source'])
 
                     # First pass: Calculate degrees
                     degrees = {}
@@ -411,8 +699,15 @@ with col1:
                         
                         # 判断是否高亮
                         is_highlighted = True
-                        if filter_types is not None and normalized_type not in filter_types:
-                            is_highlighted = False
+                        
+                        # Logic: Focus Overrides Filter
+                        if focus_id:
+                            if node['id'] not in focus_group:
+                                is_highlighted = False
+                        else:
+                            # Normal type filtering
+                            if filter_types is not None and normalized_type not in filter_types:
+                                is_highlighted = False
 
                         node_id = node['id']
                         # Strict New JSON: valid label > id (key). No 'name' fallback.
@@ -422,23 +717,23 @@ with col1:
                         # 计算节点大小 (基础大小 25 + 度数 * 3) - 调大基础大小以容纳文字
                         # 限制最大大小以防过大
                         node_degree = degrees.get(node_id, 0)
-                        size = 25 + min(node_degree * 3, 60)
+                        size = 25 + min(node_degree * 3, 60)  
                         
                         # 默认颜色逻辑 (User Custom Pastel Palette)
-                        color = '#CCCCCC' # Default
+                        color = "#34CAF7" # Default
                         
                         if 'Location' in normalized_type: 
-                            color = '#CCFFFF' # Light Cyan
-                        elif 'Person' in normalized_type or 'Creature' in normalized_type: 
-                            color = '#FF6666' # Pastel Red
-                        elif 'Party' in normalized_type: 
-                            color = '#CCFF99' # Pastel Green
-                        elif 'Spell' in normalized_type: 
-                            color = '#CCCCFF' # Pastel Purple
+                            color = "#f1b8f1" # Light Pink
+                        elif 'Monster' in normalized_type: 
+                            color = "#d9b8f1" # Pastel Purple
+                        elif 'Npc' in normalized_type: 
+                            color = '#f1ccb8' # Pastel Green
+                        elif 'Player' in normalized_type: 
+                            color = '#f1f1b8' # Pastel Purple
                         elif 'Item' in normalized_type: 
-                            color = '#FFCC99' # Pastel Orange
+                            color = '#b8f1ed' # Pastel Orange
                         elif 'Event' in normalized_type:
-                            color = '#FFFF99' # Pastel Yellow
+                            color = '#b8f1cc' # Pastel Yellow
                         
                         # 如果不高亮，则变暗
                         if not is_highlighted:
@@ -572,7 +867,7 @@ with col1:
                   "centralGravity": 0.1,
                   "springLength": 120,
                   "springConstant": 0.04,
-                  "damping": 0.9,
+                  "damping": 1.2,
                   "avoidOverlap": 0.5
                 },
                 "minVelocity": 0.75,
@@ -592,7 +887,7 @@ with col1:
         net.save_graph(str(tmp_path))
         return tmp_path
 
-    html_path = visualize_graph(graph_data, physics, selected_types)
+    html_path = visualize_graph(graph_data, physics, selected_types, focus_target)
 
     
     if html_path and html_path.exists():
@@ -665,6 +960,11 @@ with col2:
         # 原始数据
         with st.expander("Raw Data"):
             st.json(node)
+        
+        st.divider()
+        if st.button("🎯 Highlight in Graph", type="primary", use_container_width=True):
+            st.session_state.focus_target = node['id']
+            st.rerun()
             
     else:
         st.info("Select a node from the dropdown above to inspect details.")
@@ -672,7 +972,5 @@ with col2:
         > **Tip:** You can type in the box to search by name or ID.
         """)
 
-    st.divider()
-    st.subheader("System Logs")
-    log_placeholder = st.empty()
-    log_placeholder.code("Ready to weave lore...", language="bash")
+    # 使用新的 Log Viewer
+    render_log_viewer(key_prefix="viz_sidebar")

@@ -13,4 +13,5 @@ lib/
 .env
 
 # Intermediate fiels
-tmp/
+cache/
+logs/

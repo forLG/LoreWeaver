@@ -11,8 +11,8 @@
       "type": "location"
     },
     {
-      "id": "the_sword_coast",
-      "label": "The Sword Coast",
+      "id": "sword_coast",
+      "label": "Sword Coast",
       "type": "location"
     },
     {
@@ -21,13 +21,13 @@
       "type": "location"
     },
     {
-      "id": "phandalin",
-      "label": "Phandalin",
+      "id": "forge_of_spells",
+      "label": "Forge of Spells",
       "type": "location"
     },
     {
-      "id": "forge_of_spells",
-      "label": "Forge of Spells",
+      "id": "phandalin",
+      "label": "Phandalin",
       "type": "location"
     },
     {
@@ -52,32 +52,32 @@
     },
     {
       "id": "baldurs_gate",
-      "label": "baldurs_gate",
+      "label": "Baldur's Gate",
       "type": "location"
     },
     {
-      "id": "delzoun",
-      "label": "delzoun",
+      "id": "delzoun_crypts",
+      "label": "Delzoun Crypts",
       "type": "location"
     },
     {
-      "id": "the_netherese_empire",
-      "label": "the_netherese_empire",
+      "id": "netherese_ruins",
+      "label": "Netherese Ruins",
       "type": "location"
     },
     {
-      "id": "the_high_road",
-      "label": "the_high_road",
+      "id": "high_road",
+      "label": "High Road",
       "type": "location"
     },
     {
-      "id": "the_triboar_trail",
-      "label": "the_triboar_trail",
+      "id": "triboar_trail",
+      "label": "Triboar Trail",
       "type": "location"
     },
     {
-      "id": "goblin_ambush_site",
-      "label": "goblin_ambush_site",
+      "id": "wilderness_around_phandalin",
+      "label": "Wilderness around Phandalin",
       "type": "location"
     },
     {
@@ -86,18 +86,43 @@
       "type": "monster"
     },
     {
+      "id": "ambush_bend",
+      "label": "ambush_bend",
+      "type": "location"
+    },
+    {
+      "id": "goblin_trail",
+      "label": "goblin_trail",
+      "type": "location"
+    },
+    {
+      "id": "snare_trap_site",
+      "label": "snare_trap_site",
+      "type": "location"
+    },
+    {
+      "id": "pit_trap_site",
+      "label": "pit_trap_site",
+      "type": "location"
+    },
+    {
       "id": "cragmaw_hideout",
       "label": "cragmaw_hideout",
       "type": "location"
     },
     {
-      "id": "the_old_streambed",
-      "label": "the_old_streambed",
+      "id": "cave_mouth",
+      "label": "cave_mouth",
       "type": "location"
     },
     {
-      "id": "cave_entrance",
-      "label": "Cave Entrance",
+      "id": "goblin_blind",
+      "label": "goblin_blind",
+      "type": "location"
+    },
+    {
+      "id": "kennel",
+      "label": "kennel",
       "type": "location"
     },
     {
@@ -106,13 +131,33 @@
       "type": "monster"
     },
     {
+      "id": "steep_passage",
+      "label": "steep_passage",
+      "type": "location"
+    },
+    {
+      "id": "overpass",
+      "label": "overpass",
+      "type": "location"
+    },
+    {
+      "id": "goblin_den",
+      "label": "goblin_den",
+      "type": "location"
+    },
+    {
       "id": "nundro_rockseeker",
       "label": "Nundro Rockseeker",
       "type": "npc"
     },
     {
-      "id": "the_dark_pool",
-      "label": "the_dark_pool",
+      "id": "twin_pools_cave",
+      "label": "twin_pools_cave",
+      "type": "location"
+    },
+    {
+      "id": "klargs_cave",
+      "label": "klargs_cave",
       "type": "location"
     },
     {
@@ -121,13 +166,13 @@
       "type": "monster"
     },
     {
-      "id": "cragmaw_castle",
-      "label": "Cragmaw Castle",
+      "id": "town_green",
+      "label": "Town Green",
       "type": "location"
     },
     {
-      "id": "old_owl_well",
-      "label": "old_owl_well",
+      "id": "main_street",
+      "label": "Main Street",
       "type": "location"
     },
     {
@@ -136,24 +181,114 @@
       "type": "location"
     },
     {
-      "id": "thundertree",
-      "label": "Thundertree",
+      "id": "stonehill_inn",
+      "label": "stonehill_inn",
+      "type": "location"
+    },
+    {
+      "id": "alderleaf_farm",
+      "label": "Alderleaf Farm",
+      "type": "location"
+    },
+    {
+      "id": "townmasters_hall",
+      "label": "Townmaster's Hall",
+      "type": "location"
+    },
+    {
+      "id": "miners_exchange",
+      "label": "Miner's Exchange",
+      "type": "location"
+    },
+    {
+      "id": "shrine_of_luck",
+      "label": "Shrine of Luck",
+      "type": "location"
+    },
+    {
+      "id": "edermath_orchard",
+      "label": "Edermath Orchard",
+      "type": "location"
+    },
+    {
+      "id": "old_owl_well",
+      "label": "Old Owl Well",
+      "type": "location"
+    },
+    {
+      "id": "lionshield_coster",
+      "label": "Lionshield Coster",
+      "type": "location"
+    },
+    {
+      "id": "sleeping_giant_tap_house",
+      "label": "Sleeping Giant Tap House",
+      "type": "location"
+    },
+    {
+      "id": "redbrand_hideout",
+      "label": "Redbrand Hideout",
+      "type": "location"
+    },
+    {
+      "id": "glasstaffs_quarters",
+      "label": "Glasstaff's Quarters",
+      "type": "location"
+    },
+    {
+      "id": "ruins_of_thundertree",
+      "label": "Ruins of Thundertree",
+      "type": "location"
+    },
+    {
+      "id": "agathas_lair",
+      "label": "Agatha's Lair",
       "type": "location"
     },
     {
       "id": "conyberry",
-      "label": "conyberry",
+      "label": "Conyberry",
       "type": "location"
     },
     {
       "id": "wyvern_tor",
-      "label": "wyvern_tor",
+      "label": "Wyvern Tor",
+      "type": "location"
+    },
+    {
+      "id": "cragmaw_castle",
+      "label": "cragmaw_castle",
       "type": "location"
     },
     {
       "id": "redbrand_ruffian",
       "label": "Redbrand Ruffian",
       "type": "monster"
+    },
+    {
+      "id": "cellar",
+      "label": "cellar",
+      "type": "location"
+    },
+    {
+      "id": "tresendar_crypts",
+      "label": "tresendar crypts",
+      "type": "location"
+    },
+    {
+      "id": "slave_pens",
+      "label": "slave pens",
+      "type": "location"
+    },
+    {
+      "id": "barracks",
+      "label": "barracks",
+      "type": "location"
+    },
+    {
+      "id": "storeroom_work_area",
+      "label": "storeroom work area",
+      "type": "location"
     },
     {
       "id": "thieves'_tools",
@@ -171,13 +306,8 @@
       "type": "item"
     },
     {
-      "id": "south_barracks",
-      "label": "south_barracks",
-      "type": "location"
-    },
-    {
-      "id": "ruined_storeroom",
-      "label": "ruined_storeroom",
+      "id": "trapped_hall",
+      "label": "trapped_hall",
       "type": "location"
     },
     {
@@ -186,8 +316,8 @@
       "type": "monster"
     },
     {
-      "id": "north_barracks",
-      "label": "north_barracks",
+      "id": "armory",
+      "label": "armory",
       "type": "location"
     },
     {
@@ -196,8 +326,18 @@
       "type": "monster"
     },
     {
-      "id": "the_rift",
-      "label": "the_rift",
+      "id": "crevasse_cavern",
+      "label": "crevasse_cavern",
+      "type": "location"
+    },
+    {
+      "id": "guard_barracks",
+      "label": "guard_barracks",
+      "type": "location"
+    },
+    {
+      "id": "common_room",
+      "label": "common_room",
       "type": "location"
     },
     {
@@ -206,8 +346,8 @@
       "type": "item"
     },
     {
-      "id": "wizards_quarters",
-      "label": "wizards_quarters",
+      "id": "wizards_workshop",
+      "label": "wizards_workshop",
       "type": "location"
     },
     {
@@ -219,6 +359,16 @@
       "id": "staff_of_defense",
       "label": "staff of defense",
       "type": "item"
+    },
+    {
+      "id": "reidoths_cottage",
+      "label": "Reidoth's Cottage",
+      "type": "location"
+    },
+    {
+      "id": "orc_camp",
+      "label": "orc_camp",
+      "type": "location"
     },
     {
       "id": "stirge",
@@ -251,9 +401,24 @@
       "type": "monster"
     },
     {
+      "id": "sword_coast_wilderness",
+      "label": "sword_coast_wilderness",
+      "type": "location"
+    },
+    {
+      "id": "owlbear_tower",
+      "label": "owlbear_tower",
+      "type": "location"
+    },
+    {
       "id": "zombie",
       "label": "zombie",
       "type": "monster"
+    },
+    {
+      "id": "hamun_kosts_tent",
+      "label": "Hamun Kost's tent",
+      "type": "location"
     },
     {
       "id": "spell_scroll_(2nd_level)",
@@ -266,9 +431,24 @@
       "type": "item"
     },
     {
+      "id": "westernmost_cottage",
+      "label": "westernmost cottage",
+      "type": "location"
+    },
+    {
       "id": "twig_blight",
       "label": "twig blight",
       "type": "monster"
+    },
+    {
+      "id": "blighted_cottages",
+      "label": "blighted_cottages",
+      "type": "location"
+    },
+    {
+      "id": "brown_horse",
+      "label": "Brown Horse",
+      "type": "location"
     },
     {
       "id": "ash_zombie",
@@ -276,9 +456,24 @@
       "type": "monster"
     },
     {
+      "id": "druids_watch",
+      "label": "druids_watch",
+      "type": "location"
+    },
+    {
       "id": "venomfang",
       "label": "Venomfang",
       "type": "monster"
+    },
+    {
+      "id": "blighted_farmhouse",
+      "label": "blighted_farmhouse",
+      "type": "location"
+    },
+    {
+      "id": "ruined_store",
+      "label": "ruined_store",
+      "type": "location"
     },
     {
       "id": "giant_spider",
@@ -296,13 +491,38 @@
       "type": "monster"
     },
     {
+      "id": "dragons_tower",
+      "label": "dragons_tower",
+      "type": "location"
+    },
+    {
       "id": "spell_scroll_(3rd_level)",
       "label": "Spell Scroll (3rd level)",
       "type": "item"
     },
     {
-      "id": "old_guardroom",
-      "label": "old_guardroom",
+      "id": "old_smithy",
+      "label": "old_smithy",
+      "type": "location"
+    },
+    {
+      "id": "herbalists_shop",
+      "label": "herbalists_shop",
+      "type": "location"
+    },
+    {
+      "id": "town_square",
+      "label": "town_square",
+      "type": "location"
+    },
+    {
+      "id": "old_garrison",
+      "label": "old_garrison",
+      "type": "location"
+    },
+    {
+      "id": "weavers_cottage",
+      "label": "weavers_cottage",
       "type": "location"
     },
     {
@@ -311,13 +531,48 @@
       "type": "npc"
     },
     {
+      "id": "cultist_farmhouse",
+      "label": "cultist_farmhouse",
+      "type": "location"
+    },
+    {
       "id": "potion_of_flying",
       "label": "potion of flying",
       "type": "item"
     },
     {
-      "id": "the_collapsed_barracks",
-      "label": "the_collapsed_barracks",
+      "id": "brughors_cave",
+      "label": "Brughor's Cave",
+      "type": "location"
+    },
+    {
+      "id": "castle_entrance",
+      "label": "castle_entrance",
+      "type": "location"
+    },
+    {
+      "id": "archer_post",
+      "label": "archer_post",
+      "type": "location"
+    },
+    {
+      "id": "ruined_barracks",
+      "label": "ruined_barracks",
+      "type": "location"
+    },
+    {
+      "id": "storeroom",
+      "label": "storeroom",
+      "type": "location"
+    },
+    {
+      "id": "hobgoblin_barracks",
+      "label": "hobgoblin_barracks",
+      "type": "location"
+    },
+    {
+      "id": "banquet_hall",
+      "label": "banquet_hall",
       "type": "location"
     },
     {
@@ -326,14 +581,34 @@
       "type": "monster"
     },
     {
-      "id": "temple_of_dumathoin_nezznars_quarters",
-      "label": "Temple of Dumathoin Nezznar's Quarters",
+      "id": "dark_hall",
+      "label": "dark_hall",
+      "type": "location"
+    },
+    {
+      "id": "goblin_shrine",
+      "label": "goblin_shrine",
+      "type": "location"
+    },
+    {
+      "id": "postern_gate",
+      "label": "postern_gate",
+      "type": "location"
+    },
+    {
+      "id": "ruined_tower",
+      "label": "ruined_tower",
       "type": "location"
     },
     {
       "id": "doppelganger",
       "label": "doppelganger",
       "type": "monster"
+    },
+    {
+      "id": "kings_quarters",
+      "label": "kings_quarters",
+      "type": "location"
     },
     {
       "id": "commoner",
@@ -346,8 +621,8 @@
       "type": "monster"
     },
     {
-      "id": "the_collapsed_pit",
-      "label": "the_collapsed_pit",
+      "id": "cave_entrance",
+      "label": "Cave Entrance",
       "type": "location"
     },
     {
@@ -357,22 +632,42 @@
     },
     {
       "id": "mine_tunnels",
-      "label": "mine tunnels",
+      "label": "mine_tunnels",
       "type": "location"
     },
     {
-      "id": "old_entrance",
-      "label": "old_entrance",
+      "id": "low_ceilinged_intersections",
+      "label": "low_ceilinged_intersections",
+      "type": "location"
+    },
+    {
+      "id": "miners_tomb",
+      "label": "Miners Tomb",
+      "type": "location"
+    },
+    {
+      "id": "old_guardroom",
+      "label": "old_guardroom",
       "type": "location"
     },
     {
       "id": "assayers_office",
-      "label": "Assayers Office",
+      "label": "assayers_office",
       "type": "location"
     },
     {
-      "id": "the_fungal_cavern",
-      "label": "the_fungal_cavern",
+      "id": "south_barracks",
+      "label": "south_barracks",
+      "type": "location"
+    },
+    {
+      "id": "ruined_storeroom",
+      "label": "ruined_storeroom",
+      "type": "location"
+    },
+    {
+      "id": "fungal_cavern",
+      "label": "fungal_cavern",
       "type": "location"
     },
     {
@@ -381,9 +676,19 @@
       "type": "location"
     },
     {
+      "id": "dark_pool",
+      "label": "dark_pool",
+      "type": "location"
+    },
+    {
       "id": "wand_of_magic_missiles",
       "label": "wand of magic missiles",
       "type": "item"
+    },
+    {
+      "id": "north_barracks",
+      "label": "north_barracks",
+      "type": "location"
     },
     {
       "id": "potion_of_vitality",
@@ -426,23 +731,23 @@
       "type": "item"
     },
     {
-      "id": "northern_finishing_room",
-      "label": "Northern Finishing Room",
-      "type": "location"
-    },
-    {
       "id": "dragonguard",
       "label": "Dragonguard",
       "type": "item"
     },
     {
-      "id": "the_booming_cavern",
-      "label": "the_booming_cavern",
+      "id": "booming_cavern",
+      "label": "Booming Cavern",
       "type": "location"
     },
     {
-      "id": "the_collapsed_cavern",
-      "label": "the_collapsed_cavern",
+      "id": "old_streambed",
+      "label": "old_streambed",
+      "type": "location"
+    },
+    {
+      "id": "collapsed_cavern",
+      "label": "collapsed_cavern",
       "type": "location"
     },
     {
@@ -451,13 +756,18 @@
       "type": "item"
     },
     {
+      "id": "temple_of_dumathoin",
+      "label": "temple_of_dumathoin",
+      "type": "location"
+    },
+    {
       "id": "spider_staff",
       "label": "spider staff",
       "type": "item"
     },
     {
-      "id": "priests_quarters_nundros_cell",
-      "label": "priests_quarters_nundros_cell",
+      "id": "priests_quarters",
+      "label": "priests_quarters",
       "type": "location"
     },
     {
@@ -468,12 +778,6 @@
   ],
   "edges": [
     {
-      "source": "the_sword_coast",
-      "target": "neverwinter",
-      "relationship": "part_of",
-      "desc": "The Sword Coast region contains the city of Neverwinter"
-    },
-    {
       "source": "forge_of_spells",
       "target": "wave_echo_cave",
       "relationship": "stored_in",
@@ -483,25 +787,31 @@
       "source": "phandalin",
       "target": "wave_echo_cave",
       "relationship": "allied_with",
-      "desc": "Phandalin prospered alongside the dwarves and gnomes who mined Wave Echo Cave"
+      "desc": "Human wizards from Phandalin fought alongside dwarves and gnomes to defend Wave Echo Cave"
     },
     {
       "source": "gundren_rockseeker",
       "target": "sildar_hallwinter",
       "relationship": "allied_with",
-      "desc": "Gundren Rockseeker travels with Sildar Hallwinter as his escort"
+      "desc": "Gundren Rockseeker travels with Sildar Hallwinter as his escort on the road to Phandalin"
     },
     {
       "source": "nezznar_the_black_spider",
       "target": "gundren_rockseeker",
       "relationship": "commands",
-      "desc": "The Black Spider has Gundren Rockseeker captured and his map taken"
+      "desc": "The Black Spider has Gundren Rockseeker captured and his map taken to Cragmaw Castle"
     },
     {
-      "source": "sildar_hallwinter",
-      "target": "players",
+      "source": "players",
+      "target": "sildar_hallwinter",
       "relationship": "gives_quest_to",
-      "desc": "Sildar tells the characters about the lost mine and that Gundren was taken to Cragmaw Castle"
+      "desc": "Sildar Hallwinter tells the players about the lost mine and that Gundren was taken to Cragmaw Castle"
+    },
+    {
+      "source": "players",
+      "target": "gundren_rockseeker",
+      "relationship": "gives_quest_to",
+      "desc": "The players are motivated to rescue their dwarf friend Gundren Rockseeker from captivity"
     },
     {
       "source": "nezznar_the_black_spider",
@@ -511,15 +821,9 @@
     },
     {
       "source": "players",
-      "target": "gundren_rockseeker",
-      "relationship": "allied_with",
-      "desc": "The adventurers are friends with Gundren Rockseeker and seek to rescue him"
-    },
-    {
-      "source": "players",
-      "target": "sildar_hallwinter",
-      "relationship": "allied_with",
-      "desc": "The characters rescue Sildar Hallwinter from the goblins"
+      "target": "nezznar_the_black_spider",
+      "relationship": "attacks",
+      "desc": "The adventurers confront and fight Nezznar the Black Spider in Wave Echo Cave to end his troublemaking"
     },
     {
       "source": "players",
@@ -535,63 +839,45 @@
     },
     {
       "source": "gundren_rockseeker",
-      "target": "neverwinter",
-      "relationship": "inhabits",
-      "desc": "is present in Neverwinter when hiring the players"
-    },
-    {
-      "source": "gundren_rockseeker",
       "target": "phandalin",
       "relationship": "inhabits",
-      "desc": "goes ahead to attend to business in Phandalin"
+      "desc": "has gone ahead to attend to business in the town"
     },
     {
       "source": "sildar_hallwinter",
       "target": "phandalin",
       "relationship": "inhabits",
-      "desc": "accompanies Gundren Rockseeker to Phandalin"
+      "desc": "travels with Gundren Rockseeker to Phandalin"
     },
     {
       "source": "players",
       "target": "neverwinter",
       "relationship": "inhabits",
-      "desc": "are in Neverwinter when hired by Gundren Rockseeker"
-    },
-    {
-      "source": "players",
-      "target": "phandalin",
-      "desc": "are tasked with delivering a wagon to Phandalin",
-      "relationship": "inhabits"
+      "desc": "are in the city of Neverwinter at the start of the quest"
     },
     {
       "source": "barthens_provisions",
       "target": "players",
       "relationship": "gives_quest_to",
-      "desc": "will pay the players 10 gp each upon safe delivery of the wagon"
+      "desc": "will pay the players 10 gp each when they deliver the wagon safely to the trading post"
     },
     {
       "source": "players",
-      "target": "the_sword_coast",
+      "target": "delzoun_crypts",
       "relationship": "inhabits",
-      "desc": "Players travel through the Sword Coast region, delving into ancient strongholds and exploring ruins"
+      "desc": "Knights dare the crypts of the fallen dwarf kings of Delzoun, seeking glory and treasure"
     },
     {
       "source": "players",
-      "target": "delzoun",
+      "target": "netherese_ruins",
       "relationship": "inhabits",
-      "desc": "Knights (as player characters) dare the crypts of the fallen dwarf kings of Delzoun seeking glory and treasure"
+      "desc": "Wizards plunder the ruins of the fallen Netherese empire, delving into secrets too dark for the light of day"
     },
     {
       "source": "players",
-      "target": "the_netherese_empire",
+      "target": "sword_coast",
       "relationship": "inhabits",
-      "desc": "Wizards (as player characters) plunder the ruins of the fallen Netherese empire"
-    },
-    {
-      "source": "players",
-      "target": "baldurs_gate",
-      "relationship": "inhabits",
-      "desc": "Rogues (as player characters) prowl the dark alleyways of Baldur's Gate"
+      "desc": "Daring souls delve into the wreckage of ancient strongholds and explore ruins of long-lost cultures in the Sword Coast region"
     },
     {
       "source": "players",
@@ -601,33 +887,27 @@
     },
     {
       "source": "players",
-      "target": "the_high_road",
+      "target": "high_road",
       "relationship": "inhabits",
-      "desc": "Players travel south along the High Road"
+      "desc": "Players travel south along the High Road from Neverwinter"
     },
     {
       "source": "players",
-      "target": "the_triboar_trail",
+      "target": "triboar_trail",
       "relationship": "inhabits",
-      "desc": "Players travel east along the Triboar Trail"
+      "desc": "Players head east along the Triboar Trail toward Phandalin"
     },
     {
       "source": "players",
-      "target": "goblin_ambush_site",
+      "target": "wilderness_around_phandalin",
       "relationship": "inhabits",
-      "desc": "Players encounter goblin raiders at the ambush site"
-    },
-    {
-      "source": "sildar_hallwinter",
-      "target": "neverwinter",
-      "relationship": "inhabits",
-      "desc": "was in Neverwinter when departing with Gundren"
+      "desc": "Players are a half-day's march from Phandalin in the wilderness"
     },
     {
       "source": "goblin",
-      "target": "goblin_ambush_site",
+      "target": "ambush_bend",
       "relationship": "inhabits",
-      "desc": "Four goblins are hiding in the woods at the ambush site, waiting to attack"
+      "desc": "Four goblins are hiding in the woods at Ambush Bend, waiting to ambush travelers"
     },
     {
       "source": "goblin",
@@ -637,189 +917,291 @@
     },
     {
       "source": "goblin",
-      "target": "goblin",
-      "relationship": "allied_with",
-      "desc": "Four goblins work together in the ambush, coordinating their attacks"
-    },
-    {
-      "source": "goblin",
-      "target": "goblin_ambush_site",
+      "target": "goblin_trail",
       "relationship": "patrols",
-      "desc": "Goblins are positioned at the ambush site, with two on each side of the road"
+      "desc": "The goblins use the goblin trail and the last surviving goblin attempts to flee along it when three are defeated"
     },
     {
       "source": "goblin",
-      "target": "goblin_ambush_site",
-      "relationship": "guards",
-      "desc": "Goblins guard the ambush site and attack anyone who investigates the dead horses"
+      "target": "gundren_rockseeker",
+      "relationship": "attacks",
+      "desc": "Goblins ambushed and killed Gundren Rockseeker's horses, indicating they attacked his party"
     },
     {
       "source": "goblin",
-      "target": "goblin_ambush_site",
-      "relationship": "hidden_at",
-      "desc": "Goblins are hiding in the woods at the ambush site, using Stealth to surprise the players"
+      "target": "sildar_hallwinter",
+      "relationship": "attacks",
+      "desc": "Goblins ambushed and killed Sildar Hallwinter's horses, indicating they attacked his party"
     },
     {
       "source": "players",
-      "target": "goblin_ambush_site",
+      "target": "ambush_bend",
+      "relationship": "inhabits",
+      "desc": "The players come around a bend and spot dead horses blocking the path"
+    },
+    {
+      "source": "players",
+      "target": "goblin_trail",
+      "relationship": "patrols",
+      "desc": "The party pursues the goblins down the trail after defeating the ambushers"
+    },
+    {
+      "source": "players",
+      "target": "snare_trap_site",
       "relationship": "attacks",
-      "desc": "defeated the goblins at the ambush site"
+      "desc": "The lead character may trigger the hidden snare trap and become restrained upside down"
+    },
+    {
+      "source": "players",
+      "target": "pit_trap_site",
+      "relationship": "attacks",
+      "desc": "The lead character may fall into the hidden pit trap and take bludgeoning damage"
     },
     {
       "source": "players",
       "target": "cragmaw_hideout",
-      "relationship": "attacks",
-      "desc": "pursues the goblins to their hideout"
+      "relationship": "patrols",
+      "desc": "The party arrives at the hideout after following the trail, completing a story milestone"
     },
     {
       "source": "gundren_rockseeker",
-      "target": "cragmaw_hideout",
-      "relationship": "attacks",
-      "desc": "The Cragmaw tribe has orders to waylay Gundren Rockseeker and anyone traveling with him"
+      "target": "players",
+      "relationship": "allied_with",
+      "desc": "Gundren Rockseeker is traveling with the players according to the Cragmaw tribe's orders"
     },
     {
       "source": "players",
-      "target": "cave_entrance",
+      "target": "cave_mouth",
       "relationship": "inhabits",
-      "desc": "The players have arrived at the cave entrance following the goblins' trail"
+      "desc": "The players have arrived at the cave mouth after following the goblins' trail"
     },
     {
       "source": "goblin",
-      "target": "cragmaw_hideout",
+      "target": "goblin_blind",
+      "relationship": "inhabits",
+      "desc": "Two goblins are stationed at this guard post, though they are bored and inattentive"
+    },
+    {
+      "source": "goblin",
+      "target": "goblin_blind",
       "relationship": "guards",
-      "desc": "Two goblins are stationed at a guard post, watching for intruders"
+      "desc": "The goblins serve as lookouts at this guard post and will attack intruders they notice"
+    },
+    {
+      "source": "players",
+      "target": "goblin",
+      "relationship": "attacks",
+      "desc": "If the goblins notice intruders, they open fire with their bows, potentially catching characters by surprise"
     },
     {
       "source": "wolf",
-      "target": "cragmaw_hideout",
+      "target": "kennel",
       "relationship": "inhabits",
-      "desc": "Three wolves are confined in the kennel at Cragmaw Hideout"
+      "desc": "Three wolves are confined in the kennel, kept and trained by the Cragmaws"
     },
     {
       "source": "wolf",
       "target": "players",
       "relationship": "attacks",
-      "desc": "Wolves attack any creature except goblins that moves into the room"
+      "desc": "Wolves attack any creature except goblins that moves into the room, but cannot reach targets on the steps"
     },
     {
       "source": "players",
       "target": "wolf",
       "relationship": "attacks",
-      "desc": "Players can attempt to calm the wolves with a Wisdom (Animal Handling) check, with DC reduced if food is given"
+      "desc": "Characters can attempt to calm the wolves with a DC 15 Wisdom (Animal Handling) check, or DC 10 if given food"
     },
     {
       "source": "players",
-      "target": "cragmaw_hideout",
+      "target": "kennel",
       "relationship": "inhabits",
-      "desc": "A character attempting to ascend or descend the chimney shaft in the location"
-    },
-    {
-      "source": "goblin",
-      "target": "cragmaw_hideout",
-      "relationship": "inhabits",
-      "desc": "One goblin stands watch on the bridge guard post in the hideout"
+      "desc": "Characters remain in sight of the wolves in the kennel, potentially goading them"
     },
     {
       "source": "players",
-      "target": "the_old_streambed",
+      "target": "steep_passage",
       "relationship": "inhabits",
-      "desc": "The players are currently exploring the old streambed, hearing a waterfall ahead"
+      "desc": "The players are currently in the steep passage, observing their surroundings"
+    },
+    {
+      "source": "players",
+      "target": "overpass",
+      "relationship": "inhabits",
+      "desc": "The players are observing the rickety bridge (overpass) from their position in the passage"
     },
     {
       "source": "goblin",
-      "target": "sildar_hallwinter",
-      "relationship": "attacks",
-      "desc": "The goblins have been beating and tormenting Sildar Hallwinter"
+      "target": "overpass",
+      "relationship": "guards",
+      "desc": "stands watch on the bridge as a lazy and inattentive guard"
     },
     {
       "source": "goblin",
-      "target": "sildar_hallwinter",
-      "relationship": "commands",
-      "desc": "Yeemik (goblin leader) grabs Sildar and threatens to kill him if characters don't agree to truce"
+      "target": "goblin_den",
+      "relationship": "inhabits",
+      "desc": "Six goblins inhabit this den, using it as a common room and barracks"
+    },
+    {
+      "source": "sildar_hallwinter",
+      "target": "goblin_den",
+      "relationship": "stored_in",
+      "desc": "Held prisoner in this chamber, securely bound on the southern ledge of the cavern"
     },
     {
       "source": "goblin",
       "target": "players",
       "relationship": "gives_quest_to",
-      "desc": "Yeemik tries to convince the adventurers to kill Klarg, promising to release Sildar when they bring back the bugbear's head"
+      "desc": "Yeemik (goblin leader) tries to convince the players to kill Klarg, promising to release Sildar in exchange for the bugbear's head"
+    },
+    {
+      "source": "sildar_hallwinter",
+      "target": "players",
+      "relationship": "gives_quest_to",
+      "desc": "Warns the characters not to trust the goblin's deal, as Yeemik will try to force them to pay a ransom even after completing their part"
     },
     {
       "source": "sildar_hallwinter",
       "target": "gundren_rockseeker",
       "relationship": "allied_with",
-      "desc": "met in Neverwinter and agreed to accompany him back to Phandalin"
-    },
-    {
-      "source": "gundren_rockseeker",
-      "target": "nundro_rockseeker",
-      "relationship": "allied_with",
-      "desc": "one of the three Rockseeker brothers who located Wave Echo Cave"
-    },
-    {
-      "source": "sildar_hallwinter",
-      "target": "goblin_ambush_site",
-      "relationship": "inhabits",
-      "desc": "present at the goblin ambush site where he provides information to the players"
+      "desc": "Sildar met Gundren in Neverwinter and agreed to accompany him back to Phandalin to help reopen the old mine"
     },
     {
       "source": "sildar_hallwinter",
       "target": "players",
       "relationship": "allied_with",
-      "desc": "remains with the party if rescued and healed, joining them as an NPC party member"
+      "desc": "Sildar provides the characters with four pieces of useful information about the Rockseeker brothers, Klarg, the Black Spider, and Iarno Albrek"
+    },
+    {
+      "source": "sildar_hallwinter",
+      "target": "goblin_den",
+      "relationship": "inhabits",
+      "desc": "is present in the goblin den and can be rescued there"
     },
     {
       "source": "gundren_rockseeker",
-      "target": "cragmaw_hideout",
+      "target": "goblin_den",
       "relationship": "stored_in",
-      "desc": "Gundren Rockseeker's gear was taken to Cragmaw Castle, indicating he was previously at Cragmaw Hideout"
+      "desc": "Gundren Rockseeker's gear was taken to Cragmaw Castle, which is part of the goblin den location context"
+    },
+    {
+      "source": "goblin",
+      "target": "twin_pools_cave",
+      "relationship": "guards",
+      "desc": "Three goblins guard this cave, ready for trouble if warned by the goblin in area 5"
+    },
+    {
+      "source": "goblin",
+      "target": "goblin",
+      "relationship": "allied_with",
+      "desc": "Goblins work together - one will flee to area 8 to warn Klarg if a fight breaks out"
     },
     {
       "source": "bugbear",
-      "target": "cragmaw_hideout",
+      "target": "klargs_cave",
       "relationship": "inhabits",
-      "desc": "Klarg the bugbear shares this cave with his pet wolf and goblins"
+      "desc": "Klarg the bugbear shares this cave with his pet wolf and two goblins"
     },
     {
-      "source": "bugbear",
-      "target": "wolf",
-      "relationship": "commands",
-      "desc": "Klarg the bugbear has a pet wolf named Ripper that he controls"
+      "source": "wolf",
+      "target": "klargs_cave",
+      "relationship": "inhabits",
+      "desc": "Klarg's mangy pet wolf Ripper lives in the cave"
+    },
+    {
+      "source": "goblin",
+      "target": "klargs_cave",
+      "relationship": "inhabits",
+      "desc": "Two goblins live in the cave under Klarg's command"
     },
     {
       "source": "bugbear",
       "target": "goblin",
       "relationship": "commands",
-      "desc": "Klarg commands the goblins under him, though they resent his bullying"
+      "desc": "Klarg the bugbear bullies and commands the goblins under him"
     },
     {
-      "source": "cragmaw_hideout",
+      "source": "goblin",
+      "target": "bugbear",
+      "relationship": "rival_of",
+      "desc": "The goblins resent Klarg's bullying and leadership"
+    },
+    {
+      "source": "klargs_cave",
       "target": "players",
       "relationship": "attacks",
-      "desc": "The central fire pit in cragmaw_hideout deals 1 fire damage to any creature that enters it, or 1d6 fire damage to any creature that falls prone there"
+      "desc": "The central fire pit in klargs_cave deals fire damage to any creature that enters or falls prone there"
     },
     {
       "source": "players",
-      "target": "cragmaw_castle",
-      "relationship": "seeks",
-      "desc": "The characters want to seek out Cragmaw Castle to find and rescue Gundren Rockseeker"
+      "target": "klargs_cave",
+      "relationship": "inhabits",
+      "desc": "Players are present in Klarg's cave and can interact with the environment"
     },
     {
       "source": "players",
-      "target": "gundren_rockseeker",
-      "relationship": "seeks_to_rescue",
-      "desc": "The party's goal is to find and rescue Gundren Rockseeker"
-    },
-    {
-      "source": "gundren_rockseeker",
-      "target": "cragmaw_castle",
-      "relationship": "located_at",
-      "desc": "Gundren Rockseeker is believed to be at Cragmaw Castle and needs rescue"
+      "target": "cragmaw_hideout",
+      "relationship": "explores",
+      "desc": "The players explore the Cragmaw hideout as part of their adventure"
     },
     {
       "source": "players",
-      "target": "the_triboar_trail",
+      "target": "klargs_cave",
+      "relationship": "explores",
+      "desc": "The players explore Klarg's cave as part of their adventure"
+    },
+    {
+      "source": "players",
+      "target": "cragmaw_hideout",
+      "relationship": "defeats",
+      "desc": "The players defeat Klarg and his allies in the Cragmaw hideout, completing a story milestone"
+    },
+    {
+      "source": "players",
+      "target": "phandalin",
+      "relationship": "inhabits",
+      "desc": "The characters first arrive in Phandalin and can visit various locations in the town"
+    },
+    {
+      "source": "players",
+      "target": "phandalin",
+      "relationship": "approaches",
+      "desc": "The players catch their first glimpse of Phandalin and approach the town"
+    },
+    {
+      "source": "players",
+      "target": "main_street",
+      "relationship": "travels_along",
+      "desc": "The players go by along the muddy main street as they approach the town"
+    },
+    {
+      "source": "main_street",
+      "target": "tresendar_manor",
+      "relationship": "leads_to",
+      "desc": "The main street climbs toward the ruined manor house on the hillside"
+    },
+    {
+      "source": "players",
+      "target": "stonehill_inn",
+      "relationship": "inhabits",
+      "desc": "Sildar suggests securing lodgings at the local inn for the party"
+    },
+    {
+      "source": "stonehill_inn",
+      "target": "players",
       "relationship": "gives_quest_to",
-      "desc": "The townmaster is looking for someone (players) to run off orc raiders seen on the east end of Triboar Trail"
+      "desc": "NPCs at the inn direct characters toward adventure opportunities and important rumors found in other parts of town"
+    },
+    {
+      "source": "sildar_hallwinter",
+      "target": "stonehill_inn",
+      "relationship": "inhabits",
+      "desc": "takes one of the six rooms for rent at the inn"
+    },
+    {
+      "source": "players",
+      "target": "triboar_trail",
+      "relationship": "gives_quest_to",
+      "desc": "The townmaster is looking for someone (players) to run off orc raiders on the east end of Triboar Trail"
     },
     {
       "source": "players",
@@ -831,7 +1213,7 @@
       "source": "players",
       "target": "barthens_provisions",
       "relationship": "gives_quest_to",
-      "desc": "Barthen pays the players 10 gp each for delivering supplies and encourages them to rescue Gundren Rockseeker"
+      "desc": "Barthen pays the characters for delivering supplies and encourages them to rescue Gundren Rockseeker"
     },
     {
       "source": "gundren_rockseeker",
@@ -841,279 +1223,513 @@
     },
     {
       "source": "players",
-      "target": "gundren_rockseeker",
-      "relationship": "gives_quest_to",
-      "desc": "Barthen encourages the party to find and rescue Gundren Rockseeker after learning of his capture"
-    },
-    {
-      "source": "players",
-      "target": "old_owl_well",
-      "relationship": "gives_quest_to",
-      "desc": "Daran asks the characters to visit the ruins and find out who's there and what they're up to"
-    },
-    {
-      "source": "players",
-      "target": "old_owl_well",
+      "target": "edermath_orchard",
       "relationship": "inhabits",
-      "desc": "The party investigates Old Owl Well"
+      "desc": "The characters are at Daran Edermath's cottage beside the apple orchard"
+    },
+    {
+      "source": "old_owl_well",
+      "target": "netherese_ruins",
+      "relationship": "part_of",
+      "desc": "Old Owl Well is described as ruins that are an old watchtower of the ancient Netherese empire"
+    },
+    {
+      "source": "players",
+      "target": "lionshield_coster",
+      "relationship": "gives_quest_to",
+      "desc": "Linene Graywind warns the characters about the Redbrands and advises them to avoid the Sleeping Giant tap house"
+    },
+    {
+      "source": "miners_exchange",
+      "target": "players",
+      "relationship": "gives_quest_to",
+      "desc": "Halia Thornton suggests the goblin minion might know Cragmaw Castle's location and leverages this to persuade the characters to help her deal with the Redbrands"
+    },
+    {
+      "source": "players",
+      "target": "sleeping_giant_tap_house",
+      "relationship": "gives_quest_to",
+      "desc": "Halia tells the players that Redbrands loiter around the Sleeping Giant tap house and offers them 100 gp to eliminate Glasstaff"
     },
     {
       "source": "players",
       "target": "tresendar_manor",
-      "relationship": "inhabits",
-      "desc": "The players are directed to Tresendar Manor to find the Redbrand base"
+      "relationship": "gives_quest_to",
+      "desc": "Halia tells the players that Redbrands have a base under Tresendar Manor on the east edge of town"
     },
     {
       "source": "players",
+      "target": "glasstaffs_quarters",
+      "relationship": "gives_quest_to",
+      "desc": "Halia offers the players 100 gp to eliminate Glasstaff and bring her any correspondence found in the leader's quarters"
+    },
+    {
+      "source": "redbrand_hideout",
+      "target": "tresendar_manor",
+      "relationship": "hidden_at",
+      "desc": "The Redbrands have their base under Tresendar Manor on the east edge of town"
+    },
+    {
+      "source": "glasstaffs_quarters",
+      "target": "redbrand_hideout",
+      "relationship": "stored_in",
+      "desc": "Glasstaff's quarters are located within the Redbrand hideout under Tresendar Manor"
+    },
+    {
+      "source": "players",
+      "target": "miners_exchange",
+      "relationship": "inhabits",
+      "desc": "The party is at the Miners' Exchange location where these events occur"
+    },
+    {
+      "source": "players",
+      "target": "alderleaf_farm",
+      "relationship": "inhabits",
+      "desc": "Qelline Alderleaf is willing to let the characters stay in her hayloft at the farm"
+    },
+    {
+      "source": "players",
+      "target": "redbrand_hideout",
+      "relationship": "gives_quest_to",
+      "desc": "Carp informs the characters that the secret tunnel leads to area 8 in the Redbrand hideout"
+    },
+    {
+      "source": "players",
+      "target": "ruins_of_thundertree",
+      "relationship": "gives_quest_to",
+      "desc": "Qelline suggests the characters visit Reidoth at the ruins of Thundertree to get help finding specific sites"
+    },
+    {
+      "source": "players",
+      "target": "agathas_lair",
+      "relationship": "gives_quest_to",
+      "desc": "Sister Garaele offers the quest to the characters to bring Agatha a jeweled silver comb and persuade her to reveal the location of Bowgentle's spellbook"
+    },
+    {
+      "source": "players",
+      "target": "shrine_of_luck",
+      "relationship": "inhabits",
+      "desc": "The party is at the Shrine of Luck where events are occurring"
+    },
+    {
+      "source": "players",
+      "target": "sleeping_giant_tap_house",
+      "relationship": "inhabits",
+      "desc": "The characters can choose to visit this rundown tap house at the end of Phandalin's main street"
+    },
+    {
+      "source": "townmasters_hall",
+      "target": "players",
+      "relationship": "gives_quest_to",
+      "desc": "The notice posted on the board offers a reward for dealing with orcs near Wyvern Tor, inviting those interested to inquire within"
+    },
+    {
+      "source": "sildar_hallwinter",
+      "target": "townmasters_hall",
+      "relationship": "inhabits",
+      "desc": "establishes himself at the townmaster's hall after resting at Stonehill Inn"
+    },
+    {
+      "source": "sildar_hallwinter",
       "target": "phandalin",
-      "relationship": "gives_quest_to",
-      "desc": "Halia offers the players 100 gp to eliminate Glasstaff and bring her correspondence from his quarters"
-    },
-    {
-      "source": "players",
-      "target": "tresendar_manor",
-      "relationship": "gives_quest_to",
-      "desc": "Carp offers to take the characters to the secret tunnel or provide directions to Tresendar Manor where bandits have a secret lair"
-    },
-    {
-      "source": "players",
-      "target": "thundertree",
-      "relationship": "gives_quest_to",
-      "desc": "Qelline suggests the players visit Reidoth at Thundertree ruins to get help finding specific sites like Cragmaw Castle or Wave Echo Cave"
-    },
-    {
-      "source": "players",
-      "target": "conyberry",
-      "relationship": "gives_quest_to",
-      "desc": "Sister Garaele offers the quest to the characters to persuade Agatha the banshee in exchange for three potions of healing"
-    },
-    {
-      "source": "phandalin",
-      "target": "players",
-      "relationship": "gives_quest_to",
-      "desc": "Town notice posted at townmaster's hall offers reward for dealing with orcs near Wyvern Tor"
-    },
-    {
-      "source": "players",
-      "target": "wyvern_tor",
-      "relationship": "gives_quest_to",
-      "desc": "Harbin directs the party to Wyvern Tor to deal with the orc band causing trouble"
+      "relationship": "serves",
+      "desc": "as an agent of the Lords' Alliance, his goal is to bring law and order to Phandalin"
     },
     {
       "source": "sildar_hallwinter",
-      "target": "players",
-      "relationship": "commands",
-      "desc": "encourages the characters to keep up the pressure on the Cragmaw goblins"
-    },
-    {
-      "source": "sildar_hallwinter",
-      "target": "the_triboar_trail",
+      "target": "triboar_trail",
       "relationship": "patrols",
       "desc": "suggests the party might find Cragmaw Castle by searching the lands around the Triboar Trail for more raiding parties"
     },
     {
-      "source": "players",
-      "target": "neverwinter",
-      "relationship": "gives_quest_to",
-      "desc": "Sildar wants Iarno captured and transported to Neverwinter to face judgment"
+      "source": "sildar_hallwinter",
+      "target": "wilderness_around_phandalin",
+      "relationship": "patrols",
+      "desc": "suggests searching the wilderness around Phandalin for Cragmaw goblin raiding parties to locate their castle"
     },
     {
-      "source": "players",
-      "target": "cragmaw_castle",
-      "relationship": "attacks",
-      "desc": "party eliminates the goblin threat from Cragmaw Castle"
+      "source": "redbrand_hideout",
+      "target": "tresendar_manor",
+      "relationship": "part_of",
+      "desc": "the cellars of Tresendar Manor have been converted into a Redbrand stronghold"
     },
     {
       "source": "players",
       "target": "tresendar_manor",
       "relationship": "investigates",
-      "desc": "If the characters investigate this place, they find the entrance to the Redbrand hideout"
+      "desc": "if the characters investigate this place, they find the entrance to the Redbrand hideout"
+    },
+    {
+      "source": "players",
+      "target": "sleeping_giant_tap_house",
+      "relationship": "attacks",
+      "desc": "decide to confront the Redbrands at the tap house after speaking with NPCs"
     },
     {
       "source": "players",
       "target": "tresendar_manor",
       "relationship": "attacks",
-      "desc": "The characters may decide to investigate and confront the Redbrands at Tresendar Manor"
+      "desc": "decide to investigate the manor, skipping the encounter"
+    },
+    {
+      "source": "players",
+      "target": "redbrand_hideout",
+      "relationship": "attacks",
+      "desc": "go straight to the hideout after investigating Tresendar Manor"
+    },
+    {
+      "source": "redbrand_ruffian",
+      "target": "sleeping_giant_tap_house",
+      "relationship": "inhabits",
+      "desc": "can be confronted by players at the Sleeping Giant tap house"
+    },
+    {
+      "source": "redbrand_ruffian",
+      "target": "main_street",
+      "relationship": "inhabits",
+      "desc": "can confront players in the street"
     },
     {
       "source": "redbrand_ruffian",
       "target": "players",
       "relationship": "attacks",
-      "desc": "Redbrands attack the players after insults and baiting if the players don't attack first"
+      "desc": "attacks players after insults and baiting if players don't attack first"
     },
     {
       "source": "redbrand_ruffian",
-      "target": "phandalin",
-      "relationship": "inhabits",
-      "desc": "Redbrands are present in Phandalin, specifically at the Sleeping Giant and in the streets"
+      "target": "tresendar_manor",
+      "relationship": "flees_to",
+      "desc": "last remaining ruffian flees toward Tresendar Manor when three are defeated"
     },
     {
       "source": "players",
-      "target": "phandalin",
-      "relationship": "attacks",
-      "desc": "party defeats the Redbrand Ruffians in Phandalin, earning 400 XP divided equally among characters"
+      "target": "sleeping_giant_tap_house",
+      "relationship": "approaches",
+      "desc": "The players approach the Sleeping Giant tap house and are being watched by the ruffians on the porch"
+    },
+    {
+      "source": "players",
+      "target": "main_street",
+      "relationship": "inhabits",
+      "desc": "The players are heading back into the street where they encounter armed ruffians"
+    },
+    {
+      "source": "players",
+      "target": "townmasters_hall",
+      "relationship": "gives_quest_to",
+      "desc": "Townmaster Harbin Wester warns players not to cause trouble after they kill Redbrands, fearing retaliation"
+    },
+    {
+      "source": "cellar",
+      "target": "tresendar_manor",
+      "relationship": "part_of",
+      "desc": "The cellars served as safe storage for the manor before it was ruined"
+    },
+    {
+      "source": "tresendar_crypts",
+      "target": "tresendar_manor",
+      "relationship": "part_of",
+      "desc": "An adjoining crypt provided a resting place for deceased Tresendar family members"
+    },
+    {
+      "source": "slave_pens",
+      "target": "cellar",
+      "relationship": "part_of",
+      "desc": "The Redbrands added slave pens when expanding the cellars"
+    },
+    {
+      "source": "barracks",
+      "target": "cellar",
+      "relationship": "part_of",
+      "desc": "The Redbrands added barracks when expanding the cellars"
+    },
+    {
+      "source": "storeroom_work_area",
+      "target": "cellar",
+      "relationship": "part_of",
+      "desc": "The Redbrands added workshops when expanding the cellars"
+    },
+    {
+      "source": "players",
+      "target": "tresendar_manor",
+      "relationship": "enters",
+      "desc": "If the characters begin their search at Tresendar Manor, they enter the dungeon"
     },
     {
       "source": "thieves'_tools",
-      "target": "tresendar_manor",
+      "target": "redbrand_hideout",
       "relationship": "unlocks",
-      "desc": "can be used to pick the locked door in the hideout under Tresendar Manor"
+      "desc": "can be used to pick the locked door in the hideout with a successful Dexterity check"
+    },
+    {
+      "source": "players",
+      "target": "cellar",
+      "relationship": "inhabits",
+      "desc": "The characters open the door and enter the cellar to explore it"
+    },
+    {
+      "source": "players",
+      "target": "cellar",
+      "relationship": "attacks",
+      "desc": "The characters' noisy searching attracts the attention of the Redbrands in area 2"
     },
     {
       "source": "potion_of_healing",
-      "target": "tresendar_manor",
+      "target": "cellar",
       "relationship": "hidden_at",
-      "desc": "contained in a waterproof satchel hidden in the cistern at Tresendar Manor as part of Iarno's getaway kit"
+      "desc": "contained in a waterproof satchel hidden in the cistern as part of Iarno's getaway kit"
     },
     {
       "source": "potion_of_invisibility",
-      "target": "tresendar_manor",
+      "target": "cellar",
       "relationship": "hidden_at",
-      "desc": "contained in a waterproof satchel hidden in the cistern at Tresendar Manor as part of Iarno's getaway kit"
+      "desc": "contained in a waterproof satchel hidden in the cistern as part of Iarno's getaway kit"
     },
     {
       "source": "redbrand_ruffian",
-      "target": "south_barracks",
+      "target": "barracks",
       "relationship": "inhabits",
-      "desc": "Three Redbrand ruffians are resting in this room"
+      "desc": "Three Redbrand ruffians are resting in this barracks room"
+    },
+    {
+      "source": "players",
+      "target": "barracks",
+      "relationship": "inhabits",
+      "desc": "The players are present in the barracks where the Redbrands' belongings are found"
+    },
+    {
+      "source": "players",
+      "target": "trapped_hall",
+      "relationship": "inhabits",
+      "desc": "Characters can search the hall for traps and attempt to navigate around the pit trap"
     },
     {
       "source": "skeleton",
-      "target": "tresendar_manor",
+      "target": "tresendar_crypts",
       "relationship": "inhabits",
-      "desc": "three skeletons are animated and present in the mausoleum of Tresendar Manor"
+      "desc": "Three skeletons are animated and present in the Tresendar crypts"
     },
     {
       "source": "skeleton",
       "target": "players",
       "relationship": "attacks",
-      "desc": "skeletons attack any creature that comes within 10 feet of the doors unless wearing a Redbrand cloak or speaking the password 'Illefarn'"
+      "desc": "The skeletons attack any creature that comes within 10 feet of the doors, unless wearing a Redbrand cloak or speaking the password 'Illefarn'"
     },
     {
       "source": "skeleton",
-      "target": "tresendar_manor",
+      "target": "tresendar_crypts",
       "relationship": "guards",
-      "desc": "skeletons guard the doors leading to areas 5 and 6 in the mausoleum"
+      "desc": "The skeletons guard the doors leading to areas 5 and 6 within the crypts"
+    },
+    {
+      "source": "players",
+      "target": "tresendar_crypts",
+      "relationship": "attacks",
+      "desc": "Fighting in this room alerts the Redbrands in 5 that trouble is on the way"
     },
     {
       "source": "redbrand_ruffian",
-      "target": "tresendar_manor",
+      "target": "slave_pens",
       "relationship": "guards",
-      "desc": "Two Redbrand ruffians stand guard in the manor, taunting prisoners and preparing to surprise intruders"
+      "desc": "Two Redbrand ruffians stand guard in the slave pens, taunting prisoners and preparing to ambush intruders"
     },
     {
       "source": "thieves'_tools",
-      "target": "players",
-      "relationship": "unlocks",
-      "desc": "can be used by players to pick the simple locks on cell doors with a successful DC 10 Dexterity check"
+      "target": "slave_pens",
+      "relationship": "locks",
+      "desc": "The cell doors in the slave pens feature simple locks that require thieves' tools and a successful Dexterity check to pick"
     },
     {
       "source": "players",
-      "target": "north_barracks",
+      "target": "slave_pens",
+      "relationship": "gives_quest_to",
+      "desc": "The Dendrar family is grateful to the characters for rescuing them from the slave pens"
+    },
+    {
+      "source": "players",
+      "target": "armory",
+      "relationship": "hidden_at",
+      "desc": "The secret door from the armory leads to location 7, which players can discover"
+    },
+    {
+      "source": "players",
+      "target": "armory",
       "relationship": "inhabits",
-      "desc": "The players are exploring the north barracks area of the cavern"
+      "desc": "The players are present in the armory chamber"
+    },
+    {
+      "source": "players",
+      "target": "storeroom_work_area",
+      "relationship": "inhabits",
+      "desc": "Players are exploring the storeroom work area where they find various goods"
     },
     {
       "source": "nothic",
-      "target": "tresendar_manor",
+      "target": "crevasse_cavern",
       "relationship": "inhabits",
-      "desc": "lurks near the west ends of the two bridges in the cave beneath Tresendar Manor"
+      "desc": "The nothic lurks near the west ends of the two bridges in the crevasse cavern, having been lured there by a faint magical effect emanating from the crevasse"
     },
     {
       "source": "nothic",
-      "target": "tresendar_manor",
+      "target": "crevasse_cavern",
       "relationship": "guards",
-      "desc": "serves as guardian of the cave, watching for intruders and hiding behind stone columns"
+      "desc": "The nothic serves as guardian of the cave, watching for intruders and hiding behind stone columns to observe them"
     },
     {
       "source": "nothic",
       "target": "players",
       "relationship": "attacks",
-      "desc": "uses its Weird Insight ability to discern characters' secrets when it notices intruders"
+      "desc": "The nothic attempts to use its Weird Insight to discern the characters' secrets when it notices intruders entering the cave"
+    },
+    {
+      "source": "players",
+      "target": "crevasse_cavern",
+      "relationship": "inhabits",
+      "desc": "Players are exploring the crevasse cavern where the bridges are located"
+    },
+    {
+      "source": "players",
+      "target": "crevasse_cavern",
+      "relationship": "hidden_at",
+      "desc": "The chest containing the hoard is hidden in a cubbyhole at the bottom of the crevasse, under the north bridge, and can be found by characters who descend into the fissure."
     },
     {
       "source": "bugbear",
-      "target": "south_barracks",
+      "target": "guard_barracks",
       "relationship": "inhabits",
-      "desc": "three bugbears are present in the south barracks, bullying their goblin slave"
+      "desc": "three bugbears are present in the guard barracks"
     },
     {
       "source": "goblin",
-      "target": "south_barracks",
+      "target": "guard_barracks",
       "relationship": "inhabits",
-      "desc": "one goblin named Droop is present in the south barracks, falls unconscious at the sight of the party"
+      "desc": "one goblin named Droop is present in the guard barracks"
     },
     {
-      "source": "players",
-      "target": "bugbear",
+      "source": "bugbear",
+      "target": "players",
       "relationship": "attacks",
-      "desc": "if the players are not wearing scarlet cloaks or fail deception, the bugbears will attack the party"
+      "desc": "bugbears will attack characters unless they are wearing scarlet cloaks or successfully deceive them"
     },
     {
       "source": "players",
       "target": "bugbear",
       "relationship": "commands",
-      "desc": "if players wear scarlet cloaks and succeed on a 15 Charisma (Deception) check, they can persuade bugbears to help deal with 'traitors' or 'impostors'"
+      "desc": "players can persuade bugbears to help deal with 'traitors' or 'impostors' with a successful Charisma (Deception) check"
     },
     {
       "source": "players",
-      "target": "south_barracks",
+      "target": "guard_barracks",
       "relationship": "inhabits",
-      "desc": "The players have suddenly appeared in the south barracks, causing the goblin to faint"
+      "desc": "The players have suddenly appeared in the guard barracks, causing the goblin to faint"
     },
     {
       "source": "players",
-      "target": "south_barracks",
+      "target": "guard_barracks",
       "relationship": "attacks",
-      "desc": "The party is fighting bugbears in the south barracks and will receive 600 XP if they defeat them"
+      "desc": "The party is fighting bugbears in the guard barracks"
     },
     {
       "source": "redbrand_ruffian",
-      "target": "tresendar_manor",
+      "target": "common_room",
       "relationship": "inhabits",
-      "desc": "Four Redbrand ruffians are drinking and playing knucklebones in this headquarters and meeting room"
+      "desc": "Four Redbrand ruffians are drinking and playing knucklebones in the common room, which serves as their headquarters and meeting room"
     },
     {
       "source": "redbrand_ruffian",
       "target": "redbrand_ruffian",
       "relationship": "rival_of",
-      "desc": "The knucklebones game is close to turning acrimonious, with loaded dice and heavy drinking creating tension"
+      "desc": "The knucklebones game is close to turning acrimonious as most of their games do, with one ruffian using loaded dice to win"
     },
     {
       "source": "players",
       "target": "redbrand_ruffian",
       "relationship": "attacks",
-      "desc": "If characters burst into the room, they automatically surprise the Redbrand ruffians"
+      "desc": "If characters burst into the room, they automatically surprise the Redbrand ruffians and can attack them"
+    },
+    {
+      "source": "players",
+      "target": "common_room",
+      "relationship": "inhabits",
+      "desc": "The players are present in the common room observing the scene"
+    },
+    {
+      "source": "players",
+      "target": "common_room",
+      "relationship": "attacks",
+      "desc": "The party can defeat the Redbrands in this room to earn 400 XP divided equally among characters"
     },
     {
       "source": "lightbringer",
-      "target": "wizards_quarters",
+      "target": "wizards_workshop",
       "relationship": "hidden_at",
-      "desc": "mentioned in Urmon's journal as being lost when Wave Echo Cave vanished, with information about it found in the wizards_quarters"
+      "desc": "mentioned in Urmon's journal as being lost in Wave Echo Cave, which is described in the workshop's tome"
+    },
+    {
+      "source": "players",
+      "target": "wizards_workshop",
+      "relationship": "inhabits",
+      "desc": "The players are present in the wizard's workshop, observing the room"
     },
     {
       "source": "potion_of_invisibility",
-      "target": "wizards_quarters",
+      "target": "wizards_workshop",
       "relationship": "stored_in",
-      "desc": "Iarno's apparatus is set up to brew this potion in his quarters, though he hasn't succeeded yet"
+      "desc": "Iarno's apparatus is set up to brew this potion in his workshop, though he hasn't succeeded yet"
     },
     {
       "source": "evil_mage",
       "target": "staff_of_defense",
       "relationship": "stored_in",
-      "desc": "grabs his staff of defense from his chest when warned of approaching trouble"
+      "desc": "Iarno grabs his staff of defense from his quarters when warned of approaching trouble"
+    },
+    {
+      "source": "evil_mage",
+      "target": "glasstaffs_quarters",
+      "relationship": "inhabits",
+      "desc": "Iarno 'Glasstaff' Albrek is the leader of the Redbrands and resides in these quarters"
+    },
+    {
+      "source": "evil_mage",
+      "target": "players",
+      "relationship": "attacks",
+      "desc": "Iarno can be surprised and fought by the players if they approach through the secret passage"
     },
     {
       "source": "evil_mage",
       "target": "potion_of_invisibility",
       "relationship": "stored_in",
-      "desc": "quaffs the potion of invisibility from his satchel when pursued by characters"
+      "desc": "Iarno quaffs the potion of invisibility from his satchel when fleeing from pursuing characters"
     },
     {
       "source": "staff_of_defense",
-      "target": "players",
+      "target": "glasstaffs_quarters",
+      "relationship": "stored_in",
+      "desc": "Iarno uses his staff of defense in his quarters for protection and spellcasting"
+    },
+    {
+      "source": "players",
+      "target": "glasstaffs_quarters",
       "relationship": "attacks",
-      "desc": "Iarno uses his staff of defense to cast offensive spells at the players when threatened"
+      "desc": "Players confront Iarno in his quarters, leading to combat where he uses his staff of defense"
+    },
+    {
+      "source": "players",
+      "target": "glasstaffs_quarters",
+      "relationship": "inhabits",
+      "desc": "The characters search Iarno's quarters and find various papers and a letter"
+    },
+    {
+      "source": "sildar_hallwinter",
+      "target": "townmasters_hall",
+      "relationship": "commands",
+      "desc": "Arranges to have Iarno incarcerated in the townmaster's hall until transport to Neverwinter"
+    },
+    {
+      "source": "sildar_hallwinter",
+      "target": "neverwinter",
+      "relationship": "serves",
+      "desc": "Arranges for Iarno to be transported back to Neverwinter for potential trial"
     },
     {
       "source": "players",
@@ -1124,32 +1740,14 @@
     {
       "source": "players",
       "target": "phandalin",
-      "relationship": "capture_target",
-      "desc": "Lord Albrek instructs Iarno to capture the strangers if possible"
+      "relationship": "attacks",
+      "desc": "Lord Albrek instructs Iarno to capture or kill the strangers if they upset their plans"
     },
     {
       "source": "players",
-      "target": "phandalin",
-      "relationship": "kill_target",
-      "desc": "Lord Albrek instructs Iarno to kill the strangers if necessary"
-    },
-    {
-      "source": "players",
-      "target": "phandalin",
-      "relationship": "possesses",
-      "desc": "the strangers may have dwarven maps in their possession"
-    },
-    {
-      "source": "staff_of_defense",
-      "target": "tresendar_manor",
-      "relationship": "stored_in",
-      "desc": "Iarno wields the staff of defense in Tresendar Manor"
-    },
-    {
-      "source": "players",
-      "target": "sildar_hallwinter",
-      "relationship": "gives_quest_to",
-      "desc": "Sildar Hallwinter offers double XP reward if players capture Iarno Albrek and deliver him to Sildar in Phandalin"
+      "target": "neverwinter",
+      "relationship": "observed_by",
+      "desc": "Lord Albrek has spies in Neverwinter who are monitoring the players' movements"
     },
     {
       "source": "gundren_rockseeker",
@@ -1159,99 +1757,159 @@
     },
     {
       "source": "stirge",
-      "target": "the_triboar_trail",
+      "target": "triboar_trail",
       "relationship": "inhabits",
-      "desc": "can be encountered on the Triboar Trail during day or night encounters"
+      "desc": "can be encountered along the Triboar Trail during day or night"
+    },
+    {
+      "source": "stirge",
+      "target": "wilderness_around_phandalin",
+      "relationship": "inhabits",
+      "desc": "can be encountered in the wilderness around Phandalin during day or night"
     },
     {
       "source": "ogre",
-      "target": "the_triboar_trail",
+      "target": "triboar_trail",
       "relationship": "inhabits",
-      "desc": "can be encountered on the Triboar Trail during day encounters"
+      "desc": "can be encountered along the Triboar Trail during the day"
+    },
+    {
+      "source": "ogre",
+      "target": "wilderness_around_phandalin",
+      "relationship": "inhabits",
+      "desc": "can be encountered in the wilderness around Phandalin during the day"
     },
     {
       "source": "goblin",
-      "target": "the_triboar_trail",
+      "target": "triboar_trail",
       "relationship": "inhabits",
-      "desc": "can be encountered on the Triboar Trail during day or night encounters"
+      "desc": "can be encountered along the Triboar Trail during day or night"
+    },
+    {
+      "source": "goblin",
+      "target": "wilderness_around_phandalin",
+      "relationship": "inhabits",
+      "desc": "can be encountered in the wilderness around Phandalin during day or night"
     },
     {
       "source": "hobgoblin",
-      "target": "the_triboar_trail",
+      "target": "triboar_trail",
       "relationship": "inhabits",
-      "desc": "can be encountered on the Triboar Trail during day or night encounters"
+      "desc": "can be encountered along the Triboar Trail during day or night"
+    },
+    {
+      "source": "hobgoblin",
+      "target": "wilderness_around_phandalin",
+      "relationship": "inhabits",
+      "desc": "can be encountered in the wilderness around Phandalin during day or night"
     },
     {
       "source": "orc",
-      "target": "the_triboar_trail",
+      "target": "triboar_trail",
       "relationship": "inhabits",
-      "desc": "can be encountered on the Triboar Trail during day or night encounters"
+      "desc": "can be encountered along the Triboar Trail during day or night"
+    },
+    {
+      "source": "orc",
+      "target": "wilderness_around_phandalin",
+      "relationship": "inhabits",
+      "desc": "can be encountered in the wilderness around Phandalin during day or night"
     },
     {
       "source": "wolf",
-      "target": "the_triboar_trail",
+      "target": "triboar_trail",
       "relationship": "inhabits",
-      "desc": "can be encountered on the Triboar Trail during day or night encounters"
+      "desc": "can be encountered along the Triboar Trail during day or night"
+    },
+    {
+      "source": "wolf",
+      "target": "wilderness_around_phandalin",
+      "relationship": "inhabits",
+      "desc": "can be encountered in the wilderness around Phandalin during day or night"
     },
     {
       "source": "owlbear",
-      "target": "the_triboar_trail",
+      "target": "triboar_trail",
       "relationship": "inhabits",
-      "desc": "can be encountered on the Triboar Trail during day or night encounters"
+      "desc": "can be encountered along the Triboar Trail during day or night"
+    },
+    {
+      "source": "owlbear",
+      "target": "wilderness_around_phandalin",
+      "relationship": "inhabits",
+      "desc": "can be encountered in the wilderness around Phandalin during day or night"
     },
     {
       "source": "ghoul",
-      "target": "the_triboar_trail",
+      "target": "triboar_trail",
       "relationship": "inhabits",
-      "desc": "can be encountered on the Triboar Trail during night encounters"
+      "desc": "can be encountered along the Triboar Trail during the night"
+    },
+    {
+      "source": "ghoul",
+      "target": "wilderness_around_phandalin",
+      "relationship": "inhabits",
+      "desc": "can be encountered in the wilderness around Phandalin during the night"
     },
     {
       "source": "players",
-      "target": "the_triboar_trail",
-      "relationship": "patrols",
-      "desc": "travel along the Triboar Trail, potentially encountering dangerous creatures"
+      "target": "sword_coast_wilderness",
+      "relationship": "inhabits",
+      "desc": "The adventurers are traveling through the Sword Coast wilderness"
     },
     {
       "source": "players",
-      "target": "wyvern_tor",
-      "relationship": "attacks",
-      "desc": "The band of scouts based at Wyvern Tor ambushes travelers and burns homesteads as they roam"
+      "target": "owlbear_tower",
+      "relationship": "inhabits",
+      "desc": "The players are present at Owlbear Tower where they are being pursued"
     },
     {
       "source": "players",
-      "target": "conyberry",
+      "target": "agathas_lair",
       "relationship": "enters",
-      "desc": "The characters enter the ruins of Conyberry to locate Agatha's lair"
+      "desc": "The characters enter Agatha's lair to speak with the banshee"
     },
     {
       "source": "players",
-      "target": "conyberry",
+      "target": "agathas_lair",
       "relationship": "speaks_with",
-      "desc": "If the characters exercise caution, they will be able to speak with the banshee Agatha"
+      "desc": "If the characters exercise caution and remember what they've come for, they will be able to speak with the banshee"
     },
     {
       "source": "players",
-      "target": "conyberry",
+      "target": "agathas_lair",
+      "relationship": "provokes",
+      "desc": "If the characters are rude, disrespectful, or threatening, Agatha scowls and disappears"
+    },
+    {
+      "source": "players",
+      "target": "agathas_lair",
+      "relationship": "approaches",
+      "desc": "The players follow the trail and discover the dome-like shelter with a low doorway leading inside"
+    },
+    {
+      "source": "players",
+      "target": "agathas_lair",
       "relationship": "inhabits",
-      "desc": "The players are present in Conyberry when the spectral elf appears"
+      "desc": "The players are present in Agatha's Lair, experiencing the cold air and feeling of dread"
     },
     {
       "source": "evil_mage",
       "target": "zombie",
       "relationship": "commands",
-      "desc": "Kost controls the zombies as guardians and can call them off during combat"
+      "desc": "Hamun Kost controls the zombies as undead guardians and can call them off during combat"
     },
     {
       "source": "zombie",
       "target": "old_owl_well",
       "relationship": "guards",
-      "desc": "twelve zombies lurk inside the crumbled watchtower to keep intruders out"
+      "desc": "Twelve zombies lurk inside the crumbled watchtower and shamble out to guard the site when characters approach"
     },
     {
       "source": "evil_mage",
       "target": "old_owl_well",
       "relationship": "inhabits",
-      "desc": "Hamun Kost has set up a campsite at the ruins and is exploring the site for arcane lore"
+      "desc": "Hamun Kost has set up a campsite at Old Owl Well and is exploring the ruins for arcane lore"
     },
     {
       "source": "evil_mage",
@@ -1260,184 +1918,346 @@
       "desc": "Kost offers to provide information if players remove orcs at Wyvern Tor or ask Agatha the banshee about the tower's builder"
     },
     {
-      "source": "potion_of_healing",
+      "source": "players",
       "target": "old_owl_well",
+      "relationship": "inhabits",
+      "desc": "The players have arrived at the ruins of Old Owl Well and are exploring the location"
+    },
+    {
+      "source": "potion_of_healing",
+      "target": "hamun_kosts_tent",
       "relationship": "stored_in",
-      "desc": "found in a leather bag inside a chest in Hamun Kost's tent at Old Owl Well"
+      "desc": "found in a leather bag inside a chest in Hamun Kost's tent"
     },
     {
       "source": "spell_scroll_(2nd_level)",
-      "target": "old_owl_well",
+      "target": "hamun_kosts_tent",
       "relationship": "stored_in",
-      "desc": "found in a bone tube inside a leather bag in a chest in Hamun Kost's tent at Old Owl Well"
+      "desc": "found in a bone tube inside a leather bag in a chest in Hamun Kost's tent"
     },
     {
       "source": "ring_of_protection",
-      "target": "old_owl_well",
+      "target": "hamun_kosts_tent",
       "relationship": "stored_in",
-      "desc": "found in a tiny jeweled box inside a leather bag in a chest in Hamun Kost's tent at Old Owl Well"
+      "desc": "found in a tiny jeweled box inside a leather bag in a chest in Hamun Kost's tent"
     },
     {
-      "source": "players",
-      "target": "thundertree",
-      "relationship": "approaches",
-      "desc": "The party approaches the ruins of Thundertree as described in the narrative"
+      "source": "daran_edermath",
+      "target": "players",
+      "relationship": "gives_quest_to",
+      "desc": "gave the party a quest to investigate the Red Wizard's presence at Old Owl Well"
     },
     {
-      "source": "players",
-      "target": "thundertree",
+      "source": "hamun_kost",
+      "target": "old_owl_well",
       "relationship": "inhabits",
-      "desc": "The players are exploring the abandoned settlement of Thundertree, encountering dilapidated buildings and ominous warnings"
+      "desc": "is present at Old Owl Well as the Red Wizard"
+    },
+    {
+      "source": "hamun_kost",
+      "target": "zombies",
+      "relationship": "commands",
+      "desc": "controls zombies that serve him"
+    },
+    {
+      "source": "players",
+      "target": "hamun_kost",
+      "relationship": "attacks",
+      "desc": "can defeat Hamun Kost and his zombies for 800 XP"
+    },
+    {
+      "source": "players",
+      "target": "hamun_kost",
+      "relationship": "allied_with",
+      "desc": "can parley with Hamun Kost for 200 XP"
+    },
+    {
+      "source": "players",
+      "target": "daran_edermath",
+      "relationship": "serves",
+      "desc": "reports back to Daran Edermath in Phandalin to complete the quest"
+    },
+    {
+      "source": "players",
+      "target": "ruins_of_thundertree",
+      "relationship": "inhabits",
+      "desc": "The players are exploring the ruins, following the trail that becomes an old lane winding between dilapidated buildings"
     },
     {
       "source": "twig_blight",
-      "target": "thundertree",
-      "relationship": "inhabits",
-      "desc": "two twig blights hide among the weeds flanking the cottage's open doorway"
+      "target": "westernmost_cottage",
+      "relationship": "hidden_at",
+      "desc": "Two twig blights hide among the weeds flanking the cottage's open doorway"
     },
     {
       "source": "twig_blight",
       "target": "players",
       "relationship": "attacks",
-      "desc": "the blights will attack in self-defense or come to the aid of other twig blights if combat erupts"
+      "desc": "The blights will attack in self-defense or come to aid other twig blights if combat erupts"
+    },
+    {
+      "source": "players",
+      "target": "westernmost_cottage",
+      "relationship": "inhabits",
+      "desc": "The party is present at the westernmost cottage where they can destroy twig blights"
+    },
+    {
+      "source": "twig_blight",
+      "target": "blighted_cottages",
+      "relationship": "inhabits",
+      "desc": "six twig blights are lurking among the ordinary foliage in the overgrown cottages"
     },
     {
       "source": "twig_blight",
       "target": "twig_blight",
       "relationship": "allied_with",
-      "desc": "additional twig blights join the fray one round after the initial attack"
+      "desc": "one round after the initial attack, additional twig blights join the fray"
+    },
+    {
+      "source": "players",
+      "target": "blighted_cottages",
+      "relationship": "inhabits",
+      "desc": "Players are searching the interior of the eastern cottage at this location"
+    },
+    {
+      "source": "players",
+      "target": "blighted_cottages",
+      "relationship": "attacks",
+      "desc": "party destroys twig blights at the blighted cottages"
+    },
+    {
+      "source": "ash_zombie",
+      "target": "brown_horse",
+      "relationship": "inhabits",
+      "desc": "Four ash zombies lurk in the shadows of the former tavern, slumped against walls or under the bar"
     },
     {
       "source": "ash_zombie",
       "target": "players",
       "relationship": "attacks",
-      "desc": "pursues any characters they see, attacking until destroyed when living creatures enter the building"
+      "desc": "When living creatures enter, the zombies groan and stir, then pursue any characters they see, attacking until destroyed"
     },
     {
-      "source": "ash_zombie",
-      "target": "players",
-      "relationship": "guards",
-      "desc": "lurks in the shadows of the building, groaning and stirring when living creatures enter"
+      "source": "players",
+      "target": "brown_horse",
+      "relationship": "inhabits",
+      "desc": "The party is at the brown horse location where they can destroy ash zombies"
+    },
+    {
+      "source": "players",
+      "target": "reidoths_cottage",
+      "relationship": "gives_quest_to",
+      "desc": "Reidoth offers to guide the party to Wave Echo Cave in exchange for chasing off the dragon in area 7"
+    },
+    {
+      "source": "players",
+      "target": "reidoths_cottage",
+      "relationship": "attacks",
+      "desc": "If the characters attack Reidoth, he transforms into a squirrel and escapes through a crack in the wall"
     },
     {
       "source": "players",
       "target": "venomfang",
       "relationship": "attacks",
-      "desc": "The party helps Reidoth by chasing off Venomfang from Thundertree"
+      "desc": "chases off Venomfang from the location"
+    },
+    {
+      "source": "players",
+      "target": "reidoths_cottage",
+      "relationship": "inhabits",
+      "desc": "visits Reidoth's cottage to interact with the druid"
+    },
+    {
+      "source": "twig_blight",
+      "target": "blighted_farmhouse",
+      "relationship": "inhabits",
+      "desc": "crawling in the thicket east of the ruined farmhouse"
+    },
+    {
+      "source": "players",
+      "target": "blighted_farmhouse",
+      "relationship": "attacks",
+      "desc": "party destroys the twig blights at the blighted farmhouse"
     },
     {
       "source": "giant_spider",
-      "target": "ruined_storeroom",
+      "target": "ruined_store",
       "relationship": "inhabits",
-      "desc": "Two giant spiders hide on the inner walls of the ruined storeroom"
+      "desc": "two giant spiders hide on the inner walls of the ruined store"
     },
     {
       "source": "giant_spider",
       "target": "players",
       "relationship": "attacks",
-      "desc": "Spiders sense prey moving through webs and attack, surprising characters with passive Perception less than 17"
+      "desc": "spiders attack characters who trigger their webs, surprising those with passive Perception less than 17"
+    },
+    {
+      "source": "giant_spider",
+      "target": "ruined_store",
+      "relationship": "guards",
+      "desc": "spiders use trailing web lines to sense prey moving through webs in the lane"
     },
     {
       "source": "players",
-      "target": "ruined_storeroom",
+      "target": "ruined_store",
       "relationship": "inhabits",
-      "desc": "Players are exploring the ruined storeroom where webs fill two squares north of the doorway and square 6, creating difficult terrain and potential restraint hazards"
+      "desc": "Players are exploring the ruined store where webs fill two squares north of the doorway and square marked '6'"
     },
     {
       "source": "studded_leather_armor",
-      "target": "ruined_storeroom",
+      "target": "ruined_store",
       "relationship": "stored_in",
-      "desc": "worn by the shriveled elf corpse cocooned in spider silk in the western half of the building"
+      "desc": "worn by the shriveled elf corpse in the western half of the building"
     },
     {
       "source": "potion_of_healing",
-      "target": "ruined_storeroom",
+      "target": "ruined_store",
       "relationship": "hidden_at",
-      "desc": "found in a belt pouch on the shriveled elf corpse during a careful search"
+      "desc": "found in a belt pouch on the shriveled elf corpse in the western half"
+    },
+    {
+      "source": "venomfang",
+      "target": "dragons_tower",
+      "relationship": "inhabits",
+      "desc": "has recently claimed the tower as its lair after searching Neverwinter Wood"
     },
     {
       "source": "venomfang",
       "target": "young_green_dragon",
-      "relationship": "allied_with",
-      "desc": "Venomfang is the name of the young green dragon mentioned in the text"
+      "relationship": "is",
+      "desc": "Venomfang is a young green dragon"
     },
     {
       "source": "venomfang",
-      "target": "thundertree",
-      "relationship": "inhabits",
-      "desc": "Venomfang has claimed the tower in Thundertree as its lair"
+      "target": "dragons_tower",
+      "relationship": "attacks",
+      "desc": "tore its way through the roof to kill the giant spider residents"
     },
     {
       "source": "venomfang",
-      "target": "thundertree",
+      "target": "dragons_tower",
       "relationship": "guards",
-      "desc": "Venomfang is laying low in the tower and does not want to give up the lair"
-    },
-    {
-      "source": "spell_scroll_(2nd_level)",
-      "target": "venomfang",
-      "relationship": "stored_in",
-      "desc": "part of the treasure in Venomfang's hoard that the dragon admires"
-    },
-    {
-      "source": "spell_scroll_(3rd_level)",
-      "target": "venomfang",
-      "relationship": "stored_in",
-      "desc": "part of the treasure in Venomfang's hoard that the dragon admires"
-    },
-    {
-      "source": "venomfang",
-      "target": "spell_scroll_(2nd_level)",
-      "relationship": "guards",
-      "desc": "spends time greedily admiring the loot including this scroll"
-    },
-    {
-      "source": "venomfang",
-      "target": "spell_scroll_(3rd_level)",
-      "relationship": "guards",
-      "desc": "spends time greedily admiring the loot including this scroll"
-    },
-    {
-      "source": "ash_zombie",
-      "target": "thundertree",
-      "relationship": "inhabits",
-      "desc": "Five ash zombies lurk within the barracks building in Thundertree"
+      "desc": "does not want to give up such a promising lair"
     },
     {
       "source": "players",
-      "target": "old_guardroom",
+      "target": "dragons_tower",
+      "relationship": "observes",
+      "desc": "Players notice the eerie quiet and strange acrid smell at the location"
+    },
+    {
+      "source": "spell_scroll_(2nd_level)",
+      "target": "dragons_tower",
+      "relationship": "stored_in",
+      "desc": "found in a broken wooden chest on the tower floor containing the dead wizard's treasure"
+    },
+    {
+      "source": "spell_scroll_(3rd_level)",
+      "target": "dragons_tower",
+      "relationship": "stored_in",
+      "desc": "found in a broken wooden chest on the tower floor containing the dead wizard's treasure"
+    },
+    {
+      "source": "ash_zombie",
+      "target": "old_smithy",
       "relationship": "inhabits",
-      "desc": "The party is present in the old guardroom where they can destroy ash zombies"
+      "desc": "two ash zombies are slumped on the floor of the abandoned smithy"
+    },
+    {
+      "source": "players",
+      "target": "old_smithy",
+      "relationship": "inhabits",
+      "desc": "The party is at the old smithy location where they can destroy ash zombies"
+    },
+    {
+      "source": "players",
+      "target": "herbalists_shop",
+      "relationship": "hidden_at",
+      "desc": "can find a small wooden case hidden in a compartment beneath the storage shelves with a successful Wisdom (Perception) check"
+    },
+    {
+      "source": "players",
+      "target": "herbalists_shop",
+      "relationship": "inhabits",
+      "desc": "The party is at the herbalist's shop where they can return the necklace to Mirna"
+    },
+    {
+      "source": "ash_zombie",
+      "target": "old_garrison",
+      "relationship": "inhabits",
+      "desc": "Five ash zombies lurk within the old garrison building, former members of the garrison who still wear remnants of rusted mail and soldiers' surcoats"
+    },
+    {
+      "source": "players",
+      "target": "old_garrison",
+      "relationship": "inhabits",
+      "desc": "The party is present at the old garrison location"
+    },
+    {
+      "source": "twig_blight",
+      "target": "weavers_cottage",
+      "relationship": "inhabits",
+      "desc": "six twig blights lurk in the thicket south of the ruined cottage"
+    },
+    {
+      "source": "players",
+      "target": "weavers_cottage",
+      "relationship": "inhabits",
+      "desc": "The party is at the weaver's cottage where they can destroy twig blights"
     },
     {
       "source": "cultist",
-      "target": "thundertree",
+      "target": "ruins_of_thundertree",
       "relationship": "inhabits",
-      "desc": "Six human cultists are hiding in a cottage at Thundertree, with four standing guard and two resting"
+      "desc": "Six cultists are hiding in a cottage in Thundertree, with four standing guard and two resting"
     },
     {
       "source": "cultist",
       "target": "cultist",
       "relationship": "commands",
-      "desc": "Four cultists stand guard (two in each room) while the other two rest in the larger chamber"
+      "desc": "Four cultists stand guard while two others rest, indicating a command structure"
     },
     {
       "source": "cultist",
-      "target": "thundertree",
+      "target": "ruins_of_thundertree",
       "relationship": "guards",
-      "desc": "Four cultists stand guard inside the cottage, with doors and shutters barred from inside"
+      "desc": "Four cultists stand guard in the cottage, two in each room"
+    },
+    {
+      "source": "players",
+      "target": "cultist_farmhouse",
+      "relationship": "inhabits",
+      "desc": "The characters are at the cultist farmhouse location"
+    },
+    {
+      "source": "orc_camp",
+      "target": "wyvern_tor",
+      "relationship": "inhabits",
+      "desc": "The orc camp is located at Wyvern Tor, where the orcs and their ogre ally currently lair"
+    },
+    {
+      "source": "players",
+      "target": "wyvern_tor",
+      "relationship": "attacks",
+      "desc": "A band of bold adventurers dealt with the wyverns that formerly inhabited Wyvern Tor years ago"
     },
     {
       "source": "orc",
-      "target": "wyvern_tor",
+      "target": "orc_camp",
+      "relationship": "guards",
+      "desc": "lone orc sentry guards the camp entrance"
+    },
+    {
+      "source": "orc",
+      "target": "orc_camp",
       "relationship": "inhabits",
-      "desc": "orc sentry guards the hidden camp at Wyvern Tor"
+      "desc": "six ordinary orcs inhabit the cave in the camp"
     },
     {
       "source": "ogre",
-      "target": "wyvern_tor",
+      "target": "orc_camp",
       "relationship": "inhabits",
-      "desc": "Gog the ogre lives in the cave at Wyvern Tor"
+      "desc": "filthy ogre named Gog inhabits the cave in the camp"
     },
     {
       "source": "orc",
@@ -1446,74 +2266,92 @@
       "desc": "Brughor Axe-Biter (orc with 30 hit points) commands the other orcs"
     },
     {
-      "source": "orc",
-      "target": "ogre",
+      "source": "ogre",
+      "target": "orc",
       "relationship": "allied_with",
-      "desc": "orc marauders are allied with Gog the ogre in the cave"
-    },
-    {
-      "source": "orc",
-      "target": "wyvern_tor",
-      "relationship": "guards",
-      "desc": "lone orc sentry guards the camp entrance at Wyvern Tor"
+      "desc": "Gog the ogre fights alongside the orcs in the cave"
     },
     {
       "source": "players",
       "target": "orc",
       "relationship": "attacks",
-      "desc": "characters fight Brughor Axe-Biter and the orc marauders"
+      "desc": "characters can attack the lone orc sentry to prevent warning others"
     },
     {
       "source": "players",
-      "target": "ogre",
+      "target": "orc_camp",
       "relationship": "attacks",
-      "desc": "characters fight Gog the ogre who fights until slain"
+      "desc": "party attacks the orc camp at Wyvern Tor"
     },
     {
       "source": "players",
-      "target": "cave_entrance",
+      "target": "orc_camp",
       "relationship": "observes",
-      "desc": "Players ascend a rugged ridge and observe the cave entrance from fifty yards away"
+      "desc": "The players ascend a rugged ridge and observe the orc camp from fifty yards away, noticing the cave mouth and the single orc keeping watch"
     },
     {
       "source": "players",
-      "target": "wyvern_tor",
+      "target": "brughors_cave",
       "relationship": "inhabits",
-      "desc": "Players are at Wyvern Tor where they can find treasure in the cave"
+      "desc": "Players are exploring Brughor's cave where they can find treasure"
+    },
+    {
+      "source": "players",
+      "target": "cragmaw_castle",
+      "relationship": "attacks",
+      "desc": "characters might storm Cragmaw Castle with weapons in hand"
     },
     {
       "source": "players",
       "target": "cragmaw_castle",
       "relationship": "inhabits",
-      "desc": "characters might try to talk their way inside the castle"
+      "desc": "characters might try to talk their way inside Cragmaw Castle"
+    },
+    {
+      "source": "players",
+      "target": "trapped_hall",
+      "relationship": "attacks",
+      "desc": "adventurers are attacked by goblins and hobgoblins from both directions trying to drive them out of the castle"
     },
     {
       "source": "goblin",
-      "target": "cragmaw_castle",
+      "target": "archer_post",
+      "relationship": "inhabits",
+      "desc": "Two goblins occupy each of the two rooms at the archer post"
+    },
+    {
+      "source": "goblin",
+      "target": "archer_post",
       "relationship": "guards",
-      "desc": "posted as sentries by King Grol to drive off intruders who get too close to the castle"
+      "desc": "Goblins serve as sentries to drive off intruders who get too close to Cragmaw Castle"
     },
     {
       "source": "goblin",
-      "target": "north_barracks",
+      "target": "ruined_barracks",
       "relationship": "inhabits",
-      "desc": "Three goblins bunk in the north barracks, making use of every bit of available space"
+      "desc": "Three goblins bunk here in the ruined barracks, making use of every bit of available space"
     },
     {
-      "source": "goblin",
-      "target": "the_collapsed_barracks",
+      "source": "players",
+      "target": "ruined_barracks",
       "relationship": "inhabits",
-      "desc": "Goblins inhabit the collapsed barracks, though the rubble appears dangerous, the tower is stable"
+      "desc": "The party is present at the ruined barracks location where they can defeat goblins"
     },
     {
-      "source": "cragmaw_castle",
-      "target": "players",
-      "relationship": "stored_in",
-      "desc": "contains a small cask of exceptional dwarven brandy that can restore 1 hit point per glass, but poisons characters who drink two glasses within an hour"
+      "source": "players",
+      "target": "storeroom",
+      "relationship": "inhabits",
+      "desc": "Characters can explore the storeroom and interact with its contents"
+    },
+    {
+      "source": "sildar_hallwinter",
+      "target": "storeroom",
+      "relationship": "inhabits",
+      "desc": "Sildar Hallwinter is present in the storeroom where his equipment is located"
     },
     {
       "source": "hobgoblin",
-      "target": "north_barracks",
+      "target": "hobgoblin_barracks",
       "relationship": "inhabits",
       "desc": "Four hobgoblins are quartered in this room"
     },
@@ -1524,112 +2362,184 @@
       "desc": "They are quick to defend their tower if any intruders appear"
     },
     {
-      "source": "goblin",
-      "target": "cragmaw_castle",
+      "source": "players",
+      "target": "hobgoblin_barracks",
       "relationship": "inhabits",
-      "desc": "Seven miserable goblins inhabit the foul mess hall in Cragmaw Castle"
+      "desc": "Players are exploring the hobgoblin barracks where weapons are mounted on the walls"
+    },
+    {
+      "source": "players",
+      "target": "hobgoblin_barracks",
+      "relationship": "attacks",
+      "desc": "The party can defeat the hobgoblins in this room to earn 400 XP divided equally among characters"
     },
     {
       "source": "goblin",
-      "target": "goblin",
-      "relationship": "commands",
-      "desc": "Yegg (a fat, cantankerous goblin with 12 hit points) viciously bullies and commands his unwilling goblin assistants as chief cook"
+      "target": "banquet_hall",
+      "relationship": "inhabits",
+      "desc": "Seven miserable goblins and their leader Yegg inhabit this hall, which has become a foul goblin mess hall"
+    },
+    {
+      "source": "players",
+      "target": "banquet_hall",
+      "relationship": "inhabits",
+      "desc": "The players are exploring the banquet hall, observing its current state"
     },
     {
       "source": "grick",
-      "target": "cragmaw_castle",
+      "target": "dark_hall",
       "relationship": "inhabits",
-      "desc": "The grick lives in a chamber within Cragmaw Castle, climbing up to a hidden ledge in the shadows to observe intruders before attacking."
+      "desc": "The grick lives in this chamber as the special pet of goblin Lhupo"
+    },
+    {
+      "source": "grick",
+      "target": "dark_hall",
+      "relationship": "hidden_at",
+      "desc": "The grick likes to climb up to a ledge hidden in the shadows of the statuary in the higher reaches of the room"
     },
     {
       "source": "grick",
       "target": "players",
       "relationship": "attacks",
-      "desc": "The grick quietly observes intruders (players) who enter its chamber, then drops down to strike, potentially surprising them based on Stealth vs Perception checks."
+      "desc": "The grick quietly observes intruders that enter the area before dropping down to strike, potentially surprising them"
     },
     {
       "source": "players",
-      "target": "wizards_quarters",
+      "target": "dark_hall",
       "relationship": "inhabits",
-      "desc": "Players are exploring the wizard's quarters where the statuette is hidden"
+      "desc": "Players are exploring the dark hall where the statuette is hidden"
+    },
+    {
+      "source": "goblin",
+      "target": "goblin_shrine",
+      "relationship": "inhabits",
+      "desc": "Lhupo and two ordinary goblins live in the shrine, wearing filthy robes over armor"
     },
     {
       "source": "goblin",
       "target": "goblin",
       "relationship": "serves",
-      "desc": "Two ordinary goblins serve as acolytes to Lhupo, the goblin with 12 hit points"
+      "desc": "Two ordinary goblins serve as acolytes to Lhupo"
     },
     {
       "source": "goblin",
-      "target": "goblin",
+      "target": "goblin_shrine",
       "relationship": "worships",
-      "desc": "All three goblins kneel before the altar praying to Maglubiyet, the goblin god"
-    },
-    {
-      "source": "thieves'_tools",
-      "target": "cragmaw_castle",
-      "relationship": "unlocks",
-      "desc": "can be used to open the locked iron door at the side entrance to the castle"
+      "desc": "All three goblins kneel before the altar praying to Maglubiyet, their evil god"
     },
     {
       "source": "players",
-      "target": "cragmaw_castle",
+      "target": "goblin_shrine",
+      "relationship": "attacks",
+      "desc": "The party defeats the goblins at the goblin shrine, earning 150 XP to be divided equally among the characters"
+    },
+    {
+      "source": "thieves'_tools",
+      "target": "postern_gate",
+      "relationship": "unlocks",
+      "desc": "can be used to open the locked iron door at the postern gate with a successful Dexterity check"
+    },
+    {
+      "source": "players",
+      "target": "postern_gate",
+      "relationship": "inhabits",
+      "desc": "Characters are present near the arrow slits at the postern gate, listening for sounds"
+    },
+    {
+      "source": "players",
+      "target": "ruined_tower",
       "relationship": "hidden_at",
-      "desc": "A character who succeeds on a 15 Wisdom (Perception) check spots a footpath leading up to the hidden entrance. If actively searching the outside of the castle for a hidden entrance, they can make a 10 Wisdom (Perception) check to spot the canvas 'door'."
+      "desc": "can spot a hidden canvas entrance to the ruined tower with a successful Wisdom (Perception) check"
+    },
+    {
+      "source": "players",
+      "target": "ruined_tower",
+      "relationship": "inhabits",
+      "desc": "The players are exploring the ruined tower, observing its current state and features"
     },
     {
       "source": "hobgoblin",
-      "target": "north_barracks",
-      "relationship": "guards",
-      "desc": "Two hobgoblins stand guard in this room and keep watch from the arrow slit"
-    },
-    {
-      "source": "owlbear",
-      "target": "cragmaw_castle",
+      "target": "guard_barracks",
       "relationship": "inhabits",
-      "desc": "The Cragmaws have captured an owlbear and confined it to this tower room"
+      "desc": "Two hobgoblins stand guard in this room, which was once a parlor for the castle's human occupants"
+    },
+    {
+      "source": "hobgoblin",
+      "target": "guard_barracks",
+      "relationship": "guards",
+      "desc": "The hobgoblins keep watch from the arrow slit and will attack characters creeping around the east side of the castle"
     },
     {
       "source": "owlbear",
-      "target": "players",
+      "target": "owlbear_tower",
+      "relationship": "inhabits",
+      "desc": "captured and confined to this tower by the Cragmaws, kept in the dark room to remain calm"
+    },
+    {
+      "source": "players",
+      "target": "owlbear",
       "relationship": "attacks",
-      "desc": "If a character throws it fresh meat, the owlbear devours the food. Otherwise, it attacks the first creature it sees in the doorway"
+      "desc": "if players don't throw fresh meat, the owlbear attacks the first creature it sees in the doorway"
+    },
+    {
+      "source": "players",
+      "target": "owlbear",
+      "relationship": "gives_quest_to",
+      "desc": "if players throw fresh meat to the owlbear, it devours the food instead of attacking"
     },
     {
       "source": "potion_of_healing",
-      "target": "spell_scroll_(2nd_level)",
+      "target": "owlbear_tower",
       "relationship": "stored_in",
-      "desc": "contained within the battered wooden chest on the jagged ledge of the tower's second floor"
+      "desc": "contained within a battered wooden chest on the jagged ledge of the tower's second floor"
     },
     {
       "source": "spell_scroll_(2nd_level)",
-      "target": "spell_scroll_(3rd_level)",
+      "target": "owlbear_tower",
       "relationship": "stored_in",
-      "desc": "contained within the battered wooden chest on the jagged ledge of the tower's second floor"
+      "desc": "contained within a battered wooden chest on the jagged ledge of the tower's second floor"
     },
     {
       "source": "spell_scroll_(3rd_level)",
-      "target": "potion_of_healing",
+      "target": "owlbear_tower",
       "relationship": "stored_in",
-      "desc": "contained within the battered wooden chest on the jagged ledge of the tower's second floor"
+      "desc": "contained within a battered wooden chest on the jagged ledge of the tower's second floor"
+    },
+    {
+      "source": "players",
+      "target": "owlbear_tower",
+      "relationship": "hidden_at",
+      "desc": "requires a successful DC 15 Wisdom (Perception) check to notice the chest containing the items from the floor below"
+    },
+    {
+      "source": "players",
+      "target": "owlbear_tower",
+      "relationship": "attacks",
+      "desc": "party can defeat the owlbear at the tower"
+    },
+    {
+      "source": "players",
+      "target": "owlbear_tower",
+      "relationship": "gives_quest_to",
+      "desc": "party can release the owlbear at the tower"
     },
     {
       "source": "bugbear",
-      "target": "cragmaw_castle",
+      "target": "kings_quarters",
       "relationship": "inhabits",
-      "desc": "King Grol rules the Cragmaws from Cragmaw Castle through intimidation"
+      "desc": "King Grol, the fierce old bugbear, rules from his quarters"
     },
     {
       "source": "wolf",
       "target": "bugbear",
       "relationship": "serves",
-      "desc": "Snarl the wolf attends King Grol as his companion"
+      "desc": "Snarl the wolf attends and serves King Grol"
     },
     {
       "source": "doppelganger",
       "target": "bugbear",
       "relationship": "rival_of",
-      "desc": "Vyerith the doppelganger is negotiating with King Grol over payment for Gundren and the map"
+      "desc": "Vyerith the doppelganger is negotiating with Grol over the map and Gundren, with conflicting interests"
     },
     {
       "source": "doppelganger",
@@ -1641,139 +2551,157 @@
       "source": "bugbear",
       "target": "gundren_rockseeker",
       "relationship": "attacks",
-      "desc": "King Grol holds Gundren hostage and is ready to kill him if the players don't back off"
+      "desc": "Grol holds Gundren hostage and is ready to kill him if threatened"
     },
     {
       "source": "doppelganger",
-      "target": "players",
-      "relationship": "attacks",
-      "desc": "If warned of an attack, Vyerith hides behind the door to ambush intruders from the rear"
+      "target": "kings_quarters",
+      "relationship": "hidden_at",
+      "desc": "If warned of attack, Vyerith hides behind the northeast door in the king's quarters"
     },
     {
-      "source": "bugbear",
-      "target": "players",
+      "source": "players",
+      "target": "bugbear",
       "relationship": "attacks",
-      "desc": "King Grol threatens to kill Gundren if the players don't back off"
+      "desc": "The characters may attack King Grol in his quarters"
+    },
+    {
+      "source": "players",
+      "target": "doppelganger",
+      "relationship": "attacks",
+      "desc": "The characters may attack Vyerith the doppelganger in the king's quarters"
+    },
+    {
+      "source": "gundren_rockseeker",
+      "target": "kings_quarters",
+      "relationship": "inhabits",
+      "desc": "is located near the southwest corner of the room"
     },
     {
       "source": "gundren_rockseeker",
       "target": "commoner",
-      "relationship": "inhabits",
-      "desc": "Gundren Rockseeker is described as a dwarf commoner, indicating his social status and role"
+      "relationship": "is_a",
+      "desc": "is described as a dwarf commoner"
     },
     {
       "source": "potion_of_healing",
-      "target": "cragmaw_castle",
+      "target": "kings_quarters",
       "relationship": "hidden_at",
-      "desc": "three potions of healing are hidden under Grol's bed mattress in a stitched leather sack at Cragmaw Castle"
+      "desc": "three potions of healing are hidden under Grol's bed mattress in a stitched leather sack"
     },
     {
       "source": "hobgoblin",
-      "target": "hobgoblin",
-      "relationship": "commands",
-      "desc": "Targor Bloodsword leads the war band of three hobgoblins"
-    },
-    {
-      "source": "hobgoblin",
-      "target": "wolf",
-      "relationship": "commands",
-      "desc": "Targor Bloodsword has two wolves as pets that accompany the war band"
-    },
-    {
-      "source": "hobgoblin",
-      "target": "hobgoblin",
-      "relationship": "rival_of",
-      "desc": "Targor has long aspired to lead the Cragmaw tribe and could be persuaded to see himself as Grol's successor rather than avenger"
-    },
-    {
-      "source": "players",
-      "target": "wave_echo_cave",
-      "relationship": "gives_quest_to",
-      "desc": "players know the location of Wave Echo Cave and must seek out the old dwarven delve to discover the Black Spider's identity and motives"
-    },
-    {
-      "source": "players",
-      "target": "wave_echo_cave",
+      "target": "cragmaw_castle",
       "relationship": "inhabits",
-      "desc": "The adventurers are exploring this section of Wave Echo Cave, which is designed for characters of at least 4th level with 2,700+ XP"
+      "desc": "hobgoblin war band returning home to Cragmaw Castle"
+    },
+    {
+      "source": "wolf",
+      "target": "hobgoblin",
+      "relationship": "serves",
+      "desc": "two wolves serve as pets to Targor Bloodsword"
+    },
+    {
+      "source": "hobgoblin",
+      "target": "hobgoblin",
+      "relationship": "commands",
+      "desc": "Targor Bloodsword leads three hobgoblins in the war band"
+    },
+    {
+      "source": "players",
+      "target": "hobgoblin",
+      "relationship": "gives_quest_to",
+      "desc": "characters can attempt to persuade Targor to see himself as Grol's successor rather than avenger"
+    },
+    {
+      "source": "players",
+      "target": "wave_echo_cave",
+      "relationship": "attacks",
+      "desc": "players must seek out Wave Echo Cave to discover who the Black Spider is and why he's interested in the Lost Mine of Phandelver"
     },
     {
       "source": "stirge",
       "target": "wave_echo_cave",
       "relationship": "inhabits",
-      "desc": "can be encountered as wandering monsters in the cave"
+      "desc": "can be encountered as wandering monsters throughout the cave"
     },
     {
       "source": "ghoul",
       "target": "wave_echo_cave",
       "relationship": "inhabits",
-      "desc": "can be encountered as wandering monsters in the cave"
+      "desc": "can be encountered as wandering monsters throughout the cave"
     },
     {
       "source": "grick",
       "target": "wave_echo_cave",
       "relationship": "inhabits",
-      "desc": "can be encountered as wandering monsters in the cave"
+      "desc": "can be encountered as wandering monsters throughout the cave"
     },
     {
       "source": "bugbear",
       "target": "wave_echo_cave",
       "relationship": "inhabits",
-      "desc": "can be encountered as wandering monsters in the cave"
+      "desc": "can be encountered as wandering monsters throughout the cave"
     },
     {
       "source": "skeleton",
       "target": "wave_echo_cave",
       "relationship": "inhabits",
-      "desc": "can be encountered as wandering monsters in the cave"
+      "desc": "can be encountered as wandering monsters throughout the cave"
     },
     {
       "source": "zombie",
       "target": "wave_echo_cave",
       "relationship": "inhabits",
-      "desc": "can be encountered as wandering monsters in the cave"
+      "desc": "can be encountered as wandering monsters throughout the cave"
     },
     {
       "source": "ochre_jelly",
       "target": "wave_echo_cave",
       "relationship": "inhabits",
-      "desc": "can be encountered as wandering monsters in the cave"
+      "desc": "can be encountered as wandering monsters throughout the cave"
     },
     {
       "source": "stirge",
       "target": "players",
       "relationship": "attacks",
-      "desc": "can attack players as wandering monsters in the cave"
+      "desc": "wandering monsters that can attack the party to keep them on their toes"
     },
     {
       "source": "ghoul",
       "target": "players",
       "relationship": "attacks",
-      "desc": "can attack players as wandering monsters in the cave"
+      "desc": "wandering monsters that can attack the party to keep them on their toes"
     },
     {
       "source": "zombie",
       "target": "players",
       "relationship": "attacks",
-      "desc": "can attack players as wandering monsters in the cave"
+      "desc": "wandering monsters that can attack the party to keep them on their toes"
     },
     {
       "source": "ochre_jelly",
       "target": "players",
       "relationship": "attacks",
-      "desc": "can attack players as wandering monsters in the cave"
+      "desc": "wandering monsters that can attack the party to keep them on their toes"
     },
     {
       "source": "wave_echo_cave",
       "target": "players",
       "relationship": "lures",
-      "desc": "The rhythmic thunder of pounding waves in the cave piques players' curiosity and draws them deeper into the mine toward its source"
+      "desc": "The rhythmic thunder of pounding waves echoes throughout the mine, piquing players' curiosity and luring them toward its source, drawing them deeper into the mine"
     },
     {
       "source": "players",
-      "target": "the_collapsed_pit",
+      "target": "cave_entrance",
       "relationship": "inhabits",
-      "desc": "Players can climb the pit walls, with failure potentially causing them to fall to the bottom"
+      "desc": "The characters approach the hidden tunnel entrance in the Sword Mountain foothills"
+    },
+    {
+      "source": "players",
+      "target": "pit_trap_site",
+      "relationship": "inhabits",
+      "desc": "Players are present at the pit trap site and can attempt to climb the walls or fall into the pit"
     },
     {
       "source": "boots_of_striding_and_springing",
@@ -1788,22 +2716,10 @@
       "desc": "patiently lurking in one of the dead-end passages of the old mine section"
     },
     {
-      "source": "stirge",
-      "target": "old_entrance",
-      "relationship": "inhabits",
-      "desc": "Clinging to the ceiling like bats in the old entrance tunnel"
-    },
-    {
       "source": "skeleton",
       "target": "old_guardroom",
       "relationship": "inhabits",
-      "desc": "nine skeletons form in this chamber when any living creature enters and fight until destroyed"
-    },
-    {
-      "source": "players",
-      "target": "assayers_office",
-      "relationship": "hidden_at",
-      "desc": "can find faint Dwarvish markings on disintegrating paper scraps in cubbyholes that record weigh-ins and disbursements"
+      "desc": "nine skeletons form and fight in the guardroom when living creatures enter"
     },
     {
       "source": "players",
@@ -1821,13 +2737,19 @@
       "source": "ghoul",
       "target": "south_barracks",
       "relationship": "inhabits",
-      "desc": "Three ghouls from the pack are in the south barracks, cracking and gnawing on ancient bones"
+      "desc": "Three ghouls are in the south barracks, cracking and gnawing on ancient bones of the fallen"
     },
     {
-      "source": "the_fungal_cavern",
+      "source": "players",
+      "target": "ruined_storeroom",
+      "relationship": "inhabits",
+      "desc": "The storeroom is described as a secure resting place for the players/party"
+    },
+    {
+      "source": "fungal_cavern",
       "target": "players",
       "relationship": "attacks",
-      "desc": "poisonous gas released by fungal carpets forces players to make Constitution saving throws or take poison damage and become poisoned"
+      "desc": "The fungal cavern's poisonous gas attacks any creature that attempts to cross it, requiring Constitution saving throws and dealing poison damage to those who fail"
     },
     {
       "source": "ghoul",
@@ -1837,15 +2759,15 @@
     },
     {
       "source": "players",
-      "target": "the_dark_pool",
-      "relationship": "explores",
-      "desc": "Characters can explore the pool and find an old skeleton on the bottom"
+      "target": "dark_pool",
+      "relationship": "inhabits",
+      "desc": "Characters can explore the pool and wade through the stream to 18"
     },
     {
       "source": "wand_of_magic_missiles",
-      "target": "the_dark_pool",
+      "target": "dark_pool",
       "relationship": "stored_in",
-      "desc": "clutched in the bony fingers of a skeleton at the dark pool"
+      "desc": "clutched in the bony fingers of a skeleton at the dark pool location"
     },
     {
       "source": "bugbear",
@@ -1869,13 +2791,19 @@
       "source": "flameskull",
       "target": "smelter_cavern",
       "relationship": "guards",
-      "desc": "Intelligent undead creature guards this area to prevent intruders from passing through"
+      "desc": "A far more intelligent undead that guards this area to prevent intruders from passing through"
+    },
+    {
+      "source": "flameskull",
+      "target": "smelter_cavern",
+      "relationship": "inhabits",
+      "desc": "This creature was a servant of the human wizards and continues to act on ancient instructions in this chamber"
     },
     {
       "source": "flameskull",
       "target": "players",
       "relationship": "attacks",
-      "desc": "Acts on ancient instructions to prevent intruders (players) from passing through"
+      "desc": "Acts on ancient instructions to prevent intruders (including players) from passing through the area"
     },
     {
       "source": "players",
@@ -1885,7 +2813,7 @@
     },
     {
       "source": "mormesk_the_wraith",
-      "target": "wizards_quarters",
+      "target": "wizards_workshop",
       "relationship": "inhabits",
       "desc": "spends his time here because his treasure is in the scorched chest"
     },
@@ -1893,7 +2821,7 @@
       "source": "mormesk_the_wraith",
       "target": "players",
       "relationship": "attacks",
-      "desc": "rises up out of the floor when a living creature enters the room"
+      "desc": "rises up out of the floor and attacks when a living creature enters the room"
     },
     {
       "source": "spectator",
@@ -1910,26 +2838,26 @@
     {
       "source": "players",
       "target": "spectator",
-      "relationship": "gives_quest_to",
-      "desc": "can trick the spectator into thinking they are wizards or miners sent to terminate its employment, causing it to return to its home plane"
+      "relationship": "attacks",
+      "desc": "can trick the spectator into thinking they are wizards or miners sent to terminate its employment"
     },
     {
       "source": "players",
       "target": "forge_of_spells",
       "relationship": "inhabits",
-      "desc": "The players are present in the forge of spells, being addressed by the spherical creature"
+      "desc": "The players are present in the forge of spells, being addressed by the floating creature"
     },
     {
       "source": "+1_weapon",
       "target": "forge_of_spells",
       "relationship": "stored_in",
-      "desc": "can be temporarily created by bathing nonmagical weapons in the brazier's green flame at the Forge of Spells"
+      "desc": "can be created by bathing nonmagical weapons in the brazier's green flame for at least 1 minute"
     },
     {
       "source": "+1_armor",
       "target": "forge_of_spells",
       "relationship": "stored_in",
-      "desc": "can be temporarily created by bathing nonmagical armor in the brazier's green flame at the Forge of Spells"
+      "desc": "can be created by bathing nonmagical armor in the brazier's green flame for at least 1 minute"
     },
     {
       "source": "lightbringer",
@@ -1945,67 +2873,61 @@
     },
     {
       "source": "players",
-      "target": "the_old_streambed",
-      "relationship": "hidden_at",
-      "desc": "The old streambed remains as a usable passage that circumvents the undead in 12, although Nezznar has not yet discovered this"
+      "target": "booming_cavern",
+      "relationship": "inhabits",
+      "desc": "The players are currently on a narrow ledge overlooking the booming cavern"
+    },
+    {
+      "source": "players",
+      "target": "old_streambed",
+      "relationship": "inhabits",
+      "desc": "Players can use the old streambed as a passage to circumvent the undead in area 12"
     },
     {
       "source": "bugbear",
-      "target": "the_collapsed_cavern",
+      "target": "collapsed_cavern",
       "relationship": "inhabits",
       "desc": "Three bugbears are stationed in the collapsed cavern"
     },
     {
-      "source": "bugbear",
-      "target": "the_rift",
-      "relationship": "inhabits",
-      "desc": "Two bugbears are clearing rock on the rift floor"
-    },
-    {
-      "source": "bugbear",
-      "target": "the_collapsed_cavern",
-      "relationship": "guards",
-      "desc": "One bugbear stands guard in the western half of the cavern"
-    },
-    {
-      "source": "bugbear",
-      "target": "the_rift",
-      "relationship": "guards",
-      "desc": "Two bugbears guard the rift floor while clearing rubble"
-    },
-    {
       "source": "doppelganger",
-      "target": "the_collapsed_cavern",
+      "target": "collapsed_cavern",
       "relationship": "inhabits",
-      "desc": "Doppelganger named Vhalak supervises operations in the cavern"
+      "desc": "A doppelganger named Vhalak supervises operations in the cavern"
     },
     {
       "source": "doppelganger",
       "target": "bugbear",
       "relationship": "commands",
-      "desc": "Vhalak supervises the bugbears' operation in the guise of a male drow"
+      "desc": "Vhalak supervises the bugbears' operation in the cavern"
+    },
+    {
+      "source": "bugbear",
+      "target": "collapsed_cavern",
+      "relationship": "guards",
+      "desc": "Bugbears guard against undead incursions in the cavern"
+    },
+    {
+      "source": "bugbear",
+      "target": "collapsed_cavern",
+      "relationship": "patrols",
+      "desc": "One bugbear stands guard in the western half of the cavern"
     },
     {
       "source": "players",
-      "target": "the_rift",
+      "target": "collapsed_cavern",
       "relationship": "inhabits",
-      "desc": "Players can be present in the rift location and interact with its features"
+      "desc": "Players are exploring the collapsed cavern and must navigate the rift"
     },
     {
       "source": "gauntlets_of_ogre_power",
-      "target": "the_rift",
+      "target": "collapsed_cavern",
       "relationship": "hidden_at",
-      "desc": "buried under heavy rubble at the bottom of the rift, worn by a crushed dwarf skeleton"
-    },
-    {
-      "source": "players",
-      "target": "gauntlets_of_ogre_power",
-      "relationship": "can_find",
-      "desc": "can attempt a Wisdom (Perception) check to find the hidden gauntlets, one check per hour per character"
+      "desc": "buried under heavy rubble at the bottom of the rift with a crushed dwarf skeleton, requiring a successful Wisdom (Perception) check to find"
     },
     {
       "source": "nezznar_the_black_spider",
-      "target": "temple_of_dumathoin_nezznars_quarters",
+      "target": "temple_of_dumathoin",
       "relationship": "inhabits",
       "desc": "uses this room as his headquarters while exploring the mines and searching for the Forge of Spells"
     },
@@ -2017,7 +2939,7 @@
     },
     {
       "source": "giant_spider",
-      "target": "temple_of_dumathoin_nezznars_quarters",
+      "target": "temple_of_dumathoin",
       "relationship": "guards",
       "desc": "spiders hide behind pillars and try to entangle intruders in webs before closing to melee range"
     },
@@ -2035,75 +2957,93 @@
     },
     {
       "source": "players",
-      "target": "temple_of_dumathoin_nezznars_quarters",
+      "target": "temple_of_dumathoin",
       "relationship": "inhabits",
-      "desc": "have established a campsite with bedrolls, packs, and a fire pit in the temple hall"
+      "desc": "have set up a campsite with bedrolls, packs, and a fire pit in front of the statue"
     },
     {
-      "source": "sildar_hallwinter",
-      "target": "neverwinter",
-      "relationship": "serves",
-      "desc": "Sildar Hallwinter is a representative of the Lords' Alliance who can escort Nezznar to Neverwinter"
+      "source": "temple_of_dumathoin",
+      "target": "players",
+      "relationship": "gives_quest_to",
+      "desc": "The temple contains a statue of Dumathoin with fake emerald eyes protected by abjuration magic, presenting an investigation challenge to characters"
+    },
+    {
+      "source": "players",
+      "target": "townmasters_hall",
+      "relationship": "locks",
+      "desc": "Players can deliver captured Nezznar to the townmaster's hall in Phandalin where he is locked up"
+    },
+    {
+      "source": "townmasters_hall",
+      "target": "phandalin",
+      "relationship": "stored_in",
+      "desc": "The townmaster's hall is located in Phandalin where Nezznar would be imprisoned"
     },
     {
       "source": "potion_of_healing",
-      "target": "temple_of_dumathoin_nezznars_quarters",
+      "target": "temple_of_dumathoin",
       "relationship": "stored_in",
-      "desc": "Nezznar carries a potion of healing in the temple quarters"
+      "desc": "carried by Nezznar in the temple"
     },
     {
       "source": "spider_staff",
-      "target": "temple_of_dumathoin_nezznars_quarters",
+      "target": "temple_of_dumathoin",
       "relationship": "stored_in",
-      "desc": "Nezznar carries a spider staff in the temple quarters"
+      "desc": "carried by Nezznar in the temple"
+    },
+    {
+      "source": "thieves'_tools",
+      "target": "priests_quarters",
+      "relationship": "unlocks",
+      "desc": "required to open the locked door to the priests' quarters along with a successful Dexterity check"
+    },
+    {
+      "source": "nundro_rockseeker",
+      "target": "priests_quarters",
+      "relationship": "inhabits",
+      "desc": "lying on the floor as a prisoner in the room that Nezznar has appropriated as a cell"
     },
     {
       "source": "nundro_rockseeker",
       "target": "commoner",
       "relationship": "serves",
-      "desc": "Nundro Rockseeker is described as a dwarf commoner, indicating his social status"
-    },
-    {
-      "source": "nundro_rockseeker",
-      "target": "priests_quarters_nundros_cell",
-      "relationship": "inhabits",
-      "desc": "Nundro Rockseeker is lying on the floor of this cell where he is being held captive"
-    },
-    {
-      "source": "thieves'_tools",
-      "target": "priests_quarters_nundros_cell",
-      "relationship": "unlocks",
-      "desc": "The door to this room requires thieves' tools and a successful Dexterity check to open"
-    },
-    {
-      "source": "priests_quarters_nundros_cell",
-      "target": "players",
-      "relationship": "gives_quest_to",
-      "desc": "Nundro offers to join the players' party if they rescue him from his cell"
-    },
-    {
-      "source": "priests_quarters_nundros_cell",
-      "target": "players",
-      "relationship": "inhabits",
-      "desc": "serves as a safe resting place for the players after dealing with Nezznar and his minions"
+      "desc": "is described as a dwarf commoner, the youngest of the three Rockseeker brothers"
     },
     {
       "source": "players",
-      "target": "priests_quarters_nundros_cell",
+      "target": "priests_quarters",
+      "relationship": "inhabits",
+      "desc": "serves as a safe and comfortable place for the players to rest after dealing with Nezznar and his minions"
+    },
+    {
+      "source": "players",
+      "target": "wave_echo_cave",
       "relationship": "gives_quest_to",
-      "desc": "Players are tasked with rescuing Nundro from his cell in the priests' quarters"
+      "desc": "reclaimed the lost mine of Wave Echo Cave from the Black Spider"
+    },
+    {
+      "source": "players",
+      "target": "phandalin",
+      "relationship": "gives_quest_to",
+      "desc": "cleared Phandalin of the ruffians who threatened its people"
     },
     {
       "source": "nundro_rockseeker",
       "target": "wave_echo_cave",
-      "relationship": "inhabits",
-      "desc": "takes over administration of the new mine at Wave Echo Cave"
+      "relationship": "commands",
+      "desc": "takes over administration of the new mine with Gundren"
     },
     {
       "source": "nundro_rockseeker",
       "target": "players",
+      "relationship": "allied_with",
+      "desc": "awards the party a 10 percent share of the mine's profits for their service"
+    },
+    {
+      "source": "players",
+      "target": "sword_coast",
       "relationship": "gives_quest_to",
-      "desc": "awards the party a 10 percent share of the mine's profits for their service to the family"
+      "desc": "their deeds will be long remembered in this corner of the Sword Coast"
     },
     {
       "source": "young_green_dragon",

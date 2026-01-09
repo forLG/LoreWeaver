@@ -43,6 +43,15 @@ def get_base64_of_bin_file(bin_file):
         data = f.read()
     return base64.b64encode(data).decode()
 
+def get_available_projects():
+    """Scans output directory for available projects (json files)."""
+    output_dir = project_root / "output"
+    if not output_dir.exists():
+        return []
+    # 获取所有的 .json 文件，排除 final.json（如果它不是项目文件的话，这里假设所有json都是项目）
+    files = [f.stem for f in output_dir.glob("*.json") if f.is_file()]
+    return sorted(files)
+
 def set_png_as_page_bg(png_file):
     bin_str = get_base64_of_bin_file(png_file)
     page_bg_img = f'''
@@ -199,14 +208,20 @@ def rag_page():
     with st.sidebar:
         st.header("⚙️ Configuration")
         
+        # 获取可用项目
+        projects = get_available_projects()
+        
         # 图数据文件选择
-        graph_file = st.selectbox(
-            "Graph Data File",
-            ["output/deepseek/entity_graph.json", 
-             "output/deepseek/final.json",
-             "archive/output/deepseek/entity_graph.json"],
-            help="Select the knowledge graph file to query"
+        selected_project = st.selectbox(
+            "Select Project",
+            projects,
+            index=0 if projects else None,
+            help="Select the project to load"
         )
+        
+        graph_file = None
+        if selected_project:
+            graph_file = f"output/{selected_project}.json"
         
         # 搜索参数
         st.subheader("Search Parameters")
@@ -463,6 +478,20 @@ st.title("LoreWeaver: Dungeon Master's Console")
 
 # --- 侧边栏：控制面板 ---
 with st.sidebar:
+    st.header("Project Selection")
+    
+    # 获取可用项目
+    projects = get_available_projects()
+    current_project = st.selectbox(
+        "Select Adventure", 
+        projects, 
+        index=0 if projects else None,
+        help="Select which adventure's output to visualize."
+    )
+    st.session_state.current_project = current_project
+    
+    st.divider()
+    
     st.header("Pipeline Controls")
     
     # 模型选择
@@ -590,7 +619,7 @@ with st.sidebar:
     physics = st.checkbox("Enable Physics", value=True)
     graph_source = st.selectbox(
         "Graph Source",
-        ["Entity Graph", "Location Graph", "Shadow Tree"],
+        ["Entity Graph", "Location Graph"],
         index=0
     )
 
@@ -600,17 +629,17 @@ col1, col2 = st.columns([3, 1])
 with col1:
     st.subheader(f"Interactive View: {graph_source}")
     
-    def get_graph_path(source_name, model_name):
-        base_dir = project_root / "output"
-        # 简单的映射逻辑，根据实际输出目录结构调整
-        model_dir = "deepseek" if "deepseek" in model_name else "qwen3"
+    def get_graph_path(source_name, project_name):
+        if not project_name:
+            return None
+            
+        base_output = project_root / "output"
+        base_cache = project_root / "cache" / project_name
         
         if source_name == "Entity Graph":
-            return base_dir / model_dir / "entity_graph.json"
+            return base_output / f"{project_name}.json"
         elif source_name == "Location Graph":
-            return base_dir / model_dir / "location_graph.json"
-        elif source_name == "Shadow Tree":
-            return base_dir / model_dir / "shadow_tree.json"
+            return base_cache / "location_graph.json"
         return None
 
     @st.cache_data
@@ -624,7 +653,7 @@ with col1:
         return None
 
     # 1. 加载数据
-    target_path = get_graph_path(graph_source, model_choice)
+    target_path = get_graph_path(graph_source, st.session_state.get("current_project"))
     graph_data = load_graph_data(target_path)
     
     # 2. Focus State Logic
@@ -836,11 +865,6 @@ with col1:
                         except Exception as e:
                             print(f"Skipping edge {source} -> {target}: {e}")
                             continue
-                        
-                elif isinstance(data, list):
-                    # 可能是 Shadow Tree 的列表结构
-                    st.warning("Tree visualization not fully implemented yet. Showing raw structure.")
-                    pass
                 
                 st.caption(f"Displaying {node_count} nodes and {edge_count} edges")
                 

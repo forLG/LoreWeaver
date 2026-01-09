@@ -363,6 +363,3 @@ To run the Streamlit frontend:
 ```
 python -m streamlit run frontend/app.py
 ```
-=======
-```
->>>>>>> origin/main

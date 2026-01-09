@@ -14,7 +14,7 @@ This is the Streamlit-based frontend for LoreWeaver.
 Run the following command from the project root directory:
 
 ```bash
-streamlit run frontend/app.py
+python -m streamlit run frontend/app.py
 ```
 
 ## Features

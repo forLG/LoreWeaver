@@ -14,7 +14,165 @@ project_root = Path(__file__).parent.parent
 sys.path.append(str(project_root))
 
 # 设置页面配置
-st.set_page_config(page_title="LoreWeaver Holodeck", layout="wide", page_icon="🐉")
+st.set_page_config(page_title="LoreWeaver Holodeck", layout="wide", page_icon="🕸️")
+
+import base64
+
+# --- Session State 初始化 ---
+if 'page' not in st.session_state:
+    st.session_state.page = 'landing'
+
+# --- 辅助函数 ---
+def get_base64_of_bin_file(bin_file):
+    with open(bin_file, 'rb') as f:
+        data = f.read()
+    return base64.b64encode(data).decode()
+
+def set_png_as_page_bg(png_file):
+    bin_str = get_base64_of_bin_file(png_file)
+    page_bg_img = f'''
+    <style>
+    /* Create a pseudo-element for the background with blur */
+    .stApp::before {{
+        content: "";
+        position: fixed;
+        top: -20px;
+        left: -20px;
+        width: calc(100% + 40px);
+        height: calc(100% + 40px);
+        background-image: url("data:image/png;base64,{bin_str}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: blur(6px); /* blur */
+        z-index: -1;
+    }}
+    /* Ensure content is readable */
+    .stApp {{
+        background: rgba(0,0,0,0.2); /* Slight overlay */
+    }}
+    </style>
+    '''
+    st.markdown(page_bg_img, unsafe_allow_html=True)
+
+# --- 界面逻辑 ---
+def landing_page():
+    # 尝试加载背景图
+    img_path = project_root / "frontend" / "logo.png"
+    if img_path.exists():
+        set_png_as_page_bg(str(img_path))
+    
+    st.markdown("""
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=MedievalSharp&display=swap');
+
+        .block-container {
+            padding-top: 2rem;
+            padding-bottom: 0rem;
+        }
+        .landing-title {
+            text-align: center;
+            font-size: 6rem;
+            font-family: 'Cinzel Decorative', cursive; /* Artistic Font */
+            font-weight: 700;
+            color: #FFFFFF;
+            text-shadow: 0 0 10px #ff00de, 0 0 20px #000000, 0 0 30px #000000; /* Neon/Magic Glow */
+            margin-top: 20vh;
+            letter-spacing: 5px;
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073;
+            }
+            to {
+                text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6;
+            }
+        }
+
+        .landing-subtitle {
+            text-align: center;
+            font-size: 2rem;
+            font-family: 'MedievalSharp', cursive;
+            color: #EEEEEE;
+            text-shadow: 2px 2px 4px #000000;
+            margin-bottom: 50px;
+            letter-spacing: 2px;
+        }
+        .stButton > button {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+            border-radius: 10px;
+            font-size: 1.5rem;
+            font-family: 'Cinzel Decorative', cursive; /* Styled Title Font */
+            font-weight: 700;
+            padding: 0.5rem 1rem;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s;
+            text-shadow: 2px 2px 4px #000000;
+        }
+        .stButton > button:hover {
+            background-color: rgba(255, 255, 255, 0.5);
+            color: #2c3e50;
+            transform: scale(1.05);
+        }
+        </style>
+    """, unsafe_allow_html=True)
+
+    st.markdown('<div class="landing-title">LoreWeaver</div>', unsafe_allow_html=True)
+    st.markdown('<div class="landing-subtitle">The Dungeon Master\'s Intelligent Console</div>', unsafe_allow_html=True)
+
+    col1, col2, col3 = st.columns([1, 1, 1])
+    
+    with col2:
+        # Step 1: Click to Enter
+        if 'landing_stage' not in st.session_state:
+            st.session_state.landing_stage = 'entry'
+            
+        if st.session_state.landing_stage == 'entry':
+            if st.button("⚜️ ENTER HOLODECK ⚜️", use_container_width=True):
+                st.session_state.landing_stage = 'menu'
+                st.rerun()
+        
+        # Step 2: Show Options
+        else:
+            if st.button("🔮 Knowledge Graph Visualization", use_container_width=True):
+                st.session_state.page = 'visualization'
+                st.rerun()
+            
+            st.write("") # Spacer
+            
+            if st.button("📚 Graph RAG (Query System)", use_container_width=True):
+                st.session_state.page = 'rag'
+                st.rerun()
+
+def rag_page():
+    st.title("📚 Graph RAG Interface")
+    st.info("🚧 This module is currently under construction. Please check back later.")
+    
+    if st.button("⬅️ Back to Home"):
+        st.session_state.page = 'landing'
+        st.session_state.landing_stage = 'entry'
+        st.rerun()
+
+# 路由控制
+if st.session_state.page == 'landing':
+    landing_page()
+    st.stop() # 停止执行后续代码
+elif st.session_state.page == 'rag':
+    rag_page()
+    st.stop()
+
+# 下面是原有的主程序代码（visualization 页面）
+# Only add a "Back to Home" button in sidebar for navigation
+if st.session_state.page == 'visualization':
+    with st.sidebar:
+        if st.button("🏠 Back to Home"):
+            st.session_state.page = 'landing'
+            st.session_state.landing_stage = 'entry'
+            st.rerun()
 
 # --- 样式美化 (自定义 CSS) ---
 st.markdown("""
@@ -39,7 +197,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.title("🐉 LoreWeaver: Dungeon Master's Console")
+st.title("LoreWeaver: Dungeon Master's Console")
 
 # --- 侧边栏：控制面板 ---
 with st.sidebar:
@@ -257,8 +415,9 @@ with col1:
                             is_highlighted = False
 
                         node_id = node['id']
-                        label = node.get('label') or node.get('name') or node_id
-                        title = node.get('desc', '') or str(node)
+                        # Strict New JSON: valid label > id (key). No 'name' fallback.
+                        label = node.get('label') or node_id
+                        title = node.get('desc', '') or ""
                         
                         # 计算节点大小 (基础大小 25 + 度数 * 3) - 调大基础大小以容纳文字
                         # 限制最大大小以防过大
@@ -355,8 +514,29 @@ with col1:
                             edge_color = None
                             if source not in highlighted_ids or target not in highlighted_ids:
                                 edge_color = 'rgba(50, 50, 50, 0.1)' # 几乎隐形的边
+                            
+                            # Strict New JSON format (relationship, desc, weight)
+                            relation_type = edge.get('relationship', '')
+                            edge_desc = edge.get('desc', '')
+                            weight = edge.get('weight')
+                            
+                            # Build edge tooltip
+                            edge_title = relation_type
+                            if edge_desc:
+                                edge_title += f"\n\n{edge_desc}"
+                            if weight:
+                                edge_title += f"\n(Weight: {weight})"
+                            
+                            # Use weight for edge width if available
+                            edge_width = 1
+                            if weight:
+                                try:
+                                    # Scale weight to reasonable width (e.g. 1-5)
+                                    edge_width = max(1, min(float(weight), 10))
+                                except:
+                                    pass
                                 
-                            net.add_edge(source, target, title=edge.get('relation', ''), color=edge_color)
+                            net.add_edge(source, target, title=edge_title, label=relation_type, color=edge_color, width=edge_width)
                             edge_count += 1
                         except Exception as e:
                             print(f"Skipping edge {source} -> {target}: {e}")

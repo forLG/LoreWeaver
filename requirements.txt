@@ -1,5 +1,0 @@
-openai
-neo4j
-pyvis
-streamlit
-networkx

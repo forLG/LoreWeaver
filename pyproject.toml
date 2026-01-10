@@ -10,13 +10,16 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "openai",
-    "neo4j",
-    "pyvis",
     "python-dotenv",
     "pydantic>=2.0",
 ]
 
 [project.optional-dependencies]
+ui = [
+    "streamlit",
+    "pyvis",
+    "networkx",
+]
 dev = [
     "ruff",
     "mypy",

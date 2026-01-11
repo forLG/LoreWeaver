@@ -31,10 +31,6 @@ Environment Variables (.env):
     OPENAI_BASE_URL    - API base URL (default: https://api.openai.com/v1)
     LLM_MODEL          - Model name (default: gpt-4o)
 
-Note:
-    For small models (qwen, llama, mistral), use main_semantic.py instead:
-    python -m main_semantic --input data/adventure-dosi.json
-
 Pipeline Stages:
     shadow       - Build shadow tree from adventure JSON
     spatial      - Extract spatial topology graph

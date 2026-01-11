@@ -2,18 +2,26 @@ import re
 from typing import Dict, List
 
 class PromptFactory:
-    # 预编译正则，匹配 "A1: Name", "B2 Name", "Area C3" 等格式
+    """Factory for creating prompts used in various stages of the knowledge graph construction."""
+
+    # Compiled regex pattern matching area formats like "A1: Name", "B2 Name", "Area C3".
     AREA_PATTERN = re.compile(r"^(?:Area\s+)?([A-Z][0-9]+)[:\s]\s*(.+)$", re.IGNORECASE)
 
     @staticmethod
     def create_spatial_summary_prompt(node: Dict, child_summaries: List[str]) -> str:
         """
-        阶段一：递归生成纯文本的空间关系总结
+        Stage 1: Recursively generate a plain text summary of spatial relationships.
+        
+        Args:
+            node: The dictionary representing the current node (e.g., a section).
+            child_summaries: A list of spatial summaries from child nodes.
+
+        Returns:
+            A string containing the prompt for generating the spatial report.
         """
         title = node.get("title", "Untitled")
         content = node.get("content", "")
-        
-        # 基础 Prompt 结构
+
         return f"""
 You are a D&D Cartographer. Generate a SPATIAL REPORT for the node: "{title}".
 
@@ -51,7 +59,13 @@ Output Requirements:
     @staticmethod
     def create_graph_extraction_prompt(spatial_summary_text: str) -> str:
         """
-        阶段二：从单章总结文本中提取 JSON
+        Stage 2: Extract a JSON Knowledge Graph from the single-chapter spatial summary text.
+        
+        Args:
+            spatial_summary_text: The spatial summary text generated in Stage 1.
+
+        Returns:
+            A string containing the prompt for extracting the knowledge graph.
         """
         return f"""
 You are a D&D Knowledge Graph Architect.
@@ -85,11 +99,17 @@ Output Format (JSON ONLY):
     ]
 }}
 """
-    
+
     @staticmethod
     def create_entity_resolution_prompt(node_list_text: str) -> str:
         """
-        阶段三：实体对齐 Prompt
+        Stage 3: Prompt for entity deduplication and alignment.
+
+        Args:
+            node_list_text: A raw list of nodes extracted from different chapters.
+        
+        Returns:
+             A string containing the prompt for entity resolution.
         """
         return f"""
 You are a Data Deduplication Expert for a Knowledge Graph.
@@ -116,7 +136,14 @@ Only include IDs that need to change.
     @staticmethod
     def create_section_mapping_prompt(section_context: str, location_list: str) -> str:
         """
-        阶段四：映射章节至地点 ID
+        Stage 4: Map the content of a section to specific Location IDs.
+
+        Args:
+            section_context: The text content of the section.
+            location_list: The list of known Location IDs.
+
+        Returns:
+            A string containing the prompt for section mapping.
         """
         return f"""
 You are a D&D Knowledge Graph Assistant.
@@ -138,7 +165,15 @@ Rules:
     @staticmethod
     def create_entity_enrichment_prompt(section_content: str, candidate_list: list, location_list: list) -> str:
         """
-        阶段五：实体实例化与关系挖掘
+        Stage 5: Entity instantiation and relationship extraction.
+
+        Args:
+            section_content: The text content of the section.
+            candidate_list: A list of candidate entities (metdata) that might appear.
+            location_list: The list of locations relevant to this context.
+
+        Returns:
+            A string containing the prompt for entity enrichment.
         """
         return f"""
 You are a D&D Knowledge Graph Builder.

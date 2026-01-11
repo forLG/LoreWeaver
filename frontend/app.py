@@ -1,19 +1,19 @@
-import streamlit as st
-import json
-from pyvis.network import Network
-import streamlit.components.v1 as components
-import os
 import sys
+import os
 import time
+import base64
 import html
 import subprocess
+import json  # Added json import
+import streamlit as st
+import streamlit.components.v1 as components
+from pyvis.network import Network
 from pathlib import Path
 
 # Add project root to sys.path to allow importing from src
 project_root = Path(__file__).parent.parent
 sys.path.append(str(project_root))
 
-# 设置页面配置
 st.set_page_config(page_title="LoreWeaver Holodeck", layout="wide", page_icon="🕸️")
 
 # --- Logger Configuration ---
@@ -25,34 +25,50 @@ log_file = log_dir / "streamlit_app.log"
 if "logger_initialized" not in st.session_state:
     try:
         from src.utils.logger import setup_logger
-        # Force a specific log file so we can read it back
+        # Force a specific log file to enable reading it back in the UI
         setup_logger(exp_name="streamlit_app", log_dir=str(log_dir))
         st.session_state.logger_initialized = True
     except Exception as e:
         print(f"Failed to setup logger: {e}")
 
-import base64
-
-# --- Session State 初始化 ---
+# Initialize Session State
 if 'page' not in st.session_state:
     st.session_state.page = 'landing'
 
-# --- 辅助函数 ---
+# --- Helper Functions ---
+
 def get_base64_of_bin_file(bin_file):
+    """Reads a binary file and returns its base64 encoded string.
+
+    Args:
+        bin_file (str): Path to the binary file.
+
+    Returns:
+        str: Base64 encoded string of the file content.
+    """
     with open(bin_file, 'rb') as f:
         data = f.read()
     return base64.b64encode(data).decode()
 
 def get_available_projects():
-    """Scans output directory for available projects (json files)."""
+    """Scans output directory for available projects (json files).
+
+    Returns:
+        list: Sorted list of project names (stems of json files).
+    """
     output_dir = project_root / "output"
     if not output_dir.exists():
         return []
-    # 获取所有的 .json 文件，排除 final.json（如果它不是项目文件的话，这里假设所有json都是项目）
+    # Get all .json files
     files = [f.stem for f in output_dir.glob("*.json") if f.is_file()]
     return sorted(files)
 
 def set_png_as_page_bg(png_file):
+    """Sets a PNG file as the page background with a blur effect.
+
+    Args:
+        png_file (str): Path to the PNG file.
+    """
     bin_str = get_base64_of_bin_file(png_file)
     page_bg_img = f'''
     <style>
@@ -80,7 +96,11 @@ def set_png_as_page_bg(png_file):
     st.markdown(page_bg_img, unsafe_allow_html=True)
 
 def render_log_viewer(key_prefix="global"):
-    """Renders a log viewer component."""
+    """Renders a log viewer component.
+
+    Args:
+        key_prefix (str): Prefix for unique keys in Streamlit components.
+    """
     st.divider()
     st.subheader("🖥️ System Logs")
     
@@ -97,12 +117,13 @@ def render_log_viewer(key_prefix="global"):
     
     st.code(log_content, language="bash")
     
-    # Auto-refresh mechanism could be added here if needed, 
-    # but for now we rely on app interactions to trigger re-renders.
+    # Auto-refresh mechanism could be added here if needed.
 
-# --- 界面逻辑 ---
+# --- Interface Logic ---
+
 def landing_page():
-    # 尝试加载背景图
+    """Renders the landing page of the application."""
+    # Attempt to load background image
     img_path = project_root / "frontend" / "logo.png"
     if img_path.exists():
         set_png_as_page_bg(str(img_path))
@@ -194,9 +215,10 @@ def landing_page():
                 st.rerun()
 
 def rag_page():
+    """Renders the Graph RAG (Retrieval-Augmented Generation) interface."""
     st.title("📚 Graph RAG Interface")
     
-    # 初始化 session state
+    # Initialize session state
     if 'rag_engine' not in st.session_state:
         st.session_state.rag_engine = None
     if 'chat_history' not in st.session_state:
@@ -204,14 +226,14 @@ def rag_page():
     if 'show_prompt' not in st.session_state:
         st.session_state.show_prompt = {}
     
-    # 侧边栏配置
+    # Sidebar Configuration
     with st.sidebar:
         st.header("⚙️ Configuration")
         
-        # 获取可用项目
+        # Get available projects
         projects = get_available_projects()
         
-        # 图数据文件选择
+        # Select Graph Project
         selected_project = st.selectbox(
             "Select Project",
             projects,
@@ -223,7 +245,7 @@ def rag_page():
         if selected_project:
             graph_file = f"output/{selected_project}.json"
         
-        # 搜索参数
+        # Search Parameters
         st.subheader("Search Parameters")
         max_hops = st.slider("Max Hops", min_value=1, max_value=3, value=1, 
                             help="Graph traversal radius")
@@ -234,7 +256,7 @@ def rag_page():
         
         st.divider()
         
-        # 加载图数据
+        # Load Graph Data
         if st.button("🔄 Load/Reload Graph", use_container_width=True):
             try:
                 from src.graphRAG.graph_loader import GraphLoader
@@ -256,7 +278,7 @@ def rag_page():
             except Exception as e:
                 st.error(f"Error loading graph: {str(e)}")
         
-        # 显示图统计信息
+        # Display Graph Statistics
         if 'graph_stats' in st.session_state:
             st.metric("Nodes", st.session_state.graph_stats['num_nodes'])
             st.metric("Edges", st.session_state.graph_stats['num_edges'])
@@ -275,12 +297,12 @@ def rag_page():
             
         render_log_viewer(key_prefix="rag_sidebar")
     
-    # 主界面
+    # Main Interface
     if st.session_state.rag_engine is None:
         st.warning("⚠️ Please load a graph from the sidebar first.")
         st.info("Select a graph file and click 'Load/Reload Graph' to get started.")
         
-        # 显示示例问题
+        # Display Example Questions
         st.markdown("### 💡 Example Questions You Can Ask:")
         st.markdown("""
         - Where are zombies found?
@@ -290,10 +312,10 @@ def rag_page():
         - Describe the relationship between dragons and kobolds
         """)
     else:
-        # 聊天界面
+        # Chat Interface
         st.markdown("### 💬 Chat with Knowledge Graph")
         
-        # 快速示例按钮
+        # Quick Example Buttons
         st.markdown("**Quick Examples:**")
         col1, col2, col3, col4 = st.columns(4)
         with col1:
@@ -311,19 +333,19 @@ def rag_page():
         
         st.divider()
         
-        # 显示聊天历史
+        # Display Chat History
         chat_container = st.container()
         with chat_container:
             for i, entry in enumerate(st.session_state.chat_history):
-                # 用户消息
+                # User Message
                 with st.chat_message("user"):
                     st.markdown(entry['query'])
                 
-                # AI 回复
+                # AI Response
                 with st.chat_message("assistant"):
                     st.markdown(entry['answer'])
                     
-                    # 显示 prompt 按钮
+                    # Show Prompt Button
                     col1, col2, col3 = st.columns([1.2, 0.8, 4])
                     with col1:
                         if st.button("🔍 View Prompt", key=f"show_prompt_{i}"):
@@ -332,12 +354,12 @@ def rag_page():
                         if st.button("📋 Copy", key=f"copy_{i}"):
                             st.toast("Answer copied!", icon="✅")
                     
-                    # 显示实际的 prompt
+                    # Show Actual Prompt
                     if st.session_state.show_prompt.get(i, False):
                         with st.expander("📝 Full Prompt Sent to LLM", expanded=True):
                             st.code(entry['prompt'], language="markdown")
                             
-                            # 统计信息
+                            # statistics
                             col_a, col_b = st.columns(2)
                             with col_a:
                                 st.metric("Context Length", f"{len(entry['context'])} chars")
@@ -350,11 +372,11 @@ def rag_page():
         # 处理快速查询
         if 'quick_query' in st.session_state and st.session_state.quick_query:
             query_to_process = st.session_state.quick_query
-            st.session_state.quick_query = None  # 清除状态
+            st.session_state.quick_query = None  # Clear state
             
             with st.spinner("🔍 Searching knowledge graph..."):
                 try:
-                    # 获取上下文
+                    # Retrieve Context
                     context = st.session_state.rag_engine.retrieve_context(
                         query_to_process, 
                         max_hops=max_hops, 
@@ -362,10 +384,10 @@ def rag_page():
                         top_k_edges=top_k_edges
                     )
                     
-                    # 生成答案
+                    # Generate Answer
                     answer = st.session_state.rag_engine.answer_query(query_to_process, use_llm=True)
                     
-                    # 构建完整的 prompt（用于显示）
+                    # Construct Prompt (for display)
                     full_prompt = f"""You are a helpful assistant that answers questions based on the provided knowledge graph context.
 
 Context:
@@ -375,7 +397,7 @@ User Query: {query_to_process}
 
 Please provide a clear and accurate answer based on the context above. If the context doesn't contain enough information to answer the question, please say so."""
                     
-                    # 保存到历史记录
+                    # Save to History
                     st.session_state.chat_history.append({
                         'query': query_to_process,
                         'answer': answer,
@@ -391,13 +413,13 @@ Please provide a clear and accurate answer based on the context above. If the co
                     with st.expander("Error Details"):
                         st.code(traceback.format_exc())
         
-        # 输入框
+        # Input Box
         query_input = st.chat_input("💭 Ask a question about the knowledge graph...")
         
         if query_input:
             with st.spinner("🔍 Searching knowledge graph..."):
                 try:
-                    # 获取上下文
+                    # Retrieve Context
                     context = st.session_state.rag_engine.retrieve_context(
                         query_input, 
                         max_hops=max_hops, 
@@ -405,10 +427,10 @@ Please provide a clear and accurate answer based on the context above. If the co
                         top_k_edges=top_k_edges
                     )
                     
-                    # 生成答案
+                    # Generate Answer
                     answer = st.session_state.rag_engine.answer_query(query_input, use_llm=True)
                     
-                    # 构建完整的 prompt（用于显示）
+                    # Construct Prompt (for display)
                     full_prompt = f"""You are a helpful assistant that answers questions based on the provided knowledge graph context.
 
 Context:
@@ -418,7 +440,7 @@ User Query: {query_input}
 
 Please provide a clear and accurate answer based on the context above. If the context doesn't contain enough information to answer the question, please say so."""
                     
-                    # 保存到历史记录
+                    # Save to History
                     st.session_state.chat_history.append({
                         'query': query_input,
                         'answer': answer,
@@ -434,16 +456,15 @@ Please provide a clear and accurate answer based on the context above. If the co
                     with st.expander("Error Details"):
                         st.code(traceback.format_exc())
 
-# 路由控制
+# Routing Control
 if st.session_state.page == 'landing':
     landing_page()
-    st.stop() # 停止执行后续代码
+    st.stop()
 elif st.session_state.page == 'rag':
     rag_page()
     st.stop()
 
-# 下面是原有的主程序代码（visualization 页面）
-# Only add a "Back to Home" button in sidebar for navigation
+# Visualization Page Logic
 if st.session_state.page == 'visualization':
     with st.sidebar:
         if st.button("🏠 Back to Home"):
@@ -451,7 +472,7 @@ if st.session_state.page == 'visualization':
             st.session_state.landing_stage = 'entry'
             st.rerun()
 
-# --- 样式美化 (自定义 CSS) ---
+# --- CSS Styling ---
 st.markdown("""
 <style>
     .stApp {
@@ -476,11 +497,11 @@ st.markdown("""
 
 st.title("LoreWeaver: Dungeon Master's Console")
 
-# --- 侧边栏：控制面板 ---
+# --- Sidebar: Control Panel ---
 with st.sidebar:
     st.header("Project Selection")
     
-    # 获取可用项目
+    # Get available projects
     projects = get_available_projects()
     current_project = st.selectbox(
         "Select Adventure", 
@@ -494,7 +515,7 @@ with st.sidebar:
     
     st.header("Pipeline Controls")
     
-    # 模型选择
+    # Model Selection
     model_choice = st.selectbox(
         "Model", 
         ["deepseek-chat", "qwen3-8b"], 
@@ -502,7 +523,7 @@ with st.sidebar:
         help="Select the LLM model to use for processing."
     )
     
-    # 阶段选择
+    # Stage Selection
     stages = st.multiselect(
         "Stages", 
         ["shadow", "spatial", "section-map", "entity"], 
@@ -510,17 +531,17 @@ with st.sidebar:
         help="Select pipeline stages to run."
     )
     
-    # 并发控制
+    # Concurrency Control
     concurrency = st.slider("Concurrency", min_value=1, max_value=50, value=5)
     
     st.divider()
     
-    # 文件上传
+    # File Upload
     uploaded_file = st.file_uploader("Upload Adventure JSON", type=['json'])
     input_file_path = None
     
     if uploaded_file is not None:
-        # 保存上传的文件到 data 目录
+        # Save uploaded file to data directory
         data_dir = project_root / "data"
         data_dir.mkdir(exist_ok=True)
         input_file_path = data_dir / uploaded_file.name
@@ -536,39 +557,27 @@ with st.sidebar:
         with st.status("Processing...", expanded=True) as status:
             st.write("Initializing pipeline...")
             
-            # 构建命令
+            # Build command
             cmd = [sys.executable, "-m", "src.main"]
             
-            # 强制按照正确的依赖顺序排序 Stages
-            # 无论用户在前端选择的顺序如何，执行顺序必须是：shadow -> spatial -> section-map -> entity
+            # Enforce correct stage order: shadow -> spatial -> section-map -> entity
             ORDERED_STAGES = ["shadow", "spatial", "section-map", "entity"]
             sorted_stages = [s for s in ORDERED_STAGES if s in stages]
             
             for stage in sorted_stages:
                 cmd.extend(["--stage", stage])
             
-            # 如果有上传文件，指定 input 参数
+            # Specify input if file uploaded
             if input_file_path:
                 cmd.extend(["--input", str(input_file_path)])
             
-            # 传递参数
-            # 同时设置环境变量以确保兼容性
+            # Set env vars for compatibility
             env = os.environ.copy()
             env["LLM_MODEL"] = model_choice
             env["LLM_MAX_CONCURRENT"] = str(concurrency)
             
-            # 显式传递命令行参数
+            # Explicitly pass CLI arguments
             cmd.extend(["--max-concurrent", str(concurrency)])
-            # 模型选择通过环境变量 LLM_MODEL 传递；main.py 从环境中读取模型配置，而不是使用 --model 参数。
-            
-            
-            
-            
-            
-            
-            
-            
-            
             
             st.code(" ".join(cmd), language="bash")
             
@@ -576,7 +585,7 @@ with st.sidebar:
             output_lines = []
             
             try:
-                # 使用 subprocess.Popen 实时执行
+                # Execute using subprocess.Popen
                 process = subprocess.Popen(
                     cmd,
                     cwd=str(project_root),
@@ -588,7 +597,7 @@ with st.sidebar:
                     env=env
                 )
                 
-                # 实时读取输出
+                # Real-time output reading
                 while True:
                     line = process.stdout.readline()
                     if not line and process.poll() is not None:
@@ -603,10 +612,10 @@ with st.sidebar:
                 if process.returncode == 0:
                     status.update(label="Pipeline Complete!", state="complete", expanded=False)
                     st.success("Task finished successfully!")
-                    # 清除数据缓存，以便重新加载最新的图谱
+                    # Clear cache to reload latest graph
                     st.cache_data.clear()
                     time.sleep(1)
-                    st.rerun() # 刷新页面
+                    st.rerun()
                 else:
                     status.update(label="Pipeline Failed!", state="error", expanded=True)
                     st.error(f"Process failed with return code {process.returncode}")
@@ -623,13 +632,14 @@ with st.sidebar:
         index=0
     )
 
-# --- 主界面：图谱可视化 ---
+# --- Main Interface: Graph Visualization ---
 col1, col2 = st.columns([3, 1])
 
 with col1:
     st.subheader(f"Interactive View: {graph_source}")
     
     def get_graph_path(source_name, project_name):
+        """Resolves the file path for the requested graph."""
         if not project_name:
             return None
             
@@ -644,6 +654,14 @@ with col1:
 
     @st.cache_data
     def load_graph_data(file_path):
+        """Loads graph data from a JSON file.
+
+        Args:
+            file_path (Path): Path to the JSON file.
+
+        Returns:
+            dict: Parsed JSON data or None if failed.
+        """
         if file_path and file_path.exists():
             try:
                 with open(file_path, 'r', encoding='utf-8') as f:
@@ -652,11 +670,11 @@ with col1:
                 st.error(f"Error loading JSON: {e}")
         return None
 
-    # 1. 加载数据
+    # Load Data
     target_path = get_graph_path(graph_source, st.session_state.get("current_project"))
     graph_data = load_graph_data(target_path)
     
-    # 2. Focus State Logic
+    # Focus State Logic
     if 'focus_target' not in st.session_state:
         st.session_state.focus_target = None
         
@@ -672,10 +690,10 @@ with col1:
                 st.session_state.focus_target = None
                 st.rerun()
 
-    # 3. 提取类型并显示过滤器
+    # Extract types and show filters
     all_types = []
     if graph_data and "nodes" in graph_data:
-        # 使用 title() 统一格式，避免 "Location" 和 "location" 分开
+        # Normalize case
         all_types = sorted(list(set((n.get('type') or 'Unknown').title() for n in graph_data['nodes'])))
     
     selected_types = []
@@ -689,6 +707,17 @@ with col1:
             )
     
     def visualize_graph(data, use_physics, filter_types=None, focus_id=None):
+        """Generates a PyVis network graph.
+
+        Args:
+            data (dict): Graph data containing nodes and edges.
+            use_physics (bool): Whether to enable physics simulation.
+            filter_types (list, optional): List of node types to display.
+            focus_id (str, optional): Node ID to focus on.
+
+        Returns:
+            Path: Path to the generated HTML file.
+        """
         net = Network(height="600px", width="100%", bgcolor="#f0f2f6", font_color="#333333")
         
         if data:
@@ -697,9 +726,8 @@ with col1:
                 edge_count = 0
                 
                 if "nodes" in data and "edges" in data:
-                    # 标准图结构
                     existing_nodes = set()
-                    highlighted_ids = set() # 记录高亮的节点ID
+                    highlighted_ids = set() 
                     
                     # Pre-calculate neighbor set if focus is active
                     focus_group = set()
@@ -726,7 +754,6 @@ with col1:
                         raw_type = node.get('type') or 'Unknown'
                         normalized_type = raw_type.title()
                         
-                        # 判断是否高亮
                         is_highlighted = True
                         
                         # Logic: Focus Overrides Filter
@@ -743,12 +770,12 @@ with col1:
                         label = node.get('label') or node_id
                         title = node.get('desc', '') or ""
                         
-                        # 计算节点大小 (基础大小 25 + 度数 * 3) - 调大基础大小以容纳文字
-                        # 限制最大大小以防过大
+                        # Calculate node size based on degree, 
+                        # limiting max size to prevent overly large nodes
                         node_degree = degrees.get(node_id, 0)
                         size = 25 + min(node_degree * 3, 60)  
                         
-                        # 默认颜色逻辑 (User Custom Pastel Palette)
+                        # User Custom Pastel Palette
                         color = "#34CAF7" # Default
                         
                         if 'Location' in normalized_type: 
@@ -764,37 +791,30 @@ with col1:
                         elif 'Event' in normalized_type:
                             color = '#b8f1cc' # Pastel Yellow
                         
-                        # 如果不高亮，则变暗
                         if not is_highlighted:
-                            color = 'rgba(50, 50, 50, 0.1)' # 更加透明的深灰色
+                            color = 'rgba(50, 50, 50, 0.1)' # Dimmed
                         else:
                             highlighted_ids.add(node_id)
                         
-                        # --- 1. 美化 Tooltip (HTML) ---
                         desc = str(node.get('desc', ''))
                         if not desc or desc.lower() == 'no description available.':
                             desc = ''
                         
-                        # 安全处理：转义内容中的特殊字符，但保留 HTML 结构标签
                         safe_label = html.escape(label)
                         safe_type = html.escape(normalized_type)
                         
-                        # 构建纯文本 Tooltip
-                        # 回归简单文本，避免 HTML 渲染问题
                         tooltip_text = f"【{label}】\n[{normalized_type}]"
                         
                         if desc:
                             tooltip_text += f"\n\n{desc}"
 
-                        # --- 2. 标签截断逻辑 ---
-                        # 根据圆圈大小估算能放多少字
+                        # Truncate labels based on size to prevent overlap
                         max_chars = max(4, int(size / 3.5))
                         display_label = label
                         if len(label) > max_chars:
                             display_label = label[:max_chars] + ".."
 
-                        # --- 3. 字体样式 ---
-                        # 深蓝灰字体 + 白色描边，确保在粉彩背景上清晰可见且不使用纯黑
+                        # Font style
                         font_style = {
                             'color': '#2c3e50', 
                             'size': 14, 
@@ -802,7 +822,7 @@ with col1:
                             'strokeWidth': 3,
                             'strokeColor': '#ffffff',
                             'bold': True,
-                            'vadjust': 0 # 垂直居中
+                            'vadjust': 0
                         }
 
                         net.add_node(
@@ -811,7 +831,7 @@ with col1:
                             title=tooltip_text, 
                             color=color, 
                             size=size,
-                            shape='circle', # 圆形，让文字显示在内部
+                            shape='circle',
                             font=font_style
                         )
                         existing_nodes.add(node_id)
@@ -881,8 +901,7 @@ with col1:
             net.add_edge(1, 3)
 
         if use_physics:
-            # 启用物理引擎并配置参数以避免节点重叠
-            # 调整参数以减少震荡：增加阻尼(damping)，适度斥力
+            # Enable physics with parameters to reduce oscillation
             net.set_options("""
             {
               "physics": {
@@ -905,21 +924,18 @@ with col1:
         else:
             net.toggle_physics(False)
         
-        # 保存到临时文件
-        # 使用绝对路径确保 Streamlit 能找到
+        # Save to temp file using absolute path
         tmp_path = project_root / "frontend" / "temp_graph.html"
         net.save_graph(str(tmp_path))
         return tmp_path
 
     html_path = visualize_graph(graph_data, physics, selected_types, focus_target)
 
-    
     if html_path and html_path.exists():
         with open(html_path, 'r', encoding='utf-8') as f:
             source_code = f.read()
             
-            # --- 注入自定义 CSS 美化 Tooltip ---
-            # 即使是纯文本，也可以通过 CSS 美化容器
+            # --- Inject custom CSS for Tooltip ---
             custom_css = """
             <style>
                 div.vis-tooltip {
@@ -933,7 +949,7 @@ with col1:
                     font-size: 14px !important;
                     line-height: 1.5 !important;
                     max-width: 320px !important;
-                    white-space: pre-wrap !important; /* 保留换行符 */
+                    white-space: pre-wrap !important;
                     z-index: 99999 !important;
                 }
             </style>
@@ -942,22 +958,21 @@ with col1:
             
         components.html(source_code, height=610)
 
-# --- 右侧栏：详细信息 ---
+# --- Right Sidebar: Details ---
 with col2:
     st.subheader("Entity Inspector")
     
-    # 创建一个字典用于快速查找节点信息
+    # Create lookup dict for nodes (Multi-index: ID and Label)
     node_lookup = {}
     if graph_data and "nodes" in graph_data:
         for node in graph_data['nodes']:
-            # 建立多重索引：ID 和 Label 都可以查
             node_lookup[node['id']] = node
             if 'label' in node:
                 node_lookup[node['label']] = node
             if 'name' in node:
                 node_lookup[node['name']] = node
 
-    # 获取所有可选的节点名称用于搜索建议
+    # Get all node names for search suggestions
     search_options = sorted(list(node_lookup.keys()))
 
     selected_entity_id = st.selectbox(
@@ -970,18 +985,15 @@ with col2:
     if selected_entity_id and selected_entity_id in node_lookup:
         node = node_lookup[selected_entity_id]
         
-        # 展示详细信息卡片
+        # Display details card
         st.markdown(f"### {node.get('label', 'Unknown')}")
         st.caption(f"ID: {node.get('id')}")
         
-        # 类型标签
         st.markdown(f"**Type:** `{node.get('type', 'Unknown')}`")
         
-        # 描述
         st.markdown("#### Description")
         st.info(node.get('desc', 'No description available.'))
         
-        # 原始数据
         with st.expander("Raw Data"):
             st.json(node)
         
@@ -996,5 +1008,5 @@ with col2:
         > **Tip:** You can type in the box to search by name or ID.
         """)
 
-    # 使用新的 Log Viewer
+    # Use Log Viewer
     render_log_viewer(key_prefix="viz_sidebar")

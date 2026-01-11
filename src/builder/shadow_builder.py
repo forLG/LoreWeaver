@@ -1,18 +1,34 @@
 import json
 from typing import Dict, List, Any, Optional
-from src.utils.link_processor import LinkProcessor
+from src.utils.link import LinkProcessor
 from src.utils.logger import logger
 
 class ShadowNode:
+    """Represents a node in the shadow tree structure.
+
+    Attributes:
+        id: The unique identifier for the node.
+        title: The title of the node.
+        type: The type of the node (e.g., section, entry).
+        text_content: List of text paragraphs accumulated for this node.
+        links: List of links found in the accumulated text.
+        children: List of child ShadowNodes.
+    """
+
     def __init__(self, id: str, title: str, node_type: str):
         self.id = id
         self.title = title
         self.type = node_type
-        self.text_content: List[str] = [] # 累积当前节点的文本段落
-        self.links: List[Dict] = []       # 累积当前节点的链接
+        self.text_content: List[str] = []
+        self.links: List[Dict] = []
         self.children: List['ShadowNode'] = []
 
     def add_text(self, text: str):
+        """Adds text to the node, parsing links and cleaning content.
+
+        Args:
+            text: The text string to add.
+        """
         if not text:
             return
         clean_text, links = LinkProcessor.parse_and_clean(text)
@@ -20,9 +36,14 @@ class ShadowNode:
         self.links.extend(links)
 
     def to_dict(self):
-        # 在输出前对累积的所有链接进行最终去重
-        # 由于 `add_text` 会被多次调用，直接在那里去重会有
-        # 较大的时间开销
+        """Converts the node and its children to a dictionary format.
+
+        Performs final deduplication of links before outputting. This is done
+        here rather than in add_text to avoid performance overhead during accumulation.
+
+        Returns:
+            A dictionary representation of the ShadowNode.
+        """
         unique_links = []
         seen = set()
         for link in self.links:
@@ -35,14 +56,23 @@ class ShadowNode:
             "id": self.id,
             "title": self.title,
             "type": self.type,
-            "content": "\n".join(self.text_content), # 合并文本段落
+            "content": "\n".join(self.text_content),
             "links": unique_links,
             "children": [child.to_dict() for child in self.children]
         }
 
 class ShadowTreeBuilder:
+    """Builder class for constructing a shadow tree from source data."""
+
     def build(self, data: List[Dict]) -> List[Dict]:
-        """构建整个影子树"""
+        """Builds the entire shadow tree from the provided data.
+
+        Args:
+            data: A list of data entries to process.
+
+        Returns:
+            A list of dictionary representations of the root nodes.
+        """
         roots = []
         for entry in data:
             node = self._process_entry(entry)
@@ -51,20 +81,24 @@ class ShadowTreeBuilder:
         return roots
 
     def _process_entry(self, entry: Any) -> Optional[ShadowNode]:
+        """Recursive entry point for processing data entries.
+
+        Creates a ShadowNode if the entry is a structural node (e.g., Section),
+        or extracts content if it is a content block.
+
+        Strategies:
+        - Section/Inset/Entries types -> Create new node, recurse children.
+        - String/List/Image types -> Content belongs to current context, extract content.
+
+        Args:
+            entry: The data entry to process.
+
+        Returns:
+            A ShadowNode if a new node is created, otherwise None.
         """
-        递归处理入口。
-        返回 ShadowNode 表示这是一个独立的节点（如 Section）。
-        返回 None 表示这是一个内容块（如 String, List），其内容已被合并到父级（逻辑需在调用方处理，或者这里我们简化逻辑：只处理结构性节点）。
         
-        注意：为了简化递归，我们采用一种策略：
-        - 如果遇到 Section/Inset/Entries 类型 -> 创建新节点，递归处理子项。
-        - 如果遇到 String/List/Image -> 它们属于“当前上下文”，不创建独立节点。
-        
-        但在递归函数中，我们很难直接“返回给父级文本”。
-        所以我们将逻辑拆分为：_create_node_from_structure 和 _extract_content_from_structure。
-        """
-        
-        # 1. 结构性节点：创建新的 ShadowNode
+        # Create new ShadowNode for structural nodes
+        # TODO: Support more structural types as needed
         if isinstance(entry, dict) and entry.get("type") in ["section", "entries", "inset", "insetReadaloud"]:
             node_id = entry.get("id", "")
             title = entry.get("name", "Untitled Section")
@@ -72,17 +106,17 @@ class ShadowTreeBuilder:
             
             node = ShadowNode(node_id, title, node_type)
             
-            # 处理该节点下的 entries
+            # Process entries under this node
             if "entries" in entry:
                 for child_entry in entry["entries"]:
-                    # 递归检查子项
+                    # Recursively check child items
                     if self._is_structural_node(child_entry):
-                        # 如果子项也是结构性节点（如 Section 嵌套 Section），添加到 children
+                        # If child is structural, add to children
                         child_node = self._process_entry(child_entry)
                         if child_node:
                             node.children.append(child_node)
                     else:
-                        # 如果子项是内容（如 String, List），提取文本和链接到当前节点
+                        # If child is content, extract to current node
                         self._extract_content(child_entry, node)
             
             return node
@@ -90,46 +124,58 @@ class ShadowTreeBuilder:
         return None
 
     def _is_structural_node(self, entry: Any) -> bool:
-        """判断是否应该成为独立的子节点"""
+        """Determines if an entry should be a standalone child node.
+
+        Args:
+            entry: The entry to check.
+
+        Returns:
+            True if structural, False otherwise.
+        """
         if isinstance(entry, dict):
-            # 这些类型通常包含大量子内容，适合作为独立节点
+            # These types usually contain significant content and map to independent nodes
             return entry.get("type") in ["section", "entries", "inset", "insetReadaloud"]
         return False
 
     def _extract_content(self, entry: Any, current_node: ShadowNode):
-        """提取非结构化节点的内容，合并到当前节点中"""
+        """Extracts content from non-structural nodes and merges it into the current node.
+
+        Args:
+            entry: The entry to extract content from.
+            current_node: The node to add content to.
+        """
         
-        # Case 1: 纯字符串
+        # Case 1: Pure string
         if isinstance(entry, str):
             current_node.add_text(entry)
             
-        # Case 2: 字典类型 (List, Image, Table, Quote 等)
+        # Case 2: Dictionary types (List, Image, Table, Quote, etc.)
         elif isinstance(entry, dict):
             entry_type = entry.get("type")
             
             if entry_type == "list":
-                # 处理列表项
+                # Process list items
                 for item in entry.get("items", []):
                     if isinstance(item, str):
                         current_node.add_text(f"- {item}")
                     elif isinstance(item, dict) and "entry" in item:
-                        # 处理带标题的列表项 (name: entry)
+                        # Process list items with titles (name: entry)
                         name = item.get("name", "")
                         text = item.get("entry", "")
                         full_text = f"- **{name}**: {text}" if name else f"- {text}"
                         current_node.add_text(full_text)
             
             elif entry_type == "table":
-                # 简单处理表格，提取 caption 和 row 内容
+                # Simple table processing: extract caption and rows
                 if "caption" in entry:
                     current_node.add_text(f"**Table: {entry['caption']}**")
                 for row in entry.get("rows", []):
-                    # row 可能是字符串列表
+                    # Row might be a list of strings
                     row_text = " | ".join([str(cell) for cell in row])
                     current_node.add_text(row_text)
 
             elif entry_type == "image":
-                # 仅处理具有 title 的图片（通常是地图或重要图示）
+                # Only process images with titles (usually maps or important diagrams)
                 title = entry.get("title", "")
                 image_type = entry.get("imageType", "")
                 if title:
@@ -139,7 +185,7 @@ class ShadowTreeBuilder:
                         current_node.add_text(f"[Image: {title}]")
 
             elif entry_type == "gallery":
-                # 处理画廊，有有效图片时才处理
+                # Process gallery, only if valid images exist
                 is_valid = False
                 for img in entry.get("images", []):
                     title = img.get("title", "")
@@ -159,11 +205,11 @@ class ShadowTreeBuilder:
                                 current_node.add_text(f"[Image: {title}]")
             
             elif entry_type == "quote":
-                # 引用块
+                # Blockquote
                 for line in entry.get("entries", []):
                     if isinstance(line, str):
                         current_node.add_text(f"> {line}")
 
             else:
-                # 未知类型，记录警告
+                # Unknown type, log warning
                 logger.warning(f"Unknown entry type encountered: '{entry_type}' in node '{current_node.title}' (ID: {current_node.id})")

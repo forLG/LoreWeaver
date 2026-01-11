@@ -6,35 +6,44 @@ from src.utils.logger import logger
 from src.llm.prompt_factory import PromptFactory
 
 class EntityProcessor:
+    """Processor for extracting entities and relationships using an LLM."""
+
     def __init__(self, api_key: str, base_url: str = None, model: str = "deepseek-chat", max_concurrent: int = 100):
         self.async_client = AsyncOpenAI(api_key=api_key, base_url=base_url)
         self.model = model
         self.semaphore = asyncio.Semaphore(max_concurrent)
 
     def process(self, shadow_tree: List[Dict], section_map: Dict[str, List[str]]) -> Dict:
-        """
-        同步入口
+        """Synchronous entry point for processing the shadow tree.
+
+        Args:
+            shadow_tree: The shadow tree structure containing sections.
+            section_map: A mapping of section IDs to location IDs.
+
+        Returns:
+            A dictionary representing the extracted graph with nodes and edges.
         """
         return asyncio.run(self._process_async(shadow_tree, section_map))
 
     async def _process_async(self, shadow_tree: List[Dict], section_map: Dict[str, List[str]]) -> Dict:
-        # 1. 收集所有需要处理的 Section
+        # 1. Collect all sections to be processed
         sections = self._collect_sections(shadow_tree)
         logger.info(f"Starting Entity Extraction for {len(sections)} sections...")
 
         tasks = []
         for section in sections:
-            # 获取该章节对应的地点列表
+            # Get location IDs corresponding to this section
             loc_ids = section_map.get(section["id"], [])
             
-            # 只有当章节有内容 且 (有链接 或 有对应的地点) 时才处理
-            # 即使没有 links，如果内容丰富，也可以尝试挖掘（取决于你的策略，这里保守策略是必须有 links 或者是已知地点）
+            # Process only if section has content AND (has links OR has corresponding locations).
+            # Even without links, if content is rich, we might attempt extraction (depending on strategy),
+            # but current conservative strategy requires links or known locations.
             if section.get("content") and (section.get("links") or loc_ids):
                 tasks.append(self._process_single_section(section, loc_ids))
 
         results = await asyncio.gather(*tasks)
 
-        # 2. 合并结果并去重
+        # 2. Merge results and deduplicate
         full_graph = {"nodes": [], "edges": []}
         for res in results:
             full_graph["nodes"].extend(res["nodes"])
@@ -43,10 +52,10 @@ class EntityProcessor:
         return self._deduplicate_graph(full_graph)
 
     async def _process_single_section(self, section: Dict, location_ids: List[str]) -> Dict:
-        # 1. 准备候选实体 (从 links 中提取)
+        # 1. Prepare candidate entities (extracted from links)
         candidates = []
 
-        # 新增一个玩家节点，处理与玩家的互动关系
+        # Add a player node to handle interactions with players
         candidates.append({
             "tag": "player",
             "text": "Players",
@@ -54,30 +63,30 @@ class EntityProcessor:
         })
 
         for link in section.get("links", []):
-            # 过滤感兴趣的 tag
+            # Filter interested tags
             if link.get("tag") in ["creature", "item"]:
                 candidates.append({
                     "tag": link["tag"],
                     "text": link["text"],
-                    # 预生成一个建议 ID，方便 LLM 参考
+                    # Pre-generate a suggested ID for LLM reference
                     "suggested_id": f"{link['text'].lower().replace(' ', '_')}"
                 })
         
-        # 如果没有候选实体且没有地点上下文，挖掘价值不大，跳过以节省 Token
+        # If no candidates and no location context, extraction is likely low value, skip to save tokens.
         if not candidates and not location_ids:
             return {"nodes": [], "edges": []}
 
         candidate_list_str = json.dumps(candidates, indent=2, ensure_ascii=False)
         loc_list_str = ", ".join(location_ids)
 
-        # 2. 构建 Prompt
+        # 2. Build Prompt
         prompt = PromptFactory.create_entity_enrichment_prompt(
             section.get("content", ""),
             candidate_list_str,
             loc_list_str
         )
 
-        # 3. 调用 LLM
+        # 3. Call LLM
         try:
             async with self.semaphore:
                 response = await self.async_client.chat.completions.create(
@@ -93,7 +102,7 @@ class EntityProcessor:
             return {"nodes": [], "edges": []}
 
     def _collect_sections(self, nodes: List[Dict]) -> List[Dict]:
-        """递归收集所有 Section"""
+        """Recursively collects all Section nodes from the tree."""
         collected = []
         for node in nodes:
             collected.append(node)
@@ -102,20 +111,20 @@ class EntityProcessor:
         return collected
 
     def _deduplicate_graph(self, graph: Dict) -> Dict:
-        """简单的图谱去重"""
+        """Simple graph deduplication logic."""
         unique_nodes = {}
         for n in graph["nodes"]:
             if n["id"] not in unique_nodes:
                 unique_nodes[n["id"]] = n
             else:
-                # 如果新节点信息更全（例如有 label），可以更新
+                # If new node has more info (e.g. label), update it
                 if len(n.get("label", "")) > len(unique_nodes[n["id"]].get("label", "")):
                     unique_nodes[n["id"]] = n
 
         unique_edges = []
         seen_edges = set()
         for e in graph["edges"]:
-            # 归一化 edge key
+            # Normalize edge key
             key = f"{e['source']}|{e['relationship']}|{e['target']}"
             if key not in seen_edges:
                 seen_edges.add(key)

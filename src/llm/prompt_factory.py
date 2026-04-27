@@ -1,5 +1,5 @@
 import re
-from typing import Dict, List
+from typing import Dict
 
 class PromptFactory:
     """Factory for creating prompts used in various stages of the knowledge graph construction."""
@@ -8,7 +8,7 @@ class PromptFactory:
     AREA_PATTERN = re.compile(r"^(?:Area\s+)?([A-Z][0-9]+)[:\s]\s*(.+)$", re.IGNORECASE)
 
     @staticmethod
-    def create_spatial_summary_prompt(node: Dict, child_summaries: List[str]) -> str:
+    def create_spatial_summary_prompt(node: Dict, child_summaries: str) -> str:
         """
         Stage 1: Recursively generate a plain text summary of spatial relationships.
         
@@ -44,6 +44,12 @@ Task:
    - **Deduplicate**: If the same location appears multiple times with slightly different names, **MERGE** them into a single node using the most specific or canonical name.
 
 3.  **Preserve IDs**: Keep all Area IDs (e.g., A1, B2) visible.
+
+4. **Long-Context Continuity**:
+   - Treat child reports as memory from lower-level sections, not as isolated facts.
+   - Preserve cross-section dependencies such as "the stairs above", "the same tunnel",
+     "this chamber", "the next room", or named locations introduced by ancestors.
+   - If a current section depends on a parent/child location, state that dependency explicitly.
 
 Output Requirements:
 - If no spatial info exists anywhere (and no valid children), output: "NO_SPATIAL_INFO"
@@ -157,18 +163,21 @@ Section Info:
 {section_context}
 
 Rules:
-1. If the section clearly describes events inside one or more of the Known Locations, map it.
-2. If the section is generic or doesn't match any specific location, return an empty list.
-3. Output JSON format: {{ "location_ids": ["location_id_1", "location_id_2"] }}
+1. Use the section path, parent spatial summary, sibling titles, and child titles as context.
+2. If the section uses dependent language ("this room", "the stairs", "the tunnel above"),
+   resolve it through the hierarchy before choosing a location.
+3. If the section clearly describes events inside one or more Known Locations, map it.
+4. If the section is generic or doesn't match any specific location in this batch, return an empty list.
+5. Output JSON format: {{ "location_ids": ["location_id_1", "location_id_2"] }}
 """
 
     @staticmethod
-    def create_entity_enrichment_prompt(section_content: str, candidate_list: list, location_list: list) -> str:
+    def create_entity_enrichment_prompt(section_context: str, candidate_list: list, location_list: list) -> str:
         """
         Stage 5: Entity instantiation and relationship extraction.
 
         Args:
-            section_content: The text content of the section.
+            section_context: The text content plus hierarchy and spatial context for the section.
             candidate_list: A list of candidate entities (metdata) that might appear.
             location_list: The list of locations relevant to this context.
 
@@ -182,8 +191,8 @@ Context: The following text describes events occurring at these Location(s): [{l
 Candidate Entities (from metadata):
 {candidate_list}
 
-Input Text:
-{section_content}
+Section Context:
+{section_context}
 
 Task:
 1. **Instantiate Entities**: Identify which "Candidate Entities" are actually present or mentioned.
@@ -208,6 +217,13 @@ Task:
      - **Action**: `guards`, `patrols`, `attacks`, `gives_quest_to`.
 
    - **Description (REQUIRED)**: Add a `desc` field to EVERY edge summarizing the context.
+
+3. **Long-Context Dependencies**:
+   - Use the section path and parent/current spatial summaries to resolve pronouns and references such
+     as "it", "they", "this place", "the chamber", and "nearby".
+   - Prefer relationships grounded in the current section text, but keep parent location context when
+     deciding where an entity lives, guards, stores, or appears.
+   - Do not create facts from sibling titles alone; use them only to disambiguate ambiguous references.
 
 Output JSON Format:
 {{

@@ -30,6 +30,8 @@ Environment Variables (.env):
     OPENAI_API_KEY     - Your LLM API key (required)
     OPENAI_BASE_URL    - API base URL (default: https://api.openai.com/v1)
     LLM_MODEL          - Model name (default: gpt-4o)
+    LOREWEAVER_CONTEXT_WINDOW_CHARS - Approximate per-call context budget
+    LOREWEAVER_LOCATION_BATCH_SIZE  - Number of location IDs per mapping call
 
 Pipeline Stages:
     shadow       - Build shadow tree from adventure JSON
@@ -67,6 +69,18 @@ def get_default_concurrency():
             pass
     # Default for cloud APIs
     return 50
+
+
+def get_int_env(name: str, default: int) -> int:
+    """Read a positive integer environment variable with a fallback."""
+    value = os.getenv(name)
+    if not value:
+        return default
+    try:
+        parsed = int(value)
+    except ValueError:
+        return default
+    return parsed if parsed > 0 else default
 
 
 def parse_args():
@@ -120,6 +134,18 @@ def parse_args():
         default=get_default_concurrency(),
         help='Maximum concurrent LLM requests (default: auto-detected)'
     )
+    parser.add_argument(
+        '--context-window-chars',
+        type=int,
+        default=get_int_env('LOREWEAVER_CONTEXT_WINDOW_CHARS', 24000),
+        help='Approximate character budget for each long-context LLM call'
+    )
+    parser.add_argument(
+        '--location-batch-size',
+        type=int,
+        default=get_int_env('LOREWEAVER_LOCATION_BATCH_SIZE', 150),
+        help='Maximum number of location IDs to include in one section mapping call'
+    )
 
     # File paths
     parser.add_argument(
@@ -170,6 +196,8 @@ class Pipeline:
         # Log configuration
         logger.info(f"Model: {self.args.model}")
         logger.info(f"Max concurrent requests: {self.args.max_concurrent}")
+        logger.info(f"Context window budget: {self.args.context_window_chars} chars")
+        logger.info(f"Location mapping batch size: {self.args.location_batch_size}")
 
     def run(self):
         """Run the pipeline with specified stages."""
@@ -253,6 +281,8 @@ class Pipeline:
             base_url=self.args.base_url,
             model=self.args.model,
             max_concurrent=self.args.max_concurrent,
+            context_window_chars=self.args.context_window_chars,
+            location_batch_size=self.args.location_batch_size,
         )
         location_graph = processor.process(self.shadow_tree, skip_summary=skip_summary)
 
@@ -291,6 +321,8 @@ class Pipeline:
             base_url=self.args.base_url,
             model=self.args.model,
             max_concurrent=self.args.max_concurrent,
+            context_window_chars=self.args.context_window_chars,
+            location_batch_size=self.args.location_batch_size,
         )
 
         section_map = mapper.process(self.shadow_tree, location_graph)
@@ -325,6 +357,7 @@ class Pipeline:
             base_url=self.args.base_url,
             model=self.args.model,
             max_concurrent=self.args.max_concurrent,
+            context_window_chars=self.args.context_window_chars,
         )
 
         entity_graph = processor.process(self.shadow_tree, section_map)

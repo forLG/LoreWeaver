@@ -3,15 +3,26 @@ import re
 import asyncio
 from typing import List, Dict, Any
 from openai import OpenAI, AsyncOpenAI
+from src.llm.context_window import build_section_context, clamp_text, split_batches
 from src.llm.prompt_factory import PromptFactory
 from src.utils.logger import logger
 
 class SpatialTopologyProcessor:
-    def __init__(self, api_key: str, base_url: str = None, model: str = "deepseek-chat", max_concurrent: int = 100):
+    def __init__(
+        self,
+        api_key: str,
+        base_url: str = None,
+        model: str = "deepseek-chat",
+        max_concurrent: int = 100,
+        context_window_chars: int = 24000,
+        location_batch_size: int = 150,
+    ):
         self.client = OpenAI(api_key=api_key, base_url=base_url) # Keep synchronous client as backup
         self.async_client = AsyncOpenAI(api_key=api_key, base_url=base_url)
         self.model = model
         self.semaphore = asyncio.Semaphore(max_concurrent) # Limit concurrency
+        self.context_window_chars = context_window_chars
+        self.location_batch_size = location_batch_size
 
     def process(self, shadow_tree: List[Dict], skip_summary: bool = False) -> Dict:
         """Synchronous entry point that runs the async processing loop.
@@ -83,8 +94,8 @@ class SpatialTopologyProcessor:
 
         if has_content or has_valid_children:
             prompt = PromptFactory.create_spatial_summary_prompt(
-                node, 
-                children_text
+                node,
+                clamp_text(children_text, self.context_window_chars // 2),
             )
             
             # Async LLM call
@@ -110,7 +121,9 @@ class SpatialTopologyProcessor:
         Returns:
             A dictionary containing the extracted graph (nodes and edges).
         """
-        prompt = PromptFactory.create_graph_extraction_prompt(text)
+        prompt = PromptFactory.create_graph_extraction_prompt(
+            clamp_text(text, self.context_window_chars)
+        )
         
         try:
             async with self.semaphore:
@@ -184,7 +197,8 @@ class SpatialTopologyProcessor:
             if source == target:
                 continue
                 
-            edge_key = f"{source}|{edge.get('relation')}|{target}"
+            relationship = edge.get("relationship") or edge.get("relation") or ""
+            edge_key = f"{source}|{relationship}|{target}"
             
             if edge_key not in seen_edges:
                 new_edge = edge.copy()
@@ -207,7 +221,9 @@ class SpatialTopologyProcessor:
         Returns:
             A dictionary mapping duplicate IDs to canonical IDs.
         """
-        prompt = PromptFactory.create_entity_resolution_prompt(node_list_text)
+        prompt = PromptFactory.create_entity_resolution_prompt(
+            clamp_text(node_list_text, self.context_window_chars)
+        )
         
         try:
             async with self.semaphore:
@@ -239,10 +255,20 @@ class SpatialTopologyProcessor:
 class SectionLocationMapper:
     """Specific class for mapping Shadow Tree sections to known nodes in the Location Graph."""
 
-    def __init__(self, api_key: str, base_url: str = None, model: str = "deepseek-chat", max_concurrent: int = 100):
+    def __init__(
+        self,
+        api_key: str,
+        base_url: str = None,
+        model: str = "deepseek-chat",
+        max_concurrent: int = 100,
+        context_window_chars: int = 24000,
+        location_batch_size: int = 150,
+    ):
         self.async_client = AsyncOpenAI(api_key=api_key, base_url=base_url)
         self.model = model
         self.semaphore = asyncio.Semaphore(max_concurrent)
+        self.context_window_chars = context_window_chars
+        self.location_batch_size = location_batch_size
 
     def process(self, shadow_tree: List[Dict], location_graph: Dict) -> Dict[str, str]:
         """Synchronous entry point.
@@ -281,19 +307,25 @@ class SectionLocationMapper:
         return mapping
 
     async def _map_section_to_locations(self, section_ctx: Dict, location_ids: List[str]) -> tuple:
-        child_titles_str = ", ".join(section_ctx.get('child_titles', [])) or "None"
+        content_budget = max(2000, self.context_window_chars // 2)
+        context = build_section_context(section_ctx, content_budget)
 
-        context = (
-            f"ID: {section_ctx['id']}\n"
-            f"Parent Title: {section_ctx['parent_title']}\n"
-            f"Title: {section_ctx['title']}\n"
-            f"Content: {section_ctx['content']}\n"
-            f"Child Titles: {child_titles_str}"
-        )
-        
+        batches = split_batches(location_ids, self.location_batch_size)
+        all_loc_ids = []
+        for batch in batches:
+            batch_loc_ids = await self._map_section_batch(context, section_ctx["id"], batch)
+            all_loc_ids.extend(batch_loc_ids)
+
+        return section_ctx["id"], all_loc_ids
+
+    async def _map_section_batch(
+        self,
+        section_context: str,
+        section_id: str,
+        location_ids: List[str],
+    ) -> List[str]:
         loc_list_str = ", ".join(location_ids)
-        prompt = PromptFactory.create_section_mapping_prompt(context, loc_list_str)
-
+        prompt = PromptFactory.create_section_mapping_prompt(section_context, loc_list_str)
         try:
             async with self.semaphore:
                 response = await self.async_client.chat.completions.create(
@@ -313,13 +345,19 @@ class SectionLocationMapper:
                     loc_ids = [raw_result]
                 else:
                     loc_ids = []
-                    
-                return section_ctx["id"], loc_ids
-        except Exception as e:
-            logger.error(f"Mapping failed for section {section_ctx['id']}: {e}")
-            return section_ctx["id"], None
 
-    def _collect_sections_info(self, nodes: List[Dict], parent_title: str = "") -> List[Dict]:
+                return loc_ids
+        except Exception as e:
+            logger.error(f"Mapping failed for section {section_id}: {e}")
+            return []
+
+    def _collect_sections_info(
+        self,
+        nodes: List[Dict],
+        parent_title: str = "",
+        path: List[str] | None = None,
+        parent_spatial_summary: str = "",
+    ) -> List[Dict]:
         """Recursively collects all Sections containing content or links, attached with parent title info.
 
         Args:
@@ -330,18 +368,25 @@ class SectionLocationMapper:
             A list of dictionaries containing section context.
         """
         collected = []
+        path = path or []
+        sibling_titles = [node.get("title", "Untitled") for node in nodes]
         for node in nodes:
             current_title = node.get("title", "Untitled")
 
             children = node.get("children", [])
             child_titles = [child.get("title", "Untitled") for child in children]
+            current_path = [*path, current_title]
             
             context_obj = {
                 "id": node["id"],
                 "title": current_title,
                 "parent_title": parent_title,
                 "content": node.get("content", ""),
-                "child_titles": child_titles
+                "child_titles": child_titles,
+                "sibling_titles": [title for title in sibling_titles if title != current_title],
+                "path": current_path,
+                "parent_spatial_summary": parent_spatial_summary,
+                "spatial_summary": node.get("spatial_summary", ""),
             }
             
             # Only map nodes that have content
@@ -349,5 +394,12 @@ class SectionLocationMapper:
                 collected.append(context_obj)
             
             if "children" in node:
-                collected.extend(self._collect_sections_info(node["children"], current_title))
+                collected.extend(
+                    self._collect_sections_info(
+                        node["children"],
+                        current_title,
+                        current_path,
+                        node.get("spatial_summary", parent_spatial_summary),
+                    )
+                )
         return collected

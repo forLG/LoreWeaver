@@ -2,16 +2,25 @@ import json
 import asyncio
 from typing import List, Dict, Any, Set
 from openai import AsyncOpenAI
+from src.llm.context_window import build_section_context
 from src.utils.logger import logger
 from src.llm.prompt_factory import PromptFactory
 
 class EntityProcessor:
     """Processor for extracting entities and relationships using an LLM."""
 
-    def __init__(self, api_key: str, base_url: str = None, model: str = "deepseek-chat", max_concurrent: int = 100):
+    def __init__(
+        self,
+        api_key: str,
+        base_url: str = None,
+        model: str = "deepseek-chat",
+        max_concurrent: int = 100,
+        context_window_chars: int = 24000,
+    ):
         self.async_client = AsyncOpenAI(api_key=api_key, base_url=base_url)
         self.model = model
         self.semaphore = asyncio.Semaphore(max_concurrent)
+        self.context_window_chars = context_window_chars
 
     def process(self, shadow_tree: List[Dict], section_map: Dict[str, List[str]]) -> Dict:
         """Synchronous entry point for processing the shadow tree.
@@ -80,8 +89,13 @@ class EntityProcessor:
         loc_list_str = ", ".join(location_ids)
 
         # 2. Build Prompt
+        section_context = build_section_context(
+            section,
+            max(2000, self.context_window_chars // 2),
+        )
+
         prompt = PromptFactory.create_entity_enrichment_prompt(
-            section.get("content", ""),
+            section_context,
             candidate_list_str,
             loc_list_str
         )
@@ -101,13 +115,38 @@ class EntityProcessor:
             logger.error(f"Entity extraction failed for section {section['id']}: {e}")
             return {"nodes": [], "edges": []}
 
-    def _collect_sections(self, nodes: List[Dict]) -> List[Dict]:
+    def _collect_sections(
+        self,
+        nodes: List[Dict],
+        path: List[str] | None = None,
+        parent_spatial_summary: str = "",
+    ) -> List[Dict]:
         """Recursively collects all Section nodes from the tree."""
         collected = []
+        path = path or []
+        sibling_titles = [node.get("title", "Untitled") for node in nodes]
         for node in nodes:
-            collected.append(node)
+            current_title = node.get("title", "Untitled")
+            current_path = [*path, current_title]
+            section = dict(node)
+            children = node.get("children", [])
+            section["path"] = current_path
+            section["sibling_titles"] = [
+                title for title in sibling_titles if title != current_title
+            ]
+            section["child_titles"] = [
+                child.get("title", "Untitled") for child in children
+            ]
+            section["parent_spatial_summary"] = parent_spatial_summary
+            collected.append(section)
             if "children" in node:
-                collected.extend(self._collect_sections(node["children"]))
+                collected.extend(
+                    self._collect_sections(
+                        node["children"],
+                        current_path,
+                        node.get("spatial_summary", parent_spatial_summary),
+                    )
+                )
         return collected
 
     def _deduplicate_graph(self, graph: Dict) -> Dict:

@@ -7,42 +7,7 @@
     },
     {
       "id": "stormwreck_isle",
-      "label": "stormwreck_isle",
-      "type": "location"
-    },
-    {
-      "id": "dragons_rest",
-      "label": "Dragon's Rest",
-      "type": "location"
-    },
-    {
-      "id": "the_forgotten_realms",
-      "label": "The Forgotten Realms",
-      "type": "location"
-    },
-    {
-      "id": "the_sword_coast",
-      "label": "The Sword Coast",
-      "type": "location"
-    },
-    {
-      "id": "neverwinter",
-      "label": "Neverwinter",
-      "type": "location"
-    },
-    {
-      "id": "baldurs_gate",
-      "label": "Baldur's Gate",
-      "type": "location"
-    },
-    {
-      "id": "crypts_of_the_fallen_dwarf_kings_of_delzoun",
-      "label": "Crypts of the Fallen Dwarf Kings of Delzoun",
-      "type": "location"
-    },
-    {
-      "id": "ruins_of_the_fallen_netherese_empire",
-      "label": "Ruins of the Fallen Netherese Empire",
+      "label": "Stormwreck Isle",
       "type": "location"
     },
     {
@@ -51,23 +16,23 @@
       "type": "npc"
     },
     {
-      "id": "seagrow_caves",
-      "label": "seagrow_caves",
+      "id": "dragons_rest",
+      "label": "Dragon's Rest",
       "type": "location"
     },
     {
-      "id": "cursed_shipwreck",
-      "label": "cursed_shipwreck",
+      "id": "sharruths_tomb",
+      "label": "Sharruth's Tomb",
       "type": "location"
     },
     {
-      "id": "clifftop_observatory",
-      "label": "clifftop_observatory",
+      "id": "runaras_secret_lair",
+      "label": "Runara's Secret Lair",
       "type": "location"
     },
     {
-      "id": "the_ships_hold",
-      "label": "the_ships_hold",
+      "id": "the_cloister",
+      "label": "the_cloister",
       "type": "location"
     },
     {
@@ -81,8 +46,38 @@
       "type": "monster"
     },
     {
-      "id": "sea_of_swords",
-      "label": "sea_of_swords",
+      "id": "main_deck",
+      "label": "main_deck",
+      "type": "location"
+    },
+    {
+      "id": "hold",
+      "label": "hold",
+      "type": "location"
+    },
+    {
+      "id": "the_sea",
+      "label": "the_sea",
+      "type": "location"
+    },
+    {
+      "id": "north_harbor",
+      "label": "north_harbor",
+      "type": "location"
+    },
+    {
+      "id": "rickety_dock",
+      "label": "rickety_dock",
+      "type": "location"
+    },
+    {
+      "id": "cliffside_path",
+      "label": "cliffside_path",
+      "type": "location"
+    },
+    {
+      "id": "temple_of_bahamut",
+      "label": "temple_of_bahamut",
       "type": "location"
     },
     {
@@ -91,9 +86,34 @@
       "type": "monster"
     },
     {
+      "id": "recent_shipwreck_site",
+      "label": "recent_shipwreck_site",
+      "type": "location"
+    },
+    {
+      "id": "beach_at_climbs_base",
+      "label": "beach_at_climbs_base",
+      "type": "location"
+    },
+    {
       "id": "myla",
       "label": "Myla",
       "type": "npc"
+    },
+    {
+      "id": "cloister_cells",
+      "label": "cloister_cells",
+      "type": "location"
+    },
+    {
+      "id": "kitchen_dining_area",
+      "label": "kitchen_dining_area",
+      "type": "location"
+    },
+    {
+      "id": "cliff_face_library",
+      "label": "cliff_face_library",
+      "type": "location"
     },
     {
       "id": "kobold_tinkerer",
@@ -121,6 +141,11 @@
       "type": "item"
     },
     {
+      "id": "sea_caves_south_island",
+      "label": "sea_caves_south_island",
+      "type": "location"
+    },
+    {
       "id": "varnoth",
       "label": "Varnoth",
       "type": "npc"
@@ -131,8 +156,13 @@
       "type": "location"
     },
     {
-      "id": "kitchen_dining_room",
-      "label": "kitchen_dining_room",
+      "id": "statue_alcove",
+      "label": "statue_alcove",
+      "type": "location"
+    },
+    {
+      "id": "winch_house",
+      "label": "winch_house",
       "type": "location"
     },
     {
@@ -141,9 +171,39 @@
       "type": "npc"
     },
     {
+      "id": "myconid_caves",
+      "label": "myconid_caves",
+      "type": "location"
+    },
+    {
+      "id": "wreck_of_the_compass_rose",
+      "label": "wreck_of_the_compass_rose",
+      "type": "location"
+    },
+    {
+      "id": "rocks_north_of_dragons_rest",
+      "label": "rocks_north_of_dragons_rest",
+      "type": "location"
+    },
+    {
+      "id": "clifftop_observatory",
+      "label": "Clifftop Observatory",
+      "type": "location"
+    },
+    {
       "id": "fume_drake",
       "label": "Fume Drake",
       "type": "monster"
+    },
+    {
+      "id": "hot_spring_pool",
+      "label": "hot_spring_pool",
+      "type": "location"
+    },
+    {
+      "id": "luminescent_cove",
+      "label": "Luminescent Cove",
+      "type": "location"
     },
     {
       "id": "owlbear",
@@ -151,19 +211,64 @@
       "type": "monster"
     },
     {
+      "id": "northern_rocky_coast",
+      "label": "northern_rocky_coast",
+      "type": "location"
+    },
+    {
+      "id": "island_interior",
+      "label": "island_interior",
+      "type": "location"
+    },
+    {
+      "id": "island_wilderness",
+      "label": "island_wilderness",
+      "type": "location"
+    },
+    {
       "id": "winged_kobold",
       "label": "winged kobold",
       "type": "monster"
     },
     {
-      "id": "sharruths_tomb",
-      "label": "sharruths_tomb",
+      "id": "kobold_camp",
+      "label": "kobold_camp",
+      "type": "location"
+    },
+    {
+      "id": "seagrow_caves",
+      "label": "seagrow_caves",
+      "type": "location"
+    },
+    {
+      "id": "subterranean_access_network",
+      "label": "subterranean_access_network",
+      "type": "location"
+    },
+    {
+      "id": "entrance_tunnel",
+      "label": "entrance_tunnel",
+      "type": "location"
+    },
+    {
+      "id": "fume_vent",
+      "label": "fume_vent",
+      "type": "location"
+    },
+    {
+      "id": "western_fissure",
+      "label": "western_fissure",
       "type": "location"
     },
     {
       "id": "sinensa",
       "label": "Sinensa",
       "type": "npc"
+    },
+    {
+      "id": "sinensas_sanctum",
+      "label": "Sinensa's Sanctum",
+      "type": "location"
     },
     {
       "id": "rowboat",
@@ -181,6 +286,26 @@
       "type": "monster"
     },
     {
+      "id": "crystal_cave",
+      "label": "Crystal Cave",
+      "type": "location"
+    },
+    {
+      "id": "fungus_farm",
+      "label": "fungus_farm",
+      "type": "location"
+    },
+    {
+      "id": "larder",
+      "label": "larder",
+      "type": "location"
+    },
+    {
+      "id": "circle_chamber",
+      "label": "circle_chamber",
+      "type": "location"
+    },
+    {
       "id": "spore_servant_octopus",
       "label": "spore servant octopus",
       "type": "monster"
@@ -196,6 +321,16 @@
       "type": "item"
     },
     {
+      "id": "taraks_workshop",
+      "label": "taraks_workshop",
+      "type": "location"
+    },
+    {
+      "id": "cursed_shipwreck",
+      "label": "cursed_shipwreck",
+      "type": "location"
+    },
+    {
       "id": "harpy",
       "label": "harpy",
       "type": "monster"
@@ -204,6 +339,61 @@
       "id": "ghoul",
       "label": "Ghoul",
       "type": "monster"
+    },
+    {
+      "id": "other_recent_wrecks",
+      "label": "other_recent_wrecks",
+      "type": "location"
+    },
+    {
+      "id": "tattered_rigging",
+      "label": "tattered_rigging",
+      "type": "location"
+    },
+    {
+      "id": "gaping_hull_breach",
+      "label": "gaping_hull_breach",
+      "type": "location"
+    },
+    {
+      "id": "forecastle",
+      "label": "forecastle",
+      "type": "location"
+    },
+    {
+      "id": "quarterdeck",
+      "label": "quarterdeck",
+      "type": "location"
+    },
+    {
+      "id": "captains_quarters",
+      "label": "captains_quarters",
+      "type": "location"
+    },
+    {
+      "id": "galley",
+      "label": "galley",
+      "type": "location"
+    },
+    {
+      "id": "crew_quarters",
+      "label": "crew_quarters",
+      "type": "location"
+    },
+    {
+      "id": "mess_hall",
+      "label": "mess_hall",
+      "type": "location"
+    },
+    {
+      "id": "lower_deck",
+      "label": "lower_deck",
+      "type": "location"
+    },
+    {
+      "id": "mainmast_and_crows_nest",
+      "label": "mainmast_and_crows_nest",
+      "type": "location"
     },
     {
       "id": "tiger_eye",
@@ -256,6 +446,11 @@
       "type": "item"
     },
     {
+      "id": "sunken_ship_hull",
+      "label": "sunken_ship_hull",
+      "type": "location"
+    },
+    {
       "id": "turquoise",
       "label": "Turquoise",
       "type": "item"
@@ -266,8 +461,8 @@
       "type": "item"
     },
     {
-      "id": "neverwinter_docks",
-      "label": "neverwinter_docks",
+      "id": "clifftop_cemetery",
+      "label": "clifftop_cemetery",
       "type": "location"
     },
     {
@@ -276,14 +471,64 @@
       "type": "monster"
     },
     {
+      "id": "dragons_roost_spire",
+      "label": "dragons_roost_spire",
+      "type": "location"
+    },
+    {
+      "id": "the_crystalline_scar",
+      "label": "The Crystalline Scar",
+      "type": "location"
+    },
+    {
+      "id": "the_basalt_columns",
+      "label": "the_basalt_columns",
+      "type": "location"
+    },
+    {
+      "id": "southeastern_shore",
+      "label": "southeastern_shore",
+      "type": "location"
+    },
+    {
+      "id": "isolated_study_tower",
+      "label": "isolated_study_tower",
+      "type": "location"
+    },
+    {
+      "id": "the_gilded_roar_overlook",
+      "label": "the_gilded_roar_overlook",
+      "type": "location"
+    },
+    {
+      "id": "the_rust_celestial_plaza",
+      "label": "the_rust_celestial_plaza",
+      "type": "location"
+    },
+    {
       "id": "sling_bullet",
       "label": "Sling Bullet",
       "type": "item"
     },
     {
+      "id": "chamber_below",
+      "label": "chamber_below",
+      "type": "location"
+    },
+    {
       "id": "potion_of_lightning_resistance",
       "label": "Potion of Lightning Resistance",
       "type": "item"
+    },
+    {
+      "id": "hidden_entrance",
+      "label": "hidden_entrance",
+      "type": "location"
+    },
+    {
+      "id": "secret_archive_library",
+      "label": "secret_archive_library",
+      "type": "location"
     },
     {
       "id": "blue_quartz",
@@ -323,160 +568,100 @@
   ],
   "edges": [
     {
-      "source": "players",
-      "target": "dragons_rest",
-      "relationship": "inhabits",
-      "desc": "serves as the characters' home base during the adventure, where they can rest and get supplies"
-    },
-    {
-      "source": "players",
-      "target": "stormwreck_isle",
-      "relationship": "inhabits",
-      "desc": "explore an island that has long been a battlefield in the ancient dragon war"
-    },
-    {
-      "source": "players",
-      "target": "crypts_of_the_fallen_dwarf_kings_of_delzoun",
-      "relationship": "attacks",
-      "desc": "Fighters dare the crypts seeking glory and treasure"
-    },
-    {
-      "source": "players",
-      "target": "neverwinter",
-      "relationship": "patrols",
-      "desc": "Rogues prowl the dark alleyways of teeming cities"
-    },
-    {
-      "source": "players",
-      "target": "baldurs_gate",
-      "relationship": "patrols",
-      "desc": "Rogues prowl the dark alleyways of teeming cities"
-    },
-    {
-      "source": "players",
-      "target": "ruins_of_the_fallen_netherese_empire",
-      "relationship": "attacks",
-      "desc": "Wizards plunder the ruins delving into sinister secrets"
-    },
-    {
-      "source": "players",
-      "target": "the_sword_coast",
-      "relationship": "patrols",
-      "desc": "Bold adventurers follow tales of strange, glorious, faraway places"
-    },
-    {
-      "source": "players",
-      "target": "stormwreck_isle",
-      "relationship": "patrols",
-      "desc": "This adventure takes place on Stormwreck Isle where daring souls explore"
-    },
-    {
       "source": "runara",
       "target": "dragons_rest",
       "relationship": "inhabits",
-      "desc": "established Dragon's Rest as a safe haven and serves as its leader"
+      "desc": "established and leads the cloister at Dragon's Rest, living there in human guise"
+    },
+    {
+      "source": "runara",
+      "target": "the_cloister",
+      "relationship": "inhabits",
+      "desc": "serves as leader of the hermits and ascetics at the cloister"
     },
     {
       "source": "runara",
       "target": "stormwreck_isle",
       "relationship": "inhabits",
-      "desc": "lives on Stormwreck Isle in human guise as part of Dragon's Rest"
+      "desc": "has been involved with events on Stormwreck Isle for centuries, including killing a blue dragon there"
     },
     {
       "source": "runara",
       "target": "players",
       "relationship": "gives_quest_to",
-      "desc": "the adventure begins with Runara's sanctuary threatened by dragon conflict"
-    },
-    {
-      "source": "runara",
-      "target": "clifftop_observatory",
-      "relationship": "attacks",
-      "desc": "Runara killed a blue dragon at the Clifftop Observatory"
-    },
-    {
-      "source": "players",
-      "target": "seagrow_caves",
-      "relationship": "inhabits",
-      "desc": "Characters explore the Seagrow Caves where Sharruth's grave spawns fire connections"
-    },
-    {
-      "source": "players",
-      "target": "cursed_shipwreck",
-      "relationship": "inhabits",
-      "desc": "Characters investigate the cursed shipwreck alongside gold dragon bones"
-    },
-    {
-      "source": "players",
-      "target": "clifftop_observatory",
-      "relationship": "inhabits",
-      "desc": "Characters visit the Clifftop Observatory where Runara killed a blue dragon"
-    },
-    {
-      "source": "the_ships_hold",
-      "target": "cursed_shipwreck",
-      "relationship": "stored_in",
-      "desc": "The ship's hold contains a horrible curse within the cursed shipwreck"
-    },
-    {
-      "source": "players",
-      "target": "stormwreck_isle",
-      "relationship": "arrives_at",
-      "desc": "The characters arrive at locations marked on the map of Stormwreck Isle"
-    },
-    {
-      "source": "merrow_extortionist",
-      "target": "sea_of_swords",
-      "relationship": "inhabits",
-      "desc": "encounters the players' ship at sea near Stormwreck Isle"
+      "desc": "the adventure begins with Runara's sanctuary being threatened, implying she will interact with the players"
     },
     {
       "source": "merrow_extortionist",
       "target": "players",
       "relationship": "attacks",
-      "desc": "intimidates and extorts the players during their voyage"
-    },
-    {
-      "source": "players",
-      "target": "sea_of_swords",
-      "relationship": "inhabits",
-      "desc": "The players are currently sailing through the Sea of Swords on their journey to Stormwreck Isle"
+      "desc": "The merrow extortionist is described as intimidating and the text instructs the DM to adopt an intimidating voice when speaking as it, suggesting it confronts or threatens the players"
     },
     {
       "source": "merrow_extortionist",
-      "target": "the_ships_hold",
+      "target": "hold",
       "relationship": "inhabits",
-      "desc": "is present in the ship's hold demanding tribute"
+      "desc": "is present in the hold demanding tribute"
     },
     {
       "source": "merrow_extortionist",
       "target": "players",
       "relationship": "gives_quest_to",
-      "desc": "can be persuaded to accept lower tribute through Charisma checks"
+      "desc": "players can use Charisma checks to negotiate a lower tribute amount"
     },
     {
       "source": "players",
       "target": "merrow_extortionist",
       "relationship": "attacks",
-      "desc": "Players will attack the Merrow Extortionist first, with characters acting in combat order when players decide to attack"
+      "desc": "players will attack the Merrow Extortionist first, with characters acting in combat order"
     },
     {
-      "source": "merrow_extortionist",
-      "target": "stormwreck_isle",
+      "source": "players",
+      "target": "the_sea",
       "relationship": "inhabits",
-      "desc": "Merrow Extortionist is located on Stormwreck Isle"
+      "desc": "The players are traveling through the sea on a ship during their adventure"
+    },
+    {
+      "source": "players",
+      "target": "dragons_rest",
+      "relationship": "inhabits",
+      "desc": "The characters arrive at Dragon's Rest, a haven where world-weary people come to seek peace, reconciliation, and enlightenment"
     },
     {
       "source": "players",
       "target": "runara",
       "relationship": "gives_quest_to",
-      "desc": "Players seek out Runara's wisdom and assistance, learning about the dangers facing Stormwreck Isle"
+      "desc": "Characters seek out Runara's wisdom and assistance, learning about the dangers facing Stormwreck Isle"
+    },
+    {
+      "source": "players",
+      "target": "north_harbor",
+      "relationship": "inhabits",
+      "desc": "The players' ship makes its way toward the calm harbor on the island's north side"
+    },
+    {
+      "source": "players",
+      "target": "rickety_dock",
+      "relationship": "inhabits",
+      "desc": "The sailors set the players ashore on the rickety dock"
+    },
+    {
+      "source": "players",
+      "target": "cliffside_path",
+      "relationship": "inhabits",
+      "desc": "The sailors point to the base of the path where the players begin their journey"
+    },
+    {
+      "source": "players",
+      "target": "temple_of_bahamut",
+      "relationship": "inhabits",
+      "desc": "The players admire the towering statue at the center of the temple from below"
     },
     {
       "source": "zombie",
-      "target": "dragons_rest",
+      "target": "recent_shipwreck_site",
       "relationship": "inhabits",
-      "desc": "three shambling zombie sailors are present at this location"
+      "desc": "shambling zombies are animated corpses of sailors who died at the recent shipwreck site"
     },
     {
       "source": "zombie",
@@ -485,34 +670,82 @@
       "desc": "zombies will move toward and attack the characters if they choose to fight"
     },
     {
-      "source": "runara",
-      "target": "players",
-      "relationship": "attacks",
-      "desc": "rescues the players by defeating zombies that were attacking them"
+      "source": "players",
+      "target": "beach_at_climbs_base",
+      "relationship": "inhabits",
+      "desc": "The players are at the beach, about to leave and start their climb"
+    },
+    {
+      "source": "temple_of_bahamut",
+      "target": "dragons_rest",
+      "relationship": "part_of",
+      "desc": "temple is located in area A5 of Dragon's Rest"
     },
     {
       "source": "players",
       "target": "dragons_rest",
-      "relationship": "travels_to",
+      "relationship": "moves_toward",
       "desc": "The characters escape from zombies and move up the path toward Dragon's Rest"
     },
     {
       "source": "runara",
       "target": "dragons_rest",
       "relationship": "commands",
-      "desc": "is the leader of Dragon's Rest cloister"
+      "desc": "Elder Runara is the leader of Dragon's Rest and welcomes visitors to the cloister"
+    },
+    {
+      "source": "myla",
+      "target": "players",
+      "relationship": "serves",
+      "desc": "Myla sells equipment from the Basic Rules to the characters during their stay at Dragon's Rest"
+    },
+    {
+      "source": "players",
+      "target": "cloister_cells",
+      "relationship": "inhabits",
+      "desc": "Runara offers the characters the option to sleep in the monastic cells (area A1) during their stay"
+    },
+    {
+      "source": "players",
+      "target": "kitchen_dining_area",
+      "relationship": "inhabits",
+      "desc": "The characters eat with the rest of the community in the dining room (area A3)"
     },
     {
       "source": "myla",
       "target": "dragons_rest",
       "relationship": "inhabits",
-      "desc": "lives at Dragon's Rest and sells equipment to characters"
+      "desc": "Myla is one of the residents of Dragon's Rest who interacts with the characters"
+    },
+    {
+      "source": "players",
+      "target": "the_cloister",
+      "relationship": "inhabits",
+      "desc": "arrives at the cloister, drawing attention from all residents"
     },
     {
       "source": "runara",
-      "target": "players",
+      "target": "the_cloister",
       "relationship": "commands",
-      "desc": "If characters harm residents, Runara becomes hostile and insists they make amends before dealing with them"
+      "desc": "She guides the residents of the cloister in their contemplation and study"
+    },
+    {
+      "source": "runara",
+      "target": "runaras_secret_lair",
+      "relationship": "inhabits",
+      "desc": "Runara maintains a secret lair in a cave accessed by an undersea tunnel"
+    },
+    {
+      "source": "runara",
+      "target": "temple_of_bahamut",
+      "relationship": "inhabits",
+      "desc": "The other residents think she lives in the temple at the top of the island"
+    },
+    {
+      "source": "runara",
+      "target": "cliff_face_library",
+      "relationship": "inhabits",
+      "desc": "Residents say she's always in the library or checking on other residents"
     },
     {
       "source": "kobold_tinkerer",
@@ -524,24 +757,24 @@
       "source": "kobold_tinkerer",
       "target": "dragons_rest",
       "relationship": "inhabits",
-      "desc": "Nine kobolds live at Dragon's Rest, working at night and avoiding movement during the day due to sunlight sensitivity"
-    },
-    {
-      "source": "kobold_tinkerer",
-      "target": "stormwreck_isle",
-      "relationship": "inhabits",
-      "desc": "Many bands of kobolds have been drawn to Stormwreck Isle over centuries by the lingering draconic magic"
+      "desc": "Nine kobolds live at Dragon's Rest, working at night and avoiding sunlight due to sensitivity"
     },
     {
       "source": "myla",
       "target": "runara",
       "relationship": "serves",
-      "desc": "Runara helped Myla recover from wing injuries and now Myla serves as a kobold tinkerer at Dragon's Rest"
+      "desc": "Myla was helped by Runara after her wings were injured, and now serves as a tinkerer at Dragon's Rest"
+    },
+    {
+      "source": "myla",
+      "target": "kobold_tinkerer",
+      "relationship": "allied_with",
+      "desc": "Myla is a winged kobold tinkerer who is part of the kobold community at Dragon's Rest"
     },
     {
       "source": "myla",
       "target": "stirge",
-      "relationship": "attacks",
+      "relationship": "rival_of",
       "desc": "Myla's wings were badly injured in an attack by Stirge, which she describes as 'hungry, icky, blood-sucking, bat-things'"
     },
     {
@@ -558,27 +791,27 @@
     },
     {
       "source": "tarak",
+      "target": "the_cloister",
+      "relationship": "inhabits",
+      "desc": "Tarak lives at the cloister where he tends the garden plots and plans to spend the rest of his life atoning for his past"
+    },
+    {
+      "source": "tarak",
+      "target": "sea_caves_south_island",
+      "relationship": "patrols",
+      "desc": "Tarak frequently visits the sea caves to acquire heart cap mushrooms from the myconids that live there"
+    },
+    {
+      "source": "tarak",
       "target": "potion_of_healing",
-      "relationship": "makes",
-      "desc": "uses heart cap mushrooms from myconids to create healing potions"
+      "relationship": "commands",
+      "desc": "Tarak uses heart cap mushrooms from the sea caves to make Potions of Healing"
     },
     {
       "source": "tarak",
       "target": "players",
       "relationship": "gives_quest_to",
-      "desc": "worried about being turned away by guardian at sea caves and may ask for help (implied by 'Cloister Quests' reference)"
-    },
-    {
-      "source": "tarak",
-      "target": "players",
-      "relationship": "allied_with",
-      "desc": "initially friendly toward visitors and eager to share herbalism knowledge"
-    },
-    {
-      "source": "tarak",
-      "target": "players",
-      "relationship": "rival_of",
-      "desc": "becomes hostile if characters pry into his past and continue pushing after initial indifference"
+      "desc": "Tarak is worried about being unable to access the sea caves due to a guardian and may give quests to players (implied by 'Cloister Quests' reference)"
     },
     {
       "source": "varnoth",
@@ -588,9 +821,15 @@
     },
     {
       "source": "varnoth",
-      "target": "dragons_rest",
+      "target": "temple_of_bahamut",
       "relationship": "serves",
-      "desc": "uses mason's tools to maintain the temple and other areas of the cloister"
+      "desc": "uses mason's tools to maintain the temple"
+    },
+    {
+      "source": "varnoth",
+      "target": "the_cloister",
+      "relationship": "serves",
+      "desc": "uses mason's tools to maintain other areas of the cloister"
     },
     {
       "source": "varnoth",
@@ -599,46 +838,76 @@
       "desc": "can shift her attitude to friendly by engaging in conversation on history, ethics, and impact of individual actions"
     },
     {
-      "source": "tarak",
+      "source": "cliffside_path",
+      "target": "cliffside_plaza",
+      "relationship": "connected_to",
+      "desc": "The path leads up from the shore and widens into the plaza about thirty feet above the bay"
+    },
+    {
+      "source": "runara",
       "target": "players",
+      "relationship": "allied_with",
+      "desc": "shares information about the dragon statue with the players"
+    },
+    {
+      "source": "tarak",
+      "target": "cloister_cells",
       "relationship": "inhabits",
-      "desc": "Tarak's cell is next to the vacant cell available to the characters"
+      "desc": "occupies the second cell in the cloister cells"
     },
     {
       "source": "varnoth",
-      "target": "players",
+      "target": "cloister_cells",
       "relationship": "inhabits",
-      "desc": "Varnoth's cell is next to Tarak's cell in the monastic cloister"
+      "desc": "occupies the third cell in the cloister cells"
     },
     {
       "source": "myla",
-      "target": "players",
+      "target": "cloister_cells",
       "relationship": "inhabits",
-      "desc": "Myla's cluttered cell is the fourth cell in the monastic cloister"
-    },
-    {
-      "source": "tarak",
-      "target": "kitchen_dining_room",
-      "relationship": "inhabits",
-      "desc": "Tarak is one of the cloister residents who shares meals and takes turns cooking in the kitchen/dining room"
+      "desc": "occupies the fourth cell in the cloister cells, which is cluttered with junk and tools"
     },
     {
       "source": "players",
-      "target": "kitchen_dining_room",
+      "target": "winch_house",
       "relationship": "inhabits",
-      "desc": "The players are among the cloister residents who share meals in the kitchen/dining room"
+      "desc": "Characters can operate the winch and lever inside the building"
     },
     {
       "source": "tarak",
-      "target": "players",
-      "relationship": "serves",
-      "desc": "Tarak cooks meals for the residents, and the days when Tarak cooks are everyone's favorite"
+      "target": "kitchen_dining_area",
+      "relationship": "inhabits",
+      "desc": "cooks meals in the kitchen/dining area as part of the cloister residents' rotation"
+    },
+    {
+      "source": "players",
+      "target": "tarak",
+      "relationship": "allied_with",
+      "desc": "the players (as cloister residents) prefer the days when Tarak cooks, though nobody says it out loud"
     },
     {
       "source": "tarak",
-      "target": "dragons_rest",
+      "target": "cliff_face_library",
       "relationship": "inhabits",
-      "desc": "comes to the cloister library to read and discuss various works"
+      "desc": "comes to the library to read and discuss various works"
+    },
+    {
+      "source": "varnoth",
+      "target": "cliff_face_library",
+      "relationship": "inhabits",
+      "desc": "comes to the library to read and discuss various works"
+    },
+    {
+      "source": "myla",
+      "target": "cliff_face_library",
+      "relationship": "inhabits",
+      "desc": "visits the library and is described as studious among the kobolds"
+    },
+    {
+      "source": "players",
+      "target": "cliff_face_library",
+      "relationship": "inhabits",
+      "desc": "Players enter the library through the oak door and explore the space"
     },
     {
       "source": "varnoth",
@@ -647,22 +916,46 @@
       "desc": "helps Runara maintain the temple along with other residents of the cloister"
     },
     {
+      "source": "runara",
+      "target": "temple_of_bahamut",
+      "relationship": "worships",
+      "desc": "offers prayers and incense to Bahamut at the temple"
+    },
+    {
+      "source": "players",
+      "target": "temple_of_bahamut",
+      "relationship": "worships",
+      "desc": "Adventurers pray to Bahamut at the temple to uphold honor and justice or find courage against threats"
+    },
+    {
       "source": "zombie",
       "target": "kobold",
       "relationship": "attacks",
-      "desc": "zombies have attacked Blepp the kobold, leaving him with only 2 hit points"
+      "desc": "zombies have hit Blepp the kobold, leaving him with 2 hit points"
     },
     {
       "source": "zombie",
       "target": "tarak",
       "relationship": "attacks",
-      "desc": "zombies are overpowering the unarmed Tarak"
+      "desc": "zombies overpower the unarmed Tarak if characters don't help"
+    },
+    {
+      "source": "zombie",
+      "target": "the_cloister",
+      "relationship": "attacks",
+      "desc": "zombies cause trouble at the cloister, attacking Blepp and Tarak"
     },
     {
       "source": "players",
       "target": "zombie",
       "relationship": "attacks",
-      "desc": "characters have an opportunity to fight the three zombies to save Blepp and Tarak"
+      "desc": "characters can defeat zombies when they first arrive on the island"
+    },
+    {
+      "source": "tarak",
+      "target": "myconid_caves",
+      "relationship": "inhabits",
+      "desc": "is eager to reestablish contact with the myconids of the sea caves"
     },
     {
       "source": "potion_of_healing",
@@ -671,106 +964,136 @@
       "desc": "given to the players by Tarak"
     },
     {
+      "source": "varnoth",
+      "target": "recent_shipwreck_site",
+      "relationship": "witnessed",
+      "desc": "witnessed the most recent ship crash with kobold Rix"
+    },
+    {
       "source": "runara",
-      "target": "cursed_shipwreck",
-      "relationship": "hidden_at",
-      "desc": "believes the answer to the shipwreck mystery is located at the Compass Rose wreck"
+      "target": "wreck_of_the_compass_rose",
+      "relationship": "suggests_investigation_at",
+      "desc": "suggests the answer to the recent crashes can be found at the older wreck of Compass Rose"
+    },
+    {
+      "source": "recent_shipwreck_site",
+      "target": "rocks_north_of_dragons_rest",
+      "relationship": "located_at",
+      "desc": "several ships have recently crashed on the rocks north of Dragon's Rest"
     },
     {
       "source": "runara",
       "target": "tarak",
-      "relationship": "allied_with",
-      "desc": "knows Tarak has experience with escaping corruption and violence, and recommends the paladin speak with them"
+      "relationship": "commands",
+      "desc": "tells the paladin to talk to Tarak about escaping corruption"
     },
     {
       "source": "runara",
       "target": "varnoth",
-      "relationship": "allied_with",
-      "desc": "knows Varnoth has experience with escaping corruption and violence, and recommends the paladin speak with them"
+      "relationship": "commands",
+      "desc": "tells the paladin to talk to Varnoth about escaping violence"
+    },
+    {
+      "source": "tarak",
+      "target": "dragons_rest",
+      "relationship": "inhabits",
+      "desc": "Tarak is currently at Dragon's Rest, having escaped there after his lover was killed"
     },
     {
       "source": "runara",
       "target": "clifftop_observatory",
-      "relationship": "guards",
-      "desc": "controls access to the observatory and requires characters to prove themselves worthy before directing them there"
+      "relationship": "gives_quest_to",
+      "desc": "promises to direct the wizard to the observatory after the characters help deal with other problems on the island"
     },
     {
       "source": "runara",
       "target": "clifftop_observatory",
       "relationship": "rival_of",
-      "desc": "fears going to the observatory herself due to old wounds and suspects evil has arisen there"
-    },
-    {
-      "source": "runara",
-      "target": "players",
-      "relationship": "allied_with",
-      "desc": "Runara is dedicated to peace and will rescue the players if they become unconscious on the island"
+      "desc": "fears Aidron went to the observatory and suspects evil has arisen there, but dares not go herself"
     },
     {
       "source": "fume_drake",
-      "target": "stormwreck_isle",
+      "target": "hot_spring_pool",
       "relationship": "inhabits",
-      "desc": "three fume drakes are present in the hot spring water on the island"
+      "desc": "three fume drakes are the guardians of the hot spring pool, initially hidden in the water"
     },
     {
       "source": "fume_drake",
-      "target": "stormwreck_isle",
+      "target": "hot_spring_pool",
       "relationship": "guards",
-      "desc": "the fume drakes serve as guardians of the hot spring on the island"
+      "desc": "the fume drakes guard the hot spring pool and become hostile if anyone attempts to gather mushrooms or enter the water"
     },
     {
       "source": "fume_drake",
       "target": "players",
       "relationship": "attacks",
-      "desc": "the fume drakes become hostile and attack if players gather mushrooms or enter the hot spring water"
+      "desc": "the fume drakes emerge from the water to attack the players if they attempt to gather mushrooms or enter the hot spring"
     },
     {
-      "source": "owlbear",
-      "target": "stormwreck_isle",
+      "source": "players",
+      "target": "hot_spring_pool",
       "relationship": "inhabits",
-      "desc": "stranded on the island after a shipwreck and now considers it its territory"
+      "desc": "Characters can bathe in the hot spring waters to regain hit points once per day"
     },
     {
       "source": "owlbear",
       "target": "players",
       "relationship": "attacks",
-      "desc": "hostile toward characters as intruders in its territory, though aims to drive them away rather than kill"
+      "desc": "hostile toward characters, views them as intruders in its territory"
+    },
+    {
+      "source": "owlbear",
+      "target": "northern_rocky_coast",
+      "relationship": "inhabits",
+      "desc": "was stranded here after the ship carrying its performing troupe crashed on the northern rocks"
+    },
+    {
+      "source": "owlbear",
+      "target": "island_wilderness",
+      "relationship": "inhabits",
+      "desc": "considers this area its territory and won't leave it"
+    },
+    {
+      "source": "players",
+      "target": "island_interior",
+      "relationship": "patrols",
+      "desc": "characters are traveling across the island rather than following the coast"
     },
     {
       "source": "kobold",
-      "target": "stormwreck_isle",
+      "target": "island_wilderness",
       "relationship": "inhabits",
-      "desc": "kobolds are hiding in rocks and light foliage around the island, attempting to ambush travelers"
+      "desc": "hiding in rocks and light foliage, attempting to ambush travelers"
     },
     {
       "source": "winged_kobold",
-      "target": "stormwreck_isle",
+      "target": "island_wilderness",
       "relationship": "inhabits",
-      "desc": "winged kobold participates in the ambush alongside regular kobolds"
+      "desc": "participating in the ambush alongside wingless kobolds"
     },
     {
       "source": "kobold",
       "target": "runara",
       "relationship": "rival_of",
-      "desc": "kobolds reject the peaceful teachings of Runara"
-    },
-    {
-      "source": "kobold",
-      "target": "dragons_rest",
-      "relationship": "rival_of",
-      "desc": "kobolds prey on travelers who stray away from Dragon's Rest"
+      "desc": "rejects the peaceful teachings of Runara"
     },
     {
       "source": "kobold",
       "target": "players",
       "relationship": "attacks",
-      "desc": "a group of kobolds attempts to ambush the characters, fighting to the death unless offered money or food"
+      "desc": "attempts to ambush the characters while they travel"
     },
     {
       "source": "winged_kobold",
       "target": "players",
       "relationship": "attacks",
-      "desc": "winged kobold participates in the ambush against the characters"
+      "desc": "participates in the ambush against the characters"
+    },
+    {
+      "source": "players",
+      "target": "kobold_camp",
+      "relationship": "attacks",
+      "desc": "angry kobolds emerge from hiding places and attack the players"
     },
     {
       "source": "players",
@@ -780,39 +1103,51 @@
     },
     {
       "source": "players",
-      "target": "stormwreck_isle",
+      "target": "fume_vent",
       "relationship": "gives_quest_to",
-      "desc": "Characters might scour the island to find hidden vents and access tunnels"
+      "desc": "Characters might find hidden vents to access winding tunnels deep into the earth"
     },
     {
-      "source": "tarak",
-      "target": "seagrow_caves",
-      "relationship": "allied_with",
-      "desc": "Tarak used to trade with the myconids in Seagrow Caves, exchanging food scraps for rare fungi"
+      "source": "players",
+      "target": "entrance_tunnel",
+      "relationship": "gives_quest_to",
+      "desc": "Characters might access winding tunnels leading deep into the earth"
+    },
+    {
+      "source": "players",
+      "target": "subterranean_access_network",
+      "relationship": "gives_quest_to",
+      "desc": "Characters might discover subterranean passages beneath the island"
     },
     {
       "source": "sinensa",
-      "target": "seagrow_caves",
+      "target": "myconid_caves",
       "relationship": "inhabits",
-      "desc": "Sinensa is the leader of the myconid colony living in Seagrow Caves"
-    },
-    {
-      "source": "sinensa",
-      "target": "seagrow_caves",
-      "relationship": "commands",
-      "desc": "Sinensa leads the myconid colony in Seagrow Caves"
+      "desc": "Sinensa is the leader of the myconids who live in the caves"
     },
     {
       "source": "sharruths_tomb",
-      "target": "seagrow_caves",
-      "relationship": "rival_of",
-      "desc": "Noxious fumes from Sharruth's tomb are poisoning the myconids in Seagrow Caves due to a blocked vent"
+      "target": "myconid_caves",
+      "relationship": "attacks",
+      "desc": "Noxious fumes from Sharruth's tomb are poisoning the myconids and their gardens"
+    },
+    {
+      "source": "sinensa",
+      "target": "myconid_caves",
+      "relationship": "commands",
+      "desc": "Sinensa is the leader of the myconid colony in the caves"
     },
     {
       "source": "players",
       "target": "seagrow_caves",
       "relationship": "attacks",
-      "desc": "Players must face stirges that nest in Seagrow Caves, which can be deadly in large numbers"
+      "desc": "Visitors to Seagrow Caves must face the threat of stirges that nest there"
+    },
+    {
+      "source": "players",
+      "target": "seagrow_caves",
+      "relationship": "inhabits",
+      "desc": "The characters are exploring the Seagrow Caves and can take a long rest there, though doing so risks poisoning from toxic fumes"
     },
     {
       "source": "rowboat",
@@ -824,49 +1159,67 @@
       "source": "tarak",
       "target": "rowboat",
       "relationship": "commands",
-      "desc": "Tarak's preferred method of travel is by rowboat"
-    },
-    {
-      "source": "players",
-      "target": "seagrow_caves",
-      "relationship": "arrives_at",
-      "desc": "The characters arrive at Seagrow Caves at sea level"
+      "desc": "This is Tarak's preferred method (of reaching Seagrow Caves)"
     },
     {
       "source": "myconid_adult",
-      "target": "players",
-      "relationship": "attacks",
-      "desc": "defends themselves if the characters attack first"
+      "target": "seagrow_caves",
+      "relationship": "inhabits",
+      "desc": "Myconid adults live in Seagrow Caves and use Rapport Spores to warn visitors to leave"
+    },
+    {
+      "source": "myconid_sprout",
+      "target": "seagrow_caves",
+      "relationship": "inhabits",
+      "desc": "Myconid sprouts live in Seagrow Caves and flee to warn adults of intruders"
     },
     {
       "source": "myconid_sprout",
       "target": "myconid_adult",
       "relationship": "serves",
-      "desc": "flee toward the nearest adults to warn them of intruders"
+      "desc": "Sprouts flee toward the nearest adults to warn them of intruders"
     },
     {
       "source": "sinensa",
-      "target": "myconid_sprout",
+      "target": "myconid_adult",
       "relationship": "commands",
-      "desc": "is the leader of the myconid sprouts"
+      "desc": "Sinensa is the leader of the myconids in Seagrow Caves"
+    },
+    {
+      "source": "sinensa",
+      "target": "crystal_cave",
+      "relationship": "attacks",
+      "desc": "Sinensa fell ill after going into the crystal cave to investigate the foul odor"
     },
     {
       "source": "myconid_adult",
-      "target": "seagrow_caves",
-      "relationship": "inhabits",
-      "desc": "normally avoid the crystal cave due to sunlight but inhabit the caves"
+      "target": "crystal_cave",
+      "relationship": "rival_of",
+      "desc": "Myconids normally avoid the crystal cave because sunlight filters into it, which is unpleasant to them"
     },
     {
-      "source": "myconid_sprout",
-      "target": "seagrow_caves",
+      "source": "players",
+      "target": "myconid_adult",
+      "relationship": "attacks",
+      "desc": "If the characters attack, the myconids defend themselves"
+    },
+    {
+      "source": "players",
+      "target": "myconid_caves",
       "relationship": "inhabits",
-      "desc": "live in the Seagrow Caves with their leader Sinensa"
+      "desc": "The characters are currently in the myconid caves where they are experiencing the Rapport Spores effect"
+    },
+    {
+      "source": "players",
+      "target": "myconid_caves",
+      "relationship": "attacks",
+      "desc": "Players can damage myconids in the caves, triggering their Distress Spores"
     },
     {
       "source": "spore_servant_octopus",
-      "target": "seagrow_caves",
+      "target": "entrance_tunnel",
       "relationship": "inhabits",
-      "desc": "lurks in the water of the tunnel in the Seagrow Caves"
+      "desc": "lurks in the water of the entrance tunnel, regardless of tide state"
     },
     {
       "source": "spore_servant_octopus",
@@ -876,231 +1229,405 @@
     },
     {
       "source": "spore_servant_octopus",
-      "target": "seagrow_caves",
+      "target": "entrance_tunnel",
       "relationship": "guards",
       "desc": "created by the myconid leader to keep outsiders away from the tunnel"
     },
     {
       "source": "stirge",
-      "target": "players",
-      "relationship": "attacks",
-      "desc": "two Stirge join the battle if fighting breaks out in the area"
-    },
-    {
-      "source": "violet_fungus",
-      "target": "seagrow_caves",
+      "target": "entrance_tunnel",
       "relationship": "inhabits",
-      "desc": "Three violet fungus grow among the harmless mushrooms in the cave"
+      "desc": "two Stirge clinging to the tunnel ceiling in the entrance tunnel"
+    },
+    {
+      "source": "stirge",
+      "target": "players",
+      "relationship": "attacks",
+      "desc": "if fighting breaks out in this area, the stirges are disturbed and join the battle against the players"
+    },
+    {
+      "source": "myconid_sprout",
+      "target": "fungus_farm",
+      "relationship": "inhabits",
+      "desc": "Molen and Kraz are spreading fertilizer from area B3 in the fungus farm"
+    },
+    {
+      "source": "myconid_adult",
+      "target": "fungus_farm",
+      "relationship": "inhabits",
+      "desc": "Hipsiz and Rugoso tend the mushrooms near the upper pool in the fungus farm"
+    },
+    {
+      "source": "violet_fungus",
+      "target": "fungus_farm",
+      "relationship": "inhabits",
+      "desc": "three Violet Fungus grow among the harmless mushrooms in the fungus farm"
     },
     {
       "source": "violet_fungus",
       "target": "players",
       "relationship": "attacks",
-      "desc": "If characters move toward the myconids, one violet fungus attacks with rot-causing tendrils"
+      "desc": "if characters move into the cave toward the myconids, one violet fungus attacks them with rot-causing tendrils"
+    },
+    {
+      "source": "players",
+      "target": "fungus_farm",
+      "relationship": "inhabits",
+      "desc": "The players advance into the cave location"
     },
     {
       "source": "players",
       "target": "violet_fungus",
       "relationship": "attacks",
-      "desc": "characters kill the violet fungi with ranged attacks while staying out of their reach"
+      "desc": "characters kill violet fungi with ranged attacks while staying out of their reach due to their slow movement"
     },
     {
       "source": "myconid_sprout",
       "target": "players",
       "relationship": "avoids",
-      "desc": "The Myconid Sprout avoid the characters"
+      "desc": "avoids the characters and the violet fungi"
     },
     {
       "source": "myconid_adult",
       "target": "myconid_sprout",
       "relationship": "protects",
-      "desc": "The Myconid Adult move quickly to protect the sprouts when aware of danger"
+      "desc": "moves quickly to protect the sprouts when aware of danger through combat noise or Distress Spores"
     },
     {
       "source": "myconid_adult",
       "target": "players",
       "relationship": "allied_with",
-      "desc": "After characters defeat violet fungi, adults agree to accompany and vouch for them with the colony"
+      "desc": "agrees to accompany the characters and vouch for them with the rest of the myconid colony after characters defeat violet fungi"
     },
     {
-      "source": "tarak",
-      "target": "potion_of_healing",
-      "relationship": "commands",
-      "desc": "can make each heart cap mushroom into a potion of healing"
+      "source": "players",
+      "target": "fungus_farm",
+      "relationship": "examines",
+      "desc": "A character examines the fungi and notices many mushrooms are sickly, shriveled, and blotched with black patches of decay"
+    },
+    {
+      "source": "myconid_sprout",
+      "target": "larder",
+      "relationship": "inhabits",
+      "desc": "Three named sprouts (Bispo, Valup, Popple) work here gathering fertilizer for area B2"
     },
     {
       "source": "stirge",
-      "target": "seagrow_caves",
+      "target": "larder",
       "relationship": "inhabits",
-      "desc": "Six stirges emerge from a nest in the chamber when characters enter"
+      "desc": "Six stirges inhabit a nest in the chamber and will attack if characters move more than 5 feet inside"
     },
     {
       "source": "myconid_sprout",
       "target": "stirge",
       "relationship": "allied_with",
-      "desc": "Sprouts rely on stirge distraction to escape toward area B4 when intruders appear"
+      "desc": "Sprouts rely on stirge attacks as a distraction to flee toward area B4 when intruders enter"
+    },
+    {
+      "source": "players",
+      "target": "larder",
+      "relationship": "inhabits",
+      "desc": "The players are exploring this cave that reeks of rot and has decaying vegetation on the floor"
+    },
+    {
+      "source": "myconid_adult",
+      "target": "circle_chamber",
+      "relationship": "inhabits",
+      "desc": "All six myconids are present in the circle chamber, taking turns resting there due to illness and fatigue from the blight"
+    },
+    {
+      "source": "myconid_adult",
+      "target": "myconid_adult",
+      "relationship": "tends_to",
+      "desc": "Two myconids (Agric and Omphalo) are tending to the other four (Craterel, Pleuro, Subrufus, and Virosa) who are in a meld trance"
+    },
+    {
+      "source": "myconid_adult",
+      "target": "players",
+      "relationship": "attacks",
+      "desc": "The two conscious myconids move quickly to confront any intruders not escorted by other myconids and respond with violence to any threat"
     },
     {
       "source": "myconid_adult",
       "target": "sinensa",
       "relationship": "serves",
-      "desc": "tends to the unconscious leader by collecting spores from a glowing red fungus and puffing them around Sinensa's head to keep them alive"
+      "desc": "Auranta and Enok are tending to the unconscious Sinensa, collecting spores from a glowing red fungus and puffing them around the leader's head to keep them alive"
+    },
+    {
+      "source": "myconid_adult",
+      "target": "sinensa",
+      "relationship": "guards",
+      "desc": "zealously defend their leader and immediately attack intruders who aren't accompanied by other myconids"
+    },
+    {
+      "source": "myconid_adult",
+      "target": "sinensas_sanctum",
+      "relationship": "inhabits",
+      "desc": "are present in Sinensa's sanctum tending to their leader"
+    },
+    {
+      "source": "sinensa",
+      "target": "sinensas_sanctum",
+      "relationship": "inhabits",
+      "desc": "is unconscious and being tended to in their own sanctum"
+    },
+    {
+      "source": "tarak",
+      "target": "taraks_workshop",
+      "relationship": "inhabits",
+      "desc": "Tarak works in his workshop, which is presumably located at or near the cloister"
     },
     {
       "source": "tarak",
       "target": "elixir_of_health",
       "relationship": "stored_in",
-      "desc": "uses ruby morel to create the elixir of health"
+      "desc": "Tarak creates the elixir of health in his workshop using the ruby morel"
     },
     {
       "source": "fume_drake",
-      "target": "seagrow_caves",
+      "target": "crystal_cave",
       "relationship": "inhabits",
-      "desc": "Two Fume Drakes lurk amid the sulfurous fumes in the cave and don't leave it"
+      "desc": "Two Fume Drakes lurk amid the sulfurous fumes in the cave and don't leave this cave"
     },
     {
-      "source": "sharruths_tomb",
-      "target": "seagrow_caves",
-      "relationship": "causes",
-      "desc": "The presence of the red dragon Sharruth deep beneath the island causes the volcanic activity that produces the noxious fumes in the cave"
+      "source": "players",
+      "target": "crystal_cave",
+      "relationship": "inhabits",
+      "desc": "The players are currently exploring the crystal cave, observing the environment"
+    },
+    {
+      "source": "fire_snake",
+      "target": "crystal_cave",
+      "relationship": "inhabits",
+      "desc": "released from a stony egg when the orange crystal is broken, now present in the cave"
     },
     {
       "source": "fire_snake",
       "target": "players",
       "relationship": "attacks",
-      "desc": "released from the broken fire crystal and immediately attacks the characters, seeing them only as fuel"
+      "desc": "sees the characters only as fuel and attacks them at once upon release"
     },
     {
-      "source": "fire_snake",
+      "source": "sinensa",
       "target": "seagrow_caves",
       "relationship": "inhabits",
-      "desc": "emerges from the broken fire crystal in the cave and begins attacking"
+      "desc": "Sinensa is the myconid leader in the Seagrow Caves"
     },
     {
       "source": "sinensa",
       "target": "players",
       "relationship": "gives_quest_to",
-      "desc": "Sinensa gives the players permission to keep treasure and mushrooms after they help destroy the orange crystal"
-    },
-    {
-      "source": "dragons_rest",
-      "target": "players",
-      "relationship": "gives_quest_to",
-      "desc": "residents urge the players to visit the wreck of Compass Rose next"
+      "desc": "Sinensa gives the players the ruby morel and permission to keep treasure after they help the myconids"
     },
     {
       "source": "harpy",
-      "target": "cursed_shipwreck",
+      "target": "wreck_of_the_compass_rose",
       "relationship": "inhabits",
       "desc": "settled into the wreck of Compass Rose and uses it as its lair"
     },
     {
       "source": "harpy",
-      "target": "zombie",
-      "relationship": "commands",
-      "desc": "lures ships to crash, creating new zombies from drowned sailors"
+      "target": "northern_rocky_coast",
+      "relationship": "attacks",
+      "desc": "lures ships to crash on the rocky shoal and feasts on the sailors"
+    },
+    {
+      "source": "harpy",
+      "target": "players",
+      "relationship": "attacks",
+      "desc": "poses an immediate threat to adventurers exploring the area"
+    },
+    {
+      "source": "zombie",
+      "target": "northern_rocky_coast",
+      "relationship": "inhabits",
+      "desc": "shambling zombies from shipwrecks find their way ashore to the rocky coast"
     },
     {
       "source": "zombie",
       "target": "stormwreck_isle",
-      "relationship": "inhabits",
-      "desc": "shambling zombies from shipwrecks haunt the island's shores"
-    },
-    {
-      "source": "zombie",
-      "target": "dragons_rest",
       "relationship": "attacks",
-      "desc": "menaces the people of Dragon's Rest after escaping the harpy"
+      "desc": "menaces the people of Dragon's Rest on the island"
     },
     {
       "source": "zombie",
-      "target": "cursed_shipwreck",
+      "target": "wreck_of_the_compass_rose",
       "relationship": "inhabits",
       "desc": "some zombies have been trapped in the wreck for years"
     },
     {
+      "source": "hold",
+      "target": "wreck_of_the_compass_rose",
+      "relationship": "stored_in",
+      "desc": "the ship's hold is part of the wrecked vessel"
+    },
+    {
       "source": "spore_servant_octopus",
-      "target": "cursed_shipwreck",
+      "target": "other_recent_wrecks",
       "relationship": "inhabits",
-      "desc": "can be found aboard sunken ships as one of the dangers characters might encounter"
+      "desc": "can be found aboard other recent wrecks as potential dangers"
     },
     {
       "source": "ghoul",
-      "target": "cursed_shipwreck",
+      "target": "other_recent_wrecks",
       "relationship": "inhabits",
-      "desc": "can be found aboard sunken ships as one of the dangers characters might encounter"
+      "desc": "can be found aboard other recent wrecks as potential dangers"
+    },
+    {
+      "source": "wreck_of_the_compass_rose",
+      "target": "recent_shipwreck_site",
+      "relationship": "hidden_at",
+      "desc": "holds the secret to freeing Dragon's Rest from the zombie attacks"
     },
     {
       "source": "rowboat",
-      "target": "cursed_shipwreck",
-      "relationship": "stored_in",
-      "desc": "The characters can tie up the rowboat to the south (starboard) side of the shipwreck's rigging"
+      "target": "players",
+      "relationship": "gives_quest_to",
+      "desc": "the characters can take the rowboat to visit the wreck of Compass Rose"
     },
     {
       "source": "players",
+      "target": "wreck_of_the_compass_rose",
+      "relationship": "attacks",
+      "desc": "the characters arrive at the wreck of Compass Rose"
+    },
+    {
+      "source": "rowboat",
+      "target": "main_deck",
+      "relationship": "stored_in",
+      "desc": "they can tie up the little boat to the derelict's rigging and climb onto the main deck"
+    },
+    {
+      "source": "players",
+      "target": "hold",
+      "relationship": "attacks",
+      "desc": "they're free to explore other possibilities for getting aboard, such as swimming through the hole in the hold"
+    },
+    {
+      "source": "tattered_rigging",
       "target": "cursed_shipwreck",
+      "relationship": "part_of",
+      "desc": "hangs off the starboard side of the main deck of the shipwreck"
+    },
+    {
+      "source": "gaping_hull_breach",
+      "target": "cursed_shipwreck",
+      "relationship": "part_of",
+      "desc": "located at the stern of the shipwreck beneath the water line"
+    },
+    {
+      "source": "players",
+      "target": "main_deck",
+      "relationship": "inhabits",
+      "desc": "The players are exploring the main deck of the wrecked ship"
+    },
+    {
+      "source": "players",
+      "target": "mainmast_and_crows_nest",
       "relationship": "climbs",
-      "desc": "climb the rope ladder up the mast to the crow's nest, leaning out over the water on the port side"
+      "desc": "characters climb the 50-foot rope ladder up the swaying mast to reach the crow's nest"
+    },
+    {
+      "source": "players",
+      "target": "mainmast_and_crows_nest",
+      "relationship": "finds",
+      "desc": "at the top of the climb, characters find they are leaning out over the water on the port side of the ship"
     },
     {
       "source": "harpy",
-      "target": "cursed_shipwreck",
-      "relationship": "patrols",
-      "desc": "is out looking for another ship to lure onto the rocks near the shipwreck"
+      "target": "main_deck",
+      "relationship": "inhabits",
+      "desc": "returns to the shipwreck after looking for other ships to lure onto rocks"
     },
     {
       "source": "tiger_eye",
-      "target": "cursed_shipwreck",
+      "target": "mainmast_and_crows_nest",
       "relationship": "hidden_at",
-      "desc": "two small tiger eye gems found in the crow's nest of the cursed shipwreck"
+      "desc": "two small tiger eye gems found in the crow's nest"
     },
     {
       "source": "bloodstone",
-      "target": "cursed_shipwreck",
+      "target": "mainmast_and_crows_nest",
       "relationship": "hidden_at",
-      "desc": "one bloodstone gem found in the crow's nest of the cursed shipwreck"
+      "desc": "one bloodstone gem found in the crow's nest"
     },
     {
-      "source": "pouch",
-      "target": "the_ships_hold",
-      "relationship": "stored_in",
-      "desc": "found in one of two small drawers in a desk in the ship's hold"
-    },
-    {
-      "source": "cartographer's_tools",
-      "target": "the_ships_hold",
-      "relationship": "stored_in",
-      "desc": "found in one of two small drawers in a desk in the ship's hold"
-    },
-    {
-      "source": "dagger",
-      "target": "the_ships_hold",
-      "relationship": "stored_in",
-      "desc": "found in one of two small drawers in a desk in the ship's hold"
+      "source": "zombie",
+      "target": "quarterdeck",
+      "relationship": "inhabits",
+      "desc": "is located in area C4 on the quarterdeck"
     },
     {
       "source": "players",
-      "target": "the_ships_hold",
+      "target": "quarterdeck",
       "relationship": "inhabits",
-      "desc": "The players are exploring the ship's hold where they observe the galley and skeleton"
+      "desc": "characters are present on the quarterdeck interacting with the ship's wheel"
+    },
+    {
+      "source": "zombie",
+      "target": "captains_quarters",
+      "relationship": "inhabits",
+      "desc": "two zombies are inside the captain's quarters, either beside the door or shuffling around the cabin"
+    },
+    {
+      "source": "players",
+      "target": "captains_quarters",
+      "relationship": "inhabits",
+      "desc": "Players have entered the captain's quarters and are exploring the ruined cabin"
+    },
+    {
+      "source": "pouch",
+      "target": "captains_quarters",
+      "relationship": "stored_in",
+      "desc": "found in one of the small drawers in the desk"
+    },
+    {
+      "source": "cartographer's_tools",
+      "target": "captains_quarters",
+      "relationship": "stored_in",
+      "desc": "found in one of the small drawers in the desk"
+    },
+    {
+      "source": "dagger",
+      "target": "captains_quarters",
+      "relationship": "stored_in",
+      "desc": "found in one of the small drawers in the desk"
+    },
+    {
+      "source": "players",
+      "target": "galley",
+      "relationship": "inhabits",
+      "desc": "The players are exploring the galley, observing the scene"
     },
     {
       "source": "fine_clothes",
-      "target": "cursed_shipwreck",
+      "target": "crew_quarters",
       "relationship": "stored_in",
-      "desc": "The fine clothes are worn by the blond-haired man in the portrait found on the cursed shipwreck"
+      "desc": "worn by the blond-haired man in the portrait found in the crew quarters"
+    },
+    {
+      "source": "crew_quarters",
+      "target": "players",
+      "relationship": "attacks",
+      "desc": "contains a hidden dart trap that attacks characters who lift the floorboard"
     },
     {
       "source": "sack",
-      "target": "the_ships_hold",
-      "relationship": "stored_in",
-      "desc": "A sack full of 200 gp rests in a small compartment beneath the raised floorboard in the ship's hold"
+      "target": "crew_quarters",
+      "relationship": "hidden_at",
+      "desc": "rests in a small compartment beneath the raised floorboard in the crew quarters"
+    },
+    {
+      "source": "zombie",
+      "target": "lower_deck",
+      "relationship": "inhabits",
+      "desc": "is an obvious threat in the lower deck"
     },
     {
       "source": "ghoul",
-      "target": "zombie",
-      "relationship": "rival_of",
-      "desc": "is more cunning than the zombies and uses them as a distraction"
+      "target": "lower_deck",
+      "relationship": "inhabits",
+      "desc": "lurks in the aft part of the hold, waiting to attack"
     },
     {
       "source": "ghoul",
@@ -1109,40 +1636,82 @@
       "desc": "waits to attack characters when they're busy with the zombie, hoping to paralyze and drag one away"
     },
     {
-      "source": "crowbar",
-      "target": "the_ships_hold",
-      "relationship": "stored_in",
-      "desc": "A crowbar can be used to pry open crates in the ship's hold"
-    },
-    {
-      "source": "lute",
-      "target": "the_ships_hold",
-      "relationship": "stored_in",
-      "desc": "A fine lute with mother-of-pearl inlay can be found in one of the crates"
-    },
-    {
-      "source": "spell_scroll",
-      "target": "the_ships_hold",
-      "relationship": "stored_in",
-      "desc": "A spell scroll of command sealed in a leather case can be found in one of the crates"
-    },
-    {
-      "source": "turquoise",
-      "target": "pouch",
-      "relationship": "stored_in",
-      "desc": "three turquoise gems are inside the pouch"
-    },
-    {
-      "source": "boots_of_elvenkind",
-      "target": "the_ships_hold",
-      "relationship": "stored_in",
-      "desc": "contained within the iron chest on the floor of the hold"
+      "source": "ghoul",
+      "target": "zombie",
+      "relationship": "rival_of",
+      "desc": "is more cunning than zombies and uses them as a distraction for its own attacks"
     },
     {
       "source": "players",
-      "target": "neverwinter_docks",
+      "target": "lower_deck",
       "relationship": "inhabits",
-      "desc": "The players' journey ended near Neverwinter docks after the shipwreck"
+      "desc": "The players have descended to the lower deck and are exploring the area"
+    },
+    {
+      "source": "crowbar",
+      "target": "players",
+      "relationship": "stored_in",
+      "desc": "can be used by players to pry open crates more efficiently"
+    },
+    {
+      "source": "sack",
+      "target": "lower_deck",
+      "relationship": "stored_in",
+      "desc": "found in a crate containing 20 pounds of whole cloves worth 60 gp"
+    },
+    {
+      "source": "lute",
+      "target": "lower_deck",
+      "relationship": "stored_in",
+      "desc": "found in a crate, a fine lute with mother-of-pearl inlay worth 50 gp"
+    },
+    {
+      "source": "spell_scroll",
+      "target": "lower_deck",
+      "relationship": "stored_in",
+      "desc": "found in a crate, a spell scroll of command sealed in a leather case"
+    },
+    {
+      "source": "players",
+      "target": "hold",
+      "relationship": "inhabits",
+      "desc": "The characters are swimming around in the submerged hold, able to surface for air as needed"
+    },
+    {
+      "source": "players",
+      "target": "sunken_ship_hull",
+      "relationship": "inhabits",
+      "desc": "The players are exploring the sunken ship hull, having been engulfed by cold water and discovering this undersea world"
+    },
+    {
+      "source": "pouch",
+      "target": "turquoise",
+      "relationship": "stored_in",
+      "desc": "The pouch contains three turquoise gems worth 10 gp each"
+    },
+    {
+      "source": "boots_of_venkind",
+      "target": "players",
+      "relationship": "stored_in",
+      "desc": "The boots of elvenkind are in the chest and can be taken by the players"
+    },
+    {
+      "source": "pouch",
+      "target": "players",
+      "relationship": "stored_in",
+      "desc": "The pouch containing gold and turquoise is in the chest and can be taken by the players"
+    },
+    {
+      "source": "players",
+      "target": "wreck_of_the_compass_rose",
+      "relationship": "inhabits",
+      "desc": "The players are present at the wreck of the Compass Rose after the shipwreck"
+    },
+    {
+      "source": "players",
+      "target": "recent_shipwreck_site",
+      "relationship": "inhabits",
+      "desc": "The players are at the recent shipwreck site where the Compass Rose was wrecked"
     },
     {
       "source": "ghoul",
@@ -1152,75 +1721,135 @@
     },
     {
       "source": "harpy",
-      "target": "the_ships_hold",
-      "relationship": "inhabits",
-      "desc": "lands on the main deck above the hold where the players are located"
+      "target": "main_deck",
+      "relationship": "confronts",
+      "desc": "confronts the characters when they show themselves on the main deck"
     },
     {
       "source": "harpy",
-      "target": "players",
+      "target": "mainmast_and_crows_nest",
+      "relationship": "guards",
+      "desc": "The harpy guards treasure in the crow's nest and will leave if its treasure is returned"
+    },
+    {
+      "source": "players",
+      "target": "harpy",
       "relationship": "attacks",
-      "desc": "confronts the characters on the main deck and uses Luring Song to charm them on its first turn"
+      "desc": "Players can attack the harpy, and if reduced to fewer than half its hit points, it might flee"
     },
     {
       "source": "players",
       "target": "harpy",
       "relationship": "gives_quest_to",
-      "desc": "can convince the harpy to leave through diplomacy, Charisma checks, or specific tactics"
+      "desc": "Players can negotiate with the harpy to leave in exchange for returning its treasure from the crow's nest"
+    },
+    {
+      "source": "runara",
+      "target": "clifftop_cemetery",
+      "relationship": "inhabits",
+      "desc": "Runara remembers Brastos was laid to rest in the graveyard atop the cliffs"
+    },
+    {
+      "source": "players",
+      "target": "hold",
+      "relationship": "stored_in",
+      "desc": "characters find Aleitha's talisman in the hold of the ship"
     },
     {
       "source": "players",
       "target": "stormwreck_isle",
-      "relationship": "worships",
-      "desc": "In a dream, the players see Stormwreck Isle shrouded in darkness, then a ray of sunlight breaks through and they feel the love and approval of their god"
+      "relationship": "inhabits",
+      "desc": "Players are present on Stormwreck Isle in their dream, observing the island's transformation from darkness to light"
+    },
+    {
+      "source": "runara",
+      "target": "players",
+      "relationship": "commands",
+      "desc": "If necessary, you can have Runara warn the characters that they're not ready to face this part of the adventure yet"
+    },
+    {
+      "source": "blue_dragon_wyrmling",
+      "target": "clifftop_observatory",
+      "relationship": "inhabits",
+      "desc": "Sparkrender, a blue dragon wyrmling, has made the observatory ruins his home in recent months"
+    },
+    {
+      "source": "blue_dragon_wyrmling",
+      "target": "bronze_dragon_wyrmling",
+      "relationship": "rival_of",
+      "desc": "Sparkrender and Aidron immediately clashed when they met at the observatory"
+    },
+    {
+      "source": "blue_dragon_wyrmling",
+      "target": "bronze_dragon_wyrmling",
+      "relationship": "commands",
+      "desc": "Sparkrender attempted to turn Aidron against Runara and ultimately overpowered and imprisoned him"
+    },
+    {
+      "source": "bronze_dragon_wyrmling",
+      "target": "clifftop_observatory",
+      "relationship": "inhabits",
+      "desc": "Aidron came to the ancient observatory about five days before the characters arrived"
+    },
+    {
+      "source": "bronze_dragon_wyrmling",
+      "target": "clifftop_observatory",
+      "relationship": "hidden_at",
+      "desc": "Sparkrender imprisoned Aidron in the observatory ruins"
     },
     {
       "source": "runara",
       "target": "blue_dragon_wyrmling",
       "relationship": "rival_of",
-      "desc": "battled centuries ago, with Sparkrender being a descendant of Runara's ancient rival"
-    },
-    {
-      "source": "blue_dragon_wyrmling",
-      "target": "clifftop_observatory",
-      "relationship": "inhabits",
-      "desc": "has made the observatory ruins his home in recent months"
-    },
-    {
-      "source": "blue_dragon_wyrmling",
-      "target": "bronze_dragon_wyrmling",
-      "relationship": "attacks",
-      "desc": "overpowered Aidron and imprisoned him in the observatory ruins"
-    },
-    {
-      "source": "bronze_dragon_wyrmling",
-      "target": "clifftop_observatory",
-      "relationship": "inhabits",
-      "desc": "imprisoned in the observatory ruins by Sparkrender"
+      "desc": "Runara battled her blue dragon rival centuries ago, wrecking the observatory"
     },
     {
       "source": "bronze_dragon_wyrmling",
       "target": "runara",
       "relationship": "serves",
-      "desc": "was under Runara's tutelage at Dragon's Rest before leaving"
+      "desc": "Aidron was under Runara's tutelage at Dragon's Rest before leaving for the observatory"
     },
     {
       "source": "blue_dragon_wyrmling",
       "target": "bronze_dragon_wyrmling",
-      "relationship": "guards",
-      "desc": "holds Aidron prisoner as the key to unlocking the observatory's magic"
-    },
-    {
-      "source": "players",
-      "target": "clifftop_observatory",
       "relationship": "attacks",
-      "desc": "The players are deciding how to travel to the Clifftop Observatory from Dragon's Rest"
+      "desc": "Sparkrender overpowered Aidron in their clash at the observatory"
     },
     {
       "source": "players",
       "target": "clifftop_observatory",
       "relationship": "approaches",
-      "desc": "The characters approach the observatory by land, eventually arriving at area D1"
+      "desc": "The characters approach the observatory by land and continue toward it"
+    },
+    {
+      "source": "players",
+      "target": "dragons_roost_spire",
+      "relationship": "observes",
+      "desc": "The characters see Sparkrender come to rest on the rocky spire off the coast"
+    },
+    {
+      "source": "the_crystalline_scar",
+      "target": "stormwreck_isle",
+      "relationship": "inhabits",
+      "desc": "strange, twisted protrusions of glassy crystal jutting from the earth on Stormwreck Isle"
+    },
+    {
+      "source": "players",
+      "target": "southeastern_shore",
+      "relationship": "inhabits",
+      "desc": "Players are at the southeastern tip of the island, considering options to approach the ruins"
+    },
+    {
+      "source": "players",
+      "target": "the_basalt_columns",
+      "relationship": "inhabits",
+      "desc": "Players are observing the basalt columns with ruins and considering climbing them"
+    },
+    {
+      "source": "players",
+      "target": "clifftop_observatory",
+      "relationship": "attacks",
+      "desc": "Players can attempt to convince hostile kobolds to allow exploration or conversation with a successful Charisma check"
     },
     {
       "source": "winged_kobold",
@@ -1229,16 +1858,10 @@
       "desc": "are locked in battle with eight stirges at the clifftop observatory"
     },
     {
-      "source": "players",
-      "target": "winged_kobold",
+      "source": "winged_kobold",
+      "target": "players",
       "relationship": "allied_with",
-      "desc": "if the characters actively help the kobolds during the battle, the kobolds return the favor"
-    },
-    {
-      "source": "players",
-      "target": "winged_kobold",
-      "relationship": "attacks",
-      "desc": "if the characters attack the kobolds instead of or as well as the stirges, the kobolds fight back"
+      "desc": "if characters help the kobolds during battle, the kobolds return the favor and become friendly"
     },
     {
       "source": "winged_kobold",
@@ -1262,133 +1885,175 @@
       "source": "winged_kobold",
       "target": "players",
       "relationship": "gives_quest_to",
-      "desc": "if friendly, offer to help retrieve the moonstone key from area D1 to activate the bridge to D4"
+      "desc": "if friendly, offer to help characters retrieve the moonstone key from area D1 to activate the bridge to D4"
     },
     {
       "source": "kobold",
-      "target": "clifftop_observatory",
+      "target": "kobold_camp",
       "relationship": "inhabits",
-      "desc": "Three kobolds named Ekrash, Erp, and Hev currently inhabit the camp at the clifftop observatory"
+      "desc": "Three kobolds named Ekrash, Erp, and Hev currently inhabit the camp"
+    },
+    {
+      "source": "winged_kobold",
+      "target": "kobold_camp",
+      "relationship": "inhabits",
+      "desc": "Two winged kobolds named Nuhro and Snirke currently inhabit the camp"
     },
     {
       "source": "kobold",
       "target": "sling_bullet",
-      "relationship": "guards",
-      "desc": "Kobolds are polishing sling bullets and keeping busy until Sparkrender's ritual"
+      "relationship": "attacks",
+      "desc": "Kobolds are polishing sling bullets, preparing them for use"
     },
     {
       "source": "winged_kobold",
       "target": "sling_bullet",
-      "relationship": "guards",
-      "desc": "Winged kobolds are polishing sling bullets and keeping busy until Sparkrender's ritual"
+      "relationship": "attacks",
+      "desc": "Winged kobolds are polishing sling bullets, preparing them for use"
+    },
+    {
+      "source": "players",
+      "target": "isolated_study_tower",
+      "relationship": "inhabits",
+      "desc": "Players are exploring the isolated study tower where they discover the journal"
     },
     {
       "source": "potion_of_lightning_resistance",
-      "target": "pouch",
-      "relationship": "stored_in",
-      "desc": "found together in the hidden compartment, with the potion likely placed inside or alongside the pouch"
+      "target": "isolated_study_tower",
+      "relationship": "hidden_at",
+      "desc": "found in a hidden compartment behind a loose brick in the northwest wall"
     },
     {
       "source": "pouch",
-      "target": "players",
-      "relationship": "gives_quest_to",
-      "desc": "contains 10 gp that can be taken by the players, implying a reward or loot for their investigation"
-    },
-    {
-      "source": "potion_of_lightning_resistance",
-      "target": "players",
-      "relationship": "gives_quest_to",
-      "desc": "found by the players as a result of their successful investigation check, serving as a reward"
-    },
-    {
-      "source": "bronze_dragon_wyrmling",
-      "target": "clifftop_observatory",
+      "target": "isolated_study_tower",
       "relationship": "hidden_at",
-      "desc": "Bronze Dragon Wyrmling (Aidron) is imprisoned in the secret library below the observatory (area D6)"
+      "desc": "found in a hidden compartment behind a loose brick in the northwest wall"
     },
     {
-      "source": "bronze_dragon_wyrmling",
-      "target": "players",
-      "relationship": "allied_with",
-      "desc": "Players can free Bronze Dragon Wyrmling (Aidron) to gain his help in fighting Sparkrender"
-    },
-    {
-      "source": "blue_dragon_wyrmling",
-      "target": "players",
-      "relationship": "attacks",
-      "desc": "Players can choose to fight Sparkrender the blue dragon wyrmling, either with or without Aidron's help"
+      "source": "pouch",
+      "target": "potion_of_lightning_resistance",
+      "relationship": "stored_in",
+      "desc": "the potion is contained within the pouch along with 10 gp"
     },
     {
       "source": "players",
       "target": "blue_dragon_wyrmling",
       "relationship": "attacks",
-      "desc": "can potentially wake and fight the dragon if stealth checks fail"
+      "desc": "Players can choose to fight Sparkrender the blue dragon wyrmling now"
+    },
+    {
+      "source": "players",
+      "target": "bronze_dragon_wyrmling",
+      "relationship": "gives_quest_to",
+      "desc": "Players can free Bronze Dragon Wyrmling (Aidron) from the secret library to gain his help against Sparkrender"
+    },
+    {
+      "source": "bronze_dragon_wyrmling",
+      "target": "players",
+      "relationship": "allied_with",
+      "desc": "If freed, Bronze Dragon Wyrmling (Aidron) will help the players fight Sparkrender"
+    },
+    {
+      "source": "blue_dragon_wyrmling",
+      "target": "players",
+      "relationship": "attacks",
+      "desc": "Sparkrender attacks the characters if awakened and not successfully persuaded, or if Aidron or Runara are mentioned"
     },
     {
       "source": "blue_dragon_wyrmling",
       "target": "runara",
       "relationship": "rival_of",
-      "desc": "Sparkrender becomes hostile and attacks if characters mention Runara"
+      "desc": "Sparkrender becomes hostile and attacks if characters mention Runara's name"
+    },
+    {
+      "source": "hidden_entrance",
+      "target": "clifftop_observatory",
+      "relationship": "hidden_at",
+      "desc": "The hidden entrance is located within the clifftop observatory"
+    },
+    {
+      "source": "secret_archive_library",
+      "target": "hidden_entrance",
+      "relationship": "unlocks",
+      "desc": "The secret archive library is accessed by unlocking the hidden entrance through proper statue alignment"
+    },
+    {
+      "source": "players",
+      "target": "clifftop_observatory",
+      "relationship": "inhabits",
+      "desc": "The players are exploring the clifftop observatory and interacting with its mechanisms"
     },
     {
       "source": "blue_quartz",
       "target": "clifftop_observatory",
       "relationship": "stored_in",
-      "desc": "five pale blue quartz crystals are part of Sparkrender's hoard at the clifftop observatory"
+      "desc": "five pale blue quartz crystals are part of Sparkrender's hoard in the observatory"
     },
     {
       "source": "jasper",
       "target": "clifftop_observatory",
       "relationship": "stored_in",
-      "desc": "five blue jasper stones are part of Sparkrender's hoard at the clifftop observatory"
-    },
-    {
-      "source": "players",
-      "target": "bronze_dragon_wyrmling",
-      "relationship": "allied_with",
-      "desc": "Aidron the bronze wyrmling asks for help defeating Sparkrender and will return to Dragon's Rest with them after victory"
+      "desc": "five blue jasper stones are part of Sparkrender's hoard in the observatory"
     },
     {
       "source": "bronze_dragon_wyrmling",
-      "target": "players",
+      "target": "cliff_face_library",
+      "relationship": "inhabits",
+      "desc": "trapped inside the library by Sparkrender's cave-in, trying to dig his way out"
+    },
+    {
+      "source": "players",
+      "target": "cliff_face_library",
       "relationship": "gives_quest_to",
-      "desc": "asks the characters to help him defeat Sparkrender, explaining the blue dragon's plan to use his death to become a draconic avatar"
+      "desc": "Aidron asks for help defeating Sparkrender and escaping the library"
+    },
+    {
+      "source": "players",
+      "target": "hidden_entrance",
+      "relationship": "unlocks",
+      "desc": "can use the hidden entrance to access the library instead of clearing rubble"
+    },
+    {
+      "source": "players",
+      "target": "secret_archive_library",
+      "relationship": "inhabits",
+      "desc": "The players are exploring the secret archive library, experiencing the stale air and observing the surroundings"
     },
     {
       "source": "+1_battleaxe",
-      "target": "players",
+      "target": "secret_archive_library",
       "relationship": "hidden_at",
-      "desc": "can be found by players who succeed on a DC 15 Intelligence (Investigation) check while searching the library"
+      "desc": "found in the library by searching and succeeding on an Intelligence (Investigation) check"
     },
     {
       "source": "spell_scroll_(2nd_level)",
-      "target": "players",
+      "target": "secret_archive_library",
       "relationship": "hidden_at",
-      "desc": "can be found by players who succeed on a DC 15 Intelligence (Investigation) check while searching the library"
+      "desc": "found in the library by searching and succeeding on an Intelligence (Investigation) check"
     },
     {
       "source": "+1_weapon",
-      "target": "players",
-      "relationship": "hidden_at",
-      "desc": "described in appendix A and can be found in the library"
+      "target": "secret_archive_library",
+      "relationship": "stored_in",
+      "desc": "described in appendix A as being in the library"
     },
     {
       "source": "spell_scroll",
-      "target": "players",
-      "relationship": "hidden_at",
-      "desc": "described in appendix A and can be found in the library"
+      "target": "secret_archive_library",
+      "relationship": "stored_in",
+      "desc": "described in appendix A as being in the library"
     },
     {
       "source": "runara",
       "target": "potion_of_healing",
       "relationship": "stored_in",
-      "desc": "Runara possesses potions of healing that she gives to the characters as rewards"
+      "desc": "Runara gives each character a potion of healing as a reward"
     },
     {
       "source": "runara",
       "target": "pearl",
       "relationship": "stored_in",
-      "desc": "Runara possesses exquisite pearls that she gives to the characters as rewards"
+      "desc": "Runara gives each character an exquisite pearl worth 100 gp as a reward"
     }
   ]
 }

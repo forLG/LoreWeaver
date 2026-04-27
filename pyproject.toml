@@ -12,6 +12,7 @@ dependencies = [
     "openai",
     "python-dotenv",
     "pydantic>=2.0",
+    "sentence-transformers",
 ]
 
 [project.optional-dependencies]
